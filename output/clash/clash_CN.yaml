@@ -5,16 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_VLESS_12528_550
+- name: CN_VLESS_12528_569
   type: vless
   server: 120.227.1.43
   port: 12528
   uuid: f0169b08-43fd-4dc3-8195-18f6ad2fe39d
+  network: tcp
   tls: false
-  skip-cert-verify: true
-  udp: true
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
   country: CN
-- name: CN_VMESS_30809_1457
+- name: CN_VMESS_30806_1279
+  type: vmess
+  server: v6.hdacd.com
+  port: 30806
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: CN
+- name: CN_VMESS_30809_1335
   type: vmess
   server: v9.hdacd.com
   port: 30809
@@ -35,8 +49,9 @@ proxy-groups:
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_VLESS_12528_550
-  - CN_VMESS_30809_1457
+  - CN_VLESS_12528_569
+  - CN_VMESS_30806_1279
+  - CN_VMESS_30809_1335
   url: http://www.gstatic.com/generate_204
   interval: 300
 rules:

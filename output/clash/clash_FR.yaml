@@ -5,65 +5,39 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_TROJAN_443_409
-  type: trojan
-  server: tough-hermit.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: FR
-- name: FR_TROJAN_443_414
+- name: FR_TROJAN_443_427
   type: trojan
   server: one-quail.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: one-quail.rooster465.autos
+  network: tcp
   country: FR
-- name: FR_TROJAN_443_409
+- name: FR_TROJAN_443_422
   type: trojan
   server: chief-cricket.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: chief-cricket.rooster465.autos
+  network: tcp
   country: FR
-- name: FR_TROJAN_443_405
+- name: FR_TROJAN_443_429
+  type: trojan
+  server: tough-hermit.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: tough-hermit.rooster465.autos
+  network: tcp
+  country: FR
+- name: FR_TROJAN_443_421
   type: trojan
   server: distinct-quail.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: distinct-quail.rooster465.autos
+  network: tcp
   country: FR
-- name: FR_VLESS_443_431
-  type: vless
-  server: fr199.mechvpn.online
-  port: 443
-  uuid: 53c76647-14d1-4df5-99cb-be99ad2e6bd9
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_VLESS_443_929
-  type: vless
-  server: fr15.mechvpn.online
-  port: 443
-  uuid: 53c76647-14d1-4df5-99cb-be99ad2e6bd9
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_VLESS_443_541
+- name: FR_VLESS_443_650
   type: vless
   network: ws
   server: 149.202.58.99
@@ -82,17 +56,6 @@ proxies:
         (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
     path: /vws/
   country: FR
-- name: FR_TROJAN_443_686
-  type: trojan
-  network: tcp
-  server: classic-gator.rooster465.autos
-  port: 443
-  password: ND91608427
-  skip-cert-verify: false
-  udp: true
-  sni: classic-gator.rooster465.autos
-  client-fingerprint: chrome
-  country: FR
 proxy-groups:
 - name: 🚀 Node Select
   type: select
@@ -102,14 +65,11 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_TROJAN_443_409
-  - FR_TROJAN_443_414
-  - FR_TROJAN_443_409
-  - FR_TROJAN_443_405
-  - FR_VLESS_443_431
-  - FR_VLESS_443_929
-  - FR_VLESS_443_541
-  - FR_TROJAN_443_686
+  - FR_TROJAN_443_427
+  - FR_TROJAN_443_422
+  - FR_TROJAN_443_429
+  - FR_TROJAN_443_421
+  - FR_VLESS_443_650
   url: http://www.gstatic.com/generate_204
   interval: 300
 rules:

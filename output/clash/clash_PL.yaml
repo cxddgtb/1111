@@ -5,75 +5,67 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_TROJAN_443_502
+- name: PL_TROJAN_443_654
   type: trojan
   server: relative-locust.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: relative-locust.rooster465.autos
+  network: tcp
   country: PL
-- name: PL_TROJAN_443_558
-  type: trojan
-  server: tolerant-mosquito.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: PL
-- name: PL_TROJAN_443_523
-  type: trojan
-  server: game-firefly.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: PL
-- name: PL_TROJAN_443_571
+- name: PL_TROJAN_443_541
   type: trojan
   server: enough-basilisk.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: enough-basilisk.rooster465.autos
+  network: tcp
   country: PL
-- name: PL_VLESS_443_608
+- name: PL_TROJAN_443_540
+  type: trojan
+  server: game-firefly.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: game-firefly.rooster465.autos
+  network: tcp
+  country: PL
+- name: PL_TROJAN_443_586
+  type: trojan
+  server: tolerant-mosquito.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: tolerant-mosquito.rooster465.autos
+  network: tcp
+  country: PL
+- name: PL_VLESS_443_615
   type: vless
   server: 31.76.251.127
   port: 443
   uuid: 2a6b708e-6799-473e-85e9-d4b116c5eedc
   network: ws
-  servername: 31.76.251.127.cdn-one.org
   tls: true
+  servername: 31.76.251.127.cdn-one.org
   client-fingerprint: chrome
   ws-opts:
     path: /10336/2GCOqG7bvA
     headers:
       Host: 31.76.251.127.cdn-one.org
-  skip-cert-verify: true
-  udp: true
   country: PL
-- name: PL_VLESS_443_767
+- name: PL_VLESS_443_995
   type: vless
   server: 31.76.251.127.cdn-one.org
   port: 443
   uuid: 2a6b708e-6799-473e-85e9-d4b116c5eedc
   network: ws
-  servername: 31.76.251.127.cdn-one.org
   tls: true
+  servername: 31.76.251.127.cdn-one.org
   client-fingerprint: chrome
   ws-opts:
     path: /10336/2GCOqG7bvA
     headers:
       Host: 31.76.251.127.cdn-one.org
-  skip-cert-verify: true
-  udp: true
   country: PL
-- name: PL_TROJAN_443_560
+- name: PL_TROJAN_443_530
   type: trojan
   network: tcp
   server: relaxed-gull.rooster465.autos
@@ -84,7 +76,7 @@ proxies:
   sni: relaxed-gull.rooster465.autos
   client-fingerprint: chrome
   country: PL
-- name: PL_TROJAN_443_505
+- name: PL_TROJAN_443_513
   type: trojan
   network: tcp
   server: 202.78.163.248
@@ -95,7 +87,7 @@ proxies:
   sni: relaxed-gull.rooster465.autos
   client-fingerprint: chrome
   country: PL
-- name: PL_VLESS_443_456
+- name: PL_VLESS_443_446
   type: vless
   network: tcp
   server: 82.26.91.87
@@ -109,7 +101,7 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: PL
-- name: PL_VLESS_443_442
+- name: PL_VLESS_443_636
   type: vless
   network: tcp
   server: 144.31.171.233
@@ -123,7 +115,7 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: PL
-- name: PL_VLESS_443_492
+- name: PL_VLESS_443_725
   type: vless
   network: tcp
   server: 95.85.253.5
@@ -146,17 +138,17 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_TROJAN_443_502
-  - PL_TROJAN_443_558
-  - PL_TROJAN_443_523
-  - PL_TROJAN_443_571
-  - PL_VLESS_443_608
-  - PL_VLESS_443_767
-  - PL_TROJAN_443_560
-  - PL_TROJAN_443_505
-  - PL_VLESS_443_456
-  - PL_VLESS_443_442
-  - PL_VLESS_443_492
+  - PL_TROJAN_443_654
+  - PL_TROJAN_443_541
+  - PL_TROJAN_443_540
+  - PL_TROJAN_443_586
+  - PL_VLESS_443_615
+  - PL_VLESS_443_995
+  - PL_TROJAN_443_530
+  - PL_TROJAN_443_513
+  - PL_VLESS_443_446
+  - PL_VLESS_443_636
+  - PL_VLESS_443_725
   url: http://www.gstatic.com/generate_204
   interval: 300
 rules:

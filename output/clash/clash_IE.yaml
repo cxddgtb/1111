@@ -5,61 +5,55 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IE_TROJAN_443_354
-  type: trojan
-  server: helped-haddock.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: IE
-- name: IE_TROJAN_443_358
-  type: trojan
-  server: healthy-panda.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: IE
-- name: IE_TROJAN_443_365
+- name: IE_TROJAN_443_372
   type: trojan
   server: kind-stork.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: kind-stork.rooster465.autos
+  network: tcp
   country: IE
-- name: IE_TROJAN_443_378
+- name: IE_TROJAN_443_385
   type: trojan
-  server: funny-hen.rooster465.autos
+  server: healthy-panda.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: healthy-panda.rooster465.autos
+  network: tcp
   country: IE
-- name: IE_TROJAN_443_393
+- name: IE_TROJAN_443_361
   type: trojan
-  server: unbiased-garfish.rooster465.autos
+  server: helped-haddock.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: helped-haddock.rooster465.autos
+  network: tcp
   country: IE
-- name: IE_TROJAN_443_358
+- name: IE_TROJAN_443_362
   type: trojan
   server: worthy-labrador.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: worthy-labrador.rooster465.autos
+  network: tcp
   country: IE
-- name: IE_TROJAN_443_479
+- name: IE_TROJAN_443_381
+  type: trojan
+  server: unbiased-garfish.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: unbiased-garfish.rooster465.autos
+  network: tcp
+  country: IE
+- name: IE_TROJAN_443_388
+  type: trojan
+  server: funny-hen.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: funny-hen.rooster465.autos
+  network: tcp
+  country: IE
+- name: IE_TROJAN_443_342
   type: trojan
   network: tcp
   server: 34.251.228.118
@@ -79,13 +73,13 @@ proxy-groups:
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_TROJAN_443_354
-  - IE_TROJAN_443_358
-  - IE_TROJAN_443_365
-  - IE_TROJAN_443_378
-  - IE_TROJAN_443_393
-  - IE_TROJAN_443_358
-  - IE_TROJAN_443_479
+  - IE_TROJAN_443_372
+  - IE_TROJAN_443_385
+  - IE_TROJAN_443_361
+  - IE_TROJAN_443_362
+  - IE_TROJAN_443_381
+  - IE_TROJAN_443_388
+  - IE_TROJAN_443_342
   url: http://www.gstatic.com/generate_204
   interval: 300
 rules:
