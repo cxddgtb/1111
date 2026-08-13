@@ -1,0 +1,53 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies:
+- name: RO_VLESS_8443_669
+  type: vless
+  server: 72.5.43.45
+  port: 8443
+  uuid: 2c532831-127d-45d7-a84e-11ce36a6b1af
+  servername: www.intel.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: gyKPxwQBhJUGVHE2t4R2pOf64NkdSNgu3DqMxOzKtGU
+    short-id: 5b
+  skip-cert-verify: true
+  udp: true
+  country: RO
+- name: RO_VLESS_8443_721
+  type: vless
+  server: node14.fastdatastream.com
+  port: 8443
+  uuid: 2c532831-127d-45d7-a84e-11ce36a6b1af
+  servername: www.intel.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: gyKPxwQBhJUGVHE2t4R2pOf64NkdSNgu3DqMxOzKtGU
+    short-id: 5b
+  skip-cert-verify: true
+  udp: true
+  country: RO
+proxy-groups:
+- name: 🚀 Node Select
+  type: select
+  proxies:
+  - 🌍 RO
+  - DIRECT
+- name: 🌍 RO
+  type: url-test
+  proxies:
+  - RO_VLESS_8443_669
+  - RO_VLESS_8443_721
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,🚀 Node Select

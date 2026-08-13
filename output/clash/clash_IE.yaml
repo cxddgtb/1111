@@ -1,0 +1,93 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies:
+- name: IE_TROJAN_443_354
+  type: trojan
+  server: helped-haddock.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: IE
+- name: IE_TROJAN_443_358
+  type: trojan
+  server: healthy-panda.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: IE
+- name: IE_TROJAN_443_365
+  type: trojan
+  server: kind-stork.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: IE
+- name: IE_TROJAN_443_378
+  type: trojan
+  server: funny-hen.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: IE
+- name: IE_TROJAN_443_393
+  type: trojan
+  server: unbiased-garfish.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: IE
+- name: IE_TROJAN_443_358
+  type: trojan
+  server: worthy-labrador.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: IE
+- name: IE_TROJAN_443_479
+  type: trojan
+  network: tcp
+  server: 34.251.228.118
+  port: 443
+  password: UO36402987
+  skip-cert-verify: false
+  udp: true
+  sni: definite-ladybird.rooster465.autos
+  client-fingerprint: chrome
+  country: IE
+proxy-groups:
+- name: 🚀 Node Select
+  type: select
+  proxies:
+  - 🌍 IE
+  - DIRECT
+- name: 🌍 IE
+  type: url-test
+  proxies:
+  - IE_TROJAN_443_354
+  - IE_TROJAN_443_358
+  - IE_TROJAN_443_365
+  - IE_TROJAN_443_378
+  - IE_TROJAN_443_393
+  - IE_TROJAN_443_358
+  - IE_TROJAN_443_479
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,🚀 Node Select

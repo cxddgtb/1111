@@ -1,0 +1,172 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies:
+- name: NL_TROJAN_443_392
+  type: trojan
+  server: whole-woodcock.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: NL
+- name: NL_TROJAN_443_401
+  type: trojan
+  server: thorough-falcon.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: NL
+- name: NL_VLESS_443_941
+  type: vless
+  server: nl2.panel11.ru
+  port: 443
+  uuid: 9aff0732-7ce4-4b34-ba20-e67c6df64fdd
+  servername: nl2.panel11.ru
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: SyTPcYz068PdWyB0tongXPgSe1QU2nn-_yYsO959nUQ
+    short-id: 5578c19d39bec828
+  skip-cert-verify: true
+  udp: true
+  country: NL
+- name: NL_VLESS_443_2970
+  type: vless
+  server: 87.199.205.120.sslip.io
+  port: 443
+  uuid: 9aff0732-7ce4-4b34-ba20-e67c6df64fdd
+  servername: 87.199.205.120.sslip.io
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: bKfIxJpnGI17_v5257WLeZy2mGAli86T1Mf8_8hwETo
+    short-id: 1da052e4ba28e6e9
+  skip-cert-verify: true
+  udp: true
+  country: NL
+- name: NL_VMESS_443_2296
+  type: vmess
+  server: 185.246.152.159
+  port: 443
+  uuid: 5f72f180-b21b-4b7a-8484-240759012604
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /5f72f180-b21b-4b7a-8484-240759096785
+    headers:
+      Host: apjhdggyx.com
+  udp: true
+  country: NL
+- name: NL_VMESS_443_2724
+  type: vmess
+  network: ws
+  server: 37.48.90.120
+  port: 443
+  uuid: 5f72f180-b21b-4b7a-8484-240759012604
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: apjhdggyx.com
+    path: /5f72f180-b21b-4b7a-8484-240759096785
+  country: NL
+- name: NL_VLESS_443_662
+  type: vless
+  network: ws
+  server: 177.3.208.169
+  port: 443
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  servername: titandarkness.mooo.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: titandarkness.mooo.com
+    path: /21381/0kO2id8FMQ
+  country: NL
+- name: NL_VLESS_443_399
+  type: vless
+  network: tcp
+  server: 64.188.77.184
+  port: 443
+  uuid: '8033102198'
+  servername: nl13.fast-connect-service.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: NL
+- name: NL_VLESS_443_395
+  type: vless
+  network: tcp
+  server: 85.155.98.40
+  port: 443
+  uuid: '8033102198'
+  servername: nl2.fast-connect-service.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: NL
+- name: NL_VLESS_443_538
+  type: vless
+  network: ws
+  server: 82.115.6.93
+  port: 443
+  uuid: 8c00ea88-31f7-445a-8f74-f6e7f03a1553
+  servername: kuraakavaa-5l7.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: kuraakavaa-5l7.pages.dev
+    path: /
+  country: NL
+proxy-groups:
+- name: 🚀 Node Select
+  type: select
+  proxies:
+  - 🌍 NL
+  - DIRECT
+- name: 🌍 NL
+  type: url-test
+  proxies:
+  - NL_TROJAN_443_392
+  - NL_TROJAN_443_401
+  - NL_VLESS_443_941
+  - NL_VLESS_443_2970
+  - NL_VMESS_443_2296
+  - NL_VMESS_443_2724
+  - NL_VLESS_443_662
+  - NL_VLESS_443_399
+  - NL_VLESS_443_395
+  - NL_VLESS_443_538
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,🚀 Node Select

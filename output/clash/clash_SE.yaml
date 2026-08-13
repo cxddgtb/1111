@@ -1,0 +1,67 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies:
+- name: SE_VLESS_443_464
+  type: vless
+  server: 84.32.49.223
+  port: 443
+  uuid: 463a26c2-eba8-40ea-89c4-ee5c1373ccbe
+  servername: dsech.mostserv.xyz
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: g0mDPNlv3uOrnxXvBYP3cEjd0ewJuIFlBh93KE5bU3A
+    short-id: d0ca141e839394a3
+  skip-cert-verify: true
+  udp: true
+  country: SE
+- name: SE_VLESS_50443_683
+  type: vless
+  server: 62.60.159.137
+  port: 50443
+  uuid: 000f16e8-cc68-4951-b336-acd81996efde
+  servername: www.icloud.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: hp9ht_jsxocTnQEbChb1G3JoDF50x-xDT8UYr66D1TQ
+  skip-cert-verify: true
+  udp: true
+  country: SE
+- name: SE_VLESS_443_498
+  type: vless
+  network: tcp
+  server: 95.85.246.104
+  port: 443
+  uuid: '8033102198'
+  servername: pl7.fast-connect-service.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: SE
+proxy-groups:
+- name: 🚀 Node Select
+  type: select
+  proxies:
+  - 🌍 SE
+  - DIRECT
+- name: 🌍 SE
+  type: url-test
+  proxies:
+  - SE_VLESS_443_464
+  - SE_VLESS_50443_683
+  - SE_VLESS_443_498
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,🚀 Node Select

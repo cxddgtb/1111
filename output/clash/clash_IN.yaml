@@ -1,0 +1,54 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies:
+- name: IN_VLESS_443_778
+  type: vless
+  server: apxc.falsemirrov.com
+  port: 443
+  uuid: ff1b0b50-70dc-4bae-866e-55cff86f4d6d
+  servername: apxc.falsemirrov.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: sbl95eJz_SP1vYb8doCjAJOo0o5NveutEb9J-XKGl1w
+    short-id: 9c2378562188c3cb
+  skip-cert-verify: true
+  udp: true
+  country: IN
+- name: IN_VLESS_443_1540
+  type: vless
+  server: 4.240.110.47
+  port: 443
+  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
+  network: ws
+  servername: bab-6.site
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vws/
+    headers:
+      Host: bab-6.site
+  skip-cert-verify: true
+  udp: true
+  country: IN
+proxy-groups:
+- name: 🚀 Node Select
+  type: select
+  proxies:
+  - 🌍 IN
+  - DIRECT
+- name: 🌍 IN
+  type: url-test
+  proxies:
+  - IN_VLESS_443_778
+  - IN_VLESS_443_1540
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,🚀 Node Select

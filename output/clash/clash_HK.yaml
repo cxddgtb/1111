@@ -1,0 +1,153 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies:
+- name: HK_TROJAN_443_653
+  type: trojan
+  server: humorous-parakeet.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: HK
+- name: HK_TROJAN_443_651
+  type: trojan
+  server: magical-kodiak.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: HK
+- name: HK_TROJAN_443_647
+  type: trojan
+  server: smiling-ray.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: HK
+- name: HK_TROJAN_443_652
+  type: trojan
+  server: upright-bedbug.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: HK
+- name: HK_TROJAN_443_624
+  type: trojan
+  server: novel-mouse.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: HK
+- name: HK_TROJAN_443_671
+  type: trojan
+  server: wealthy-loon.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: HK
+- name: HK_TROJAN_443_652
+  type: trojan
+  server: modest-foal.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: HK
+- name: HK_TROJAN_11035_517
+  type: trojan
+  network: tcp
+  server: 18.162.120.218
+  port: 11035
+  password: BxceQaOe
+  skip-cert-verify: true
+  sni: t.me%2Fripaojiedian
+  country: HK
+- name: HK_TROJAN_443_648
+  type: trojan
+  network: tcp
+  server: dynamic-grubworm.rooster465.autos
+  port: 443
+  password: ND91608427
+  skip-cert-verify: false
+  udp: true
+  sni: dynamic-grubworm.rooster465.autos
+  client-fingerprint: chrome
+  country: HK
+- name: HK_TROJAN_443_636
+  type: trojan
+  network: tcp
+  server: 185.244.208.13
+  port: 443
+  password: ND91608427
+  skip-cert-verify: false
+  udp: true
+  sni: ace-starling.rooster465.autos
+  client-fingerprint: chrome
+  country: HK
+- name: HK_TROJAN_443_615
+  type: trojan
+  network: tcp
+  server: 91.199.84.120
+  port: 443
+  password: ND91608427
+  skip-cert-verify: false
+  udp: true
+  sni: dynamic-grubworm.rooster465.autos
+  client-fingerprint: chrome
+  country: HK
+- name: HK_VMESS_443_1309
+  type: vmess
+  network: ws
+  server: drbkg16egf3fzlm3.v.3dns.vip
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: DrBKg16eGf3FZlM3.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+proxy-groups:
+- name: 🚀 Node Select
+  type: select
+  proxies:
+  - 🌍 HK
+  - DIRECT
+- name: 🌍 HK
+  type: url-test
+  proxies:
+  - HK_TROJAN_443_653
+  - HK_TROJAN_443_651
+  - HK_TROJAN_443_647
+  - HK_TROJAN_443_652
+  - HK_TROJAN_443_624
+  - HK_TROJAN_443_671
+  - HK_TROJAN_443_652
+  - HK_TROJAN_11035_517
+  - HK_TROJAN_443_648
+  - HK_TROJAN_443_636
+  - HK_TROJAN_443_615
+  - HK_VMESS_443_1309
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,🚀 Node Select
