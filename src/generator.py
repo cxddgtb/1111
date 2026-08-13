@@ -3,6 +3,7 @@ import yaml
 from collections import defaultdict
 
 TEST_URL = 'http://www.gstatic.com/generate_204'
+YOUTUBE_TEST_URL = 'https://www.youtube.com'
 TEST_INTERVAL = 300
 
 def select_top_500(alive_nodes):
@@ -78,13 +79,26 @@ def generate_clash_config(nodes, filename, delay_map=None):
         'port': 7890, 'socks-port': 7891, 'allow-lan': False, 'mode': 'Rule',
         'log-level': 'info', 'external-controller': '127.0.0.1:9090',
         'proxies': safe_nodes, 'proxy-groups': [],
-        'rules': ['GEOIP,CN,DIRECT', 'MATCH,🚀 节点选择']
+        'rules': [
+            # 禁用 YouTube 的 QUIC(UDP)，避免节点 UDP 转发不良时傻等超时回退
+            'AND,((NETWORK,UDP),(DOMAIN-SUFFIX,googlevideo.com)),REJECT',
+            'AND,((NETWORK,UDP),(DOMAIN-SUFFIX,youtube.com)),REJECT',
+            # 中国大陆直连，绕过代理
+            'GEOIP,CN,DIRECT',
+            # YouTube 相关域名走专属优选组
+            'DOMAIN-SUFFIX,googlevideo.com,📺 YouTube 优选',
+            'DOMAIN-SUFFIX,youtube.com,📺 YouTube 优选',
+            'DOMAIN-SUFFIX,ytimg.com,📺 YouTube 优选',
+            'DOMAIN-SUFFIX,yt.be,📺 YouTube 优选',
+            'DOMAIN-SUFFIX,ggpht.com,📺 YouTube 优选',
+            'MATCH,🚀 节点选择'
+        ]
     }
 
     # 手动选择组（默认选中"全球最低延迟"）
     config['proxy-groups'].append({
         'name': '🚀 节点选择', 'type': 'select',
-        'proxies': ['⚡ 全球最低延迟', '♻️ 自动故障转移', '⚖️ 负载均衡'] +
+        'proxies': ['⚡ 全球最低延迟', '♻️ 自动故障转移', '⚖️ 负载均衡', '📺 YouTube 优选'] +
                    [f'🌍 {c}' for c in sorted(set(n.get('country', 'Unknown') for n in safe_nodes))] + ['DIRECT']
     })
 
@@ -92,6 +106,12 @@ def generate_clash_config(nodes, filename, delay_map=None):
     config['proxy-groups'].append({
         'name': '⚡ 全球最低延迟', 'type': 'url-test',
         'proxies': all_names, 'url': TEST_URL, 'interval': TEST_INTERVAL, 'tolerance': 100
+    })
+
+    # YouTube 专属优选：用 YouTube 真实地址测速，挑对视频真正快的节点
+    config['proxy-groups'].append({
+        'name': '📺 YouTube 优选', 'type': 'url-test',
+        'proxies': all_names, 'url': YOUTUBE_TEST_URL, 'interval': TEST_INTERVAL, 'tolerance': 50
     })
 
     # 保证可用：故障自动切换（按延迟优先级）
