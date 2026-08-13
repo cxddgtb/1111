@@ -5,97 +5,72 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_561
+- name: RU_VLESS_2200_427
   type: vless
-  server: 158.160.249.252
-  port: 443
-  uuid: ff1b0b50-70dc-4bae-866e-55cff86f4d6d
-  servername: smartcaptcha.yandexcloud.net
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  reality-opts:
-    public-key: iRbc5G3wZbluYutzDvrJlc356yJsEnhV1T4tvE-tCnM
-    short-id: 27e53bbcab7593d7
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_443_600
-  type: vless
-  server: 84.201.178.175
-  port: 443
-  uuid: ff1b0b50-70dc-4bae-866e-55cff86f4d6d
-  servername: www.vk.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  reality-opts:
-    public-key: bwuT_tpimT_uUeWpSn-HbRztfol4o4uCcUHcdvkeFx0
-    short-id: 27e53bbcab7593d7
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_443_598
-  type: vless
-  server: 51.250.16.150
-  port: 443
-  uuid: ff1b0b50-70dc-4bae-866e-55cff86f4d6d
-  servername: smartcaptcha.yandexcloud.net
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  reality-opts:
-    public-key: iRbc5G3wZbluYutzDvrJlc356yJsEnhV1T4tvE-tCnM
-    short-id: 27e53bbcab7593d7
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_443_532
-  type: vless
-  server: vruaz.mostserv.xyz
-  port: 443
-  uuid: 463a26c2-eba8-0031-89c4-ee5c1373ccbe
-  servername: vruaz.mostserv.xyz
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: edge
-  reality-opts:
-    public-key: ckPCrgbrSdQaz1j3vP0-f0P8F4E8ZucQTeQGtxBKagU
-    short-id: 3882f019072c5dcd
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_443_1544
-  type: vless
-  server: ru9.aimodelhub.top
-  port: 443
-  uuid: b85b1e90-b5ed-0002-b433-bf9d2eca0e42
-  servername: ru9.aimodelhub.top
-  tls: true
-  flow: xtls-rprx-vision
+  server: 201.51.5.253
+  port: 2200
+  uuid: ed1cd50f-ead9-4e01-b5ae-b7d2dfb532fc
+  network: ws
+  tls: false
+  servername: ''
   client-fingerprint: chrome
-  reality-opts:
-    public-key: jwT3lcIzJQMjzBKRNsmyRGrgaa1qNfE7pQF_nAKu0GA
-    short-id: a73cf719b624
-  skip-cert-verify: true
-  udp: true
+  ws-opts:
+    path: /v1
+    headers:
+      Host: rzd.ru
+  country: RU
+- name: RU_VLESS_4100_450
+  type: vless
+  server: 201.51.5.253
+  port: 4100
+  uuid: ed1cd50f-ead9-4e01-b5ae-b7d2dfb532fc
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /v1
+    headers:
+      Host: live.ok.ru
   country: RU
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
   - 🌍 RU
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - RU_VLESS_2200_427
+  - RU_VLESS_4100_450
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - RU_VLESS_2200_427
+  - RU_VLESS_4100_450
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_561
-  - RU_VLESS_443_600
-  - RU_VLESS_443_598
-  - RU_VLESS_443_532
-  - RU_VLESS_443_1544
+  - RU_VLESS_2200_427
+  - RU_VLESS_4100_450
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- MATCH,🚀 节点选择

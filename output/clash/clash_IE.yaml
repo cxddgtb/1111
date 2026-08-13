@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IE_TROJAN_443_372
+- name: IE_TROJAN_443_243
   type: trojan
   server: kind-stork.rooster465.autos
   port: 443
@@ -13,7 +13,7 @@ proxies:
   sni: kind-stork.rooster465.autos
   network: tcp
   country: IE
-- name: IE_TROJAN_443_385
+- name: IE_TROJAN_443_245
   type: trojan
   server: healthy-panda.rooster465.autos
   port: 443
@@ -21,7 +21,7 @@ proxies:
   sni: healthy-panda.rooster465.autos
   network: tcp
   country: IE
-- name: IE_TROJAN_443_361
+- name: IE_TROJAN_443_258
   type: trojan
   server: helped-haddock.rooster465.autos
   port: 443
@@ -29,15 +29,7 @@ proxies:
   sni: helped-haddock.rooster465.autos
   network: tcp
   country: IE
-- name: IE_TROJAN_443_362
-  type: trojan
-  server: worthy-labrador.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: worthy-labrador.rooster465.autos
-  network: tcp
-  country: IE
-- name: IE_TROJAN_443_381
+- name: IE_TROJAN_443_257
   type: trojan
   server: unbiased-garfish.rooster465.autos
   port: 443
@@ -45,7 +37,7 @@ proxies:
   sni: unbiased-garfish.rooster465.autos
   network: tcp
   country: IE
-- name: IE_TROJAN_443_388
+- name: IE_TROJAN_443_253
   type: trojan
   server: funny-hen.rooster465.autos
   port: 443
@@ -53,7 +45,15 @@ proxies:
   sni: funny-hen.rooster465.autos
   network: tcp
   country: IE
-- name: IE_TROJAN_443_342
+- name: IE_TROJAN_443_258_2
+  type: trojan
+  server: worthy-labrador.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: worthy-labrador.rooster465.autos
+  network: tcp
+  country: IE
+- name: IE_TROJAN_443_288
   type: trojan
   network: tcp
   server: 34.251.228.118
@@ -65,23 +65,58 @@ proxies:
   client-fingerprint: chrome
   country: IE
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
   - 🌍 IE
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - IE_TROJAN_443_243
+  - IE_TROJAN_443_245
+  - IE_TROJAN_443_258
+  - IE_TROJAN_443_257
+  - IE_TROJAN_443_253
+  - IE_TROJAN_443_258_2
+  - IE_TROJAN_443_288
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - IE_TROJAN_443_243
+  - IE_TROJAN_443_245
+  - IE_TROJAN_443_253
+  - IE_TROJAN_443_257
+  - IE_TROJAN_443_258
+  - IE_TROJAN_443_258_2
+  - IE_TROJAN_443_288
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_TROJAN_443_372
-  - IE_TROJAN_443_385
-  - IE_TROJAN_443_361
-  - IE_TROJAN_443_362
-  - IE_TROJAN_443_381
-  - IE_TROJAN_443_388
-  - IE_TROJAN_443_342
+  - IE_TROJAN_443_243
+  - IE_TROJAN_443_245
+  - IE_TROJAN_443_258
+  - IE_TROJAN_443_257
+  - IE_TROJAN_443_253
+  - IE_TROJAN_443_258_2
+  - IE_TROJAN_443_288
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- MATCH,🚀 节点选择

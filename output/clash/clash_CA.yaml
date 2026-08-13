@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_18000_162
+- name: CA_VMESS_18000_105
   type: vmess
   network: tcp
   server: 23.162.200.198
@@ -16,17 +16,40 @@ proxies:
   cipher: auto
   country: CA
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
   - 🌍 CA
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - CA_VMESS_18000_105
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - CA_VMESS_18000_105
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_18000_162
+  - CA_VMESS_18000_105
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- MATCH,🚀 节点选择

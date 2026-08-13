@@ -5,17 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_VMESS_22324_754
-  type: vmess
-  network: tcp
-  server: 66.163.117.58
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: GB
-- name: GB_VLESS_2053_225
+- name: GB_VLESS_2053_48
   type: vless
   network: ws
   server: 91.193.58.217
@@ -32,18 +22,40 @@ proxies:
     path: /socks5=888:888
   country: GB
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
   - 🌍 GB
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - GB_VLESS_2053_48
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - GB_VLESS_2053_48
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_VMESS_22324_754
-  - GB_VLESS_2053_225
+  - GB_VLESS_2053_48
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- MATCH,🚀 节点选择

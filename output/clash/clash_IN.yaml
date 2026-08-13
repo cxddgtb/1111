@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_VLESS_443_1659
+- name: IN_VLESS_443_1469
   type: vless
   server: 4.240.110.47
   port: 443
@@ -20,17 +20,40 @@ proxies:
       Host: bab-6.site
   country: IN
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
   - 🌍 IN
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - IN_VLESS_443_1469
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - IN_VLESS_443_1469
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VLESS_443_1659
+  - IN_VLESS_443_1469
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- MATCH,🚀 节点选择

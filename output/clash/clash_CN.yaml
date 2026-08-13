@@ -5,55 +5,64 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_VLESS_12528_569
+- name: CN_VLESS_12528_656
   type: vless
   server: 120.227.1.43
   port: 12528
   uuid: f0169b08-43fd-4dc3-8195-18f6ad2fe39d
-  network: tcp
   tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+  skip-cert-verify: true
+  udp: true
   country: CN
-- name: CN_VMESS_30806_1279
-  type: vmess
-  server: v6.hdacd.com
-  port: 30806
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: CN
-- name: CN_VMESS_30809_1335
+- name: CN_VMESS_30809_1227
   type: vmess
   server: v9.hdacd.com
   port: 30809
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
-  network: tcp
   tls: false
-  servername: ''
-  ws-opts: null
+  skip-cert-verify: true
+  udp: true
   country: CN
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
   - 🌍 CN
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - CN_VLESS_12528_656
+  - CN_VMESS_30809_1227
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - CN_VLESS_12528_656
+  - CN_VMESS_30809_1227
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_VLESS_12528_569
-  - CN_VMESS_30806_1279
-  - CN_VMESS_30809_1335
+  - CN_VLESS_12528_656
+  - CN_VMESS_30809_1227
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- MATCH,🚀 节点选择

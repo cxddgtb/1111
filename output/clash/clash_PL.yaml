@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_TROJAN_443_654
+- name: PL_TROJAN_443_410
   type: trojan
   server: relative-locust.rooster465.autos
   port: 443
@@ -13,23 +13,7 @@ proxies:
   sni: relative-locust.rooster465.autos
   network: tcp
   country: PL
-- name: PL_TROJAN_443_541
-  type: trojan
-  server: enough-basilisk.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: enough-basilisk.rooster465.autos
-  network: tcp
-  country: PL
-- name: PL_TROJAN_443_540
-  type: trojan
-  server: game-firefly.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: game-firefly.rooster465.autos
-  network: tcp
-  country: PL
-- name: PL_TROJAN_443_586
+- name: PL_TROJAN_443_423
   type: trojan
   server: tolerant-mosquito.rooster465.autos
   port: 443
@@ -37,7 +21,23 @@ proxies:
   sni: tolerant-mosquito.rooster465.autos
   network: tcp
   country: PL
-- name: PL_VLESS_443_615
+- name: PL_TROJAN_443_426
+  type: trojan
+  server: enough-basilisk.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: enough-basilisk.rooster465.autos
+  network: tcp
+  country: PL
+- name: PL_TROJAN_443_427
+  type: trojan
+  server: game-firefly.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: game-firefly.rooster465.autos
+  network: tcp
+  country: PL
+- name: PL_VLESS_443_525
   type: vless
   server: 31.76.251.127
   port: 443
@@ -51,7 +51,7 @@ proxies:
     headers:
       Host: 31.76.251.127.cdn-one.org
   country: PL
-- name: PL_VLESS_443_995
+- name: PL_VLESS_443_739
   type: vless
   server: 31.76.251.127.cdn-one.org
   port: 443
@@ -65,7 +65,7 @@ proxies:
     headers:
       Host: 31.76.251.127.cdn-one.org
   country: PL
-- name: PL_TROJAN_443_530
+- name: PL_TROJAN_443_433
   type: trojan
   network: tcp
   server: relaxed-gull.rooster465.autos
@@ -76,7 +76,7 @@ proxies:
   sni: relaxed-gull.rooster465.autos
   client-fingerprint: chrome
   country: PL
-- name: PL_TROJAN_443_513
+- name: PL_TROJAN_443_419
   type: trojan
   network: tcp
   server: 202.78.163.248
@@ -87,7 +87,7 @@ proxies:
   sni: relaxed-gull.rooster465.autos
   client-fingerprint: chrome
   country: PL
-- name: PL_VLESS_443_446
+- name: PL_VLESS_443_346
   type: vless
   network: tcp
   server: 82.26.91.87
@@ -101,7 +101,7 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: PL
-- name: PL_VLESS_443_636
+- name: PL_VLESS_443_345
   type: vless
   network: tcp
   server: 144.31.171.233
@@ -115,42 +115,68 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: PL
-- name: PL_VLESS_443_725
-  type: vless
-  network: tcp
-  server: 95.85.253.5
-  port: 443
-  uuid: '8033102198'
-  servername: pl4.fast-connect-service.site
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: PL
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
   - 🌍 PL
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - PL_TROJAN_443_410
+  - PL_TROJAN_443_423
+  - PL_TROJAN_443_426
+  - PL_TROJAN_443_427
+  - PL_VLESS_443_525
+  - PL_VLESS_443_739
+  - PL_TROJAN_443_433
+  - PL_TROJAN_443_419
+  - PL_VLESS_443_346
+  - PL_VLESS_443_345
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - PL_VLESS_443_345
+  - PL_VLESS_443_346
+  - PL_TROJAN_443_410
+  - PL_TROJAN_443_419
+  - PL_TROJAN_443_423
+  - PL_TROJAN_443_426
+  - PL_TROJAN_443_427
+  - PL_TROJAN_443_433
+  - PL_VLESS_443_525
+  - PL_VLESS_443_739
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_TROJAN_443_654
-  - PL_TROJAN_443_541
-  - PL_TROJAN_443_540
-  - PL_TROJAN_443_586
-  - PL_VLESS_443_615
-  - PL_VLESS_443_995
-  - PL_TROJAN_443_530
-  - PL_TROJAN_443_513
-  - PL_VLESS_443_446
-  - PL_VLESS_443_636
-  - PL_VLESS_443_725
+  - PL_TROJAN_443_410
+  - PL_TROJAN_443_423
+  - PL_TROJAN_443_426
+  - PL_TROJAN_443_427
+  - PL_VLESS_443_525
+  - PL_VLESS_443_739
+  - PL_TROJAN_443_433
+  - PL_TROJAN_443_419
+  - PL_VLESS_443_346
+  - PL_VLESS_443_345
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- MATCH,🚀 节点选择

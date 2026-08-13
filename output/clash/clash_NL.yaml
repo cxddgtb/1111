@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_TROJAN_443_393
+- name: NL_TROJAN_443_287
   type: trojan
   server: thorough-falcon.rooster465.autos
   port: 443
@@ -13,7 +13,7 @@ proxies:
   sni: thorough-falcon.rooster465.autos
   network: tcp
   country: NL
-- name: NL_TROJAN_443_394
+- name: NL_TROJAN_443_285
   type: trojan
   server: whole-woodcock.rooster465.autos
   port: 443
@@ -21,7 +21,7 @@ proxies:
   sni: whole-woodcock.rooster465.autos
   network: tcp
   country: NL
-- name: NL_VLESS_443_672
+- name: NL_VLESS_443_523
   type: vless
   network: ws
   server: 177.3.208.169
@@ -38,7 +38,7 @@ proxies:
       Host: titandarkness.mooo.com
     path: /21381/0kO2id8FMQ
   country: NL
-- name: NL_VLESS_443_392
+- name: NL_VLESS_443_310
   type: vless
   network: tcp
   server: 64.188.77.184
@@ -52,7 +52,7 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: NL
-- name: NL_VLESS_443_403
+- name: NL_VLESS_443_314
   type: vless
   network: tcp
   server: 85.155.98.40
@@ -66,7 +66,7 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: NL
-- name: NL_VLESS_443_529
+- name: NL_VLESS_443_406
   type: vless
   network: ws
   server: 82.115.6.93
@@ -84,22 +84,55 @@ proxies:
     path: /
   country: NL
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
   - 🌍 NL
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - NL_TROJAN_443_287
+  - NL_TROJAN_443_285
+  - NL_VLESS_443_523
+  - NL_VLESS_443_310
+  - NL_VLESS_443_314
+  - NL_VLESS_443_406
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - NL_TROJAN_443_285
+  - NL_TROJAN_443_287
+  - NL_VLESS_443_310
+  - NL_VLESS_443_314
+  - NL_VLESS_443_406
+  - NL_VLESS_443_523
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_TROJAN_443_393
-  - NL_TROJAN_443_394
-  - NL_VLESS_443_672
-  - NL_VLESS_443_392
-  - NL_VLESS_443_403
-  - NL_VLESS_443_529
+  - NL_TROJAN_443_287
+  - NL_TROJAN_443_285
+  - NL_VLESS_443_523
+  - NL_VLESS_443_310
+  - NL_VLESS_443_314
+  - NL_VLESS_443_406
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- MATCH,🚀 节点选择
