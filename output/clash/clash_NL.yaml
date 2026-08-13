@@ -5,23 +5,46 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_TROJAN_443_287
-  type: trojan
-  server: thorough-falcon.rooster465.autos
+- name: NL_SS_443_2385
+  type: ss
+  server: 193.124.203.144
   port: 443
-  password: AE62539071
-  sni: thorough-falcon.rooster465.autos
-  network: tcp
+  cipher: 2022-blake3-aes-256-gcm
+  password: mkKfxndCZ9c3YIkAAmANrtfI/mlGJwwV9/GdVTYgW3M=:JazxiYc3Mc5tLn/Te3T59W6Zw4Z/BPuepQ0VlVD/cZ8=
+  skip-cert-verify: true
+  udp: true
   country: NL
-- name: NL_TROJAN_443_285
-  type: trojan
-  server: whole-woodcock.rooster465.autos
+- name: NL_VMESS_443_2086
+  type: vmess
+  network: ws
+  server: 89.150.35.155
   port: 443
-  password: AE62539071
-  sni: whole-woodcock.rooster465.autos
-  network: tcp
+  uuid: 5f72f180-b21b-4b7a-8484-240759012604
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: apjhdggyx.com
+    path: /5f72f180-b21b-4b7a-8484-240759096785
   country: NL
-- name: NL_VLESS_443_523
+- name: NL_VMESS_443_2249
+  type: vmess
+  network: ws
+  server: 37.48.90.120
+  port: 443
+  uuid: 5f72f180-b21b-4b7a-8484-240759012604
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: apjhdggyx.com
+    path: /5f72f180-b21b-4b7a-8484-240759096785
+  country: NL
+- name: NL_VLESS_443_467
   type: vless
   network: ws
   server: 177.3.208.169
@@ -38,7 +61,7 @@ proxies:
       Host: titandarkness.mooo.com
     path: /21381/0kO2id8FMQ
   country: NL
-- name: NL_VLESS_443_310
+- name: NL_VLESS_443_302
   type: vless
   network: tcp
   server: 64.188.77.184
@@ -52,7 +75,7 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: NL
-- name: NL_VLESS_443_314
+- name: NL_VLESS_443_282
   type: vless
   network: tcp
   server: 85.155.98.40
@@ -66,7 +89,7 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: NL
-- name: NL_VLESS_443_406
+- name: NL_VLESS_443_387
   type: vless
   network: ws
   server: 82.115.6.93
@@ -83,6 +106,22 @@ proxies:
       Host: kuraakavaa-5l7.pages.dev
     path: /
   country: NL
+- name: NL_TROJAN_443_269
+  type: trojan
+  server: thorough-falcon.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: thorough-falcon.rooster465.autos
+  network: tcp
+  country: NL
+- name: NL_TROJAN_443_309
+  type: trojan
+  server: whole-woodcock.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: whole-woodcock.rooster465.autos
+  network: tcp
+  country: NL
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -90,29 +129,42 @@ proxy-groups:
   - ⚡ 全球最低延迟
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
+  - 📺 YouTube 优选
   - 🌍 NL
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_TROJAN_443_287
-  - NL_TROJAN_443_285
-  - NL_VLESS_443_523
-  - NL_VLESS_443_310
-  - NL_VLESS_443_314
-  - NL_VLESS_443_406
+  - NL_SS_443_2385
+  - NL_VMESS_443_2086
+  - NL_VMESS_443_2249
+  - NL_VLESS_443_467
+  - NL_VLESS_443_302
+  - NL_VLESS_443_282
+  - NL_VLESS_443_387
+  - NL_TROJAN_443_269
+  - NL_TROJAN_443_309
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
+- name: 📺 YouTube 优选
+  type: url-test
+  proxies: *id001
+  url: https://www.youtube.com
+  interval: 300
+  tolerance: 50
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_TROJAN_443_285
-  - NL_TROJAN_443_287
-  - NL_VLESS_443_310
-  - NL_VLESS_443_314
-  - NL_VLESS_443_406
-  - NL_VLESS_443_523
+  - NL_TROJAN_443_269
+  - NL_VLESS_443_282
+  - NL_VLESS_443_302
+  - NL_TROJAN_443_309
+  - NL_VLESS_443_387
+  - NL_VLESS_443_467
+  - NL_VMESS_443_2086
+  - NL_VMESS_443_2249
+  - NL_SS_443_2385
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -124,15 +176,25 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_TROJAN_443_287
-  - NL_TROJAN_443_285
-  - NL_VLESS_443_523
-  - NL_VLESS_443_310
-  - NL_VLESS_443_314
-  - NL_VLESS_443_406
+  - NL_SS_443_2385
+  - NL_VMESS_443_2086
+  - NL_VMESS_443_2249
+  - NL_VLESS_443_467
+  - NL_VLESS_443_302
+  - NL_VLESS_443_282
+  - NL_VLESS_443_387
+  - NL_TROJAN_443_269
+  - NL_TROJAN_443_309
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 rules:
+- AND,((NETWORK,UDP),(DOMAIN-SUFFIX,googlevideo.com)),REJECT
+- AND,((NETWORK,UDP),(DOMAIN-SUFFIX,youtube.com)),REJECT
 - GEOIP,CN,DIRECT
+- DOMAIN-SUFFIX,googlevideo.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,youtube.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,ytimg.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,yt.be,📺 YouTube 优选
+- DOMAIN-SUFFIX,ggpht.com,📺 YouTube 优选
 - MATCH,🚀 节点选择

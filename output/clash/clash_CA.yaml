@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_18000_105
+- name: CA_VMESS_18000_103
   type: vmess
   network: tcp
   server: 23.162.200.198
@@ -22,19 +22,26 @@ proxy-groups:
   - ⚡ 全球最低延迟
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
+  - 📺 YouTube 优选
   - 🌍 CA
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_18000_105
+  - CA_VMESS_18000_103
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
+- name: 📺 YouTube 优选
+  type: url-test
+  proxies: *id001
+  url: https://www.youtube.com
+  interval: 300
+  tolerance: 50
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_18000_105
+  - CA_VMESS_18000_103
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -46,10 +53,17 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_18000_105
+  - CA_VMESS_18000_103
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 rules:
+- AND,((NETWORK,UDP),(DOMAIN-SUFFIX,googlevideo.com)),REJECT
+- AND,((NETWORK,UDP),(DOMAIN-SUFFIX,youtube.com)),REJECT
 - GEOIP,CN,DIRECT
+- DOMAIN-SUFFIX,googlevideo.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,youtube.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,ytimg.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,yt.be,📺 YouTube 优选
+- DOMAIN-SUFFIX,ggpht.com,📺 YouTube 优选
 - MATCH,🚀 节点选择

@@ -5,81 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_TROJAN_443_298
-  type: trojan
-  server: sterling-macaw.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: sterling-macaw.rooster465.autos
-  network: tcp
-  country: DE
-- name: DE_TROJAN_443_291
-  type: trojan
-  server: up-dinosaur.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: up-dinosaur.rooster465.autos
-  network: tcp
-  country: DE
-- name: DE_TROJAN_443_321
-  type: trojan
-  server: teaching-gnu.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: teaching-gnu.rooster465.autos
-  network: tcp
-  country: DE
-- name: DE_TROJAN_443_295
-  type: trojan
-  server: moved-bluegill.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: moved-bluegill.rooster465.autos
-  network: tcp
-  country: DE
-- name: DE_TROJAN_443_307
-  type: trojan
-  server: dashing-bedbug.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: dashing-bedbug.rooster465.autos
-  network: tcp
-  country: DE
-- name: DE_TROJAN_443_289
-  type: trojan
-  server: proper-marlin.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: proper-marlin.rooster465.autos
-  network: tcp
-  country: DE
-- name: DE_VLESS_443_593
-  type: vless
-  server: 35.157.240.237
-  port: 443
-  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
-  network: ws
-  tls: true
-  servername: bab-6.site
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vws/
-    headers:
-      Host: bab-6.site
-  country: DE
-- name: DE_VLESS_443_473
-  type: vless
-  server: 81.95.4.189
-  port: 443
-  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
-  network: ws
-  tls: true
-  servername: bab-6.site
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vws/
-    headers:
-      Host: bab-6.site
+- name: DE_VMESS_38998_198
+  type: vmess
+  server: 178.83.45.29
+  port: 38998
+  uuid: 48422300-458f-4dbb-b0f5-96f45450ab9f
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
   country: DE
 - name: DE_TROJAN_443_418
   type: trojan
@@ -93,7 +28,7 @@ proxies:
   grpc-opts:
     grpc-service-name: /50779/NQmry9z8yR
   country: DE
-- name: DE_TROJAN_443_299
+- name: DE_TROJAN_443_312
   type: trojan
   network: grpc
   server: 31.76.11.46
@@ -107,7 +42,7 @@ proxies:
   grpc-opts:
     grpc-service-name: /50779/NQmry9z8yR
   country: DE
-- name: DE_VLESS_443_958
+- name: DE_VLESS_443_853
   type: vless
   server: 18.198.227.161
   port: 443
@@ -123,7 +58,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: DE
-- name: DE_VMESS_2053_628
+- name: DE_VMESS_2053_1601
   type: vmess
   network: ws
   server: deapp.jisuyun.top
@@ -138,30 +73,10 @@ proxies:
       Host: deapp.jisuyun.top
     path: /devm
   country: DE
-- name: DE_VMESS_180_109
-  type: vmess
-  network: tcp
-  server: 82.198.246.233
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_180_117
-  type: vmess
-  network: tcp
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_443_2773
+- name: DE_VMESS_443_2935
   type: vmess
   network: ws
-  server: 194.164.192.16
+  server: 38.180.219.131
   port: 443
   uuid: 5f72f180-b21b-4b7a-8484-240759012604
   skip-cert-verify: true
@@ -173,7 +88,41 @@ proxies:
       Host: apjhdggyx.com
     path: /5f72f180-b21b-4b7a-8484-240759096785
   country: DE
-- name: DE_VLESS_443_309
+- name: DE_VMESS_180_126
+  type: vmess
+  network: tcp
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_124
+  type: vmess
+  network: tcp
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VLESS_443_297
+  type: vless
+  network: tcp
+  server: 217.60.68.147
+  port: 443
+  uuid: 551955b3-46e9-5129-95c9-e7474c15ed6b
+  servername: de16.fast-connect-service.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: DE
+- name: DE_VLESS_443_356
   type: vless
   network: tcp
   server: 217.60.68.130
@@ -190,20 +139,6 @@ proxies:
 - name: DE_VLESS_443_298
   type: vless
   network: tcp
-  server: 217.60.68.91
-  port: 443
-  uuid: 551955b3-46e9-5129-95c9-e7474c15ed6b
-  servername: de6.fast-connect-service.site
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: DE
-- name: DE_VLESS_443_304
-  type: vless
-  network: tcp
   server: 217.60.68.179
   port: 443
   uuid: 551955b3-46e9-5129-95c9-e7474c15ed6b
@@ -215,21 +150,7 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: DE
-- name: DE_VLESS_443_340
-  type: vless
-  network: tcp
-  server: 217.60.68.147
-  port: 443
-  uuid: 551955b3-46e9-5129-95c9-e7474c15ed6b
-  servername: de16.fast-connect-service.site
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: DE
-- name: DE_VLESS_443_315
+- name: DE_VLESS_443_298_2
   type: vless
   network: tcp
   server: 94.183.219.145
@@ -243,7 +164,21 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: DE
-- name: DE_VLESS_443_484
+- name: DE_VLESS_443_301
+  type: vless
+  network: tcp
+  server: 217.60.68.91
+  port: 443
+  uuid: 551955b3-46e9-5129-95c9-e7474c15ed6b
+  servername: de6.fast-connect-service.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: DE
+- name: DE_VLESS_443_479
   type: vless
   network: tcp
   server: 159.195.40.19
@@ -257,7 +192,19 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: DE
-- name: DE_VLESS_443_560
+- name: DE_VLESS_443_405
+  type: vless
+  network: xhttp
+  server: 167.233.225.59
+  port: 443
+  uuid: 8f2a6194-1748-4ec7-9c5f-8ad504818aa3
+  servername: uk-cf.aba-hum.store
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  country: DE
+- name: DE_VLESS_443_2362
   type: vless
   network: tcp
   server: 144.31.168.91
@@ -271,17 +218,81 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: DE
-- name: DE_VLESS_443_430
-  type: vless
-  network: xhttp
-  server: 167.233.225.59
+- name: DE_TROJAN_443_286
+  type: trojan
+  server: sterling-macaw.rooster465.autos
   port: 443
-  uuid: 8f2a6194-1748-4ec7-9c5f-8ad504818aa3
-  servername: uk-cf.aba-hum.store
-  skip-cert-verify: false
+  password: AE62539071
+  sni: sterling-macaw.rooster465.autos
+  network: tcp
+  country: DE
+- name: DE_TROJAN_443_286_2
+  type: trojan
+  server: moved-bluegill.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: moved-bluegill.rooster465.autos
+  network: tcp
+  country: DE
+- name: DE_TROJAN_443_301
+  type: trojan
+  server: up-dinosaur.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: up-dinosaur.rooster465.autos
+  network: tcp
+  country: DE
+- name: DE_TROJAN_443_300
+  type: trojan
+  server: teaching-gnu.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: teaching-gnu.rooster465.autos
+  network: tcp
+  country: DE
+- name: DE_TROJAN_443_301_2
+  type: trojan
+  server: dashing-bedbug.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: dashing-bedbug.rooster465.autos
+  network: tcp
+  country: DE
+- name: DE_TROJAN_443_296
+  type: trojan
+  server: proper-marlin.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: proper-marlin.rooster465.autos
+  network: tcp
+  country: DE
+- name: DE_VLESS_443_441
+  type: vless
+  server: 81.95.4.189
+  port: 443
+  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
+  network: ws
   tls: true
-  udp: true
-  tfo: false
+  servername: bab-6.site
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vws/
+    headers:
+      Host: bab-6.site
+  country: DE
+- name: DE_VLESS_443_567
+  type: vless
+  server: 35.157.240.237
+  port: 443
+  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
+  network: ws
+  tls: true
+  servername: bab-6.site
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vws/
+    headers:
+      Host: bab-6.site
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -290,63 +301,72 @@ proxy-groups:
   - ⚡ 全球最低延迟
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
+  - 📺 YouTube 优选
   - 🌍 DE
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_TROJAN_443_298
-  - DE_TROJAN_443_291
-  - DE_TROJAN_443_321
-  - DE_TROJAN_443_295
-  - DE_TROJAN_443_307
-  - DE_TROJAN_443_289
-  - DE_VLESS_443_593
-  - DE_VLESS_443_473
+  - DE_VMESS_38998_198
   - DE_TROJAN_443_418
-  - DE_TROJAN_443_299
-  - DE_VLESS_443_958
-  - DE_VMESS_2053_628
-  - DE_VMESS_180_109
-  - DE_VMESS_180_117
-  - DE_VMESS_443_2773
-  - DE_VLESS_443_309
+  - DE_TROJAN_443_312
+  - DE_VLESS_443_853
+  - DE_VMESS_2053_1601
+  - DE_VMESS_443_2935
+  - DE_VMESS_180_126
+  - DE_VMESS_180_124
+  - DE_VLESS_443_297
+  - DE_VLESS_443_356
   - DE_VLESS_443_298
-  - DE_VLESS_443_304
-  - DE_VLESS_443_340
-  - DE_VLESS_443_315
-  - DE_VLESS_443_484
-  - DE_VLESS_443_560
-  - DE_VLESS_443_430
+  - DE_VLESS_443_298_2
+  - DE_VLESS_443_301
+  - DE_VLESS_443_479
+  - DE_VLESS_443_405
+  - DE_VLESS_443_2362
+  - DE_TROJAN_443_286
+  - DE_TROJAN_443_286_2
+  - DE_TROJAN_443_301
+  - DE_TROJAN_443_300
+  - DE_TROJAN_443_301_2
+  - DE_TROJAN_443_296
+  - DE_VLESS_443_441
+  - DE_VLESS_443_567
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
+- name: 📺 YouTube 优选
+  type: url-test
+  proxies: *id001
+  url: https://www.youtube.com
+  interval: 300
+  tolerance: 50
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VMESS_180_109
-  - DE_VMESS_180_117
-  - DE_TROJAN_443_289
-  - DE_TROJAN_443_291
-  - DE_TROJAN_443_295
-  - DE_TROJAN_443_298
+  - DE_VMESS_180_124
+  - DE_VMESS_180_126
+  - DE_VMESS_38998_198
+  - DE_TROJAN_443_286
+  - DE_TROJAN_443_286_2
+  - DE_TROJAN_443_296
+  - DE_VLESS_443_297
   - DE_VLESS_443_298
-  - DE_TROJAN_443_299
-  - DE_VLESS_443_304
-  - DE_TROJAN_443_307
-  - DE_VLESS_443_309
-  - DE_VLESS_443_315
-  - DE_TROJAN_443_321
-  - DE_VLESS_443_340
+  - DE_VLESS_443_298_2
+  - DE_TROJAN_443_300
+  - DE_VLESS_443_301
+  - DE_TROJAN_443_301
+  - DE_TROJAN_443_301_2
+  - DE_TROJAN_443_312
+  - DE_VLESS_443_356
+  - DE_VLESS_443_405
   - DE_TROJAN_443_418
-  - DE_VLESS_443_430
-  - DE_VLESS_443_473
-  - DE_VLESS_443_484
-  - DE_VLESS_443_560
-  - DE_VLESS_443_593
-  - DE_VMESS_2053_628
-  - DE_VLESS_443_958
-  - DE_VMESS_443_2773
+  - DE_VLESS_443_441
+  - DE_VLESS_443_479
+  - DE_VLESS_443_567
+  - DE_VLESS_443_853
+  - DE_VMESS_2053_1601
+  - DE_VLESS_443_2362
+  - DE_VMESS_443_2935
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -358,32 +378,40 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_TROJAN_443_298
-  - DE_TROJAN_443_291
-  - DE_TROJAN_443_321
-  - DE_TROJAN_443_295
-  - DE_TROJAN_443_307
-  - DE_TROJAN_443_289
-  - DE_VLESS_443_593
-  - DE_VLESS_443_473
+  - DE_VMESS_38998_198
   - DE_TROJAN_443_418
-  - DE_TROJAN_443_299
-  - DE_VLESS_443_958
-  - DE_VMESS_2053_628
-  - DE_VMESS_180_109
-  - DE_VMESS_180_117
-  - DE_VMESS_443_2773
-  - DE_VLESS_443_309
+  - DE_TROJAN_443_312
+  - DE_VLESS_443_853
+  - DE_VMESS_2053_1601
+  - DE_VMESS_443_2935
+  - DE_VMESS_180_126
+  - DE_VMESS_180_124
+  - DE_VLESS_443_297
+  - DE_VLESS_443_356
   - DE_VLESS_443_298
-  - DE_VLESS_443_304
-  - DE_VLESS_443_340
-  - DE_VLESS_443_315
-  - DE_VLESS_443_484
-  - DE_VLESS_443_560
-  - DE_VLESS_443_430
+  - DE_VLESS_443_298_2
+  - DE_VLESS_443_301
+  - DE_VLESS_443_479
+  - DE_VLESS_443_405
+  - DE_VLESS_443_2362
+  - DE_TROJAN_443_286
+  - DE_TROJAN_443_286_2
+  - DE_TROJAN_443_301
+  - DE_TROJAN_443_300
+  - DE_TROJAN_443_301_2
+  - DE_TROJAN_443_296
+  - DE_VLESS_443_441
+  - DE_VLESS_443_567
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 rules:
+- AND,((NETWORK,UDP),(DOMAIN-SUFFIX,googlevideo.com)),REJECT
+- AND,((NETWORK,UDP),(DOMAIN-SUFFIX,youtube.com)),REJECT
 - GEOIP,CN,DIRECT
+- DOMAIN-SUFFIX,googlevideo.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,youtube.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,ytimg.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,yt.be,📺 YouTube 优选
+- DOMAIN-SUFFIX,ggpht.com,📺 YouTube 优选
 - MATCH,🚀 节点选择
