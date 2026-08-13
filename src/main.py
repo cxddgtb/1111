@@ -49,6 +49,8 @@ def main():
         ip_pattern = re.compile(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$')
         
         final_nodes = []
+        used_names = set()  # 新增：记录已使用的节点名称，防止重名导致配置报错
+        
         for item in alive_nodes_with_delay:
             node = item['node']
             server = node['server']
@@ -63,8 +65,16 @@ def main():
                 
             item['country'] = country
             node['country'] = country
-            # 重命名节点以包含国家和延迟信息
-            node['name'] = f"{country}_{node['type'].upper()}_{node['port']}_{item['delay']}"
+            
+            # 重命名节点以包含国家和延迟信息（新增去重后缀逻辑）
+            base_name = f"{country}_{node['type'].upper()}_{node['port']}_{item['delay']}"
+            name, suffix = base_name, 2
+            while name in used_names:
+                name = f"{base_name}_{suffix}"
+                suffix += 1
+            used_names.add(name)
+            node['name'] = name
+            
             final_nodes.append(item)
             
         print("7. Generating outputs...")
