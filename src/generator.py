@@ -52,14 +52,27 @@ def generate_base64_sub(nodes, filename):
         f.write(base64.b64encode("\n".join(uris).encode()).decode())
 
 def generate_clash_config(nodes, filename):
+    # 兜底去重：确保写入配置时节点名称绝对唯一，防止 Mihomo/Clash 报错
+    safe_nodes = []
+    used = set()
+    for n in nodes:
+        new_node = n.copy()
+        base = new_node['name']
+        i = 2
+        while new_node['name'] in used:
+            new_node['name'] = f"{base}_{i}"
+            i += 1
+        used.add(new_node['name'])
+        safe_nodes.append(new_node)
+
     config = {
         'port': 7890, 'socks-port': 7891, 'allow-lan': False, 'mode': 'Rule',
         'log-level': 'info', 'external-controller': '127.0.0.1:9090',
-        'proxies': nodes, 'proxy-groups': [],
+        'proxies': safe_nodes, 'proxy-groups': [],
         'rules': ['GEOIP,CN,DIRECT', 'MATCH,🚀 Node Select']
     }
-    countries = list(set([n.get('country', 'Unknown') for n in nodes]))
-    country_groups = {f'🌍 {c}': [n['name'] for n in nodes if n.get('country') == c] for c in countries}
+    countries = list(set([n.get('country', 'Unknown') for n in safe_nodes]))
+    country_groups = {f'🌍 {c}': [n['name'] for n in safe_nodes if n.get('country') == c] for c in countries}
     
     for name, proxies in country_groups.items():
         config['proxy-groups'].append({'name': name, 'type': 'url-test', 'proxies': proxies, 'url': 'http://www.gstatic.com/generate_204', 'interval': 300})
