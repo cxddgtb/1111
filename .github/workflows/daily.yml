@@ -1,0 +1,48 @@
+name: Daily Node Crawl and Test
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 00:00 运行 (北京时间 08:00)
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install httpx pyyaml geoip2
+
+      - name: Download Mihomo (Clash Meta Core)
+        run: |
+          curl -sL https://github.com/MetaCubeX/mihomo/releases/latest/download/mihomo-linux-amd64.gz -o mihomo.gz
+          gunzip mihomo.gz
+          chmod +x mihomo
+          mv mihomo src/
+
+      - name: Download GeoLite2 Database
+        run: |
+          curl -sL https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -o src/GeoLite2-Country.mmdb
+
+      - name: Run Scraper and Tester
+        run: python src/main.py
+
+      - name: Commit and Push Output
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/
+          git diff --staged --quiet || git commit -m "Auto update nodes [skip ci]"
+          git push
