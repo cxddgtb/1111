@@ -5,16 +5,41 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_SS_443_2385
-  type: ss
-  server: 193.124.203.144
+- name: NL_TROJAN_443_295
+  type: trojan
+  server: thorough-falcon.rooster465.autos
   port: 443
-  cipher: 2022-blake3-aes-256-gcm
-  password: mkKfxndCZ9c3YIkAAmANrtfI/mlGJwwV9/GdVTYgW3M=:JazxiYc3Mc5tLn/Te3T59W6Zw4Z/BPuepQ0VlVD/cZ8=
+  password: AE62539071
   skip-cert-verify: true
+  tls: true
   udp: true
   country: NL
-- name: NL_VMESS_443_2086
+- name: NL_TROJAN_443_345
+  type: trojan
+  server: whole-woodcock.rooster465.autos
+  port: 443
+  password: AE62539071
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: NL
+- name: NL_VMESS_443_2566
+  type: vmess
+  server: 185.246.152.159
+  port: 443
+  uuid: 5f72f180-b21b-4b7a-8484-240759012604
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /5f72f180-b21b-4b7a-8484-240759096785
+    headers:
+      Host: apjhdggyx.com
+  udp: true
+  country: NL
+- name: NL_VMESS_443_2685
   type: vmess
   network: ws
   server: 89.150.35.155
@@ -29,67 +54,18 @@ proxies:
       Host: apjhdggyx.com
     path: /5f72f180-b21b-4b7a-8484-240759096785
   country: NL
-- name: NL_VMESS_443_2249
+- name: NL_VMESS_1234_307
   type: vmess
-  network: ws
-  server: 37.48.90.120
-  port: 443
-  uuid: 5f72f180-b21b-4b7a-8484-240759012604
+  network: tcp
+  server: 159.223.13.109
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
   skip-cert-verify: true
   tls: true
   alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: apjhdggyx.com
-    path: /5f72f180-b21b-4b7a-8484-240759096785
+  cipher: aes-128-gcm
   country: NL
-- name: NL_VLESS_443_467
-  type: vless
-  network: ws
-  server: 177.3.208.169
-  port: 443
-  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
-  servername: titandarkness.mooo.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: titandarkness.mooo.com
-    path: /21381/0kO2id8FMQ
-  country: NL
-- name: NL_VLESS_443_302
-  type: vless
-  network: tcp
-  server: 64.188.77.184
-  port: 443
-  uuid: '8033102198'
-  servername: nl13.fast-connect-service.site
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: NL
-- name: NL_VLESS_443_282
-  type: vless
-  network: tcp
-  server: 85.155.98.40
-  port: 443
-  uuid: '8033102198'
-  servername: nl2.fast-connect-service.site
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: NL
-- name: NL_VLESS_443_387
+- name: NL_VLESS_443_424
   type: vless
   network: ws
   server: 82.115.6.93
@@ -106,22 +82,6 @@ proxies:
       Host: kuraakavaa-5l7.pages.dev
     path: /
   country: NL
-- name: NL_TROJAN_443_269
-  type: trojan
-  server: thorough-falcon.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: thorough-falcon.rooster465.autos
-  network: tcp
-  country: NL
-- name: NL_TROJAN_443_309
-  type: trojan
-  server: whole-woodcock.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: whole-woodcock.rooster465.autos
-  network: tcp
-  country: NL
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -135,15 +95,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_SS_443_2385
-  - NL_VMESS_443_2086
-  - NL_VMESS_443_2249
-  - NL_VLESS_443_467
-  - NL_VLESS_443_302
-  - NL_VLESS_443_282
-  - NL_VLESS_443_387
-  - NL_TROJAN_443_269
-  - NL_TROJAN_443_309
+  - NL_TROJAN_443_295
+  - NL_TROJAN_443_345
+  - NL_VMESS_443_2566
+  - NL_VMESS_443_2685
+  - NL_VMESS_1234_307
+  - NL_VLESS_443_424
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -156,15 +113,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_TROJAN_443_269
-  - NL_VLESS_443_282
-  - NL_VLESS_443_302
-  - NL_TROJAN_443_309
-  - NL_VLESS_443_387
-  - NL_VLESS_443_467
-  - NL_VMESS_443_2086
-  - NL_VMESS_443_2249
-  - NL_SS_443_2385
+  - NL_TROJAN_443_295
+  - NL_VMESS_1234_307
+  - NL_TROJAN_443_345
+  - NL_VLESS_443_424
+  - NL_VMESS_443_2566
+  - NL_VMESS_443_2685
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -176,15 +130,12 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_SS_443_2385
-  - NL_VMESS_443_2086
-  - NL_VMESS_443_2249
-  - NL_VLESS_443_467
-  - NL_VLESS_443_302
-  - NL_VLESS_443_282
-  - NL_VLESS_443_387
-  - NL_TROJAN_443_269
-  - NL_TROJAN_443_309
+  - NL_TROJAN_443_295
+  - NL_TROJAN_443_345
+  - NL_VMESS_443_2566
+  - NL_VMESS_443_2685
+  - NL_VMESS_1234_307
+  - NL_VLESS_443_424
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

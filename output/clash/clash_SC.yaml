@@ -5,21 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RO_VLESS_443_552
+- name: SC_VLESS_443_67
   type: vless
-  server: 82.117.255.87
+  network: ws
+  server: 45.130.125.96
   port: 443
-  uuid: b748a230-b157-4401-8423-f8e44df31b5e
-  servername: www.cloudflare.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 1xxZM10W-A8nuj6MOXFd1kA9lS7bEy-5SO5j-jrd_Cg
-    short-id: b70076439f4a1340
+  uuid: 28607fa7-db30-47d6-942a-f5744e4be9ad
+  servername: dfsuporte.garena.com.ex33r.eu.cc
   skip-cert-verify: true
+  tls: true
   udp: true
-  country: RO
+  tfo: false
+  ws-opts:
+    headers:
+      Host: dfsuporte.garena.com.ex33r.eu.cc
+    path: /id-pusat
+  country: SC
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -28,12 +29,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 RO
+  - 🌍 SC
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_VLESS_443_552
+  - SC_VLESS_443_67
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_VLESS_443_552
+  - SC_VLESS_443_67
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,10 +56,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 RO
+- name: 🌍 SC
   type: url-test
   proxies:
-  - RO_VLESS_443_552
+  - SC_VLESS_443_67
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

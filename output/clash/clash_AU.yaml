@@ -5,20 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AU_TROJAN_443_630
+- name: AU_TROJAN_443_575
   type: trojan
   server: together-dingo.rooster465.autos
   port: 443
   password: AE62539071
-  sni: together-dingo.rooster465.autos
-  network: tcp
+  skip-cert-verify: true
+  tls: true
+  udp: true
   country: AU
-- name: AU_TROJAN_443_721
+- name: AU_TROJAN_443_575_2
   type: trojan
   server: darling-mutt.rooster465.autos
   port: 443
   password: AE62539071
-  sni: darling-mutt.rooster465.autos
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: AU
+- name: AU_TROJAN_443_606
+  type: trojan
+  server: humorous-llama.rooster465.autos
+  port: 443
+  password: AE62539071
+  sni: humorous-llama.rooster465.autos
   network: tcp
   country: AU
 proxy-groups:
@@ -34,8 +44,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AU_TROJAN_443_630
-  - AU_TROJAN_443_721
+  - AU_TROJAN_443_575
+  - AU_TROJAN_443_575_2
+  - AU_TROJAN_443_606
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,8 +59,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AU_TROJAN_443_630
-  - AU_TROJAN_443_721
+  - AU_TROJAN_443_575
+  - AU_TROJAN_443_575_2
+  - AU_TROJAN_443_606
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -61,8 +73,9 @@ proxy-groups:
 - name: 🌍 AU
   type: url-test
   proxies:
-  - AU_TROJAN_443_630
-  - AU_TROJAN_443_721
+  - AU_TROJAN_443_575
+  - AU_TROJAN_443_575_2
+  - AU_TROJAN_443_606
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

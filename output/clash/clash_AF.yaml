@@ -5,21 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RO_VLESS_443_552
+- name: AF_VLESS_443_1865
   type: vless
-  server: 82.117.255.87
+  server: 103.161.237.54
   port: 443
-  uuid: b748a230-b157-4401-8423-f8e44df31b5e
-  servername: www.cloudflare.com
+  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
+  network: ws
   tls: true
-  flow: xtls-rprx-vision
+  servername: vod.ensf.top
   client-fingerprint: chrome
-  reality-opts:
-    public-key: 1xxZM10W-A8nuj6MOXFd1kA9lS7bEy-5SO5j-jrd_Cg
-    short-id: b70076439f4a1340
-  skip-cert-verify: true
-  udp: true
-  country: RO
+  ws-opts:
+    path: /api/v1/irc
+    headers:
+      Host: vod.ensf.top
+  country: AF
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -28,12 +27,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 RO
+  - 🌍 AF
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_VLESS_443_552
+  - AF_VLESS_443_1865
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_VLESS_443_552
+  - AF_VLESS_443_1865
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,10 +54,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 RO
+- name: 🌍 AF
   type: url-test
   proxies:
-  - RO_VLESS_443_552
+  - AF_VLESS_443_1865
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
