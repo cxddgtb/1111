@@ -5,124 +5,63 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_TROJAN_443_325
+- name: FR_VLESS_443_716
+  type: vless
+  server: 57.128.181.125
+  port: 443
+  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
+  network: ws
+  tls: true
+  servername: vod.ensf.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /api/v1/irc
+    headers:
+      Host: vod.ensf.top
+  country: FR
+- name: FR_TROJAN_443_424
   type: trojan
   server: one-quail.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  sni: one-quail.rooster465.autos
+  network: tcp
   country: FR
-- name: FR_VLESS_443_336
-  type: vless
-  server: fr15.mechvpn.online
-  port: 443
-  uuid: 53c76647-14d1-4df5-99cb-be99ad2e6bd9
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_TROJAN_443_324
-  type: trojan
-  server: tough-hermit.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: FR
-- name: FR_TROJAN_443_328
-  type: trojan
-  server: distinct-quail.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: FR
-- name: FR_TROJAN_443_336
+- name: FR_TROJAN_443_437
   type: trojan
   server: chief-cricket.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: FR
-- name: FR_VLESS_443_346
-  type: vless
-  server: fr199.mechvpn.online
-  port: 443
-  uuid: 53c76647-14d1-4df5-99cb-be99ad2e6bd9
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_VLESS_443_415
-  type: vless
-  server: 57.128.177.198
-  port: 443
-  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
-  network: ws
-  servername: vp58.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram🇨🇳+@VPNine1
-    headers:
-      Host: vp58.cc.cd
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_VLESS_443_432
-  type: vless
-  network: ws
-  server: 149.202.58.99
-  port: 443
-  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
-  servername: bab-6.site
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: bab-6.site
-      User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-J730GM Build/NRD90M) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
-    path: /vws/
-  country: FR
-- name: FR_TROJAN_443_331
-  type: trojan
+  sni: chief-cricket.rooster465.autos
   network: tcp
-  server: classic-gator.rooster465.autos
-  port: 443
-  password: ND91608427
-  skip-cert-verify: false
-  udp: true
-  sni: classic-gator.rooster465.autos
-  client-fingerprint: chrome
   country: FR
-- name: FR_VMESS_443_2978
-  type: vmess
-  network: ws
-  server: 57.128.183.3
+- name: FR_VLESS_443_650
+  type: vless
+  server: finite-node.rtxconfigz.com
   port: 443
-  uuid: 5f72f180-b21b-4b7a-8484-240759012604
-  skip-cert-verify: true
+  uuid: 25f3beef-a4b6-40bc-aa74-17a0f89f683c
+  network: ws
   tls: true
-  alterId: 0
-  cipher: auto
+  servername: finite-node.rtxconfigz.com
+  client-fingerprint: chrome
   ws-opts:
+    path: /
     headers:
-      Host: apjhdggyx.com
-    path: /5f72f180-b21b-4b7a-8484-240759096785
+      Host: telegram.us
+  country: FR
+- name: FR_VLESS_443_701
+  type: vless
+  server: 193.42.62.63
+  port: 443
+  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
+  network: ws
+  tls: true
+  servername: vod.ensf.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /api/v1/irc
+    headers:
+      Host: vod.ensf.top
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -137,16 +76,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_TROJAN_443_325
-  - FR_VLESS_443_336
-  - FR_TROJAN_443_324
-  - FR_TROJAN_443_328
-  - FR_TROJAN_443_336
-  - FR_VLESS_443_346
-  - FR_VLESS_443_415
-  - FR_VLESS_443_432
-  - FR_TROJAN_443_331
-  - FR_VMESS_443_2978
+  - FR_VLESS_443_716
+  - FR_TROJAN_443_424
+  - FR_TROJAN_443_437
+  - FR_VLESS_443_650
+  - FR_VLESS_443_701
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -159,16 +93,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_TROJAN_443_324
-  - FR_TROJAN_443_325
-  - FR_TROJAN_443_328
-  - FR_TROJAN_443_331
-  - FR_VLESS_443_336
-  - FR_TROJAN_443_336
-  - FR_VLESS_443_346
-  - FR_VLESS_443_415
-  - FR_VLESS_443_432
-  - FR_VMESS_443_2978
+  - FR_TROJAN_443_424
+  - FR_TROJAN_443_437
+  - FR_VLESS_443_650
+  - FR_VLESS_443_701
+  - FR_VLESS_443_716
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -180,16 +109,11 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_TROJAN_443_325
-  - FR_VLESS_443_336
-  - FR_TROJAN_443_324
-  - FR_TROJAN_443_328
-  - FR_TROJAN_443_336
-  - FR_VLESS_443_346
-  - FR_VLESS_443_415
-  - FR_VLESS_443_432
-  - FR_TROJAN_443_331
-  - FR_VMESS_443_2978
+  - FR_VLESS_443_716
+  - FR_TROJAN_443_424
+  - FR_TROJAN_443_437
+  - FR_VLESS_443_650
+  - FR_VLESS_443_701
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

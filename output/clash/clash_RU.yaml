@@ -5,69 +5,11 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_958
+- name: RU_VLESS_4100_542
   type: vless
-  server: ru9.aimodelhub.top
-  port: 443
-  uuid: b85b1e90-b5ed-0002-b433-bf9d2eca0e42
-  servername: ru9.aimodelhub.top
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: jwT3lcIzJQMjzBKRNsmyRGrgaa1qNfE7pQF_nAKu0GA
-    short-id: a73cf719b624
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_443_433
-  type: vless
-  server: vruaz.mostserv.xyz
-  port: 443
-  uuid: 463a26c2-eba8-0031-89c4-ee5c1373ccbe
-  servername: vruaz.mostserv.xyz
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: edge
-  reality-opts:
-    public-key: ckPCrgbrSdQaz1j3vP0-f0P8F4E8ZucQTeQGtxBKagU
-    short-id: 3882f019072c5dcd
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_2200_445
-  type: vless
-  server: 201.51.5.253
-  port: 2200
-  uuid: ed1cd50f-ead9-4e01-b5ae-b7d2dfb532fc
-  network: ws
-  tls: false
-  ws-opts:
-    path: /v1
-    headers:
-      Host: rzd.ru
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_4100_438
-  type: vless
-  server: 201.51.5.253
+  server: 193.188.23.170
   port: 4100
-  uuid: ed1cd50f-ead9-4e01-b5ae-b7d2dfb532fc
-  network: ws
-  tls: false
-  ws-opts:
-    path: /v1
-    headers:
-      Host: live.ok.ru
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_4100_492
-  type: vless
-  server: 194.26.229.222
-  port: 4100
-  uuid: b3d66abd-ea82-4616-92f0-1dec8d1e4cfc
+  uuid: 1f9ac5fe-ce9c-40ff-b52f-6f96b1285ba6
   network: ws
   tls: false
   servername: ''
@@ -76,6 +18,76 @@ proxies:
     path: /v1
     headers:
       Host: live.ok.ru
+  country: RU
+- name: RU_VLESS_2200_503
+  type: vless
+  server: 87.228.122.100
+  port: 2200
+  uuid: 099c6e3f-e8d3-41d4-95f2-ef2eafb51cdc
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /v1
+    headers:
+      Host: rzd.ru
+  country: RU
+- name: RU_VLESS_4100_569
+  type: vless
+  server: 168.222.140.236
+  port: 4100
+  uuid: 155e8dd4-a559-407a-9ea8-13a5e829f066
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /v1
+    headers:
+      Host: ''
+  country: RU
+- name: RU_VLESS_2200_506
+  type: vless
+  server: 188.225.27.238
+  port: 2200
+  uuid: 77fd4d9e-c314-4203-b3e0-b836a1d969b4
+  network: ws
+  tls: false
+  servername: rzd.ru
+  client-fingerprint: chrome
+  ws-opts:
+    path: /v1
+    headers:
+      Host: ''
+  country: RU
+- name: RU_VLESS_2200_543
+  type: vless
+  server: 201.24.127.110
+  port: 2200
+  uuid: 6620ef58-9c62-43fe-9596-ff862b200958
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /v1
+    headers:
+      Host: rzd.ru
+  country: RU
+- name: RU_VLESS_4100_544
+  type: vless
+  server: 104.171.136.172
+  port: 4100
+  uuid: 106b0505-da24-4ae4-b22c-302ab814f6f4
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /v1
+    headers:
+      Host: ''
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -90,11 +102,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_958
-  - RU_VLESS_443_433
-  - RU_VLESS_2200_445
-  - RU_VLESS_4100_438
-  - RU_VLESS_4100_492
+  - RU_VLESS_4100_542
+  - RU_VLESS_2200_503
+  - RU_VLESS_4100_569
+  - RU_VLESS_2200_506
+  - RU_VLESS_2200_543
+  - RU_VLESS_4100_544
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -107,11 +120,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_443_433
-  - RU_VLESS_4100_438
-  - RU_VLESS_2200_445
-  - RU_VLESS_4100_492
-  - RU_VLESS_443_958
+  - RU_VLESS_2200_503
+  - RU_VLESS_2200_506
+  - RU_VLESS_4100_542
+  - RU_VLESS_2200_543
+  - RU_VLESS_4100_544
+  - RU_VLESS_4100_569
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -123,11 +137,12 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_958
-  - RU_VLESS_443_433
-  - RU_VLESS_2200_445
-  - RU_VLESS_4100_438
-  - RU_VLESS_4100_492
+  - RU_VLESS_4100_542
+  - RU_VLESS_2200_503
+  - RU_VLESS_4100_569
+  - RU_VLESS_2200_506
+  - RU_VLESS_2200_543
+  - RU_VLESS_4100_544
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

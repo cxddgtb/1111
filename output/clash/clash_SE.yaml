@@ -5,34 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_443_357
+- name: SE_VLESS_443_938
   type: vless
-  server: 84.32.49.223
+  server: 77.221.136.148
   port: 443
-  uuid: 463a26c2-eba8-40ea-89c4-ee5c1373ccbe
-  servername: dsech.mostserv.xyz
+  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
+  network: ws
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: g0mDPNlv3uOrnxXvBYP3cEjd0ewJuIFlBh93KE5bU3A
-    short-id: d0ca141e839394a3
-  skip-cert-verify: true
-  udp: true
+  servername: vod.ensf.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /api/v1/irc
+    headers:
+      Host: vod.ensf.top
   country: SE
-- name: SE_VLESS_50443_726
+- name: SE_VLESS_12345_840
   type: vless
-  server: 62.60.159.137
-  port: 50443
-  uuid: 000f16e8-cc68-4951-b336-acd81996efde
-  servername: www.icloud.com
+  server: 213.21.229.126
+  port: 12345
+  uuid: 58809ac1-22fe-4372-8d84-ccaca97043fd
+  network: ws
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: hp9ht_jsxocTnQEbChb1G3JoDF50x-xDT8UYr66D1TQ
-  skip-cert-verify: true
-  udp: true
+  servername: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+  country: SE
+- name: SE_VLESS_443_825
+  type: vless
+  server: 41.216.182.105
+  port: 443
+  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
+  network: ws
+  tls: true
+  servername: vod.ensf.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /api/v1/irc
+    headers:
+      Host: vod.ensf.top
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -47,8 +60,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_443_357
-  - SE_VLESS_50443_726
+  - SE_VLESS_443_938
+  - SE_VLESS_12345_840
+  - SE_VLESS_443_825
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -61,8 +75,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_443_357
-  - SE_VLESS_50443_726
+  - SE_VLESS_443_825
+  - SE_VLESS_12345_840
+  - SE_VLESS_443_938
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -74,8 +89,9 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_443_357
-  - SE_VLESS_50443_726
+  - SE_VLESS_443_938
+  - SE_VLESS_12345_840
+  - SE_VLESS_443_825
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

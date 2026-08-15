@@ -5,77 +5,43 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_TROJAN_443_388
+- name: PL_TROJAN_443_560
   type: trojan
-  server: relative-locust.rooster465.autos
+  server: primary-leech.rooster465.autos
   port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  password: FH72359861
+  sni: primary-leech.rooster465.autos
+  network: tcp
   country: PL
-- name: PL_TROJAN_443_391
+- name: PL_TROJAN_443_543
   type: trojan
-  server: tolerant-mosquito.rooster465.autos
+  server: magnetic-caiman.rooster465.autos
   port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  password: FH72359861
+  sni: magnetic-caiman.rooster465.autos
+  network: tcp
   country: PL
-- name: PL_TROJAN_443_386
+- name: PL_VLESS_443_636
+  type: vless
+  server: pl4.lckdwn.ru
+  port: 443
+  uuid: 5e7ecc47-e424-4653-876e-c7515a2c82b4
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  country: PL
+- name: PL_TROJAN_443_568
   type: trojan
   server: enough-basilisk.rooster465.autos
   port: 443
   password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: PL
-- name: PL_TROJAN_443_389
-  type: trojan
-  server: game-firefly.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: PL
-- name: PL_TROJAN_443_391_2
-  type: trojan
+  sni: enough-basilisk.rooster465.autos
   network: tcp
-  server: relaxed-gull.rooster465.autos
-  port: 443
-  password: ND91608427
-  skip-cert-verify: true
-  udp: true
-  sni: relaxed-gull.rooster465.autos
-  client-fingerprint: chrome
-  country: PL
-- name: PL_TROJAN_443_375
-  type: trojan
-  network: tcp
-  server: 202.78.163.248
-  port: 443
-  password: ND91608427
-  skip-cert-verify: false
-  udp: true
-  sni: relaxed-gull.rooster465.autos
-  client-fingerprint: chrome
-  country: PL
-- name: PL_VLESS_443_356
-  type: vless
-  network: tcp
-  server: 82.26.91.87
-  port: 443
-  uuid: 7e760d89-a8f4-4a87-8f10-b4af28c61b7f
-  servername: faster.yandex-apicloud.ru
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -90,13 +56,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_TROJAN_443_388
-  - PL_TROJAN_443_391
-  - PL_TROJAN_443_386
-  - PL_TROJAN_443_389
-  - PL_TROJAN_443_391_2
-  - PL_TROJAN_443_375
-  - PL_VLESS_443_356
+  - PL_TROJAN_443_560
+  - PL_TROJAN_443_543
+  - PL_VLESS_443_636
+  - PL_TROJAN_443_568
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -109,13 +72,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_443_356
-  - PL_TROJAN_443_375
-  - PL_TROJAN_443_386
-  - PL_TROJAN_443_388
-  - PL_TROJAN_443_389
-  - PL_TROJAN_443_391
-  - PL_TROJAN_443_391_2
+  - PL_TROJAN_443_543
+  - PL_TROJAN_443_560
+  - PL_TROJAN_443_568
+  - PL_VLESS_443_636
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -127,13 +87,10 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_TROJAN_443_388
-  - PL_TROJAN_443_391
-  - PL_TROJAN_443_386
-  - PL_TROJAN_443_389
-  - PL_TROJAN_443_391_2
-  - PL_TROJAN_443_375
-  - PL_VLESS_443_356
+  - PL_TROJAN_443_560
+  - PL_TROJAN_443_543
+  - PL_VLESS_443_636
+  - PL_TROJAN_443_568
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
