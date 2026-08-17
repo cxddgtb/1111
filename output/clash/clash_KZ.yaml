@@ -5,21 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KZ_VLESS_2096_33
+- name: KZ_VLESS_8443_1854
   type: vless
-  network: ws
-  server: 194.59.5.46
-  port: 2096
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
-  servername: wild-sky-f384.alvlirm3737.workers.dev
-  skip-cert-verify: true
+  server: magazinetut.online
+  port: 8443
+  uuid: 7d641c2e-6897-4b9f-8a82-3f0cc8980db1
   tls: true
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
   udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: wild-sky-f384.alvlirm3737.workers.dev
-    path: /proxyip=172.86.93.55,194.99.20.245,46.101.165.85,46.101.181.132,209.38.201.199,165.22.89.207,207.154.242.240,64.188.83.202
   country: KZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -34,7 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KZ_VLESS_2096_33
+  - KZ_VLESS_8443_1854
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KZ_VLESS_2096_33
+  - KZ_VLESS_8443_1854
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +53,7 @@ proxy-groups:
 - name: 🌍 KZ
   type: url-test
   proxies:
-  - KZ_VLESS_2096_33
+  - KZ_VLESS_8443_1854
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

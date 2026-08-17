@@ -5,29 +5,36 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_SS_443_344
-  type: ss
-  server: 54.36.174.140
+- name: BR_VLESS_443_629
+  type: vless
+  server: veilix.ciphero.xyz
   port: 443
-  cipher: chacha20-ietf-poly1305
-  password: ytw2awn
+  uuid: b6b92515-13c5-4e6e-9fea-8db2d44628a0
+  servername: veilix.ciphero.xyz
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  reality-opts:
+    public-key: 8qUm4S6MR9bLa-ZfblO64aKjRIwGEFEwdVIxgz_tbn4
+    short-id: 33b5887524592cad
   skip-cert-verify: true
   udp: true
-  country: FR
-- name: FR_VMESS_16632_2461
-  type: vmess
-  network: ws
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  uuid: 97c638c6-86d5-4cf6-b70b-114c6809b637
+  country: BR
+- name: BR_VLESS_443_621
+  type: vless
+  server: 200.165.225.174
+  port: 443
+  uuid: b6b92515-13c5-4e6e-9fea-8db2d44628a0
+  servername: veilix.ciphero.xyz
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: 8qUm4S6MR9bLa-ZfblO64aKjRIwGEFEwdVIxgz_tbn4
+    short-id: 33b5887524592cad
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: 407a2bc6d452ff93e6d7b73078539d9e.mobgslb.tbcache.com
-    path: /
-  country: FR
+  udp: true
+  country: BR
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -36,13 +43,13 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 FR
+  - 🌍 BR
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_SS_443_344
-  - FR_VMESS_16632_2461
+  - BR_VLESS_443_629
+  - BR_VLESS_443_621
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -55,8 +62,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_443_344
-  - FR_VMESS_16632_2461
+  - BR_VLESS_443_621
+  - BR_VLESS_443_629
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,11 +72,11 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 FR
+- name: 🌍 BR
   type: url-test
   proxies:
-  - FR_SS_443_344
-  - FR_VMESS_16632_2461
+  - BR_VLESS_443_629
+  - BR_VLESS_443_621
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,18 +5,49 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RO_VLESS_443_552
+- name: RO_VLESS_13443_663
   type: vless
-  server: 82.117.255.87
-  port: 443
-  uuid: b748a230-b157-4401-8423-f8e44df31b5e
-  servername: www.cloudflare.com
+  server: 79.108.166.178
+  port: 13443
+  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
+  servername: auto.cendora.ru
   tls: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
+  client-fingerprint: qq
   reality-opts:
-    public-key: 1xxZM10W-A8nuj6MOXFd1kA9lS7bEy-5SO5j-jrd_Cg
-    short-id: b70076439f4a1340
+    public-key: gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM
+    short-id: a7f3c91b2e6d84c0
+  skip-cert-verify: true
+  udp: true
+  country: RO
+- name: RO_VLESS_2053_788
+  type: vless
+  server: 188.241.241.28
+  port: 2053
+  uuid: c7e9c591-2764-423a-afca-efbd010fd396
+  network: ws
+  servername: forfreeuse.rtqa.ru
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: forfreeuse.rtqa.ru
+  skip-cert-verify: true
+  udp: true
+  country: RO
+- name: RO_VLESS_2053_797
+  type: vless
+  server: 188.241.241.20
+  port: 2053
+  uuid: c7e9c591-2764-423a-afca-efbd010fd396
+  network: ws
+  servername: forfreeuse.rtqa.ru
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: forfreeuse.rtqa.ru
   skip-cert-verify: true
   udp: true
   country: RO
@@ -33,7 +64,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_VLESS_443_552
+  - RO_VLESS_13443_663
+  - RO_VLESS_2053_788
+  - RO_VLESS_2053_797
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +79,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_VLESS_443_552
+  - RO_VLESS_13443_663
+  - RO_VLESS_2053_788
+  - RO_VLESS_2053_797
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +93,9 @@ proxy-groups:
 - name: 🌍 RO
   type: url-test
   proxies:
-  - RO_VLESS_443_552
+  - RO_VLESS_13443_663
+  - RO_VLESS_2053_788
+  - RO_VLESS_2053_797
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

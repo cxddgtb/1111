@@ -5,87 +5,31 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_TROJAN_443_607
-  type: trojan
-  server: master-possum.rooster465.autos
-  port: 443
-  password: FH72359861
-  sni: master-possum.rooster465.autos
-  network: tcp
-  country: SG
-- name: SG_TROJAN_443_557
-  type: trojan
-  server: calm-honeybee.rooster465.autos
-  port: 443
-  password: FH72359861
-  sni: calm-honeybee.rooster465.autos
-  network: tcp
-  country: SG
-- name: SG_TROJAN_443_563
-  type: trojan
-  server: loved-shark.rooster465.autos
-  port: 443
-  password: FH72359861
-  sni: loved-shark.rooster465.autos
-  network: tcp
-  country: SG
-- name: SG_TROJAN_443_560
-  type: trojan
-  server: fond-chipmunk.rooster465.autos
-  port: 443
-  password: FH72359861
-  sni: fond-chipmunk.rooster465.autos
-  network: tcp
-  country: SG
-- name: SG_TROJAN_443_566
-  type: trojan
-  server: noted-bass.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: noted-bass.rooster465.autos
-  network: tcp
-  country: SG
-- name: SG_VLESS_10101_802
+- name: SG_VLESS_2083_706
   type: vless
-  server: 175.41.178.130
-  port: 10101
-  uuid: 3ebfb78b-a659-4fdf-a63d-8037272e6f23
+  server: 165.245.184.86
+  port: 2083
+  uuid: 548df4ba-0b7f-4850-ac84-716bbb68a4ba
   network: ws
+  servername: fm3.pages.dev
   tls: true
-  servername: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
-  client-fingerprint: chrome
+  client-fingerprint: random
   ws-opts:
-    path: /@Marisa_kristi
+    path: /
     headers:
-      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+      Host: fm3.pages.dev
+  skip-cert-verify: true
+  udp: true
   country: SG
-- name: SG_VLESS_30680_835
-  type: vless
-  server: 149.28.138.97
-  port: 30680
-  uuid: 5800fc03-aaf7-4f4e-b547-52d14a91e1b7
-  network: ws
-  tls: true
-  servername: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
-  country: SG
-- name: SG_VLESS_8441_838
-  type: vless
-  server: 45.77.241.190
-  port: 8441
-  uuid: c6e09f95-bf02-4854-bcba-7a977a0f8ecd
-  network: ws
-  tls: true
-  servername: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
+- name: SG_VMESS_18000_344
+  type: vmess
+  network: tcp
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -100,14 +44,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_TROJAN_443_607
-  - SG_TROJAN_443_557
-  - SG_TROJAN_443_563
-  - SG_TROJAN_443_560
-  - SG_TROJAN_443_566
-  - SG_VLESS_10101_802
-  - SG_VLESS_30680_835
-  - SG_VLESS_8441_838
+  - SG_VLESS_2083_706
+  - SG_VMESS_18000_344
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -120,14 +58,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_TROJAN_443_557
-  - SG_TROJAN_443_560
-  - SG_TROJAN_443_563
-  - SG_TROJAN_443_566
-  - SG_TROJAN_443_607
-  - SG_VLESS_10101_802
-  - SG_VLESS_30680_835
-  - SG_VLESS_8441_838
+  - SG_VMESS_18000_344
+  - SG_VLESS_2083_706
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -139,14 +71,8 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_TROJAN_443_607
-  - SG_TROJAN_443_557
-  - SG_TROJAN_443_563
-  - SG_TROJAN_443_560
-  - SG_TROJAN_443_566
-  - SG_VLESS_10101_802
-  - SG_VLESS_30680_835
-  - SG_VLESS_8441_838
+  - SG_VLESS_2083_706
+  - SG_VMESS_18000_344
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

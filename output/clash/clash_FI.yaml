@@ -5,33 +5,48 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_443_895
+- name: FI_VLESS_443_557
   type: vless
-  server: 37.27.11.192
+  server: 163.5.153.153
   port: 443
-  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
-  network: ws
+  uuid: 0a76a766-d141-44b8-944e-dff757d7116f
+  servername: www.samsung.com
   tls: true
-  servername: vod.ensf.top
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  ws-opts:
-    path: /api/v1/irc
-    headers:
-      Host: vod.ensf.top
+  reality-opts:
+    public-key: aB_2Tcf0A5LoiIEZHztR_l-ZOFeJKxYRH67s_OVQ9C0
+    short-id: a91045bc
+  skip-cert-verify: true
+  udp: true
   country: FI
-- name: FI_VLESS_443_866
+- name: FI_VLESS_2053_789
   type: vless
-  server: 65.108.245.196
-  port: 443
-  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
+  server: 65.109.12.58
+  port: 2053
+  uuid: c7e9c591-2764-423a-afca-efbd010fd396
   network: ws
+  servername: forfreeuse.rtqa.ru
   tls: true
-  servername: vod.ensf.top
-  client-fingerprint: chrome
   ws-opts:
-    path: /api/v1/irc
+    path: /
     headers:
-      Host: vod.ensf.top
+      Host: forfreeuse.rtqa.ru
+  skip-cert-verify: true
+  udp: true
+  country: FI
+- name: FI_VLESS_2096_768
+  type: vless
+  server: five.neobo-tooth.ru
+  port: 2096
+  uuid: 70e20b2e-3b1f-4c25-9a3d-9240570391bb
+  network: ws
+  servername: five.neobo-tooth.ru
+  tls: false
+  ws-opts:
+    path: /
+  skip-cert-verify: true
+  udp: true
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +61,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_443_895
-  - FI_VLESS_443_866
+  - FI_VLESS_443_557
+  - FI_VLESS_2053_789
+  - FI_VLESS_2096_768
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +76,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_443_866
-  - FI_VLESS_443_895
+  - FI_VLESS_443_557
+  - FI_VLESS_2096_768
+  - FI_VLESS_2053_789
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +90,9 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_443_895
-  - FI_VLESS_443_866
+  - FI_VLESS_443_557
+  - FI_VLESS_2053_789
+  - FI_VLESS_2096_768
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

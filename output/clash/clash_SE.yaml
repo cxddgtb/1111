@@ -5,47 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_443_938
+- name: SE_VLESS_443_484
   type: vless
-  server: 77.221.136.148
+  server: swed1.helper-internet.com
   port: 443
-  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
-  network: ws
+  uuid: 670decfe-68cc-499e-8cb1-22b39c20acbb
+  servername: swed1.helper-internet.com
   tls: true
-  servername: vod.ensf.top
-  client-fingerprint: chrome
-  ws-opts:
-    path: /api/v1/irc
-    headers:
-      Host: vod.ensf.top
-  country: SE
-- name: SE_VLESS_12345_840
-  type: vless
-  server: 213.21.229.126
-  port: 12345
-  uuid: 58809ac1-22fe-4372-8d84-ccaca97043fd
-  network: ws
-  tls: true
-  servername: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: mw5qisav.wjwqvie0wb1eqhb8e83clqdoq3m5p9a4on.workers.dev
-  country: SE
-- name: SE_VLESS_443_825
-  type: vless
-  server: 41.216.182.105
-  port: 443
-  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
-  network: ws
-  tls: true
-  servername: vod.ensf.top
-  client-fingerprint: chrome
-  ws-opts:
-    path: /api/v1/irc
-    headers:
-      Host: vod.ensf.top
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  reality-opts:
+    public-key: W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE
+    short-id: ff776ff77be48b88
+  skip-cert-verify: true
+  udp: true
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -60,9 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_443_938
-  - SE_VLESS_12345_840
-  - SE_VLESS_443_825
+  - SE_VLESS_443_484
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -75,9 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_443_825
-  - SE_VLESS_12345_840
-  - SE_VLESS_443_938
+  - SE_VLESS_443_484
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -89,9 +58,7 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_443_938
-  - SE_VLESS_12345_840
-  - SE_VLESS_443_825
+  - SE_VLESS_443_484
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
