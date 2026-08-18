@@ -5,7 +5,27 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VMESS_25686_342
+- name: JP_VLESS_10000_220
+  type: vless
+  server: 14.137.238.40
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: JP
+- name: JP_TROJAN_443_358
+  type: trojan
+  server: merry-falcon.rooster465.autos
+  port: 443
+  password: PQ05174892
+  skip-cert-verify: true
+  tls: false
+  udp: true
+  country: JP
+- name: JP_VMESS_25686_345
   type: vmess
   network: ws
   server: 140.83.51.161
@@ -19,19 +39,85 @@ proxies:
       Host: jp02.a0a.xyz
     path: /cctv13.m3u8
   country: JP
-- name: JP_VMESS_2052_893
+- name: JP_VMESS_13118_843
   type: vmess
   network: ws
-  server: 207.56.229.202
-  port: 2052
-  uuid: 9bb81a28-00d0-4dcc-bf81-369721d208c9
+  server: 140.83.57.20
+  port: 13118
+  uuid: 1f01e389-fbcb-494c-e46a-210ec36329c2
   skip-cert-verify: true
+  tls: true
   alterId: 0
   cipher: auto
   ws-opts:
     headers:
-      Host: www.bing.com
-    path: 9bb81a28-00d0-4dcc-bf81-369721d208c9-vm
+      Host: sg.11160321.de5.net
+    path: /
+  country: JP
+- name: JP_VLESS_443_429
+  type: vless
+  network: ws
+  server: 43.167.239.81
+  port: 443
+  uuid: 85819b3c-fe18-40bb-bd9a-f3cd194a8d28
+  servername: 43.167.239.81
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  tfo: false
+  flow: ''
+  ws-opts:
+    headers:
+      Host: 43.167.239.81
+    path: /ws
+  country: JP
+- name: JP_TROJAN_443_341
+  type: trojan
+  server: witty-duckling.rooster465.autos
+  port: 443
+  password: PQ05174892
+  sni: witty-duckling.rooster465.autos
+  network: tcp
+  country: JP
+- name: JP_TROJAN_443_344
+  type: trojan
+  server: aware-puma.rooster465.autos
+  port: 443
+  password: PQ05174892
+  sni: aware-puma.rooster465.autos
+  network: tcp
+  country: JP
+- name: JP_TROJAN_443_347
+  type: trojan
+  server: key-sponge.rooster465.autos
+  port: 443
+  password: PQ05174892
+  sni: key-sponge.rooster465.autos
+  network: tcp
+  country: JP
+- name: JP_TROJAN_443_333
+  type: trojan
+  server: sterling-vervet.rooster465.autos
+  port: 443
+  password: PQ05174892
+  sni: sterling-vervet.rooster465.autos
+  network: tcp
+  country: JP
+- name: JP_TROJAN_443_347_2
+  type: trojan
+  server: proud-escargot.rooster465.autos
+  port: 443
+  password: PQ05174892
+  sni: proud-escargot.rooster465.autos
+  network: tcp
+  country: JP
+- name: JP_TROJAN_443_345
+  type: trojan
+  server: open-caribou.rooster465.autos
+  port: 443
+  password: PQ05174892
+  sni: open-caribou.rooster465.autos
+  network: tcp
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +132,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VMESS_25686_342
-  - JP_VMESS_2052_893
+  - JP_VLESS_10000_220
+  - JP_TROJAN_443_358
+  - JP_VMESS_25686_345
+  - JP_VMESS_13118_843
+  - JP_VLESS_443_429
+  - JP_TROJAN_443_341
+  - JP_TROJAN_443_344
+  - JP_TROJAN_443_347
+  - JP_TROJAN_443_333
+  - JP_TROJAN_443_347_2
+  - JP_TROJAN_443_345
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +155,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_25686_342
-  - JP_VMESS_2052_893
+  - JP_VLESS_10000_220
+  - JP_TROJAN_443_333
+  - JP_TROJAN_443_341
+  - JP_TROJAN_443_344
+  - JP_VMESS_25686_345
+  - JP_TROJAN_443_345
+  - JP_TROJAN_443_347
+  - JP_TROJAN_443_347_2
+  - JP_TROJAN_443_358
+  - JP_VLESS_443_429
+  - JP_VMESS_13118_843
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +177,17 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VMESS_25686_342
-  - JP_VMESS_2052_893
+  - JP_VLESS_10000_220
+  - JP_TROJAN_443_358
+  - JP_VMESS_25686_345
+  - JP_VMESS_13118_843
+  - JP_VLESS_443_429
+  - JP_TROJAN_443_341
+  - JP_TROJAN_443_344
+  - JP_TROJAN_443_347
+  - JP_TROJAN_443_333
+  - JP_TROJAN_443_347_2
+  - JP_TROJAN_443_345
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

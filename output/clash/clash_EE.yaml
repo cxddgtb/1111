@@ -5,25 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_TROJAN_449_531
-  type: trojan
-  server: 109.206.241.10
-  port: 449
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  sni: russiapower.accesscam.org
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: EE
-- name: EE_VLESS_443_679
+- name: EE_VLESS_443_599
   type: vless
-  server: ee2.mehab.me
+  server: estproxy4.lockdwn.com
   port: 443
-  uuid: 278412f2-ef42-48e2-a4c0-243b173e612b
-  tls: true
+  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  network: ws
+  tls: false
+  servername: ''
   client-fingerprint: chrome
-  skip-cert-verify: true
-  udp: true
+  ws-opts:
+    path: /
+    headers:
+      Host: estproxy4.lockdwn.com
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -38,8 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_TROJAN_449_531
-  - EE_VLESS_443_679
+  - EE_VLESS_443_599
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_TROJAN_449_531
-  - EE_VLESS_443_679
+  - EE_VLESS_443_599
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +57,7 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_TROJAN_449_531
-  - EE_VLESS_443_679
+  - EE_VLESS_443_599
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

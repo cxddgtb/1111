@@ -5,37 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AU_TROJAN_443_447
-  type: trojan
-  server: wanted-marmoset.rooster465.autos
+- name: AU_VLESS_443_777
+  type: vless
+  network: ws
+  server: 16.176.42.97
   port: 443
-  password: AE62539071
-  sni: wanted-marmoset.rooster465.autos
-  network: tcp
-  country: AU
-- name: AU_TROJAN_443_446
-  type: trojan
-  server: darling-mutt.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: darling-mutt.rooster465.autos
-  network: tcp
-  country: AU
-- name: AU_TROJAN_443_448
-  type: trojan
-  server: together-dingo.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: together-dingo.rooster465.autos
-  network: tcp
-  country: AU
-- name: AU_TROJAN_443_449
-  type: trojan
-  server: humorous-llama.rooster465.autos
-  port: 443
-  password: AE62539071
-  sni: humorous-llama.rooster465.autos
-  network: tcp
+  uuid: 1bc380b1-cff7-446f-b13f-5c0ad29fc75a
+  servername: zero.csmaster.ggff.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: zero.csmaster.ggff.net
+    path: /
   country: AU
 proxy-groups:
 - name: 🚀 节点选择
@@ -50,10 +35,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AU_TROJAN_443_447
-  - AU_TROJAN_443_446
-  - AU_TROJAN_443_448
-  - AU_TROJAN_443_449
+  - AU_VLESS_443_777
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -66,10 +48,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AU_TROJAN_443_446
-  - AU_TROJAN_443_447
-  - AU_TROJAN_443_448
-  - AU_TROJAN_443_449
+  - AU_VLESS_443_777
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,10 +60,7 @@ proxy-groups:
 - name: 🌍 AU
   type: url-test
   proxies:
-  - AU_TROJAN_443_447
-  - AU_TROJAN_443_446
-  - AU_TROJAN_443_448
-  - AU_TROJAN_443_449
+  - AU_VLESS_443_777
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

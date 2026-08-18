@@ -5,10 +5,35 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_18000_180
+- name: CA_VMESS_18000_179
   type: vmess
   network: tcp
   server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_443_296
+  type: vmess
+  network: ws
+  server: 158.51.121.63
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: seribus.org
+    path: linkvws
+  country: CA
+- name: CA_VMESS_18000_136
+  type: vmess
+  network: tcp
+  server: 134.195.196.211
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
@@ -28,7 +53,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_18000_180
+  - CA_VMESS_18000_179
+  - CA_VMESS_443_296
+  - CA_VMESS_18000_136
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +68,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_18000_180
+  - CA_VMESS_18000_136
+  - CA_VMESS_18000_179
+  - CA_VMESS_443_296
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +82,9 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_18000_180
+  - CA_VMESS_18000_179
+  - CA_VMESS_443_296
+  - CA_VMESS_18000_136
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

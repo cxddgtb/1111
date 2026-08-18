@@ -5,24 +5,37 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_TROJAN_443_580
+- name: KR_TROJAN_443_486
   type: trojan
-  server: star-bluejay.rooster465.autos
+  server: awake-redbird.rooster465.autos
   port: 443
-  password: FH72359861
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  password: PQ05174892
+  sni: awake-redbird.rooster465.autos
+  network: tcp
   country: KR
-- name: KR_TROJAN_443_696
+- name: KR_TROJAN_443_460
+  type: trojan
+  server: careful-cow.rooster465.autos
+  port: 443
+  password: PQ05174892
+  sni: careful-cow.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_450
+  type: trojan
+  server: regular-raptor.rooster465.autos
+  port: 443
+  password: PQ05174892
+  sni: regular-raptor.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_456
   type: trojan
   server: enough-lamb.rooster465.autos
   port: 443
   password: HC04361579
   sni: enough-lamb.rooster465.autos
-  skip-cert-verify: true
-  tls: true
-  udp: true
+  network: tcp
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +50,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_TROJAN_443_580
-  - KR_TROJAN_443_696
+  - KR_TROJAN_443_486
+  - KR_TROJAN_443_460
+  - KR_TROJAN_443_450
+  - KR_TROJAN_443_456
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +66,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_TROJAN_443_580
-  - KR_TROJAN_443_696
+  - KR_TROJAN_443_450
+  - KR_TROJAN_443_456
+  - KR_TROJAN_443_460
+  - KR_TROJAN_443_486
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +81,10 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_TROJAN_443_580
-  - KR_TROJAN_443_696
+  - KR_TROJAN_443_486
+  - KR_TROJAN_443_460
+  - KR_TROJAN_443_450
+  - KR_TROJAN_443_456
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
