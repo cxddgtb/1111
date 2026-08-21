@@ -5,39 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VLESS_30100_489
-  type: vless
-  server: xiweini.dpdns.org
-  port: 30100
-  uuid: 19bb341c-ee57-4899-b1e7-e9d3ebdf23df
-  tls: true
-  skip-cert-verify: true
-  udp: true
+- name: HK_TROJAN_5443_444
+  type: trojan
+  server: 47.86.107.20
+  port: 5443
+  password: fg20mtCFHy
+  sni: hytfes.southbyte.xyz
+  network: tcp
   country: HK
-- name: HK_VMESS_443_999
-  type: vmess
-  network: ws
-  server: drbkg16egf3fzlm3.v.3dns.vip
+- name: HK_TROJAN_443_1520
+  type: trojan
+  network: tcp
+  server: 119.246.1.143
   port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  password: BxceQaOe
   skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: DrBKg16eGf3FZlM3.v.3dns.vip
-    path: /ws-vmess
+  sni: t.me/ripaojiedian
   country: HK
-- name: HK_VMESS_30807_1584
+- name: HK_VMESS_9527_1501
   type: vmess
   network: tcp
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  server: 43.132.192.16
+  port: 9527
+  uuid: ae862e1d-3b8c-443a-027b-37c6c69ef43c
   skip-cert-verify: true
-  alterId: 2
-  cipher: auto
+  alterId: 0
+  cipher: chacha20-poly1305
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -52,9 +45,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_30100_489
-  - HK_VMESS_443_999
-  - HK_VMESS_30807_1584
+  - HK_TROJAN_5443_444
+  - HK_TROJAN_443_1520
+  - HK_VMESS_9527_1501
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -67,9 +60,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VLESS_30100_489
-  - HK_VMESS_443_999
-  - HK_VMESS_30807_1584
+  - HK_TROJAN_5443_444
+  - HK_VMESS_9527_1501
+  - HK_TROJAN_443_1520
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,9 +74,9 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_30100_489
-  - HK_VMESS_443_999
-  - HK_VMESS_30807_1584
+  - HK_TROJAN_5443_444
+  - HK_TROJAN_443_1520
+  - HK_VMESS_9527_1501
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

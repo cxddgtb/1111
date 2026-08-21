@@ -5,21 +5,53 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VMESS_16632_1725
+- name: FR_VMESS_1234_488
   type: vmess
-  network: ws
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  uuid: 97c638c6-86d5-4cf6-b70b-114c6809b637
+  network: tcp
+  server: 141.95.65.9
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  servername: supervpn.super.com
   skip-cert-verify: true
+  tls: true
+  udp: true
+  alterId: 0
+  cipher: aes-128-gcm
+  client-fingerprint: chrome
+  country: FR
+- name: FR_VMESS_1234_488_2
+  type: vmess
+  network: tcp
+  server: 162.19.204.71
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  servername: supervpn.super.com
+  skip-cert-verify: true
+  tls: true
+  udp: true
   alterId: 0
   cipher: auto
+  client-fingerprint: chrome
+  country: FR
+- name: FR_VLESS_443_610
+  type: vless
+  network: ws
+  server: 149.202.58.99
+  port: 443
+  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
+  servername: bab-6.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  client-fingerprint: chrome
+  packet-encoding: xudp
+  encryption: none
   ws-opts:
     headers:
-      Host: 407a2bc6d452ff93e6d7b73078539d9e.mobgslb.tbcache.com
-    path: /
+      Host: bab-6.site
+    path: /vws/
   country: FR
-- name: FR_VLESS_443_463
+- name: FR_VLESS_443_450
   type: vless
   network: tcp
   server: 162.19.10.99
@@ -46,8 +78,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VMESS_16632_1725
-  - FR_VLESS_443_463
+  - FR_VMESS_1234_488
+  - FR_VMESS_1234_488_2
+  - FR_VLESS_443_610
+  - FR_VLESS_443_450
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +94,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_443_463
-  - FR_VMESS_16632_1725
+  - FR_VLESS_443_450
+  - FR_VMESS_1234_488
+  - FR_VMESS_1234_488_2
+  - FR_VLESS_443_610
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +109,10 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VMESS_16632_1725
-  - FR_VLESS_443_463
+  - FR_VMESS_1234_488
+  - FR_VMESS_1234_488_2
+  - FR_VLESS_443_610
+  - FR_VLESS_443_450
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

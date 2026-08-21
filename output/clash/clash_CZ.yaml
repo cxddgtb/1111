@@ -5,22 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CZ_VLESS_443_681
+- name: CZ_VLESS_2053_839
   type: vless
   network: ws
-  server: 193.124.15.11
-  port: 443
-  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
-  servername: vod.ensf.top
+  server: 195.133.94.188
+  port: 2053
+  uuid: c7e9c591-2764-423a-afca-efbd010fd396
+  servername: forfreeuse.rtqa.ru
   skip-cert-verify: false
   tls: true
   udp: true
   tfo: false
-  client-fingerprint: chrome
   ws-opts:
     headers:
-      Host: vod.ensf.top
-    path: /api/v1/irc
+      Host: forfreeuse.rtqa.ru
+    path: /?TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI?ed
   country: CZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -35,7 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CZ_VLESS_443_681
+  - CZ_VLESS_2053_839
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,7 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CZ_VLESS_443_681
+  - CZ_VLESS_2053_839
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -60,7 +59,7 @@ proxy-groups:
 - name: 🌍 CZ
   type: url-test
   proxies:
-  - CZ_VLESS_443_681
+  - CZ_VLESS_2053_839
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

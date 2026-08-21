@@ -5,51 +5,38 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RO_VLESS_13443_663
+- name: RO_VLESS_2053_843
   type: vless
-  server: 79.108.166.178
-  port: 13443
-  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
-  servername: auto.cendora.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: qq
-  reality-opts:
-    public-key: gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM
-    short-id: a7f3c91b2e6d84c0
-  skip-cert-verify: true
-  udp: true
-  country: RO
-- name: RO_VLESS_2053_788
-  type: vless
+  network: ws
   server: 188.241.241.28
   port: 2053
   uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
   servername: forfreeuse.rtqa.ru
+  skip-cert-verify: false
   tls: true
+  udp: true
+  tfo: false
+  flow: ''
   ws-opts:
-    path: /
     headers:
       Host: forfreeuse.rtqa.ru
-  skip-cert-verify: true
-  udp: true
+    path: /
   country: RO
-- name: RO_VLESS_2053_797
+- name: RO_VLESS_2053_826
   type: vless
-  server: 188.241.241.20
+  network: ws
+  server: 188.241.241.37
   port: 2053
   uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
   servername: forfreeuse.rtqa.ru
+  skip-cert-verify: false
   tls: true
-  client-fingerprint: chrome
+  udp: true
+  tfo: false
   ws-opts:
-    path: /
     headers:
       Host: forfreeuse.rtqa.ru
-  skip-cert-verify: true
-  udp: true
+    path: /
   country: RO
 proxy-groups:
 - name: 🚀 节点选择
@@ -64,9 +51,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_VLESS_13443_663
-  - RO_VLESS_2053_788
-  - RO_VLESS_2053_797
+  - RO_VLESS_2053_843
+  - RO_VLESS_2053_826
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -79,9 +65,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_VLESS_13443_663
-  - RO_VLESS_2053_788
-  - RO_VLESS_2053_797
+  - RO_VLESS_2053_826
+  - RO_VLESS_2053_843
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -93,9 +78,8 @@ proxy-groups:
 - name: 🌍 RO
   type: url-test
   proxies:
-  - RO_VLESS_13443_663
-  - RO_VLESS_2053_788
-  - RO_VLESS_2053_797
+  - RO_VLESS_2053_843
+  - RO_VLESS_2053_826
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

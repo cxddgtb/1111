@@ -5,20 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_VLESS_2053_1172
+- name: LV_VLESS_443_751
   type: vless
-  server: 45.38.143.54
-  port: 2053
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
+  server: 195.123.209.50.fwqfw783rg2dad.website
+  port: 443
+  uuid: 5ca83936-136d-4314-8453-4ba10a86cf60
   network: ws
-  servername: forfreeuse.rtqa.ru
   tls: true
+  servername: 195.123.209.50.fwqfw783rg2dad.website
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /websocket
     headers:
-      Host: forfreeuse.rtqa.ru
-  skip-cert-verify: true
-  udp: true
+      Host: ''
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_VLESS_2053_1172
+  - LV_VLESS_443_751
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_VLESS_2053_1172
+  - LV_VLESS_443_751
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +57,7 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_VLESS_2053_1172
+  - LV_VLESS_443_751
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

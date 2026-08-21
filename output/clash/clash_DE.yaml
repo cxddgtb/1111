@@ -5,62 +5,135 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VMESS_2053_626
-  type: vmess
+- name: DE_SS_443_323
+  type: ss
+  server: 3.79.230.55
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: DE_VLESS_22222_303
+  type: vless
+  server: 63.188.40.90
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: DE
+- name: DE_VLESS_22223_317
+  type: vless
+  server: 63.183.163.238
+  port: 22223
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: DE
+- name: DE_SS_443_314
+  type: ss
+  server: 52.59.195.252
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: DE_VLESS_22222_313
+  type: vless
+  server: 63.183.163.238
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: DE
+- name: DE_VLESS_443_1257
+  type: vless
+  server: 194.154.30.154
+  port: 443
+  uuid: c7e9c591-2764-423a-afca-efbd010fd396
   network: ws
-  server: 104.105.18.214
-  port: 2053
-  uuid: 9a1a05d9-69be-45d3-e326-c6621edf7b31
-  skip-cert-verify: true
+  servername: forfreeuse.rtqa.ru
   tls: true
-  alterId: 0
-  cipher: auto
+  client-fingerprint: chrome
   ws-opts:
+    path: /
     headers:
-      Host: deapp.jisuyun.top
-    path: /devm
+      Host: forfreeuse.rtqa.ru
+  skip-cert-verify: true
+  udp: true
   country: DE
-- name: DE_VMESS_180_20
+- name: DE_VMESS_180_33
   type: vmess
   network: tcp
-  server: 82.198.246.37
+  server: 82.198.246.97
   port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_180_20_2
-  type: vmess
-  network: tcp
-  server: 82.198.246.233
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
+  tls: false
   alterId: 0
   cipher: auto
   country: DE
 - name: DE_VMESS_180_21
   type: vmess
   network: tcp
-  server: 82.198.246.97
+  server: 82.198.246.250
   port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
+  skip-cert-verify: false
+  tls: false
+  udp: true
   alterId: 0
   cipher: auto
+  client-fingerprint: chrome
+  xudp: true
+  packet-encoding: xudp
   country: DE
-- name: DE_VMESS_38998_312
+- name: DE_VMESS_180_24
   type: vmess
   network: tcp
-  server: 178.83.45.29
-  port: 38998
-  uuid: 48422300-458f-4dbb-b0f5-96f45450ab9f
-  skip-cert-verify: true
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  tls: false
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VLESS_443_456
+- name: DE_VMESS_180_25
+  type: vmess
+  network: tcp
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  tls: false
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VLESS_80_534
+  type: vless
+  network: ws
+  server: OV-Germany1.09vpn.com
+  port: 80
+  uuid: 7d74eae4-8a06-4306-a923-ad686f30bf26
+  skip-cert-verify: false
+  udp: true
+  encryption: none
+  xudp: true
+  packet-encoding: xudp
+  ws-opts:
+    headers:
+      Host: OV-Germany1.09vpn.com
+    path: /vless/
+  country: DE
+- name: DE_VLESS_443_482
   type: vless
   network: tcp
   server: 82.38.4.126
@@ -74,7 +147,20 @@ proxies:
   client-fingerprint: chrome
   flow: xtls-rprx-vision
   country: DE
-- name: DE_VLESS_443_677
+- name: DE_VLESS_33843_497
+  type: vless
+  network: tcp
+  server: 87.120.84.32
+  port: 33843
+  uuid: 93dac4b8-3879-4179-abdb-9666a9e2ca8d
+  servername: deproxy2.lckdwn.ru
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  country: DE
+- name: DE_VLESS_443_697
   type: vless
   network: ws
   server: 81.95.4.189
@@ -91,33 +177,23 @@ proxies:
       Host: bab-6.site
     path: /vws/
   country: DE
-- name: DE_VLESS_443_797
+- name: DE_VLESS_2053_1055
   type: vless
   network: ws
-  server: 5.187.7.220
-  port: 443
-  uuid: e911c552-3a98-41e0-b5fb-0dd3879887b7
-  servername: vod.ensf.top
+  server: 163.5.187.118
+  port: 2053
+  uuid: c7e9c591-2764-423a-afca-efbd010fd396
+  servername: forfreeuse.rtqa.ru
   skip-cert-verify: false
   tls: true
   udp: true
   tfo: false
   client-fingerprint: chrome
+  flow: ''
   ws-opts:
     headers:
-      Host: vod.ensf.top
-    path: /api/v1/irc
-  country: DE
-- name: DE_VLESS_33843_499
-  type: vless
-  server: 87.120.84.32
-  port: 33843
-  uuid: 93dac4b8-3879-4179-abdb-9666a9e2ca8d
-  network: tcp
-  tls: true
-  servername: deproxy2.lckdwn.ru
-  client-fingerprint: chrome
-  ws-opts: null
+      Host: forfreeuse.rtqa.ru
+    path: /
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -132,15 +208,21 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VMESS_2053_626
-  - DE_VMESS_180_20
-  - DE_VMESS_180_20_2
+  - DE_SS_443_323
+  - DE_VLESS_22222_303
+  - DE_VLESS_22223_317
+  - DE_SS_443_314
+  - DE_VLESS_22222_313
+  - DE_VLESS_443_1257
+  - DE_VMESS_180_33
   - DE_VMESS_180_21
-  - DE_VMESS_38998_312
-  - DE_VLESS_443_456
-  - DE_VLESS_443_677
-  - DE_VLESS_443_797
-  - DE_VLESS_33843_499
+  - DE_VMESS_180_24
+  - DE_VMESS_180_25
+  - DE_VLESS_80_534
+  - DE_VLESS_443_482
+  - DE_VLESS_33843_497
+  - DE_VLESS_443_697
+  - DE_VLESS_2053_1055
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -153,15 +235,21 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VMESS_180_20
-  - DE_VMESS_180_20_2
   - DE_VMESS_180_21
-  - DE_VMESS_38998_312
-  - DE_VLESS_443_456
-  - DE_VLESS_33843_499
-  - DE_VMESS_2053_626
-  - DE_VLESS_443_677
-  - DE_VLESS_443_797
+  - DE_VMESS_180_24
+  - DE_VMESS_180_25
+  - DE_VMESS_180_33
+  - DE_VLESS_22222_303
+  - DE_VLESS_22222_313
+  - DE_SS_443_314
+  - DE_VLESS_22223_317
+  - DE_SS_443_323
+  - DE_VLESS_443_482
+  - DE_VLESS_33843_497
+  - DE_VLESS_80_534
+  - DE_VLESS_443_697
+  - DE_VLESS_2053_1055
+  - DE_VLESS_443_1257
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -173,15 +261,21 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VMESS_2053_626
-  - DE_VMESS_180_20
-  - DE_VMESS_180_20_2
+  - DE_SS_443_323
+  - DE_VLESS_22222_303
+  - DE_VLESS_22223_317
+  - DE_SS_443_314
+  - DE_VLESS_22222_313
+  - DE_VLESS_443_1257
+  - DE_VMESS_180_33
   - DE_VMESS_180_21
-  - DE_VMESS_38998_312
-  - DE_VLESS_443_456
-  - DE_VLESS_443_677
-  - DE_VLESS_443_797
-  - DE_VLESS_33843_499
+  - DE_VMESS_180_24
+  - DE_VMESS_180_25
+  - DE_VLESS_80_534
+  - DE_VLESS_443_482
+  - DE_VLESS_33843_497
+  - DE_VLESS_443_697
+  - DE_VLESS_2053_1055
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
