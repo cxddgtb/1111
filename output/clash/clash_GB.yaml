@@ -5,32 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_VMESS_22324_336
-  type: vmess
+- name: GB_TROJAN_5448_433
+  type: trojan
+  server: londhtc.southbyte.xyz
+  port: 5448
+  password: fg20mtCFHy
+  sni: londhtc.southbyte.xyz
   network: tcp
-  server: 66.163.117.58
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  tls: false
-  alterId: 0
-  cipher: auto
-  country: GB
-- name: GB_VLESS_443_574
-  type: vless
-  network: ws
-  server: 129.121.95.159
-  port: 443
-  uuid: f6190ff2-864c-46cf-ac16-93908c069b75
-  servername: 129.121.95.159
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: 129.121.95.159
-    path: /connect
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,8 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_VMESS_22324_336
-  - GB_VLESS_443_574
+  - GB_TROJAN_5448_433
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_VMESS_22324_336
-  - GB_VLESS_443_574
+  - GB_TROJAN_5448_433
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +51,7 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_VMESS_22324_336
-  - GB_VLESS_443_574
+  - GB_TROJAN_5448_433
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

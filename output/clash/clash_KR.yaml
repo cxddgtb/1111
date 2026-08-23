@@ -5,27 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VMESS_80_469
-  type: vmess
-  network: ws
-  server: 132.145.80.230
-  port: 80
-  uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-  udp: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: kr02.a0a.xyz
-    path: /cctv13.m3u8
-  country: KR
-- name: KR_VMESS_8888_349
+- name: KR_VMESS_8888_475
   type: vmess
   network: tcp
   server: 146.56.112.110
   port: 8888
   uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
-  udp: true
+  skip-cert-verify: true
   alterId: 0
   cipher: auto
   country: KR
@@ -42,8 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_80_469
-  - KR_VMESS_8888_349
+  - KR_VMESS_8888_475
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_8888_349
-  - KR_VMESS_80_469
+  - KR_VMESS_8888_475
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +53,7 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_80_469
-  - KR_VMESS_8888_349
+  - KR_VMESS_8888_475
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

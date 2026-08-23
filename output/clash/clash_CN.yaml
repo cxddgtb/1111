@@ -5,16 +5,35 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_VMESS_50002_446
+- name: CN_VMESS_50002_448
   type: vmess
-  network: tcp
   server: 112.132.215.108
   port: 50002
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  skip-cert-verify: true
   alterId: 64
   cipher: auto
-  delay: 175
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: CN
+- name: CN_VLESS_12528_523
+  type: vless
+  server: 120.227.1.43
+  port: 12528
+  uuid: f0169b08-43fd-4dc3-8195-18f6ad2fe39d
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  country: CN
+- name: CN_SS_65443_2599
+  type: ss
+  server: 121.46.230.136
+  port: 65443
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  skip-cert-verify: true
+  udp: true
   country: CN
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +48,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CN_VMESS_50002_446
+  - CN_VMESS_50002_448
+  - CN_VLESS_12528_523
+  - CN_SS_65443_2599
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +63,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CN_VMESS_50002_446
+  - CN_VMESS_50002_448
+  - CN_VLESS_12528_523
+  - CN_SS_65443_2599
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +77,9 @@ proxy-groups:
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_VMESS_50002_446
+  - CN_VMESS_50002_448
+  - CN_VLESS_12528_523
+  - CN_SS_65443_2599
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,100 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_2027_526
+- name: RU_VLESS_2200_739
   type: vless
-  server: 78.159.247.253
-  port: 2027
-  uuid: 851ed0d8-a37b-452d-8ef2-5b6c2d28a060
-  servername: storage.yandex.net
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo
-    short-id: 8d3293f0066e129a
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_2200_570
-  type: vless
-  server: 77.222.32.201
+  server: 201.24.49.79
   port: 2200
-  uuid: c366f788-ea31-4a3a-897e-794c9f935896
+  uuid: 3b4274c1-4744-452e-9903-e11ccc0c9900
   network: ws
-  servername: rzd.ru
   tls: false
+  servername: rzd.ru
   client-fingerprint: chrome
   ws-opts:
     path: /v1
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_2200_553
-  type: vless
-  server: 31.177.83.226
-  port: 2200
-  uuid: 3e530a2c-7fad-42b9-9fde-ea88d9f8ffb3
-  network: ws
-  servername: rzd.ru
-  tls: false
-  client-fingerprint: firefox
-  ws-opts:
-    path: /v1
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_8443_1812
-  type: vless
-  server: id.tutdesignstudio.site
-  port: 8443
-  uuid: b9125df6-2a60-4643-bcba-a5f78cb663a7
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_2053_1119
-  type: vless
-  server: 45.139.184.183
-  port: 2053
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
-  servername: forfreeuse.rtqa.ru
-  tls: true
-  ws-opts:
-    path: /
     headers:
-      Host: forfreeuse.rtqa.ru
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_2200_646
-  type: vless
-  server: 104.171.137.185
-  port: 2200
-  uuid: 3b037295-b93f-4ed1-b3ee-0efb8bc2f093
-  network: ws
-  tls: false
-  ws-opts:
-    path: /v1
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_4100_612
-  type: vless
-  server: 168.222.140.233
-  port: 4100
-  uuid: 9b44bfb4-9d28-4870-9fc3-5154d6d462ff
-  network: ws
-  tls: false
-  ws-opts:
-    path: /v1
-    headers:
-      Host: live.ok.ru
-  skip-cert-verify: true
-  udp: true
+      Host: ''
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -113,13 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_2027_526
-  - RU_VLESS_2200_570
-  - RU_VLESS_2200_553
-  - RU_VLESS_8443_1812
-  - RU_VLESS_2053_1119
-  - RU_VLESS_2200_646
-  - RU_VLESS_4100_612
+  - RU_VLESS_2200_739
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -132,13 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_2027_526
-  - RU_VLESS_2200_553
-  - RU_VLESS_2200_570
-  - RU_VLESS_4100_612
-  - RU_VLESS_2200_646
-  - RU_VLESS_2053_1119
-  - RU_VLESS_8443_1812
+  - RU_VLESS_2200_739
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -150,13 +57,7 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_2027_526
-  - RU_VLESS_2200_570
-  - RU_VLESS_2200_553
-  - RU_VLESS_8443_1812
-  - RU_VLESS_2053_1119
-  - RU_VLESS_2200_646
-  - RU_VLESS_4100_612
+  - RU_VLESS_2200_739
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

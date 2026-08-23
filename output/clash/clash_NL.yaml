@@ -5,132 +5,53 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_VLESS_2053_758
+- name: NL_VLESS_62145_261
   type: vless
-  server: 167.172.32.216
-  port: 2053
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
-  tls: true
-  servername: forfreeuse.rtqa.ru
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: forfreeuse.rtqa.ru
-  country: NL
-- name: NL_VLESS_2053_1204
-  type: vless
-  server: 31.59.94.24
-  port: 2053
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
-  tls: true
-  servername: forfreeuse.rtqa.ru
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: forfreeuse.rtqa.ru
-  country: NL
-- name: NL_VLESS_2053_781
-  type: vless
-  server: 134.209.205.250
-  port: 2053
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
-  tls: true
-  servername: forfreeuse.rtqa.ru
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: forfreeuse.rtqa.ru
-  country: NL
-- name: NL_VLESS_2053_788
-  type: vless
-  server: 89.110.116.183
-  port: 2053
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
-  tls: true
-  servername: forfreeuse.rtqa.ru
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: forfreeuse.rtqa.ru
-  country: NL
-- name: NL_VLESS_2053_804
-  type: vless
-  server: 140.82.57.190
-  port: 2053
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
-  tls: true
-  servername: forfreeuse.rtqa.ru
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: forfreeuse.rtqa.ru
-  country: NL
-- name: NL_VMESS_1234_453
-  type: vmess
+  server: 158.178.153.49
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
   network: tcp
-  server: 159.223.13.109
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  servername: supervpn.super.com
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  alterId: 0
-  cipher: aes-128-gcm
-  client-fingerprint: chrome
-  country: NL
-- name: NL_VMESS_1234_471
-  type: vmess
-  network: tcp
-  server: 45.90.106.24
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  servername: 45.90.106.24
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  alterId: 0
-  cipher: aes-128-gcm
-  country: NL
-- name: NL_VLESS_80_436
-  type: vless
-  network: ws
-  server: sc-thenetherlands1.09vpn.com
-  port: 80
-  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
-  skip-cert-verify: false
   tls: false
-  udp: true
-  encryption: none
-  packet-encoding: xudp
-  ws-opts:
-    headers:
-      Host: sc-thenetherlands1.09vpn.com
-    path: /vless/
-  country: NL
-- name: NL_VLESS_8443_460
-  type: vless
-  network: tcp
-  server: 177.3.212.127
-  port: 8443
-  uuid: 14da77da-4fb3-4e49-ac4f-7881ea19b267
-  servername: neth6.lckdwn.ru
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
+  servername: ''
   client-fingerprint: chrome
-  flow: ''
+  ws-opts: null
+  country: NL
+- name: NL_VLESS_62145_261_2
+  type: vless
+  server: 158.101.208.44
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: NL
+- name: NL_VLESS_62145_263
+  type: vless
+  server: 92.5.227.75
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: NL
+- name: NL_VMESS_443_2556
+  type: vmess
+  server: 185.246.152.159
+  port: 443
+  uuid: 5f72f180-b21b-4b7a-8484-240759012604
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: apjhdggyx.com
+  ws-opts:
+    path: /5f72f180-b21b-4b7a-8484-240759096785
+    headers:
+      Host: apjhdggyx.com
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -145,15 +66,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_VLESS_2053_758
-  - NL_VLESS_2053_1204
-  - NL_VLESS_2053_781
-  - NL_VLESS_2053_788
-  - NL_VLESS_2053_804
-  - NL_VMESS_1234_453
-  - NL_VMESS_1234_471
-  - NL_VLESS_80_436
-  - NL_VLESS_8443_460
+  - NL_VLESS_62145_261
+  - NL_VLESS_62145_261_2
+  - NL_VLESS_62145_263
+  - NL_VMESS_443_2556
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -166,15 +82,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_VLESS_80_436
-  - NL_VMESS_1234_453
-  - NL_VLESS_8443_460
-  - NL_VMESS_1234_471
-  - NL_VLESS_2053_758
-  - NL_VLESS_2053_781
-  - NL_VLESS_2053_788
-  - NL_VLESS_2053_804
-  - NL_VLESS_2053_1204
+  - NL_VLESS_62145_261
+  - NL_VLESS_62145_261_2
+  - NL_VLESS_62145_263
+  - NL_VMESS_443_2556
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -186,15 +97,10 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_2053_758
-  - NL_VLESS_2053_1204
-  - NL_VLESS_2053_781
-  - NL_VLESS_2053_788
-  - NL_VLESS_2053_804
-  - NL_VMESS_1234_453
-  - NL_VMESS_1234_471
-  - NL_VLESS_80_436
-  - NL_VLESS_8443_460
+  - NL_VLESS_62145_261
+  - NL_VLESS_62145_261_2
+  - NL_VLESS_62145_263
+  - NL_VMESS_443_2556
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
