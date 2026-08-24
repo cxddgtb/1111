@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: US_VMESS_443_87
+- name: US_VMESS_443_219
   type: vmess
   server: guanwang.awsno.com
   port: 443
@@ -17,22 +17,11 @@ proxies:
   servername: ''
   ws-opts: null
   country: US
-- name: US_VLESS_10000_1460
-  type: vless
-  server: 180.178.60.254
-  port: 10000
-  uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: US
-- name: US_VLESS_443_299
+- name: US_VLESS_443_293
   type: vless
   server: 199.232.78.159
   port: 443
-  uuid: ff4589d5-8c1b-4cd4-93d1-25db3635735d
+  uuid: 27315937-5479-49fd-867d-6b2f17246708
   network: ws
   tls: true
   servername: ssl.fastly.com
@@ -40,14 +29,135 @@ proxies:
   ws-opts:
     path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
     headers:
-      Host: pane3.global.ssl.fastly.net
+      Host: pan1.global.ssl.fastly.net
   country: US
-- name: US_SS_8388_113
+- name: US_VLESS_8880_136
+  type: vless
+  server: 63.141.128.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime42.workers.dev
+  country: US
+- name: US_VLESS_8880_130
+  type: vless
+  server: 50.62.198.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime39.workers.dev
+  country: US
+- name: US_VLESS_80_153
+  type: vless
+  server: 50.62.195.4
+  port: 80
+  uuid: e382b6dd-2dac-49c5-b16f-1cd0a6b73bf2
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: raspy-feather-12ec.137-257.workers.dev
+  country: US
+- name: US_VLESS_8880_154
+  type: vless
+  server: 45.40.149.50
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime39.workers.dev
+  country: US
+- name: US_VLESS_8880_162
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+  country: US
+- name: US_VLESS_8880_189
+  type: vless
+  server: 80.93.202.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime02.workers.dev
+  country: US
+- name: US_SS_16015_300
   type: ss
-  server: 38.64.58.242
-  port: 8388
-  cipher: aes-256-gcm
-  password: 7w9x5m4kNWNFgKuDXFUxu68x-26wbWwg
+  server: 144.31.243.2
+  port: 16015
+  cipher: chacha20-ietf-poly1305
+  password: J1InuU6QRT5JOh1mQfkjU2
+  skip-cert-verify: true
+  udp: true
+  country: US
+- name: US_VLESS_443_437
+  type: vless
+  server: 151.101.56.6
+  port: 443
+  uuid: 63650025-84ff-4272-cfd4-61e7b9ee8834
+  network: ws
+  tls: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /?TELEGRAM--KANAL--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray
+    headers:
+      Host: c12.com
+  country: US
+- name: US_VLESS_443_568
+  type: vless
+  server: k2.cloud--vpn.site
+  port: 443
+  uuid: 63650025-84ff-4272-cfd4-61e7b9ee8834
+  network: ws
+  tls: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: c12.com
+  country: US
+- name: US_VLESS_10000_2113
+  type: vless
+  server: 180.178.60.254
+  port: 10000
+  uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
+  tls: false
   skip-cert-verify: true
   udp: true
   country: US
@@ -64,10 +174,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - US_VMESS_443_87
-  - US_VLESS_10000_1460
-  - US_VLESS_443_299
-  - US_SS_8388_113
+  - US_VMESS_443_219
+  - US_VLESS_443_293
+  - US_VLESS_8880_136
+  - US_VLESS_8880_130
+  - US_VLESS_80_153
+  - US_VLESS_8880_154
+  - US_VLESS_8880_162
+  - US_VLESS_8880_189
+  - US_SS_16015_300
+  - US_VLESS_443_437
+  - US_VLESS_443_568
+  - US_VLESS_10000_2113
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,10 +198,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - US_VMESS_443_87
-  - US_SS_8388_113
-  - US_VLESS_443_299
-  - US_VLESS_10000_1460
+  - US_VLESS_8880_130
+  - US_VLESS_8880_136
+  - US_VLESS_80_153
+  - US_VLESS_8880_154
+  - US_VLESS_8880_162
+  - US_VLESS_8880_189
+  - US_VMESS_443_219
+  - US_VLESS_443_293
+  - US_SS_16015_300
+  - US_VLESS_443_437
+  - US_VLESS_443_568
+  - US_VLESS_10000_2113
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -95,10 +221,18 @@ proxy-groups:
 - name: 🌍 US
   type: url-test
   proxies:
-  - US_VMESS_443_87
-  - US_VLESS_10000_1460
-  - US_VLESS_443_299
-  - US_SS_8388_113
+  - US_VMESS_443_219
+  - US_VLESS_443_293
+  - US_VLESS_8880_136
+  - US_VLESS_8880_130
+  - US_VLESS_80_153
+  - US_VLESS_8880_154
+  - US_VLESS_8880_162
+  - US_VLESS_8880_189
+  - US_SS_16015_300
+  - US_VLESS_443_437
+  - US_VLESS_443_568
+  - US_VLESS_10000_2113
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

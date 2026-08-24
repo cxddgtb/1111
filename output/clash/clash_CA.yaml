@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_443_300
+- name: CA_VMESS_443_220
   type: vmess
   network: ws
   server: 23.162.200.227
@@ -20,7 +20,7 @@ proxies:
       Host: vk.com
     path: /linkvws
   country: CA
-- name: CA_VMESS_443_304
+- name: CA_VMESS_443_576
   type: vmess
   network: ws
   server: 134.195.198.147
@@ -48,8 +48,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_443_300
-  - CA_VMESS_443_304
+  - CA_VMESS_443_220
+  - CA_VMESS_443_576
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,8 +62,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_443_300
-  - CA_VMESS_443_304
+  - CA_VMESS_443_220
+  - CA_VMESS_443_576
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,8 +75,8 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_443_300
-  - CA_VMESS_443_304
+  - CA_VMESS_443_220
+  - CA_VMESS_443_576
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

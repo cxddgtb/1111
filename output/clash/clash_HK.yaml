@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_30807_1707
+- name: HK_VMESS_30807_1770
   type: vmess
   server: v10.zgtfqs.click
   port: 30807
@@ -17,7 +17,7 @@ proxies:
   servername: ''
   ws-opts: null
   country: HK
-- name: HK_VMESS_30807_2140
+- name: HK_VMESS_30807_1747
   type: vmess
   server: v10.hdacd.com
   port: 30807
@@ -29,13 +29,19 @@ proxies:
   servername: ''
   ws-opts: null
   country: HK
-- name: HK_TROJAN_443_617
-  type: trojan
-  server: modern-bedbug.rooster465.autos
-  port: 443
-  password: FH72359861
-  sni: modern-bedbug.rooster465.autos
-  network: tcp
+- name: HK_VLESS_8880_117
+  type: vless
+  server: 154.92.9.2
+  port: 8880
+  uuid: fb5058f5-a9ed-424e-9ed7-33d455438286
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /pyip=Telegram🇨🇳+@WangCai2
+    headers:
+      Host: old-violet-a5ce.29-440.workers.dev
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -50,9 +56,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_30807_1707
-  - HK_VMESS_30807_2140
-  - HK_TROJAN_443_617
+  - HK_VMESS_30807_1770
+  - HK_VMESS_30807_1747
+  - HK_VLESS_8880_117
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -65,9 +71,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_TROJAN_443_617
-  - HK_VMESS_30807_1707
-  - HK_VMESS_30807_2140
+  - HK_VLESS_8880_117
+  - HK_VMESS_30807_1747
+  - HK_VMESS_30807_1770
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -79,9 +85,9 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_30807_1707
-  - HK_VMESS_30807_2140
-  - HK_TROJAN_443_617
+  - HK_VMESS_30807_1770
+  - HK_VMESS_30807_1747
+  - HK_VLESS_8880_117
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

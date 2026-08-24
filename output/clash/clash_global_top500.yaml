@@ -5,56 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: US_VMESS_443_87
-  type: vmess
-  server: guanwang.awsno.com
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: true
-  servername: ''
-  ws-opts: null
-  country: US
-- name: NL_VLESS_62145_261
-  type: vless
-  server: 158.178.153.49
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: NL
-- name: US_VLESS_443_299
-  type: vless
-  server: 199.232.78.159
-  port: 443
-  uuid: ff4589d5-8c1b-4cd4-93d1-25db3635735d
-  network: ws
-  tls: true
-  servername: ssl.fastly.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
-    headers:
-      Host: pane3.global.ssl.fastly.net
-  country: US
-- name: HK_VMESS_30807_1707
-  type: vmess
-  server: v10.zgtfqs.click
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: HK
-- name: CA_VMESS_443_300
+- name: CA_VMESS_443_220
   type: vmess
   network: ws
   server: 23.162.200.227
@@ -69,7 +20,7 @@ proxies:
       Host: vk.com
     path: /linkvws
   country: CA
-- name: KR_VMESS_8888_475
+- name: KR_VMESS_8888_474
   type: vmess
   network: tcp
   server: 146.56.112.110
@@ -79,190 +30,61 @@ proxies:
   alterId: 0
   cipher: auto
   country: KR
-- name: KZ_VMESS_80_865
+- name: US_VMESS_443_219
   type: vmess
+  server: guanwang.awsno.com
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
+  servername: ''
+  ws-opts: null
+  country: US
+- name: Unknown_VLESS_8880_108
+  type: vless
+  server: 188.114.97.6
+  port: 8880
+  uuid: b19b768d-bc57-4d03-9bea-61129ed5fef9
   network: ws
-  server: 3h-kazakhstan1.09vpn.com
+  tls: false
+  servername: new.106-79e.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /pyip=ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: new.106-79e.workers.dev
+  country: Unknown
+- name: US_VLESS_8880_130
+  type: vless
+  server: 50.62.198.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime39.workers.dev
+  country: US
+- name: TR_VLESS_80_132
+  type: vless
+  server: 91.206.71.8
   port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-    path: /vmess/
-  country: KZ
-- name: Unknown_VLESS_443_56
-  type: vless
-  server: 104.16.79.73
-  port: 443
-  uuid: 83afd88f-200f-4d89-bfc7-66eff160c1d8
+  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
   network: ws
-  tls: true
-  servername: josni.hoyes.cloudns.ch
-  client-fingerprint: chrome
-  ws-opts:
-    path: /?TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI?ed=2048
-    headers:
-      Host: josni.hoyes.cloudns.ch
-  country: Unknown
-- name: AU_TROJAN_443_432
-  type: trojan
-  server: 87.121.33.14
-  port: 443
-  password: FH72359861
-  sni: true-pony.rooster465.autos
-  network: tcp
-  country: AU
-- name: GB_TROJAN_5448_433
-  type: trojan
-  server: londhtc.southbyte.xyz
-  port: 5448
-  password: fg20mtCFHy
-  sni: londhtc.southbyte.xyz
-  network: tcp
-  country: GB
-- name: CN_VMESS_50002_448
-  type: vmess
-  server: 112.132.215.108
-  port: 50002
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: CN
-- name: PL_TROJAN_443_528
-  type: trojan
-  server: optimal-urchin.rooster465.autos
-  port: 443
-  password: FH72359861
-  sni: optimal-urchin.rooster465.autos
-  network: tcp
-  country: PL
-- name: HK_TROJAN_443_617
-  type: trojan
-  server: modern-bedbug.rooster465.autos
-  port: 443
-  password: FH72359861
-  sni: modern-bedbug.rooster465.autos
-  network: tcp
-  country: HK
-- name: RU_VLESS_2200_739
-  type: vless
-  server: 201.24.49.79
-  port: 2200
-  uuid: 3b4274c1-4744-452e-9903-e11ccc0c9900
-  network: ws
-  tls: false
-  servername: rzd.ru
-  client-fingerprint: chrome
-  ws-opts:
-    path: /v1
-    headers:
-      Host: ''
-  country: RU
-- name: Unknown_VMESS_443_330
-  type: vmess
-  server: rush-6it6b.teeopp.quest
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: rush-6it6b.teeopp.quest
-  ws-opts:
-    path: /video/kz49hf/gbin5jve.m3u8
-    headers:
-      Host: rush-6it6b.teeopp.quest
-  country: Unknown
-- name: NL_VMESS_443_2556
-  type: vmess
-  server: 185.246.152.159
-  port: 443
-  uuid: 5f72f180-b21b-4b7a-8484-240759012604
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: apjhdggyx.com
-  ws-opts:
-    path: /5f72f180-b21b-4b7a-8484-240759096785
-    headers:
-      Host: apjhdggyx.com
-  country: NL
-- name: US_SS_8388_113
-  type: ss
-  server: 38.64.58.242
-  port: 8388
-  cipher: aes-256-gcm
-  password: 7w9x5m4kNWNFgKuDXFUxu68x-26wbWwg
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: TH_SS_65443_405
-  type: ss
-  server: 103.169.67.34
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  skip-cert-verify: true
-  udp: true
-  country: TH
-- name: CN_VLESS_12528_523
-  type: vless
-  server: 120.227.1.43
-  port: 12528
-  uuid: f0169b08-43fd-4dc3-8195-18f6ad2fe39d
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: CN
-- name: FI_HYSTERIA2_443_1120
-  type: hysteria2
-  server: fast.wwwinternetvideo.click
-  port: 443
-  password: C91FbOXGY9XRymrcEebtax9R1Nj62UizoT8S6kCb7xwey8IE
-  sni: fast.wwwinternetvideo.click
-  skip-cert-verify: true
-  udp: true
-  country: FI
-- name: CN_SS_65443_2599
-  type: ss
-  server: 121.46.230.136
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  skip-cert-verify: true
-  udp: true
-  country: CN
-- name: NL_VLESS_62145_261_2
-  type: vless
-  server: 158.101.208.44
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  network: tcp
   tls: false
   servername: ''
   client-fingerprint: chrome
-  ws-opts: null
-  country: NL
-- name: US_VLESS_10000_1460
-  type: vless
-  server: 180.178.60.254
-  port: 10000
-  uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: US
-- name: HK_VMESS_30807_2140
+  ws-opts:
+    path: /pyip=Telegram🇨🇳+@WangCai2
+    headers:
+      Host: round-haze-8783.294.workers.dev
+  country: TR
+- name: HK_VMESS_30807_1747
   type: vmess
   server: v10.hdacd.com
   port: 30807
@@ -274,7 +96,79 @@ proxies:
   servername: ''
   ws-opts: null
   country: HK
-- name: CA_VMESS_443_304
+- name: NL_VLESS_8880_185
+  type: vless
+  server: 45.131.7.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime02.workers.dev
+  country: NL
+- name: HK_VLESS_8880_117
+  type: vless
+  server: 154.92.9.2
+  port: 8880
+  uuid: fb5058f5-a9ed-424e-9ed7-33d455438286
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /pyip=Telegram🇨🇳+@WangCai2
+    headers:
+      Host: old-violet-a5ce.29-440.workers.dev
+  country: HK
+- name: US_SS_16015_300
+  type: ss
+  server: 144.31.243.2
+  port: 16015
+  cipher: chacha20-ietf-poly1305
+  password: J1InuU6QRT5JOh1mQfkjU2
+  skip-cert-verify: true
+  udp: true
+  country: US
+- name: TH_SS_65443_441
+  type: ss
+  server: 103.169.67.34
+  port: 65443
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  skip-cert-verify: true
+  udp: true
+  country: TH
+- name: CN_VLESS_12528_537
+  type: vless
+  server: 120.227.1.43
+  port: 12528
+  uuid: f0169b08-43fd-4dc3-8195-18f6ad2fe39d
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: CN
+- name: Unknown_VMESS_443_1422
+  type: vmess
+  server: rush-6it6b.teeopp.quest
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: ''
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  country: Unknown
+- name: CA_VMESS_443_576
   type: vmess
   network: ws
   server: 134.195.198.147
@@ -289,7 +183,103 @@ proxies:
       Host: vk.com
     path: /linkvws
   country: CA
-- name: Unknown_VLESS_443_62
+- name: Unknown_VLESS_80_112
+  type: vless
+  server: 162.159.81.104
+  port: 80
+  uuid: 4b00d726-e072-429b-997e-f07affea3b7f
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /eyJqdW5rIjoiUEVTdDRlR2hhc0JuYyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzI2MDI6ZmM1OTpiMDo2NDo6XSJdfQ==
+    headers:
+      Host: icy-darkness-8ff1.farzambia12mo.workers.dev
+  country: Unknown
+- name: US_VLESS_8880_136
+  type: vless
+  server: 63.141.128.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime42.workers.dev
+  country: US
+- name: HK_VMESS_30807_1770
+  type: vmess
+  server: v10.zgtfqs.click
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: Unknown_VLESS_443_127
+  type: vless
+  server: 104.17.147.34
+  port: 443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  servername: appproject.payglobal.dpdns.org
+  client-fingerprint: chrome
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      Host: appproject.payglobal.dpdns.org
+  country: Unknown
+- name: US_VLESS_80_153
+  type: vless
+  server: 50.62.195.4
+  port: 80
+  uuid: e382b6dd-2dac-49c5-b16f-1cd0a6b73bf2
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: raspy-feather-12ec.137-257.workers.dev
+  country: US
+- name: Unknown_VLESS_80_148
+  type: vless
+  server: 162.159.81.177
+  port: 80
+  uuid: 4b00d726-e072-429b-997e-f07affea3b7f
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /eyJqdW5rIjoibHFUM0pwRHZXIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+    headers:
+      Host: icy-darkness-8ff1.farzambia12mo.workers.dev
+  country: Unknown
+- name: US_VLESS_8880_154
+  type: vless
+  server: 45.40.149.50
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime39.workers.dev
+  country: US
+- name: Unknown_VLESS_443_195
   type: vless
   server: 104.18.37.228
   port: 443
@@ -303,28 +293,23 @@ proxies:
     headers:
       Host: josni.hoyes.cloudns.ch
   country: Unknown
-- name: AU_TROJAN_443_462
-  type: trojan
-  server: true-pony.rooster465.autos
-  port: 443
-  password: FH72359861
-  sni: true-pony.rooster465.autos
-  network: tcp
-  country: AU
-- name: NL_VLESS_62145_263
+- name: US_VLESS_8880_162
   type: vless
-  server: 92.5.227.75
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  network: tcp
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
   tls: false
   servername: ''
   client-fingerprint: chrome
-  ws-opts: null
-  country: NL
-- name: Unknown_VLESS_443_88
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+  country: US
+- name: Unknown_VLESS_443_210
   type: vless
-  server: millionaire.levikogjgfdd.ir
+  server: 104.16.79.73
   port: 443
   uuid: 83afd88f-200f-4d89-bfc7-66eff160c1d8
   network: ws
@@ -332,25 +317,53 @@ proxies:
   servername: josni.hoyes.cloudns.ch
   client-fingerprint: chrome
   ws-opts:
-    path: /sg-melbi
+    path: /?TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI?ed=2048
     headers:
       Host: josni.hoyes.cloudns.ch
   country: Unknown
-- name: Unknown_VLESS_443_158
+- name: US_VLESS_8880_189
   type: vless
-  server: yx.zhourf2006.dpdns.org
-  port: 443
-  uuid: 7e81824b-35e0-4eb1-89e9-592f0c92aa6b
+  server: 80.93.202.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
-  tls: true
-  servername: yx.zhourf2006.dpdns.org
+  tls: false
+  servername: ''
   client-fingerprint: chrome
   ws-opts:
-    path: /blog/ranking/task/proxyip=156.246.92.195,172.238.6.57,43.207.197.79,156.246.91.114,161.248.254.27,153.121.45.101,101.36.105.226?ed=2560
+    path: /
     headers:
-      Host: yx.zhourf2006.dpdns.org
+      Host: vms.lifetime02.workers.dev
+  country: US
+- name: Unknown_VLESS_443_216
+  type: vless
+  server: liang92.dpdns.org
+  port: 443
+  uuid: 0aab6adc-104c-4339-8d25-09755ffe2cbd
+  network: ws
+  tls: true
+  servername: liang92.dpdns.org
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: liang92.dpdns.org
   country: Unknown
-- name: Unknown_VLESS_443_160
+- name: US_VLESS_443_293
+  type: vless
+  server: 199.232.78.159
+  port: 443
+  uuid: 27315937-5479-49fd-867d-6b2f17246708
+  network: ws
+  tls: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
+    headers:
+      Host: pan1.global.ssl.fastly.net
+  country: US
+- name: Unknown_VLESS_443_278
   type: vless
   server: ed8d.wdz.de5.net
   port: 443
@@ -364,6 +377,57 @@ proxies:
     headers:
       Host: ''
   country: Unknown
+- name: US_VLESS_443_437
+  type: vless
+  server: 151.101.56.6
+  port: 443
+  uuid: 63650025-84ff-4272-cfd4-61e7b9ee8834
+  network: ws
+  tls: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /?TELEGRAM--KANAL--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray--@mainv2ray
+    headers:
+      Host: c12.com
+  country: US
+- name: Unknown_VLESS_443_350
+  type: vless
+  server: 141.101.122.147
+  port: 443
+  uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
+  network: ws
+  tls: true
+  servername: a.cwvps.eu.org
+  client-fingerprint: chrome
+  ws-opts:
+    path: /ws
+    headers:
+      Host: a.cwvps.eu.org
+  country: Unknown
+- name: US_VLESS_443_568
+  type: vless
+  server: k2.cloud--vpn.site
+  port: 443
+  uuid: 63650025-84ff-4272-cfd4-61e7b9ee8834
+  network: ws
+  tls: true
+  servername: ssl.fastly.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: c12.com
+  country: US
+- name: US_VLESS_10000_2113
+  type: vless
+  server: 180.178.60.254
+  port: 10000
+  uuid: caec0d8d-ab2f-4247-b97d-7fb1a34ab195
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  country: US
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -372,55 +436,51 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 AU
   - 🌍 CA
   - 🌍 CN
-  - 🌍 FI
-  - 🌍 GB
   - 🌍 HK
   - 🌍 KR
-  - 🌍 KZ
   - 🌍 NL
-  - 🌍 PL
-  - 🌍 RU
   - 🌍 TH
+  - 🌍 TR
   - 🌍 US
   - 🌍 Unknown
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - US_VMESS_443_87
-  - NL_VLESS_62145_261
-  - US_VLESS_443_299
-  - HK_VMESS_30807_1707
-  - CA_VMESS_443_300
-  - KR_VMESS_8888_475
-  - KZ_VMESS_80_865
-  - Unknown_VLESS_443_56
-  - AU_TROJAN_443_432
-  - GB_TROJAN_5448_433
-  - CN_VMESS_50002_448
-  - PL_TROJAN_443_528
-  - HK_TROJAN_443_617
-  - RU_VLESS_2200_739
-  - Unknown_VMESS_443_330
-  - NL_VMESS_443_2556
-  - US_SS_8388_113
-  - TH_SS_65443_405
-  - CN_VLESS_12528_523
-  - FI_HYSTERIA2_443_1120
-  - CN_SS_65443_2599
-  - NL_VLESS_62145_261_2
-  - US_VLESS_10000_1460
-  - HK_VMESS_30807_2140
-  - CA_VMESS_443_304
-  - Unknown_VLESS_443_62
-  - AU_TROJAN_443_462
-  - NL_VLESS_62145_263
-  - Unknown_VLESS_443_88
-  - Unknown_VLESS_443_158
-  - Unknown_VLESS_443_160
+  - CA_VMESS_443_220
+  - KR_VMESS_8888_474
+  - US_VMESS_443_219
+  - Unknown_VLESS_8880_108
+  - US_VLESS_8880_130
+  - TR_VLESS_80_132
+  - HK_VMESS_30807_1747
+  - NL_VLESS_8880_185
+  - HK_VLESS_8880_117
+  - US_SS_16015_300
+  - TH_SS_65443_441
+  - CN_VLESS_12528_537
+  - Unknown_VMESS_443_1422
+  - CA_VMESS_443_576
+  - Unknown_VLESS_80_112
+  - US_VLESS_8880_136
+  - HK_VMESS_30807_1770
+  - Unknown_VLESS_443_127
+  - US_VLESS_80_153
+  - Unknown_VLESS_80_148
+  - US_VLESS_8880_154
+  - Unknown_VLESS_443_195
+  - US_VLESS_8880_162
+  - Unknown_VLESS_443_210
+  - US_VLESS_8880_189
+  - Unknown_VLESS_443_216
+  - US_VLESS_443_293
+  - Unknown_VLESS_443_278
+  - US_VLESS_443_437
+  - Unknown_VLESS_443_350
+  - US_VLESS_443_568
+  - US_VLESS_10000_2113
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -433,37 +493,38 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - Unknown_VLESS_443_56
-  - Unknown_VLESS_443_62
-  - US_VMESS_443_87
-  - Unknown_VLESS_443_88
-  - US_SS_8388_113
-  - Unknown_VLESS_443_158
-  - Unknown_VLESS_443_160
-  - NL_VLESS_62145_261
-  - NL_VLESS_62145_261_2
-  - NL_VLESS_62145_263
-  - US_VLESS_443_299
-  - CA_VMESS_443_300
-  - CA_VMESS_443_304
-  - Unknown_VMESS_443_330
-  - TH_SS_65443_405
-  - AU_TROJAN_443_432
-  - GB_TROJAN_5448_433
-  - CN_VMESS_50002_448
-  - AU_TROJAN_443_462
-  - KR_VMESS_8888_475
-  - CN_VLESS_12528_523
-  - PL_TROJAN_443_528
-  - HK_TROJAN_443_617
-  - RU_VLESS_2200_739
-  - KZ_VMESS_80_865
-  - FI_HYSTERIA2_443_1120
-  - US_VLESS_10000_1460
-  - HK_VMESS_30807_1707
-  - HK_VMESS_30807_2140
-  - NL_VMESS_443_2556
-  - CN_SS_65443_2599
+  - Unknown_VLESS_8880_108
+  - Unknown_VLESS_80_112
+  - HK_VLESS_8880_117
+  - Unknown_VLESS_443_127
+  - US_VLESS_8880_130
+  - TR_VLESS_80_132
+  - US_VLESS_8880_136
+  - Unknown_VLESS_80_148
+  - US_VLESS_80_153
+  - US_VLESS_8880_154
+  - US_VLESS_8880_162
+  - NL_VLESS_8880_185
+  - US_VLESS_8880_189
+  - Unknown_VLESS_443_195
+  - Unknown_VLESS_443_210
+  - Unknown_VLESS_443_216
+  - US_VMESS_443_219
+  - CA_VMESS_443_220
+  - Unknown_VLESS_443_278
+  - US_VLESS_443_293
+  - US_SS_16015_300
+  - Unknown_VLESS_443_350
+  - US_VLESS_443_437
+  - TH_SS_65443_441
+  - KR_VMESS_8888_474
+  - CN_VLESS_12528_537
+  - US_VLESS_443_568
+  - CA_VMESS_443_576
+  - Unknown_VMESS_443_1422
+  - HK_VMESS_30807_1747
+  - HK_VMESS_30807_1770
+  - US_VLESS_10000_2113
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -472,118 +533,89 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 AU
-  type: url-test
-  proxies:
-  - AU_TROJAN_443_432
-  - AU_TROJAN_443_462
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_443_300
-  - CA_VMESS_443_304
+  - CA_VMESS_443_220
+  - CA_VMESS_443_576
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_VMESS_50002_448
-  - CN_VLESS_12528_523
-  - CN_SS_65443_2599
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
-- name: 🌍 FI
-  type: url-test
-  proxies:
-  - FI_HYSTERIA2_443_1120
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
-- name: 🌍 GB
-  type: url-test
-  proxies:
-  - GB_TROJAN_5448_433
+  - CN_VLESS_12528_537
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_30807_1707
-  - HK_TROJAN_443_617
-  - HK_VMESS_30807_2140
+  - HK_VMESS_30807_1747
+  - HK_VLESS_8880_117
+  - HK_VMESS_30807_1770
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_8888_475
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
-- name: 🌍 KZ
-  type: url-test
-  proxies:
-  - KZ_VMESS_80_865
+  - KR_VMESS_8888_474
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_62145_261
-  - NL_VMESS_443_2556
-  - NL_VLESS_62145_261_2
-  - NL_VLESS_62145_263
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
-- name: 🌍 PL
-  type: url-test
-  proxies:
-  - PL_TROJAN_443_528
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
-- name: 🌍 RU
-  type: url-test
-  proxies:
-  - RU_VLESS_2200_739
+  - NL_VLESS_8880_185
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 TH
   type: url-test
   proxies:
-  - TH_SS_65443_405
+  - TH_SS_65443_441
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 TR
+  type: url-test
+  proxies:
+  - TR_VLESS_80_132
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 US
   type: url-test
   proxies:
-  - US_VMESS_443_87
-  - US_VLESS_443_299
-  - US_SS_8388_113
-  - US_VLESS_10000_1460
+  - US_VMESS_443_219
+  - US_VLESS_8880_130
+  - US_SS_16015_300
+  - US_VLESS_8880_136
+  - US_VLESS_80_153
+  - US_VLESS_8880_154
+  - US_VLESS_8880_162
+  - US_VLESS_8880_189
+  - US_VLESS_443_293
+  - US_VLESS_443_437
+  - US_VLESS_443_568
+  - US_VLESS_10000_2113
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 Unknown
   type: url-test
   proxies:
-  - Unknown_VLESS_443_56
-  - Unknown_VMESS_443_330
-  - Unknown_VLESS_443_62
-  - Unknown_VLESS_443_88
-  - Unknown_VLESS_443_158
-  - Unknown_VLESS_443_160
+  - Unknown_VLESS_8880_108
+  - Unknown_VMESS_443_1422
+  - Unknown_VLESS_80_112
+  - Unknown_VLESS_443_127
+  - Unknown_VLESS_80_148
+  - Unknown_VLESS_443_195
+  - Unknown_VLESS_443_210
+  - Unknown_VLESS_443_216
+  - Unknown_VLESS_443_278
+  - Unknown_VLESS_443_350
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

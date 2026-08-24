@@ -5,53 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_VLESS_62145_261
+- name: NL_VLESS_8880_185
   type: vless
-  server: 158.178.153.49
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: NL
-- name: NL_VLESS_62145_261_2
-  type: vless
-  server: 158.101.208.44
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: NL
-- name: NL_VLESS_62145_263
-  type: vless
-  server: 92.5.227.75
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: NL
-- name: NL_VMESS_443_2556
-  type: vmess
-  server: 185.246.152.159
-  port: 443
-  uuid: 5f72f180-b21b-4b7a-8484-240759012604
-  alterId: 0
-  cipher: auto
+  server: 45.131.7.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
-  tls: true
-  servername: apjhdggyx.com
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
   ws-opts:
-    path: /5f72f180-b21b-4b7a-8484-240759096785
+    path: /
     headers:
-      Host: apjhdggyx.com
+      Host: vms.lifetime02.workers.dev
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -66,10 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_VLESS_62145_261
-  - NL_VLESS_62145_261_2
-  - NL_VLESS_62145_263
-  - NL_VMESS_443_2556
+  - NL_VLESS_8880_185
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -82,10 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_VLESS_62145_261
-  - NL_VLESS_62145_261_2
-  - NL_VLESS_62145_263
-  - NL_VMESS_443_2556
+  - NL_VLESS_8880_185
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -97,10 +57,7 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_62145_261
-  - NL_VLESS_62145_261_2
-  - NL_VLESS_62145_263
-  - NL_VMESS_443_2556
+  - NL_VLESS_8880_185
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
