@@ -5,35 +5,36 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_443_220
-  type: vmess
-  network: ws
-  server: 23.162.200.227
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+- name: CA_SS_11994_166
+  type: ss
+  server: 209.200.246.182
+  port: 11994
+  cipher: 2022-blake3-aes-256-gcm
+  password: NTQwZmFlZTcwZWY1NDNiYzg3ZDJlMzlkN2RiNmYyMTc=:ZDA0ZjRiMzIxNDc5NDQ5ZmFlODQxNGJhZGE4NWIzY2Q=
   skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: vk.com
-    path: /linkvws
+  udp: true
   country: CA
-- name: CA_VMESS_443_576
+- name: CA_VMESS_18000_184
   type: vmess
-  network: ws
-  server: 134.195.198.147
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  network: tcp
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
-  tls: true
   alterId: 0
   cipher: auto
-  ws-opts:
-    headers:
-      Host: vk.com
-    path: /linkvws
+  country: CA
+- name: CA_VLESS_443_255
+  type: vless
+  network: tcp
+  server: 184.107.106.68
+  port: 443
+  uuid: 716426fa-bcb7-4eb9-b460-36399ebf740d
+  servername: lizca2.footballfantasyforum.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,8 +49,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_443_220
-  - CA_VMESS_443_576
+  - CA_SS_11994_166
+  - CA_VMESS_18000_184
+  - CA_VLESS_443_255
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,8 +64,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_443_220
-  - CA_VMESS_443_576
+  - CA_SS_11994_166
+  - CA_VMESS_18000_184
+  - CA_VLESS_443_255
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,8 +78,9 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_443_220
-  - CA_VMESS_443_576
+  - CA_SS_11994_166
+  - CA_VMESS_18000_184
+  - CA_VLESS_443_255
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,13 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_TROJAN_5448_433
-  type: trojan
-  server: londhtc.southbyte.xyz
-  port: 5448
-  password: fg20mtCFHy
-  sni: londhtc.southbyte.xyz
+- name: GB_VMESS_22324_1383
+  type: vmess
   network: tcp
+  server: 66.163.117.58
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -26,7 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_TROJAN_5448_433
+  - GB_VMESS_22324_1383
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_TROJAN_5448_433
+  - GB_VMESS_22324_1383
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +53,7 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_TROJAN_5448_433
+  - GB_VMESS_22324_1383
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

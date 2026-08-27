@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TH_SS_65443_441
+- name: TH_SS_65443_388
   type: ss
   server: 103.169.67.34
   port: 65443
@@ -27,7 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TH_SS_65443_441
+  - TH_SS_65443_388
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TH_SS_65443_441
+  - TH_SS_65443_388
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +52,7 @@ proxy-groups:
 - name: 🌍 TH
   type: url-test
   proxies:
-  - TH_SS_65443_441
+  - TH_SS_65443_388
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

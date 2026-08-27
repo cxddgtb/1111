@@ -5,149 +5,50 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_SS_443_323
-  type: ss
-  server: 3.79.230.55
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
+- name: DE_HYSTERIA_54177_2311
+  type: hysteria
+  server: 5.83.129.90
+  port: 54177
+  auth_str: dongtaiwang.com
+  up: '500'
+  down: '1000'
+  sni: apple.com
   skip-cert-verify: true
+  alpn:
+  - h3
   udp: true
   country: DE
-- name: DE_VLESS_22222_303
-  type: vless
-  server: 63.188.40.90
-  port: 22222
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: DE
-- name: DE_VLESS_22223_317
-  type: vless
-  server: 63.183.163.238
-  port: 22223
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: DE
-- name: DE_SS_443_314
-  type: ss
-  server: 52.59.195.252
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-  skip-cert-verify: true
-  udp: true
-  country: DE
-- name: DE_VLESS_22222_313
-  type: vless
-  server: 63.183.163.238
-  port: 22222
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: DE
-- name: DE_VLESS_443_1257
-  type: vless
-  server: 194.154.30.154
-  port: 443
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  network: ws
-  servername: forfreeuse.rtqa.ru
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: forfreeuse.rtqa.ru
-  skip-cert-verify: true
-  udp: true
-  country: DE
-- name: DE_VMESS_180_33
+- name: DE_VMESS_180_21
   type: vmess
   network: tcp
   server: 82.198.246.97
   port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  tls: false
+  skip-cert-verify: true
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VMESS_180_21
+- name: DE_VMESS_110_304
   type: vmess
   network: tcp
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: false
-  tls: false
-  udp: true
+  server: 94.156.179.138
+  port: 110
+  uuid: 8e9687fc-a3a7-414a-8676-8e2136797cfe
+  skip-cert-verify: true
   alterId: 0
   cipher: auto
-  client-fingerprint: chrome
-  xudp: true
-  packet-encoding: xudp
   country: DE
-- name: DE_VMESS_180_24
+- name: DE_VMESS_180_22
   type: vmess
   network: tcp
   server: 82.198.246.37
   port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  tls: false
+  skip-cert-verify: true
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VMESS_180_25
-  type: vmess
-  network: tcp
-  server: 82.198.246.233
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  tls: false
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VLESS_80_534
-  type: vless
-  network: ws
-  server: OV-Germany1.09vpn.com
-  port: 80
-  uuid: 7d74eae4-8a06-4306-a923-ad686f30bf26
-  skip-cert-verify: false
-  udp: true
-  encryption: none
-  xudp: true
-  packet-encoding: xudp
-  ws-opts:
-    headers:
-      Host: OV-Germany1.09vpn.com
-    path: /vless/
-  country: DE
-- name: DE_VLESS_443_482
-  type: vless
-  network: tcp
-  server: 82.38.4.126
-  port: 443
-  uuid: 53c76647-14d1-4df5-99cb-be99ad2e6bd9
-  servername: de126.mechvpn.online
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: DE
-- name: DE_VLESS_33843_497
+- name: DE_VLESS_33843_1502
   type: vless
   network: tcp
   server: 87.120.84.32
@@ -159,41 +60,6 @@ proxies:
   udp: true
   tfo: false
   client-fingerprint: chrome
-  country: DE
-- name: DE_VLESS_443_697
-  type: vless
-  network: ws
-  server: 81.95.4.189
-  port: 443
-  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
-  servername: bab-6.site
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: bab-6.site
-    path: /vws/
-  country: DE
-- name: DE_VLESS_2053_1055
-  type: vless
-  network: ws
-  server: 163.5.187.118
-  port: 2053
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  servername: forfreeuse.rtqa.ru
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: ''
-  ws-opts:
-    headers:
-      Host: forfreeuse.rtqa.ru
-    path: /
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -208,21 +74,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_SS_443_323
-  - DE_VLESS_22222_303
-  - DE_VLESS_22223_317
-  - DE_SS_443_314
-  - DE_VLESS_22222_313
-  - DE_VLESS_443_1257
-  - DE_VMESS_180_33
+  - DE_HYSTERIA_54177_2311
   - DE_VMESS_180_21
-  - DE_VMESS_180_24
-  - DE_VMESS_180_25
-  - DE_VLESS_80_534
-  - DE_VLESS_443_482
-  - DE_VLESS_33843_497
-  - DE_VLESS_443_697
-  - DE_VLESS_2053_1055
+  - DE_VMESS_110_304
+  - DE_VMESS_180_22
+  - DE_VLESS_33843_1502
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -236,20 +92,10 @@ proxy-groups:
   type: fallback
   proxies:
   - DE_VMESS_180_21
-  - DE_VMESS_180_24
-  - DE_VMESS_180_25
-  - DE_VMESS_180_33
-  - DE_VLESS_22222_303
-  - DE_VLESS_22222_313
-  - DE_SS_443_314
-  - DE_VLESS_22223_317
-  - DE_SS_443_323
-  - DE_VLESS_443_482
-  - DE_VLESS_33843_497
-  - DE_VLESS_80_534
-  - DE_VLESS_443_697
-  - DE_VLESS_2053_1055
-  - DE_VLESS_443_1257
+  - DE_VMESS_180_22
+  - DE_VMESS_110_304
+  - DE_VLESS_33843_1502
+  - DE_HYSTERIA_54177_2311
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -261,21 +107,11 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_SS_443_323
-  - DE_VLESS_22222_303
-  - DE_VLESS_22223_317
-  - DE_SS_443_314
-  - DE_VLESS_22222_313
-  - DE_VLESS_443_1257
-  - DE_VMESS_180_33
+  - DE_HYSTERIA_54177_2311
   - DE_VMESS_180_21
-  - DE_VMESS_180_24
-  - DE_VMESS_180_25
-  - DE_VLESS_80_534
-  - DE_VLESS_443_482
-  - DE_VLESS_33843_497
-  - DE_VLESS_443_697
-  - DE_VLESS_2053_1055
+  - DE_VMESS_110_304
+  - DE_VMESS_180_22
+  - DE_VLESS_33843_1502
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

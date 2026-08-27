@@ -5,19 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_VLESS_443_599
+- name: EE_VLESS_8443_516
   type: vless
-  server: estproxy4.lockdwn.com
-  port: 443
+  network: tcp
+  server: 94.183.170.135
+  port: 8443
   uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
-  network: ws
-  tls: false
-  servername: ''
+  servername: estproxy4.lockdwn.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
   client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: estproxy4.lockdwn.com
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +31,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_443_599
+  - EE_VLESS_8443_516
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +44,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_443_599
+  - EE_VLESS_8443_516
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +56,7 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_443_599
+  - EE_VLESS_8443_516
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

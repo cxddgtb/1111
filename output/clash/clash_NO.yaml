@@ -5,21 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_443_530
+- name: NO_VLESS_335_576
   type: vless
-  server: 31.59.125.49
-  port: 443
-  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
-  servername: eu-central.cendora.ru
+  server: 151.242.168.69
+  port: 335
+  uuid: 10000025-9365-7547-f000-30f4f61aa020
+  servername: onlineraceentry.co.uk
   tls: true
   flow: xtls-rprx-vision
-  client-fingerprint: firefox
+  client-fingerprint: qq
   reality-opts:
-    public-key: b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI
-    short-id: 00bca5982f82d083
+    public-key: XJhq5Vpqo6j5Xsd56EMAK8--8EWBZWc3tjf-WFnInio
+    short-id: ec2213ae33d5b43f
   skip-cert-verify: true
   udp: true
-  country: PL
+  country: 'NO'
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -28,12 +28,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 PL
+  - 🌍 NO
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_443_530
+  - NO_VLESS_335_576
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_443_530
+  - NO_VLESS_335_576
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,10 +55,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 PL
+- name: 🌍 NO
   type: url-test
   proxies:
-  - PL_VLESS_443_530
+  - NO_VLESS_335_576
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
