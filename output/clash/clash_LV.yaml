@@ -5,19 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_VLESS_443_751
+- name: LV_VLESS_443_676
   type: vless
-  server: 195.123.209.50.fwqfw783rg2dad.website
+  server: 195.123.212.30.blanesik.space
   port: 443
-  uuid: 5ca83936-136d-4314-8453-4ba10a86cf60
+  uuid: 523486c6-c0b5-4e5b-8896-4af2375b41cc
   network: ws
   tls: true
-  servername: 195.123.209.50.fwqfw783rg2dad.website
+  servername: 195.123.212.30.blanesik.space
   client-fingerprint: chrome
   ws-opts:
-    path: /websocket
+    path: /websocket?ed=2560
     headers:
-      Host: ''
+      Host: 195.123.212.30.blanesik.space
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_VLESS_443_751
+  - LV_VLESS_443_676
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_VLESS_443_751
+  - LV_VLESS_443_676
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +57,7 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_VLESS_443_751
+  - LV_VLESS_443_676
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

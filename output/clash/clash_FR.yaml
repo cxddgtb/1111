@@ -5,7 +5,36 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VMESS_23388_896
+- name: FR_VLESS_8443_634
+  type: vless
+  server: chopin.adaspoloandco.com
+  port: 8443
+  uuid: f798a2c4-c51b-409d-b349-ca8455b36796
+  network: ws
+  tls: true
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /download.php
+    headers:
+      Host: chopin.adaspoloandco.com
+  country: FR
+- name: FR_VMESS_16632_1534
+  type: vmess
+  server: t.cnmjcn.cyou
+  port: 16632
+  uuid: 62319519-82bc-46ff-99cd-237bd0882cef
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: 1b24b66c02c843942070b76b27406898.mobgslb.tbcache.com
+  ws-opts:
+    path: /
+    headers:
+      Host: 1b24b66c02c843942070b76b27406898.mobgslb.tbcache.com
+  country: FR
+- name: FR_VMESS_23388_401
   type: vmess
   network: ws
   server: 62.210.127.120
@@ -19,7 +48,18 @@ proxies:
       Host: engage.cloudflareclient.com
     path: /github.com/Alvin9999-newpac/fanqiang
   country: FR
-- name: FR_VLESS_443_588
+- name: FR_VMESS_1234_473
+  type: vmess
+  network: tcp
+  server: 162.19.204.71
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  country: FR
+- name: FR_VLESS_443_556
   type: vless
   network: ws
   server: 149.202.58.99
@@ -37,6 +77,15 @@ proxies:
       Host: bab-6.site
     path: /vws/
   country: FR
+- name: FR_SS_65443_637
+  type: ss
+  server: 95.170.13.47
+  port: 65443
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  skip-cert-verify: true
+  udp: true
+  country: FR
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -50,8 +99,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VMESS_23388_896
-  - FR_VLESS_443_588
+  - FR_VLESS_8443_634
+  - FR_VMESS_16632_1534
+  - FR_VMESS_23388_401
+  - FR_VMESS_1234_473
+  - FR_VLESS_443_556
+  - FR_SS_65443_637
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,8 +117,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_443_588
-  - FR_VMESS_23388_896
+  - FR_VMESS_23388_401
+  - FR_VMESS_1234_473
+  - FR_VLESS_443_556
+  - FR_VLESS_8443_634
+  - FR_SS_65443_637
+  - FR_VMESS_16632_1534
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -77,8 +134,12 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VMESS_23388_896
-  - FR_VLESS_443_588
+  - FR_VLESS_8443_634
+  - FR_VMESS_16632_1534
+  - FR_VMESS_23388_401
+  - FR_VMESS_1234_473
+  - FR_VLESS_443_556
+  - FR_SS_65443_637
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

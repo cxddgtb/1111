@@ -5,70 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VLESS_443_337
-  type: vless
-  server: 43.165.177.82
-  port: 443
-  uuid: 0b772594-d6b9-4f4f-849b-8a6f92f594fe
-  servername: www.cloudflare.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: ZuN9nc78h4Ccb19eb9NpTCs0jZkhJB8L0i1ZoAhu0XU
-    short-id: b2f4518cf979889d
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_VLESS_52143_214
-  type: vless
-  server: 139.180.198.220
-  port: 52143
-  uuid: 2942bae7-9dcf-4a2e-f928-933c0ab3eab0
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_TROJAN_443_338
-  type: trojan
-  server: climbing-frog.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: JP
-- name: JP_TROJAN_443_353
-  type: trojan
-  server: coherent-newt.rooster465.autos
-  port: 443
-  password: AE62539071
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  country: JP
-- name: JP_TROJAN_443_328
-  type: trojan
-  server: 18.183.109.172
-  port: 443
-  password: AE62539071
-  sni: well-jennet.rooster465.autos
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  country: JP
-- name: JP_TROJAN_443_338_2
-  type: trojan
-  network: tcp
-  server: ideal-phoenix.rooster465.autos
-  port: 443
-  password: PQ05174892
-  skip-cert-verify: false
-  udp: true
-  sni: ideal-phoenix.rooster465.autos
-  client-fingerprint: chrome
-  country: JP
-- name: JP_VMESS_13118_860
+- name: JP_VMESS_13118_939
   type: vmess
   network: ws
   server: 140.83.57.20
@@ -83,21 +20,6 @@ proxies:
       Host: sg.11160321.de5.net
     path: /
   country: JP
-- name: JP_VMESS_55386_222
-  type: vmess
-  network: http
-  server: 103.127.243.60
-  port: 55386
-  uuid: 22d4ef9c-b269-4f82-9f59-6c2c0d8ce16d
-  tls: false
-  alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
-  http-opts:
-    headers: {}
-    path:
-    - /ABCDE
-  country: JP
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -111,14 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_443_337
-  - JP_VLESS_52143_214
-  - JP_TROJAN_443_338
-  - JP_TROJAN_443_353
-  - JP_TROJAN_443_328
-  - JP_TROJAN_443_338_2
-  - JP_VMESS_13118_860
-  - JP_VMESS_55386_222
+  - JP_VMESS_13118_939
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -131,14 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VLESS_52143_214
-  - JP_VMESS_55386_222
-  - JP_TROJAN_443_328
-  - JP_VLESS_443_337
-  - JP_TROJAN_443_338
-  - JP_TROJAN_443_338_2
-  - JP_TROJAN_443_353
-  - JP_VMESS_13118_860
+  - JP_VMESS_13118_939
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -150,14 +58,7 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_443_337
-  - JP_VLESS_52143_214
-  - JP_TROJAN_443_338
-  - JP_TROJAN_443_353
-  - JP_TROJAN_443_328
-  - JP_TROJAN_443_338_2
-  - JP_VMESS_13118_860
-  - JP_VMESS_55386_222
+  - JP_VMESS_13118_939
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

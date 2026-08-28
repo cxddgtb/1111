@@ -5,26 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_SS_11994_166
-  type: ss
-  server: 209.200.246.182
-  port: 11994
-  cipher: 2022-blake3-aes-256-gcm
-  password: NTQwZmFlZTcwZWY1NDNiYzg3ZDJlMzlkN2RiNmYyMTc=:ZDA0ZjRiMzIxNDc5NDQ5ZmFlODQxNGJhZGE4NWIzY2Q=
-  skip-cert-verify: true
-  udp: true
-  country: CA
-- name: CA_VMESS_18000_184
+- name: CA_VMESS_18000_106
   type: vmess
   network: tcp
-  server: 23.162.200.198
+  server: 134.195.196.211
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VLESS_443_255
+- name: CA_VLESS_443_186
   type: vless
   network: tcp
   server: 184.107.106.68
@@ -49,9 +40,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_SS_11994_166
-  - CA_VMESS_18000_184
-  - CA_VLESS_443_255
+  - CA_VMESS_18000_106
+  - CA_VLESS_443_186
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,9 +54,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_11994_166
-  - CA_VMESS_18000_184
-  - CA_VLESS_443_255
+  - CA_VMESS_18000_106
+  - CA_VLESS_443_186
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -78,9 +67,8 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_SS_11994_166
-  - CA_VMESS_18000_184
-  - CA_VLESS_443_255
+  - CA_VMESS_18000_106
+  - CA_VLESS_443_186
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

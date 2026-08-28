@@ -5,19 +5,45 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_2200_739
+- name: RU_VLESS_443_628
   type: vless
-  server: 201.24.49.79
-  port: 2200
-  uuid: 3b4274c1-4744-452e-9903-e11ccc0c9900
+  server: wsnl7.wba-pn.ru
+  port: 443
+  uuid: 053440e6-fc8d-48d9-bb4f-2675e367f64f
   network: ws
-  tls: false
-  servername: rzd.ru
+  tls: true
+  servername: ''
   client-fingerprint: chrome
   ws-opts:
-    path: /v1
+    path: /
     headers:
-      Host: ''
+      Host: wsnl7.wba-pn.ru
+  country: RU
+- name: RU_VLESS_4100_516
+  type: vless
+  server: 201.24.49.233
+  port: 4100
+  uuid: aa7d939b-feaa-4ad3-9615-74216f490807
+  network: ws
+  servername: live.ok.ru
+  tls: false
+  ws-opts:
+    path: /v1
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_VLESS_4100_571
+  type: vless
+  server: 200.165.234.45
+  port: 4100
+  uuid: 39e0f41b-180b-4f7e-a607-37b135f0fd83
+  network: ws
+  servername: live.ok.ru
+  tls: false
+  ws-opts:
+    path: /v1
+  skip-cert-verify: true
+  udp: true
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +58,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_2200_739
+  - RU_VLESS_443_628
+  - RU_VLESS_4100_516
+  - RU_VLESS_4100_571
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +73,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_2200_739
+  - RU_VLESS_4100_516
+  - RU_VLESS_4100_571
+  - RU_VLESS_443_628
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +87,9 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_2200_739
+  - RU_VLESS_443_628
+  - RU_VLESS_4100_516
+  - RU_VLESS_4100_571
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

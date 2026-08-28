@@ -5,17 +5,28 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_VLESS_10086_344
+- name: IT_VLESS_443_501
   type: vless
-  network: tcp
-  server: 204.216.216.23
-  port: 10086
-  uuid: 9f0285ee-20ca-4953-bcdb-86a920652923
-  skip-cert-verify: false
+  server: itproxy4.lockdwn.com
+  port: 443
+  uuid: e4737ce4-c646-44cc-9067-390e13c2a5f6
+  network: ws
   tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  country: IT
+- name: IT_SS_10901_1369
+  type: ss
+  server: 194.87.47.204
+  port: 10901
+  cipher: aes-256-gcm
+  password: d1fa2f4b98a38bc8
+  skip-cert-verify: true
   udp: true
-  encryption: none
-  packet-encoding: xudp
   country: IT
 proxy-groups:
 - name: 🚀 节点选择
@@ -30,7 +41,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_VLESS_10086_344
+  - IT_VLESS_443_501
+  - IT_SS_10901_1369
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +55,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_VLESS_10086_344
+  - IT_VLESS_443_501
+  - IT_SS_10901_1369
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +68,8 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_VLESS_10086_344
+  - IT_VLESS_443_501
+  - IT_SS_10901_1369
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
