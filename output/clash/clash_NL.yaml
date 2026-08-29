@@ -5,30 +5,27 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_VLESS_443_585
-  type: vless
-  server: hys41.wba-pn.ru
-  port: 443
-  uuid: 8e8e4592-6088-4d00-b061-ef5456d0eb9c
-  network: ws
-  tls: true
-  servername: hys41.wba-pn.ru
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  country: NL
-- name: NL_VMESS_1234_379
-  type: vmess
-  network: tcp
-  server: 159.223.13.109
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+- name: NL_SS_45819_185
+  type: ss
+  server: 141.148.244.146
+  port: 45819
+  cipher: 2022-blake3-chacha20-poly1305
+  password: w5pcVb0VsP2Ze6TbJAXR7ZaofRyoJn5sm0CdhBg78q4=
   skip-cert-verify: true
+  udp: true
+  country: NL
+- name: NL_VLESS_8443_1655
+  type: vless
+  network: tcp
+  server: 193.23.194.167
+  port: 8443
+  uuid: 32349ee8-8551-45fa-a265-8704cec72936
+  servername: neth.lckdwn.ru
+  skip-cert-verify: false
   tls: true
-  alterId: 0
-  cipher: aes-128-gcm
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -43,8 +40,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_VLESS_443_585
-  - NL_VMESS_1234_379
+  - NL_SS_45819_185
+  - NL_VLESS_8443_1655
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -57,8 +54,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_VMESS_1234_379
-  - NL_VLESS_443_585
+  - NL_SS_45819_185
+  - NL_VLESS_8443_1655
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,8 +67,8 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_443_585
-  - NL_VMESS_1234_379
+  - NL_SS_45819_185
+  - NL_VLESS_8443_1655
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_18000_106
+- name: CA_VMESS_18000_76
   type: vmess
   network: tcp
   server: 134.195.196.211
@@ -15,7 +15,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VLESS_443_186
+- name: CA_VLESS_443_312
   type: vless
   network: tcp
   server: 184.107.106.68
@@ -40,8 +40,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_18000_106
-  - CA_VLESS_443_186
+  - CA_VMESS_18000_76
+  - CA_VLESS_443_312
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -54,8 +54,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_18000_106
-  - CA_VLESS_443_186
+  - CA_VMESS_18000_76
+  - CA_VLESS_443_312
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -67,8 +67,8 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_18000_106
-  - CA_VLESS_443_186
+  - CA_VMESS_18000_76
+  - CA_VLESS_443_312
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

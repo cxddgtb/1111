@@ -5,7 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_VMESS_22324_1383
+- name: GB_VMESS_2053_346
+  type: vmess
+  network: tcp
+  server: 51.38.71.147
+  port: 2053
+  uuid: 72f2cbe4-2874-45b7-b6aa-b93077c10c72
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  country: GB
+- name: GB_VMESS_22324_1990
   type: vmess
   network: tcp
   server: 66.163.117.58
@@ -14,6 +25,61 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
+  country: GB
+- name: GB_VLESS_22223_163
+  type: vless
+  server: 18.168.125.235
+  port: 22223
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: GB
+- name: GB_VLESS_22223_173
+  type: vless
+  server: 18.169.233.193
+  port: 22223
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: GB
+- name: GB_VLESS_22222_165
+  type: vless
+  server: 18.168.125.235
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: GB
+- name: GB_VLESS_22222_170
+  type: vless
+  server: 18.169.233.193
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: GB
+- name: GB_VLESS_22224_170
+  type: vless
+  server: 18.169.233.193
+  port: 22224
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -28,7 +94,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_VMESS_22324_1383
+  - GB_VMESS_2053_346
+  - GB_VMESS_22324_1990
+  - GB_VLESS_22223_163
+  - GB_VLESS_22223_173
+  - GB_VLESS_22222_165
+  - GB_VLESS_22222_170
+  - GB_VLESS_22224_170
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +113,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_VMESS_22324_1383
+  - GB_VLESS_22223_163
+  - GB_VLESS_22222_165
+  - GB_VLESS_22222_170
+  - GB_VLESS_22224_170
+  - GB_VLESS_22223_173
+  - GB_VMESS_2053_346
+  - GB_VMESS_22324_1990
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +131,13 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_VMESS_22324_1383
+  - GB_VMESS_2053_346
+  - GB_VMESS_22324_1990
+  - GB_VLESS_22223_163
+  - GB_VLESS_22223_173
+  - GB_VLESS_22222_165
+  - GB_VLESS_22222_170
+  - GB_VLESS_22224_170
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

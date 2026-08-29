@@ -5,45 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_628
+- name: RU_VLESS_8443_492
   type: vless
-  server: wsnl7.wba-pn.ru
-  port: 443
-  uuid: 053440e6-fc8d-48d9-bb4f-2675e367f64f
-  network: ws
+  network: tcp
+  server: 185.147.27.164
+  port: 8443
+  uuid: 3a90bf69-1ffe-4ebb-b9a7-ad9ba8e9f66f
+  servername: user-6a8d949a.noooo.win
+  skip-cert-verify: false
   tls: true
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: wsnl7.wba-pn.ru
+  udp: true
+  tfo: false
+  flow: xtls-rprx-vision
   country: RU
-- name: RU_VLESS_4100_516
+- name: RU_VLESS_4100_406
   type: vless
   server: 201.24.49.233
   port: 4100
   uuid: aa7d939b-feaa-4ad3-9615-74216f490807
   network: ws
-  servername: live.ok.ru
   tls: false
+  servername: live.ok.ru
+  client-fingerprint: chrome
   ws-opts:
     path: /v1
-  skip-cert-verify: true
-  udp: true
-  country: RU
-- name: RU_VLESS_4100_571
-  type: vless
-  server: 200.165.234.45
-  port: 4100
-  uuid: 39e0f41b-180b-4f7e-a607-37b135f0fd83
-  network: ws
-  servername: live.ok.ru
-  tls: false
-  ws-opts:
-    path: /v1
-  skip-cert-verify: true
-  udp: true
+    headers:
+      Host: ''
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,9 +45,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_628
-  - RU_VLESS_4100_516
-  - RU_VLESS_4100_571
+  - RU_VLESS_8443_492
+  - RU_VLESS_4100_406
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,9 +59,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_4100_516
-  - RU_VLESS_4100_571
-  - RU_VLESS_443_628
+  - RU_VLESS_4100_406
+  - RU_VLESS_8443_492
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,9 +72,8 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_628
-  - RU_VLESS_4100_516
-  - RU_VLESS_4100_571
+  - RU_VLESS_8443_492
+  - RU_VLESS_4100_406
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
