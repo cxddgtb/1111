@@ -5,7 +5,42 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VMESS_18000_454
+- name: SG_VLESS_41159_537
+  type: vless
+  server: 47.129.200.244
+  port: 41159
+  uuid: cc138c2d-5e03-4efd-a935-fc500e938033
+  servername: www.tesla.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: dp_CXcMGxttv9CdCq3LI7UkaHbpV9yoPKpgAGH177WY
+    short-id: 41c5dc0928f602ab
+  skip-cert-verify: true
+  udp: true
+  country: SG
+- name: SG_VMESS_8443_355
+  type: vmess
+  network: tcp
+  server: 13.250.114.194
+  port: 8443
+  uuid: 9dcb8d73-cc0b-4fcc-a12d-d7affb56267c
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: SG_VMESS_18000_343
+  type: vmess
+  network: tcp
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: SG_VMESS_18000_342
   type: vmess
   network: tcp
   server: 149.88.23.202
@@ -14,17 +49,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-  country: SG
-- name: SG_VLESS_23816_765
-  type: vless
-  server: node.qingyi668.biz
-  port: 23816
-  uuid: 881b936b-2591-4ea8-d21d-8215a36d41a3
-  network: tcp
-  tls: true
-  servername: node.qingyi668.biz
-  client-fingerprint: chrome
-  ws-opts: null
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -39,8 +63,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VMESS_18000_454
-  - SG_VLESS_23816_765
+  - SG_VLESS_41159_537
+  - SG_VMESS_8443_355
+  - SG_VMESS_18000_343
+  - SG_VMESS_18000_342
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -53,8 +79,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VMESS_18000_454
-  - SG_VLESS_23816_765
+  - SG_VMESS_18000_342
+  - SG_VMESS_18000_343
+  - SG_VMESS_8443_355
+  - SG_VLESS_41159_537
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -66,8 +94,10 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VMESS_18000_454
-  - SG_VLESS_23816_765
+  - SG_VLESS_41159_537
+  - SG_VMESS_8443_355
+  - SG_VMESS_18000_343
+  - SG_VMESS_18000_342
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

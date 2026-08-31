@@ -5,30 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_443_296
-  type: vmess
+- name: NZ_VLESS_8880_84
+  type: vless
   network: ws
-  server: 134.195.198.147
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
+  server: 114.129.43.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
     headers:
-      Host: vk.com
-    path: /linkvws
-  country: CA
-- name: CA_SS_443_196
-  type: ss
-  server: 35.182.250.193
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-  skip-cert-verify: true
-  udp: true
-  country: CA
+      Host: vms.lifetime04.workers.dev
+    path: /
+  country: NZ
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -37,13 +24,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 CA
+  - 🌍 NZ
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_443_296
-  - CA_SS_443_196
+  - NZ_VLESS_8880_84
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_443_196
-  - CA_VMESS_443_296
+  - NZ_VLESS_8880_84
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -66,11 +51,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 CA
+- name: 🌍 NZ
   type: url-test
   proxies:
-  - CA_VMESS_443_296
-  - CA_SS_443_196
+  - NZ_VLESS_8880_84
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

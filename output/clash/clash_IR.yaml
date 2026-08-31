@@ -5,12 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IR_VLESS_80_549
+- name: IR_VLESS_80_1027
   type: vless
-  server: 5.57.32.153
+  server: 185.143.233.5
   port: 80
-  uuid: 49c37551-2843-4cd0-87ff-b75f5938a6d9
+  uuid: 38dd06a1-e1cb-492b-bb87-218ce05d0d67
+  network: ws
   tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: fox-a9e04bb07a-test.apps.ir-central1.arvancaas.ir
   skip-cert-verify: true
   udp: true
   country: IR
@@ -27,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IR_VLESS_80_549
+  - IR_VLESS_80_1027
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IR_VLESS_80_549
+  - IR_VLESS_80_1027
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +57,7 @@ proxy-groups:
 - name: 🌍 IR
   type: url-test
   proxies:
-  - IR_VLESS_80_549
+  - IR_VLESS_80_1027
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,121 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_8443_492
+- name: RU_VLESS_2200_557
+  type: vless
+  server: 77.222.53.218
+  port: 2200
+  uuid: 1cb011db-0211-4120-8984-13d8510a612b
+  network: ws
+  servername: rzd.ru
+  tls: false
+  ws-opts:
+    path: /v1
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_VLESS_4100_601
+  type: vless
+  server: 201.24.49.213
+  port: 4100
+  uuid: 6d662736-24ea-4f8e-9e73-acbc14d09cb1
+  network: ws
+  servername: live.ok.ru
+  tls: false
+  ws-opts:
+    path: /v1
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_VLESS_443_1340
+  type: vless
+  server: ru05.abvpn.ru
+  port: 443
+  uuid: a289a3d3-5833-4b28-8809-ae72898a98d0
+  network: ws
+  servername: ru05.abvpn.ru
+  tls: true
+  client-fingerprint: edge
+  ws-opts:
+    path: /websocket
+    headers:
+      Host: ru05.abvpn.ru
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_VLESS_4100_559
+  type: vless
+  server: 83.147.246.153
+  port: 4100
+  uuid: 85223e1a-f55d-4d0d-b27d-39e8be49d220
+  network: ws
+  servername: live.ok.ru
+  tls: false
+  ws-opts:
+    path: /v1
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_VLESS_2200_642
+  type: vless
+  server: 201.24.49.237
+  port: 2200
+  uuid: af412668-578c-4296-bc8c-8fac6a8d9003
+  network: ws
+  servername: rzd.ru
+  tls: false
+  ws-opts:
+    path: /v1
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_VLESS_4100_603
+  type: vless
+  server: 201.34.137.15
+  port: 4100
+  uuid: 716903b1-e6bf-4420-9e27-65e4451692e9
+  network: ws
+  servername: live.ok.ru
+  tls: false
+  ws-opts:
+    path: /v1
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_VLESS_4100_603_2
+  type: vless
+  server: 201.24.49.69
+  port: 4100
+  uuid: 2cd5f052-6455-4153-b7d3-0545184dc64c
+  network: ws
+  tls: false
+  ws-opts:
+    path: /v1
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_VLESS_8880_64
+  type: vless
+  network: ws
+  server: 176.124.223.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime38.workers.dev
+  country: RU
+- name: RU_VLESS_8880_45
+  type: vless
+  network: ws
+  server: 194.53.53.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime51.workers.dev
+    path: /
+  country: RU
+- name: RU_VLESS_8443_695
   type: vless
   network: tcp
   server: 185.147.27.164
@@ -18,19 +132,19 @@ proxies:
   tfo: false
   flow: xtls-rprx-vision
   country: RU
-- name: RU_VLESS_4100_406
+- name: RU_VLESS_443_826
   type: vless
-  server: 201.24.49.233
-  port: 4100
-  uuid: aa7d939b-feaa-4ad3-9615-74216f490807
+  server: 45.9.15.206
+  port: 443
+  uuid: a289a3d3-5833-4b28-8809-ae72898a98d0
   network: ws
-  tls: false
-  servername: live.ok.ru
+  tls: true
+  servername: ru05.abvpn.ru
   client-fingerprint: chrome
   ws-opts:
-    path: /v1
+    path: /websocket
     headers:
-      Host: ''
+      Host: ru05.abvpn.ru
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,8 +159,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_8443_492
-  - RU_VLESS_4100_406
+  - RU_VLESS_2200_557
+  - RU_VLESS_4100_601
+  - RU_VLESS_443_1340
+  - RU_VLESS_4100_559
+  - RU_VLESS_2200_642
+  - RU_VLESS_4100_603
+  - RU_VLESS_4100_603_2
+  - RU_VLESS_8880_64
+  - RU_VLESS_8880_45
+  - RU_VLESS_8443_695
+  - RU_VLESS_443_826
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +182,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_4100_406
-  - RU_VLESS_8443_492
+  - RU_VLESS_8880_45
+  - RU_VLESS_8880_64
+  - RU_VLESS_2200_557
+  - RU_VLESS_4100_559
+  - RU_VLESS_4100_601
+  - RU_VLESS_4100_603
+  - RU_VLESS_4100_603_2
+  - RU_VLESS_2200_642
+  - RU_VLESS_8443_695
+  - RU_VLESS_443_826
+  - RU_VLESS_443_1340
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +204,17 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_8443_492
-  - RU_VLESS_4100_406
+  - RU_VLESS_2200_557
+  - RU_VLESS_4100_601
+  - RU_VLESS_443_1340
+  - RU_VLESS_4100_559
+  - RU_VLESS_2200_642
+  - RU_VLESS_4100_603
+  - RU_VLESS_4100_603_2
+  - RU_VLESS_8880_64
+  - RU_VLESS_8880_45
+  - RU_VLESS_8443_695
+  - RU_VLESS_443_826
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

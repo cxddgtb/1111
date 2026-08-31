@@ -5,16 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_SS_59924_1553
-  type: ss
-  server: 79.76.100.14
-  port: 59924
-  cipher: 2022-blake3-chacha20-poly1305
-  password: kwwU9fwtA1cW+BCUvO0sabEQGskLfLt7B0aWHeJpdYo=
+- name: DE_VLESS_20995_472
+  type: vless
+  server: 159.69.28.178
+  port: 20995
+  uuid: 20bcb7a8-c51b-4771-9686-6b4509dc9cd2
+  servername: itunes.apple.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: GqIZ3PiZBcvHMfXhk7BDZMWhF2Q4FrGVW9sgkllXkA4
+    short-id: 6ba85179e30d4fc2
   skip-cert-verify: true
   udp: true
   country: DE
-- name: DE_VMESS_180_109
+- name: DE_VMESS_180_23
+  type: vmess
+  network: tcp
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_20
   type: vmess
   network: tcp
   server: 82.198.246.97
@@ -24,7 +40,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VMESS_180_111
+- name: DE_VMESS_180_26
   type: vmess
   network: tcp
   server: 82.198.246.250
@@ -33,6 +49,28 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
+  country: DE
+- name: DE_VLESS_33843_1509
+  type: vless
+  network: tcp
+  server: 87.120.84.32
+  port: 33843
+  uuid: 93dac4b8-3879-4179-abdb-9666a9e2ca8d
+  servername: deproxy2.lckdwn.ru
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  country: DE
+- name: DE_HYSTERIA2_443_587
+  type: hysteria2
+  server: replay.wwwinternetvideo.click
+  port: 443
+  password: 2691cbe7c20cced8b0aeb12c812d09077e5b3eec7669fb8f
+  sni: replay.wwwinternetvideo.click
+  skip-cert-verify: true
+  udp: true
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -47,9 +85,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_SS_59924_1553
-  - DE_VMESS_180_109
-  - DE_VMESS_180_111
+  - DE_VLESS_20995_472
+  - DE_VMESS_180_23
+  - DE_VMESS_180_20
+  - DE_VMESS_180_26
+  - DE_VLESS_33843_1509
+  - DE_HYSTERIA2_443_587
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,9 +103,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VMESS_180_109
-  - DE_VMESS_180_111
-  - DE_SS_59924_1553
+  - DE_VMESS_180_20
+  - DE_VMESS_180_23
+  - DE_VMESS_180_26
+  - DE_VLESS_20995_472
+  - DE_HYSTERIA2_443_587
+  - DE_VLESS_33843_1509
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -76,9 +120,12 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_SS_59924_1553
-  - DE_VMESS_180_109
-  - DE_VMESS_180_111
+  - DE_VLESS_20995_472
+  - DE_VMESS_180_23
+  - DE_VMESS_180_20
+  - DE_VMESS_180_26
+  - DE_VLESS_33843_1509
+  - DE_HYSTERIA2_443_587
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,19 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VMESS_39618_351
-  type: vmess
-  server: 45.159.51.180
-  port: 39618
-  uuid: 09d4921e-13e9-426f-8cd3-73556e8a0199
-  alterId: 0
-  cipher: auto
-  network: http
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: JP
-- name: JP_VMESS_13118_900
+- name: JP_VMESS_13118_899
   type: vmess
   network: ws
   server: 140.83.57.20
@@ -45,8 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VMESS_39618_351
-  - JP_VMESS_13118_900
+  - JP_VMESS_13118_899
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_39618_351
-  - JP_VMESS_13118_900
+  - JP_VMESS_13118_899
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +58,7 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VMESS_39618_351
-  - JP_VMESS_13118_900
+  - JP_VMESS_13118_899
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

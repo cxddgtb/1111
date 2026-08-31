@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_8443_757
+- name: AE_VLESS_8443_720
   type: vless
   network: ws
   server: 185.112.249.201
@@ -35,7 +35,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_8443_757
+  - AE_VLESS_8443_720
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,7 +48,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_VLESS_8443_757
+  - AE_VLESS_8443_720
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -60,7 +60,7 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_8443_757
+  - AE_VLESS_8443_720
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

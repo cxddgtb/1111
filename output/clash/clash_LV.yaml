@@ -5,19 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_VLESS_443_676
+- name: LV_VLESS_443_745
   type: vless
-  server: 195.123.212.30.blanesik.space
+  server: 195.123.210.168
   port: 443
-  uuid: 523486c6-c0b5-4e5b-8896-4af2375b41cc
-  network: ws
+  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
+  servername: eu-west.cendora.ru
   tls: true
-  servername: 195.123.212.30.blanesik.space
-  client-fingerprint: chrome
-  ws-opts:
-    path: /websocket?ed=2560
-    headers:
-      Host: 195.123.212.30.blanesik.space
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  reality-opts:
+    public-key: m6RDw1b8R4lCaRUIzhHpy6TtX2Dhk6nyby8dWzeQqA0
+    short-id: dd3ff38418d29d22
+  skip-cert-verify: true
+  udp: true
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_VLESS_443_676
+  - LV_VLESS_443_745
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_VLESS_443_676
+  - LV_VLESS_443_745
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +58,7 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_VLESS_443_676
+  - LV_VLESS_443_745
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

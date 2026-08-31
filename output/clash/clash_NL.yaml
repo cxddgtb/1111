@@ -5,16 +5,36 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_SS_45819_185
-  type: ss
-  server: 141.148.244.146
-  port: 45819
-  cipher: 2022-blake3-chacha20-poly1305
-  password: w5pcVb0VsP2Ze6TbJAXR7ZaofRyoJn5sm0CdhBg78q4=
-  skip-cert-verify: true
-  udp: true
+- name: NL_VLESS_8880_67
+  type: vless
+  network: ws
+  server: 45.131.4.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  encryption: none
+  ws-opts:
+    headers:
+      Host: vms.lifetime59.workers.dev
   country: NL
-- name: NL_VLESS_8443_1655
+- name: NL_VLESS_8880_119
+  type: vless
+  network: ws
+  server: 45.131.209.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime04.workers.dev
+    path: /
+  country: NL
+- name: NL_VLESS_62145_1331
+  type: vless
+  network: tcp
+  server: 84.235.175.73
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  country: NL
+- name: NL_VLESS_8443_487
   type: vless
   network: tcp
   server: 193.23.194.167
@@ -26,6 +46,20 @@ proxies:
   udp: true
   tfo: false
   client-fingerprint: chrome
+  country: NL
+- name: NL_VLESS_443_1042
+  type: vless
+  server: 151.242.2.81
+  port: 443
+  uuid: 0a2dde28-70da-4863-a06f-35d007d94d35
+  network: ws
+  tls: true
+  servername: cf9.rumedia-cdn.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /cdn/v3/live
+    headers:
+      Host: cf9.rumedia-cdn.com
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -40,8 +74,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_SS_45819_185
-  - NL_VLESS_8443_1655
+  - NL_VLESS_8880_67
+  - NL_VLESS_8880_119
+  - NL_VLESS_62145_1331
+  - NL_VLESS_8443_487
+  - NL_VLESS_443_1042
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -54,8 +91,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_SS_45819_185
-  - NL_VLESS_8443_1655
+  - NL_VLESS_8880_67
+  - NL_VLESS_8880_119
+  - NL_VLESS_8443_487
+  - NL_VLESS_443_1042
+  - NL_VLESS_62145_1331
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -67,8 +107,11 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_SS_45819_185
-  - NL_VLESS_8443_1655
+  - NL_VLESS_8880_67
+  - NL_VLESS_8880_119
+  - NL_VLESS_62145_1331
+  - NL_VLESS_8443_487
+  - NL_VLESS_443_1042
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

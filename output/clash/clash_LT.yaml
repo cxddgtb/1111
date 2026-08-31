@@ -5,22 +5,26 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LT_VLESS_8443_945
+- name: LT_VLESS_8880_57
   type: vless
   network: ws
-  server: 86.38.214.7
-  port: 8443
-  uuid: 7967bf59-57e3-4cde-9898-527b0fe60022
-  servername: speed.dulacloud.store
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
+  server: 88.216.66.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
     headers:
-      Host: speed.dulacloud.store
-    path: /dula?Telegram-WangCai2
+      Host: vms.lifetime04.workers.dev
+  country: LT
+- name: LT_VLESS_8880_71
+  type: vless
+  network: ws
+  server: 89.116.180.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime09.workers.dev
+    path: /?ed=2560
   country: LT
 proxy-groups:
 - name: 🚀 节点选择
@@ -35,7 +39,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LT_VLESS_8443_945
+  - LT_VLESS_8880_57
+  - LT_VLESS_8880_71
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,7 +53,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LT_VLESS_8443_945
+  - LT_VLESS_8880_57
+  - LT_VLESS_8880_71
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -60,7 +66,8 @@ proxy-groups:
 - name: 🌍 LT
   type: url-test
   proxies:
-  - LT_VLESS_8443_945
+  - LT_VLESS_8880_57
+  - LT_VLESS_8880_71
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
