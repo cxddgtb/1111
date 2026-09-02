@@ -5,20 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_VLESS_443_745
+- name: LV_VLESS_64584_1805
   type: vless
-  server: 195.123.210.168
-  port: 443
-  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
-  servername: eu-west.cendora.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: qq
-  reality-opts:
-    public-key: m6RDw1b8R4lCaRUIzhHpy6TtX2Dhk6nyby8dWzeQqA0
-    short-id: dd3ff38418d29d22
-  skip-cert-verify: true
-  udp: true
+  server: 109.248.161.43
+  port: 64584
+  uuid: 24e84618-3de6-4e3b-802e-5abbe666c4b0
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +29,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_VLESS_443_745
+  - LV_VLESS_64584_1805
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_VLESS_443_745
+  - LV_VLESS_64584_1805
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +54,7 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_VLESS_443_745
+  - LV_VLESS_64584_1805
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

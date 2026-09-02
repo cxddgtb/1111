@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_30807_2671
+- name: HK_VMESS_30807_2595
   type: vmess
   server: v10.zgtfqs.click
   port: 30807
@@ -17,17 +17,21 @@ proxies:
   servername: ''
   ws-opts: null
   country: HK
-- name: HK_VMESS_30807_2797
-  type: vmess
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
+- name: HK_VLESS_443_962
+  type: vless
+  server: hk.mkdir.kdns.fr
+  port: 443
+  uuid: 2cf94f4d-9d5b-49ca-81a3-ddc0529a2dac
+  network: ws
+  servername: pwdern.pages.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: pwdern.pages.dev
+  skip-cert-verify: true
+  udp: true
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -42,8 +46,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_30807_2671
-  - HK_VMESS_30807_2797
+  - HK_VMESS_30807_2595
+  - HK_VLESS_443_962
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +60,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_30807_2671
-  - HK_VMESS_30807_2797
+  - HK_VLESS_443_962
+  - HK_VMESS_30807_2595
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +73,8 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_30807_2671
-  - HK_VMESS_30807_2797
+  - HK_VMESS_30807_2595
+  - HK_VLESS_443_962
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

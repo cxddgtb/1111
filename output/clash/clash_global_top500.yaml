@@ -4,7 +4,405 @@ allow-lan: false
 mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
-proxies: []
+proxies:
+- name: DE_VLESS_2087_301
+  type: vless
+  server: 163.8.195.241
+  port: 2087
+  uuid: 56ba5d34-ef22-4ba6-8090-4188b807df54
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /29c8fed7ca22
+    headers:
+      Host: ''
+  country: DE
+- name: GB_VLESS_22222_169
+  type: vless
+  server: 13.135.142.182
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: GB
+- name: PL_VLESS_2087_287
+  type: vless
+  server: 178.95.170.115
+  port: 2087
+  uuid: bf443e4a-aa9e-4509-abf0-d0f6828d57be
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /4bc027a44532
+    headers:
+      Host: ''
+  country: PL
+- name: US_VMESS_18000_64
+  type: vmess
+  network: tcp
+  server: 67.220.95.3
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: SE_VLESS_443_526
+  type: vless
+  server: 202.155.11.249
+  port: 443
+  uuid: 0a2dde28-70da-4863-a06f-35d007d94d35
+  network: ws
+  tls: true
+  servername: cf2.rumedia-cdn.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /cdn/v3/live
+    headers:
+      Host: cf2.rumedia-cdn.com
+  country: SE
+- name: RU_VLESS_443_650
+  type: vless
+  server: 45.9.15.206
+  port: 443
+  uuid: a289a3d3-5833-4b28-8809-ae72898a98d0
+  network: ws
+  tls: true
+  servername: ru05.abvpn.ru
+  client-fingerprint: chrome
+  ws-opts:
+    path: /websocket
+    headers:
+      Host: ru05.abvpn.ru
+  country: RU
+- name: NL_VLESS_443_537
+  type: vless
+  server: 151.242.2.81
+  port: 443
+  uuid: 0a2dde28-70da-4863-a06f-35d007d94d35
+  network: ws
+  tls: true
+  servername: cf9.rumedia-cdn.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /cdn/v3/live
+    headers:
+      Host: ''
+  country: NL
+- name: LV_VLESS_64584_1805
+  type: vless
+  server: 109.248.161.43
+  port: 64584
+  uuid: 24e84618-3de6-4e3b-802e-5abbe666c4b0
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: LV
+- name: HK_VMESS_30807_2595
+  type: vmess
+  server: v10.zgtfqs.click
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: CA_VMESS_18000_113
+  type: vmess
+  network: tcp
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: DE_VMESS_110_190
+  type: vmess
+  network: tcp
+  server: 94.156.170.102
+  port: 110
+  uuid: 8e9687fc-a3a7-414a-8676-8e2136797cfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: JP_VMESS_55216_332
+  type: vmess
+  network: tcp
+  server: 155.248.176.44
+  port: 55216
+  uuid: 154dbc39-0921-cf11-29bd-156c5000d763
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: JP
+- name: SG_VMESS_18000_458
+  type: vmess
+  network: tcp
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: MY_VMESS_10000_778
+  type: vmess
+  network: tcp
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: MY
+- name: FR_VMESS_16632_1203
+  type: vmess
+  network: ws
+  server: planb.mojcn.com.linuxlh.xin
+  port: 16632
+  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
+    path: /
+  country: FR
+- name: RU_TROJAN_2223_392
+  type: trojan
+  server: 90.156.218.126
+  port: 2223
+  password: 47SXGr72f1wpGNkZzLUUExRDHuVQypaW
+  sni: vkc7.secured-by-tenzo.sbs
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: Unknown_VLESS_2087_265
+  type: vless
+  server: fu.baiproxy.us.ci
+  port: 2087
+  uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
+  network: ws
+  servername: fu.baiproxy.us.ci
+  tls: true
+  client-fingerprint: qq
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: fu.baiproxy.us.ci
+  skip-cert-verify: true
+  udp: true
+  country: Unknown
+- name: US_VLESS_443_229
+  type: vless
+  server: 199.232.78.159
+  port: 443
+  uuid: a1ee277e-93b7-4aa9-86a2-c7ef85a2adb0
+  network: ws
+  servername: ssl.fastly.com
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
+    headers:
+      Host: pane3.global.ssl.fastly.net
+  skip-cert-verify: true
+  udp: true
+  country: US
+- name: HK_VLESS_443_962
+  type: vless
+  server: hk.mkdir.kdns.fr
+  port: 443
+  uuid: 2cf94f4d-9d5b-49ca-81a3-ddc0529a2dac
+  network: ws
+  servername: pwdern.pages.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: pwdern.pages.dev
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: CA_SS_443_57
+  type: ss
+  server: 35.182.226.121
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  skip-cert-verify: true
+  udp: true
+  country: CA
+- name: GB_SS_443_166
+  type: ss
+  server: 13.40.94.70
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  skip-cert-verify: true
+  udp: true
+  country: GB
+- name: MY_SS_65443_565
+  type: ss
+  server: 118.107.222.231
+  port: 65443
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  skip-cert-verify: true
+  udp: true
+  country: MY
+- name: CN_SS_65443_628
+  type: ss
+  server: 121.46.230.138
+  port: 65443
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  skip-cert-verify: true
+  udp: true
+  country: CN
+- name: GB_VLESS_2087_271
+  type: vless
+  server: 188.220.67.198
+  port: 2087
+  uuid: 90da514d-8888-4a53-912e-ac2981c8c6ee
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /8f2690e2d016
+    headers:
+      Host: ''
+  country: GB
+- name: US_VMESS_18000_87
+  type: vmess
+  network: tcp
+  server: 38.91.107.49
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: RU_VLESS_443_1001
+  type: vless
+  server: ru05.abvpn.ru
+  port: 443
+  uuid: a289a3d3-5833-4b28-8809-ae72898a98d0
+  network: ws
+  tls: true
+  servername: ru05.abvpn.ru
+  client-fingerprint: chrome
+  ws-opts:
+    path: /websocket
+    headers:
+      Host: ru05.abvpn.ru
+  country: RU
+- name: SG_VMESS_8443_461
+  type: vmess
+  network: tcp
+  server: 13.250.114.194
+  port: 8443
+  uuid: 9dcb8d73-cc0b-4fcc-a12d-d7affb56267c
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: GB_VLESS_2087_275
+  type: vless
+  server: 188.220.67.181
+  port: 2087
+  uuid: 90da514d-8888-4a53-912e-ac2981c8c6ee
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /8f2690e2d016
+    headers:
+      Host: ''
+  country: GB
+- name: US_VMESS_18000_151
+  type: vmess
+  network: tcp
+  server: 84.17.41.2
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: GB_VLESS_2087_275_2
+  type: vless
+  server: 188.220.67.224
+  port: 2087
+  uuid: 90da514d-8888-4a53-912e-ac2981c8c6ee
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /8f2690e2d016
+    headers:
+      Host: ''
+  country: GB
+- name: US_VMESS_443_311
+  type: vmess
+  server: guanwang.awsno.com
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: true
+  servername: ''
+  ws-opts: null
+  country: US
+- name: GB_VLESS_2087_282
+  type: vless
+  server: 188.220.67.140
+  port: 2087
+  uuid: 90da514d-8888-4a53-912e-ac2981c8c6ee
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /8f2690e2d016
+    headers:
+      Host: ''
+  country: GB
+- name: GB_VLESS_15006_2842
+  type: vless
+  server: nian.001.url111.kcloud02.top
+  port: 15006
+  uuid: 399c4c9b-27e1-37f1-9dce-22ccc2727a86
+  servername: www.adobe.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: g9KZONtwSL8mL772rps2nXVAuQpsgHY33K_pHpI89Rg
+    short-id: 029a6cc4
+  skip-cert-verify: true
+  udp: true
+  country: GB
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -13,10 +411,59 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
+  - 🌍 CA
+  - 🌍 CN
+  - 🌍 DE
+  - 🌍 FR
+  - 🌍 GB
+  - 🌍 HK
+  - 🌍 JP
+  - 🌍 LV
+  - 🌍 MY
+  - 🌍 NL
+  - 🌍 PL
+  - 🌍 RU
+  - 🌍 SE
+  - 🌍 SG
+  - 🌍 US
+  - 🌍 Unknown
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
-  proxies: &id001 []
+  proxies: &id001
+  - DE_VLESS_2087_301
+  - GB_VLESS_22222_169
+  - PL_VLESS_2087_287
+  - US_VMESS_18000_64
+  - SE_VLESS_443_526
+  - RU_VLESS_443_650
+  - NL_VLESS_443_537
+  - LV_VLESS_64584_1805
+  - HK_VMESS_30807_2595
+  - CA_VMESS_18000_113
+  - DE_VMESS_110_190
+  - JP_VMESS_55216_332
+  - SG_VMESS_18000_458
+  - MY_VMESS_10000_778
+  - FR_VMESS_16632_1203
+  - RU_TROJAN_2223_392
+  - Unknown_VLESS_2087_265
+  - US_VLESS_443_229
+  - HK_VLESS_443_962
+  - CA_SS_443_57
+  - GB_SS_443_166
+  - MY_SS_65443_565
+  - CN_SS_65443_628
+  - GB_VLESS_2087_271
+  - US_VMESS_18000_87
+  - RU_VLESS_443_1001
+  - SG_VMESS_8443_461
+  - GB_VLESS_2087_275
+  - US_VMESS_18000_151
+  - GB_VLESS_2087_275_2
+  - US_VMESS_443_311
+  - GB_VLESS_2087_282
+  - GB_VLESS_15006_2842
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -28,7 +475,40 @@ proxy-groups:
   tolerance: 50
 - name: ♻️ 自动故障转移
   type: fallback
-  proxies: []
+  proxies:
+  - CA_SS_443_57
+  - US_VMESS_18000_64
+  - US_VMESS_18000_87
+  - CA_VMESS_18000_113
+  - US_VMESS_18000_151
+  - GB_SS_443_166
+  - GB_VLESS_22222_169
+  - DE_VMESS_110_190
+  - US_VLESS_443_229
+  - Unknown_VLESS_2087_265
+  - GB_VLESS_2087_271
+  - GB_VLESS_2087_275
+  - GB_VLESS_2087_275_2
+  - GB_VLESS_2087_282
+  - PL_VLESS_2087_287
+  - DE_VLESS_2087_301
+  - US_VMESS_443_311
+  - JP_VMESS_55216_332
+  - RU_TROJAN_2223_392
+  - SG_VMESS_18000_458
+  - SG_VMESS_8443_461
+  - SE_VLESS_443_526
+  - NL_VLESS_443_537
+  - MY_SS_65443_565
+  - CN_SS_65443_628
+  - RU_VLESS_443_650
+  - MY_VMESS_10000_778
+  - HK_VLESS_443_962
+  - RU_VLESS_443_1001
+  - FR_VMESS_16632_1203
+  - LV_VLESS_64584_1805
+  - HK_VMESS_30807_2595
+  - GB_VLESS_15006_2842
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -37,6 +517,135 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
+- name: 🌍 CA
+  type: url-test
+  proxies:
+  - CA_VMESS_18000_113
+  - CA_SS_443_57
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 CN
+  type: url-test
+  proxies:
+  - CN_SS_65443_628
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 DE
+  type: url-test
+  proxies:
+  - DE_VLESS_2087_301
+  - DE_VMESS_110_190
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 FR
+  type: url-test
+  proxies:
+  - FR_VMESS_16632_1203
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 GB
+  type: url-test
+  proxies:
+  - GB_VLESS_22222_169
+  - GB_SS_443_166
+  - GB_VLESS_2087_271
+  - GB_VLESS_2087_275
+  - GB_VLESS_2087_275_2
+  - GB_VLESS_2087_282
+  - GB_VLESS_15006_2842
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 HK
+  type: url-test
+  proxies:
+  - HK_VMESS_30807_2595
+  - HK_VLESS_443_962
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 JP
+  type: url-test
+  proxies:
+  - JP_VMESS_55216_332
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 LV
+  type: url-test
+  proxies:
+  - LV_VLESS_64584_1805
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 MY
+  type: url-test
+  proxies:
+  - MY_VMESS_10000_778
+  - MY_SS_65443_565
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 NL
+  type: url-test
+  proxies:
+  - NL_VLESS_443_537
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 PL
+  type: url-test
+  proxies:
+  - PL_VLESS_2087_287
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 RU
+  type: url-test
+  proxies:
+  - RU_VLESS_443_650
+  - RU_TROJAN_2223_392
+  - RU_VLESS_443_1001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 SE
+  type: url-test
+  proxies:
+  - SE_VLESS_443_526
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 SG
+  type: url-test
+  proxies:
+  - SG_VMESS_18000_458
+  - SG_VMESS_8443_461
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 US
+  type: url-test
+  proxies:
+  - US_VMESS_18000_64
+  - US_VLESS_443_229
+  - US_VMESS_18000_87
+  - US_VMESS_18000_151
+  - US_VMESS_443_311
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 Unknown
+  type: url-test
+  proxies:
+  - Unknown_VLESS_2087_265
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
 rules:
 - AND,((NETWORK,UDP),(DOMAIN-SUFFIX,googlevideo.com)),REJECT
 - AND,((NETWORK,UDP),(DOMAIN-SUFFIX,youtube.com)),REJECT

@@ -5,20 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_443_484
+- name: SE_VLESS_443_526
   type: vless
-  server: swed1.helper-internet.com
+  server: 202.155.11.249
   port: 443
-  uuid: 670decfe-68cc-499e-8cb1-22b39c20acbb
-  servername: swed1.helper-internet.com
+  uuid: 0a2dde28-70da-4863-a06f-35d007d94d35
+  network: ws
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  reality-opts:
-    public-key: W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE
-    short-id: ff776ff77be48b88
-  skip-cert-verify: true
-  udp: true
+  servername: cf2.rumedia-cdn.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /cdn/v3/live
+    headers:
+      Host: cf2.rumedia-cdn.com
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_443_484
+  - SE_VLESS_443_526
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_443_484
+  - SE_VLESS_443_526
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +57,7 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_443_484
+  - SE_VLESS_443_526
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
