@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_18000_113
+- name: CA_VMESS_18000_179
   type: vmess
   network: tcp
   server: 23.162.200.198
@@ -14,15 +14,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-  country: CA
-- name: CA_SS_443_57
-  type: ss
-  server: 35.182.226.121
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-  skip-cert-verify: true
-  udp: true
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_18000_113
-  - CA_SS_443_57
+  - CA_VMESS_18000_179
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_443_57
-  - CA_VMESS_18000_113
+  - CA_VMESS_18000_179
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +53,7 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_18000_113
-  - CA_SS_443_57
+  - CA_VMESS_18000_179
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

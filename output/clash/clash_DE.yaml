@@ -5,7 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_2087_301
+- name: DE_VLESS_1901_314
+  type: vless
+  server: 212.43.158.62
+  port: 1901
+  uuid: 6cbc63c1-97de-4460-847c-7fd7bdda3fa6
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: DE_VLESS_2087_741
   type: vless
   server: 163.8.195.241
   port: 2087
@@ -19,7 +28,20 @@ proxies:
     headers:
       Host: ''
   country: DE
-- name: DE_VMESS_110_190
+- name: DE_HYSTERIA_20088_2052
+  type: hysteria
+  server: 5.83.129.153
+  port: 20088
+  auth_str: dongtaiwang.com
+  up: '500'
+  down: '1000'
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  udp: true
+  country: DE
+- name: DE_VMESS_110_286
   type: vmess
   network: tcp
   server: 94.156.170.102
@@ -28,6 +50,92 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
+  country: DE
+- name: DE_VMESS_180_22
+  type: vmess
+  network: tcp
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_25
+  type: vmess
+  network: tcp
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_23
+  type: vmess
+  network: tcp
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_21
+  type: vmess
+  network: tcp
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VLESS_443_587
+  type: vless
+  network: ws
+  server: 94.156.232.254
+  port: 443
+  uuid: 03c48eca-e0aa-4e18-998c-1f53f1de293c
+  servername: cf6.rumedia-cdn.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  flow: ''
+  ws-opts:
+    headers:
+      Host: cf6.rumedia-cdn.com
+    path: /cdn/v3/live
+  country: DE
+- name: DE_VLESS_443_552
+  type: vless
+  network: ws
+  server: 164.90.217.130
+  port: 443
+  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
+  servername: white-forest-2c01.alvlirm222.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: white-forest-2c01.alvlirm222.workers.dev
+    path: /
+  country: DE
+- name: DE_VLESS_33843_427
+  type: vless
+  network: tcp
+  server: 87.120.84.32
+  port: 33843
+  uuid: 93dac4b8-3879-4179-abdb-9666a9e2ca8d
+  servername: deproxy2.lckdwn.ru
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -42,8 +150,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_2087_301
-  - DE_VMESS_110_190
+  - DE_VLESS_1901_314
+  - DE_VLESS_2087_741
+  - DE_HYSTERIA_20088_2052
+  - DE_VMESS_110_286
+  - DE_VMESS_180_22
+  - DE_VMESS_180_25
+  - DE_VMESS_180_23
+  - DE_VMESS_180_21
+  - DE_VLESS_443_587
+  - DE_VLESS_443_552
+  - DE_VLESS_33843_427
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +173,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VMESS_110_190
-  - DE_VLESS_2087_301
+  - DE_VMESS_180_21
+  - DE_VMESS_180_22
+  - DE_VMESS_180_23
+  - DE_VMESS_180_25
+  - DE_VMESS_110_286
+  - DE_VLESS_1901_314
+  - DE_VLESS_33843_427
+  - DE_VLESS_443_552
+  - DE_VLESS_443_587
+  - DE_VLESS_2087_741
+  - DE_HYSTERIA_20088_2052
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +195,17 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_2087_301
-  - DE_VMESS_110_190
+  - DE_VLESS_1901_314
+  - DE_VLESS_2087_741
+  - DE_HYSTERIA_20088_2052
+  - DE_VMESS_110_286
+  - DE_VMESS_180_22
+  - DE_VMESS_180_25
+  - DE_VMESS_180_23
+  - DE_VMESS_180_21
+  - DE_VLESS_443_587
+  - DE_VLESS_443_552
+  - DE_VLESS_33843_427
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

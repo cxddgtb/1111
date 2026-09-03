@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_1001
+- name: RU_VLESS_443_1438
   type: vless
   server: ru05.abvpn.ru
   port: 443
@@ -19,7 +19,21 @@ proxies:
     headers:
       Host: ru05.abvpn.ru
   country: RU
-- name: RU_VLESS_443_650
+- name: RU_VLESS_2200_539
+  type: vless
+  server: 201.24.49.228
+  port: 2200
+  uuid: 09f2e2f4-3225-4342-bc92-cb58ee841f72
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /v1
+    headers:
+      Host: rzd.ru
+  country: RU
+- name: RU_VLESS_443_827
   type: vless
   server: 45.9.15.206
   port: 443
@@ -33,14 +47,21 @@ proxies:
     headers:
       Host: ru05.abvpn.ru
   country: RU
-- name: RU_TROJAN_2223_392
-  type: trojan
-  server: 90.156.218.126
-  port: 2223
-  password: 47SXGr72f1wpGNkZzLUUExRDHuVQypaW
-  sni: vkc7.secured-by-tenzo.sbs
+- name: RU_VLESS_2053_753
+  type: vless
+  network: ws
+  server: 186.246.12.85
+  port: 2053
+  uuid: f62a1751-c1e4-4612-90e7-bd5781c1aede
+  servername: 186.246.12.85
   skip-cert-verify: true
+  tls: true
   udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: 186.246.12.85
+    path: /
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -55,9 +76,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_1001
-  - RU_VLESS_443_650
-  - RU_TROJAN_2223_392
+  - RU_VLESS_443_1438
+  - RU_VLESS_2200_539
+  - RU_VLESS_443_827
+  - RU_VLESS_2053_753
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,9 +92,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_TROJAN_2223_392
-  - RU_VLESS_443_650
-  - RU_VLESS_443_1001
+  - RU_VLESS_2200_539
+  - RU_VLESS_2053_753
+  - RU_VLESS_443_827
+  - RU_VLESS_443_1438
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,9 +107,10 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_1001
-  - RU_VLESS_443_650
-  - RU_TROJAN_2223_392
+  - RU_VLESS_443_1438
+  - RU_VLESS_2200_539
+  - RU_VLESS_443_827
+  - RU_VLESS_2053_753
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
