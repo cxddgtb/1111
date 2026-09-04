@@ -5,16 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_VLESS_64584_1805
+- name: LV_VLESS_443_703
   type: vless
-  server: 109.248.161.43
-  port: 64584
-  uuid: 24e84618-3de6-4e3b-802e-5abbe666c4b0
-  network: tcp
-  tls: false
-  servername: ''
+  server: 193.163.203.170
+  port: 443
+  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
+  servername: yandex.ru
+  tls: true
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  ws-opts: null
+  reality-opts:
+    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
+    short-id: b28db60d77c50b4f
+  skip-cert-verify: true
+  udp: true
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_VLESS_64584_1805
+  - LV_VLESS_443_703
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_VLESS_64584_1805
+  - LV_VLESS_443_703
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +58,7 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_VLESS_64584_1805
+  - LV_VLESS_443_703
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,16 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_1901_314
-  type: vless
-  server: 212.43.158.62
-  port: 1901
-  uuid: 6cbc63c1-97de-4460-847c-7fd7bdda3fa6
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: DE
-- name: DE_VLESS_2087_741
+- name: DE_VLESS_2087_685
   type: vless
   server: 163.8.195.241
   port: 2087
@@ -26,22 +17,9 @@ proxies:
   ws-opts:
     path: /29c8fed7ca22
     headers:
-      Host: ''
+      Host: /?--v2rayNplus--v2rayNplus--v2rayNplus--
   country: DE
-- name: DE_HYSTERIA_20088_2052
-  type: hysteria
-  server: 5.83.129.153
-  port: 20088
-  auth_str: dongtaiwang.com
-  up: '500'
-  down: '1000'
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  udp: true
-  country: DE
-- name: DE_VMESS_110_286
+- name: DE_VMESS_110_193
   type: vmess
   network: tcp
   server: 94.156.170.102
@@ -51,27 +29,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VMESS_180_22
-  type: vmess
-  network: tcp
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_180_25
-  type: vmess
-  network: tcp
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_180_23
+- name: DE_VMESS_180_118
   type: vmess
   network: tcp
   server: 82.198.246.233
@@ -81,7 +39,27 @@ proxies:
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VMESS_180_21
+- name: DE_VMESS_180_119
+  type: vmess
+  network: tcp
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_118_2
+  type: vmess
+  network: tcp
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_121
   type: vmess
   network: tcp
   server: 82.198.246.37
@@ -91,7 +69,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VLESS_443_587
+- name: DE_VLESS_443_412
   type: vless
   network: ws
   server: 94.156.232.254
@@ -108,7 +86,7 @@ proxies:
       Host: cf6.rumedia-cdn.com
     path: /cdn/v3/live
   country: DE
-- name: DE_VLESS_443_552
+- name: DE_VLESS_443_414
   type: vless
   network: ws
   server: 164.90.217.130
@@ -124,7 +102,7 @@ proxies:
       Host: white-forest-2c01.alvlirm222.workers.dev
     path: /
   country: DE
-- name: DE_VLESS_33843_427
+- name: DE_VLESS_33843_319
   type: vless
   network: tcp
   server: 87.120.84.32
@@ -136,6 +114,19 @@ proxies:
   udp: true
   tfo: false
   client-fingerprint: chrome
+  country: DE
+- name: DE_HYSTERIA_20088_1625
+  type: hysteria
+  server: 5.83.129.153
+  port: 20088
+  auth_str: dongtaiwang.com
+  up: '500'
+  down: '1000'
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  udp: true
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -150,17 +141,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_1901_314
-  - DE_VLESS_2087_741
-  - DE_HYSTERIA_20088_2052
-  - DE_VMESS_110_286
-  - DE_VMESS_180_22
-  - DE_VMESS_180_25
-  - DE_VMESS_180_23
-  - DE_VMESS_180_21
-  - DE_VLESS_443_587
-  - DE_VLESS_443_552
-  - DE_VLESS_33843_427
+  - DE_VLESS_2087_685
+  - DE_VMESS_110_193
+  - DE_VMESS_180_118
+  - DE_VMESS_180_119
+  - DE_VMESS_180_118_2
+  - DE_VMESS_180_121
+  - DE_VLESS_443_412
+  - DE_VLESS_443_414
+  - DE_VLESS_33843_319
+  - DE_HYSTERIA_20088_1625
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -173,17 +163,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VMESS_180_21
-  - DE_VMESS_180_22
-  - DE_VMESS_180_23
-  - DE_VMESS_180_25
-  - DE_VMESS_110_286
-  - DE_VLESS_1901_314
-  - DE_VLESS_33843_427
-  - DE_VLESS_443_552
-  - DE_VLESS_443_587
-  - DE_VLESS_2087_741
-  - DE_HYSTERIA_20088_2052
+  - DE_VMESS_180_118
+  - DE_VMESS_180_118_2
+  - DE_VMESS_180_119
+  - DE_VMESS_180_121
+  - DE_VMESS_110_193
+  - DE_VLESS_33843_319
+  - DE_VLESS_443_412
+  - DE_VLESS_443_414
+  - DE_VLESS_2087_685
+  - DE_HYSTERIA_20088_1625
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -195,17 +184,16 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_1901_314
-  - DE_VLESS_2087_741
-  - DE_HYSTERIA_20088_2052
-  - DE_VMESS_110_286
-  - DE_VMESS_180_22
-  - DE_VMESS_180_25
-  - DE_VMESS_180_23
-  - DE_VMESS_180_21
-  - DE_VLESS_443_587
-  - DE_VLESS_443_552
-  - DE_VLESS_33843_427
+  - DE_VLESS_2087_685
+  - DE_VMESS_110_193
+  - DE_VMESS_180_118
+  - DE_VMESS_180_119
+  - DE_VMESS_180_118_2
+  - DE_VMESS_180_121
+  - DE_VLESS_443_412
+  - DE_VLESS_443_414
+  - DE_VLESS_33843_319
+  - DE_HYSTERIA_20088_1625
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

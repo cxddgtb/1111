@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VMESS_18000_366
+- name: SG_VMESS_18000_448
   type: vmess
   network: tcp
   server: 149.88.23.207
@@ -15,7 +15,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: SG
-- name: SG_VMESS_18000_364
+- name: SG_VMESS_18000_465
   type: vmess
   network: tcp
   server: 149.88.23.202
@@ -38,8 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VMESS_18000_366
-  - SG_VMESS_18000_364
+  - SG_VMESS_18000_448
+  - SG_VMESS_18000_465
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VMESS_18000_364
-  - SG_VMESS_18000_366
+  - SG_VMESS_18000_448
+  - SG_VMESS_18000_465
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +65,8 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VMESS_18000_366
-  - SG_VMESS_18000_364
+  - SG_VMESS_18000_448
+  - SG_VMESS_18000_465
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
