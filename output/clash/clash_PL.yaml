@@ -5,19 +5,33 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_2087_281
+- name: PL_VLESS_2087_285
   type: vless
   server: 178.95.170.83
   port: 2087
   uuid: bf443e4a-aa9e-4509-abf0-d0f6828d57be
   network: ws
   tls: false
-  servername: ''
+  servername: 178.95.170.83
   client-fingerprint: chrome
   ws-opts:
     path: /4bc027a44532
     headers:
       Host: ''
+  country: PL
+- name: PL_VLESS_443_450
+  type: vless
+  server: pl3.lckdwn.ru
+  port: 443
+  uuid: 84c898c4-6990-4121-ae51-27d989f5ce39
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: pl3.lckdwn.ru
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +46,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_2087_281
+  - PL_VLESS_2087_285
+  - PL_VLESS_443_450
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +60,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_2087_281
+  - PL_VLESS_2087_285
+  - PL_VLESS_443_450
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +73,8 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_2087_281
+  - PL_VLESS_2087_285
+  - PL_VLESS_443_450
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

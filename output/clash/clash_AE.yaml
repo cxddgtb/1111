@@ -5,22 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_8443_720
+- name: AE_VLESS_53289_1604
   type: vless
-  network: ws
-  server: 185.112.249.201
-  port: 8443
-  uuid: 9b18ccef-b9e0-41d1-8990-9d970569e142
-  servername: web-socket.tgdaosheng.ggff.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
+  server: 78.17.190.94
+  port: 53289
+  uuid: 9a913f1c-28b3-4d0b-aa77-698302252ab7
+  network: tcp
+  tls: false
+  servername: ''
   client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: web-socket.tgdaosheng.ggff.net
-    path: /proxyip=bpb.yousef.isegaro.comfp=chrome
+  ws-opts: null
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -35,7 +29,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_8443_720
+  - AE_VLESS_53289_1604
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,7 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_VLESS_8443_720
+  - AE_VLESS_53289_1604
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -60,7 +54,7 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_8443_720
+  - AE_VLESS_53289_1604
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

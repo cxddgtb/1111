@@ -5,22 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VMESS_16626_1672
-  type: vmess
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16626
-  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
-  ws-opts:
-    path: /
-    headers:
-      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
-  country: FR
-- name: FR_SS_65443_165
+- name: FR_SS_65443_167
   type: ss
   server: 95.170.13.47
   port: 65443
@@ -42,8 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VMESS_16626_1672
-  - FR_SS_65443_165
+  - FR_SS_65443_167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_65443_165
-  - FR_VMESS_16626_1672
+  - FR_SS_65443_167
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +52,7 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VMESS_16626_1672
-  - FR_SS_65443_165
+  - FR_SS_65443_167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
