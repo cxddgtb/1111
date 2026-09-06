@@ -5,20 +5,35 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VMESS_18000_448
+- name: SG_VLESS_54618_724
+  type: vless
+  server: 18.136.125.3
+  port: 54618
+  uuid: 5b314c69-b427-4648-a8aa-6c38bc87fdc7
+  servername: www.amd.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: BugMYB6c9k66FOr1dTMnkojMXH5OCYP2wDH2nntWGgk
+    short-id: 93ed34c8eea01f
+  skip-cert-verify: true
+  udp: true
+  country: SG
+- name: SG_VMESS_18000_454
   type: vmess
   network: tcp
-  server: 149.88.23.207
+  server: 149.88.23.202
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
   alterId: 0
   cipher: auto
   country: SG
-- name: SG_VMESS_18000_465
+- name: SG_VMESS_18000_454_2
   type: vmess
   network: tcp
-  server: 149.88.23.202
+  server: 149.88.23.207
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
@@ -38,8 +53,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VMESS_18000_448
-  - SG_VMESS_18000_465
+  - SG_VLESS_54618_724
+  - SG_VMESS_18000_454
+  - SG_VMESS_18000_454_2
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +68,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VMESS_18000_448
-  - SG_VMESS_18000_465
+  - SG_VMESS_18000_454
+  - SG_VMESS_18000_454_2
+  - SG_VLESS_54618_724
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +82,9 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VMESS_18000_448
-  - SG_VMESS_18000_465
+  - SG_VLESS_54618_724
+  - SG_VMESS_18000_454
+  - SG_VMESS_18000_454_2
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

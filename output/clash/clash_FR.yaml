@@ -5,14 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_SS_65443_167
-  type: ss
-  server: 95.170.13.47
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  skip-cert-verify: true
+- name: FR_VLESS_443_273
+  type: vless
+  network: tcp
+  server: 162.19.10.99
+  port: 443
+  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
+  servername: nasnet-162191099-direct.mbghalibaf.com
+  skip-cert-verify: false
+  tls: true
   udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_SS_65443_167
+  - FR_VLESS_443_273
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_65443_167
+  - FR_VLESS_443_273
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +57,7 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_SS_65443_167
+  - FR_VLESS_443_273
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

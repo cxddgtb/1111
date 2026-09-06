@@ -5,151 +5,280 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_VLESS_2087_298
+- name: Unknown_VLESS_443_35
+  type: vless
+  network: ws
+  server: 188.114.97.6
+  port: 443
+  uuid: 0f0b7f69-78e1-4e9e-8b35-0986444613e4
+  servername: xwrivr.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: xwrivr.pages.dev
+    path: /?ed=2048
+  country: Unknown
+- name: DE_VLESS_443_287
+  type: vless
+  server: 176.96.138.122
+  port: 443
+  uuid: b229d38c-35ec-4a0b-9c86-8fceba243d6c
+  servername: plucky-xenon.cdn.cachefleet.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  reality-opts:
+    public-key: O_YZOJVON0LE1U01hAtNUOVRy7z6fkBUXbMtpCGoGEg
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: NL_VLESS_8443_275
+  type: vless
+  network: tcp
+  server: 193.23.194.167
+  port: 8443
+  uuid: 32349ee8-8551-45fa-a265-8704cec72936
+  servername: neth.lckdwn.ru
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  country: NL
+- name: GB_VLESS_2087_301
   type: vless
   server: 188.220.67.245
   port: 2087
   uuid: 90da514d-8888-4a53-912e-ac2981c8c6ee
   network: ws
   tls: false
-  servername: ''
-  client-fingerprint: chrome
   ws-opts:
     path: /8f2690e2d016
-    headers:
-      Host: ''
+  skip-cert-verify: true
+  udp: true
   country: GB
-- name: PL_VLESS_2087_285
+- name: PL_VLESS_2087_306
   type: vless
   server: 178.95.170.83
   port: 2087
   uuid: bf443e4a-aa9e-4509-abf0-d0f6828d57be
   network: ws
+  servername: Telegram-Leviko_v2ray
   tls: false
-  servername: 178.95.170.83
-  client-fingerprint: chrome
   ws-opts:
     path: /4bc027a44532
-    headers:
-      Host: ''
+  skip-cert-verify: true
+  udp: true
   country: PL
-- name: DE_VLESS_2087_322
+- name: SG_VLESS_54618_724
   type: vless
-  server: 163.8.195.241
-  port: 2087
-  uuid: 56ba5d34-ef22-4ba6-8090-4188b807df54
+  server: 18.136.125.3
+  port: 54618
+  uuid: 5b314c69-b427-4648-a8aa-6c38bc87fdc7
+  servername: www.amd.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: BugMYB6c9k66FOr1dTMnkojMXH5OCYP2wDH2nntWGgk
+    short-id: 93ed34c8eea01f
+  skip-cert-verify: true
+  udp: true
+  country: SG
+- name: US_VLESS_8880_55
+  type: vless
+  server: 104.254.140.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   network: ws
   tls: false
-  servername: ''
-  client-fingerprint: chrome
   ws-opts:
-    path: /29c8fed7ca22
+    path: /
     headers:
-      Host: /?--v2rayNplus--v2rayNplus--v2rayNplus--
-  country: DE
-- name: RU_VLESS_443_750
+      Host: vms.lifetime54.workers.dev
+  skip-cert-verify: true
+  udp: true
+  country: US
+- name: RU_VLESS_443_596
   type: vless
-  server: ru05.abvpn.ru
+  server: 45.9.15.206
   port: 443
   uuid: a289a3d3-5833-4b28-8809-ae72898a98d0
   network: ws
-  tls: true
   servername: ru05.abvpn.ru
-  client-fingerprint: chrome
+  tls: true
+  client-fingerprint: edge
   ws-opts:
     path: /websocket
     headers:
-      Host: ''
+      Host: ru05.abvpn.ru
+  skip-cert-verify: true
+  udp: true
   country: RU
-- name: US_VLESS_443_210
-  type: vless
-  server: 151.101.56.7
-  port: 443
-  uuid: d2299018-601d-488e-afd6-8f55b3f7439f
+- name: NL_VMESS_33736_1440
+  type: vmess
+  server: 78.17.71.236
+  port: 33736
+  uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
   network: ws
+  ws-opts:
+    path: /vmess-ws
+  udp: true
+  country: NL
+- name: AE_VLESS_8443_549
+  type: vless
+  network: ws
+  server: 185.112.249.201
+  port: 8443
+  uuid: 9b18ccef-b9e0-41d1-8990-9d970569e142
+  servername: web-socket.tgdaosheng.ggff.net
+  skip-cert-verify: false
   tls: true
-  servername: ssl.fastly.com
+  udp: true
+  tfo: false
   client-fingerprint: chrome
   ws-opts:
-    path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
     headers:
-      Host: pan1.global.ssl.fastly.net
-  country: US
-- name: CA_SS_8118_48
-  type: ss
-  server: 51.79.85.185
-  port: 8118
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
-  skip-cert-verify: true
-  udp: true
-  country: CA
-- name: Unknown_VLESS_8080_456
-  type: vless
-  server: 188.114.97.6
-  port: 8080
-  uuid: 91875754-7fcc-5ba9-9573-5a43215dfd0f
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /sync
-    headers:
-      Host: node-8966333989-b9acc5.dsjvhbsdcjy.workers.dev
-  country: Unknown
-- name: FR_SS_65443_167
-  type: ss
-  server: 95.170.13.47
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: MY_SS_65443_471
-  type: ss
-  server: 118.107.222.231
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  skip-cert-verify: true
-  udp: true
-  country: MY
-- name: CN_SS_65443_916
-  type: ss
-  server: 121.46.230.137
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  skip-cert-verify: true
-  udp: true
-  country: CN
-- name: AE_VLESS_53289_1604
-  type: vless
-  server: 78.17.190.94
-  port: 53289
-  uuid: 9a913f1c-28b3-4d0b-aa77-698302252ab7
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+      Host: web-socket.tgdaosheng.ggff.net
+    path: /proxyip=bpb.yousef.isegaro.comfp=chrome
   country: AE
-- name: DE_HYSTERIA_20088_1649
-  type: hysteria
-  server: 5.83.129.153
-  port: 20088
-  auth_str: dongtaiwang.com
-  up: '500'
-  down: '1000'
-  sni: apple.com
+- name: KR_VLESS_443_2110
+  type: vless
+  server: kr.mkdir.kdns.fr
+  port: 443
+  uuid: 2cf94f4d-9d5b-49ca-81a3-ddc0529a2dac
+  network: ws
+  servername: ai-verps.pages.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ai-verps.pages.dev
   skip-cert-verify: true
-  alpn:
-  - h3
   udp: true
+  country: KR
+- name: US_VMESS_22324_19
+  type: vmess
+  network: tcp
+  server: 216.106.183.35
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: HK_VMESS_30804_1099
+  type: vmess
+  network: tcp
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  servername: v4.hdacd.com
+  skip-cert-verify: true
+  alterId: 2
+  cipher: auto
+  delay: 1031
+  country: HK
+- name: SG_VMESS_18000_454
+  type: vmess
+  network: tcp
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: SC_VMESS_54321_1030
+  type: vmess
+  network: tcp
+  server: 156.226.183.181
+  port: 54321
+  uuid: d3bcc1f1-6294-4f68-bcf3-c3bcb2001520
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SC
+- name: DE_VMESS_180_124
+  type: vmess
+  network: tcp
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: DE
-- name: TH_SS_65443_2837
+- name: Unknown_VMESS_8443_167
+  type: vmess
+  network: ws
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: none
+  ws-opts:
+    headers:
+      Host: v2ray1.dozapp.xyz
+    path: /lMnsZUN4/
+  country: Unknown
+- name: TW_VMESS_35034_420
+  type: vmess
+  network: tcp
+  server: 165.154.195.38
+  port: 35034
+  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: TW
+- name: CA_VMESS_18000_89
+  type: vmess
+  network: tcp
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: EE_VLESS_8443_355
+  type: vless
+  network: tcp
+  server: 94.183.170.135
+  port: 8443
+  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  servername: estproxy4.lockdwn.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  country: EE
+- name: FR_VLESS_443_273
+  type: vless
+  network: tcp
+  server: 162.19.10.99
+  port: 443
+  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
+  servername: nasnet-162191099-direct.mbghalibaf.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: FR
+- name: TH_SS_65443_510
   type: ss
   server: 103.169.67.34
   port: 65443
@@ -158,39 +287,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: TH
-- name: PL_VLESS_443_450
-  type: vless
-  server: pl3.lckdwn.ru
-  port: 443
-  uuid: 84c898c4-6990-4121-ae51-27d989f5ce39
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: pl3.lckdwn.ru
-  country: PL
-- name: CA_SS_443_64
-  type: ss
-  server: 15.156.204.87
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-  skip-cert-verify: true
-  udp: true
-  country: CA
-- name: CN_SS_65443_1177
-  type: ss
-  server: 121.46.230.138
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  skip-cert-verify: true
-  udp: true
-  country: CN
-- name: CA_SS_443_66
+- name: CA_SS_443_76
   type: ss
   server: 35.182.118.89
   port: 443
@@ -199,15 +296,886 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: CA
-- name: CN_SS_65443_1986
-  type: ss
-  server: 121.46.230.232
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
+- name: HK_TROJAN_28122_747
+  type: trojan
+  server: 209.248.32.116
+  port: 28122
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
   skip-cert-verify: true
   udp: true
-  country: CN
+  country: HK
+- name: US_TROJAN_29739_184
+  type: trojan
+  server: 207.246.97.36
+  port: 29739
+  password: i99Cef
+  sni: download.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: US
+- name: JP_TROJAN_27242_502
+  type: trojan
+  server: 45.32.57.242
+  port: 27242
+  password: i99Cef
+  sni: download.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: TW_TROJAN_28156_789
+  type: trojan
+  server: 211.20.156.191
+  port: 28156
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: Unknown_VLESS_2053_35
+  type: vless
+  network: ws
+  server: 172.67.137.74
+  port: 2053
+  uuid: 774d0ea8-0e45-4078-ab22-14e4f5fff10f
+  servername: broad-hill-c0ae.anz-rahii23.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: broad-hill-c0ae.anz-rahii23.workers.dev
+    path: /eyJqdW5rIjoiaWtrbUhXQmMwN0xFOVUiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6MTE6NjQ6Ol0iXX0
+  country: Unknown
+- name: DE_VLESS_2087_302
+  type: vless
+  server: 163.8.195.241
+  port: 2087
+  uuid: 56ba5d34-ef22-4ba6-8090-4188b807df54
+  network: ws
+  tls: false
+  ws-opts:
+    path: /29c8fed7ca22
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: NL_VLESS_7443_410
+  type: vless
+  server: 144.124.225.48
+  port: 7443
+  uuid: ecf789a5-edc3-4eef-bdea-837d048afd9a
+  servername: setbacks.hb-website.ru-msk.vkcloud-storage.ru
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: 8qUiIosG5-OQWo0tD29BQCbxb50neUg8BynxdAvDzB4
+    short-id: '132142'
+  skip-cert-verify: true
+  udp: true
+  country: NL
+- name: GB_VLESS_443_358
+  type: vless
+  network: ws
+  server: 129.121.95.159
+  port: 443
+  uuid: f6190ff2-864c-46cf-ac16-93908c069b75
+  servername: 129.121.95.159
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: 129.121.95.159
+    path: /connect
+  country: GB
+- name: US_VLESS_443_468
+  type: vless
+  network: ws
+  server: 31.76.88.10
+  port: 443
+  uuid: 03c48eca-e0aa-4e18-998c-1f53f1de293c
+  servername: cf5.rumedia-cdn.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: cf5.rumedia-cdn.com
+    path: /cdn/v3/live
+  country: US
+- name: RU_VLESS_443_1025
+  type: vless
+  server: ru05.abvpn.ru
+  port: 443
+  uuid: a289a3d3-5833-4b28-8809-ae72898a98d0
+  network: ws
+  servername: ru05.abvpn.ru
+  tls: true
+  client-fingerprint: edge
+  ws-opts:
+    path: /websocket
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: AE_VLESS_53289_1667
+  type: vless
+  server: 78.17.190.94
+  port: 53289
+  uuid: 9a913f1c-28b3-4d0b-aa77-698302252ab7
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  country: AE
+- name: US_VMESS_18000_31
+  type: vmess
+  network: tcp
+  server: 67.220.85.46
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: SG_VMESS_18000_454_2
+  type: vmess
+  network: tcp
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: DE_VMESS_180_126
+  type: vmess
+  network: tcp
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: HK_TROJAN_28104_764
+  type: trojan
+  server: 209.248.32.116
+  port: 28104
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: TW_TROJAN_28122_807
+  type: trojan
+  server: 211.20.156.191
+  port: 28122
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: Unknown_VLESS_443_37
+  type: vless
+  network: ws
+  server: 172.67.148.180
+  port: 443
+  uuid: 02e6ad71-7f85-4c3a-aac7-6171762bce87
+  servername: summer-field-3c5b.fsdfsddf.workers.dev
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: summer-field-3c5b.fsdfsddf.workers.dev
+    path: /eyJqdW5rIjoia2N4eldGd0p6NVY1V3hrIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OjExOjY0OjpdIl19?ed=2560
+  country: Unknown
+- name: DE_VLESS_33843_313
+  type: vless
+  network: tcp
+  server: 87.120.84.32
+  port: 33843
+  uuid: 93dac4b8-3879-4179-abdb-9666a9e2ca8d
+  servername: deproxy2.lckdwn.ru
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  country: DE
+- name: US_VLESS_443_977
+  type: vless
+  server: 31.76.71.140
+  port: 443
+  uuid: af00e0c4-decf-48f2-9013-56abe9c9efcd
+  servername: rrr.windconnect.pro
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: BsFRd4pZgH2hK2AmVf6Mv7z2QGmV2LPYbqkT1UqZX30
+    short-id: 4da5d1853f04af6d
+  skip-cert-verify: true
+  udp: true
+  country: US
+- name: US_VMESS_18000_49
+  type: vmess
+  network: tcp
+  server: 67.220.95.3
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: DE_VMESS_180_130
+  type: vmess
+  network: tcp
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: HK_TROJAN_28105_783
+  type: trojan
+  server: 209.248.32.116
+  port: 28105
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: TW_TROJAN_28159_1369
+  type: trojan
+  server: 211.20.156.191
+  port: 28159
+  password: i99Cef
+  sni: download.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: Unknown_VLESS_8443_38
+  type: vless
+  network: ws
+  server: 104.26.12.54
+  port: 8443
+  uuid: 31aa0950-eb19-45ff-94a2-af416deb3b90
+  servername: square-salad-ebde.zdfgvccfguuyggg.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: square-salad-ebde.zdfgvccfguuyggg.workers.dev
+    path: /eyJqdW5rIjoiZm5INktPV0lGcHI1NjNSOSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0?ed=8443
+  country: Unknown
+- name: DE_VLESS_443_411
+  type: vless
+  network: ws
+  server: 94.156.232.254
+  port: 443
+  uuid: 03c48eca-e0aa-4e18-998c-1f53f1de293c
+  servername: cf6.rumedia-cdn.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: cf6.rumedia-cdn.com
+    path: /cdn/v3/live
+  country: DE
+- name: US_VLESS_443_1211
+  type: vless
+  server: rrr.windconnect.pro
+  port: 443
+  uuid: af00e0c4-decf-48f2-9013-56abe9c9efcd
+  servername: rrr.windconnect.pro
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: BsFRd4pZgH2hK2AmVf6Mv7z2QGmV2LPYbqkT1UqZX30
+    short-id: 4da5d1853f04af6d
+  skip-cert-verify: true
+  udp: true
+  country: US
+- name: US_VMESS_18000_82
+  type: vmess
+  network: tcp
+  server: 38.110.1.246
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: DE_VMESS_180_130_2
+  type: vmess
+  network: tcp
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: HK_TROJAN_28126_784
+  type: trojan
+  server: 209.248.32.116
+  port: 28126
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: TW_TROJAN_28155_1392
+  type: trojan
+  server: 211.20.156.191
+  port: 28155
+  password: i99Cef
+  sni: download.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: Unknown_VLESS_80_39
+  type: vless
+  server: 172.64.52.6
+  port: 80
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  network: ws
+  tls: false
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+  skip-cert-verify: true
+  udp: true
+  country: Unknown
+- name: US_VMESS_18000_82_2
+  type: vmess
+  network: tcp
+  server: 38.91.107.49
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: DE_VMESS_443_674
+  type: vmess
+  network: ws
+  server: 82.139.242.5
+  port: 443
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: renderer-stream-2-62.mirra.now
+    path: /api/v1/gpu-stream/socket
+  country: DE
+- name: HK_TROJAN_28125_1063
+  type: trojan
+  server: 209.248.32.116
+  port: 28125
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: TW_TROJAN_28123_1559
+  type: trojan
+  server: 211.20.156.191
+  port: 28123
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: Unknown_VLESS_2083_39
+  type: vless
+  network: ws
+  server: 172.66.44.211
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  servername: wk1.f1w.de5.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: wk1.f1w.de5.net
+    path: /
+  country: Unknown
+- name: US_VMESS_18000_135
+  type: vmess
+  network: tcp
+  server: 84.17.41.2
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: HK_TROJAN_28165_1165
+  type: trojan
+  server: 209.248.32.116
+  port: 28165
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: TW_TROJAN_28133_1742
+  type: trojan
+  server: 211.20.156.191
+  port: 28133
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: Unknown_VLESS_2087_39
+  type: vless
+  network: ws
+  server: 104.16.150.246
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /fp=chrome
+  country: Unknown
+- name: US_VMESS_443_164
+  type: vmess
+  network: tcp
+  server: 165.140.216.142
+  port: 443
+  uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: HK_TROJAN_28159_1322
+  type: trojan
+  server: 209.248.32.116
+  port: 28159
+  password: i99Cef
+  sni: download.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: TW_TROJAN_28152_2117
+  type: trojan
+  server: 211.20.156.191
+  port: 28152
+  password: i99Cef
+  sni: download.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: Unknown_VLESS_2087_40
+  type: vless
+  network: ws
+  server: 104.16.151.21
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /
+  country: Unknown
+- name: US_VMESS_443_166
+  type: vmess
+  network: tcp
+  server: 165.140.216.141
+  port: 443
+  uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: HK_TROJAN_28166_1324
+  type: trojan
+  server: 209.248.32.116
+  port: 28166
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: TW_TROJAN_28161_2430
+  type: trojan
+  server: 211.20.156.191
+  port: 28161
+  password: i99Cef
+  sni: download.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: Unknown_VLESS_8080_44
+  type: vless
+  server: 188.114.97.6
+  port: 8080
+  uuid: e5c5c336-8ca7-44bc-82d6-0473a55ad1ae
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: pingoneorg.hydrash.workers.dev
+  skip-cert-verify: true
+  udp: true
+  country: Unknown
+- name: HK_TROJAN_28145_1441
+  type: trojan
+  server: 209.248.32.116
+  port: 28145
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: Unknown_VLESS_8880_46
+  type: vless
+  server: 104.16.106.213
+  port: 8880
+  uuid: afb13fa2-bba2-417f-b8c2-62565f92a78d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /pyip=ProxyIP.JP.CMLiussss.net
+    headers:
+      Host: orange-block-5cd1.124-199.workers.dev
+  skip-cert-verify: true
+  udp: true
+  country: Unknown
+- name: HK_TROJAN_28121_1451
+  type: trojan
+  server: 209.248.32.116
+  port: 28121
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: Unknown_VLESS_2053_46
+  type: vless
+  network: ws
+  server: 172.67.130.187
+  port: 2053
+  uuid: 2b8738de-1af5-4267-b101-c05707769ed4
+  servername: fans.liverpool.qzz.io
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: fans.liverpool.qzz.io
+    path: /eyJqdW5rIjoiZXlpMnFWRURmWkp5ZCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+  country: Unknown
+- name: HK_TROJAN_28144_1758
+  type: trojan
+  server: 209.248.32.116
+  port: 28144
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: Unknown_VLESS_2083_46
+  type: vless
+  network: ws
+  server: 104.18.40.152
+  port: 2083
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /
+  country: Unknown
+- name: Unknown_VLESS_8443_50
+  type: vless
+  network: ws
+  server: 172.66.149.243
+  port: 8443
+  uuid: ededaf7e-ad86-40bc-b837-b1403c56f311
+  servername: bazyepc.aminrazavi1384.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: bazyepc.aminrazavi1384.workers.dev
+    path: /eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+  country: Unknown
+- name: Unknown_VLESS_8880_55
+  type: vless
+  server: 8.6.112.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime08.workers.dev
+  skip-cert-verify: true
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_2087_55
+  type: vless
+  network: ws
+  server: 104.19.214.98
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /?TELEGRAM-MARAMBASHI_MARAMBASHI?ed=512
+  country: Unknown
+- name: Unknown_VLESS_2083_58
+  type: vless
+  network: ws
+  server: 172.66.47.45
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  servername: wk1.f1w.de5.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: wk1.f1w.de5.net
+    path: /fp=chrome
+  country: Unknown
+- name: Unknown_VLESS_443_60
+  type: vless
+  network: ws
+  server: 104.21.61.42
+  port: 443
+  uuid: 5b14b2cf-57e3-4f96-92f2-9695078f06d8
+  servername: 001.inc-electrocell-001-001.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: 001.inc-electrocell-001-001.workers.dev
+    path: /eyJqdW5rIjoiSGdhak9tRkZLeDdwcCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560
+  country: Unknown
+- name: Unknown_VLESS_8080_110
+  type: vless
+  server: 104.21.75.97
+  port: 8080
+  uuid: d98c1be3-7837-4d8a-a9fc-05e7a807ccb0
+  network: ws
+  tls: false
+  ws-opts:
+    path: /eyJqdW5rIjoiSWZqSHF3Q2RLIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19?ed=2560
+    headers:
+      Host: server1.poludiro.workers.dev
+  skip-cert-verify: true
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_443_318
+  type: vless
+  network: ws
+  server: 172.67.130.144
+  port: 443
+  uuid: 7da33b25-cdd6-e481-afcf-c5d532361a70
+  servername: ez-1bc8ab.sekiro-c18.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: ez-1bc8ab.sekiro-c18.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_8443_342
+  type: vless
+  network: ws
+  server: 188.114.96.7
+  port: 8443
+  uuid: 362a79a2-ce89-8d2d-355c-f1f5071a445f
+  servername: fragrant-unit-d662.mmammatrix770088.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: fragrant-unit-d662.mmammatrix770088.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_344
+  type: vless
+  network: ws
+  server: 172.64.80.1
+  port: 443
+  uuid: 4ce7cb8a-f9b1-4bfa-a80d-9e168c61a633
+  servername: curly-night-6928.ggdhchjk.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: curly-night-6928.ggdhchjk.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_451
+  type: vless
+  network: ws
+  server: 172.67.214.106
+  port: 443
+  uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
+  servername: summer-meadow-af5b.woowoorrrkk.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: summer-meadow-af5b.woowoorrrkk.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_555
+  type: vless
+  network: ws
+  server: 104.21.78.9
+  port: 443
+  uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
+  servername: summer-meadow-af5b.woowoorrrkk.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: summer-meadow-af5b.woowoorrrkk.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_727
+  type: vless
+  network: ws
+  server: 172.67.156.147
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+  country: Unknown
+- name: Unknown_VLESS_443_773
+  type: vless
+  server: 162.159.254.3
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  network: ws
+  servername: jp3.yohototo.top
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+  skip-cert-verify: true
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_443_872
+  type: vless
+  network: ws
+  server: 141.101.122.147
+  port: 443
+  uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
+  servername: a.cwvps.eu.org
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: a.cwvps.eu.org
+    path: /ws
+  country: Unknown
+- name: Unknown_VLESS_443_1602
+  type: vless
+  network: ws
+  server: 104.27.11.186
+  port: 443
+  uuid: 50414e45-4c5f-5a45-5553-932290b159c7
+  servername: llz3pge3u16s.nova-abdda2.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: llz3pge3u16s.nova-abdda2.workers.dev
+    path: /stream/PANEL_ZEUS/932290b159c7/loc-3
+  country: Unknown
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -218,38 +1186,118 @@ proxy-groups:
   - 📺 YouTube 优选
   - 🌍 AE
   - 🌍 CA
-  - 🌍 CN
   - 🌍 DE
+  - 🌍 EE
   - 🌍 FR
   - 🌍 GB
-  - 🌍 MY
+  - 🌍 HK
+  - 🌍 JP
+  - 🌍 KR
+  - 🌍 NL
   - 🌍 PL
   - 🌍 RU
+  - 🌍 SC
+  - 🌍 SG
   - 🌍 TH
+  - 🌍 TW
   - 🌍 US
   - 🌍 Unknown
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_VLESS_2087_298
-  - PL_VLESS_2087_285
-  - DE_VLESS_2087_322
-  - RU_VLESS_443_750
-  - US_VLESS_443_210
-  - CA_SS_8118_48
-  - Unknown_VLESS_8080_456
-  - FR_SS_65443_167
-  - MY_SS_65443_471
-  - CN_SS_65443_916
-  - AE_VLESS_53289_1604
-  - DE_HYSTERIA_20088_1649
-  - TH_SS_65443_2837
-  - PL_VLESS_443_450
-  - CA_SS_443_64
-  - CN_SS_65443_1177
-  - CA_SS_443_66
-  - CN_SS_65443_1986
+  - Unknown_VLESS_443_35
+  - DE_VLESS_443_287
+  - NL_VLESS_8443_275
+  - GB_VLESS_2087_301
+  - PL_VLESS_2087_306
+  - SG_VLESS_54618_724
+  - US_VLESS_8880_55
+  - RU_VLESS_443_596
+  - NL_VMESS_33736_1440
+  - AE_VLESS_8443_549
+  - KR_VLESS_443_2110
+  - US_VMESS_22324_19
+  - HK_VMESS_30804_1099
+  - SG_VMESS_18000_454
+  - SC_VMESS_54321_1030
+  - DE_VMESS_180_124
+  - Unknown_VMESS_8443_167
+  - TW_VMESS_35034_420
+  - CA_VMESS_18000_89
+  - EE_VLESS_8443_355
+  - FR_VLESS_443_273
+  - TH_SS_65443_510
+  - CA_SS_443_76
+  - HK_TROJAN_28122_747
+  - US_TROJAN_29739_184
+  - JP_TROJAN_27242_502
+  - TW_TROJAN_28156_789
+  - Unknown_VLESS_2053_35
+  - DE_VLESS_2087_302
+  - NL_VLESS_7443_410
+  - GB_VLESS_443_358
+  - US_VLESS_443_468
+  - RU_VLESS_443_1025
+  - AE_VLESS_53289_1667
+  - US_VMESS_18000_31
+  - SG_VMESS_18000_454_2
+  - DE_VMESS_180_126
+  - HK_TROJAN_28104_764
+  - TW_TROJAN_28122_807
+  - Unknown_VLESS_443_37
+  - DE_VLESS_33843_313
+  - US_VLESS_443_977
+  - US_VMESS_18000_49
+  - DE_VMESS_180_130
+  - HK_TROJAN_28105_783
+  - TW_TROJAN_28159_1369
+  - Unknown_VLESS_8443_38
+  - DE_VLESS_443_411
+  - US_VLESS_443_1211
+  - US_VMESS_18000_82
+  - DE_VMESS_180_130_2
+  - HK_TROJAN_28126_784
+  - TW_TROJAN_28155_1392
+  - Unknown_VLESS_80_39
+  - US_VMESS_18000_82_2
+  - DE_VMESS_443_674
+  - HK_TROJAN_28125_1063
+  - TW_TROJAN_28123_1559
+  - Unknown_VLESS_2083_39
+  - US_VMESS_18000_135
+  - HK_TROJAN_28165_1165
+  - TW_TROJAN_28133_1742
+  - Unknown_VLESS_2087_39
+  - US_VMESS_443_164
+  - HK_TROJAN_28159_1322
+  - TW_TROJAN_28152_2117
+  - Unknown_VLESS_2087_40
+  - US_VMESS_443_166
+  - HK_TROJAN_28166_1324
+  - TW_TROJAN_28161_2430
+  - Unknown_VLESS_8080_44
+  - HK_TROJAN_28145_1441
+  - Unknown_VLESS_8880_46
+  - HK_TROJAN_28121_1451
+  - Unknown_VLESS_2053_46
+  - HK_TROJAN_28144_1758
+  - Unknown_VLESS_2083_46
+  - Unknown_VLESS_8443_50
+  - Unknown_VLESS_8880_55
+  - Unknown_VLESS_2087_55
+  - Unknown_VLESS_2083_58
+  - Unknown_VLESS_443_60
+  - Unknown_VLESS_8080_110
+  - Unknown_VLESS_443_318
+  - Unknown_VLESS_8443_342
+  - Unknown_VLESS_443_344
+  - Unknown_VLESS_443_451
+  - Unknown_VLESS_443_555
+  - Unknown_VLESS_443_727
+  - Unknown_VLESS_443_773
+  - Unknown_VLESS_443_872
+  - Unknown_VLESS_443_1602
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -262,24 +1310,98 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_8118_48
-  - CA_SS_443_64
-  - CA_SS_443_66
-  - FR_SS_65443_167
-  - US_VLESS_443_210
-  - PL_VLESS_2087_285
-  - GB_VLESS_2087_298
-  - DE_VLESS_2087_322
-  - PL_VLESS_443_450
-  - Unknown_VLESS_8080_456
-  - MY_SS_65443_471
-  - RU_VLESS_443_750
-  - CN_SS_65443_916
-  - CN_SS_65443_1177
-  - AE_VLESS_53289_1604
-  - DE_HYSTERIA_20088_1649
-  - CN_SS_65443_1986
-  - TH_SS_65443_2837
+  - US_VMESS_22324_19
+  - US_VMESS_18000_31
+  - Unknown_VLESS_443_35
+  - Unknown_VLESS_2053_35
+  - Unknown_VLESS_443_37
+  - Unknown_VLESS_8443_38
+  - Unknown_VLESS_80_39
+  - Unknown_VLESS_2083_39
+  - Unknown_VLESS_2087_39
+  - Unknown_VLESS_2087_40
+  - Unknown_VLESS_8080_44
+  - Unknown_VLESS_8880_46
+  - Unknown_VLESS_2053_46
+  - Unknown_VLESS_2083_46
+  - US_VMESS_18000_49
+  - Unknown_VLESS_8443_50
+  - US_VLESS_8880_55
+  - Unknown_VLESS_8880_55
+  - Unknown_VLESS_2087_55
+  - Unknown_VLESS_2083_58
+  - Unknown_VLESS_443_60
+  - CA_SS_443_76
+  - US_VMESS_18000_82
+  - US_VMESS_18000_82_2
+  - CA_VMESS_18000_89
+  - Unknown_VLESS_8080_110
+  - DE_VMESS_180_124
+  - DE_VMESS_180_126
+  - DE_VMESS_180_130
+  - DE_VMESS_180_130_2
+  - US_VMESS_18000_135
+  - US_VMESS_443_164
+  - US_VMESS_443_166
+  - Unknown_VMESS_8443_167
+  - US_TROJAN_29739_184
+  - FR_VLESS_443_273
+  - NL_VLESS_8443_275
+  - DE_VLESS_443_287
+  - GB_VLESS_2087_301
+  - DE_VLESS_2087_302
+  - PL_VLESS_2087_306
+  - DE_VLESS_33843_313
+  - Unknown_VLESS_443_318
+  - Unknown_VLESS_8443_342
+  - Unknown_VLESS_443_344
+  - EE_VLESS_8443_355
+  - GB_VLESS_443_358
+  - NL_VLESS_7443_410
+  - DE_VLESS_443_411
+  - TW_VMESS_35034_420
+  - Unknown_VLESS_443_451
+  - SG_VMESS_18000_454
+  - SG_VMESS_18000_454_2
+  - US_VLESS_443_468
+  - JP_TROJAN_27242_502
+  - TH_SS_65443_510
+  - AE_VLESS_8443_549
+  - Unknown_VLESS_443_555
+  - RU_VLESS_443_596
+  - DE_VMESS_443_674
+  - SG_VLESS_54618_724
+  - Unknown_VLESS_443_727
+  - HK_TROJAN_28122_747
+  - HK_TROJAN_28104_764
+  - Unknown_VLESS_443_773
+  - HK_TROJAN_28105_783
+  - HK_TROJAN_28126_784
+  - TW_TROJAN_28156_789
+  - TW_TROJAN_28122_807
+  - Unknown_VLESS_443_872
+  - US_VLESS_443_977
+  - RU_VLESS_443_1025
+  - SC_VMESS_54321_1030
+  - HK_TROJAN_28125_1063
+  - HK_VMESS_30804_1099
+  - HK_TROJAN_28165_1165
+  - US_VLESS_443_1211
+  - HK_TROJAN_28159_1322
+  - HK_TROJAN_28166_1324
+  - TW_TROJAN_28159_1369
+  - TW_TROJAN_28155_1392
+  - NL_VMESS_33736_1440
+  - HK_TROJAN_28145_1441
+  - HK_TROJAN_28121_1451
+  - TW_TROJAN_28123_1559
+  - Unknown_VLESS_443_1602
+  - AE_VLESS_53289_1667
+  - TW_TROJAN_28133_1742
+  - HK_TROJAN_28144_1758
+  - KR_VLESS_443_2110
+  - TW_TROJAN_28152_2117
+  - TW_TROJAN_28161_2430
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -291,90 +1413,200 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_53289_1604
+  - AE_VLESS_8443_549
+  - AE_VLESS_53289_1667
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_SS_8118_48
-  - CA_SS_443_64
-  - CA_SS_443_66
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
-- name: 🌍 CN
-  type: url-test
-  proxies:
-  - CN_SS_65443_916
-  - CN_SS_65443_1177
-  - CN_SS_65443_1986
+  - CA_VMESS_18000_89
+  - CA_SS_443_76
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_2087_322
-  - DE_HYSTERIA_20088_1649
+  - DE_VLESS_443_287
+  - DE_VMESS_180_124
+  - DE_VLESS_2087_302
+  - DE_VMESS_180_126
+  - DE_VLESS_33843_313
+  - DE_VMESS_180_130
+  - DE_VLESS_443_411
+  - DE_VMESS_180_130_2
+  - DE_VMESS_443_674
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 EE
+  type: url-test
+  proxies:
+  - EE_VLESS_8443_355
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_SS_65443_167
+  - FR_VLESS_443_273
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_VLESS_2087_298
+  - GB_VLESS_2087_301
+  - GB_VLESS_443_358
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
-- name: 🌍 MY
+- name: 🌍 HK
   type: url-test
   proxies:
-  - MY_SS_65443_471
+  - HK_VMESS_30804_1099
+  - HK_TROJAN_28122_747
+  - HK_TROJAN_28104_764
+  - HK_TROJAN_28105_783
+  - HK_TROJAN_28126_784
+  - HK_TROJAN_28125_1063
+  - HK_TROJAN_28165_1165
+  - HK_TROJAN_28159_1322
+  - HK_TROJAN_28166_1324
+  - HK_TROJAN_28145_1441
+  - HK_TROJAN_28121_1451
+  - HK_TROJAN_28144_1758
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 JP
+  type: url-test
+  proxies:
+  - JP_TROJAN_27242_502
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 KR
+  type: url-test
+  proxies:
+  - KR_VLESS_443_2110
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 NL
+  type: url-test
+  proxies:
+  - NL_VLESS_8443_275
+  - NL_VMESS_33736_1440
+  - NL_VLESS_7443_410
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_2087_285
-  - PL_VLESS_443_450
+  - PL_VLESS_2087_306
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_750
+  - RU_VLESS_443_596
+  - RU_VLESS_443_1025
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 SC
+  type: url-test
+  proxies:
+  - SC_VMESS_54321_1030
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 SG
+  type: url-test
+  proxies:
+  - SG_VLESS_54618_724
+  - SG_VMESS_18000_454
+  - SG_VMESS_18000_454_2
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 TH
   type: url-test
   proxies:
-  - TH_SS_65443_2837
+  - TH_SS_65443_510
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 🌍 TW
+  type: url-test
+  proxies:
+  - TW_VMESS_35034_420
+  - TW_TROJAN_28156_789
+  - TW_TROJAN_28122_807
+  - TW_TROJAN_28159_1369
+  - TW_TROJAN_28155_1392
+  - TW_TROJAN_28123_1559
+  - TW_TROJAN_28133_1742
+  - TW_TROJAN_28152_2117
+  - TW_TROJAN_28161_2430
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 US
   type: url-test
   proxies:
-  - US_VLESS_443_210
+  - US_VLESS_8880_55
+  - US_VMESS_22324_19
+  - US_TROJAN_29739_184
+  - US_VLESS_443_468
+  - US_VMESS_18000_31
+  - US_VLESS_443_977
+  - US_VMESS_18000_49
+  - US_VLESS_443_1211
+  - US_VMESS_18000_82
+  - US_VMESS_18000_82_2
+  - US_VMESS_18000_135
+  - US_VMESS_443_164
+  - US_VMESS_443_166
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
 - name: 🌍 Unknown
   type: url-test
   proxies:
-  - Unknown_VLESS_8080_456
+  - Unknown_VLESS_443_35
+  - Unknown_VMESS_8443_167
+  - Unknown_VLESS_2053_35
+  - Unknown_VLESS_443_37
+  - Unknown_VLESS_8443_38
+  - Unknown_VLESS_80_39
+  - Unknown_VLESS_2083_39
+  - Unknown_VLESS_2087_39
+  - Unknown_VLESS_2087_40
+  - Unknown_VLESS_8080_44
+  - Unknown_VLESS_8880_46
+  - Unknown_VLESS_2053_46
+  - Unknown_VLESS_2083_46
+  - Unknown_VLESS_8443_50
+  - Unknown_VLESS_8880_55
+  - Unknown_VLESS_2087_55
+  - Unknown_VLESS_2083_58
+  - Unknown_VLESS_443_60
+  - Unknown_VLESS_8080_110
+  - Unknown_VLESS_443_318
+  - Unknown_VLESS_8443_342
+  - Unknown_VLESS_443_344
+  - Unknown_VLESS_443_451
+  - Unknown_VLESS_443_555
+  - Unknown_VLESS_443_727
+  - Unknown_VLESS_443_773
+  - Unknown_VLESS_443_872
+  - Unknown_VLESS_443_1602
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,22 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VLESS_443_1074
+- name: KR_VLESS_443_2110
   type: vless
-  network: ws
   server: kr.mkdir.kdns.fr
   port: 443
   uuid: 2cf94f4d-9d5b-49ca-81a3-ddc0529a2dac
+  network: ws
   servername: ai-verps.pages.dev
-  skip-cert-verify: false
   tls: true
-  udp: true
-  tfo: false
   client-fingerprint: chrome
   ws-opts:
+    path: /
     headers:
       Host: ai-verps.pages.dev
-    path: /
+  skip-cert-verify: true
+  udp: true
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -35,7 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VLESS_443_1074
+  - KR_VLESS_443_2110
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,7 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VLESS_443_1074
+  - KR_VLESS_443_2110
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -60,7 +59,7 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VLESS_443_1074
+  - KR_VLESS_443_2110
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
