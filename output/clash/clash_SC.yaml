@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SC_VMESS_54321_1030
+- name: SC_VMESS_54321_758
   type: vmess
   network: tcp
   server: 156.226.183.181
@@ -28,7 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SC_VMESS_54321_1030
+  - SC_VMESS_54321_758
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SC_VMESS_54321_1030
+  - SC_VMESS_54321_758
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +53,7 @@ proxy-groups:
 - name: 🌍 SC
   type: url-test
   proxies:
-  - SC_VMESS_54321_1030
+  - SC_VMESS_54321_758
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

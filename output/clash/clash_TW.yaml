@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VMESS_35034_420
+- name: TW_VMESS_35034_416
   type: vmess
   network: tcp
   server: 165.154.195.38
@@ -14,78 +14,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-  country: TW
-- name: TW_TROJAN_28156_789
-  type: trojan
-  server: 211.20.156.191
-  port: 28156
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-  country: TW
-- name: TW_TROJAN_28122_807
-  type: trojan
-  server: 211.20.156.191
-  port: 28122
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-  country: TW
-- name: TW_TROJAN_28159_1369
-  type: trojan
-  server: 211.20.156.191
-  port: 28159
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-  country: TW
-- name: TW_TROJAN_28155_1392
-  type: trojan
-  server: 211.20.156.191
-  port: 28155
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-  country: TW
-- name: TW_TROJAN_28123_1559
-  type: trojan
-  server: 211.20.156.191
-  port: 28123
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-  country: TW
-- name: TW_TROJAN_28133_1742
-  type: trojan
-  server: 211.20.156.191
-  port: 28133
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-  country: TW
-- name: TW_TROJAN_28161_2430
-  type: trojan
-  server: 211.20.156.191
-  port: 28161
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-  country: TW
-- name: TW_TROJAN_28152_2117
-  type: trojan
-  server: 211.20.156.191
-  port: 28152
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -100,15 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VMESS_35034_420
-  - TW_TROJAN_28156_789
-  - TW_TROJAN_28122_807
-  - TW_TROJAN_28159_1369
-  - TW_TROJAN_28155_1392
-  - TW_TROJAN_28123_1559
-  - TW_TROJAN_28133_1742
-  - TW_TROJAN_28161_2430
-  - TW_TROJAN_28152_2117
+  - TW_VMESS_35034_416
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -121,15 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_420
-  - TW_TROJAN_28156_789
-  - TW_TROJAN_28122_807
-  - TW_TROJAN_28159_1369
-  - TW_TROJAN_28155_1392
-  - TW_TROJAN_28123_1559
-  - TW_TROJAN_28133_1742
-  - TW_TROJAN_28152_2117
-  - TW_TROJAN_28161_2430
+  - TW_VMESS_35034_416
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -141,15 +53,7 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VMESS_35034_420
-  - TW_TROJAN_28156_789
-  - TW_TROJAN_28122_807
-  - TW_TROJAN_28159_1369
-  - TW_TROJAN_28155_1392
-  - TW_TROJAN_28123_1559
-  - TW_TROJAN_28133_1742
-  - TW_TROJAN_28161_2430
-  - TW_TROJAN_28152_2117
+  - TW_VMESS_35034_416
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

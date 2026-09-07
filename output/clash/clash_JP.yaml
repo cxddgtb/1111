@@ -5,13 +5,36 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_TROJAN_27242_502
-  type: trojan
-  server: 45.32.57.242
-  port: 27242
-  password: i99Cef
-  sni: download.windowsupdate.com
+- name: JP_VMESS_4433_319
+  type: vmess
+  network: tcp
+  server: 45.32.57.118
+  port: 4433
+  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
   skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: JP
+- name: JP_HYSTERIA2_2035_1681
+  type: hysteria2
+  server: bt5iibdl.zf-mix-2.9999231.xyz
+  port: 2035
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  sni: az-wy.9999231.xyz
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: ZDQxZDhjZDk4ZjAwYjIwNA==
+  udp: true
+  country: JP
+- name: JP_HYSTERIA2_2039_1579
+  type: hysteria2
+  server: vmt2k5g7.zf-mix-2.9999231.xyz
+  port: 2039
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  sni: ro-wy.9999231.xyz
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: ZDQxZDhjZDk4ZjAwYjIwNA==
   udp: true
   country: JP
 proxy-groups:
@@ -27,7 +50,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_TROJAN_27242_502
+  - JP_VMESS_4433_319
+  - JP_HYSTERIA2_2035_1681
+  - JP_HYSTERIA2_2039_1579
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +65,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_TROJAN_27242_502
+  - JP_VMESS_4433_319
+  - JP_HYSTERIA2_2039_1579
+  - JP_HYSTERIA2_2035_1681
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +79,9 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_TROJAN_27242_502
+  - JP_VMESS_4433_319
+  - JP_HYSTERIA2_2035_1681
+  - JP_HYSTERIA2_2039_1579
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
