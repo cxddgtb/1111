@@ -5,20 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CH_VLESS_5001_630
-  type: vless
-  server: 31.76.4.128
-  port: 5001
-  uuid: 5a92a9d2-3067-49cd-bfc5-989bbdfc5d52
-  servername: fi.aeternavpn.space
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: qq
-  reality-opts:
-    public-key: HNjZe5pYUhcuE8sASYVVrVSMW_jFfekgLnrnO4xXIyQ
-    short-id: a1b2c3d4
+- name: CH_HTTP_9443_649
+  password: None
+  port: 9443
+  server: 37.120.213.210
   skip-cert-verify: true
-  udp: true
+  tls: true
+  type: http
+  username: null
+  country: CH
+- name: CH_HTTP_443_885
+  port: 443
+  server: 31.7.62.50
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_VLESS_5001_630
+  - CH_HTTP_9443_649
+  - CH_HTTP_443_885
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_VLESS_5001_630
+  - CH_HTTP_9443_649
+  - CH_HTTP_443_885
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +61,8 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_VLESS_5001_630
+  - CH_HTTP_9443_649
+  - CH_HTTP_443_885
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,23 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CO_VLESS_62145_235
-  type: vless
-  server: 149.130.184.118
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: CO
-- name: CO_VLESS_62145_1271
-  type: vless
-  server: 157.137.227.227
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  tls: false
-  skip-cert-verify: true
-  udp: true
+- name: CO_HTTP_999_369
+  password: None
+  port: 999
+  server: 8.243.167.51
+  type: http
+  username: null
   country: CO
 proxy-groups:
 - name: 🚀 节点选择
@@ -36,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CO_VLESS_62145_235
-  - CO_VLESS_62145_1271
+  - CO_HTTP_999_369
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CO_VLESS_62145_235
-  - CO_VLESS_62145_1271
+  - CO_HTTP_999_369
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +50,7 @@ proxy-groups:
 - name: 🌍 CO
   type: url-test
   proxies:
-  - CO_VLESS_62145_235
-  - CO_VLESS_62145_1271
+  - CO_HTTP_999_369
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

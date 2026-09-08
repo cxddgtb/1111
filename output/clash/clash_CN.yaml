@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_SS_65443_916
+- name: CN_SS_65443_466
   type: ss
   server: 121.46.230.137
   port: 65443
@@ -14,16 +14,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: CN
-- name: CN_SS_65443_1177
-  type: ss
-  server: 121.46.230.138
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  skip-cert-verify: true
-  udp: true
-  country: CN
-- name: CN_SS_65443_1986
+- name: CN_SS_65443_684
   type: ss
   server: 121.46.230.232
   port: 65443
@@ -31,6 +22,18 @@ proxies:
   password: 7eadc6dbe2ae
   skip-cert-verify: true
   udp: true
+  country: CN
+- name: CN_VMESS_50002_2751
+  type: vmess
+  network: tcp
+  server: 112.132.215.108
+  port: 50002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  servername: 112.132.215.108
+  skip-cert-verify: true
+  alterId: 64
+  cipher: auto
+  delay: 162
   country: CN
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,9 +48,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CN_SS_65443_916
-  - CN_SS_65443_1177
-  - CN_SS_65443_1986
+  - CN_SS_65443_466
+  - CN_SS_65443_684
+  - CN_VMESS_50002_2751
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,9 +63,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CN_SS_65443_916
-  - CN_SS_65443_1177
-  - CN_SS_65443_1986
+  - CN_SS_65443_466
+  - CN_SS_65443_684
+  - CN_VMESS_50002_2751
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -74,9 +77,9 @@ proxy-groups:
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_SS_65443_916
-  - CN_SS_65443_1177
-  - CN_SS_65443_1986
+  - CN_SS_65443_466
+  - CN_SS_65443_684
+  - CN_VMESS_50002_2751
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,17 +5,43 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VMESS_18000_457
-  type: vmess
-  network: tcp
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+- name: SG_HYSTERIA2_1933_1030
+  password: 19f72087-4591-4d72-930b-2697078ec2be
+  port: 1933
+  server: sg1.xiaoliyu.cyou
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  sni: sg1.xiaoliyu.cyou
+  tls: false
+  type: hysteria2
   country: SG
-- name: SG_VMESS_18000_449
+- name: SG_HYSTERIA2_443_543
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  port: 443
+  server: 47.129.0.20
+  skip-cert-verify: true
+  sni: 47.129.0.20
+  tls: false
+  type: hysteria2
+  country: SG
+- name: SG_TROJAN_10046_1039
+  server: z-sg2.251313.xyz
+  port: 10046
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+  country: SG
+- name: SG_TROJAN_10044_1492
+  server: z-sg1.251313.xyz
+  port: 10044
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+  country: SG
+- name: SG_VMESS_18000_341
   type: vmess
   network: tcp
   server: 149.88.23.202
@@ -25,26 +51,20 @@ proxies:
   alterId: 0
   cipher: auto
   country: SG
-- name: SG_VLESS_443_897
-  type: vless
-  network: ws
-  server: 149.118.55.234
-  port: 443
-  uuid: 58f7687b-5209-4dcd-a11e-6e4eb2191378
-  servername: edge.xlordgrim.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: edge.xlordgrim.com
-    path: /xlordgrim/sg
-  country: SG
-- name: SG_VMESS_18000_634
+- name: SG_VMESS_18000_504
   type: vmess
   network: tcp
   server: ww11.levikogjgfdd.ir
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: SG_VMESS_18000_344
+  type: vmess
+  network: tcp
+  server: 149.88.23.207
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
@@ -64,10 +84,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VMESS_18000_457
-  - SG_VMESS_18000_449
-  - SG_VLESS_443_897
-  - SG_VMESS_18000_634
+  - SG_HYSTERIA2_1933_1030
+  - SG_HYSTERIA2_443_543
+  - SG_TROJAN_10046_1039
+  - SG_TROJAN_10044_1492
+  - SG_VMESS_18000_341
+  - SG_VMESS_18000_504
+  - SG_VMESS_18000_344
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,10 +103,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VMESS_18000_449
-  - SG_VMESS_18000_457
-  - SG_VMESS_18000_634
-  - SG_VLESS_443_897
+  - SG_VMESS_18000_341
+  - SG_VMESS_18000_344
+  - SG_VMESS_18000_504
+  - SG_HYSTERIA2_443_543
+  - SG_HYSTERIA2_1933_1030
+  - SG_TROJAN_10046_1039
+  - SG_TROJAN_10044_1492
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -95,10 +121,13 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VMESS_18000_457
-  - SG_VMESS_18000_449
-  - SG_VLESS_443_897
-  - SG_VMESS_18000_634
+  - SG_HYSTERIA2_1933_1030
+  - SG_HYSTERIA2_443_543
+  - SG_TROJAN_10046_1039
+  - SG_TROJAN_10044_1492
+  - SG_VMESS_18000_341
+  - SG_VMESS_18000_504
+  - SG_VMESS_18000_344
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

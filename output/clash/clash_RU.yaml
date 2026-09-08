@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_712
+- name: RU_VLESS_443_839
   type: vless
   server: 45.9.15.206
   port: 443
@@ -17,9 +17,9 @@ proxies:
   ws-opts:
     path: /websocket
     headers:
-      Host: ''
+      Host: ru05.abvpn.ru
   country: RU
-- name: RU_VLESS_443_1019
+- name: RU_VLESS_443_1512
   type: vless
   server: ru05.abvpn.ru
   port: 443
@@ -31,45 +31,12 @@ proxies:
   ws-opts:
     path: /websocket
     headers:
-      Host: ru05.abvpn.ru
+      Host: ''
   country: RU
-- name: RU_VLESS_8443_522
-  type: vless
-  network: ws
-  server: 147.45.175.81
-  port: 8443
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-  servername: vlessru.duckdns.org
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: vlessru.duckdns.org
-    path: /wsru
-  country: RU
-- name: RU_VLESS_443_594
+- name: RU_VLESS_443_850
   type: vless
   network: ws
   server: 91.210.169.181
-  port: 443
-  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
-  servername: wstg.datasynctrue.online
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: wstg.datasynctrue.online
-    path: /api/connect
-  country: RU
-- name: RU_VLESS_443_611
-  type: vless
-  network: ws
-  server: 188.225.33.141
   port: 443
   uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
   servername: wstg.datasynctrue.online
@@ -95,11 +62,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_712
-  - RU_VLESS_443_1019
-  - RU_VLESS_8443_522
-  - RU_VLESS_443_594
-  - RU_VLESS_443_611
+  - RU_VLESS_443_839
+  - RU_VLESS_443_1512
+  - RU_VLESS_443_850
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -112,11 +77,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_8443_522
-  - RU_VLESS_443_594
-  - RU_VLESS_443_611
-  - RU_VLESS_443_712
-  - RU_VLESS_443_1019
+  - RU_VLESS_443_839
+  - RU_VLESS_443_850
+  - RU_VLESS_443_1512
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -128,11 +91,9 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_712
-  - RU_VLESS_443_1019
-  - RU_VLESS_8443_522
-  - RU_VLESS_443_594
-  - RU_VLESS_443_611
+  - RU_VLESS_443_839
+  - RU_VLESS_443_1512
+  - RU_VLESS_443_850
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

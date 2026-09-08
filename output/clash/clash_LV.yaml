@@ -5,20 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_VLESS_443_703
-  type: vless
-  server: 193.163.203.170
+- name: LV_HYSTERIA2_8443_571
+  password: 52e3dd44-ed23-4030-b0cc-5b5a953f2d4d
+  port: 8443
+  server: 104.165.205.42
+  sni: speedtestmark.com
+  tls: false
+  type: hysteria2
+  country: LV
+- name: LV_HTTP_443_686
   port: 443
-  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
-  servername: yandex.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
-    short-id: b28db60d77c50b4f
+  server: 109.248.149.34
   skip-cert-verify: true
-  udp: true
+  tls: true
+  type: http
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +33,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_VLESS_443_703
+  - LV_HYSTERIA2_8443_571
+  - LV_HTTP_443_686
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +47,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_VLESS_443_703
+  - LV_HYSTERIA2_8443_571
+  - LV_HTTP_443_686
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +60,8 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_VLESS_443_703
+  - LV_HYSTERIA2_8443_571
+  - LV_HTTP_443_686
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

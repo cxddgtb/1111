@@ -5,31 +5,101 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_2087_305
+- name: DE_VLESS_2087_472
   type: vless
   server: 163.8.195.241
   port: 2087
   uuid: 56ba5d34-ef22-4ba6-8090-4188b807df54
   network: ws
   tls: false
-  servername: ''
+  servername: 163.8.195.241
   client-fingerprint: chrome
   ws-opts:
     path: /29c8fed7ca22
     headers:
-      Host: /?--v2rayNplus--v2rayNplus--v2rayNplus--
+      Host: ''
   country: DE
-- name: DE_VMESS_180_120
-  type: vmess
-  network: tcp
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+- name: DE_VLESS_443_645
+  type: vless
+  server: 94.159.97.247
+  port: 443
+  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
+  network: ws
+  tls: true
+  servername: vp58.cc.cd
+  client-fingerprint: chrome
+  ws-opts:
+    path: /Telegram🇨🇳+@VPNine1
+    headers:
+      Host: vp58.cc.cd
+  country: DE
+- name: DE_HYSTERIA_20088_2060
+  type: hysteria
+  server: 5.83.129.153
+  port: 20088
+  auth_str: dongtaiwang.com
+  up: '500'
+  down: '1000'
+  sni: apple.com
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  alpn:
+  - h3
+  udp: true
   country: DE
-- name: DE_VMESS_180_120_2
+- name: DE_HTTP_443_619
+  port: 443
+  server: 138.201.56.241
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_600
+  password: None
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: DE
+- name: DE_HTTP_443_606
+  port: 443
+  server: 87.249.132.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_786
+  port: 443
+  server: 185.44.107.166
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_847
+  port: 443
+  server: 141.17.83.73
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_VLESS_443_501
+  server: 167.233.219.201
+  port: 443
+  type: vless
+  uuid: 05bfcbaa-cba0-4bce-9103-09fe3f5f0667
+  tls: true
+  alpn:
+  - h2
+  servername: fsn1.nordlinkcloud.com
+  client-fingerprint: chrome
+  network: xhttp
+  xhttp-opts:
+    path: /api/v3/stream/
+    mode: auto
+  udp: true
+  country: DE
+- name: DE_VMESS_180_25
   type: vmess
   network: tcp
   server: 82.198.246.97
@@ -39,7 +109,17 @@ proxies:
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VMESS_180_122
+- name: DE_VMESS_180_34
+  type: vmess
+  network: tcp
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_23
   type: vmess
   network: tcp
   server: 82.198.246.37
@@ -49,7 +129,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: DE
-- name: DE_VLESS_443_414
+- name: DE_VLESS_443_645_2
   type: vless
   network: ws
   server: 94.156.232.254
@@ -66,7 +146,7 @@ proxies:
       Host: cf6.rumedia-cdn.com
     path: /cdn/v3/live
   country: DE
-- name: DE_VLESS_33843_317
+- name: DE_VLESS_33843_488
   type: vless
   network: tcp
   server: 87.120.84.32
@@ -92,12 +172,20 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_2087_305
-  - DE_VMESS_180_120
-  - DE_VMESS_180_120_2
-  - DE_VMESS_180_122
-  - DE_VLESS_443_414
-  - DE_VLESS_33843_317
+  - DE_VLESS_2087_472
+  - DE_VLESS_443_645
+  - DE_HYSTERIA_20088_2060
+  - DE_HTTP_443_619
+  - DE_HTTP_443_600
+  - DE_HTTP_443_606
+  - DE_HTTP_443_786
+  - DE_HTTP_443_847
+  - DE_VLESS_443_501
+  - DE_VMESS_180_25
+  - DE_VMESS_180_34
+  - DE_VMESS_180_23
+  - DE_VLESS_443_645_2
+  - DE_VLESS_33843_488
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -110,12 +198,20 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VMESS_180_120
-  - DE_VMESS_180_120_2
-  - DE_VMESS_180_122
-  - DE_VLESS_2087_305
-  - DE_VLESS_33843_317
-  - DE_VLESS_443_414
+  - DE_VMESS_180_23
+  - DE_VMESS_180_25
+  - DE_VMESS_180_34
+  - DE_VLESS_2087_472
+  - DE_VLESS_33843_488
+  - DE_VLESS_443_501
+  - DE_HTTP_443_600
+  - DE_HTTP_443_606
+  - DE_HTTP_443_619
+  - DE_VLESS_443_645
+  - DE_VLESS_443_645_2
+  - DE_HTTP_443_786
+  - DE_HTTP_443_847
+  - DE_HYSTERIA_20088_2060
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -127,12 +223,20 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_2087_305
-  - DE_VMESS_180_120
-  - DE_VMESS_180_120_2
-  - DE_VMESS_180_122
-  - DE_VLESS_443_414
-  - DE_VLESS_33843_317
+  - DE_VLESS_2087_472
+  - DE_VLESS_443_645
+  - DE_HYSTERIA_20088_2060
+  - DE_HTTP_443_619
+  - DE_HTTP_443_600
+  - DE_HTTP_443_606
+  - DE_HTTP_443_786
+  - DE_HTTP_443_847
+  - DE_VLESS_443_501
+  - DE_VMESS_180_25
+  - DE_VMESS_180_34
+  - DE_VMESS_180_23
+  - DE_VLESS_443_645_2
+  - DE_VLESS_33843_488
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,14 +5,25 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_HYSTERIA2_443_1120
+- name: FI_HYSTERIA2_8080_690
+  password: h_B9x3942fJ9x_Kpx3914KQ_nZ934HFg_rT
+  port: 8080
+  server: 138.124.0.168
+  skip-cert-verify: false
+  sni: hopp-legend-se.roxa.org
+  tls: false
   type: hysteria2
-  server: fast.wwwinternetvideo.click
+  country: FI
+- name: FI_HYSTERIA2_443_502
+  obfs: salamander
+  obfs-password: uw9b2qq5rx
+  password: 6aab8efdf13945829ae3699c342be406
   port: 443
-  password: C91FbOXGY9XRymrcEebtax9R1Nj62UizoT8S6kCb7xwey8IE
-  sni: fast.wwwinternetvideo.click
-  skip-cert-verify: true
-  udp: true
+  server: 31.76.80.69
+  skip-cert-verify: false
+  sni: fiproxy1.lockdwn.com
+  tls: false
+  type: hysteria2
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_HYSTERIA2_443_1120
+  - FI_HYSTERIA2_8080_690
+  - FI_HYSTERIA2_443_502
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_HYSTERIA2_443_1120
+  - FI_HYSTERIA2_443_502
+  - FI_HYSTERIA2_8080_690
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +65,8 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_HYSTERIA2_443_1120
+  - FI_HYSTERIA2_8080_690
+  - FI_HYSTERIA2_443_502
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

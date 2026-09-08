@@ -5,7 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VMESS_35034_416
+- name: TW_VLESS_443_643
+  type: vless
+  server: brightharbor.download
+  port: 443
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  servername: localhost
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+  skip-cert-verify: true
+  udp: true
+  country: TW
+- name: TW_VMESS_35034_313
   type: vmess
   network: tcp
   server: 165.154.195.38
@@ -28,7 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VMESS_35034_416
+  - TW_VLESS_443_643
+  - TW_VMESS_35034_313
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_416
+  - TW_VMESS_35034_313
+  - TW_VLESS_443_643
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +69,8 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VMESS_35034_416
+  - TW_VLESS_443_643
+  - TW_VMESS_35034_313
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

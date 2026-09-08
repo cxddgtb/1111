@@ -5,19 +5,31 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VMESS_4433_319
-  type: vmess
-  network: tcp
-  server: 45.32.57.118
-  port: 4433
-  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: JP
-- name: JP_HYSTERIA2_2035_1681
+- name: JP_HYSTERIA2_2015_782
   type: hysteria2
-  server: bt5iibdl.zf-mix-2.9999231.xyz
+  server: 3dxgfwxk.zf-mix-2.9999231.xyz
+  port: 2015
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  sni: id-house.9999231.xyz
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: ZDQxZDhjZDk4ZjAwYjIwNA==
+  udp: true
+  country: JP
+- name: JP_HYSTERIA2_2038_1395
+  type: hysteria2
+  server: br8l8lyl.zf-mix-4.9999231.xyz
+  port: 2038
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  sni: ng-wy.9999231.xyz
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: ZDQxZDhjZDk4ZjAwYjIwNA==
+  udp: true
+  country: JP
+- name: JP_HYSTERIA2_2035_1493
+  type: hysteria2
+  server: 6v2tii2i.zf-mix-1.9999231.xyz
   port: 2035
   password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
   sni: az-wy.9999231.xyz
@@ -26,16 +38,58 @@ proxies:
   obfs-password: ZDQxZDhjZDk4ZjAwYjIwNA==
   udp: true
   country: JP
-- name: JP_HYSTERIA2_2039_1579
-  type: hysteria2
-  server: vmt2k5g7.zf-mix-2.9999231.xyz
-  port: 2039
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  sni: ro-wy.9999231.xyz
+- name: JP_HYSTERIA2_50160_1441
+  password: 184cdec28da5a09450803c8debcd2cc9
+  port: 50160
+  server: 138.3.208.26
   skip-cert-verify: true
-  obfs: salamander
-  obfs-password: ZDQxZDhjZDk4ZjAwYjIwNA==
+  sni: www.bing.com
+  tls: false
+  type: hysteria2
+  country: JP
+- name: JP_HTTP_443_1325
+  port: 443
+  server: fan.571589.xyz
+  sni: fan.571589.xyz
+  tls: true
+  type: http
+  country: JP
+- name: JP_TROJAN_10010_875
+  server: z-jp1.251313.xyz
+  port: 10010
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
   udp: true
+  country: JP
+- name: JP_TROJAN_10012_1309
+  server: z-jp1.251313.xyz
+  port: 10012
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_TROJAN_10011_1298
+  server: z-jp1.251313.xyz
+  port: 10011
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VMESS_4433_213
+  type: vmess
+  network: tcp
+  server: 45.32.57.118
+  port: 4433
+  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -50,9 +104,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VMESS_4433_319
-  - JP_HYSTERIA2_2035_1681
-  - JP_HYSTERIA2_2039_1579
+  - JP_HYSTERIA2_2015_782
+  - JP_HYSTERIA2_2038_1395
+  - JP_HYSTERIA2_2035_1493
+  - JP_HYSTERIA2_50160_1441
+  - JP_HTTP_443_1325
+  - JP_TROJAN_10010_875
+  - JP_TROJAN_10012_1309
+  - JP_TROJAN_10011_1298
+  - JP_VMESS_4433_213
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -65,9 +125,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_4433_319
-  - JP_HYSTERIA2_2039_1579
-  - JP_HYSTERIA2_2035_1681
+  - JP_VMESS_4433_213
+  - JP_HYSTERIA2_2015_782
+  - JP_TROJAN_10010_875
+  - JP_TROJAN_10011_1298
+  - JP_TROJAN_10012_1309
+  - JP_HTTP_443_1325
+  - JP_HYSTERIA2_2038_1395
+  - JP_HYSTERIA2_50160_1441
+  - JP_HYSTERIA2_2035_1493
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -79,9 +145,15 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VMESS_4433_319
-  - JP_HYSTERIA2_2035_1681
-  - JP_HYSTERIA2_2039_1579
+  - JP_HYSTERIA2_2015_782
+  - JP_HYSTERIA2_2038_1395
+  - JP_HYSTERIA2_2035_1493
+  - JP_HYSTERIA2_50160_1441
+  - JP_HTTP_443_1325
+  - JP_TROJAN_10010_875
+  - JP_TROJAN_10012_1309
+  - JP_TROJAN_10011_1298
+  - JP_VMESS_4433_213
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

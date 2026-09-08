@@ -5,40 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_HTTP_443_657
-  password: None
+- name: BE_HTTP_443_594
   port: 443
-  server: 185.183.105.130
+  server: 146.70.176.242
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
-  country: IT
-- name: IT_HTTP_443_706
-  password: None
+  country: BE
+- name: BE_HTTP_443_602
   port: 443
-  server: 185.183.105.146
+  server: 146.70.123.98
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
-  country: IT
-- name: IT_HTTP_443_785
-  port: 443
-  server: 178.237.4.200
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: IT
-- name: IT_HTTP_443_1079
-  password: None
-  port: 443
-  server: 93.42.177.250
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: IT
+  country: BE
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -47,15 +27,13 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 IT
+  - 🌍 BE
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_HTTP_443_657
-  - IT_HTTP_443_706
-  - IT_HTTP_443_785
-  - IT_HTTP_443_1079
+  - BE_HTTP_443_594
+  - BE_HTTP_443_602
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -68,10 +46,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_HTTP_443_657
-  - IT_HTTP_443_706
-  - IT_HTTP_443_785
-  - IT_HTTP_443_1079
+  - BE_HTTP_443_594
+  - BE_HTTP_443_602
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -80,13 +56,11 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 IT
+- name: 🌍 BE
   type: url-test
   proxies:
-  - IT_HTTP_443_657
-  - IT_HTTP_443_706
-  - IT_HTTP_443_785
-  - IT_HTTP_443_1079
+  - BE_HTTP_443_594
+  - BE_HTTP_443_602
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
