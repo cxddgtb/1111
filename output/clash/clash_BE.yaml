@@ -5,19 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BE_HTTP_443_594
-  port: 443
-  server: 146.70.176.242
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: BE
-- name: BE_HTTP_443_602
+- name: BE_HTTP_443_435
+  password: None
   port: 443
   server: 146.70.123.98
   skip-cert-verify: true
   tls: true
   type: http
+  username: null
   country: BE
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,8 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BE_HTTP_443_594
-  - BE_HTTP_443_602
+  - BE_HTTP_443_435
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,8 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BE_HTTP_443_594
-  - BE_HTTP_443_602
+  - BE_HTTP_443_435
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,8 +52,7 @@ proxy-groups:
 - name: 🌍 BE
   type: url-test
   proxies:
-  - BE_HTTP_443_594
-  - BE_HTTP_443_602
+  - BE_HTTP_443_435
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

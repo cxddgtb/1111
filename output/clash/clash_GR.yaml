@@ -5,20 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GR_VLESS_443_584
-  type: vless
-  server: grek.helper-internet.com
+- name: GR_HTTP_443_585
+  password: None
   port: 443
-  uuid: 670decfe-68cc-499e-8cb1-22b39c20acbb
-  servername: grek.helper-internet.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE
-    short-id: ff776ff77be48b88
+  server: 149.22.85.65
   skip-cert-verify: true
-  udp: true
+  tls: true
+  type: http
+  username: null
   country: GR
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GR_VLESS_443_584
+  - GR_HTTP_443_585
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GR_VLESS_443_584
+  - GR_HTTP_443_585
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +52,7 @@ proxy-groups:
 - name: 🌍 GR
   type: url-test
   proxies:
-  - GR_VLESS_443_584
+  - GR_HTTP_443_585
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,21 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_HTTP_443_709
+- name: SE_HTTP_443_551
+  port: 443
+  server: 146.70.242.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: SE
+- name: SE_HTTP_443_480
   password: None
   port: 443
-  server: 146.70.242.130
+  server: 79.142.77.63
   skip-cert-verify: true
   tls: true
   type: http
   username: null
-  country: SE
-- name: SE_HTTP_443_697
-  port: 443
-  server: 149.50.216.65
-  skip-cert-verify: true
-  tls: true
-  type: http
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -34,8 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_HTTP_443_709
-  - SE_HTTP_443_697
+  - SE_HTTP_443_551
+  - SE_HTTP_443_480
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,8 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_HTTP_443_697
-  - SE_HTTP_443_709
+  - SE_HTTP_443_480
+  - SE_HTTP_443_551
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -61,8 +61,8 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_HTTP_443_709
-  - SE_HTTP_443_697
+  - SE_HTTP_443_551
+  - SE_HTTP_443_480
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

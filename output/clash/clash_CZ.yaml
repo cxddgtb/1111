@@ -5,17 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CZ_HTTP_443_684
+- name: CZ_HTTP_443_490
+  password: ''
   port: 443
-  server: 185.216.35.130
+  server: 185.216.35.66
   skip-cert-verify: true
   tls: true
   type: http
+  udp: true
+  username: ''
   country: CZ
-- name: CZ_HTTP_443_685
+- name: CZ_HTTP_443_527
   password: None
   port: 443
-  server: 185.216.35.66
+  server: 185.216.35.130
   skip-cert-verify: true
   tls: true
   type: http
@@ -34,8 +37,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CZ_HTTP_443_684
-  - CZ_HTTP_443_685
+  - CZ_HTTP_443_490
+  - CZ_HTTP_443_527
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,8 +51,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CZ_HTTP_443_684
-  - CZ_HTTP_443_685
+  - CZ_HTTP_443_490
+  - CZ_HTTP_443_527
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -61,8 +64,8 @@ proxy-groups:
 - name: 🌍 CZ
   type: url-test
   proxies:
-  - CZ_HTTP_443_684
-  - CZ_HTTP_443_685
+  - CZ_HTTP_443_490
+  - CZ_HTTP_443_527
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

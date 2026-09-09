@@ -5,21 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_2087_526
+- name: PL_VLESS_8118_574
   type: vless
-  server: 178.95.170.83
-  port: 2087
-  uuid: bf443e4a-aa9e-4509-abf0-d0f6828d57be
-  network: ws
-  tls: false
-  servername: ''
+  server: plll.banibus.ir
+  port: 8118
+  uuid: 8b54a46a-e66b-48cc-bf5a-88f0855a3598
+  servername: play.googleapis.com
+  tls: true
   client-fingerprint: chrome
-  ws-opts:
-    path: /4bc027a44532
-    headers:
-      Host: 178.95.170.83
+  reality-opts:
+    public-key: LjAkLizwkZf35ObrUMFZ22UHXTEJzpgcTvHk9AuzcUM
+  skip-cert-verify: true
+  udp: true
   country: PL
-- name: PL_HYSTERIA2_443_509
+- name: PL_HYSTERIA2_443_344
   password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
   port: 443
   server: 45.192.12.93
@@ -27,7 +26,7 @@ proxies:
   tls: false
   type: hysteria2
   country: PL
-- name: PL_HYSTERIA2_443_658
+- name: PL_HYSTERIA2_443_423
   password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
   port: 443
   server: admin.wwwinternetvideo.click
@@ -36,90 +35,26 @@ proxies:
   tls: false
   type: hysteria2
   country: PL
-- alpn:
-  - h2
-  - http/1.1
-  - h3
-  client-fingerprint: chrome
-  encryption: mlkem768x25519plus.native.0rtt.FbDgDkr9zVUNTJ4k_LHxv6UXgFU7_6gBImNSh9NxjkY
-  name: PL_VLESS_2083_897
-  network: ws
-  port: '2083'
-  server: srvpl1.e404ng.fun
-  servername: srvpl1.e404ng.fun
-  tls: true
-  type: vless
-  udp: true
-  uuid: 8c3f6768-6e56-432f-864a-1b40a1269dce
-  ws-opts:
-    headers:
-      Host: srvpl1.e404ng.fun
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/61.0.3163.79 Safari/537.36
-    path: /
-  xudp: true
-  country: PL
-- name: PL_HTTP_443_707
+- name: PL_HTTP_443_514
   port: 443
-  server: 37.120.156.18
+  server: 37.120.156.34
   skip-cert-verify: true
   tls: true
   type: http
   country: PL
-- name: PL_VLESS_443_1772
+- name: PL_VLESS_2087_387
   type: vless
-  network: tcp
-  server: pl4.moritech.net
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: pl4.moritech.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
+  server: 178.95.170.83
+  port: 2087
+  uuid: bf443e4a-aa9e-4509-abf0-d0f6828d57be
+  network: ws
+  tls: false
+  servername: 178.95.170.83
   client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: PL
-- name: PL_VLESS_443_537
-  type: vless
-  network: tcp
-  server: 144.31.5.3
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: pl4.moritech.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: PL
-- name: PL_VLESS_443_539
-  type: vless
-  network: tcp
-  server: 144.31.5.64
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: pl6.moritech.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: PL
-- name: PL_VLESS_443_547
-  type: vless
-  network: tcp
-  server: 50.7.248.234
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: viper-22.moriarty-web.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  flow: xtls-rprx-vision
+  ws-opts:
+    path: /4bc027a44532
+    headers:
+      Host: Telegram-Leviko_v2ray
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -134,15 +69,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_2087_526
-  - PL_HYSTERIA2_443_509
-  - PL_HYSTERIA2_443_658
-  - PL_VLESS_2083_897
-  - PL_HTTP_443_707
-  - PL_VLESS_443_1772
-  - PL_VLESS_443_537
-  - PL_VLESS_443_539
-  - PL_VLESS_443_547
+  - PL_VLESS_8118_574
+  - PL_HYSTERIA2_443_344
+  - PL_HYSTERIA2_443_423
+  - PL_HTTP_443_514
+  - PL_VLESS_2087_387
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -155,15 +86,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HYSTERIA2_443_509
-  - PL_VLESS_2087_526
-  - PL_VLESS_443_537
-  - PL_VLESS_443_539
-  - PL_VLESS_443_547
-  - PL_HYSTERIA2_443_658
-  - PL_HTTP_443_707
-  - PL_VLESS_2083_897
-  - PL_VLESS_443_1772
+  - PL_HYSTERIA2_443_344
+  - PL_VLESS_2087_387
+  - PL_HYSTERIA2_443_423
+  - PL_HTTP_443_514
+  - PL_VLESS_8118_574
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -175,15 +102,11 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_2087_526
-  - PL_HYSTERIA2_443_509
-  - PL_HYSTERIA2_443_658
-  - PL_VLESS_2083_897
-  - PL_HTTP_443_707
-  - PL_VLESS_443_1772
-  - PL_VLESS_443_537
-  - PL_VLESS_443_539
-  - PL_VLESS_443_547
+  - PL_VLESS_8118_574
+  - PL_HYSTERIA2_443_344
+  - PL_HYSTERIA2_443_423
+  - PL_HTTP_443_514
+  - PL_VLESS_2087_387
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

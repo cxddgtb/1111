@@ -5,15 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_TROJAN_52224_696
-  network: tcp
-  password: d742752c-4231-4695-801e-f06d77f0f277
-  port: 52224
-  server: hk04.qianmoip.win
-  skip-cert-verify: true
-  sni: taobao.com
-  type: trojan
-  country: HK
+- name: CY_SS_3_355
+  server: 185.203.4.204
+  port: 3
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 816Efx8yiCSDDpvvpxXL8Q
+  udp: true
+  country: CY
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -22,12 +21,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 HK
+  - 🌍 CY
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_TROJAN_52224_696
+  - CY_SS_3_355
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_TROJAN_52224_696
+  - CY_SS_3_355
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -49,10 +48,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 HK
+- name: 🌍 CY
   type: url-test
   proxies:
-  - HK_TROJAN_52224_696
+  - CY_SS_3_355
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
