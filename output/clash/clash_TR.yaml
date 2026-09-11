@@ -5,20 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TR_VLESS_443_450
-  server: 212.64.193.85
-  port: 443
+- name: TR_VLESS_8444_661
   type: vless
-  uuid: 2b2ea9d8-501e-4b79-8fd9-19bff6ed5cf5
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: _IBXb9NfhsnS21XbU9PIl73ExvrjXGXVLO0Za1ui5Fo
-    short-id: f93c9d5127e622e4
-  servername: cz.cloudtechone.org
-  client-fingerprint: firefox
+  server: connect3.nyxserver.ir
+  port: 8444
+  uuid: 0b39a009-2a2a-4035-ba87-cc82894f8e21
   network: tcp
-  udp: true
+  tls: true
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
   country: TR
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +29,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_VLESS_443_450
+  - TR_VLESS_8444_661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_VLESS_443_450
+  - TR_VLESS_8444_661
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +54,7 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_VLESS_443_450
+  - TR_VLESS_8444_661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

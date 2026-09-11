@@ -5,15 +5,33 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: aes-256-cfb
-  name: IE_SS_443_485
-  password: amazonskr05
+- name: IE_SS_443_242
+  type: ss
+  server: 63.32.92.226
   port: 443
-  server: 54.247.231.139
+  cipher: aes-256-cfb
+  password: amazonskr05
+  skip-cert-verify: true
+  udp: true
+  country: IE
+- name: IE_SS_443_144
+  type: ss
+  server: 108.129.176.139
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  skip-cert-verify: true
+  udp: true
+  country: IE
+- cipher: aes-256-cfb
+  name: IE_SS_443_136
+  password: amazonskr05
+  port: '443'
+  server: 3.254.74.220
   type: ss
   udp: true
   country: IE
-- name: IE_HTTP_443_445
+- name: IE_HTTP_443_368
   password: None
   port: 443
   server: 149.88.96.1
@@ -35,8 +53,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IE_SS_443_485
-  - IE_HTTP_443_445
+  - IE_SS_443_242
+  - IE_SS_443_144
+  - IE_SS_443_136
+  - IE_HTTP_443_368
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -49,8 +69,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IE_HTTP_443_445
-  - IE_SS_443_485
+  - IE_SS_443_136
+  - IE_SS_443_144
+  - IE_SS_443_242
+  - IE_HTTP_443_368
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -62,8 +84,10 @@ proxy-groups:
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_SS_443_485
-  - IE_HTTP_443_445
+  - IE_SS_443_242
+  - IE_SS_443_144
+  - IE_SS_443_136
+  - IE_HTTP_443_368
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

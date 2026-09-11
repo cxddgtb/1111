@@ -5,14 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_HYSTERIA2_50160_586
-  password: 1671a252e2a97dc2bda4e515475931da
-  port: 50160
-  server: 132.226.226.189
+- auth: maintell
+  name: KR_HYSTERIA2_2053_1924
+  password: maintell
+  port: 2053
+  server: 152.70.237.123
   skip-cert-verify: true
-  sni: www.bing.com
-  tls: false
+  sni: bing.com
   type: hysteria2
+  udp: true
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_HYSTERIA2_50160_586
+  - KR_HYSTERIA2_2053_1924
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_HYSTERIA2_50160_586
+  - KR_HYSTERIA2_2053_1924
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +53,7 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_HYSTERIA2_50160_586
+  - KR_HYSTERIA2_2053_1924
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

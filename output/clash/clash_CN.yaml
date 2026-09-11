@@ -5,7 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_SS_65443_886
+- name: CN_SS_65443_784
+  type: ss
+  server: 121.46.230.232
+  port: 65443
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  skip-cert-verify: true
+  udp: true
+  country: CN
+- name: CN_SS_65443_771
   type: ss
   server: 121.46.230.138
   port: 65443
@@ -14,18 +23,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: CN
-- name: CN_VMESS_50002_1394
-  type: vmess
-  server: 112.132.215.108
-  port: 50002
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: CN
-- name: CN_SS_65443_2310
+- name: CN_SS_65443_940
   type: ss
   server: 121.46.230.137
   port: 65443
@@ -33,6 +31,18 @@ proxies:
   password: 7eadc6dbe2ae
   skip-cert-verify: true
   udp: true
+  country: CN
+- name: CN_VMESS_50002_537
+  type: vmess
+  server: 112.132.215.108
+  port: 50002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
   country: CN
 proxy-groups:
 - name: 🚀 节点选择
@@ -47,9 +57,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CN_SS_65443_886
-  - CN_VMESS_50002_1394
-  - CN_SS_65443_2310
+  - CN_SS_65443_784
+  - CN_SS_65443_771
+  - CN_SS_65443_940
+  - CN_VMESS_50002_537
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,9 +73,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CN_SS_65443_886
-  - CN_VMESS_50002_1394
-  - CN_SS_65443_2310
+  - CN_VMESS_50002_537
+  - CN_SS_65443_771
+  - CN_SS_65443_784
+  - CN_SS_65443_940
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -76,9 +88,10 @@ proxy-groups:
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_SS_65443_886
-  - CN_VMESS_50002_1394
-  - CN_SS_65443_2310
+  - CN_SS_65443_784
+  - CN_SS_65443_771
+  - CN_SS_65443_940
+  - CN_VMESS_50002_537
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

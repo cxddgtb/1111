@@ -5,31 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_HYSTERIA2_8080_557
+- name: FI_HYSTERIA2_8080_541
   password: h_B9x3942fJ9x_Kpx3914KQ_nZ934HFg_rT
   port: 8080
   server: 138.124.0.168
-  skip-cert-verify: false
+  skip-cert-verify: true
   sni: hopp-legend-se.roxa.org
   tls: false
   type: hysteria2
-  country: FI
-- name: FI_VLESS_443_434
-  server: 62.238.49.168
-  port: 443
-  type: vless
-  uuid: 10b0fa95-ca1d-4ba7-829f-350758056697
-  tls: true
-  reality-opts:
-    public-key: as04WkYoj-P4vEjJFXB3LeA_Rkt7Ud4pV2oTZ3bZwQg
-    short-id: 1c213fd68e13
-  servername: www.wikipedia.org
-  client-fingerprint: chrome
-  network: xhttp
-  xhttp-opts:
-    path: /farasati1
-    host: www.wikipedia.org
-  udp: true
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,8 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_HYSTERIA2_8080_557
-  - FI_VLESS_443_434
+  - FI_HYSTERIA2_8080_541
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,8 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_443_434
-  - FI_HYSTERIA2_8080_557
+  - FI_HYSTERIA2_8080_541
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -71,8 +52,7 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_HYSTERIA2_8080_557
-  - FI_VLESS_443_434
+  - FI_HYSTERIA2_8080_541
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

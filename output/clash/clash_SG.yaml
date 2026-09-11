@@ -5,18 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_HYSTERIA2_443_643
-  type: hysteria2
-  server: 138.2.89.249
-  port: 443
-  password: d042d150716709bb778cc73889cddb02
-  sni: www.bing.com
-  skip-cert-verify: true
-  obfs: salamander
-  obfs-password: 309502c4a8df10b46fb976d4a8c43f42
-  udp: true
-  country: SG
-- name: SG_HYSTERIA2_1933_1185
+- name: SG_HYSTERIA2_1933_1166
   password: 19f72087-4591-4d72-930b-2697078ec2be
   port: 1933
   server: sg1.xiaoliyu.cyou
@@ -25,30 +14,42 @@ proxies:
   tls: false
   type: hysteria2
   country: SG
-- name: SG_HYSTERIA2_443_690
+- name: SG_HYSTERIA2_443_691
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   port: 443
-  server: 13.212.76.106
+  server: 13.250.120.9
   skip-cert-verify: true
-  sni: vk.com
+  sni: 13.250.120.9
   tls: false
   type: hysteria2
   country: SG
-- name: SG_SS_56927_427
-  server: 146.235.20.146
-  port: 56927
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: dslI58qn4pSS0YD4peSYgUTbYtJypzIr+Wvt4uLXLNI=
-  country: SG
-- name: SG_TROJAN_10046_2812
-  server: z-sg1.6send.com
-  port: 10046
-  type: trojan
-  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
+- name: SG_HYSTERIA2_443_727
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  port: 443
+  server: 47.129.0.20
   skip-cert-verify: true
-  udp: true
+  sni: speedtest.tinkoff.ru
+  tls: false
+  type: hysteria2
+  country: SG
+- name: SG_HYSTERIA2_443_699
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  port: 443
+  server: 54.151.142.26
+  skip-cert-verify: true
+  sni: whatsapp.com
+  tls: false
+  type: hysteria2
+  country: SG
+- name: SG_VMESS_18000_451
+  type: vmess
+  network: tcp
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -63,11 +64,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_HYSTERIA2_443_643
-  - SG_HYSTERIA2_1933_1185
-  - SG_HYSTERIA2_443_690
-  - SG_SS_56927_427
-  - SG_TROJAN_10046_2812
+  - SG_HYSTERIA2_1933_1166
+  - SG_HYSTERIA2_443_691
+  - SG_HYSTERIA2_443_727
+  - SG_HYSTERIA2_443_699
+  - SG_VMESS_18000_451
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,11 +81,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_SS_56927_427
-  - SG_HYSTERIA2_443_643
-  - SG_HYSTERIA2_443_690
-  - SG_HYSTERIA2_1933_1185
-  - SG_TROJAN_10046_2812
+  - SG_VMESS_18000_451
+  - SG_HYSTERIA2_443_691
+  - SG_HYSTERIA2_443_699
+  - SG_HYSTERIA2_443_727
+  - SG_HYSTERIA2_1933_1166
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -96,11 +97,11 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_HYSTERIA2_443_643
-  - SG_HYSTERIA2_1933_1185
-  - SG_HYSTERIA2_443_690
-  - SG_SS_56927_427
-  - SG_TROJAN_10046_2812
+  - SG_HYSTERIA2_1933_1166
+  - SG_HYSTERIA2_443_691
+  - SG_HYSTERIA2_443_727
+  - SG_HYSTERIA2_443_699
+  - SG_VMESS_18000_451
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

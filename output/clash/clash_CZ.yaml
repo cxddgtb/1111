@@ -5,24 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CZ_HTTP_443_490
-  password: ''
+- name: CZ_VMESS_443_1412
+  type: vmess
+  server: 95.85.233.138
   port: 443
-  server: 185.216.35.66
-  skip-cert-verify: true
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  alterId: 0
+  cipher: auto
+  network: ws
   tls: true
-  type: http
-  udp: true
-  username: ''
-  country: CZ
-- name: CZ_HTTP_443_527
-  password: None
-  port: 443
-  server: 185.216.35.130
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
+  servername: renderer-stream-2-62.mirra.now
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: renderer-stream-2-62.mirra.now
   country: CZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CZ_HTTP_443_490
-  - CZ_HTTP_443_527
+  - CZ_VMESS_443_1412
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CZ_HTTP_443_490
-  - CZ_HTTP_443_527
+  - CZ_VMESS_443_1412
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +58,7 @@ proxy-groups:
 - name: 🌍 CZ
   type: url-test
   proxies:
-  - CZ_HTTP_443_490
-  - CZ_HTTP_443_527
+  - CZ_VMESS_443_1412
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
