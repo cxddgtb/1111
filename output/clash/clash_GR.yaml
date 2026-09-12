@@ -5,14 +5,25 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GR_HTTP_443_546
-  password: None
+- name: GR_HTTP_443_542
+  password: ''
   port: 443
   server: 149.22.85.65
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
+  udp: true
+  username: ''
+  country: GR
+- name: GR_HTTP_443_526
+  password: ''
+  port: 443
+  server: 149.22.85.78
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
   country: GR
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GR_HTTP_443_546
+  - GR_HTTP_443_542
+  - GR_HTTP_443_526
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GR_HTTP_443_546
+  - GR_HTTP_443_526
+  - GR_HTTP_443_542
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +65,8 @@ proxy-groups:
 - name: 🌍 GR
   type: url-test
   proxies:
-  - GR_HTTP_443_546
+  - GR_HTTP_443_542
+  - GR_HTTP_443_526
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

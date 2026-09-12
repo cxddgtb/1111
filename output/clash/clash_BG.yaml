@@ -5,14 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BG_HTTP_443_529
-  password: None
-  port: 443
-  server: 185.94.192.210
-  skip-cert-verify: true
+- name: BG_VLESS_8443_283
+  type: vless
+  network: tcp
+  server: 192.145.31.5
+  port: 8443
+  uuid: 9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a
+  servername: neth9.lunariai.ru
+  skip-cert-verify: false
   tls: true
-  type: http
-  username: null
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: ''
   country: BG
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_HTTP_443_529
+  - BG_VLESS_8443_283
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_HTTP_443_529
+  - BG_VLESS_8443_283
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +57,7 @@ proxy-groups:
 - name: 🌍 BG
   type: url-test
   proxies:
-  - BG_HTTP_443_529
+  - BG_VLESS_8443_283
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

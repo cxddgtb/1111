@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_HTTP_443_493
+- name: IT_HTTP_443_450
   password: None
   port: 443
   server: 185.183.105.130
@@ -14,7 +14,7 @@ proxies:
   type: http
   username: null
   country: IT
-- name: IT_HTTP_443_462
+- name: IT_HTTP_443_416
   password: None
   port: 443
   server: 185.183.105.146
@@ -22,6 +22,24 @@ proxies:
   tls: true
   type: http
   username: null
+  country: IT
+- name: IT_VLESS_443_2619
+  type: vless
+  network: ws
+  server: 158.180.231.216
+  port: 443
+  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
+  servername: bab-6.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: ''
+  ws-opts:
+    headers:
+      Host: bab-6.site
+    path: /vws/
   country: IT
 proxy-groups:
 - name: 🚀 节点选择
@@ -36,8 +54,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_HTTP_443_493
-  - IT_HTTP_443_462
+  - IT_HTTP_443_450
+  - IT_HTTP_443_416
+  - IT_VLESS_443_2619
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +69,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_HTTP_443_462
-  - IT_HTTP_443_493
+  - IT_HTTP_443_416
+  - IT_HTTP_443_450
+  - IT_VLESS_443_2619
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +83,9 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_HTTP_443_493
-  - IT_HTTP_443_462
+  - IT_HTTP_443_450
+  - IT_HTTP_443_416
+  - IT_VLESS_443_2619
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

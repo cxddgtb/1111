@@ -5,7 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_HTTP_443_480
+- name: LV_HTTP_443_452
+  port: 443
+  server: 109.248.149.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: LV
+- name: LV_HTTP_443_467
   password: None
   port: 443
   server: 109.248.147.66
@@ -14,14 +21,19 @@ proxies:
   type: http
   username: null
   country: LV
-- name: LV_HYSTERIA2_8443_394
-  server: 104.165.205.42
-  port: 8443
-  type: hysteria2
-  password: 52e3dd44-ed23-4030-b0cc-5b5a953f2d4d
-  auth: 52e3dd44-ed23-4030-b0cc-5b5a953f2d4d
-  sni: speedtestmark.com
-  skip-cert-verify: true
+- name: LV_VLESS_1443_402
+  server: 169.40.1.62
+  port: 1443
+  type: vless
+  uuid: 773251ef-4691-453e-b062-27e3ed3ed784
+  tls: true
+  alpn:
+  - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
+  flow: xtls-rprx-vision
+  servername: lv.pawnet.ink
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -36,8 +48,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_HTTP_443_480
-  - LV_HYSTERIA2_8443_394
+  - LV_HTTP_443_452
+  - LV_HTTP_443_467
+  - LV_VLESS_1443_402
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +63,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_HYSTERIA2_8443_394
-  - LV_HTTP_443_480
+  - LV_VLESS_1443_402
+  - LV_HTTP_443_452
+  - LV_HTTP_443_467
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +77,9 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_HTTP_443_480
-  - LV_HYSTERIA2_8443_394
+  - LV_HTTP_443_452
+  - LV_HTTP_443_467
+  - LV_VLESS_1443_402
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

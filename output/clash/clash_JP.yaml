@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_HYSTERIA2_50160_520
+- name: JP_HYSTERIA2_50160_513
   password: 184cdec28da5a09450803c8debcd2cc9
   port: 50160
   server: 138.3.208.26
@@ -14,40 +14,16 @@ proxies:
   tls: false
   type: hysteria2
   country: JP
-- name: JP_VLESS_55596_892
-  type: vless
-  server: 206.251.54.34
-  port: 55596
-  uuid: 9fc6444b-987a-41d5-9bf5-195d147e0a05
-  servername: www.amd.com
+- name: JP_HTTP_443_1171
+  password: ''
+  port: '443'
+  server: fan.571589.xyz
+  skip-cert-verify: true
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: QQUHUyF5Wb3XeRRrky-WOaRTxBtHokNaMec02HURWSI
-    short-id: 6ac09686189038
-  skip-cert-verify: true
-  udp: true
+  type: http
+  username: bnVsbDpudWxs
   country: JP
-- name: JP_TROJAN_10011_1404
-  type: trojan
-  server: z-jp1.1card.cc
-  port: 10011
-  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_TROJAN_10011_1543
-  type: trojan
-  server: z-jp2.1card.cc
-  port: 10011
-  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_VMESS_4433_321
+- name: JP_VMESS_4433_325
   type: vmess
   network: tcp
   server: 45.32.57.118
@@ -70,11 +46,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_HYSTERIA2_50160_520
-  - JP_VLESS_55596_892
-  - JP_TROJAN_10011_1404
-  - JP_TROJAN_10011_1543
-  - JP_VMESS_4433_321
+  - JP_HYSTERIA2_50160_513
+  - JP_HTTP_443_1171
+  - JP_VMESS_4433_325
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -87,11 +61,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_4433_321
-  - JP_HYSTERIA2_50160_520
-  - JP_VLESS_55596_892
-  - JP_TROJAN_10011_1404
-  - JP_TROJAN_10011_1543
+  - JP_VMESS_4433_325
+  - JP_HYSTERIA2_50160_513
+  - JP_HTTP_443_1171
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -103,11 +75,9 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_HYSTERIA2_50160_520
-  - JP_VLESS_55596_892
-  - JP_TROJAN_10011_1404
-  - JP_TROJAN_10011_1543
-  - JP_VMESS_4433_321
+  - JP_HYSTERIA2_50160_513
+  - JP_HTTP_443_1171
+  - JP_VMESS_4433_325
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

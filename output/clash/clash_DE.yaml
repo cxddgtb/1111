@@ -5,21 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_443_284
-  type: vless
-  server: 176.96.138.122
-  port: 443
-  uuid: b229d38c-35ec-4a0b-9c86-8fceba243d6c
-  servername: plucky-xenon.cdn.cachefleet.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: qq
-  reality-opts:
-    public-key: O_YZOJVON0LE1U01hAtNUOVRy7z6fkBUXbMtpCGoGEg
-  skip-cert-verify: true
-  udp: true
-  country: DE
-- name: DE_VLESS_443_293
+- name: DE_VLESS_443_283
   type: vless
   server: 2.59.134.226
   port: 443
@@ -33,7 +19,34 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: DE
-- name: DE_HYSTERIA2_443_572
+- name: DE_VLESS_443_275
+  type: vless
+  server: 176.96.138.122
+  port: 443
+  uuid: b229d38c-35ec-4a0b-9c86-8fceba243d6c
+  servername: plucky-xenon.cdn.cachefleet.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  reality-opts:
+    public-key: O_YZOJVON0LE1U01hAtNUOVRy7z6fkBUXbMtpCGoGEg
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: DE_HYSTERIA_20088_1617
+  type: hysteria
+  server: 5.83.129.153
+  port: 20088
+  auth_str: dongtaiwang.com
+  up: '10'
+  down: '50'
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  udp: true
+  country: DE
+- name: DE_HYSTERIA2_443_568
   obfs: salamander
   obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
   password: cd74c0a406664a5bc0bac098220a2468
@@ -44,14 +57,14 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HTTP_443_369
+- name: DE_HTTP_443_394
   port: 443
-  server: 149.36.50.129
+  server: 138.201.56.241
   skip-cert-verify: true
   tls: true
   type: http
   country: DE
-- name: DE_HTTP_443_374
+- name: DE_HTTP_443_371
   password: None
   port: 443
   server: 149.36.50.1
@@ -60,44 +73,144 @@ proxies:
   type: http
   username: null
   country: DE
-- name: DE_SS_8390_586
-  server: germ6.velqixa.ir
-  port: 8390
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: BKoK3EPN2TwJUf0IBOPQSA
-  udp: true
+- name: DE_HTTP_443_587
+  port: 443
+  server: 141.17.83.73
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: DE
-- name: DE_VLESS_8445_376
-  server: germ6.velqixa.ir
-  port: 8445
+- name: DE_VLESS_443_388
+  server: 91.107.144.42
+  port: 443
   type: vless
-  uuid: f2900749-7cff-42b7-9566-dfb03840d374
+  uuid: f1505323-ecb6-4152-9a5b-d37b3ae1cacf
   tls: true
   reality-opts:
-    public-key: TJJ4Zfq2KhZii_IP8J1EW4VNt3HBYnlIR5yn7JzbFXs
-    short-id: 498dde7df1bf79ab
-  servername: amp-api-edge.apps.apple.com
-  client-fingerprint: qq
+    public-key: WlAXTWbhFDMJJHaXkpnbbxEBtQV3lZNoIH86pmYzMx8
+    short-id: f532fd0a180d3458
+  servername: play-apps-features.googleusercontent.com
+  client-fingerprint: edge
   network: tcp
   udp: true
   country: DE
-- name: DE_VLESS_443_409
-  server: 150.241.68.208
-  port: 443
-  type: vless
-  uuid: b8201bab-fa6c-4f6e-b289-b5da660c6f69
-  tls: true
-  alpn:
-  - http/1.1
-  servername: cf13.rumedia-cdn.com
-  client-fingerprint: chrome
+- name: DE_TROJAN_2053_996
+  server: 82.117.245.125
+  port: 2053
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /cdn/v3/live
+    path: /assignment
     headers:
-      Host: cf13.rumedia-cdn.com
+      Host: www.calmlunch.com
   udp: true
+  country: DE
+- name: DE_VMESS_180_123
+  type: vmess
+  network: tcp
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_134
+  type: vmess
+  network: tcp
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_132
+  type: vmess
+  network: tcp
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_132_2
+  type: vmess
+  network: tcp
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_443_2851
+  type: vmess
+  network: ws
+  server: 85.215.41.19
+  port: 443
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: renderer-stream-2-62.mirra.now
+    path: /api/v1/gpu-stream/socket
+  country: DE
+- name: DE_VMESS_443_2723
+  type: vmess
+  network: ws
+  server: 212.95.34.195
+  port: 443
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: renderer-stream-2-62.mirra.now
+    path: /api/v1/gpu-stream/socket
+  country: DE
+- name: DE_VLESS_443_2555
+  type: vless
+  network: ws
+  server: 81.95.4.189
+  port: 443
+  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
+  servername: bab-6.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: bab-6.site
+    path: /vws/
+  country: DE
+- name: DE_VLESS_2096_402
+  type: vless
+  network: ws
+  server: 64.226.95.244
+  port: 2096
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  servername: cf3.schzyc.cc.cd
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: cf3.schzyc.cc.cd
+    path: /proxyip=ProxyIP.CMLiussss.net
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -112,14 +225,23 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_443_284
-  - DE_VLESS_443_293
-  - DE_HYSTERIA2_443_572
-  - DE_HTTP_443_369
-  - DE_HTTP_443_374
-  - DE_SS_8390_586
-  - DE_VLESS_8445_376
-  - DE_VLESS_443_409
+  - DE_VLESS_443_283
+  - DE_VLESS_443_275
+  - DE_HYSTERIA_20088_1617
+  - DE_HYSTERIA2_443_568
+  - DE_HTTP_443_394
+  - DE_HTTP_443_371
+  - DE_HTTP_443_587
+  - DE_VLESS_443_388
+  - DE_TROJAN_2053_996
+  - DE_VMESS_180_123
+  - DE_VMESS_180_134
+  - DE_VMESS_180_132
+  - DE_VMESS_180_132_2
+  - DE_VMESS_443_2851
+  - DE_VMESS_443_2723
+  - DE_VLESS_443_2555
+  - DE_VLESS_2096_402
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -132,14 +254,23 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VLESS_443_284
-  - DE_VLESS_443_293
-  - DE_HTTP_443_369
-  - DE_HTTP_443_374
-  - DE_VLESS_8445_376
-  - DE_VLESS_443_409
-  - DE_HYSTERIA2_443_572
-  - DE_SS_8390_586
+  - DE_VMESS_180_123
+  - DE_VMESS_180_132
+  - DE_VMESS_180_132_2
+  - DE_VMESS_180_134
+  - DE_VLESS_443_275
+  - DE_VLESS_443_283
+  - DE_HTTP_443_371
+  - DE_VLESS_443_388
+  - DE_HTTP_443_394
+  - DE_VLESS_2096_402
+  - DE_HYSTERIA2_443_568
+  - DE_HTTP_443_587
+  - DE_TROJAN_2053_996
+  - DE_HYSTERIA_20088_1617
+  - DE_VLESS_443_2555
+  - DE_VMESS_443_2723
+  - DE_VMESS_443_2851
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -151,14 +282,23 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_443_284
-  - DE_VLESS_443_293
-  - DE_HYSTERIA2_443_572
-  - DE_HTTP_443_369
-  - DE_HTTP_443_374
-  - DE_SS_8390_586
-  - DE_VLESS_8445_376
-  - DE_VLESS_443_409
+  - DE_VLESS_443_283
+  - DE_VLESS_443_275
+  - DE_HYSTERIA_20088_1617
+  - DE_HYSTERIA2_443_568
+  - DE_HTTP_443_394
+  - DE_HTTP_443_371
+  - DE_HTTP_443_587
+  - DE_VLESS_443_388
+  - DE_TROJAN_2053_996
+  - DE_VMESS_180_123
+  - DE_VMESS_180_134
+  - DE_VMESS_180_132
+  - DE_VMESS_180_132_2
+  - DE_VMESS_443_2851
+  - DE_VMESS_443_2723
+  - DE_VLESS_443_2555
+  - DE_VLESS_2096_402
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

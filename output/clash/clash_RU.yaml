@@ -5,61 +5,96 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_HYSTERIA2_22443_407
-  password: 5beff945-adaa-492f-85c6-8aaf5df6cfa5
-  port: 22443
-  server: 91.240.86.70
-  sni: hy.quattro-tech.ru
-  tls: false
-  type: hysteria2
+- name: RU_VMESS_443_2935
+  type: vmess
+  server: 5.188.26.85
+  port: 443
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: renderer-stream-2-62.mirra.now
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: renderer-stream-2-62.mirra.now
   country: RU
-- down: ''
-  fingerprint: ''
-  name: RU_HYSTERIA2_443_662
-  obfs: ''
-  obfs-password: ''
+- name: RU_HYSTERIA2_443_495
   password: f317b5d6-d399-4d3d-a051-89d674ae953c
-  port: '443'
+  port: 443
   server: msk.frkn.org
-  skip-cert-verify: false
-  sni: msk.frkn.org
   tls: false
   type: hysteria2
-  up: ''
   country: RU
-- name: RU_VLESS_443_509
-  server: 93.189.63.146
-  port: 443
-  type: vless
-  uuid: 82282910-54a0-0032-b2df-86bfbce8ed36
-  tls: true
+- alpn:
+  - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
+  client-fingerprint: qq
+  encryption: none
+  grpc-opts:
+    grpc-service-name: grpc-tunnel
+  name: RU_VLESS_9891_562
+  network: grpc
+  port: '9891'
   reality-opts:
-    public-key: YHPoUNxsml4z6pYt-7djOb1lqnBjxCk4-2mk84pveyc
-    short-id: 3b5b38669a1a51c0
-  servername: mm.melbicom.net
-  client-fingerprint: chrome
-  network: xhttp
-  xhttp-opts:
-    path: /static
-    host: mm.melbicom.net
+    public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+    short-id: aabbccdd
+  server: 188.68.216.38
+  servername: dl.google.com
+  tls: true
+  type: vless
   udp: true
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+  xudp: true
   country: RU
-- name: RU_VLESS_443_470
-  server: 95.143.188.10
-  port: 443
-  type: vless
-  uuid: 82282910-54a0-0032-b2df-86bfbce8ed36
-  tls: true
-  reality-opts:
-    public-key: YHPoUNxsml4z6pYt-7djOb1lqnBjxCk4-2mk84pveyc
-    short-id: 3b5b38669a1a51c0
-  servername: git.medrocket.ru
-  client-fingerprint: firefox
+- client-fingerprint: chrome
+  encryption: none
+  name: RU_VLESS_443_616
   network: xhttp
-  xhttp-opts:
-    path: /repository
-    host: git.medrocket.ru
+  port: '443'
+  reality-opts:
+    public-key: oHaUPZiESTQQ89DMd4uIcPWgsyeFFy58iZYX_8mbvWk
+    short-id: ''
+  server: 62.233.39.9
+  servername: dl.dell.com
+  tls: true
+  type: vless
   udp: true
+  uuid: 3f9f2bda-0b9c-8469-7381-a73de2255619
+  xhttp-opts:
+    path: /
+  xudp: true
+  country: RU
+- name: RU_VLESS_443_553
+  type: vless
+  network: ws
+  server: 91.210.169.181
+  port: 443
+  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
+  servername: wstg.datasynctrue.online
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: wstg.datasynctrue.online
+    path: /api/connect
+  country: RU
+- name: RU_VMESS_443_1167
+  type: vmess
+  network: ws
+  server: 194.226.142.120
+  port: 443
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: renderer-stream-2-62.mirra.now
+    path: /api/v1/gpu-stream/socket
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -74,10 +109,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_HYSTERIA2_22443_407
-  - RU_HYSTERIA2_443_662
-  - RU_VLESS_443_509
-  - RU_VLESS_443_470
+  - RU_VMESS_443_2935
+  - RU_HYSTERIA2_443_495
+  - RU_VLESS_9891_562
+  - RU_VLESS_443_616
+  - RU_VLESS_443_553
+  - RU_VMESS_443_1167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -90,10 +127,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_22443_407
-  - RU_VLESS_443_470
-  - RU_VLESS_443_509
-  - RU_HYSTERIA2_443_662
+  - RU_HYSTERIA2_443_495
+  - RU_VLESS_443_553
+  - RU_VLESS_9891_562
+  - RU_VLESS_443_616
+  - RU_VMESS_443_1167
+  - RU_VMESS_443_2935
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -105,10 +144,12 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_HYSTERIA2_22443_407
-  - RU_HYSTERIA2_443_662
-  - RU_VLESS_443_509
-  - RU_VLESS_443_470
+  - RU_VMESS_443_2935
+  - RU_HYSTERIA2_443_495
+  - RU_VLESS_9891_562
+  - RU_VLESS_443_616
+  - RU_VLESS_443_553
+  - RU_VMESS_443_1167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_HYSTERIA2_8080_541
+- name: FI_HYSTERIA2_8080_500
   password: h_B9x3942fJ9x_Kpx3914KQ_nZ934HFg_rT
   port: 8080
   server: 138.124.0.168
@@ -13,6 +13,21 @@ proxies:
   sni: hopp-legend-se.roxa.org
   tls: false
   type: hysteria2
+  country: FI
+- name: FI_VLESS_443_1734
+  server: fin.pinkmoon.pro
+  port: 443
+  type: vless
+  uuid: 827a0eb0-21bf-4bce-96ef-0a7bac5d68f5
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+    short-id: 8ffa160e608bf539
+  servername: fin.pinkmoon.pro
+  client-fingerprint: qq
+  network: tcp
+  udp: true
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_HYSTERIA2_8080_541
+  - FI_HYSTERIA2_8080_500
+  - FI_VLESS_443_1734
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_HYSTERIA2_8080_541
+  - FI_HYSTERIA2_8080_500
+  - FI_VLESS_443_1734
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +69,8 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_HYSTERIA2_8080_541
+  - FI_HYSTERIA2_8080_500
+  - FI_VLESS_443_1734
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

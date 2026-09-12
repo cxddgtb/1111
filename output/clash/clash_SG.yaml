@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_HYSTERIA2_1933_1166
+- name: SG_HYSTERIA2_1933_1300
   password: 19f72087-4591-4d72-930b-2697078ec2be
   port: 1933
   server: sg1.xiaoliyu.cyou
@@ -14,37 +14,28 @@ proxies:
   tls: false
   type: hysteria2
   country: SG
-- name: SG_HYSTERIA2_443_691
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  port: 443
-  server: 13.250.120.9
-  skip-cert-verify: true
-  sni: 13.250.120.9
-  tls: false
-  type: hysteria2
-  country: SG
-- name: SG_HYSTERIA2_443_727
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  port: 443
-  server: 47.129.0.20
-  skip-cert-verify: true
-  sni: speedtest.tinkoff.ru
-  tls: false
-  type: hysteria2
-  country: SG
-- name: SG_HYSTERIA2_443_699
+- name: SG_HYSTERIA2_443_706
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   port: 443
   server: 54.151.142.26
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: false
+  type: hysteria2
+  country: SG
+- name: SG_HYSTERIA2_443_701
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  port: 443
+  server: 47.129.0.20
   skip-cert-verify: true
   sni: whatsapp.com
   tls: false
   type: hysteria2
   country: SG
-- name: SG_VMESS_18000_451
+- name: SG_VMESS_18000_448
   type: vmess
   network: tcp
-  server: 149.88.23.202
+  server: 149.88.23.207
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
@@ -64,11 +55,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_HYSTERIA2_1933_1166
-  - SG_HYSTERIA2_443_691
-  - SG_HYSTERIA2_443_727
-  - SG_HYSTERIA2_443_699
-  - SG_VMESS_18000_451
+  - SG_HYSTERIA2_1933_1300
+  - SG_HYSTERIA2_443_706
+  - SG_HYSTERIA2_443_701
+  - SG_VMESS_18000_448
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -81,11 +71,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VMESS_18000_451
-  - SG_HYSTERIA2_443_691
-  - SG_HYSTERIA2_443_699
-  - SG_HYSTERIA2_443_727
-  - SG_HYSTERIA2_1933_1166
+  - SG_VMESS_18000_448
+  - SG_HYSTERIA2_443_701
+  - SG_HYSTERIA2_443_706
+  - SG_HYSTERIA2_1933_1300
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -97,11 +86,10 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_HYSTERIA2_1933_1166
-  - SG_HYSTERIA2_443_691
-  - SG_HYSTERIA2_443_727
-  - SG_HYSTERIA2_443_699
-  - SG_VMESS_18000_451
+  - SG_HYSTERIA2_1933_1300
+  - SG_HYSTERIA2_443_706
+  - SG_HYSTERIA2_443_701
+  - SG_VMESS_18000_448
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

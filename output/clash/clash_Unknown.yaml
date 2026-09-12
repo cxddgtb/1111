@@ -5,7 +5,51 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: Unknown_VMESS_443_411
+- name: Unknown_VLESS_2096_70
+  type: vless
+  server: 104.17.62.176
+  port: 2096
+  uuid: 42c62a5a-cd31-4551-80ef-908732370287
+  network: ws
+  tls: true
+  servername: fq.jp188.dpdns.org
+  client-fingerprint: chrome
+  ws-opts:
+    path: /proxyip=154.17.22.207,69.63.210.157,134.195.211.13,172.236.245.153,209.146.115.209,64.186.224.194,149.28.94.52,107.151.188.57
+    headers:
+      Host: fq.jp188.dpdns.org
+  country: Unknown
+- name: Unknown_VLESS_8443_33
+  type: vless
+  server: 8.35.211.145
+  port: 8443
+  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
+  network: ws
+  tls: true
+  servername: mianfei-73q.pages.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /proxyip=154.3.33.43
+    headers:
+      Host: mianfei-73q.pages.dev
+  country: Unknown
+- name: Unknown_VLESS_443_50
+  type: vless
+  server: 104.17.159.189
+  port: 443
+  uuid: 42c62a5a-cd31-4551-80ef-908732370287
+  network: ws
+  servername: fq.jp188.dpdns.org
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /proxyip=154.17.22.207,69.63.210.157,134.195.211.13,172.236.245.153,209.146.115.209,64.186.224.194,149.28.94.52,107.151.188.57fp=chrome
+    headers:
+      Host: fq.jp188.dpdns.org
+  skip-cert-verify: true
+  udp: true
+  country: Unknown
+- name: Unknown_VMESS_443_523
   type: vmess
   server: www.shopify.com
   port: 443
@@ -22,121 +66,783 @@ proxies:
       Host: guanwang.awsno.com
   udp: true
   country: Unknown
-- name: Unknown_VLESS_2096_55
-  server: 172.64.52.60
-  port: 2096
-  type: vless
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  tls: true
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  client-fingerprint: chrome
+- client-fingerprint: chrome
+  ech-opts:
+    enable: true
+    query-server-name: cloudflare-ech.com
+  name: Unknown_VLESS_2083_102
   network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  udp: true
-  country: Unknown
-- name: Unknown_VLESS_2087_74
-  server: 172.64.52.97
-  port: 2087
-  type: vless
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  tls: true
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  udp: true
-  country: Unknown
-- name: Unknown_VLESS_2087_72
-  server: 172.64.52.68
-  port: 2087
-  type: vless
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  tls: true
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  udp: true
-  country: Unknown
-- name: Unknown_VLESS_2087_54
-  server: 104.17.110.46
-  port: 2087
-  type: vless
-  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
-  tls: true
-  servername: mianfei-73q.pages.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /proxyip=154.3.33.43
-    headers:
-      Host: mianfei-73q.pages.dev
-  country: Unknown
-- name: Unknown_VLESS_2087_260
-  server: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  port: 2087
-  type: vless
-  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-  tls: true
-  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  client-fingerprint: qq
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  udp: true
-  country: Unknown
-- name: Unknown_VLESS_443_331
-  type: vless
-  server: fq.jp188.dpdns.org
-  port: 443
-  uuid: 42c62a5a-cd31-4551-80ef-908732370287
-  network: ws
-  tls: true
+  port: 2083
+  server: 104.16.157.58
   servername: fq.jp188.dpdns.org
-  client-fingerprint: chrome
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 42c62a5a-cd31-4551-80ef-908732370287
   ws-opts:
-    path: /
     headers:
       Host: fq.jp188.dpdns.org
+    path: /proxyip=154.17.22.207,69.63.210.157,134.195.211.13,172.236.245.153,209.146.115.209,64.186.224.194,149.28.94.52,107.151.188.57
   country: Unknown
-- name: Unknown_VLESS_443_1313
+- name: Unknown_VLESS_2095_37
+  server: 162.159.0.53
+  port: 2095
   type: vless
-  server: 104.19.87.194
-  port: 443
-  uuid: 407ecce0-dc85-465f-89f5-e520e9378baf
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  tls: false
   network: ws
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_8443_32
+  server: 172.64.146.211
+  port: 8443
+  type: vless
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
   tls: true
-  servername: ld.223350.xyz
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   client-fingerprint: chrome
+  network: ws
   ws-opts:
     path: /
     headers:
-      Host: ld.223350.xyz
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  udp: true
   country: Unknown
-- name: Unknown_VLESS_8443_53
+- name: Unknown_VLESS_8080_22
+  server: 172.64.229.170
+  port: 8080
   type: vless
-  server: 8.35.211.145
-  port: 8443
-  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  tls: false
   network: ws
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_2082_28
+  server: 162.159.38.127
+  port: 2082
+  type: vless
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  tls: false
+  servername: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+  network: ws
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_443_52
+  server: 172.64.53.215
+  port: 443
+  type: vless
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  tls: true
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_2087_37
+  server: 104.16.150.108
+  port: 2087
+  type: vless
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  tls: true
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_2095_48
+  server: 162.159.24.131
+  port: 2095
+  type: vless
+  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  tls: false
+  network: ws
+  ws-opts:
+    path: /?ed=2560security=tls
+    headers:
+      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_2087_51
+  server: 172.64.53.194
+  port: 2087
+  type: vless
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  tls: true
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  udp: true
+  country: Unknown
+- name: Unknown_TROJAN_443_275
+  server: 188.114.96.3
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_443_63
+  server: 104.17.20.39
+  port: 443
+  type: vless
+  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
   tls: true
   servername: mianfei-73q.pages.dev
   client-fingerprint: chrome
+  network: ws
   ws-opts:
     path: /proxyip=154.3.33.43
     headers:
       Host: mianfei-73q.pages.dev
+  udp: true
+  country: Unknown
+- name: Unknown_VLESS_443_68
+  type: vless
+  network: ws
+  server: 172.67.148.180
+  port: 443
+  uuid: 02e6ad71-7f85-4c3a-aac7-6171762bce87
+  servername: summer-field-3c5b.fsdfsddf.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: summer-field-3c5b.fsdfsddf.workers.dev
+    path: /eyJqdW5rIjoia2N4eldGd0p6NVY1V3hrIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OjExOjY0OjpdIl19?ed
+  country: Unknown
+- name: Unknown_VLESS_443_366
+  type: vless
+  network: ws
+  server: 104.21.69.118
+  port: 443
+  uuid: 1443b7a1-7ba9-4ec9-b904-2e867367b5d7
+  servername: odd-violet-5440.asdgrweeee13.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: odd-violet-5440.asdgrweeee13.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_36
+  type: vless
+  network: ws
+  server: 172.67.174.249
+  port: 443
+  uuid: 26b35808-f1e1-4b97-8c69-46796f058d8b
+  servername: ezaccess-project-9138d4.5f6on.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: ezaccess-project-9138d4.5f6on.workers.dev
+    path: /eyJqdW5rIjoicG9pMkt4TDY2TVNtRSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+  country: Unknown
+- name: Unknown_VLESS_443_58
+  type: vless
+  network: ws
+  server: 104.21.70.21
+  port: 443
+  uuid: 2db92da9-8ffb-491b-81d6-6e8d50876020
+  servername: bpb-01c11365.hjdbcvdbkv.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: bpb-01c11365.hjdbcvdbkv.workers.dev
+    path: /eyJqdW5rIjoiWlFRWlMwRDdLakVqMyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560
+  country: Unknown
+- name: Unknown_VLESS_8443_56
+  type: vless
+  network: ws
+  server: 104.26.12.54
+  port: 8443
+  uuid: 31aa0950-eb19-45ff-94a2-af416deb3b90
+  servername: square-salad-ebde.zdfgvccfguuyggg.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: square-salad-ebde.zdfgvccfguuyggg.workers.dev
+    path: /eyJqdW5rIjoiZm5INktPV0lGcHI1NjNSOSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0?ed=8443
+  country: Unknown
+- name: Unknown_VLESS_443_35
+  type: vless
+  network: ws
+  server: 104.21.22.180
+  port: 443
+  uuid: 33918b20-9e02-4dc6-8b30-79b2d4b2e0e6
+  servername: aUto-scaLe-238B2B.inFra-coRE-1630dD.WorKerS.DeV
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: aUto-scaLe-238B2B.inFra-coRE-1630dD.WorKerS.DeV
+    path: /eyJqdW5rIjoiUjJBU3JkVlRwSWtnciIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbImJwYi55b3VzZWYuaXNlZ2Fyby5jb20iXX0
+  country: Unknown
+- name: Unknown_VLESS_8443_318
+  type: vless
+  network: ws
+  server: 188.114.96.7
+  port: 8443
+  uuid: 362a79a2-ce89-8d2d-355c-f1f5071a445f
+  servername: fragrant-unit-d662.mmammatrix770088.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: fragrant-unit-d662.mmammatrix770088.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_2083_352
+  type: vless
+  network: ws
+  server: 104.25.157.74
+  port: 2083
+  uuid: 3cb4c775-bf08-4158-a0e3-cbae9ac452d7
+  servername: orange-darkness-749f.phantomnettest1-65d.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: orange-darkness-749f.phantomnettest1-65d.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_63_2
+  type: vless
+  network: ws
+  server: 104.21.33.59
+  port: 443
+  uuid: 44eae030-290b-4083-8102-6f8bab05701b
+  servername: cfvvv-ev1.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: unsafe
+  ws-opts:
+    headers:
+      Host: cfvvv-ev1.pages.dev
+    path: /
+  country: Unknown
+- name: Unknown_VLESS_443_374
+  type: vless
+  network: ws
+  server: 172.64.80.1
+  port: 443
+  uuid: 4ce7cb8a-f9b1-4bfa-a80d-9e168c61a633
+  servername: curly-night-6928.ggdhchjk.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: curly-night-6928.ggdhchjk.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_485
+  type: vless
+  network: ws
+  server: 104.21.78.225
+  port: 443
+  uuid: 4ce7cb8a-f9b1-4bfa-a80d-9e168c61a633
+  servername: curly-night-6928.ggdhchjk.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: curly-night-6928.ggdhchjk.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_8443_350
+  type: vless
+  network: ws
+  server: 172.64.155.209
+  port: 8443
+  uuid: 4ff70740-8c80-48ae-985f-2afe4924e908
+  servername: pubb.clnahanpnln.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: pubb.clnahanpnln.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_50_2
+  type: vless
+  network: ws
+  server: 141.101.120.73
+  port: 443
+  uuid: 5d8eb33a-2166-4daf-88fe-4be5799c493b
+  servername: noisy-term-e657.airdrop2014aa5168.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: noisy-term-e657.airdrop2014aa5168.workers.dev
+    path: /
+  country: Unknown
+- name: Unknown_VLESS_443_62
+  type: vless
+  network: ws
+  server: 141.101.114.8
+  port: 443
+  uuid: 5d8eb33a-2166-4daf-88fe-4be5799c493b
+  servername: noisy-term-e657.airdrop2014aa5168.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: noisy-term-e657.airdrop2014aa5168.workers.dev
+    path: /
+  country: Unknown
+- name: Unknown_VLESS_443_876
+  type: vless
+  network: ws
+  server: 172.67.134.170
+  port: 443
+  uuid: 50414e45-4c5f-5a45-5553-635698a6bb9c
+  servername: jdzit4e4urks.xwzohsebujps.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: jdzit4e4urks.xwzohsebujps.workers.dev
+    path: /stream/PANEL_ZEUS/635698a6bb9c/loc-0
+  country: Unknown
+- name: Unknown_VLESS_443_852
+  type: vless
+  network: ws
+  server: 172.67.151.109
+  port: 443
+  uuid: 50414e45-4c5f-5a45-5553-635698a6bb9c
+  servername: jdzit4e4urks.xwzohsebujps.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: jdzit4e4urks.xwzohsebujps.workers.dev
+    path: /stream/PANEL_ZEUS/635698a6bb9c/loc-0
+  country: Unknown
+- name: Unknown_VLESS_443_969
+  type: vless
+  network: ws
+  server: 172.67.156.147
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+  country: Unknown
+- name: Unknown_VLESS_443_1250
+  type: vless
+  network: ws
+  server: 162.159.91.222
+  port: 443
+  uuid: 50414e45-4c5f-5a45-5553-723a643df685
+  servername: n3zaxce7u0es.crzl48eiuses.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: n3zaxce7u0es.crzl48eiuses.workers.dev
+    path: /stream/PANEL_ZEUS/723a643df685/loc-0
+  country: Unknown
+- name: Unknown_VLESS_2087_28
+  type: vless
+  network: ws
+  server: 104.16.150.7
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /
+  country: Unknown
+- name: Unknown_VLESS_2087_30
+  type: vless
+  network: ws
+  server: 104.19.214.98
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /?TELEGRAM-MARAMBASHI_MARAMBASHI?ed=512
+  country: Unknown
+- name: Unknown_VLESS_2087_36
+  type: vless
+  network: ws
+  server: 104.25.248.101
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /
+  country: Unknown
+- name: Unknown_VLESS_2087_41
+  type: vless
+  network: ws
+  server: 172.64.145.166
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /
+  country: Unknown
+- name: Unknown_VLESS_2087_41_2
+  type: vless
+  network: ws
+  server: 172.64.146.211
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+    path: /
+  country: Unknown
+- name: Unknown_VLESS_443_2141
+  type: vless
+  network: ws
+  server: 104.21.238.93
+  port: 443
+  uuid: 50414e45-4c5f-5a45-5553-44890b90d17e
+  servername: afzoybehu2ws.vtzv4xe1un6s.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: afzoybehu2ws.vtzv4xe1un6s.workers.dev
+    path: /stream/PANEL_ZEUS/44890b90d17e/loc-0
+  country: Unknown
+- name: Unknown_VLESS_2096_41
+  type: vless
+  network: ws
+  server: 8.39.125.245
+  port: 2096
+  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
+  servername: mianfei-73q.pages.dev
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: mianfei-73q.pages.dev
+    path: /proxyip=154.3.33.43
+  country: Unknown
+- name: Unknown_VLESS_2053_66
+  type: vless
+  network: ws
+  server: 8.39.125.70
+  port: 2053
+  uuid: 8666ab45-8e3d-4988-841b-2561d91e32d5
+  servername: mianfei-73q.pages.dev
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  tfo: false
+  flow: ''
+  ws-opts:
+    headers:
+      Host: mianfei-73q.pages.dev
+    path: /proxyip=154.3.33.43
+  country: Unknown
+- name: Unknown_VLESS_2096_26
+  type: vless
+  network: ws
+  server: 188.114.96.2
+  port: 2096
+  uuid: 8d82944e-17b9-473f-a456-dec9a6e21471
+  servername: peekconfig.peekconf1.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: peekconfig.peekconf1.workers.dev
+    path: /eyJqdW5rIjoidnlSRWhQQ3ZCNGZRNHVYMyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzJhMDI6ODk4OjE0Njo2NDo6XSJdfQ==
+  country: Unknown
+- name: Unknown_VLESS_443_437
+  type: vless
+  network: ws
+  server: 104.21.78.9
+  port: 443
+  uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
+  servername: summer-meadow-af5b.woowoorrrkk.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: summer-meadow-af5b.woowoorrrkk.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_430
+  type: vless
+  network: ws
+  server: 172.67.214.106
+  port: 443
+  uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
+  servername: summer-meadow-af5b.woowoorrrkk.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: summer-meadow-af5b.woowoorrrkk.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_443_75
+  type: vless
+  network: ws
+  server: 172.67.161.136
+  port: 443
+  uuid: d713a25e-d96c-4755-94f4-9a0e0cd1ad68
+  servername: bpb-panel-4e2c.sakwra939.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: bpb-panel-4e2c.sakwra939.workers.dev
+    path: /eyJqdW5rIjoiVndBTWp2RGsyc0g4TlgiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjoiWzJhMDI6ODk4OjE0Njo2NDo6XSJ9?ed
+  country: Unknown
+- name: Unknown_VLESS_443_52_2
+  type: vless
+  network: ws
+  server: 172.67.165.125
+  port: 443
+  uuid: e48e4049-58bb-4355-9a9a-433b9524d928
+  servername: z8z7lovopd53iz6ivd2m.fixing00ponvip.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: z8z7lovopd53iz6ivd2m.fixing00ponvip.workers.dev
+    path: /vl/Fx1O4r0oHuQMNuKFQzcoV2yl31?ed
+  country: Unknown
+- name: Unknown_VLESS_8443_34
+  type: vless
+  network: ws
+  server: 172.66.149.243
+  port: 8443
+  uuid: ededaf7e-ad86-40bc-b837-b1403c56f311
+  servername: bazyepc.aminrazavi1384.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: bazyepc.aminrazavi1384.workers.dev
+    path: /eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19
+  country: Unknown
+- name: Unknown_VLESS_2053_353
+  type: vless
+  network: ws
+  server: 104.21.7.43
+  port: 2053
+  uuid: f58a9d78-d4cc-c8bc-03d0-2810846a33d1
+  servername: hossein.shhrsbzhsyn.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: hossein.shhrsbzhsyn.workers.dev
+    path: /sync
+  country: Unknown
+- name: Unknown_VLESS_2087_36_2
+  type: vless
+  network: ws
+  server: www.shopify.com
+  port: 2087
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
+    path: /?ed=2560
+  country: Unknown
+- name: Unknown_VLESS_443_111
+  type: vless
+  network: ws
+  server: store.ubi.com
+  port: 443
+  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
+  servername: cf1-1mh.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: firefox
+  ws-opts:
+    headers:
+      Host: cf1-1mh.pages.dev
+    path: /?ed=2560
+  country: Unknown
+- name: Unknown_VLESS_443_437_2
+  type: vless
+  network: ws
+  server: cf.877774.xyz
+  port: 443
+  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
+  servername: cf1-1mh.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: firefox
+  ws-opts:
+    headers:
+      Host: cf1-1mh.pages.dev
+    path: /?ed=2560
+  country: Unknown
+- name: Unknown_VLESS_443_730
+  type: vless
+  network: ws
+  server: cf.090227.xyz
+  port: 443
+  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
+  servername: cf1-1mh.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: firefox
+  ws-opts:
+    headers:
+      Host: cf1-1mh.pages.dev
+    path: /?ed=2560
   country: Unknown
 proxy-groups:
 - name: 🚀 节点选择
@@ -151,15 +857,58 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - Unknown_VMESS_443_411
-  - Unknown_VLESS_2096_55
-  - Unknown_VLESS_2087_74
-  - Unknown_VLESS_2087_72
-  - Unknown_VLESS_2087_54
-  - Unknown_VLESS_2087_260
-  - Unknown_VLESS_443_331
-  - Unknown_VLESS_443_1313
-  - Unknown_VLESS_8443_53
+  - Unknown_VLESS_2096_70
+  - Unknown_VLESS_8443_33
+  - Unknown_VLESS_443_50
+  - Unknown_VMESS_443_523
+  - Unknown_VLESS_2083_102
+  - Unknown_VLESS_2095_37
+  - Unknown_VLESS_8443_32
+  - Unknown_VLESS_8080_22
+  - Unknown_VLESS_2082_28
+  - Unknown_VLESS_443_52
+  - Unknown_VLESS_2087_37
+  - Unknown_VLESS_2095_48
+  - Unknown_VLESS_2087_51
+  - Unknown_TROJAN_443_275
+  - Unknown_VLESS_443_63
+  - Unknown_VLESS_443_68
+  - Unknown_VLESS_443_366
+  - Unknown_VLESS_443_36
+  - Unknown_VLESS_443_58
+  - Unknown_VLESS_8443_56
+  - Unknown_VLESS_443_35
+  - Unknown_VLESS_8443_318
+  - Unknown_VLESS_2083_352
+  - Unknown_VLESS_443_63_2
+  - Unknown_VLESS_443_374
+  - Unknown_VLESS_443_485
+  - Unknown_VLESS_8443_350
+  - Unknown_VLESS_443_50_2
+  - Unknown_VLESS_443_62
+  - Unknown_VLESS_443_876
+  - Unknown_VLESS_443_852
+  - Unknown_VLESS_443_969
+  - Unknown_VLESS_443_1250
+  - Unknown_VLESS_2087_28
+  - Unknown_VLESS_2087_30
+  - Unknown_VLESS_2087_36
+  - Unknown_VLESS_2087_41
+  - Unknown_VLESS_2087_41_2
+  - Unknown_VLESS_443_2141
+  - Unknown_VLESS_2096_41
+  - Unknown_VLESS_2053_66
+  - Unknown_VLESS_2096_26
+  - Unknown_VLESS_443_437
+  - Unknown_VLESS_443_430
+  - Unknown_VLESS_443_75
+  - Unknown_VLESS_443_52_2
+  - Unknown_VLESS_8443_34
+  - Unknown_VLESS_2053_353
+  - Unknown_VLESS_2087_36_2
+  - Unknown_VLESS_443_111
+  - Unknown_VLESS_443_437_2
+  - Unknown_VLESS_443_730
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -172,15 +921,58 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - Unknown_VLESS_8443_53
-  - Unknown_VLESS_2087_54
-  - Unknown_VLESS_2096_55
-  - Unknown_VLESS_2087_72
-  - Unknown_VLESS_2087_74
-  - Unknown_VLESS_2087_260
-  - Unknown_VLESS_443_331
-  - Unknown_VMESS_443_411
-  - Unknown_VLESS_443_1313
+  - Unknown_VLESS_8080_22
+  - Unknown_VLESS_2096_26
+  - Unknown_VLESS_2082_28
+  - Unknown_VLESS_2087_28
+  - Unknown_VLESS_2087_30
+  - Unknown_VLESS_8443_32
+  - Unknown_VLESS_8443_33
+  - Unknown_VLESS_8443_34
+  - Unknown_VLESS_443_35
+  - Unknown_VLESS_443_36
+  - Unknown_VLESS_2087_36
+  - Unknown_VLESS_2087_36_2
+  - Unknown_VLESS_2095_37
+  - Unknown_VLESS_2087_37
+  - Unknown_VLESS_2087_41
+  - Unknown_VLESS_2087_41_2
+  - Unknown_VLESS_2096_41
+  - Unknown_VLESS_2095_48
+  - Unknown_VLESS_443_50
+  - Unknown_VLESS_443_50_2
+  - Unknown_VLESS_2087_51
+  - Unknown_VLESS_443_52
+  - Unknown_VLESS_443_52_2
+  - Unknown_VLESS_8443_56
+  - Unknown_VLESS_443_58
+  - Unknown_VLESS_443_62
+  - Unknown_VLESS_443_63
+  - Unknown_VLESS_443_63_2
+  - Unknown_VLESS_2053_66
+  - Unknown_VLESS_443_68
+  - Unknown_VLESS_2096_70
+  - Unknown_VLESS_443_75
+  - Unknown_VLESS_2083_102
+  - Unknown_VLESS_443_111
+  - Unknown_TROJAN_443_275
+  - Unknown_VLESS_8443_318
+  - Unknown_VLESS_8443_350
+  - Unknown_VLESS_2083_352
+  - Unknown_VLESS_2053_353
+  - Unknown_VLESS_443_366
+  - Unknown_VLESS_443_374
+  - Unknown_VLESS_443_430
+  - Unknown_VLESS_443_437
+  - Unknown_VLESS_443_437_2
+  - Unknown_VLESS_443_485
+  - Unknown_VMESS_443_523
+  - Unknown_VLESS_443_730
+  - Unknown_VLESS_443_852
+  - Unknown_VLESS_443_876
+  - Unknown_VLESS_443_969
+  - Unknown_VLESS_443_1250
+  - Unknown_VLESS_443_2141
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -192,15 +984,58 @@ proxy-groups:
 - name: 🌍 Unknown
   type: url-test
   proxies:
-  - Unknown_VMESS_443_411
-  - Unknown_VLESS_2096_55
-  - Unknown_VLESS_2087_74
-  - Unknown_VLESS_2087_72
-  - Unknown_VLESS_2087_54
-  - Unknown_VLESS_2087_260
-  - Unknown_VLESS_443_331
-  - Unknown_VLESS_443_1313
-  - Unknown_VLESS_8443_53
+  - Unknown_VLESS_2096_70
+  - Unknown_VLESS_8443_33
+  - Unknown_VLESS_443_50
+  - Unknown_VMESS_443_523
+  - Unknown_VLESS_2083_102
+  - Unknown_VLESS_2095_37
+  - Unknown_VLESS_8443_32
+  - Unknown_VLESS_8080_22
+  - Unknown_VLESS_2082_28
+  - Unknown_VLESS_443_52
+  - Unknown_VLESS_2087_37
+  - Unknown_VLESS_2095_48
+  - Unknown_VLESS_2087_51
+  - Unknown_TROJAN_443_275
+  - Unknown_VLESS_443_63
+  - Unknown_VLESS_443_68
+  - Unknown_VLESS_443_366
+  - Unknown_VLESS_443_36
+  - Unknown_VLESS_443_58
+  - Unknown_VLESS_8443_56
+  - Unknown_VLESS_443_35
+  - Unknown_VLESS_8443_318
+  - Unknown_VLESS_2083_352
+  - Unknown_VLESS_443_63_2
+  - Unknown_VLESS_443_374
+  - Unknown_VLESS_443_485
+  - Unknown_VLESS_8443_350
+  - Unknown_VLESS_443_50_2
+  - Unknown_VLESS_443_62
+  - Unknown_VLESS_443_876
+  - Unknown_VLESS_443_852
+  - Unknown_VLESS_443_969
+  - Unknown_VLESS_443_1250
+  - Unknown_VLESS_2087_28
+  - Unknown_VLESS_2087_30
+  - Unknown_VLESS_2087_36
+  - Unknown_VLESS_2087_41
+  - Unknown_VLESS_2087_41_2
+  - Unknown_VLESS_443_2141
+  - Unknown_VLESS_2096_41
+  - Unknown_VLESS_2053_66
+  - Unknown_VLESS_2096_26
+  - Unknown_VLESS_443_437
+  - Unknown_VLESS_443_430
+  - Unknown_VLESS_443_75
+  - Unknown_VLESS_443_52_2
+  - Unknown_VLESS_8443_34
+  - Unknown_VLESS_2053_353
+  - Unknown_VLESS_2087_36_2
+  - Unknown_VLESS_443_111
+  - Unknown_VLESS_443_437_2
+  - Unknown_VLESS_443_730
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
