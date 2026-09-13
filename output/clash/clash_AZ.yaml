@@ -5,45 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_HYSTERIA2_25443_468
-  password: 29ffde49-e1d6-4dcd-a135-352920f9f0b8
-  port: 25443
-  server: se-node.rumedia-cdn.com
-  sni: cf2.rumedia-cdn.com
-  tls: false
-  type: hysteria2
-  country: SE
-- alpn:
-  - h3
-  name: SE_HYSTERIA2_36264_444
-  obfs: salamander
-  obfs-password: Telegram@vpnjey
-  password: Telegram-vpnjey
-  port: 36264
-  server: 77.110.96.201
-  skip-cert-verify: true
-  sni: se.vpnjey2.dpdns.org
-  tls: false
-  type: hysteria2
-  country: SE
-- name: SE_HTTP_443_473
-  password: None
-  port: 443
-  server: 146.70.242.146
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: SE
-- name: SE_HTTP_443_432
-  password: None
-  port: 443
-  server: 149.50.216.65
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: SE
+- encryption: none
+  name: AZ_VLESS_21289_595
+  network: tcp
+  port: '21289'
+  server: basalam.horqen.ir
+  type: vless
+  udp: true
+  uuid: c12db015-a63c-43e5-a744-6398a90373b5
+  xudp: true
+  country: AZ
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -52,15 +23,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 SE
+  - 🌍 AZ
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_HYSTERIA2_25443_468
-  - SE_HYSTERIA2_36264_444
-  - SE_HTTP_443_473
-  - SE_HTTP_443_432
+  - AZ_VLESS_21289_595
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,10 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_HTTP_443_432
-  - SE_HYSTERIA2_36264_444
-  - SE_HYSTERIA2_25443_468
-  - SE_HTTP_443_473
+  - AZ_VLESS_21289_595
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -85,13 +50,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 SE
+- name: 🌍 AZ
   type: url-test
   proxies:
-  - SE_HYSTERIA2_25443_468
-  - SE_HYSTERIA2_36264_444
-  - SE_HTTP_443_473
-  - SE_HTTP_443_432
+  - AZ_VLESS_21289_595
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

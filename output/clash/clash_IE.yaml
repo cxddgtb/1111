@@ -5,14 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IE_SS_443_147
-  type: ss
-  server: 34.244.71.63
+- name: IE_HTTP_443_362
   port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
+  server: 149.88.96.1
   skip-cert-verify: true
-  udp: true
+  tls: true
+  type: http
   country: IE
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IE_SS_443_147
+  - IE_HTTP_443_362
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IE_SS_443_147
+  - IE_HTTP_443_362
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +50,7 @@ proxy-groups:
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_SS_443_147
+  - IE_HTTP_443_362
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

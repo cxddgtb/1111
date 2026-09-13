@@ -5,16 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AT_VLESS_443_453
-  server: at-new-ded5.moritech.net
+- name: AT_HTTP_443_440
+  password: None
   port: 443
-  type: vless
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  server: 146.70.244.18
+  skip-cert-verify: true
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
+  type: http
+  username: null
   country: AT
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AT_VLESS_443_453
+  - AT_HTTP_443_440
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AT_VLESS_443_453
+  - AT_HTTP_443_440
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +52,7 @@ proxy-groups:
 - name: 🌍 AT
   type: url-test
   proxies:
-  - AT_VLESS_443_453
+  - AT_HTTP_443_440
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

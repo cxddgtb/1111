@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HU_HTTP_443_468
+- name: HU_HTTP_443_460
   password: None
   port: 443
   server: 146.70.203.18
@@ -27,7 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HU_HTTP_443_468
+  - HU_HTTP_443_460
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HU_HTTP_443_468
+  - HU_HTTP_443_460
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +52,7 @@ proxy-groups:
 - name: 🌍 HU
   type: url-test
   proxies:
-  - HU_HTTP_443_468
+  - HU_HTTP_443_460
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

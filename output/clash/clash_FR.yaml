@@ -5,48 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_22224_178
+- name: FR_VLESS_443_429
   type: vless
-  server: 15.237.145.224
-  port: 22224
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FR
-- name: FR_VLESS_22222_180
-  type: vless
-  server: 15.237.145.224
-  port: 22222
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FR
-- name: FR_VLESS_22223_181
-  type: vless
-  server: 15.237.145.224
-  port: 22223
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FR
-- name: FR_HTTP_443_354
+  server: kama1.api3-max.ru
   port: 443
-  server: 103.82.101.44
-  skip-cert-verify: true
-  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
+  uuid: 97ecaad4-452c-45ec-b591-d68d3308aad4
   tls: true
-  type: http
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  udp: true
   country: FR
-- name: FR_HTTP_443_398
+- name: FR_HTTP_443_375
   password: None
   port: 443
   server: 149.102.245.65
@@ -55,47 +24,35 @@ proxies:
   type: http
   username: null
   country: FR
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: FR_VLESS_443_598
-  network: tcp
-  port: '443'
-  reality-opts:
-    public-key: YzcD3L8gMsXxNBiGsPaLsy6DMip_MK6xu7voH_HriA8
-    short-id: cd41f54066ca4672
-  server: 167.104.216.148
-  servername: fr3.esimpson.org
-  tls: true
-  type: vless
+- name: FR_SOCKS5_1088_1061
+  password: None
+  port: 1088
+  server: 144.91.111.48
+  type: socks5
   udp: true
-  uuid: 367b6ccd-ecf1-42da-b9d7-375161ab0952
-  xudp: true
+  username: null
   country: FR
-- name: FR_VMESS_1234_322
-  type: vmess
-  network: tcp
-  server: 162.19.204.71
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: FR
-- name: FR_VLESS_443_279
+- name: FR_VLESS_22223_172
   type: vless
+  server: 35.181.146.129
+  port: 22223
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
   network: tcp
-  server: 162.19.10.99
-  port: 443
-  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
-  servername: nasnet-162191099-direct.mbghalibaf.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
+  tls: false
+  servername: ''
   client-fingerprint: chrome
-  flow: xtls-rprx-vision
+  ws-opts: null
+  country: FR
+- name: FR_VLESS_22222_179
+  type: vless
+  server: 35.181.146.129
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -110,14 +67,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_22224_178
-  - FR_VLESS_22222_180
-  - FR_VLESS_22223_181
-  - FR_HTTP_443_354
-  - FR_HTTP_443_398
-  - FR_VLESS_443_598
-  - FR_VMESS_1234_322
-  - FR_VLESS_443_279
+  - FR_VLESS_443_429
+  - FR_HTTP_443_375
+  - FR_SOCKS5_1088_1061
+  - FR_VLESS_22223_172
+  - FR_VLESS_22222_179
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -130,14 +84,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_22224_178
-  - FR_VLESS_22222_180
-  - FR_VLESS_22223_181
-  - FR_VLESS_443_279
-  - FR_VMESS_1234_322
-  - FR_HTTP_443_354
-  - FR_HTTP_443_398
-  - FR_VLESS_443_598
+  - FR_VLESS_22223_172
+  - FR_VLESS_22222_179
+  - FR_HTTP_443_375
+  - FR_VLESS_443_429
+  - FR_SOCKS5_1088_1061
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -149,14 +100,11 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_22224_178
-  - FR_VLESS_22222_180
-  - FR_VLESS_22223_181
-  - FR_HTTP_443_354
-  - FR_HTTP_443_398
-  - FR_VLESS_443_598
-  - FR_VMESS_1234_322
-  - FR_VLESS_443_279
+  - FR_VLESS_443_429
+  - FR_HTTP_443_375
+  - FR_SOCKS5_1088_1061
+  - FR_VLESS_22223_172
+  - FR_VLESS_22222_179
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

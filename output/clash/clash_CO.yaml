@@ -5,10 +5,10 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CO_HTTP_999_369
+- name: CO_HTTP_465_258
   password: None
-  port: 999
-  server: 8.243.167.51
+  port: 465
+  server: 38.225.40.143
   type: http
   username: null
   country: CO
@@ -25,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CO_HTTP_999_369
+  - CO_HTTP_465_258
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CO_HTTP_999_369
+  - CO_HTTP_465_258
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +50,7 @@ proxy-groups:
 - name: 🌍 CO
   type: url-test
   proxies:
-  - CO_HTTP_999_369
+  - CO_HTTP_465_258
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

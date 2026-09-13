@@ -5,7 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_HYSTERIA2_443_261
+- name: NL_SS_11001_395
+  type: ss
+  server: 158.173.221.214
+  port: 11001
+  cipher: chacha20-ietf-poly1305
+  password: c58d16e593d44f42
+  skip-cert-verify: true
+  udp: true
+  country: NL
+- name: NL_HYSTERIA2_443_259
   password: BWAFlp8g53
   port: 443
   server: 72.56.102.31
@@ -13,18 +22,7 @@ proxies:
   tls: false
   type: hysteria2
   country: NL
-- name: NL_HYSTERIA2_8443_274
-  obfs: salamander
-  obfs-password: HysteriaHowdy
-  password: HowdyHysteria2023w0W
-  port: 8443
-  server: 51.15.19.206
-  skip-cert-verify: true
-  sni: sni-here.com
-  tls: false
-  type: hysteria2
-  country: NL
-- name: NL_HYSTERIA2_8443_300
+- name: NL_HYSTERIA2_8443_301
   obfs: salamander
   obfs-password: HysteriaHowdy
   password: HowdyHysteria2023w0W
@@ -35,16 +33,7 @@ proxies:
   tls: false
   type: hysteria2
   country: NL
-- name: NL_HYSTERIA2_8443_273
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 8443
-  server: 46.229.243.152
-  skip-cert-verify: true
-  sni: grape-turbo-fr.roxa.org
-  tls: false
-  type: hysteria2
-  country: NL
-- name: NL_HYSTERIA2_8443_288
+- name: NL_HYSTERIA2_8443_281
   password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
   port: 8443
   server: 46.229.243.145
@@ -53,75 +42,77 @@ proxies:
   tls: false
   type: hysteria2
   country: NL
-- alpn:
-  - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
-  client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: NL_VLESS_443_288
-  network: tcp
-  port: '443'
-  reality-opts:
-    public-key: 2zLFL9xRZ_hAqBHIUpZrj3z5o5Bvt3OAFy5yDat7h0U
-    short-id: 2aef5875
-  server: mst1ndch.goonars.com
-  servername: apiv1nd.goonars.com
+- name: NL_HYSTERIA2_8443_275
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 8443
+  server: 46.229.243.152
+  skip-cert-verify: true
+  sni: grape-turbo-fr.roxa.org
+  tls: false
+  type: hysteria2
+  country: NL
+- client-fingerprint: chrome
+  ech-opts:
+    enable: true
+    query-server-name: cloudflare-ech.com
+  name: NL_VLESS_2096_65
+  network: ws
+  port: 2096
+  server: 188.164.248.78
+  servername: fq.jp188.dpdns.org
+  skip-cert-verify: false
   tls: true
   type: vless
-  udp: true
-  uuid: 02722550-1915-4629-a653-cbe95e594f70
-  xudp: true
+  uuid: 42c62a5a-cd31-4551-80ef-908732370287
+  ws-opts:
+    headers:
+      Host: fq.jp188.dpdns.org
+    path: /proxyip=154.17.22.207,69.63.210.157,134.195.211.13,172.236.245.153,209.146.115.209,64.186.224.194,149.28.94.52,107.151.188.57
   country: NL
-- name: NL_HTTP_9002_372
+- name: NL_HTTP_443_364
+  port: 443
+  server: 185.246.153.42
+  skip-cert-verify: true
+  sni: 482c8436a1f7c908b48a1757abb5dd79-3791fb4df2db250b.apache-iv.com
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_443_357
+  port: 443
+  server: 103.97.88.154
+  skip-cert-verify: true
+  sni: 4a8c2906c96058315dffbc2b0e7ff19b-98005bea43f9ac33.apache-iv.com
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_23856_332
+  password: None
+  port: 23856
+  server: 51.159.225.196
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: NL
+- name: NL_HTTP_9002_371
+  password: ''
+  port: 9002
+  server: 84.17.47.147
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: ''
+  country: NL
+- name: NL_HTTP_9002_369
+  password: 'null'
   port: 9002
   server: 84.17.47.150
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
+  username: 'null'
   country: NL
-- name: NL_HTTP_9002_374
-  password: None
-  port: 9002
-  server: 84.17.47.125
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_378
-  password: None
-  port: 9002
-  server: 84.17.47.148
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_366
-  port: 9002
-  server: 84.17.47.146
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_443_346
-  port: 443
-  server: 185.246.153.28
-  skip-cert-verify: true
-  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_443_360
-  port: 443
-  server: 149.36.51.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_443_343
+- name: NL_HTTP_443_365
   port: 443
   server: 185.140.209.235
   skip-cert-verify: true
@@ -129,25 +120,31 @@ proxies:
   tls: true
   type: http
   country: NL
-- name: NL_HTTP_443_388
-  password: None
+- name: NL_HTTP_9002_372
+  password: 'null'
+  port: 9002
+  server: 84.17.47.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+  country: NL
+- name: NL_HTTP_443_349
   port: 443
   server: 5.255.118.82
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
-  country: NL
-- name: NL_HTTP_443_745
-  password: None
-  port: 443
-  server: 157.22.183.72
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
   country: NL
 - name: NL_HTTP_9002_372_2
+  port: 9002
+  server: 84.17.47.125
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_364
   port: 9002
   server: 84.17.47.149
   skip-cert-verify: true
@@ -155,86 +152,28 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_VLESS_443_613
-  server: tmnd2.betust.net
-  port: 443
+- name: NL_HTTP_9002_373
+  port: 9002
+  server: 84.17.47.148
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_VLESS_9443_2299
   type: vless
-  uuid: 02722550-1915-4629-a653-cbe95e594f70
+  server: 31.59.150.174
+  port: 9443
+  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
+  servername: hotcoals.aeternavpn.space
   tls: true
   flow: xtls-rprx-vision
+  client-fingerprint: firefox
   reality-opts:
-    public-key: iTCQz0n0AolvGxU2ZASJIsSVoKOR9PAFbnZVQDnSnF8
-    short-id: c481d750
-  servername: app2.jarvesitw.ru
-  client-fingerprint: qq
-  network: tcp
-  udp: true
-  country: NL
-- name: NL_VMESS_1234_265
-  type: vmess
-  network: tcp
-  server: 159.223.13.109
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
+    short-id: a1b2c3d4
   skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: aes-128-gcm
-  country: NL
-- name: NL_VLESS_8443_269
-  type: vless
-  network: tcp
-  server: 193.23.194.167
-  port: 8443
-  uuid: 32349ee8-8551-45fa-a265-8704cec72936
-  servername: neth.lckdwn.ru
-  skip-cert-verify: false
-  tls: true
   udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: NL
-- name: NL_VLESS_8443_271
-  type: vless
-  network: tcp
-  server: 165.231.99.52
-  port: 8443
-  uuid: 6b03ffdd-6646-410b-b575-6c05eafdaf60
-  servername: vusr-6aa2cf2b.adhil.uk
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: NL
-- name: NL_VLESS_8443_278
-  type: vless
-  network: tcp
-  server: 31.76.76.28
-  port: 8443
-  uuid: de5906f3-df38-4463-aa9d-2b01320cc6ea
-  servername: neth4.lckdwn.ru
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: NL
-- name: NL_VMESS_443_1088
-  type: vmess
-  network: ws
-  server: 212.43.156.143
-  port: 443
-  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: renderer-stream-2-62.mirra.now
-    path: /api/v1/gpu-stream/socket
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -249,28 +188,24 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_HYSTERIA2_443_261
-  - NL_HYSTERIA2_8443_274
-  - NL_HYSTERIA2_8443_300
-  - NL_HYSTERIA2_8443_273
-  - NL_HYSTERIA2_8443_288
-  - NL_VLESS_443_288
+  - NL_SS_11001_395
+  - NL_HYSTERIA2_443_259
+  - NL_HYSTERIA2_8443_301
+  - NL_HYSTERIA2_8443_281
+  - NL_HYSTERIA2_8443_275
+  - NL_VLESS_2096_65
+  - NL_HTTP_443_364
+  - NL_HTTP_443_357
+  - NL_HTTP_23856_332
+  - NL_HTTP_9002_371
+  - NL_HTTP_9002_369
+  - NL_HTTP_443_365
   - NL_HTTP_9002_372
-  - NL_HTTP_9002_374
-  - NL_HTTP_9002_378
-  - NL_HTTP_9002_366
-  - NL_HTTP_443_346
-  - NL_HTTP_443_360
-  - NL_HTTP_443_343
-  - NL_HTTP_443_388
-  - NL_HTTP_443_745
+  - NL_HTTP_443_349
   - NL_HTTP_9002_372_2
-  - NL_VLESS_443_613
-  - NL_VMESS_1234_265
-  - NL_VLESS_8443_269
-  - NL_VLESS_8443_271
-  - NL_VLESS_8443_278
-  - NL_VMESS_443_1088
+  - NL_HTTP_9002_364
+  - NL_HTTP_9002_373
+  - NL_VLESS_9443_2299
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -283,28 +218,24 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_HYSTERIA2_443_261
-  - NL_VMESS_1234_265
-  - NL_VLESS_8443_269
-  - NL_VLESS_8443_271
-  - NL_HYSTERIA2_8443_273
-  - NL_HYSTERIA2_8443_274
-  - NL_VLESS_8443_278
-  - NL_HYSTERIA2_8443_288
-  - NL_VLESS_443_288
-  - NL_HYSTERIA2_8443_300
-  - NL_HTTP_443_343
-  - NL_HTTP_443_346
-  - NL_HTTP_443_360
-  - NL_HTTP_9002_366
+  - NL_VLESS_2096_65
+  - NL_HYSTERIA2_443_259
+  - NL_HYSTERIA2_8443_275
+  - NL_HYSTERIA2_8443_281
+  - NL_HYSTERIA2_8443_301
+  - NL_HTTP_23856_332
+  - NL_HTTP_443_349
+  - NL_HTTP_443_357
+  - NL_HTTP_443_364
+  - NL_HTTP_9002_364
+  - NL_HTTP_443_365
+  - NL_HTTP_9002_369
+  - NL_HTTP_9002_371
   - NL_HTTP_9002_372
   - NL_HTTP_9002_372_2
-  - NL_HTTP_9002_374
-  - NL_HTTP_9002_378
-  - NL_HTTP_443_388
-  - NL_VLESS_443_613
-  - NL_HTTP_443_745
-  - NL_VMESS_443_1088
+  - NL_HTTP_9002_373
+  - NL_SS_11001_395
+  - NL_VLESS_9443_2299
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -316,28 +247,24 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_HYSTERIA2_443_261
-  - NL_HYSTERIA2_8443_274
-  - NL_HYSTERIA2_8443_300
-  - NL_HYSTERIA2_8443_273
-  - NL_HYSTERIA2_8443_288
-  - NL_VLESS_443_288
+  - NL_SS_11001_395
+  - NL_HYSTERIA2_443_259
+  - NL_HYSTERIA2_8443_301
+  - NL_HYSTERIA2_8443_281
+  - NL_HYSTERIA2_8443_275
+  - NL_VLESS_2096_65
+  - NL_HTTP_443_364
+  - NL_HTTP_443_357
+  - NL_HTTP_23856_332
+  - NL_HTTP_9002_371
+  - NL_HTTP_9002_369
+  - NL_HTTP_443_365
   - NL_HTTP_9002_372
-  - NL_HTTP_9002_374
-  - NL_HTTP_9002_378
-  - NL_HTTP_9002_366
-  - NL_HTTP_443_346
-  - NL_HTTP_443_360
-  - NL_HTTP_443_343
-  - NL_HTTP_443_388
-  - NL_HTTP_443_745
+  - NL_HTTP_443_349
   - NL_HTTP_9002_372_2
-  - NL_VLESS_443_613
-  - NL_VMESS_1234_265
-  - NL_VLESS_8443_269
-  - NL_VLESS_8443_271
-  - NL_VLESS_8443_278
-  - NL_VMESS_443_1088
+  - NL_HTTP_9002_364
+  - NL_HTTP_9002_373
+  - NL_VLESS_9443_2299
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,39 +5,26 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: SC_VLESS_443_276
-  network: tcp
-  port: '443'
-  reality-opts:
-    public-key: VWDBW2RS3o-oFBrSNdpncoaVVU8KixbPNHoj4-Wy7lM
-    short-id: 04a69fc6
-  server: cdn6.goonars.com
-  servername: apitw3.goonars.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 02722550-1915-4629-a653-cbe95e594f70
-  xudp: true
-  country: SC
-- name: SC_VLESS_443_42
-  type: vless
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  client-fingerprint: ios
+  name: SC_TROJAN_443_259
   network: ws
-  server: 45.130.125.126
-  port: 443
-  uuid: b69b43d1-091d-4d7c-90b2-7a8bbad9d6a9
-  servername: BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv
+  password: humanity
+  port: '443'
+  server: 45.130.125.158
   skip-cert-verify: false
-  tls: true
+  sni: www.ignitelimit.com
+  type: trojan
   udp: true
-  tfo: false
-  flow: ''
   ws-opts:
     headers:
-      Host: BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv
-    path: /eyJqdW5rIjoiY0U2T212Y21yeEhUZHRKYSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
+      User-Agent: Mozilla/5.0 (Linux; Android 5.1; HUAWEI CUN-L22 Build/HUAWEICUN-L22;
+        wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84
+        Mobile Safari/537.36
+    path: /assignment
   country: SC
 proxy-groups:
 - name: 🚀 节点选择
@@ -52,8 +39,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SC_VLESS_443_276
-  - SC_VLESS_443_42
+  - SC_TROJAN_443_259
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -66,8 +52,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SC_VLESS_443_42
-  - SC_VLESS_443_276
+  - SC_TROJAN_443_259
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -79,8 +64,7 @@ proxy-groups:
 - name: 🌍 SC
   type: url-test
   proxies:
-  - SC_VLESS_443_276
-  - SC_VLESS_443_42
+  - SC_TROJAN_443_259
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

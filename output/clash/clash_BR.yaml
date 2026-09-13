@@ -5,14 +5,10 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BR_SS_59319_2348
-  type: ss
-  server: 137.131.187.253
-  port: 59319
-  cipher: 2022-blake3-chacha20-poly1305
-  password: syoHUErIIXqk/xwYXjB/fHaW3puNw529eq5eIqtjpq0=
-  skip-cert-verify: true
-  udp: true
+- name: BR_HTTP_8085_386
+  port: 8085
+  server: 179.0.79.3
+  type: http
   country: BR
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +23,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BR_SS_59319_2348
+  - BR_HTTP_8085_386
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +36,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BR_SS_59319_2348
+  - BR_HTTP_8085_386
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +48,7 @@ proxy-groups:
 - name: 🌍 BR
   type: url-test
   proxies:
-  - BR_SS_59319_2348
+  - BR_HTTP_8085_386
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

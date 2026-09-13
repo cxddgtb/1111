@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_HYSTERIA2_50160_1040
+- name: HK_HYSTERIA2_50160_1016
   type: hysteria2
   server: 31.57.248.176
   port: 50160
@@ -14,22 +14,76 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: HK
-- alterId: 2
-  cipher: auto
-  name: HK_VMESS_30807_2610
-  port: 30807
-  server: v10.hdacd.com
-  skip-cert-verify: false
-  tls: false
+- name: HK_VMESS_30806_1331
   type: vmess
+  server: v6.hdacd.com
+  port: 30806
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
   country: HK
-- name: HK_HTTP_443_2069
+- name: HK_VMESS_30804_2373
+  type: vmess
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: none
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: HK_HTTP_443_1126
   port: 443
   server: hk40.240104.xyz
   sni: hk40.240104.xyz
   tls: true
   type: http
+  country: HK
+- name: HK_VLESS_443_796
+  server: 47.83.4.146
+  port: 443
+  type: vless
+  uuid: 8952ecb7-4b85-4aa5-8b22-adc9aa4d3591
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: ID53PilNajhqBP3PTJJxurZOFnZfKVs-CU5buNOaKBQ
+    short-id: e40b98d40e53b8b9
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+  country: HK
+- name: HK_HYSTERIA2_443_782
+  server: 8.218.56.189
+  port: 443
+  type: hysteria2
+  password: 0c7fa158eb9f72a1c4b80927e48373dc
+  auth: 0c7fa158eb9f72a1c4b80927e48373dc
+  sni: 8.218.56.189
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: 5c8f1a3e7b2d9046c1f8a5e3b7d04f2a
+  udp: true
+  country: HK
+- name: HK_VLESS_443_2849
+  server: 47.83.173.110
+  port: 443
+  type: vless
+  uuid: bca6f15f-89db-40e2-a955-19d084229234
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: BqFbrSSosM7RAVvUGTRmCrZlHY6aGwq9HEJs0fMdK0s
+    short-id: 8144589880395fa1
+  servername: www.samsung.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,9 +98,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_HYSTERIA2_50160_1040
-  - HK_VMESS_30807_2610
-  - HK_HTTP_443_2069
+  - HK_HYSTERIA2_50160_1016
+  - HK_VMESS_30806_1331
+  - HK_VMESS_30804_2373
+  - HK_HTTP_443_1126
+  - HK_VLESS_443_796
+  - HK_HYSTERIA2_443_782
+  - HK_VLESS_443_2849
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,9 +117,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_HYSTERIA2_50160_1040
-  - HK_HTTP_443_2069
-  - HK_VMESS_30807_2610
+  - HK_HYSTERIA2_443_782
+  - HK_VLESS_443_796
+  - HK_HYSTERIA2_50160_1016
+  - HK_HTTP_443_1126
+  - HK_VMESS_30806_1331
+  - HK_VMESS_30804_2373
+  - HK_VLESS_443_2849
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,9 +135,13 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_HYSTERIA2_50160_1040
-  - HK_VMESS_30807_2610
-  - HK_HTTP_443_2069
+  - HK_HYSTERIA2_50160_1016
+  - HK_VMESS_30806_1331
+  - HK_VMESS_30804_2373
+  - HK_HTTP_443_1126
+  - HK_VLESS_443_796
+  - HK_HYSTERIA2_443_782
+  - HK_VLESS_443_2849
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

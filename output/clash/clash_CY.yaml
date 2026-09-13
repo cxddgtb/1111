@@ -5,12 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CY_SS_3_355
-  server: 185.203.4.204
-  port: 3
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 816Efx8yiCSDDpvvpxXL8Q
+- name: CY_VLESS_2053_638
+  server: 171.22.129.56
+  port: 2053
+  type: vless
+  uuid: b2744db0-1c64-4218-a93b-9eba0e5f811f
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: AKUQO-fKsD19FFBxNq5XTFCRXWDZfes4zJjRINY1KUI
+    short-id: beff3ff061a64cfd
+  servername: fi-one.quiet-rogue.site
+  client-fingerprint: firefox
+  network: tcp
   udp: true
   country: CY
 proxy-groups:
@@ -26,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CY_SS_3_355
+  - CY_VLESS_2053_638
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CY_SS_3_355
+  - CY_VLESS_2053_638
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +58,7 @@ proxy-groups:
 - name: 🌍 CY
   type: url-test
   proxies:
-  - CY_SS_3_355
+  - CY_VLESS_2053_638
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
