@@ -5,47 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_443_382
-  type: vless
-  server: poland-new-ded.failspace.top
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  skip-cert-verify: true
-  udp: true
-  country: PL
-- name: PL_HTTP_443_448
+- name: PL_HTTP_443_440
   port: 443
   server: 37.120.156.18
   skip-cert-verify: true
   tls: true
   type: http
   country: PL
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: PL_VLESS_443_353
-  network: tcp
-  port: '443'
-  server: poland.failspace.top
+- name: PL_HTTP_443_447
+  port: 443
+  server: 37.120.156.34
+  skip-cert-verify: true
   tls: true
-  type: vless
-  udp: true
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  xudp: true
-  country: PL
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: PL_VLESS_443_378
-  network: tcp
-  port: '443'
-  server: poland-new-ded-2.failspace.top
-  tls: true
-  type: vless
-  udp: true
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  xudp: true
+  type: http
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -60,10 +32,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_443_382
-  - PL_HTTP_443_448
-  - PL_VLESS_443_353
-  - PL_VLESS_443_378
+  - PL_HTTP_443_440
+  - PL_HTTP_443_447
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -76,10 +46,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_443_353
-  - PL_VLESS_443_378
-  - PL_VLESS_443_382
-  - PL_HTTP_443_448
+  - PL_HTTP_443_440
+  - PL_HTTP_443_447
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -91,10 +59,8 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_443_382
-  - PL_HTTP_443_448
-  - PL_VLESS_443_353
-  - PL_VLESS_443_378
+  - PL_HTTP_443_440
+  - PL_HTTP_443_447
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

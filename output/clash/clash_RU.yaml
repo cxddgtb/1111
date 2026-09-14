@@ -5,42 +5,34 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_HYSTERIA2_443_651
+- name: RU_HYSTERIA2_443_470
   password: f317b5d6-d399-4d3d-a051-89d674ae953c
   port: 443
   server: msk.frkn.org
   tls: false
   type: hysteria2
   country: RU
-- name: RU_VLESS_443_692
-  server: rus.2clash.ru
-  port: 443
-  type: vless
-  uuid: 3b6a9df3-f1d1-4bc1-94a5-0d8f2d5512b1
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Rf2jgZShaYRQ2kh9nF79eB2KFcIdiYHwPWJyFKA_CWU
-  servername: max.ru
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
+- name: RU_HYSTERIA2_22443_399
+  password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+  port: 22443
+  server: 91.240.86.70
+  sni: hy.quattro-tech.ru
+  tls: false
+  type: hysteria2
   country: RU
-- name: RU_VMESS_443_1247
-  type: vmess
-  server: 5.188.26.85
-  port: 443
-  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-  alterId: 0
-  cipher: auto
-  tls: true
+- name: RU_HYSTERIA2_2056_423
+  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  port: 2056
+  server: els1.mangshe.xyz
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /api/v1/gpu-stream/socket
-    headers:
-      Host: renderer-stream-2-62.mirra.now
-  udp: true
+  sni: www.microsoft.com
+  tls: false
+  type: hysteria2
+  country: RU
+- name: RU_HTTP_49156_457
+  port: 49156
+  server: 45.132.252.25
+  type: http
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -55,9 +47,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_HYSTERIA2_443_651
-  - RU_VLESS_443_692
-  - RU_VMESS_443_1247
+  - RU_HYSTERIA2_443_470
+  - RU_HYSTERIA2_22443_399
+  - RU_HYSTERIA2_2056_423
+  - RU_HTTP_49156_457
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,9 +63,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_443_651
-  - RU_VLESS_443_692
-  - RU_VMESS_443_1247
+  - RU_HYSTERIA2_22443_399
+  - RU_HYSTERIA2_2056_423
+  - RU_HTTP_49156_457
+  - RU_HYSTERIA2_443_470
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,9 +78,10 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_HYSTERIA2_443_651
-  - RU_VLESS_443_692
-  - RU_VMESS_443_1247
+  - RU_HYSTERIA2_443_470
+  - RU_HYSTERIA2_22443_399
+  - RU_HYSTERIA2_2056_423
+  - RU_HTTP_49156_457
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

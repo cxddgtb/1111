@@ -5,17 +5,9 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_HYSTERIA2_25443_468
-  password: 29ffde49-e1d6-4dcd-a135-352920f9f0b8
-  port: 25443
-  server: se-node.rumedia-cdn.com
-  sni: cf2.rumedia-cdn.com
-  tls: false
-  type: hysteria2
-  country: SE
 - alpn:
   - h3
-  name: SE_HYSTERIA2_36264_444
+  name: SE_HYSTERIA2_36264_384
   obfs: salamander
   obfs-password: Telegram@vpnjey
   password: Telegram-vpnjey
@@ -26,23 +18,28 @@ proxies:
   tls: false
   type: hysteria2
   country: SE
-- name: SE_HTTP_443_473
+- name: SE_HTTP_443_457
+  port: 443
+  server: 79.142.77.63
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: SE
+- name: SE_HTTP_443_472
   password: None
   port: 443
-  server: 146.70.242.146
+  server: 146.70.242.130
   skip-cert-verify: true
   tls: true
   type: http
   username: null
   country: SE
-- name: SE_HTTP_443_432
-  password: None
+- name: SE_HTTP_443_427
   port: 443
   server: 149.50.216.65
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -57,10 +54,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_HYSTERIA2_25443_468
-  - SE_HYSTERIA2_36264_444
-  - SE_HTTP_443_473
-  - SE_HTTP_443_432
+  - SE_HYSTERIA2_36264_384
+  - SE_HTTP_443_457
+  - SE_HTTP_443_472
+  - SE_HTTP_443_427
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,10 +70,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_HTTP_443_432
-  - SE_HYSTERIA2_36264_444
-  - SE_HYSTERIA2_25443_468
-  - SE_HTTP_443_473
+  - SE_HYSTERIA2_36264_384
+  - SE_HTTP_443_427
+  - SE_HTTP_443_457
+  - SE_HTTP_443_472
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -88,10 +85,10 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_HYSTERIA2_25443_468
-  - SE_HYSTERIA2_36264_444
-  - SE_HTTP_443_473
-  - SE_HTTP_443_432
+  - SE_HYSTERIA2_36264_384
+  - SE_HTTP_443_457
+  - SE_HTTP_443_472
+  - SE_HTTP_443_427
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

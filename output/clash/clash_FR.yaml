@@ -5,47 +5,9 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_443_429
+- name: FR_VLESS_22222_171
   type: vless
-  server: kama1.api3-max.ru
-  port: 443
-  uuid: 97ecaad4-452c-45ec-b591-d68d3308aad4
-  tls: true
-  flow: xtls-rprx-vision
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_HTTP_443_375
-  password: None
-  port: 443
-  server: 149.102.245.65
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: FR
-- name: FR_SOCKS5_1088_1061
-  password: None
-  port: 1088
-  server: 144.91.111.48
-  type: socks5
-  udp: true
-  username: null
-  country: FR
-- name: FR_VLESS_22223_172
-  type: vless
-  server: 35.181.146.129
-  port: 22223
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FR
-- name: FR_VLESS_22222_179
-  type: vless
-  server: 35.181.146.129
+  server: 15.236.13.100
   port: 22222
   uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
   network: tcp
@@ -53,6 +15,23 @@ proxies:
   servername: ''
   client-fingerprint: chrome
   ws-opts: null
+  country: FR
+- name: FR_HTTP_443_351
+  port: 443
+  server: 103.82.101.44
+  skip-cert-verify: true
+  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_367
+  password: None
+  port: 443
+  server: 149.102.245.65
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -67,11 +46,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_443_429
-  - FR_HTTP_443_375
-  - FR_SOCKS5_1088_1061
-  - FR_VLESS_22223_172
-  - FR_VLESS_22222_179
+  - FR_VLESS_22222_171
+  - FR_HTTP_443_351
+  - FR_HTTP_443_367
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -84,11 +61,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_22223_172
-  - FR_VLESS_22222_179
-  - FR_HTTP_443_375
-  - FR_VLESS_443_429
-  - FR_SOCKS5_1088_1061
+  - FR_VLESS_22222_171
+  - FR_HTTP_443_351
+  - FR_HTTP_443_367
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -100,11 +75,9 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_443_429
-  - FR_HTTP_443_375
-  - FR_SOCKS5_1088_1061
-  - FR_VLESS_22223_172
-  - FR_VLESS_22222_179
+  - FR_VLESS_22222_171
+  - FR_HTTP_443_351
+  - FR_HTTP_443_367
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,15 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AU_HYSTERIA2_443_769
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+- name: MX_HTTP_443_298
   port: 443
-  server: vpn-au-002.fastervpn.world
+  server: 45.134.9.41
   skip-cert-verify: true
-  sni: css.rbxcdn.com
-  tls: false
-  type: hysteria2
-  country: AU
+  sni: 991cc80f13caf81d3426ddebb2da7f49-240d6105b6ef86f0.apache-iv.com
+  tls: true
+  type: http
+  country: MX
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -22,12 +21,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 AU
+  - 🌍 MX
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AU_HYSTERIA2_443_769
+  - MX_HTTP_443_298
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AU_HYSTERIA2_443_769
+  - MX_HTTP_443_298
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -49,10 +48,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 AU
+- name: 🌍 MX
   type: url-test
   proxies:
-  - AU_HYSTERIA2_443_769
+  - MX_HTTP_443_298
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
