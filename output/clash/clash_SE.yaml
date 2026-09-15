@@ -7,7 +7,7 @@ external-controller: 127.0.0.1:9090
 proxies:
 - alpn:
   - h3
-  name: SE_HYSTERIA2_36264_384
+  name: SE_HYSTERIA2_36264_532
   obfs: salamander
   obfs-password: Telegram@vpnjey
   password: Telegram-vpnjey
@@ -18,14 +18,14 @@ proxies:
   tls: false
   type: hysteria2
   country: SE
-- name: SE_HTTP_443_457
+- name: SE_HTTP_443_709
   port: 443
   server: 79.142.77.63
   skip-cert-verify: true
   tls: true
   type: http
   country: SE
-- name: SE_HTTP_443_472
+- name: SE_HTTP_443_718
   password: None
   port: 443
   server: 146.70.242.130
@@ -34,12 +34,23 @@ proxies:
   type: http
   username: null
   country: SE
-- name: SE_HTTP_443_427
+- name: SE_HTTP_443_717
+  password: None
+  port: 443
+  server: 146.70.242.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: SE
+- name: SE_HTTP_443_670
+  password: None
   port: 443
   server: 149.50.216.65
   skip-cert-verify: true
   tls: true
   type: http
+  username: null
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -54,10 +65,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_HYSTERIA2_36264_384
-  - SE_HTTP_443_457
-  - SE_HTTP_443_472
-  - SE_HTTP_443_427
+  - SE_HYSTERIA2_36264_532
+  - SE_HTTP_443_709
+  - SE_HTTP_443_718
+  - SE_HTTP_443_717
+  - SE_HTTP_443_670
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,10 +82,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_HYSTERIA2_36264_384
-  - SE_HTTP_443_427
-  - SE_HTTP_443_457
-  - SE_HTTP_443_472
+  - SE_HYSTERIA2_36264_532
+  - SE_HTTP_443_670
+  - SE_HTTP_443_709
+  - SE_HTTP_443_717
+  - SE_HTTP_443_718
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -85,10 +98,11 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_HYSTERIA2_36264_384
-  - SE_HTTP_443_457
-  - SE_HTTP_443_472
-  - SE_HTTP_443_427
+  - SE_HYSTERIA2_36264_532
+  - SE_HTTP_443_709
+  - SE_HTTP_443_718
+  - SE_HTTP_443_717
+  - SE_HTTP_443_670
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

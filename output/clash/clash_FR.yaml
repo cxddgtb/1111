@@ -5,26 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_22222_171
-  type: vless
-  server: 15.236.13.100
-  port: 22222
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FR
-- name: FR_HTTP_443_351
-  port: 443
-  server: 103.82.101.44
-  skip-cert-verify: true
-  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_367
+- name: FR_HTTP_443_635
   password: None
   port: 443
   server: 149.102.245.65
@@ -32,6 +13,22 @@ proxies:
   tls: true
   type: http
   username: null
+  country: FR
+- name: FR_HTTP_443_774
+  port: 443
+  server: 141.94.16.4
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_VLESS_22223_285
+  server: 13.37.25.107
+  port: 22223
+  type: vless
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  tls: false
+  network: tcp
+  udp: true
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,9 +43,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_22222_171
-  - FR_HTTP_443_351
-  - FR_HTTP_443_367
+  - FR_HTTP_443_635
+  - FR_HTTP_443_774
+  - FR_VLESS_22223_285
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -61,9 +58,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_22222_171
-  - FR_HTTP_443_351
-  - FR_HTTP_443_367
+  - FR_VLESS_22223_285
+  - FR_HTTP_443_635
+  - FR_HTTP_443_774
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,9 +72,9 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_22222_171
-  - FR_HTTP_443_351
-  - FR_HTTP_443_367
+  - FR_HTTP_443_635
+  - FR_HTTP_443_774
+  - FR_VLESS_22223_285
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

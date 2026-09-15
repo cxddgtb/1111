@@ -5,21 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_VLESS_443_53
+- name: EE_VLESS_8443_554
+  server: 94.183.170.147
+  port: 8443
   type: vless
-  network: ws
-  server: 45.80.108.236
-  port: 443
-  uuid: ef9d2063-0140-472b-8b17-ba02ba4b4435
-  servername: lively-resonance-4e12.electrocellco-cf-059.workers.dev
-  skip-cert-verify: false
+  uuid: 5edbcb44-8d04-4fa7-a587-bc5d60c24ca1
   tls: true
+  reality-opts:
+    public-key: s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg
+    short-id: 72ccd4a7563c2953
+  servername: www.cloudflare.com
+  client-fingerprint: firefox
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: 9d30d49278
   udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: lively-resonance-4e12.electrocellco-cf-059.workers.dev
-    path: /proxyip
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -34,7 +35,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_443_53
+  - EE_VLESS_8443_554
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +48,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_443_53
+  - EE_VLESS_8443_554
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +60,7 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_443_53
+  - EE_VLESS_8443_554
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

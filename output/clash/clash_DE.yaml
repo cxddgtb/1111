@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_HYSTERIA_20088_1630
+- name: DE_HYSTERIA_20088_2073
   type: hysteria
   server: 5.83.129.153
   port: 20088
@@ -18,20 +18,17 @@ proxies:
   - h3
   udp: true
   country: DE
-- alpn:
-  - h3
-  name: DE_HYSTERIA2_37009_314
+- name: DE_HYSTERIA2_54759_491
   obfs: salamander
   obfs-password: Telegram@vpnjey
-  password: Telegram-vpnjey
-  port: 37009
-  server: 31.76.27.23
+  password: Telegram@vpnjey
+  port: 54759
+  server: 179.61.138.145
   skip-cert-verify: true
-  sni: de.vpnjey.store
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HYSTERIA2_443_590
+- name: DE_HYSTERIA2_443_1041
   obfs: salamander
   obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
   password: cd74c0a406664a5bc0bac098220a2468
@@ -42,7 +39,35 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HTTP_443_371
+- name: DE_HTTP_443_610
+  port: 443
+  server: 149.36.50.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_11111_451
+  port: 11111
+  server: 103.237.102.191
+  type: http
+  country: DE
+- name: DE_HTTP_443_596
+  password: None
+  port: 443
+  server: 87.249.132.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: DE
+- name: DE_HTTP_443_620
+  port: 443
+  server: 138.201.56.241
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_605
   password: None
   port: 443
   server: 149.36.50.1
@@ -50,6 +75,36 @@ proxies:
   tls: true
   type: http
   username: null
+  country: DE
+- name: DE_HTTP_443_850
+  port: 443
+  server: 141.17.83.73
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_SS_4680_566
+  server: setlor.rehan-iogsar.ir
+  port: 4680
+  type: ss
+  cipher: 2022-blake3-aes-128-gcm
+  password: 1JvlmtT4v8y1yGczDtT6Ww==:aCtpeMietGsJY50h6jDW6w==
+  udp: true
+  country: DE
+- name: DE_VLESS_443_352
+  server: 169.40.42.52
+  port: 443
+  type: vless
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  servername: yahoo.com
+  client-fingerprint: ios
+  network: tcp
+  udp: true
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -64,10 +119,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_HYSTERIA_20088_1630
-  - DE_HYSTERIA2_37009_314
-  - DE_HYSTERIA2_443_590
-  - DE_HTTP_443_371
+  - DE_HYSTERIA_20088_2073
+  - DE_HYSTERIA2_54759_491
+  - DE_HYSTERIA2_443_1041
+  - DE_HTTP_443_610
+  - DE_HTTP_11111_451
+  - DE_HTTP_443_596
+  - DE_HTTP_443_620
+  - DE_HTTP_443_605
+  - DE_HTTP_443_850
+  - DE_SS_4680_566
+  - DE_VLESS_443_352
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,10 +142,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_HYSTERIA2_37009_314
-  - DE_HTTP_443_371
-  - DE_HYSTERIA2_443_590
-  - DE_HYSTERIA_20088_1630
+  - DE_VLESS_443_352
+  - DE_HTTP_11111_451
+  - DE_HYSTERIA2_54759_491
+  - DE_SS_4680_566
+  - DE_HTTP_443_596
+  - DE_HTTP_443_605
+  - DE_HTTP_443_610
+  - DE_HTTP_443_620
+  - DE_HTTP_443_850
+  - DE_HYSTERIA2_443_1041
+  - DE_HYSTERIA_20088_2073
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -95,10 +164,17 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_HYSTERIA_20088_1630
-  - DE_HYSTERIA2_37009_314
-  - DE_HYSTERIA2_443_590
-  - DE_HTTP_443_371
+  - DE_HYSTERIA_20088_2073
+  - DE_HYSTERIA2_54759_491
+  - DE_HYSTERIA2_443_1041
+  - DE_HTTP_443_610
+  - DE_HTTP_11111_451
+  - DE_HTTP_443_596
+  - DE_HTTP_443_620
+  - DE_HTTP_443_605
+  - DE_HTTP_443_850
+  - DE_SS_4680_566
+  - DE_VLESS_443_352
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_HYSTERIA2_443_732
+- name: IN_HYSTERIA2_443_703
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
   server: vpn-in-001.fastervpn.world
@@ -14,7 +14,7 @@ proxies:
   tls: false
   type: hysteria2
   country: IN
-- name: IN_HYSTERIA2_443_608
+- name: IN_HYSTERIA2_443_693
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
   server: 65.2.178.161
@@ -36,8 +36,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_HYSTERIA2_443_732
-  - IN_HYSTERIA2_443_608
+  - IN_HYSTERIA2_443_703
+  - IN_HYSTERIA2_443_693
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +50,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_HYSTERIA2_443_608
-  - IN_HYSTERIA2_443_732
+  - IN_HYSTERIA2_443_693
+  - IN_HYSTERIA2_443_703
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +63,8 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_HYSTERIA2_443_732
-  - IN_HYSTERIA2_443_608
+  - IN_HYSTERIA2_443_703
+  - IN_HYSTERIA2_443_693
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,36 +5,37 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_VLESS_25585_180
-  type: vless
-  server: 78.141.221.126
-  port: 25585
-  uuid: 8b84bbec-9a55-47c2-ac2e-03c41065e572
-  network: tcp
+- name: NL_HYSTERIA2_443_449
+  password: EkF2Yw0Lc7
+  port: 443
+  server: 72.56.16.243
+  skip-cert-verify: true
+  sni: hys34.wba-pn.ru
   tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+  type: hysteria2
   country: NL
-- name: NL_HTTP_9002_368
-  port: 9002
-  server: 84.17.47.150
+- name: NL_HYSTERIA2_443_513
+  password: BWAFlp8g53
+  port: 443
+  server: 72.56.102.31
   skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
+  tls: false
+  type: hysteria2
   country: NL
-- name: NL_HTTP_9002_384
-  password: None
-  port: 9002
-  server: 84.17.47.125
-  skip-cert-verify: true
+- name: NL_VLESS_443_235
+  network: ws
+  port: 443
+  server: nl4.zuoai.cf
+  servername: xi.tbv.ccwu.cc
   tls: true
-  type: http
-  udp: true
+  type: vless
+  uuid: b2593749-691c-428c-9481-14979cba3446
+  ws-opts:
+    headers:
+      Host: xi.tbv.ccwu.cc
+    path: /proxyip=us.xiabibi.cf
   country: NL
-- name: NL_HTTP_9002_373
-  password: None
+- name: NL_HTTP_9002_610
   port: 9002
   server: 84.17.47.148
   skip-cert-verify: true
@@ -42,55 +43,78 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_443_362
-  port: 443
-  server: 149.36.51.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_9002_380
-  password: ''
+- name: NL_HTTP_9002_635
   port: 9002
-  server: 84.17.47.147
+  server: 84.17.47.125
   skip-cert-verify: true
   tls: true
   type: http
-  username: ''
+  udp: true
   country: NL
-- name: NL_HTTP_443_346
-  password: None
-  port: 443
-  server: 51.158.243.91
+- name: NL_HTTP_9002_631
+  port: 9002
+  server: 84.17.47.150
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
+  udp: true
   country: NL
-- name: NL_HTTP_443_343
-  port: 443
-  server: 185.246.153.28
-  skip-cert-verify: true
-  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_9002_368_2
-  password: 'null'
+- name: NL_HTTP_9002_605
   port: 9002
   server: 84.17.47.146
   skip-cert-verify: true
   tls: true
   type: http
-  username: 'null'
+  udp: true
   country: NL
-- name: NL_HTTP_9002_358
+- name: NL_HTTP_9002_635_2
   port: 9002
   server: 84.17.47.149
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
+  country: NL
+- name: NL_HTTP_443_627
+  port: 443
+  server: 149.36.51.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_443_604
+  password: None
+  port: 443
+  server: 157.22.183.72
+  skip-cert-verify: false
+  tls: true
+  type: http
+  username: null
+  country: NL
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  name: NL_VLESS_443_448
+  network: tcp
+  port: '443'
+  reality-opts:
+    public-key: N8tPKh6gTyc6L5GOmBn_3wIy707a-5QYB0FrF2HigUc
+    short-id: ''
+  server: 217.60.98.56
+  servername: west.blackbigdog.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 069ba4cf-e8af-4561-b11e-18bd07b0dbd3
+  xudp: true
+  country: NL
+- name: NL_HTTP_443_761
+  port: 443
+  server: 185.246.153.28
+  skip-cert-verify: true
+  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
+  tls: true
+  type: http
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -105,16 +129,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_VLESS_25585_180
-  - NL_HTTP_9002_368
-  - NL_HTTP_9002_384
-  - NL_HTTP_9002_373
-  - NL_HTTP_443_362
-  - NL_HTTP_9002_380
-  - NL_HTTP_443_346
-  - NL_HTTP_443_343
-  - NL_HTTP_9002_368_2
-  - NL_HTTP_9002_358
+  - NL_HYSTERIA2_443_449
+  - NL_HYSTERIA2_443_513
+  - NL_VLESS_443_235
+  - NL_HTTP_9002_610
+  - NL_HTTP_9002_635
+  - NL_HTTP_9002_631
+  - NL_HTTP_9002_605
+  - NL_HTTP_9002_635_2
+  - NL_HTTP_443_627
+  - NL_HTTP_443_604
+  - NL_VLESS_443_448
+  - NL_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -127,16 +153,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_VLESS_25585_180
-  - NL_HTTP_443_343
-  - NL_HTTP_443_346
-  - NL_HTTP_9002_358
-  - NL_HTTP_443_362
-  - NL_HTTP_9002_368
-  - NL_HTTP_9002_368_2
-  - NL_HTTP_9002_373
-  - NL_HTTP_9002_380
-  - NL_HTTP_9002_384
+  - NL_VLESS_443_235
+  - NL_VLESS_443_448
+  - NL_HYSTERIA2_443_449
+  - NL_HYSTERIA2_443_513
+  - NL_HTTP_443_604
+  - NL_HTTP_9002_605
+  - NL_HTTP_9002_610
+  - NL_HTTP_443_627
+  - NL_HTTP_9002_631
+  - NL_HTTP_9002_635
+  - NL_HTTP_9002_635_2
+  - NL_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -148,16 +176,18 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_25585_180
-  - NL_HTTP_9002_368
-  - NL_HTTP_9002_384
-  - NL_HTTP_9002_373
-  - NL_HTTP_443_362
-  - NL_HTTP_9002_380
-  - NL_HTTP_443_346
-  - NL_HTTP_443_343
-  - NL_HTTP_9002_368_2
-  - NL_HTTP_9002_358
+  - NL_HYSTERIA2_443_449
+  - NL_HYSTERIA2_443_513
+  - NL_VLESS_443_235
+  - NL_HTTP_9002_610
+  - NL_HTTP_9002_635
+  - NL_HTTP_9002_631
+  - NL_HTTP_9002_605
+  - NL_HTTP_9002_635_2
+  - NL_HTTP_443_627
+  - NL_HTTP_443_604
+  - NL_VLESS_443_448
+  - NL_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

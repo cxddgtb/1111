@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EC_HTTP_9443_436
+- name: EC_HTTP_9443_569
   password: ''
   port: 9443
   server: 38.165.231.71
@@ -28,7 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EC_HTTP_9443_436
+  - EC_HTTP_9443_569
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EC_HTTP_9443_436
+  - EC_HTTP_9443_569
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +53,7 @@ proxy-groups:
 - name: 🌍 EC
   type: url-test
   proxies:
-  - EC_HTTP_9443_436
+  - EC_HTTP_9443_569
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,22 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_HYSTERIA2_2053_2759
-  type: hysteria2
-  server: 152.70.237.123
-  port: 2053
-  password: maintell
-  sni: bing.com
+- name: KR_VLESS_10048_769
+  type: vless
+  server: kr3-r.link-t7.com
+  port: 10048
+  uuid: 7134DB35-F254-4468-BA00-D9C099CF5AF7
+  network: grpc
+  servername: s0.awsstatic.com
+  tls: true
+  client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: update
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
   skip-cert-verify: true
   udp: true
   country: KR
-- name: KR_HYSTERIA2_443_648
-  server: 47.80.61.21
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: update
+  name: KR_VLESS_10049_471
+  network: grpc
+  port: 10049
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  server: kr4-r.link-t7.com
+  servername: s0.awsstatic.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 7134DB35-F254-4468-BA00-D9C099CF5AF7
+  country: KR
+- name: KR_HYSTERIA2_443_505
+  server: 47.80.62.188
   port: 443
   type: hysteria2
-  password: bf902e668996d97397a6427725141ef6
-  auth: bf902e668996d97397a6427725141ef6
-  sni: 47.80.61.21
+  password: 3ce2883e1dca7a6b08e4e95db4959ccc
+  auth: 3ce2883e1dca7a6b08e4e95db4959ccc
+  sni: 47.80.62.188
   skip-cert-verify: true
   obfs: salamander
   obfs-password: 5c8f1a3e7b2d9046c1f8a5e3b7d04f2a
@@ -39,8 +64,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_HYSTERIA2_2053_2759
-  - KR_HYSTERIA2_443_648
+  - KR_VLESS_10048_769
+  - KR_VLESS_10049_471
+  - KR_HYSTERIA2_443_505
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -53,8 +79,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_HYSTERIA2_443_648
-  - KR_HYSTERIA2_2053_2759
+  - KR_VLESS_10049_471
+  - KR_HYSTERIA2_443_505
+  - KR_VLESS_10048_769
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -66,8 +93,9 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_HYSTERIA2_2053_2759
-  - KR_HYSTERIA2_443_648
+  - KR_VLESS_10048_769
+  - KR_VLESS_10049_471
+  - KR_HYSTERIA2_443_505
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

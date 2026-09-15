@@ -5,13 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PT_HTTP_443_705
+- name: SA_VLESS_443_171
+  server: sa1.zuoai.cf
   port: 443
-  server: 149.22.86.1
-  skip-cert-verify: true
+  type: vless
+  uuid: b09dfed1-90fa-4353-8bdf-de1edb2e2d79
   tls: true
-  type: http
-  country: PT
+  servername: nb.lovecf.ggff.net
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /proxyip=us.xiabibi.cf
+    headers:
+      Host: nb.lovecf.ggff.net
+  udp: true
+  country: SA
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -20,12 +28,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 PT
+  - 🌍 SA
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PT_HTTP_443_705
+  - SA_VLESS_443_171
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PT_HTTP_443_705
+  - SA_VLESS_443_171
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -47,10 +55,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 PT
+- name: 🌍 SA
   type: url-test
   proxies:
-  - PT_HTTP_443_705
+  - SA_VLESS_443_171
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

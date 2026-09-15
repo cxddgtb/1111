@@ -5,7 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_18000_91
+- name: CA_HYSTERIA2_443_233
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: 15.223.122.197
+  skip-cert-verify: true
+  sni: t.me
+  tls: false
+  type: hysteria2
+  country: CA
+- name: CA_VMESS_18000_163
   type: vmess
   network: tcp
   server: 23.162.200.198
@@ -14,15 +23,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-  country: CA
-- name: CA_HYSTERIA2_443_70
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: 443
-  server: 15.223.122.197
-  skip-cert-verify: true
-  sni: t.me
-  tls: false
-  type: hysteria2
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +37,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_18000_91
-  - CA_HYSTERIA2_443_70
+  - CA_HYSTERIA2_443_233
+  - CA_VMESS_18000_163
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +51,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_HYSTERIA2_443_70
-  - CA_VMESS_18000_91
+  - CA_VMESS_18000_163
+  - CA_HYSTERIA2_443_233
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +64,8 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_18000_91
-  - CA_HYSTERIA2_443_70
+  - CA_HYSTERIA2_443_233
+  - CA_VMESS_18000_163
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
