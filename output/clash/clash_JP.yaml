@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_HYSTERIA2_50160_325
+- name: JP_HYSTERIA2_50160_565
   password: 184cdec28da5a09450803c8debcd2cc9
   port: 50160
   server: 138.3.208.26
@@ -14,16 +14,7 @@ proxies:
   tls: false
   type: hysteria2
   country: JP
-- name: JP_HYSTERIA2_20562_794
-  server: mszz.mangshe.xyz
-  port: 20562
-  type: hysteria2
-  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
-  auth: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
-  sni: www.microsoft.com
-  skip-cert-verify: true
-  country: JP
-- name: JP_VMESS_4433_215
+- name: JP_VMESS_4433_340
   type: vmess
   network: tcp
   server: 45.32.57.118
@@ -46,9 +37,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_HYSTERIA2_50160_325
-  - JP_HYSTERIA2_20562_794
-  - JP_VMESS_4433_215
+  - JP_HYSTERIA2_50160_565
+  - JP_VMESS_4433_340
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -61,9 +51,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_4433_215
-  - JP_HYSTERIA2_50160_325
-  - JP_HYSTERIA2_20562_794
+  - JP_VMESS_4433_340
+  - JP_HYSTERIA2_50160_565
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,9 +64,8 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_HYSTERIA2_50160_325
-  - JP_HYSTERIA2_20562_794
-  - JP_VMESS_4433_215
+  - JP_HYSTERIA2_50160_565
+  - JP_VMESS_4433_340
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

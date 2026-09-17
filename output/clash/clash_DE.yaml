@@ -5,20 +5,58 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_HYSTERIA_20088_2073
-  type: hysteria
-  server: 5.83.129.153
-  port: 20088
-  auth_str: dongtaiwang.com
-  up: '10'
-  down: '50'
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  udp: true
+- name: DE_VMESS_2086_206
+  type: vmess
+  server: 91.107.146.97
+  port: 2086
+  uuid: f6361af8-bb8f-4609-bf5d-3fc0f688f47b
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
   country: DE
-- name: DE_HYSTERIA2_54759_491
+- name: DE_VLESS_23351_400
+  type: vless
+  server: 185.217.108.229
+  port: 23351
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  servername: cdn8848.776676.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /help?ed=2560fp=chrome
+    headers:
+      Host: cdn8848.776676.xyz
+  country: DE
+- name: DE_VLESS_2083_417
+  type: vless
+  server: 64.225.110.247
+  port: 2083
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  servername: cdn8848.776676.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /acg/buy/ajax?ed=2560fp=chrome
+    headers:
+      Host: cdn8848.776676.xyz
+  country: DE
+- name: DE_VLESS_440_213
+  type: vless
+  server: 206.81.29.176
+  port: 440
+  uuid: 59906cb2-a61b-4cf3-b77b-5762ef61d2b0
+  network: http
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: DE
+- name: DE_HYSTERIA2_54759_304
   obfs: salamander
   obfs-password: Telegram@vpnjey
   password: Telegram@vpnjey
@@ -28,46 +66,25 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HYSTERIA2_443_1041
+- name: DE_HYSTERIA2_443_681
   obfs: salamander
   obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
   password: cd74c0a406664a5bc0bac098220a2468
   port: 443
   server: 2.27.59.206
-  skip-cert-verify: true
+  skip-cert-verify: false
   sni: de1.sferavpn.pro
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HTTP_443_610
-  port: 443
-  server: 149.36.50.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_11111_451
+- name: DE_HTTP_11111_288
+  password: None
   port: 11111
   server: 103.237.102.191
   type: http
-  country: DE
-- name: DE_HTTP_443_596
-  password: None
-  port: 443
-  server: 87.249.132.97
-  skip-cert-verify: true
-  tls: true
-  type: http
   username: null
   country: DE
-- name: DE_HTTP_443_620
-  port: 443
-  server: 138.201.56.241
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_443_605
+- name: DE_HTTP_443_422
   password: None
   port: 443
   server: 149.36.50.1
@@ -76,35 +93,52 @@ proxies:
   type: http
   username: null
   country: DE
-- name: DE_HTTP_443_850
+- name: DE_HTTP_443_415
+  password: None
   port: 443
-  server: 141.17.83.73
+  server: 87.249.132.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: DE
+- name: DE_HTTP_443_418
+  port: 443
+  server: 149.36.50.157
   skip-cert-verify: true
   tls: true
   type: http
   country: DE
-- name: DE_SS_4680_566
-  server: setlor.rehan-iogsar.ir
-  port: 4680
+- name: DE_HTTP_443_416
+  password: None
+  port: 443
+  server: 149.36.50.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: DE
+- name: DE_HTTP_443_581
+  port: 443
+  server: 141.17.83.78
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_SS_59924_187
+  server: 130.61.41.7
+  port: 59924
   type: ss
-  cipher: 2022-blake3-aes-128-gcm
-  password: 1JvlmtT4v8y1yGczDtT6Ww==:aCtpeMietGsJY50h6jDW6w==
+  cipher: 2022-blake3-chacha20-poly1305
+  password: yuyGqH7zIcMJkpyOWfI6iKEDx8tjXJM4mrBZSWoIHn4=
   udp: true
   country: DE
-- name: DE_VLESS_443_352
-  server: 169.40.42.52
-  port: 443
-  type: vless
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  servername: yahoo.com
-  client-fingerprint: ios
-  network: tcp
-  udp: true
+- name: DE_SS_59924_187_2
+  server: 130.61.34.121
+  port: 59924
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: zI0WUsK9Ct4x3vCtyfZPK++Ag2bohY8qoA0ElyeWKM0=
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -119,17 +153,20 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_HYSTERIA_20088_2073
-  - DE_HYSTERIA2_54759_491
-  - DE_HYSTERIA2_443_1041
-  - DE_HTTP_443_610
-  - DE_HTTP_11111_451
-  - DE_HTTP_443_596
-  - DE_HTTP_443_620
-  - DE_HTTP_443_605
-  - DE_HTTP_443_850
-  - DE_SS_4680_566
-  - DE_VLESS_443_352
+  - DE_VMESS_2086_206
+  - DE_VLESS_23351_400
+  - DE_VLESS_2083_417
+  - DE_VLESS_440_213
+  - DE_HYSTERIA2_54759_304
+  - DE_HYSTERIA2_443_681
+  - DE_HTTP_11111_288
+  - DE_HTTP_443_422
+  - DE_HTTP_443_415
+  - DE_HTTP_443_418
+  - DE_HTTP_443_416
+  - DE_HTTP_443_581
+  - DE_SS_59924_187
+  - DE_SS_59924_187_2
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -142,17 +179,20 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VLESS_443_352
-  - DE_HTTP_11111_451
-  - DE_HYSTERIA2_54759_491
-  - DE_SS_4680_566
-  - DE_HTTP_443_596
-  - DE_HTTP_443_605
-  - DE_HTTP_443_610
-  - DE_HTTP_443_620
-  - DE_HTTP_443_850
-  - DE_HYSTERIA2_443_1041
-  - DE_HYSTERIA_20088_2073
+  - DE_SS_59924_187
+  - DE_SS_59924_187_2
+  - DE_VMESS_2086_206
+  - DE_VLESS_440_213
+  - DE_HTTP_11111_288
+  - DE_HYSTERIA2_54759_304
+  - DE_VLESS_23351_400
+  - DE_HTTP_443_415
+  - DE_HTTP_443_416
+  - DE_VLESS_2083_417
+  - DE_HTTP_443_418
+  - DE_HTTP_443_422
+  - DE_HTTP_443_581
+  - DE_HYSTERIA2_443_681
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -164,17 +204,20 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_HYSTERIA_20088_2073
-  - DE_HYSTERIA2_54759_491
-  - DE_HYSTERIA2_443_1041
-  - DE_HTTP_443_610
-  - DE_HTTP_11111_451
-  - DE_HTTP_443_596
-  - DE_HTTP_443_620
-  - DE_HTTP_443_605
-  - DE_HTTP_443_850
-  - DE_SS_4680_566
-  - DE_VLESS_443_352
+  - DE_VMESS_2086_206
+  - DE_VLESS_23351_400
+  - DE_VLESS_2083_417
+  - DE_VLESS_440_213
+  - DE_HYSTERIA2_54759_304
+  - DE_HYSTERIA2_443_681
+  - DE_HTTP_11111_288
+  - DE_HTTP_443_422
+  - DE_HTTP_443_415
+  - DE_HTTP_443_418
+  - DE_HTTP_443_416
+  - DE_HTTP_443_581
+  - DE_SS_59924_187
+  - DE_SS_59924_187_2
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

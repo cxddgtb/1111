@@ -5,15 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BG_HTTP_443_603
-  password: None
+- name: MO_VLESS_443_856
+  type: vless
+  server: 45.202.247.152
   port: 443
-  server: 185.94.192.210
-  skip-cert-verify: true
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
   tls: true
-  type: http
-  username: null
-  country: BG
+  servername: cdn8848.776676.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /jump.html/star?ed=2560fp=chrome
+    headers:
+      Host: cdn8848.776676.xyz
+  country: MO
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -22,12 +27,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 BG
+  - 🌍 MO
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_HTTP_443_603
+  - MO_VLESS_443_856
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_HTTP_443_603
+  - MO_VLESS_443_856
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -49,10 +54,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 BG
+- name: 🌍 MO
   type: url-test
   proxies:
-  - BG_HTTP_443_603
+  - MO_VLESS_443_856
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

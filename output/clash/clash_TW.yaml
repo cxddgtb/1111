@@ -5,15 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_HTTP_1443_843
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
+- name: TW_VMESS_443_1638
+  type: vmess
+  server: 82259754d625.oylfmxz.cn
+  port: 443
+  uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
+  alterId: 0
+  cipher: auto
+  network: ws
   tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  servername: 82259754d625.oylfmxz.cn
+  ws-opts:
+    path: /
+    headers:
+      Host: 82259754d625.oylfmxz.cn
+  country: TW
+- name: TW_HYSTERIA2_443_640
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: 160.187.100.109
+  skip-cert-verify: true
+  sni: vpn-tw-002.fastervpn.world
+  tls: false
+  type: hysteria2
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -28,7 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_HTTP_1443_843
+  - TW_VMESS_443_1638
+  - TW_HYSTERIA2_443_640
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_HTTP_1443_843
+  - TW_HYSTERIA2_443_640
+  - TW_VMESS_443_1638
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +69,8 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_HTTP_1443_843
+  - TW_VMESS_443_1638
+  - TW_HYSTERIA2_443_640
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

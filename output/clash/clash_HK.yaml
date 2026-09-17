@@ -5,17 +5,28 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_30807_2331
-  type: vmess
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
+- name: HK_VLESS_443_946
+  type: vless
+  server: 43.159.4.80
+  port: 443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  servername: cdn8848.776676.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /episode/files?ed=2560fp=chrome
+    headers:
+      Host: cdn8848.776676.xyz
+  country: HK
+- name: HK_HYSTERIA2_60001_955
+  server: hk01.kfc-520.com
+  port: 60001
+  type: hysteria2
+  password: 49f7ff21-a176-30cc-ab60-a5988fd85ce0
+  auth: 49f7ff21-a176-30cc-ab60-a5988fd85ce0
+  sni: hk01.kfc-520.com
+  skip-cert-verify: true
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -30,7 +41,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_30807_2331
+  - HK_VLESS_443_946
+  - HK_HYSTERIA2_60001_955
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +55,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_30807_2331
+  - HK_VLESS_443_946
+  - HK_HYSTERIA2_60001_955
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +68,8 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_30807_2331
+  - HK_VLESS_443_946
+  - HK_HYSTERIA2_60001_955
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

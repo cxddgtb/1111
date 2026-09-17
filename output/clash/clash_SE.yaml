@@ -7,7 +7,7 @@ external-controller: 127.0.0.1:9090
 proxies:
 - alpn:
   - h3
-  name: SE_HYSTERIA2_36264_532
+  name: SE_HYSTERIA2_36264_461
   obfs: salamander
   obfs-password: Telegram@vpnjey
   password: Telegram-vpnjey
@@ -18,23 +18,7 @@ proxies:
   tls: false
   type: hysteria2
   country: SE
-- name: SE_HTTP_443_709
-  port: 443
-  server: 79.142.77.63
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: SE
-- name: SE_HTTP_443_718
-  password: None
-  port: 443
-  server: 146.70.242.130
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: SE
-- name: SE_HTTP_443_717
+- name: SE_HTTP_443_495
   password: None
   port: 443
   server: 146.70.242.146
@@ -43,14 +27,30 @@ proxies:
   type: http
   username: null
   country: SE
-- name: SE_HTTP_443_670
+- name: SE_HTTP_443_422
   password: None
   port: 443
-  server: 149.50.216.65
+  server: 79.142.77.63
   skip-cert-verify: true
   tls: true
   type: http
   username: null
+  country: SE
+- name: SE_HTTP_443_498
+  password: None
+  port: 443
+  server: 146.70.242.130
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: SE
+- name: SE_SS_45819_178
+  server: 51.170.179.166
+  port: 45819
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: 4pGFK0x/lqudD4LJU8isjFCNxlw04AnKc72lFxetSZU=
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -65,11 +65,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_HYSTERIA2_36264_532
-  - SE_HTTP_443_709
-  - SE_HTTP_443_718
-  - SE_HTTP_443_717
-  - SE_HTTP_443_670
+  - SE_HYSTERIA2_36264_461
+  - SE_HTTP_443_495
+  - SE_HTTP_443_422
+  - SE_HTTP_443_498
+  - SE_SS_45819_178
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -82,11 +82,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_HYSTERIA2_36264_532
-  - SE_HTTP_443_670
-  - SE_HTTP_443_709
-  - SE_HTTP_443_717
-  - SE_HTTP_443_718
+  - SE_SS_45819_178
+  - SE_HTTP_443_422
+  - SE_HYSTERIA2_36264_461
+  - SE_HTTP_443_495
+  - SE_HTTP_443_498
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -98,11 +98,11 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_HYSTERIA2_36264_532
-  - SE_HTTP_443_709
-  - SE_HTTP_443_718
-  - SE_HTTP_443_717
-  - SE_HTTP_443_670
+  - SE_HYSTERIA2_36264_461
+  - SE_HTTP_443_495
+  - SE_HTTP_443_422
+  - SE_HTTP_443_498
+  - SE_SS_45819_178
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

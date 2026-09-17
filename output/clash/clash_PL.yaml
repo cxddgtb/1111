@@ -5,19 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_HTTP_443_711
-  port: 443
-  server: 37.120.156.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: PL
-- name: PL_HTTP_443_714
+- name: PL_HTTP_443_463
   port: 443
   server: 37.120.156.34
   skip-cert-verify: true
   tls: true
   type: http
+  country: PL
+- name: PL_HTTP_443_458
+  password: None
+  port: 443
+  server: 151.115.54.133
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,8 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_HTTP_443_711
-  - PL_HTTP_443_714
+  - PL_HTTP_443_463
+  - PL_HTTP_443_458
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,8 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HTTP_443_711
-  - PL_HTTP_443_714
+  - PL_HTTP_443_458
+  - PL_HTTP_443_463
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,8 +61,8 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_HTTP_443_711
-  - PL_HTTP_443_714
+  - PL_HTTP_443_463
+  - PL_HTTP_443_458
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
