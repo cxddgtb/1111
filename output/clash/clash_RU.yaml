@@ -5,22 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_HYSTERIA2_443_665
+- name: RU_HYSTERIA2_443_629
   password: f317b5d6-d399-4d3d-a051-89d674ae953c
   port: 443
   server: msk.frkn.org
   tls: false
   type: hysteria2
-  country: RU
-- name: RU_HTTP_49156_440
-  port: 49156
-  server: 45.132.252.25
-  type: http
-  country: RU
-- name: RU_HTTP_9950_430
-  port: 9950
-  server: 95.140.159.180
-  type: http
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -35,9 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_HYSTERIA2_443_665
-  - RU_HTTP_49156_440
-  - RU_HTTP_9950_430
+  - RU_HYSTERIA2_443_629
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,9 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HTTP_9950_430
-  - RU_HTTP_49156_440
-  - RU_HYSTERIA2_443_665
+  - RU_HYSTERIA2_443_629
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,9 +50,7 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_HYSTERIA2_443_665
-  - RU_HTTP_49156_440
-  - RU_HTTP_9950_430
+  - RU_HYSTERIA2_443_629
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

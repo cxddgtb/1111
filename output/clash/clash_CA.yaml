@@ -5,15 +5,35 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_18000_79
+- name: CA_VMESS_443_127
   type: vmess
-  network: tcp
-  server: 23.162.200.198
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  network: ws
+  server: 134.195.198.147
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   skip-cert-verify: true
+  tls: true
   alterId: 0
   cipher: auto
+  ws-opts:
+    headers:
+      Host: vk.com
+    path: /linkvws
+  country: CA
+- name: CA_VMESS_443_167
+  type: vmess
+  network: ws
+  server: 23.162.200.227
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: vk.com
+    path: /linkvws
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -28,7 +48,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_18000_79
+  - CA_VMESS_443_127
+  - CA_VMESS_443_167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +62,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_18000_79
+  - CA_VMESS_443_127
+  - CA_VMESS_443_167
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +75,8 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_18000_79
+  - CA_VMESS_443_127
+  - CA_VMESS_443_167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

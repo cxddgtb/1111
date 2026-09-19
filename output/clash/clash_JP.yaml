@@ -5,24 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_HYSTERIA2_50160_565
-  password: 184cdec28da5a09450803c8debcd2cc9
-  port: 50160
-  server: 138.3.208.26
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: false
-  type: hysteria2
-  country: JP
-- name: JP_VMESS_4433_340
-  type: vmess
-  network: tcp
-  server: 45.32.57.118
-  port: 4433
-  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+- name: JP_VLESS_8443_554
+  type: vless
+  server: 206.251.53.91
+  port: 8443
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  network: ws
+  tls: true
+  servername: cdn8848.776676.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /settings?ed=2560fp=chrome
+    headers:
+      Host: cdn8848.776676.xyz
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_HYSTERIA2_50160_565
-  - JP_VMESS_4433_340
+  - JP_VLESS_8443_554
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_4433_340
-  - JP_HYSTERIA2_50160_565
+  - JP_VLESS_8443_554
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +57,7 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_HYSTERIA2_50160_565
-  - JP_VMESS_4433_340
+  - JP_VLESS_8443_554
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

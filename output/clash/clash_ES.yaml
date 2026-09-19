@@ -5,30 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ES_HYSTERIA2_443_289
-  obfs: salamander
-  obfs-password: 5c8f1a3e7b2d9046c1f8a5e3b7d04f2a
-  password: 1851679956395a09f6afc10eb3f3751b
-  port: 443
-  server: 80.91.65.89
-  skip-cert-verify: true
-  sni: 80.91.65.89
-  tls: false
-  type: hysteria2
-  country: ES
-- name: ES_HTTP_443_450
+- name: ES_HTTP_443_488
   password: None
   port: 443
-  server: 130.195.250.34
+  server: 130.195.250.18
   skip-cert-verify: true
   tls: true
   type: http
   username: null
   country: ES
-- name: ES_HTTP_443_451
+- name: ES_HTTP_443_480
   password: None
   port: 443
-  server: 130.195.250.18
+  server: 130.195.250.34
   skip-cert-verify: true
   tls: true
   type: http
@@ -47,9 +36,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_HYSTERIA2_443_289
-  - ES_HTTP_443_450
-  - ES_HTTP_443_451
+  - ES_HTTP_443_488
+  - ES_HTTP_443_480
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,9 +50,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_HYSTERIA2_443_289
-  - ES_HTTP_443_450
-  - ES_HTTP_443_451
+  - ES_HTTP_443_480
+  - ES_HTTP_443_488
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -76,9 +63,8 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_HYSTERIA2_443_289
-  - ES_HTTP_443_450
-  - ES_HTTP_443_451
+  - ES_HTTP_443_488
+  - ES_HTTP_443_480
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,23 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CH_HYSTERIA2_50160_637
-  password: 84a506ca5aca505696a454d828420b3f
-  port: 50160
-  server: 140.238.213.114
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: false
-  type: hysteria2
-  country: CH
-- name: CH_HTTP_9443_392
+- name: CH_HTTP_9443_489
+  password: None
   port: 9443
   server: 37.120.213.210
   skip-cert-verify: true
   tls: true
   type: http
+  username: null
   country: CH
-- name: CH_HTTP_443_415
+- name: CH_HTTP_443_518
   password: None
   port: 443
   server: 31.7.62.50
@@ -43,9 +36,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_HYSTERIA2_50160_637
-  - CH_HTTP_9443_392
-  - CH_HTTP_443_415
+  - CH_HTTP_9443_489
+  - CH_HTTP_443_518
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,9 +50,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_HTTP_9443_392
-  - CH_HTTP_443_415
-  - CH_HYSTERIA2_50160_637
+  - CH_HTTP_9443_489
+  - CH_HTTP_443_518
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,9 +63,8 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_HYSTERIA2_50160_637
-  - CH_HTTP_9443_392
-  - CH_HTTP_443_415
+  - CH_HTTP_9443_489
+  - CH_HTTP_443_518
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

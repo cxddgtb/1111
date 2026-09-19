@@ -5,58 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VMESS_2086_206
-  type: vmess
-  server: 91.107.146.97
-  port: 2086
-  uuid: f6361af8-bb8f-4609-bf5d-3fc0f688f47b
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: DE
-- name: DE_VLESS_23351_400
+- name: DE_VLESS_2096_566
   type: vless
-  server: 185.217.108.229
-  port: 23351
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  server: 64.226.95.244
+  port: 2096
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
   network: ws
   tls: true
-  servername: cdn8848.776676.xyz
+  servername: cf3.schzyc.cc.cd
   client-fingerprint: chrome
   ws-opts:
-    path: /help?ed=2560fp=chrome
+    path: /
     headers:
-      Host: cdn8848.776676.xyz
+      Host: cf3.schzyc.cc.cd
   country: DE
-- name: DE_VLESS_2083_417
-  type: vless
-  server: 64.225.110.247
-  port: 2083
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  servername: cdn8848.776676.xyz
-  client-fingerprint: chrome
-  ws-opts:
-    path: /acg/buy/ajax?ed=2560fp=chrome
-    headers:
-      Host: cdn8848.776676.xyz
-  country: DE
-- name: DE_VLESS_440_213
-  type: vless
-  server: 206.81.29.176
-  port: 440
-  uuid: 59906cb2-a61b-4cf3-b77b-5762ef61d2b0
-  network: http
+- name: DE_HYSTERIA2_25443_516
+  password: 29ffde49-e1d6-4dcd-a135-352920f9f0b8
+  port: 25443
+  server: de-node.rumedia-cdn.com
+  skip-cert-verify: true
+  sni: cf6.rumedia-cdn.com
   tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+  type: hysteria2
   country: DE
-- name: DE_HYSTERIA2_54759_304
+- name: DE_HYSTERIA2_54759_369
   obfs: salamander
   obfs-password: Telegram@vpnjey
   password: Telegram@vpnjey
@@ -66,7 +38,7 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HYSTERIA2_443_681
+- name: DE_HYSTERIA2_443_887
   obfs: salamander
   obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
   password: cd74c0a406664a5bc0bac098220a2468
@@ -77,14 +49,7 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HTTP_11111_288
-  password: None
-  port: 11111
-  server: 103.237.102.191
-  type: http
-  username: null
-  country: DE
-- name: DE_HTTP_443_422
+- name: DE_HTTP_443_469
   password: None
   port: 443
   server: 149.36.50.1
@@ -93,23 +58,7 @@ proxies:
   type: http
   username: null
   country: DE
-- name: DE_HTTP_443_415
-  password: None
-  port: 443
-  server: 87.249.132.97
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: DE
-- name: DE_HTTP_443_418
-  port: 443
-  server: 149.36.50.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_443_416
+- name: DE_HTTP_443_473
   password: None
   port: 443
   server: 149.36.50.129
@@ -118,27 +67,42 @@ proxies:
   type: http
   username: null
   country: DE
-- name: DE_HTTP_443_581
+- name: DE_HTTP_11111_368
+  password: None
+  port: 11111
+  server: 103.237.102.191
+  type: http
+  username: null
+  country: DE
+- name: DE_HTTP_443_453
   port: 443
-  server: 141.17.83.78
+  server: 149.36.50.157
   skip-cert-verify: true
   tls: true
   type: http
   country: DE
-- name: DE_SS_59924_187
-  server: 130.61.41.7
+- name: DE_SS_443_239
+  server: 3.71.182.230
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  country: DE
+- name: DE_SS_59924_1489
+  server: 130.61.147.64
   port: 59924
   type: ss
   cipher: 2022-blake3-chacha20-poly1305
-  password: yuyGqH7zIcMJkpyOWfI6iKEDx8tjXJM4mrBZSWoIHn4=
+  password: JgVnjf+IujBeHuKJ9dhXtdyGYRYY8x9LPeqbgYYQE0Q=
   udp: true
   country: DE
-- name: DE_SS_59924_187_2
-  server: 130.61.34.121
+- name: DE_SS_59924_2480
+  server: 130.61.114.48
   port: 59924
   type: ss
   cipher: 2022-blake3-chacha20-poly1305
-  password: zI0WUsK9Ct4x3vCtyfZPK++Ag2bohY8qoA0ElyeWKM0=
+  password: FmxC4O0b9MskcU1X3oBo26HI+Kn5NDxSUAbvdF/tkV8=
+  udp: true
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -153,20 +117,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VMESS_2086_206
-  - DE_VLESS_23351_400
-  - DE_VLESS_2083_417
-  - DE_VLESS_440_213
-  - DE_HYSTERIA2_54759_304
-  - DE_HYSTERIA2_443_681
-  - DE_HTTP_11111_288
-  - DE_HTTP_443_422
-  - DE_HTTP_443_415
-  - DE_HTTP_443_418
-  - DE_HTTP_443_416
-  - DE_HTTP_443_581
-  - DE_SS_59924_187
-  - DE_SS_59924_187_2
+  - DE_VLESS_2096_566
+  - DE_HYSTERIA2_25443_516
+  - DE_HYSTERIA2_54759_369
+  - DE_HYSTERIA2_443_887
+  - DE_HTTP_443_469
+  - DE_HTTP_443_473
+  - DE_HTTP_11111_368
+  - DE_HTTP_443_453
+  - DE_SS_443_239
+  - DE_SS_59924_1489
+  - DE_SS_59924_2480
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -179,20 +140,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_SS_59924_187
-  - DE_SS_59924_187_2
-  - DE_VMESS_2086_206
-  - DE_VLESS_440_213
-  - DE_HTTP_11111_288
-  - DE_HYSTERIA2_54759_304
-  - DE_VLESS_23351_400
-  - DE_HTTP_443_415
-  - DE_HTTP_443_416
-  - DE_VLESS_2083_417
-  - DE_HTTP_443_418
-  - DE_HTTP_443_422
-  - DE_HTTP_443_581
-  - DE_HYSTERIA2_443_681
+  - DE_SS_443_239
+  - DE_HTTP_11111_368
+  - DE_HYSTERIA2_54759_369
+  - DE_HTTP_443_453
+  - DE_HTTP_443_469
+  - DE_HTTP_443_473
+  - DE_HYSTERIA2_25443_516
+  - DE_VLESS_2096_566
+  - DE_HYSTERIA2_443_887
+  - DE_SS_59924_1489
+  - DE_SS_59924_2480
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -204,20 +162,17 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VMESS_2086_206
-  - DE_VLESS_23351_400
-  - DE_VLESS_2083_417
-  - DE_VLESS_440_213
-  - DE_HYSTERIA2_54759_304
-  - DE_HYSTERIA2_443_681
-  - DE_HTTP_11111_288
-  - DE_HTTP_443_422
-  - DE_HTTP_443_415
-  - DE_HTTP_443_418
-  - DE_HTTP_443_416
-  - DE_HTTP_443_581
-  - DE_SS_59924_187
-  - DE_SS_59924_187_2
+  - DE_VLESS_2096_566
+  - DE_HYSTERIA2_25443_516
+  - DE_HYSTERIA2_54759_369
+  - DE_HYSTERIA2_443_887
+  - DE_HTTP_443_469
+  - DE_HTTP_443_473
+  - DE_HTTP_11111_368
+  - DE_HTTP_443_453
+  - DE_SS_443_239
+  - DE_SS_59924_1489
+  - DE_SS_59924_2480
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
