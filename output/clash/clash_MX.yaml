@@ -5,13 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MX_HTTP_443_298
+- name: MX_VLESS_443_212
+  type: vless
+  server: 216.238.79.164
   port: 443
-  server: 45.134.9.41
-  skip-cert-verify: true
-  sni: 991cc80f13caf81d3426ddebb2da7f49-240d6105b6ef86f0.apache-iv.com
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
   tls: true
-  type: http
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: MX
+- name: MX_SS_8388_89
+  type: ss
+  server: 64.177.90.30
+  port: 8388
+  cipher: aes-256-gcm
+  password: BWyPPTusFKhGgzKh
+  skip-cert-verify: true
+  udp: true
   country: MX
 proxy-groups:
 - name: 🚀 节点选择
@@ -26,7 +43,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MX_HTTP_443_298
+  - MX_VLESS_443_212
+  - MX_SS_8388_89
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +57,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MX_HTTP_443_298
+  - MX_SS_8388_89
+  - MX_VLESS_443_212
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +70,8 @@ proxy-groups:
 - name: 🌍 MX
   type: url-test
   proxies:
-  - MX_HTTP_443_298
+  - MX_VLESS_443_212
+  - MX_SS_8388_89
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

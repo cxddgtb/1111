@@ -5,29 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VLESS_443_672
+- name: KR_VLESS_443_682
   type: vless
-  server: 146.56.115.180
-  port: 443
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   network: ws
+  server: 123.111.169.70
+  port: 443
+  uuid: 8102891d-7b37-4dc5-8261-9474b59b5c63
+  servername: vip.868068.xyz
   tls: true
-  servername: 7bzzv.umtm.n70.hh.vavava.kdns.fr
+  udp: true
+  client-fingerprint: random
+  xudp: true
+  ws-opts:
+    headers:
+      Host: vip.868068.xyz
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/52.0.2743.116 Safari/537.36
+    path: /proxyip=us.xiabibi.cf
+  country: KR
+- name: KR_VLESS_2083_1324
+  type: vless
+  server: 123.111.169.70
+  port: 2083
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
   client-fingerprint: chrome
   ws-opts:
-    path: /?ed=2560
+    path: /
     headers:
-      Host: 7bzzv.umtm.n70.hh.vavava.kdns.fr
-  country: KR
-- name: KR_VMESS_8888_398
-  type: vmess
-  network: tcp
-  server: 146.56.112.110
-  port: 8888
-  uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
+      Host: shuma.ccwu.cc
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  udp: true
+  country: KR
+- name: KR_HYSTERIA2_50160_619
+  password: 1beb216e3f60aea9555dae60d219a5ca
+  port: 50160
+  server: 152-69-231-175.liao.kdns.fr
+  sni: 152-69-231-175.liao.kdns.fr
+  tls: false
+  type: hysteria2
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -42,8 +60,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VLESS_443_672
-  - KR_VMESS_8888_398
+  - KR_VLESS_443_682
+  - KR_VLESS_2083_1324
+  - KR_HYSTERIA2_50160_619
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +75,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_8888_398
-  - KR_VLESS_443_672
+  - KR_HYSTERIA2_50160_619
+  - KR_VLESS_443_682
+  - KR_VLESS_2083_1324
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +89,9 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VLESS_443_672
-  - KR_VMESS_8888_398
+  - KR_VLESS_443_682
+  - KR_VLESS_2083_1324
+  - KR_HYSTERIA2_50160_619
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

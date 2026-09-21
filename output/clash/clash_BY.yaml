@@ -5,33 +5,71 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BY_VLESS_443_588
+- name: BY_VLESS_443_678
   type: vless
-  server: 144.31.129.2
+  server: 185.179.82.201
   port: 443
-  uuid: 91eb52ec-e3f5-4ab9-90da-43104995aef7
-  servername: by1.un1.pro
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: y3EIsxDGDJrBGk3j4YmjI5R_8jiCsEDRDMeL4bv5TTI
-    short-id: 6ba85179e30d4fc2
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
   skip-cert-verify: true
   udp: true
   country: BY
 proxy-groups:
-- name: 🚀 Node Select
+- name: 🚀 节点选择
   type: select
   proxies:
+  - ⚡ 全球最低延迟
+  - ♻️ 自动故障转移
+  - ⚖️ 负载均衡
+  - 📺 YouTube 优选
   - 🌍 BY
   - DIRECT
+- name: ⚡ 全球最低延迟
+  type: url-test
+  proxies: &id001
+  - BY_VLESS_443_678
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+- name: 📺 YouTube 优选
+  type: url-test
+  proxies: *id001
+  url: https://www.youtube.com
+  interval: 300
+  tolerance: 50
+- name: ♻️ 自动故障转移
+  type: fallback
+  proxies:
+  - BY_VLESS_443_678
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: ⚖️ 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  proxies: *id001
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 - name: 🌍 BY
   type: url-test
   proxies:
-  - BY_VLESS_443_588
+  - BY_VLESS_443_678
   url: http://www.gstatic.com/generate_204
   interval: 300
+  tolerance: 100
 rules:
+- AND,((NETWORK,UDP),(DOMAIN-SUFFIX,googlevideo.com)),REJECT
+- AND,((NETWORK,UDP),(DOMAIN-SUFFIX,youtube.com)),REJECT
 - GEOIP,CN,DIRECT
-- MATCH,🚀 Node Select
+- DOMAIN-SUFFIX,googlevideo.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,youtube.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,ytimg.com,📺 YouTube 优选
+- DOMAIN-SUFFIX,yt.be,📺 YouTube 优选
+- DOMAIN-SUFFIX,ggpht.com,📺 YouTube 优选
+- MATCH,🚀 节点选择

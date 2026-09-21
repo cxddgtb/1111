@@ -5,12 +5,51 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MY_SS_65443_612
-  type: ss
-  server: 118.107.222.231
-  port: 65443
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
+- name: MY_VLESS_443_1056
+  type: vless
+  server: 216.173.67.159
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: MY
+- name: MY_VLESS_443_1057
+  type: vless
+  server: 216.173.67.119
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: MY
+- name: MY_VLESS_443_1112
+  type: vless
+  server: 216.173.67.144
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
   skip-cert-verify: true
   udp: true
   country: MY
@@ -27,7 +66,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MY_SS_65443_612
+  - MY_VLESS_443_1056
+  - MY_VLESS_443_1057
+  - MY_VLESS_443_1112
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +81,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MY_SS_65443_612
+  - MY_VLESS_443_1056
+  - MY_VLESS_443_1057
+  - MY_VLESS_443_1112
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +95,9 @@ proxy-groups:
 - name: 🌍 MY
   type: url-test
   proxies:
-  - MY_SS_65443_612
+  - MY_VLESS_443_1056
+  - MY_VLESS_443_1057
+  - MY_VLESS_443_1112
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

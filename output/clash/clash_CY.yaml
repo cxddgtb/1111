@@ -5,19 +5,69 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CY_VLESS_2095_445
+- name: CY_VLESS_443_74
   type: vless
-  server: www.csgo.net
-  port: 2095
-  uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
   network: ws
-  tls: false
-  servername: ''
+  server: 195.26.229.156
+  port: 443
+  uuid: b2593749-691c-428c-9481-14979cba3446
+  servername: xi.tbv.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: xi.tbv.ccwu.cc
+    path: /proxyip=us.xiabibi.cf
+  country: CY
+- name: CY_VLESS_443_65
+  type: vless
+  network: ws
+  server: 195.26.229.131
+  port: 443
+  uuid: b2593749-691c-428c-9481-14979cba3446
+  servername: xi.tbv.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: xi.tbv.ccwu.cc
+    path: /proxyip=us.xiabibi.cf
+  country: CY
+- name: CY_VLESS_443_80
+  type: vless
+  network: ws
+  server: 195.26.229.222
+  port: 443
+  uuid: b2593749-691c-428c-9481-14979cba3446
+  servername: xi.tbv.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: xi.tbv.ccwu.cc
+    path: /proxyip=us.xiabibi.cf
+  country: CY
+- name: CY_VLESS_443_834
+  type: vless
+  server: 213.111.177.107
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
-      Host: pornbitches.asshole.us.ci
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
   country: CY
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +82,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CY_VLESS_2095_445
+  - CY_VLESS_443_74
+  - CY_VLESS_443_65
+  - CY_VLESS_443_80
+  - CY_VLESS_443_834
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +98,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CY_VLESS_2095_445
+  - CY_VLESS_443_65
+  - CY_VLESS_443_74
+  - CY_VLESS_443_80
+  - CY_VLESS_443_834
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +113,10 @@ proxy-groups:
 - name: 🌍 CY
   type: url-test
   proxies:
-  - CY_VLESS_2095_445
+  - CY_VLESS_443_74
+  - CY_VLESS_443_65
+  - CY_VLESS_443_80
+  - CY_VLESS_443_834
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

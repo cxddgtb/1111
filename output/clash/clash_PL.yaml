@@ -5,15 +5,76 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_HYSTERIA2_443_532
-  password: 865e271f7c97b549b024255c9d02cebe9cc0c2c070a82b1e11bb11b9cd88dd01
-  port: 443
-  server: streambox.wwwinternetvideo.click
-  sni: streambox.wwwinternetvideo.click
+- name: PL_VMESS_50665_338
+  type: vmess
+  server: 91.224.75.56
+  port: 50665
+  uuid: '@Nitro_Skybot'
+  alterId: 0
+  cipher: auto
+  network: http
   tls: false
-  type: hysteria2
+  servername: ''
+  ws-opts: null
   country: PL
-- name: PL_HTTP_443_547
+- name: PL_VLESS_443_468
+  type: vless
+  network: tcp
+  server: 144.31.2.33
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl3.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_451
+  type: vless
+  network: tcp
+  server: 144.31.5.64
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl6.moritech.net
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  tfo: false
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_1107
+  type: vless
+  network: tcp
+  server: 144.31.5.3
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl4.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_679
+  type: vless
+  server: 103.167.234.26
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: PL
+- name: PL_HTTP_443_658
   port: 443
   server: 37.120.156.18
   skip-cert-verify: true
@@ -33,8 +94,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_HYSTERIA2_443_532
-  - PL_HTTP_443_547
+  - PL_VMESS_50665_338
+  - PL_VLESS_443_468
+  - PL_VLESS_443_451
+  - PL_VLESS_443_1107
+  - PL_VLESS_443_679
+  - PL_HTTP_443_658
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,8 +112,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HYSTERIA2_443_532
-  - PL_HTTP_443_547
+  - PL_VMESS_50665_338
+  - PL_VLESS_443_451
+  - PL_VLESS_443_468
+  - PL_HTTP_443_658
+  - PL_VLESS_443_679
+  - PL_VLESS_443_1107
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -60,8 +129,12 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_HYSTERIA2_443_532
-  - PL_HTTP_443_547
+  - PL_VMESS_50665_338
+  - PL_VLESS_443_468
+  - PL_VLESS_443_451
+  - PL_VLESS_443_1107
+  - PL_VLESS_443_679
+  - PL_HTTP_443_658
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

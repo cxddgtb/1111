@@ -5,32 +5,31 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_HYSTERIA2_36723_365
-  password: Krab9Hyst2_Rk7pQ2xL
-  port: 36723
-  server: 151.247.197.253
-  skip-cert-verify: true
-  sni: 151.247.197.253
-  tls: false
-  type: hysteria2
-  country: FR
-- name: FR_HTTP_6103_515
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_464
+- name: FR_SS_443_394
+  type: ss
+  server: 54.36.174.140
   port: 443
-  server: 149.102.245.65
-  skip-cert-verify: true
-  tls: true
-  type: http
+  cipher: chacha20-ietf-poly1305
+  password: mrs2e9a
+  udp: true
   country: FR
-- name: FR_VLESS_22222_233
+- name: FR_VLESS_22222_267
   type: vless
-  server: 13.39.230.204
+  server: 15.224.194.93
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  udp: true
+  country: FR
+- name: FR_VLESS_22222_263
+  type: vless
+  server: 15.188.103.174
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  udp: true
+  country: FR
+- name: FR_VLESS_22222_266
+  type: vless
+  server: 13.36.1.52
   port: 22222
   uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
   network: tcp
@@ -39,16 +38,53 @@ proxies:
   client-fingerprint: chrome
   ws-opts: null
   country: FR
-- name: FR_VLESS_22224_229
+- name: FR_VLESS_2053_613
   type: vless
-  server: 13.39.230.204
-  port: 22224
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
+  server: 141.227.137.177
+  port: 2053
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
   client-fingerprint: chrome
-  ws-opts: null
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: FR
+- name: FR_VLESS_2053_602
+  type: vless
+  server: 141.227.186.38
+  port: 2053
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: FR
+- name: FR_VLESS_443_730
+  type: vless
+  server: 141.227.188.153
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -63,11 +99,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_HYSTERIA2_36723_365
-  - FR_HTTP_6103_515
-  - FR_HTTP_443_464
-  - FR_VLESS_22222_233
-  - FR_VLESS_22224_229
+  - FR_SS_443_394
+  - FR_VLESS_22222_267
+  - FR_VLESS_22222_263
+  - FR_VLESS_22222_266
+  - FR_VLESS_2053_613
+  - FR_VLESS_2053_602
+  - FR_VLESS_443_730
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,11 +118,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_22224_229
-  - FR_VLESS_22222_233
-  - FR_HYSTERIA2_36723_365
-  - FR_HTTP_443_464
-  - FR_HTTP_6103_515
+  - FR_VLESS_22222_263
+  - FR_VLESS_22222_266
+  - FR_VLESS_22222_267
+  - FR_SS_443_394
+  - FR_VLESS_2053_602
+  - FR_VLESS_2053_613
+  - FR_VLESS_443_730
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -96,11 +136,13 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_HYSTERIA2_36723_365
-  - FR_HTTP_6103_515
-  - FR_HTTP_443_464
-  - FR_VLESS_22222_233
-  - FR_VLESS_22224_229
+  - FR_SS_443_394
+  - FR_VLESS_22222_267
+  - FR_VLESS_22222_263
+  - FR_VLESS_22222_266
+  - FR_VLESS_2053_613
+  - FR_VLESS_2053_602
+  - FR_VLESS_443_730
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

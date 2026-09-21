@@ -5,30 +5,181 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_2096_566
+- name: DE_SS_59924_271
+  type: ss
+  server: 130.61.116.110
+  port: 59924
+  cipher: 2022-blake3-chacha20-poly1305
+  password: UpeZLBSVADf64wezj0K1CcapVO6MLWWPYtMJue7gxqE=
+  udp: true
+  country: DE
+- name: DE_VLESS_2053_609
   type: vless
-  server: 64.226.95.244
-  port: 2096
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  server: 5.104.107.80
+  port: 2053
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   network: ws
   tls: true
-  servername: cf3.schzyc.cc.cd
+  servername: cdn8848.776676.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /act/clip/directory?ed=2560fp=chrome
+    headers:
+      Host: cdn8848.776676.xyz
+  country: DE
+- name: DE_VMESS_180_28
+  type: vmess
+  network: tcp
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_22
+  type: vmess
+  network: tcp
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_31
+  type: vmess
+  network: tcp
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_180_28_2
+  type: vmess
+  network: tcp
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VLESS_2096_1696
+  type: vless
+  network: ws
+  server: 2.26.125.38
+  port: 2096
+  uuid: 0a2dde28-70da-4863-a06f-35d007d94d35
+  servername: st3f6d.rumedia-cdn.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: st3f6d.rumedia-cdn.com
+    path: /cdn/v3/live
+  country: DE
+- name: DE_VLESS_2083_569
+  type: vless
+  network: ws
+  server: 164.90.176.31
+  port: 2083
+  uuid: a747c516-34bd-41b8-8590-a9d1edb79e95
+  servername: summer-hall-8b23.asddsaasan.workers.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: summer-hall-8b23.asddsaasan.workers.dev
+    path: /
+  country: DE
+- name: DE_VLESS_9443_702
+  type: vless
+  network: ws
+  server: 77.110.117.199
+  port: 9443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
+  servername: hub-nl-01.hanvpn.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: hub-nl-01.hanvpn.cc
+    path: /nl01-ws-8e47a
+  country: DE
+- name: DE_VLESS_443_450
+  type: vless
+  network: tcp
+  server: 57.129.96.67
+  port: 443
+  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
+  servername: nasnet-571299667-direct.mbghalibaf.com
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  tfo: false
+  flow: xtls-rprx-vision
+  country: DE
+- name: DE_VLESS_443_585
+  type: vless
+  server: 103.228.168.182
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
-      Host: cf3.schzyc.cc.cd
-  country: DE
-- name: DE_HYSTERIA2_25443_516
-  password: 29ffde49-e1d6-4dcd-a135-352920f9f0b8
-  port: 25443
-  server: de-node.rumedia-cdn.com
+      Host: shuma.ccwu.cc
   skip-cert-verify: true
-  sni: cf6.rumedia-cdn.com
-  tls: false
-  type: hysteria2
+  udp: true
   country: DE
-- name: DE_HYSTERIA2_54759_369
+- name: DE_VLESS_443_703
+  type: vless
+  server: 144.31.217.95
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: DE_VLESS_443_594
+  type: vless
+  server: 109.176.202.20
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: DE_HYSTERIA2_54759_445
   obfs: salamander
   obfs-password: Telegram@vpnjey
   password: Telegram@vpnjey
@@ -38,7 +189,7 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HYSTERIA2_443_887
+- name: DE_HYSTERIA2_443_951
   obfs: salamander
   obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
   password: cd74c0a406664a5bc0bac098220a2468
@@ -48,61 +199,6 @@ proxies:
   sni: de1.sferavpn.pro
   tls: false
   type: hysteria2
-  country: DE
-- name: DE_HTTP_443_469
-  password: None
-  port: 443
-  server: 149.36.50.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: DE
-- name: DE_HTTP_443_473
-  password: None
-  port: 443
-  server: 149.36.50.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: DE
-- name: DE_HTTP_11111_368
-  password: None
-  port: 11111
-  server: 103.237.102.191
-  type: http
-  username: null
-  country: DE
-- name: DE_HTTP_443_453
-  port: 443
-  server: 149.36.50.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_SS_443_239
-  server: 3.71.182.230
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  country: DE
-- name: DE_SS_59924_1489
-  server: 130.61.147.64
-  port: 59924
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: JgVnjf+IujBeHuKJ9dhXtdyGYRYY8x9LPeqbgYYQE0Q=
-  udp: true
-  country: DE
-- name: DE_SS_59924_2480
-  server: 130.61.114.48
-  port: 59924
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: FmxC4O0b9MskcU1X3oBo26HI+Kn5NDxSUAbvdF/tkV8=
-  udp: true
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -117,17 +213,21 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_2096_566
-  - DE_HYSTERIA2_25443_516
-  - DE_HYSTERIA2_54759_369
-  - DE_HYSTERIA2_443_887
-  - DE_HTTP_443_469
-  - DE_HTTP_443_473
-  - DE_HTTP_11111_368
-  - DE_HTTP_443_453
-  - DE_SS_443_239
-  - DE_SS_59924_1489
-  - DE_SS_59924_2480
+  - DE_SS_59924_271
+  - DE_VLESS_2053_609
+  - DE_VMESS_180_28
+  - DE_VMESS_180_22
+  - DE_VMESS_180_31
+  - DE_VMESS_180_28_2
+  - DE_VLESS_2096_1696
+  - DE_VLESS_2083_569
+  - DE_VLESS_9443_702
+  - DE_VLESS_443_450
+  - DE_VLESS_443_585
+  - DE_VLESS_443_703
+  - DE_VLESS_443_594
+  - DE_HYSTERIA2_54759_445
+  - DE_HYSTERIA2_443_951
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -140,17 +240,21 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_SS_443_239
-  - DE_HTTP_11111_368
-  - DE_HYSTERIA2_54759_369
-  - DE_HTTP_443_453
-  - DE_HTTP_443_469
-  - DE_HTTP_443_473
-  - DE_HYSTERIA2_25443_516
-  - DE_VLESS_2096_566
-  - DE_HYSTERIA2_443_887
-  - DE_SS_59924_1489
-  - DE_SS_59924_2480
+  - DE_VMESS_180_22
+  - DE_VMESS_180_28
+  - DE_VMESS_180_28_2
+  - DE_VMESS_180_31
+  - DE_SS_59924_271
+  - DE_HYSTERIA2_54759_445
+  - DE_VLESS_443_450
+  - DE_VLESS_2083_569
+  - DE_VLESS_443_585
+  - DE_VLESS_443_594
+  - DE_VLESS_2053_609
+  - DE_VLESS_9443_702
+  - DE_VLESS_443_703
+  - DE_HYSTERIA2_443_951
+  - DE_VLESS_2096_1696
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -162,17 +266,21 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_2096_566
-  - DE_HYSTERIA2_25443_516
-  - DE_HYSTERIA2_54759_369
-  - DE_HYSTERIA2_443_887
-  - DE_HTTP_443_469
-  - DE_HTTP_443_473
-  - DE_HTTP_11111_368
-  - DE_HTTP_443_453
-  - DE_SS_443_239
-  - DE_SS_59924_1489
-  - DE_SS_59924_2480
+  - DE_SS_59924_271
+  - DE_VLESS_2053_609
+  - DE_VMESS_180_28
+  - DE_VMESS_180_22
+  - DE_VMESS_180_31
+  - DE_VMESS_180_28_2
+  - DE_VLESS_2096_1696
+  - DE_VLESS_2083_569
+  - DE_VLESS_9443_702
+  - DE_VLESS_443_450
+  - DE_VLESS_443_585
+  - DE_VLESS_443_703
+  - DE_VLESS_443_594
+  - DE_HYSTERIA2_54759_445
+  - DE_HYSTERIA2_443_951
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

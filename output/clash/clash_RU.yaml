@@ -5,7 +5,39 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_HYSTERIA2_443_629
+- name: RU_VLESS_443_785
+  type: vless
+  network: ws
+  server: 91.210.169.181
+  port: 443
+  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
+  servername: wstg.datasynctrue.online
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: wstg.datasynctrue.online
+    path: /api/connect
+  country: RU
+- name: RU_VLESS_443_824
+  type: vless
+  server: 104.128.137.133
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: RU
+- name: RU_HYSTERIA2_443_630
   password: f317b5d6-d399-4d3d-a051-89d674ae953c
   port: 443
   server: msk.frkn.org
@@ -25,7 +57,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_HYSTERIA2_443_629
+  - RU_VLESS_443_785
+  - RU_VLESS_443_824
+  - RU_HYSTERIA2_443_630
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +72,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_443_629
+  - RU_HYSTERIA2_443_630
+  - RU_VLESS_443_785
+  - RU_VLESS_443_824
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +86,9 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_HYSTERIA2_443_629
+  - RU_VLESS_443_785
+  - RU_VLESS_443_824
+  - RU_HYSTERIA2_443_630
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
