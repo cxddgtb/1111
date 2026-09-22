@@ -5,20 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ID_VMESS_53548_646
-  type: vmess
-  server: 202.47.89.133
-  port: 53548
-  uuid: 3a03613b-bbac-4a22-bee6-2c9a751a2761
-  alterId: 0
-  cipher: auto
+- name: ID_VLESS_443_973
+  type: vless
+  server: 172.232.236.252
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: shuma.ccwu.cc
   network: ws
-  tls: false
-  servername: ''
   ws-opts:
-    path: /dkfjh222
+    path: /fp=chrome
     headers:
-      Host: ''
+      Host: shuma.ccwu.cc
   country: ID
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ID_VMESS_53548_646
+  - ID_VLESS_443_973
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ID_VMESS_53548_646
+  - ID_VLESS_443_973
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +58,7 @@ proxy-groups:
 - name: 🌍 ID
   type: url-test
   proxies:
-  - ID_VMESS_53548_646
+  - ID_VLESS_443_973
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

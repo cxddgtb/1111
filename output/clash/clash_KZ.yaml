@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KZ_VMESS_80_908
+- name: KZ_VMESS_80_740
   type: vmess
   network: ws
   server: 38.107.234.57
@@ -19,19 +19,22 @@ proxies:
       Host: 3h-kazakhstan1.09vpn.com
     path: /vmess/
   country: KZ
-- name: KZ_VMESS_80_922
-  type: vmess
+- name: KZ_VLESS_443_63
+  type: vless
   network: ws
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  server: 31.43.179.106
+  port: 443
+  uuid: b2593749-691c-428c-9481-14979cba3446
+  servername: xi.tbv.ccwu.cc
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
   ws-opts:
     headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-    path: /vmess/
+      Host: xi.tbv.ccwu.cc
+    path: /proxyip=us.xiabibi.cf
   country: KZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +49,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KZ_VMESS_80_908
-  - KZ_VMESS_80_922
+  - KZ_VMESS_80_740
+  - KZ_VLESS_443_63
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +63,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KZ_VMESS_80_908
-  - KZ_VMESS_80_922
+  - KZ_VLESS_443_63
+  - KZ_VMESS_80_740
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +76,8 @@ proxy-groups:
 - name: 🌍 KZ
   type: url-test
   proxies:
-  - KZ_VMESS_80_908
-  - KZ_VMESS_80_922
+  - KZ_VMESS_80_740
+  - KZ_VLESS_443_63
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

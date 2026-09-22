@@ -5,60 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VMESS_50665_338
-  type: vmess
-  server: 91.224.75.56
-  port: 50665
-  uuid: '@Nitro_Skybot'
-  alterId: 0
-  cipher: auto
-  network: http
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: PL
-- name: PL_VLESS_443_468
-  type: vless
-  network: tcp
-  server: 144.31.2.33
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: pl3.moritech.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: PL
-- name: PL_VLESS_443_451
-  type: vless
-  network: tcp
-  server: 144.31.5.64
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: pl6.moritech.net
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  tfo: false
-  flow: xtls-rprx-vision
-  country: PL
-- name: PL_VLESS_443_1107
-  type: vless
-  network: tcp
-  server: 144.31.5.3
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: pl4.moritech.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: PL
-- name: PL_VLESS_443_679
+- name: PL_VLESS_443_464
   type: vless
   server: 103.167.234.26
   port: 443
@@ -74,9 +21,76 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: PL
-- name: PL_HTTP_443_658
+- name: PL_VLESS_443_345
+  type: vless
+  network: tcp
+  server: 144.31.5.3
   port: 443
-  server: 37.120.156.18
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl4.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_353
+  type: vless
+  network: tcp
+  server: 144.31.2.33
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl3.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_338
+  type: vless
+  network: tcp
+  server: 144.31.5.64
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl6.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_HTTP_443_494
+  password: None
+  port: 443
+  server: 37.120.156.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: PL
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: PL_VLESS_443_353_2
+  network: tcp
+  port: '443'
+  reality-opts:
+    public-key: g2sbZDGTg4l1Dcg_Y4UKpbncPKEh7iFtTlWYbfi2sCk
+    short-id: ''
+  server: 31.59.125.106
+  servername: poll2.shhflow.xyz
+  tls: true
+  type: vless
+  udp: true
+  uuid: 129799e0-a9b1-4ae8-80bd-fa92db813f85
+  xudp: true
+  country: PL
+- name: PL_HTTP_443_445
+  port: 443
+  server: 151.115.54.133
   skip-cert-verify: true
   tls: true
   type: http
@@ -94,12 +108,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VMESS_50665_338
-  - PL_VLESS_443_468
-  - PL_VLESS_443_451
-  - PL_VLESS_443_1107
-  - PL_VLESS_443_679
-  - PL_HTTP_443_658
+  - PL_VLESS_443_464
+  - PL_VLESS_443_345
+  - PL_VLESS_443_353
+  - PL_VLESS_443_338
+  - PL_HTTP_443_494
+  - PL_VLESS_443_353_2
+  - PL_HTTP_443_445
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -112,12 +127,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VMESS_50665_338
-  - PL_VLESS_443_451
-  - PL_VLESS_443_468
-  - PL_HTTP_443_658
-  - PL_VLESS_443_679
-  - PL_VLESS_443_1107
+  - PL_VLESS_443_338
+  - PL_VLESS_443_345
+  - PL_VLESS_443_353
+  - PL_VLESS_443_353_2
+  - PL_HTTP_443_445
+  - PL_VLESS_443_464
+  - PL_HTTP_443_494
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -129,12 +145,13 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VMESS_50665_338
-  - PL_VLESS_443_468
-  - PL_VLESS_443_451
-  - PL_VLESS_443_1107
-  - PL_VLESS_443_679
-  - PL_HTTP_443_658
+  - PL_VLESS_443_464
+  - PL_VLESS_443_345
+  - PL_VLESS_443_353
+  - PL_VLESS_443_338
+  - PL_HTTP_443_494
+  - PL_VLESS_443_353_2
+  - PL_HTTP_443_445
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

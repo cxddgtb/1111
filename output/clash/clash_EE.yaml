@@ -5,60 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_VLESS_8443_653
-  type: vless
-  server: 5.101.115.117
-  port: 8443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  servername: cdn8848.776676.xyz
-  client-fingerprint: chrome
-  ws-opts:
-    path: /magnet/thread?ed=2560fp=chrome
-    headers:
-      Host: cdn8848.776676.xyz
-  country: EE
-- name: EE_VLESS_2053_502
-  type: vless
-  server: 5.101.114.44
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  servername: cdn8848.776676.xyz
-  client-fingerprint: chrome
-  ws-opts:
-    path: /collection/directory?ed=2560
-    headers:
-      Host: cdn8848.776676.xyz
-  country: EE
-- name: EE_VLESS_443_720
-  type: vless
-  server: 109.206.241.16
+- name: EE_HYSTERIA2_443_361
+  password: sOiWCQ2AdIV0OWNuqQVyWp4JZnRxdyLROSjX
   port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  servername: shuma.ccwu.cc
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
+  server: 217.60.182.79
   skip-cert-verify: true
-  udp: true
-  country: EE
-- name: EE_HYSTERIA2_8443_659
+  sni: cabinet.wwwinternetvideo.click
+  tls: false
   type: hysteria2
-  server: tishina-axe.dedyn.io
-  port: 8443
-  password: 319ed24b1c7203aa
-  sni: tishina-axe.dedyn.io
-  skip-cert-verify: true
-  alpn:
-  - h3
-  udp: true
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -73,10 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_8443_653
-  - EE_VLESS_2053_502
-  - EE_VLESS_443_720
-  - EE_HYSTERIA2_8443_659
+  - EE_HYSTERIA2_443_361
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -89,10 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_2053_502
-  - EE_VLESS_8443_653
-  - EE_HYSTERIA2_8443_659
-  - EE_VLESS_443_720
+  - EE_HYSTERIA2_443_361
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -104,10 +52,7 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_8443_653
-  - EE_VLESS_2053_502
-  - EE_VLESS_443_720
-  - EE_HYSTERIA2_8443_659
+  - EE_HYSTERIA2_443_361
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

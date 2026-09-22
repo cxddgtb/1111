@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_VLESS_443_732
+- name: IT_VLESS_443_586
   type: vless
   server: 149.154.157.213
   port: 443
@@ -21,6 +21,22 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: IT
+- name: IT_HTTP_443_442
+  password: None
+  port: 443
+  server: 185.183.105.130
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: IT
+- name: IT_HTTP_443_461
+  port: 443
+  server: 185.183.105.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: IT
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -34,7 +50,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_VLESS_443_732
+  - IT_VLESS_443_586
+  - IT_HTTP_443_442
+  - IT_HTTP_443_461
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +65,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_VLESS_443_732
+  - IT_HTTP_443_442
+  - IT_HTTP_443_461
+  - IT_VLESS_443_586
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +79,9 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_VLESS_443_732
+  - IT_VLESS_443_586
+  - IT_HTTP_443_442
+  - IT_HTTP_443_461
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

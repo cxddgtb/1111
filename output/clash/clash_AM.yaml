@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AM_VLESS_443_1055
+- name: AM_VLESS_443_855
   type: vless
   server: 2.56.204.183
   port: 443
@@ -34,7 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AM_VLESS_443_1055
+  - AM_VLESS_443_855
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AM_VLESS_443_1055
+  - AM_VLESS_443_855
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +59,7 @@ proxy-groups:
 - name: 🌍 AM
   type: url-test
   proxies:
-  - AM_VLESS_443_1055
+  - AM_VLESS_443_855
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,349 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: US_TROJAN_443_132
-  type: trojan
-  server: 167.82.76.7
-  port: 443
-  password: MiTIVPN
-  udp: true
-  skip-cert-verify: true
-  sni: ssl.fastly.com
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: mitivpn---ss--s---mitivpn-33e.global.ssl.fastly.net
-  country: US
-- name: US_VLESS_443_169
-  type: vless
-  server: us.cache-4d8a.com
-  port: 443
-  uuid: ddf09ad0-02dc-485b-9048-1038de5bebf0
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: firefox
-  servername: us.cache-4d8a.com
-  reality-opts:
-    public-key: S6t9-gOX2mxWKNGvGSJ8NxDdlJy78d4gN2-wv2d0hFw
-    short-id: 8319913f2e5f5711
-  country: US
-- name: US_VMESS_12004_113
-  type: vmess
-  network: tcp
-  server: 47.85.188.30
-  port: 12004
-  uuid: 8b5552bd-4cc7-4cac-af08-81c21686fd4f
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_18000_79
-  type: vmess
-  network: tcp
-  server: 84.17.41.2
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_22324_99
-  type: vmess
-  network: tcp
-  server: 67.220.72.237
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_15311_196
-  type: vmess
-  network: tcp
-  server: 107.173.254.27
-  port: 15311
-  uuid: ad78d02b-873f-4cff-8d4a-673f53d6ce0f
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_48111_17
-  type: vmess
-  network: tcp
-  server: 129.146.143.80
-  port: 48111
-  uuid: d4603cc2-e0ee-4651-83f5-1db5b7168177
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VLESS_443_67
-  type: vless
-  network: ws
-  server: 139.64.235.1
-  port: 443
-  uuid: b09dfed1-90fa-4353-8bdf-de1edb2e2d79
-  servername: nb.lovecf.ggff.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: nb.lovecf.ggff.net
-    path: /proxyip=us.xiabibi.cf
-  country: US
-- name: US_VLESS_443_101
-  type: vless
-  network: ws
-  server: 139.64.235.117
-  port: 443
-  uuid: b09dfed1-90fa-4353-8bdf-de1edb2e2d79
-  servername: nb.lovecf.ggff.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: nb.lovecf.ggff.net
-    path: /proxyip=us.xiabibi.cf
-  country: US
-- name: US_VLESS_443_78
-  type: vless
-  network: ws
-  server: 139.64.235.225
-  port: 443
-  uuid: b09dfed1-90fa-4353-8bdf-de1edb2e2d79
-  servername: nb.lovecf.ggff.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: nb.lovecf.ggff.net
-    path: /proxyip=us.xiabibi.cf
-  country: US
-- name: US_VLESS_443_93
-  type: vless
-  network: ws
-  server: 139.64.235.23
-  port: 443
-  uuid: b09dfed1-90fa-4353-8bdf-de1edb2e2d79
-  servername: nb.lovecf.ggff.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: nb.lovecf.ggff.net
-    path: /proxyip=us.xiabibi.cf
-  country: US
-- name: US_VLESS_443_95
-  type: vless
-  network: ws
-  server: 165.215.250.16
-  port: 443
-  uuid: e8d06b09-acd9-448c-9874-3c36151d36ee
-  servername: icy-wildflower-2590.lihuifeng595.workers.dev
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: icy-wildflower-2590.lihuifeng595.workers.dev
-    path: /
-  country: US
-- name: US_VMESS_18000_116
-  type: vmess
-  network: tcp
-  server: 38.110.1.246
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_18000_170
-  type: vmess
-  network: tcp
-  server: 67.220.95.3
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VLESS_60156_635
-  type: vless
-  server: 207.57.131.116
-  port: 60156
-  uuid: d42830a2-4a5f-4f55-bd01-fc3d2651505e
-  servername: aws.amazon.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 0WCIcNPaAc_UqgQmKptY2vvQKSCjz7LkoG6YEgtzuFs
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_35957_696
-  type: vless
-  server: 68.64.180.201
-  port: 35957
-  uuid: ebc2c010-91e2-491d-875b-81de66a01590
-  servername: www.cloudflare.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 79XmdoMC-YDcAhXMX6TGYfajcPWxVTSwIpbP0-QdMV8
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_14934_669
-  type: vless
-  server: 207.57.129.114
-  port: 14934
-  uuid: 630b700b-3c91-463a-9ef5-ee01f5848b45
-  servername: dash.cloudflare.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: C9qIqeSCAkCLIqki3n21hyeILLltWcZJ6M0HgRTGmk4
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_42038_649
-  type: vless
-  server: 207.57.131.82
-  port: 42038
-  uuid: 451ae20e-adca-4d00-bf12-9572f58f181b
-  servername: aws.amazon.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: uK4Syxig1VpR42JEkbld2ZIaymNkt5MW4UMt21LsaRA
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_24681_806
-  type: vless
-  server: 38.207.177.203
-  port: 24681
-  uuid: 5d2a0ea5-9563-4778-aed4-c97ec0e5f2a8
-  servername: aws.amazon.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: t-BhtrNH7C1zTuLOuBu4tXeIv3JR-cN88pVFywIkti4
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_14163_798
-  type: vless
-  server: 68.64.183.164
-  port: 14163
-  uuid: 8871f4a9-cb90-4159-b3d0-84b90efdd3ca
-  servername: www.paypal.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 40j_uKu51A06ECDlinwC6Q7h7ZPWs9Bkv24_EZdcvnQ
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_46042_770
-  type: vless
-  server: 38.147.171.99
-  port: 46042
-  uuid: 1e89e68f-eceb-4159-baee-2b77c9d34717
-  servername: dash.cloudflare.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: BjAkOapbZN6R4cUgz8Ye-o-uyWz6o_LoUlI5kbURMh0
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_2128_888
-  type: vless
-  server: 207.57.135.124
-  port: 2128
-  uuid: 630630d0-35eb-41b1-a7e9-90ca7e5c897f
-  servername: www.amazon.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 0zFniJLY80LQ5zKKB-X6r-tpHgAI6yqUVxJFQGG9SUM
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_59672_899
-  type: vless
-  server: 207.57.134.242
-  port: 59672
-  uuid: d1ac7eb4-a6fd-481b-8c91-5c40680af484
-  servername: www.amazon.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: MyT8CmpFM5SbEol-rsH-Gm-I8GJLAfRLQnGnyNCXrho
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_58979_855
-  type: vless
-  server: 207.57.135.37
-  port: 58979
-  uuid: 99385d38-676e-4e21-8de5-bd3b0b57e2b6
-  servername: www.ebay.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: BMGv1azVuzaXicmRgvGIbDdRv-9tIjfvtSCKRh1EfVw
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VMESS_18000_1408
-  type: vmess
-  network: tcp
-  server: 38.91.107.49
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VLESS_27684_1732
-  type: vless
-  server: 68.64.183.115
-  port: 27684
-  uuid: ff7fecdc-f816-4ff7-9447-65ecbae25ec2
-  servername: dash.cloudflare.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: CTB0zNN-oslyk5a3NfliC_nUakFUn94QH8X_rN5ZvlQ
-  skip-cert-verify: true
-  udp: true
-  country: US
-- name: US_VLESS_2096_583
+- name: US_VLESS_2096_594
   type: vless
   server: 167.160.177.68
   port: 2096
@@ -363,7 +21,16 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: US
-- name: US_VLESS_8443_635
+- name: US_TROJAN_443_441
+  type: trojan
+  network: tcp
+  server: 100.42.228.109
+  port: 443
+  password: BxceQaOe
+  skip-cert-verify: true
+  sni: t.me%2Fripaojiedian
+  country: US
+- name: US_VLESS_8443_831
   type: vless
   server: 104.194.84.188
   port: 8443
@@ -379,7 +46,83 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: US
-- name: US_HYSTERIA2_4433_770
+- name: US_VMESS_18000_75
+  type: vmess
+  network: tcp
+  server: 67.220.95.3
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: US_VMESS_18000_101
+  type: vmess
+  network: tcp
+  server: 38.91.107.49
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: US_VMESS_18000_108
+  type: vmess
+  network: tcp
+  server: 38.110.1.246
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: US_VMESS_18000_148
+  type: vmess
+  network: tcp
+  server: 84.17.41.2
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: US
+- name: US_VLESS_443_375
+  type: vless
+  server: 50.7.36.30
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  flow: xtls-rprx-vision-udp443
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: ad-dedic-3.failspace.top
+  country: US
+- name: US_VLESS_40443_829
+  type: vless
+  server: lyra.yokkastars.com
+  port: 40443
+  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  client-fingerprint: edge
+  servername: deepl.com
+  reality-opts:
+    public-key: Uvj5H9pDJP0HX2bN7NN7sCQwVCrC5N2NbKf-yuy1ikE
+    short-id: ee33
+  country: US
+- name: US_HYSTERIA2_443_1011
+  type: hysteria2
+  server: 24.233.8.109
+  port: 443
+  password: 8294f130408299df8cab08c80bf6f819
+  sni: www.bing.com
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: c8827ab99e316c5bd414e21afa915ddf
+  udp: true
+  country: US
+- name: US_HYSTERIA2_4433_777
   password: 19f72087-4591-4d72-930b-2697078ec2be
   port: 4433
   server: es1.xiaoliyu.cyou
@@ -388,7 +131,7 @@ proxies:
   tls: false
   type: hysteria2
   country: US
-- name: US_HYSTERIA2_443_840
+- name: US_HYSTERIA2_443_652
   password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
   port: 443
   server: go.wwwinternetvideo.click
@@ -397,18 +140,23 @@ proxies:
   tls: false
   type: hysteria2
   country: US
-- name: US_HYSTERIA2_443_919
-  obfs: salamander
-  obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
-  password: cd74c0a406664a5bc0bac098220a2468
-  port: 443
-  server: 2.27.249.79
+- client-fingerprint: chrome
+  name: US_TROJAN_443_310
+  network: ws
+  password: humanity
+  port: '443'
+  server: 216.24.57.1
   skip-cert-verify: false
-  sni: nl1.sferavpn.pro
-  tls: false
-  type: hysteria2
+  sni: www.ignitelimit.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/54.0.2840.99 Safari/537.36
+    path: /assignment
   country: US
-- name: US_HYSTERIA2_443_1465
+- name: US_HYSTERIA2_443_996
   obfs: salamander
   obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
   password: cd74c0a406664a5bc0bac098220a2468
@@ -419,141 +167,7 @@ proxies:
   tls: false
   type: hysteria2
   country: US
-- name: US_HTTP_9002_43
-  password: 'null'
-  port: 9002
-  server: 138.199.35.216
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-  country: US
-- name: US_HTTP_9002_44
-  password: 'null'
-  port: 9002
-  server: 138.199.35.198
-  skip-cert-verify: true
-  sni: 138.199.35.198
-  tls: true
-  type: http
-  username: 'null'
-  country: US
-- name: US_HTTP_9002_37
-  port: 9002
-  server: 138.199.35.213
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: US
-- name: US_HTTP_443_143
-  password: 'null'
-  port: 443
-  server: efr-marktplatz.club
-  tls: true
-  type: http
-  username: 'null'
-  country: US
-- name: US_HTTP_9002_42
-  password: None
-  port: 9002
-  server: 138.199.35.204
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: US
-- name: US_HTTP_9002_40
-  password: None
-  port: 9002
-  server: 138.199.35.210
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: US
-- name: US_HTTP_443_126
-  password: 'null'
-  port: 443
-  server: webdrone.club
-  tls: true
-  type: http
-  username: 'null'
-  country: US
-- name: US_HTTP_9002_36
-  password: None
-  port: 9002
-  server: 138.199.35.217
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: US
-- name: US_HTTP_9002_38
-  password: None
-  port: 9002
-  server: 138.199.35.207
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: US
-- name: US_HTTP_9002_37_2
-  password: 'null'
-  port: 9002
-  server: 138.199.35.209
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-  country: US
-- name: US_HTTP_9002_41
-  port: 9002
-  server: 138.199.35.205
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: US
-- name: US_HTTP_9002_38_2
-  password: None
-  port: 9002
-  server: 138.199.35.197
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: US
-- name: US_HTTP_9002_42_2
-  password: ''
-  port: 9002
-  server: 138.199.35.196
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: ''
-  country: US
-- name: US_HTTP_9002_41_2
-  password: ''
-  port: 9002
-  server: 138.199.35.212
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: ''
-  country: US
-- name: US_HTTP_9002_44_2
-  password: ''
-  port: 9002
-  server: 138.199.35.203
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: ''
-  country: US
-- name: US_HTTP_9443_48
+- name: US_HTTP_9443_220
   password: ''
   port: 9443
   server: 38.95.111.226
@@ -563,41 +177,104 @@ proxies:
   udp: true
   username: ''
   country: US
-- name: US_HTTP_9002_41_3
-  password: None
-  port: 9002
-  server: 138.199.35.201
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: US
-- name: US_HTTP_443_223
-  password: None
-  port: 443
-  server: berniesbodybla.fun
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-  country: US
-- name: US_HTTP_9002_37_3
+- name: US_HTTP_9002_214
   password: 'null'
-  port: '9002'
-  server: 138.199.35.218
+  port: 9002
+  server: 138.199.35.216
   skip-cert-verify: true
   tls: true
   type: http
+  udp: true
   username: 'null'
   country: US
-- name: US_HTTP_443_131
+- name: US_HTTP_443_394
+  password: None
+  port: 443
+  server: goedkoopgeluid.icu
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: US
+- name: US_HTTP_9002_214_2
+  password: ''
+  port: 9002
+  server: 138.199.35.217
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: ''
+  country: US
+- name: US_HTTP_443_35
+  port: 443
+  server: 52.55.81.168
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: US
+- name: US_HTTP_443_554
   port: 443
   server: voteshirleysew.club
   tls: true
   type: http
   udp: true
   country: US
-- name: US_HTTP_443_250
+- name: US_HTTP_9002_222
+  password: 'null'
+  port: 9002
+  server: 138.199.35.209
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+  country: US
+- name: US_HTTP_9002_223
+  password: None
+  port: 9002
+  server: 138.199.35.206
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: US
+- name: US_HTTP_9002_219
+  password: None
+  port: 9002
+  server: 138.199.35.220
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: US
+- name: US_HTTP_443_511
+  password: ''
+  port: 443
+  server: fullmanfirm.icu
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: ''
+  country: US
+- name: US_HTTP_443_50
+  password: ''
+  port: 443
+  server: 149.88.21.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  country: US
+- name: US_HTTP_9002_212
+  password: ''
+  port: '9002'
+  server: 138.199.35.200
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: ''
+  country: US
+- name: US_HTTP_443_296
   port: 443
   server: fan.365747.xyz
   skip-cert-verify: true
@@ -605,15 +282,15 @@ proxies:
   type: http
   udp: true
   country: US
-- name: US_HTTP_443_123
-  password: None
-  port: 443
-  server: purposebydesig.club
+- name: US_HTTP_9002_211
+  port: 9002
+  server: 138.199.35.198
+  skip-cert-verify: true
   tls: true
   type: http
   udp: true
   country: US
-- name: US_HTTP_443_247
+- name: US_HTTP_443_417
   port: 443
   server: 38.28.193.188
   skip-cert-verify: true
@@ -621,7 +298,15 @@ proxies:
   type: http
   udp: true
   country: US
-- name: US_ANYTLS_19000_127
+- name: US_HTTP_443_502
+  password: None
+  port: 443
+  server: purposebydesig.club
+  tls: true
+  type: http
+  udp: true
+  country: US
+- name: US_ANYTLS_19000_227
   server: anytls2.864106.xyz
   port: 19000
   type: anytls
@@ -630,35 +315,36 @@ proxies:
   sni: anytls2.864106.xyz
   skip-cert-verify: true
   country: US
-- name: US_HYSTERIA2_49490_103
-  server: akmgzz.jiedddym.com
-  port: 49490
-  type: hysteria2
-  password: 17ab31f7-c021-4aec-83b2-ab48de8886bd
-  auth: 17ab31f7-c021-4aec-83b2-ab48de8886bd
-  up: 'null'
-  down: 'null'
-  skip-cert-verify: true
-  country: US
-- name: US_HYSTERIA2_49490_392
-  server: mglswjs.jiedddym.com
-  port: 49490
-  type: hysteria2
-  password: 17ab31f7-c021-4aec-83b2-ab48de8886bd
-  auth: 17ab31f7-c021-4aec-83b2-ab48de8886bd
-  up: 'null'
-  down: 'null'
-  skip-cert-verify: true
-  country: US
-- name: US_HYSTERIA2_443_724
-  server: starlink-ft.251313.xyz
+- name: US_VLESS_443_588
+  server: a2.arshia-nova.ir
   port: 443
-  type: hysteria2
-  password: https://xship.best
-  auth: https://xship.best
-  sni: xship.top
-  skip-cert-verify: true
+  type: vless
+  uuid: 1fac5e18-2ca8-4626-c299-1f3f21c6b55e
+  tls: true
+  alpn:
+  - h2
+  servername: ssl.fastly.com
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: c12.com
   udp: true
+  country: US
+- name: US_VLESS_40443_490
+  server: 72.56.41.33
+  port: 40443
+  type: vless
+  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Uvj5H9pDJP0HX2bN7NN7sCQwVCrC5N2NbKf-yuy1ikE
+    short-id: ee33
+  servername: deepl.com
+  client-fingerprint: firefox
+  network: tcp
   country: US
 proxy-groups:
 - name: 🚀 节点选择
@@ -673,65 +359,39 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - US_TROJAN_443_132
-  - US_VLESS_443_169
-  - US_VMESS_12004_113
-  - US_VMESS_18000_79
-  - US_VMESS_22324_99
-  - US_VMESS_15311_196
-  - US_VMESS_48111_17
-  - US_VLESS_443_67
-  - US_VLESS_443_101
-  - US_VLESS_443_78
-  - US_VLESS_443_93
-  - US_VLESS_443_95
-  - US_VMESS_18000_116
-  - US_VMESS_18000_170
-  - US_VLESS_60156_635
-  - US_VLESS_35957_696
-  - US_VLESS_14934_669
-  - US_VLESS_42038_649
-  - US_VLESS_24681_806
-  - US_VLESS_14163_798
-  - US_VLESS_46042_770
-  - US_VLESS_2128_888
-  - US_VLESS_59672_899
-  - US_VLESS_58979_855
-  - US_VMESS_18000_1408
-  - US_VLESS_27684_1732
-  - US_VLESS_2096_583
-  - US_VLESS_8443_635
-  - US_HYSTERIA2_4433_770
-  - US_HYSTERIA2_443_840
-  - US_HYSTERIA2_443_919
-  - US_HYSTERIA2_443_1465
-  - US_HTTP_9002_43
-  - US_HTTP_9002_44
-  - US_HTTP_9002_37
-  - US_HTTP_443_143
-  - US_HTTP_9002_42
-  - US_HTTP_9002_40
-  - US_HTTP_443_126
-  - US_HTTP_9002_36
-  - US_HTTP_9002_38
-  - US_HTTP_9002_37_2
-  - US_HTTP_9002_41
-  - US_HTTP_9002_38_2
-  - US_HTTP_9002_42_2
-  - US_HTTP_9002_41_2
-  - US_HTTP_9002_44_2
-  - US_HTTP_9443_48
-  - US_HTTP_9002_41_3
-  - US_HTTP_443_223
-  - US_HTTP_9002_37_3
-  - US_HTTP_443_131
-  - US_HTTP_443_250
-  - US_HTTP_443_123
-  - US_HTTP_443_247
-  - US_ANYTLS_19000_127
-  - US_HYSTERIA2_49490_103
-  - US_HYSTERIA2_49490_392
-  - US_HYSTERIA2_443_724
+  - US_VLESS_2096_594
+  - US_TROJAN_443_441
+  - US_VLESS_8443_831
+  - US_VMESS_18000_75
+  - US_VMESS_18000_101
+  - US_VMESS_18000_108
+  - US_VMESS_18000_148
+  - US_VLESS_443_375
+  - US_VLESS_40443_829
+  - US_HYSTERIA2_443_1011
+  - US_HYSTERIA2_4433_777
+  - US_HYSTERIA2_443_652
+  - US_TROJAN_443_310
+  - US_HYSTERIA2_443_996
+  - US_HTTP_9443_220
+  - US_HTTP_9002_214
+  - US_HTTP_443_394
+  - US_HTTP_9002_214_2
+  - US_HTTP_443_35
+  - US_HTTP_443_554
+  - US_HTTP_9002_222
+  - US_HTTP_9002_223
+  - US_HTTP_9002_219
+  - US_HTTP_443_511
+  - US_HTTP_443_50
+  - US_HTTP_9002_212
+  - US_HTTP_443_296
+  - US_HTTP_9002_211
+  - US_HTTP_443_417
+  - US_HTTP_443_502
+  - US_ANYTLS_19000_227
+  - US_VLESS_443_588
+  - US_VLESS_40443_490
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -744,65 +404,39 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - US_VMESS_48111_17
-  - US_HTTP_9002_36
-  - US_HTTP_9002_37
-  - US_HTTP_9002_37_2
-  - US_HTTP_9002_37_3
-  - US_HTTP_9002_38
-  - US_HTTP_9002_38_2
-  - US_HTTP_9002_40
-  - US_HTTP_9002_41
-  - US_HTTP_9002_41_2
-  - US_HTTP_9002_41_3
-  - US_HTTP_9002_42
-  - US_HTTP_9002_42_2
-  - US_HTTP_9002_43
-  - US_HTTP_9002_44
-  - US_HTTP_9002_44_2
-  - US_HTTP_9443_48
-  - US_VLESS_443_67
-  - US_VLESS_443_78
-  - US_VMESS_18000_79
-  - US_VLESS_443_93
-  - US_VLESS_443_95
-  - US_VMESS_22324_99
-  - US_VLESS_443_101
-  - US_HYSTERIA2_49490_103
-  - US_VMESS_12004_113
-  - US_VMESS_18000_116
-  - US_HTTP_443_123
-  - US_HTTP_443_126
-  - US_ANYTLS_19000_127
-  - US_HTTP_443_131
-  - US_TROJAN_443_132
-  - US_HTTP_443_143
-  - US_VLESS_443_169
-  - US_VMESS_18000_170
-  - US_VMESS_15311_196
-  - US_HTTP_443_223
-  - US_HTTP_443_247
-  - US_HTTP_443_250
-  - US_HYSTERIA2_49490_392
-  - US_VLESS_2096_583
-  - US_VLESS_60156_635
-  - US_VLESS_8443_635
-  - US_VLESS_42038_649
-  - US_VLESS_14934_669
-  - US_VLESS_35957_696
-  - US_HYSTERIA2_443_724
-  - US_VLESS_46042_770
-  - US_HYSTERIA2_4433_770
-  - US_VLESS_14163_798
-  - US_VLESS_24681_806
-  - US_HYSTERIA2_443_840
-  - US_VLESS_58979_855
-  - US_VLESS_2128_888
-  - US_VLESS_59672_899
-  - US_HYSTERIA2_443_919
-  - US_VMESS_18000_1408
-  - US_HYSTERIA2_443_1465
-  - US_VLESS_27684_1732
+  - US_HTTP_443_35
+  - US_HTTP_443_50
+  - US_VMESS_18000_75
+  - US_VMESS_18000_101
+  - US_VMESS_18000_108
+  - US_VMESS_18000_148
+  - US_HTTP_9002_211
+  - US_HTTP_9002_212
+  - US_HTTP_9002_214
+  - US_HTTP_9002_214_2
+  - US_HTTP_9002_219
+  - US_HTTP_9443_220
+  - US_HTTP_9002_222
+  - US_HTTP_9002_223
+  - US_ANYTLS_19000_227
+  - US_HTTP_443_296
+  - US_TROJAN_443_310
+  - US_VLESS_443_375
+  - US_HTTP_443_394
+  - US_HTTP_443_417
+  - US_TROJAN_443_441
+  - US_VLESS_40443_490
+  - US_HTTP_443_502
+  - US_HTTP_443_511
+  - US_HTTP_443_554
+  - US_VLESS_443_588
+  - US_VLESS_2096_594
+  - US_HYSTERIA2_443_652
+  - US_HYSTERIA2_4433_777
+  - US_VLESS_40443_829
+  - US_VLESS_8443_831
+  - US_HYSTERIA2_443_996
+  - US_HYSTERIA2_443_1011
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -814,65 +448,39 @@ proxy-groups:
 - name: 🌍 US
   type: url-test
   proxies:
-  - US_TROJAN_443_132
-  - US_VLESS_443_169
-  - US_VMESS_12004_113
-  - US_VMESS_18000_79
-  - US_VMESS_22324_99
-  - US_VMESS_15311_196
-  - US_VMESS_48111_17
-  - US_VLESS_443_67
-  - US_VLESS_443_101
-  - US_VLESS_443_78
-  - US_VLESS_443_93
-  - US_VLESS_443_95
-  - US_VMESS_18000_116
-  - US_VMESS_18000_170
-  - US_VLESS_60156_635
-  - US_VLESS_35957_696
-  - US_VLESS_14934_669
-  - US_VLESS_42038_649
-  - US_VLESS_24681_806
-  - US_VLESS_14163_798
-  - US_VLESS_46042_770
-  - US_VLESS_2128_888
-  - US_VLESS_59672_899
-  - US_VLESS_58979_855
-  - US_VMESS_18000_1408
-  - US_VLESS_27684_1732
-  - US_VLESS_2096_583
-  - US_VLESS_8443_635
-  - US_HYSTERIA2_4433_770
-  - US_HYSTERIA2_443_840
-  - US_HYSTERIA2_443_919
-  - US_HYSTERIA2_443_1465
-  - US_HTTP_9002_43
-  - US_HTTP_9002_44
-  - US_HTTP_9002_37
-  - US_HTTP_443_143
-  - US_HTTP_9002_42
-  - US_HTTP_9002_40
-  - US_HTTP_443_126
-  - US_HTTP_9002_36
-  - US_HTTP_9002_38
-  - US_HTTP_9002_37_2
-  - US_HTTP_9002_41
-  - US_HTTP_9002_38_2
-  - US_HTTP_9002_42_2
-  - US_HTTP_9002_41_2
-  - US_HTTP_9002_44_2
-  - US_HTTP_9443_48
-  - US_HTTP_9002_41_3
-  - US_HTTP_443_223
-  - US_HTTP_9002_37_3
-  - US_HTTP_443_131
-  - US_HTTP_443_250
-  - US_HTTP_443_123
-  - US_HTTP_443_247
-  - US_ANYTLS_19000_127
-  - US_HYSTERIA2_49490_103
-  - US_HYSTERIA2_49490_392
-  - US_HYSTERIA2_443_724
+  - US_VLESS_2096_594
+  - US_TROJAN_443_441
+  - US_VLESS_8443_831
+  - US_VMESS_18000_75
+  - US_VMESS_18000_101
+  - US_VMESS_18000_108
+  - US_VMESS_18000_148
+  - US_VLESS_443_375
+  - US_VLESS_40443_829
+  - US_HYSTERIA2_443_1011
+  - US_HYSTERIA2_4433_777
+  - US_HYSTERIA2_443_652
+  - US_TROJAN_443_310
+  - US_HYSTERIA2_443_996
+  - US_HTTP_9443_220
+  - US_HTTP_9002_214
+  - US_HTTP_443_394
+  - US_HTTP_9002_214_2
+  - US_HTTP_443_35
+  - US_HTTP_443_554
+  - US_HTTP_9002_222
+  - US_HTTP_9002_223
+  - US_HTTP_9002_219
+  - US_HTTP_443_511
+  - US_HTTP_443_50
+  - US_HTTP_9002_212
+  - US_HTTP_443_296
+  - US_HTTP_9002_211
+  - US_HTTP_443_417
+  - US_HTTP_443_502
+  - US_ANYTLS_19000_227
+  - US_VLESS_443_588
+  - US_VLESS_40443_490
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

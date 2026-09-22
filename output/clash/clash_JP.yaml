@@ -5,64 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VLESS_57554_485
-  type: vless
-  server: 203.137.165.164
-  port: 57554
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  servername: cdn8848.776676.xyz
-  client-fingerprint: chrome
-  ws-opts:
-    path: /p/docs/soft?ed=2560fp=chrome
-    headers:
-      Host: cdn8848.776676.xyz
-  country: JP
-- name: JP_VLESS_2053_676
-  type: vless
-  network: ws
-  server: 103.31.77.108
-  port: 2053
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  servername: cdn8848.776676.xyz
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: cdn8848.776676.xyz
-    path: /channels/act
-  country: JP
-- name: JP_VMESS_4433_233
-  type: vmess
-  network: tcp
-  server: 45.32.57.118
-  port: 4433
-  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: JP
-- name: JP_VLESS_443_358
-  type: vless
-  server: 103.115.18.54
-  port: 443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  servername: cdn8848.776676.xyz
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /episode/files?ed=2560
-    headers:
-      Host: cdn8848.776676.xyz
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_VLESS_443_502
+- name: JP_VLESS_443_663
   type: vless
   server: 92.113.124.228
   port: 443
@@ -78,55 +21,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: JP
-- name: JP_VLESS_443_470
-  type: vless
-  server: 154.19.187.190
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  servername: shuma.ccwu.cc
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_VLESS_443_588
-  type: vless
-  server: 132.226.5.163
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  servername: shuma.ccwu.cc
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_VLESS_8443_660
-  type: vless
-  server: 102.134.49.108
-  port: 8443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  servername: shuma.ccwu.cc
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_VLESS_443_467
+- name: JP_VLESS_443_643
   type: vless
   server: 35.72.179.15
   port: 443
@@ -142,7 +37,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: JP
-- name: JP_VLESS_443_488
+- name: JP_VLESS_443_664
   type: vless
   server: 161.33.29.51
   port: 443
@@ -158,9 +53,25 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: JP
-- name: JP_VLESS_443_513
+- name: JP_VLESS_2053_674
   type: vless
-  server: 101.142.129.72
+  server: 103.31.77.108
+  port: 2053
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VLESS_443_1105
+  type: vless
+  server: 154.19.187.190
   port: 443
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   network: ws
@@ -174,7 +85,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: JP
-- name: JP_VLESS_443_542
+- name: JP_VLESS_443_645
   type: vless
   server: 45.202.254.133
   port: 443
@@ -190,14 +101,32 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: JP
-- name: JP_HYSTERIA2_20561_762
+- name: JP_VMESS_4433_307
+  type: vmess
+  network: tcp
+  server: 45.32.57.118
+  port: 4433
+  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: JP
+- name: JP_HYSTERIA2_20561_1032
+  type: hysteria2
   server: msjp1.mangshe.xyz
   port: 20561
-  type: hysteria2
   password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
-  auth: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
   sni: www.microsoft.com
   skip-cert-verify: true
+  udp: true
+  country: JP
+- cipher: aes-256-cfb
+  name: JP_SS_443_321
+  password: amazonskr05
+  port: 443
+  server: 18.181.165.254
+  type: ss
+  udp: true
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -212,19 +141,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_57554_485
-  - JP_VLESS_2053_676
-  - JP_VMESS_4433_233
-  - JP_VLESS_443_358
-  - JP_VLESS_443_502
-  - JP_VLESS_443_470
-  - JP_VLESS_443_588
-  - JP_VLESS_8443_660
-  - JP_VLESS_443_467
-  - JP_VLESS_443_488
-  - JP_VLESS_443_513
-  - JP_VLESS_443_542
-  - JP_HYSTERIA2_20561_762
+  - JP_VLESS_443_663
+  - JP_VLESS_443_643
+  - JP_VLESS_443_664
+  - JP_VLESS_2053_674
+  - JP_VLESS_443_1105
+  - JP_VLESS_443_645
+  - JP_VMESS_4433_307
+  - JP_HYSTERIA2_20561_1032
+  - JP_SS_443_321
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -237,19 +162,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_4433_233
-  - JP_VLESS_443_358
-  - JP_VLESS_443_467
-  - JP_VLESS_443_470
-  - JP_VLESS_57554_485
-  - JP_VLESS_443_488
-  - JP_VLESS_443_502
-  - JP_VLESS_443_513
-  - JP_VLESS_443_542
-  - JP_VLESS_443_588
-  - JP_VLESS_8443_660
-  - JP_VLESS_2053_676
-  - JP_HYSTERIA2_20561_762
+  - JP_VMESS_4433_307
+  - JP_SS_443_321
+  - JP_VLESS_443_643
+  - JP_VLESS_443_645
+  - JP_VLESS_443_663
+  - JP_VLESS_443_664
+  - JP_VLESS_2053_674
+  - JP_HYSTERIA2_20561_1032
+  - JP_VLESS_443_1105
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -261,19 +182,15 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_57554_485
-  - JP_VLESS_2053_676
-  - JP_VMESS_4433_233
-  - JP_VLESS_443_358
-  - JP_VLESS_443_502
-  - JP_VLESS_443_470
-  - JP_VLESS_443_588
-  - JP_VLESS_8443_660
-  - JP_VLESS_443_467
-  - JP_VLESS_443_488
-  - JP_VLESS_443_513
-  - JP_VLESS_443_542
-  - JP_HYSTERIA2_20561_762
+  - JP_VLESS_443_663
+  - JP_VLESS_443_643
+  - JP_VLESS_443_664
+  - JP_VLESS_2053_674
+  - JP_VLESS_443_1105
+  - JP_VLESS_443_645
+  - JP_VMESS_4433_307
+  - JP_HYSTERIA2_20561_1032
+  - JP_SS_443_321
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BR_VLESS_443_691
+- name: BR_VLESS_443_508
   type: vless
   server: 157.151.4.93
   port: 443
@@ -21,6 +21,24 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: BR
+- name: BR_VLESS_443_579
+  type: vless
+  server: 35.199.90.53
+  port: 443
+  uuid: e9c2ed7f-79ab-40a8-8910-24468f5da712
+  udp: true
+  tls: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: 0WXz3PJQnr-KprrwiO5BlKVRdqA4ZS6U5jGHc_aeJnw
+    short-id: 4b414f69a06e1e81
+  country: BR
+- name: BR_HTTP_8080_2536
+  port: 8080
+  server: 201.4.64.153
+  type: http
+  country: BR
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -34,7 +52,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BR_VLESS_443_691
+  - BR_VLESS_443_508
+  - BR_VLESS_443_579
+  - BR_HTTP_8080_2536
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +67,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BR_VLESS_443_691
+  - BR_VLESS_443_508
+  - BR_VLESS_443_579
+  - BR_HTTP_8080_2536
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +81,9 @@ proxy-groups:
 - name: 🌍 BR
   type: url-test
   proxies:
-  - BR_VLESS_443_691
+  - BR_VLESS_443_508
+  - BR_VLESS_443_579
+  - BR_HTTP_8080_2536
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

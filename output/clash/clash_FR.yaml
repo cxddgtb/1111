@@ -5,40 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_SS_443_394
-  type: ss
-  server: 54.36.174.140
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: mrs2e9a
-  udp: true
-  country: FR
-- name: FR_VLESS_22222_267
-  type: vless
-  server: 15.224.194.93
-  port: 22222
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  udp: true
-  country: FR
-- name: FR_VLESS_22222_263
-  type: vless
-  server: 15.188.103.174
-  port: 22222
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  udp: true
-  country: FR
-- name: FR_VLESS_22222_266
-  type: vless
-  server: 13.36.1.52
-  port: 22222
-  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FR
-- name: FR_VLESS_2053_613
+- name: FR_VLESS_2053_400
   type: vless
   server: 141.227.137.177
   port: 2053
@@ -54,7 +21,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: FR
-- name: FR_VLESS_2053_602
+- name: FR_VLESS_2053_385
   type: vless
   server: 141.227.186.38
   port: 2053
@@ -70,7 +37,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: FR
-- name: FR_VLESS_443_730
+- name: FR_VLESS_443_483
   type: vless
   server: 141.227.188.153
   port: 443
@@ -86,6 +53,36 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: FR
+- name: FR_VLESS_443_345
+  type: vless
+  network: tcp
+  server: 162.19.10.99
+  port: 443
+  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
+  servername: nasnet-162191099-direct.mbghalibaf.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: FR
+- name: FR_HTTP_443_388
+  port: 443
+  server: 149.102.245.65
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_VLESS_22222_171
+  server: 13.36.86.247
+  port: 22222
+  type: vless
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  tls: false
+  network: tcp
+  udp: true
+  country: FR
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -99,13 +96,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_SS_443_394
-  - FR_VLESS_22222_267
-  - FR_VLESS_22222_263
-  - FR_VLESS_22222_266
-  - FR_VLESS_2053_613
-  - FR_VLESS_2053_602
-  - FR_VLESS_443_730
+  - FR_VLESS_2053_400
+  - FR_VLESS_2053_385
+  - FR_VLESS_443_483
+  - FR_VLESS_443_345
+  - FR_HTTP_443_388
+  - FR_VLESS_22222_171
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -118,13 +114,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_22222_263
-  - FR_VLESS_22222_266
-  - FR_VLESS_22222_267
-  - FR_SS_443_394
-  - FR_VLESS_2053_602
-  - FR_VLESS_2053_613
-  - FR_VLESS_443_730
+  - FR_VLESS_22222_171
+  - FR_VLESS_443_345
+  - FR_VLESS_2053_385
+  - FR_HTTP_443_388
+  - FR_VLESS_2053_400
+  - FR_VLESS_443_483
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -136,13 +131,12 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_SS_443_394
-  - FR_VLESS_22222_267
-  - FR_VLESS_22222_263
-  - FR_VLESS_22222_266
-  - FR_VLESS_2053_613
-  - FR_VLESS_2053_602
-  - FR_VLESS_443_730
+  - FR_VLESS_2053_400
+  - FR_VLESS_2053_385
+  - FR_VLESS_443_483
+  - FR_VLESS_443_345
+  - FR_HTTP_443_388
+  - FR_VLESS_22222_171
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

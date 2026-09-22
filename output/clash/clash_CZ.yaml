@@ -5,23 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CZ_VLESS_443_675
-  type: vless
-  server: 109.172.8.37
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  servername: shuma.ccwu.cc
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
-  country: CZ
-- name: CZ_VLESS_8443_694
+- name: CZ_VLESS_8443_489
   type: vless
   server: 103.200.28.113
   port: 8443
@@ -37,6 +21,22 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: CZ
+- name: CZ_HTTP_443_439
+  port: 443
+  server: 185.216.35.130
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CZ
+- name: CZ_HTTP_443_437
+  password: None
+  port: 443
+  server: 185.216.35.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: CZ
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -50,8 +50,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CZ_VLESS_443_675
-  - CZ_VLESS_8443_694
+  - CZ_VLESS_8443_489
+  - CZ_HTTP_443_439
+  - CZ_HTTP_443_437
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,8 +65,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CZ_VLESS_443_675
-  - CZ_VLESS_8443_694
+  - CZ_HTTP_443_437
+  - CZ_HTTP_443_439
+  - CZ_VLESS_8443_489
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -77,8 +79,9 @@ proxy-groups:
 - name: 🌍 CZ
   type: url-test
   proxies:
-  - CZ_VLESS_443_675
-  - CZ_VLESS_8443_694
+  - CZ_VLESS_8443_489
+  - CZ_HTTP_443_439
+  - CZ_HTTP_443_437
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

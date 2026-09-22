@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NO_VLESS_443_619
+- name: NO_VLESS_443_488
   type: vless
   server: 194.32.107.150
   port: 443
@@ -21,7 +21,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: 'NO'
-- name: NO_VLESS_8443_607
+- name: NO_VLESS_8443_482
   type: vless
   server: 185.125.171.128
   port: 8443
@@ -50,8 +50,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NO_VLESS_443_619
-  - NO_VLESS_8443_607
+  - NO_VLESS_443_488
+  - NO_VLESS_8443_482
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,8 +64,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NO_VLESS_8443_607
-  - NO_VLESS_443_619
+  - NO_VLESS_8443_482
+  - NO_VLESS_443_488
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -77,8 +77,8 @@ proxy-groups:
 - name: 🌍 NO
   type: url-test
   proxies:
-  - NO_VLESS_443_619
-  - NO_VLESS_8443_607
+  - NO_VLESS_443_488
+  - NO_VLESS_8443_482
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

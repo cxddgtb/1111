@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MY_VLESS_443_1056
+- name: MY_VLESS_443_1069
   type: vless
   server: 216.173.67.159
   port: 443
@@ -21,7 +21,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: MY
-- name: MY_VLESS_443_1057
+- name: MY_VLESS_443_1024
   type: vless
   server: 216.173.67.119
   port: 443
@@ -37,7 +37,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: MY
-- name: MY_VLESS_443_1112
+- name: MY_VLESS_443_1059
   type: vless
   server: 216.173.67.144
   port: 443
@@ -53,6 +53,16 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: MY
+- name: MY_VMESS_10000_479
+  type: vmess
+  network: tcp
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: MY
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -66,9 +76,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MY_VLESS_443_1056
-  - MY_VLESS_443_1057
-  - MY_VLESS_443_1112
+  - MY_VLESS_443_1069
+  - MY_VLESS_443_1024
+  - MY_VLESS_443_1059
+  - MY_VMESS_10000_479
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -81,9 +92,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MY_VLESS_443_1056
-  - MY_VLESS_443_1057
-  - MY_VLESS_443_1112
+  - MY_VMESS_10000_479
+  - MY_VLESS_443_1024
+  - MY_VLESS_443_1059
+  - MY_VLESS_443_1069
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -95,9 +107,10 @@ proxy-groups:
 - name: 🌍 MY
   type: url-test
   proxies:
-  - MY_VLESS_443_1056
-  - MY_VLESS_443_1057
-  - MY_VLESS_443_1112
+  - MY_VLESS_443_1069
+  - MY_VLESS_443_1024
+  - MY_VLESS_443_1059
+  - MY_VMESS_10000_479
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
