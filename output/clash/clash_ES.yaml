@@ -5,43 +5,40 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ES_VLESS_8443_448
+- name: ES_VLESS_8443_517
   type: vless
   server: 152.114.195.163
   port: 8443
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   network: ws
-  servername: shuma.ccwu.cc
   tls: true
+  servername: shuma.ccwu.cc
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
       Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
   country: ES
-- name: ES_VMESS_22324_188
-  type: vmess
-  network: tcp
-  server: 85.90.217.42
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: ES
-- name: ES_HTTP_443_434
+- name: ES_HTTP_443_451
   port: 443
-  server: 82.102.17.178
+  server: 130.195.250.18
   skip-cert-verify: true
   tls: true
   type: http
   country: ES
-- name: ES_HTTP_443_386
+- name: ES_HTTP_443_468
   password: None
   port: 443
   server: 130.195.250.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: ES
+- name: ES_HTTP_443_494
+  password: None
+  port: 443
+  server: 82.102.17.178
   skip-cert-verify: true
   tls: true
   type: http
@@ -60,10 +57,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_VLESS_8443_448
-  - ES_VMESS_22324_188
-  - ES_HTTP_443_434
-  - ES_HTTP_443_386
+  - ES_VLESS_8443_517
+  - ES_HTTP_443_451
+  - ES_HTTP_443_468
+  - ES_HTTP_443_494
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -76,10 +73,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_VMESS_22324_188
-  - ES_HTTP_443_386
-  - ES_HTTP_443_434
-  - ES_VLESS_8443_448
+  - ES_HTTP_443_451
+  - ES_HTTP_443_468
+  - ES_HTTP_443_494
+  - ES_VLESS_8443_517
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -91,10 +88,10 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_VLESS_8443_448
-  - ES_VMESS_22324_188
-  - ES_HTTP_443_434
-  - ES_HTTP_443_386
+  - ES_VLESS_8443_517
+  - ES_HTTP_443_451
+  - ES_HTTP_443_468
+  - ES_HTTP_443_494
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

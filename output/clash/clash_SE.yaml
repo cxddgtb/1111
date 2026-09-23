@@ -7,7 +7,7 @@ external-controller: 127.0.0.1:9090
 proxies:
 - alpn:
   - h3
-  name: SE_HYSTERIA2_36264_387
+  name: SE_HYSTERIA2_36264_497
   obfs: salamander
   obfs-password: Telegram@vpnjey
   password: Telegram-vpnjey
@@ -18,27 +18,28 @@ proxies:
   tls: false
   type: hysteria2
   country: SE
-- name: SE_HTTP_443_494
+- name: SE_HTTP_443_512
   password: None
   port: 443
-  server: 146.70.242.146
+  server: 79.142.77.63
   skip-cert-verify: true
   tls: true
   type: http
   username: null
   country: SE
-- cipher: aes-256-cfb
-  name: SE_SS_443_320
-  password: amazonskr05
-  port: 443
-  server: 16.171.55.2
-  type: ss
-  udp: true
-  country: SE
-- name: SE_HTTP_443_471
+- name: SE_HTTP_443_515
   password: None
   port: 443
-  server: 79.142.77.63
+  server: 146.70.242.130
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: SE
+- name: SE_HTTP_443_487
+  password: None
+  port: 443
+  server: 149.50.216.65
   skip-cert-verify: true
   tls: true
   type: http
@@ -57,10 +58,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_HYSTERIA2_36264_387
-  - SE_HTTP_443_494
-  - SE_SS_443_320
-  - SE_HTTP_443_471
+  - SE_HYSTERIA2_36264_497
+  - SE_HTTP_443_512
+  - SE_HTTP_443_515
+  - SE_HTTP_443_487
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,10 +74,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_SS_443_320
-  - SE_HYSTERIA2_36264_387
-  - SE_HTTP_443_471
-  - SE_HTTP_443_494
+  - SE_HTTP_443_487
+  - SE_HYSTERIA2_36264_497
+  - SE_HTTP_443_512
+  - SE_HTTP_443_515
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -88,10 +89,10 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_HYSTERIA2_36264_387
-  - SE_HTTP_443_494
-  - SE_SS_443_320
-  - SE_HTTP_443_471
+  - SE_HYSTERIA2_36264_497
+  - SE_HTTP_443_512
+  - SE_HTTP_443_515
+  - SE_HTTP_443_487
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

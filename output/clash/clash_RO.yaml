@@ -5,39 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RO_VLESS_8443_606
+- name: RO_VLESS_8443_625
   type: vless
   server: 103.126.50.196
   port: 8443
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   network: ws
-  servername: shuma.ccwu.cc
   tls: true
+  servername: shuma.ccwu.cc
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
       Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
   country: RO
-- name: RO_VLESS_443_623
-  type: vless
-  server: 154.46.31.118
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  servername: shuma.ccwu.cc
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
-  country: RO
-- name: RO_HYSTERIA2_443_417
+- name: RO_HYSTERIA2_443_456
   obfs: salamander
   obfs-password: c1b4086fea89914496c7e10967a419216566
   password: QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s
@@ -48,38 +30,111 @@ proxies:
   tls: false
   type: hysteria2
   country: RO
-- name: RO_HTTP_9002_535
+- name: RO_HTTP_9002_559
   port: 9002
-  server: 193.176.84.39
+  server: 193.176.84.20
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_598
+  port: 9002
+  server: 193.176.84.24
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_527
+- name: RO_HTTP_9002_589
   port: 9002
-  server: 193.176.84.34
+  server: 193.176.84.25
   skip-cert-verify: true
   tls: true
   type: http
+  udp: true
   country: RO
-- name: RO_HTTP_9002_570
+- name: RO_HTTP_9002_603
   password: None
   port: 9002
-  server: 193.176.84.20
+  server: 193.176.84.17
   skip-cert-verify: true
   tls: true
   type: http
   username: null
   country: RO
-- name: RO_HTTP_9002_532
+- name: RO_HTTP_9002_605
+  password: ''
+  port: 9002
+  server: 193.176.84.37
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  username: ''
+  country: RO
+- name: RO_HTTP_9002_573
   password: 'null'
-  port: '9002'
-  server: 193.176.84.35
+  port: 9002
+  server: 193.176.84.19
   skip-cert-verify: true
   tls: true
   type: http
   username: 'null'
+  country: RO
+- name: RO_HTTP_9002_591
+  password: None
+  port: 9002
+  server: 193.176.84.36
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: RO
+- name: RO_HTTP_9002_599
+  port: 9002
+  server: 193.176.84.32
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_598_2
+  port: 9002
+  server: 193.176.84.31
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_621
+  password: None
+  port: 9002
+  server: 193.176.84.26
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: RO
+- name: RO_HTTP_9002_604
+  port: 9002
+  server: 193.176.84.27
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_597
+  port: 9002
+  server: 193.176.84.40
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  udp: true
   country: RO
 - name: RO_HTTP_9002_576
   port: 9002
@@ -89,7 +144,24 @@ proxies:
   tls: true
   type: http
   country: RO
-- name: RO_HTTP_9002_520
+- name: RO_HTTP_9002_578
+  port: 9002
+  server: 193.176.84.34
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_587
+  port: 9002
+  server: 193.176.84.39
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_585
   port: 9002
   server: 193.176.84.33
   skip-cert-verify: true
@@ -97,7 +169,7 @@ proxies:
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_538
+- name: RO_HTTP_9002_590
   port: 9002
   server: 193.176.84.30
   skip-cert-verify: true
@@ -105,59 +177,18 @@ proxies:
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_541
+- name: RO_HTTP_9002_637
   port: 9002
-  server: 193.176.84.17
+  server: 193.176.84.35
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_521
-  port: 9002
-  server: 193.176.84.25
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_531
-  port: 9002
-  server: 193.176.84.24
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_514
-  password: None
-  port: 9002
-  server: 193.176.84.31
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_561
+- name: RO_HTTP_9002_591_2
   password: None
   port: 9002
   server: 193.176.84.23
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_540
-  port: 9002
-  server: 193.176.84.27
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_537
-  port: 9002
-  server: 193.176.84.32
   skip-cert-verify: true
   tls: true
   type: http
@@ -176,23 +207,27 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_VLESS_8443_606
-  - RO_VLESS_443_623
-  - RO_HYSTERIA2_443_417
-  - RO_HTTP_9002_535
-  - RO_HTTP_9002_527
-  - RO_HTTP_9002_570
-  - RO_HTTP_9002_532
+  - RO_VLESS_8443_625
+  - RO_HYSTERIA2_443_456
+  - RO_HTTP_9002_559
+  - RO_HTTP_9002_598
+  - RO_HTTP_9002_589
+  - RO_HTTP_9002_603
+  - RO_HTTP_9002_605
+  - RO_HTTP_9002_573
+  - RO_HTTP_9002_591
+  - RO_HTTP_9002_599
+  - RO_HTTP_9002_598_2
+  - RO_HTTP_9002_621
+  - RO_HTTP_9002_604
+  - RO_HTTP_9002_597
   - RO_HTTP_9002_576
-  - RO_HTTP_9002_520
-  - RO_HTTP_9002_538
-  - RO_HTTP_9002_541
-  - RO_HTTP_9002_521
-  - RO_HTTP_9002_531
-  - RO_HTTP_9002_514
-  - RO_HTTP_9002_561
-  - RO_HTTP_9002_540
-  - RO_HTTP_9002_537
+  - RO_HTTP_9002_578
+  - RO_HTTP_9002_587
+  - RO_HTTP_9002_585
+  - RO_HTTP_9002_590
+  - RO_HTTP_9002_637
+  - RO_HTTP_9002_591_2
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -205,23 +240,27 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_HYSTERIA2_443_417
-  - RO_HTTP_9002_514
-  - RO_HTTP_9002_520
-  - RO_HTTP_9002_521
-  - RO_HTTP_9002_527
-  - RO_HTTP_9002_531
-  - RO_HTTP_9002_532
-  - RO_HTTP_9002_535
-  - RO_HTTP_9002_537
-  - RO_HTTP_9002_538
-  - RO_HTTP_9002_540
-  - RO_HTTP_9002_541
-  - RO_HTTP_9002_561
-  - RO_HTTP_9002_570
+  - RO_HYSTERIA2_443_456
+  - RO_HTTP_9002_559
+  - RO_HTTP_9002_573
   - RO_HTTP_9002_576
-  - RO_VLESS_8443_606
-  - RO_VLESS_443_623
+  - RO_HTTP_9002_578
+  - RO_HTTP_9002_585
+  - RO_HTTP_9002_587
+  - RO_HTTP_9002_589
+  - RO_HTTP_9002_590
+  - RO_HTTP_9002_591
+  - RO_HTTP_9002_591_2
+  - RO_HTTP_9002_597
+  - RO_HTTP_9002_598
+  - RO_HTTP_9002_598_2
+  - RO_HTTP_9002_599
+  - RO_HTTP_9002_603
+  - RO_HTTP_9002_604
+  - RO_HTTP_9002_605
+  - RO_HTTP_9002_621
+  - RO_VLESS_8443_625
+  - RO_HTTP_9002_637
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -233,23 +272,27 @@ proxy-groups:
 - name: 🌍 RO
   type: url-test
   proxies:
-  - RO_VLESS_8443_606
-  - RO_VLESS_443_623
-  - RO_HYSTERIA2_443_417
-  - RO_HTTP_9002_535
-  - RO_HTTP_9002_527
-  - RO_HTTP_9002_570
-  - RO_HTTP_9002_532
+  - RO_VLESS_8443_625
+  - RO_HYSTERIA2_443_456
+  - RO_HTTP_9002_559
+  - RO_HTTP_9002_598
+  - RO_HTTP_9002_589
+  - RO_HTTP_9002_603
+  - RO_HTTP_9002_605
+  - RO_HTTP_9002_573
+  - RO_HTTP_9002_591
+  - RO_HTTP_9002_599
+  - RO_HTTP_9002_598_2
+  - RO_HTTP_9002_621
+  - RO_HTTP_9002_604
+  - RO_HTTP_9002_597
   - RO_HTTP_9002_576
-  - RO_HTTP_9002_520
-  - RO_HTTP_9002_538
-  - RO_HTTP_9002_541
-  - RO_HTTP_9002_521
-  - RO_HTTP_9002_531
-  - RO_HTTP_9002_514
-  - RO_HTTP_9002_561
-  - RO_HTTP_9002_540
-  - RO_HTTP_9002_537
+  - RO_HTTP_9002_578
+  - RO_HTTP_9002_587
+  - RO_HTTP_9002_585
+  - RO_HTTP_9002_590
+  - RO_HTTP_9002_637
+  - RO_HTTP_9002_591_2
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

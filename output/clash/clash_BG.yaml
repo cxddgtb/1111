@@ -5,25 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BG_VLESS_8443_292
-  type: vless
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: BG_VLESS_18775_400
   network: tcp
-  server: 192.145.31.5
-  port: 8443
-  uuid: 9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a
-  servername: neth9.lunariai.ru
-  skip-cert-verify: false
+  port: '18775'
+  reality-opts:
+    public-key: oR75S6pg_RDAKIuzv_WrCiwaUqqFoek2iuo5N22llQQ
+    short-id: 6ba85179e30d4fc2
+  server: 136.175.82.85
+  servername: addons.mozilla.org
   tls: true
+  type: vless
   udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: BG
-- name: BG_HTTP_443_530
-  port: 443
-  server: 185.94.192.210
-  skip-cert-verify: true
-  tls: true
-  type: http
+  uuid: 9ae5940b-0278-403d-a1e1-9dddc47bdcf6
+  xudp: true
   country: BG
 proxy-groups:
 - name: 🚀 节点选择
@@ -38,8 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_VLESS_8443_292
-  - BG_HTTP_443_530
+  - BG_VLESS_18775_400
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_VLESS_8443_292
-  - BG_HTTP_443_530
+  - BG_VLESS_18775_400
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +59,7 @@ proxy-groups:
 - name: 🌍 BG
   type: url-test
   proxies:
-  - BG_VLESS_8443_292
-  - BG_HTTP_443_530
+  - BG_VLESS_18775_400
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

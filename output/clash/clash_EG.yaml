@@ -5,28 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VLESS_443_552
+- name: EG_VLESS_443_100
   type: vless
-  server: 34.81.223.1
+  server: 166.1.228.218
   port: 443
-  uuid: 31a40f42-4ad6-4a32-a760-71102b459584
-  udp: true
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
   tls: true
+  servername: shuma.ccwu.cc
   client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: qvekI7tKB1NDnZA6JcS_24aV4n8mlCbI3SFvkRr22wg
-    short-id: d74a6321deec9f31
-  country: TW
-- name: TW_ANYTLS_443_1080
-  password: 9sK2mP8xQ7vL3nZ6
-  port: 443
-  server: 6ivh.pnuqcnp.cn
-  skip-cert-verify: true
-  sni: images.ctfassets.net
-  type: anytls
-  udp: true
-  country: TW
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  country: EG
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -35,13 +27,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 TW
+  - 🌍 EG
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VLESS_443_552
-  - TW_ANYTLS_443_1080
+  - EG_VLESS_443_100
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -54,8 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VLESS_443_552
-  - TW_ANYTLS_443_1080
+  - EG_VLESS_443_100
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,11 +54,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 TW
+- name: 🌍 EG
   type: url-test
   proxies:
-  - TW_VLESS_443_552
-  - TW_ANYTLS_443_1080
+  - EG_VLESS_443_100
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,23 +5,35 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DK_VLESS_8443_503
+- name: DK_VLESS_8443_546
   type: vless
   server: 193.180.208.169
   port: 8443
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   network: ws
-  servername: shuma.ccwu.cc
   tls: true
+  servername: shuma.ccwu.cc
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
       Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
   country: DK
-- name: DK_HYSTERIA2_4433_788
+- name: DK_VLESS_443_547
+  type: vless
+  server: 92.113.149.59
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  tls: true
+  servername: shuma.ccwu.cc
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  country: DK
+- name: DK_HYSTERIA2_4433_841
   password: 19f72087-4591-4d72-930b-2697078ec2be
   port: 4433
   server: se.xiaoliyu.cyou
@@ -30,7 +42,7 @@ proxies:
   tls: false
   type: hysteria2
   country: DK
-- name: DK_HTTP_9443_412
+- name: DK_HTTP_9443_467
   password: None
   port: 9443
   server: 185.245.84.50
@@ -52,9 +64,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DK_VLESS_8443_503
-  - DK_HYSTERIA2_4433_788
-  - DK_HTTP_9443_412
+  - DK_VLESS_8443_546
+  - DK_VLESS_443_547
+  - DK_HYSTERIA2_4433_841
+  - DK_HTTP_9443_467
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -67,9 +80,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DK_HTTP_9443_412
-  - DK_VLESS_8443_503
-  - DK_HYSTERIA2_4433_788
+  - DK_HTTP_9443_467
+  - DK_VLESS_8443_546
+  - DK_VLESS_443_547
+  - DK_HYSTERIA2_4433_841
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,9 +95,10 @@ proxy-groups:
 - name: 🌍 DK
   type: url-test
   proxies:
-  - DK_VLESS_8443_503
-  - DK_HYSTERIA2_4433_788
-  - DK_HTTP_9443_412
+  - DK_VLESS_8443_546
+  - DK_VLESS_443_547
+  - DK_HYSTERIA2_4433_841
+  - DK_HTTP_9443_467
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

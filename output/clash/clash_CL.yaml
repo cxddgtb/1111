@@ -5,29 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CL_VLESS_80_607
-  type: vless
-  server: platform117.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  udp: true
-  network: ws
-  ws-opts:
-    path: /platform117
-    headers:
-      Host: platform117.halalkhor.info
-  country: CL
-- name: CL_VLESS_80_604
-  server: platform118.golnamakcert.top
+- name: CL_VLESS_80_494
+  server: platform113.golnamakcert.top
   port: 80
   type: vless
   uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
   tls: false
+  servername: platform113.halalkhor.info
   network: ws
   ws-opts:
-    path: /platform118
+    path: /platform113
     headers:
-      Host: platform118.halalkhor.info
+      Host: platform113.halalkhor.info
   udp: true
   country: CL
 proxy-groups:
@@ -43,8 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CL_VLESS_80_607
-  - CL_VLESS_80_604
+  - CL_VLESS_80_494
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -57,8 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CL_VLESS_80_604
-  - CL_VLESS_80_607
+  - CL_VLESS_80_494
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,8 +57,7 @@ proxy-groups:
 - name: 🌍 CL
   type: url-test
   proxies:
-  - CL_VLESS_80_607
-  - CL_VLESS_80_604
+  - CL_VLESS_80_494
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

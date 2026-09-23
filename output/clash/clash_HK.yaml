@@ -5,90 +5,152 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VLESS_443_879
+- name: HK_VLESS_443_768
   type: vless
-  server: 216.23.84.115
+  server: 43.161.254.71
   port: 443
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   network: ws
-  servername: shuma.ccwu.cc
   tls: true
+  servername: shuma.ccwu.cc
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
       Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
   country: HK
-- name: HK_VLESS_443_936
+- name: HK_VLESS_443_862
   type: vless
-  server: 122.10.119.252
+  server: 103.101.0.73
   port: 443
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   network: ws
-  servername: shuma.ccwu.cc
   tls: true
+  servername: shuma.ccwu.cc
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
       Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
   country: HK
-- name: HK_VLESS_443_1383
+- name: HK_VLESS_443_1537
+  type: vless
+  server: 43.161.226.55
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  tls: true
+  servername: shuma.ccwu.cc
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  country: HK
+- name: HK_VLESS_443_1212
+  type: vless
+  server: 103.118.41.121
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  tls: true
+  servername: shuma.ccwu.cc
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  country: HK
+- name: HK_VLESS_443_976
   type: vless
   server: 103.143.81.178
   port: 443
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   network: ws
-  servername: shuma.ccwu.cc
   tls: true
+  servername: shuma.ccwu.cc
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
       Host: shuma.ccwu.cc
-  skip-cert-verify: true
-  udp: true
   country: HK
-- name: HK_VLESS_27948_2835
+- name: HK_VLESS_443_592
   type: vless
-  server: 83.229.127.18
-  port: 27948
-  uuid: 7010c0c4-ac62-4456-9f40-fead039d2be5
-  servername: www.amazon.com
+  server: 34.96.146.210
+  port: 443
+  uuid: 90153538-ef08-4942-b8e1-41e7c523e659
+  udp: true
   tls: true
-  flow: xtls-rprx-vision
   client-fingerprint: chrome
+  servername: www.cloudflare.com
   reality-opts:
-    public-key: ZJbUs5ZBJacR5XKdOKz8rI7ovNMcq0ocdCvsA0Z3ul8
+    public-key: tSBJnEt6E1dy6UgX9gX5wUfvZ2KAXjGWVKsEq886OWM
+    short-id: 56d4e7ae4f86fa39
+  country: HK
+- name: HK_VMESS_443_1494
+  type: vmess
+  server: dee2309db4944c248b6d4372c6641e7b.oylfmxz.cn
+  port: 443
+  uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: dee2309db4944c248b6d4372c6641e7b.oylfmxz.cn
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: dee2309db4944c248b6d4372c6641e7b.oylfmxz.cn
+  udp: true
+  country: HK
+- name: HK_VMESS_60852_2181
+  type: vmess
+  server: hkgb707.ifastcdncache.com
+  port: 60852
+  uuid: f8eca8df-a1a5-4918-a194-d34112a3673f
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  udp: true
+  country: HK
+- name: HK_VMESS_30807_2558
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
   skip-cert-verify: true
   udp: true
   country: HK
-- name: HK_VLESS_11907_2284
-  type: vless
-  network: tcp
-  server: 195.58.144.56
-  port: 11907
-  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: HK
-- name: HK_HYSTERIA2_8443_970
-  password: HysTeria2026!Proxy
-  port: 8443
-  server: mz.hkychina.com
-  skip-cert-verify: false
-  sni: mz.hkychina.com
-  tls: false
+- auth: 19f72087-4591-4d72-930b-2697078ec2be
+  name: HK_HYSTERIA2_4433_1577
+  password: 19f72087-4591-4d72-930b-2697078ec2be
+  port: 4433
+  server: hk2.xiaoliyu.cyou
+  skip-cert-verify: true
   type: hysteria2
   country: HK
-- name: HK_ANYTLS_443_1261
+- name: HK_VLESS_443_586
+  server: 34.92.145.185
+  port: 443
+  type: vless
+  uuid: 75d38591-267e-4d89-98bc-164f25b50880
+  tls: true
+  reality-opts:
+    public-key: HV_4dmK3rwzqhWP1yOpC1L8BObd5lpZRYTzUflsi2x4
+    short-id: 64b3f192fc0669e1
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+  country: HK
+- name: HK_ANYTLS_443_1008
   server: ac7548f3ebe045b39a90288ff1e97528.pnuqcnp.cn
   port: 443
   type: anytls
@@ -110,13 +172,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_443_879
-  - HK_VLESS_443_936
-  - HK_VLESS_443_1383
-  - HK_VLESS_27948_2835
-  - HK_VLESS_11907_2284
-  - HK_HYSTERIA2_8443_970
-  - HK_ANYTLS_443_1261
+  - HK_VLESS_443_768
+  - HK_VLESS_443_862
+  - HK_VLESS_443_1537
+  - HK_VLESS_443_1212
+  - HK_VLESS_443_976
+  - HK_VLESS_443_592
+  - HK_VMESS_443_1494
+  - HK_VMESS_60852_2181
+  - HK_VMESS_30807_2558
+  - HK_HYSTERIA2_4433_1577
+  - HK_VLESS_443_586
+  - HK_ANYTLS_443_1008
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -129,13 +196,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VLESS_443_879
-  - HK_VLESS_443_936
-  - HK_HYSTERIA2_8443_970
-  - HK_ANYTLS_443_1261
-  - HK_VLESS_443_1383
-  - HK_VLESS_11907_2284
-  - HK_VLESS_27948_2835
+  - HK_VLESS_443_586
+  - HK_VLESS_443_592
+  - HK_VLESS_443_768
+  - HK_VLESS_443_862
+  - HK_VLESS_443_976
+  - HK_ANYTLS_443_1008
+  - HK_VLESS_443_1212
+  - HK_VMESS_443_1494
+  - HK_VLESS_443_1537
+  - HK_HYSTERIA2_4433_1577
+  - HK_VMESS_60852_2181
+  - HK_VMESS_30807_2558
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -147,13 +219,18 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_443_879
-  - HK_VLESS_443_936
-  - HK_VLESS_443_1383
-  - HK_VLESS_27948_2835
-  - HK_VLESS_11907_2284
-  - HK_HYSTERIA2_8443_970
-  - HK_ANYTLS_443_1261
+  - HK_VLESS_443_768
+  - HK_VLESS_443_862
+  - HK_VLESS_443_1537
+  - HK_VLESS_443_1212
+  - HK_VLESS_443_976
+  - HK_VLESS_443_592
+  - HK_VMESS_443_1494
+  - HK_VMESS_60852_2181
+  - HK_VMESS_30807_2558
+  - HK_HYSTERIA2_4433_1577
+  - HK_VLESS_443_586
+  - HK_ANYTLS_443_1008
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
