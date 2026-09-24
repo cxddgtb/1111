@@ -5,65 +5,53 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_443_516
-  type: vless
-  server: 103.167.234.26
+- name: PL_HTTP_443_521
   port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: PL
-- name: PL_VLESS_443_548
-  type: vless
-  server: 94.142.255.4
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: PL
-- name: PL_VLESS_443_501
-  type: vless
-  server: 31.169.126.66
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: PL
-- name: PL_HTTP_443_464
-  password: None
-  port: 443
-  server: 151.115.54.133
+  server: 37.120.156.18
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
   country: PL
-- name: PL_HTTP_443_538
-  password: ''
+- name: PL_VLESS_443_355
+  type: vless
+  network: tcp
+  server: 144.31.5.64
   port: 443
-  server: 37.120.156.34
-  skip-cert-verify: true
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl6.moritech.net
+  skip-cert-verify: false
   tls: true
-  type: http
-  username: ''
+  udp: true
+  tfo: false
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_797
+  type: vless
+  network: tcp
+  server: 144.31.5.3
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl4.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_964
+  type: vless
+  network: tcp
+  server: 144.31.2.33
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl3.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -78,11 +66,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_443_516
-  - PL_VLESS_443_548
-  - PL_VLESS_443_501
-  - PL_HTTP_443_464
-  - PL_HTTP_443_538
+  - PL_HTTP_443_521
+  - PL_VLESS_443_355
+  - PL_VLESS_443_797
+  - PL_VLESS_443_964
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -95,11 +82,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HTTP_443_464
-  - PL_VLESS_443_501
-  - PL_VLESS_443_516
-  - PL_HTTP_443_538
-  - PL_VLESS_443_548
+  - PL_VLESS_443_355
+  - PL_HTTP_443_521
+  - PL_VLESS_443_797
+  - PL_VLESS_443_964
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -111,11 +97,10 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_443_516
-  - PL_VLESS_443_548
-  - PL_VLESS_443_501
-  - PL_HTTP_443_464
-  - PL_HTTP_443_538
+  - PL_HTTP_443_521
+  - PL_VLESS_443_355
+  - PL_VLESS_443_797
+  - PL_VLESS_443_964
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

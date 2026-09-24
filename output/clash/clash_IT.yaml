@@ -5,28 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_VLESS_443_533
-  type: vless
-  server: 80.211.24.214
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: IT
-- name: IT_HTTP_443_489
-  password: None
+- name: IT_HTTP_443_527
   port: 443
   server: 185.183.105.130
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
+  country: IT
+- name: IT_VMESS_22324_241
+  type: vmess
+  network: tcp
+  server: 89.41.172.85
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: IT
 proxy-groups:
 - name: 🚀 节点选择
@@ -41,8 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_VLESS_443_533
-  - IT_HTTP_443_489
+  - IT_HTTP_443_527
+  - IT_VMESS_22324_241
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -55,8 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_HTTP_443_489
-  - IT_VLESS_443_533
+  - IT_VMESS_22324_241
+  - IT_HTTP_443_527
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -68,8 +62,8 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_VLESS_443_533
-  - IT_HTTP_443_489
+  - IT_HTTP_443_527
+  - IT_VMESS_22324_241
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

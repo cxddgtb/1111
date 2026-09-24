@@ -5,19 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HU_VLESS_8443_569
-  type: vless
-  server: 180.149.37.38
-  port: 8443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
+- name: HU_HTTP_443_533
+  password: None
+  port: 443
+  server: 146.70.203.18
+  skip-cert-verify: true
   tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
+  type: http
+  username: null
   country: HU
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HU_VLESS_8443_569
+  - HU_HTTP_443_533
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HU_VLESS_8443_569
+  - HU_HTTP_443_533
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +52,7 @@ proxy-groups:
 - name: 🌍 HU
   type: url-test
   proxies:
-  - HU_VLESS_8443_569
+  - HU_HTTP_443_533
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_HYSTERIA2_22443_415
+- name: RU_HYSTERIA2_22443_451
   password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
   port: 22443
   server: 91.240.86.70
@@ -14,32 +14,28 @@ proxies:
   tls: false
   type: hysteria2
   country: RU
-- client-fingerprint: qq
-  grpc-opts:
-    grpc-service-name: grpc-tunnel
-  name: RU_VLESS_9889_659
-  network: grpc
-  port: '9889'
-  reality-opts:
-    public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
-    short-id: aabb
-  server: 213.171.25.29
-  servername: dl.google.com
-  tls: true
+- name: RU_VLESS_443_652
   type: vless
+  network: ws
+  server: 91.210.169.181
+  port: 443
+  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
+  servername: wstg.datasynctrue.online
+  skip-cert-verify: false
+  tls: true
   udp: true
-  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-  xudp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: wstg.datasynctrue.online
+    path: /api/connect
   country: RU
-- name: RU_VLESS_5432_2501
-  server: 130.49.218.208
-  port: 5432
-  type: vless
-  uuid: cc01f435-d561-4525-bf1f-7a9876d33207
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  network: tcp
+- name: RU_SS_888_325
+  type: ss
+  server: 62.113.41.165
+  port: 888
+  cipher: chacha20-ietf-poly1305
+  password: hF-qqin2wYhP7zS47SyR0Q
   udp: true
   country: RU
 proxy-groups:
@@ -55,9 +51,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_HYSTERIA2_22443_415
-  - RU_VLESS_9889_659
-  - RU_VLESS_5432_2501
+  - RU_HYSTERIA2_22443_451
+  - RU_VLESS_443_652
+  - RU_SS_888_325
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,9 +66,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_22443_415
-  - RU_VLESS_9889_659
-  - RU_VLESS_5432_2501
+  - RU_SS_888_325
+  - RU_HYSTERIA2_22443_451
+  - RU_VLESS_443_652
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,9 +80,9 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_HYSTERIA2_22443_415
-  - RU_VLESS_9889_659
-  - RU_VLESS_5432_2501
+  - RU_HYSTERIA2_22443_451
+  - RU_VLESS_443_652
+  - RU_SS_888_325
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

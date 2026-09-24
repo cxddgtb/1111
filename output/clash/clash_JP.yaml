@@ -5,173 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VLESS_2053_481
-  type: vless
-  server: 103.31.77.108
-  port: 2053
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_579
-  type: vless
-  server: 31.57.218.99
+- auth: my_super_password_123
+  name: JP_HYSTERIA2_443_471
+  password: my_super_password_123
   port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_620
-  type: vless
-  server: 161.33.29.51
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_640
-  type: vless
-  server: 45.202.254.133
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_717
-  type: vless
-  server: 92.113.124.228
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_591
-  type: vless
-  server: 45.76.100.75
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_8443_621
-  type: vless
-  server: 45.76.100.75
-  port: 8443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_627
-  type: vless
-  server: 64.176.34.130
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_632
-  type: vless
-  server: 168.138.52.221
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_636
-  type: vless
-  server: 140.83.87.85
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_631
-  type: vless
-  server: 66.245.219.95
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: JP
-- name: JP_VLESS_443_458
-  server: 35.243.84.20
-  port: 443
-  type: vless
-  uuid: 0c4c6ebb-603f-4429-8682-beef6b65b80d
-  tls: true
-  reality-opts:
-    public-key: Ti7zRkfweHdrQ5QHI9o_zEgHn39xRfMG2C2Gfp_AMHE
-    short-id: 8380ad05cd21a69f
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  network: tcp
+  server: open.w2m.ink
+  skip-cert-verify: true
+  sni: open.w2m.ink
+  type: hysteria2
   udp: true
+  country: JP
+- name: JP_HYSTERIA2_5443_747
+  server: open.2ml.cc.cd
+  port: 5443
+  type: hysteria2
+  password: my_super_password_123
+  auth: my_super_password_123
+  skip-cert-verify: true
+  country: JP
+- name: JP_VMESS_80_438
+  type: vmess
+  network: ws
+  server: 172.111.146.64
+  port: 80
+  uuid: 05b8c783-7f59-47f9-9923-06a465679f6a
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: 172.111.146.64
+    path: /vmess/
+  country: JP
+- name: JP_VMESS_4433_297
+  type: vmess
+  network: tcp
+  server: 45.32.57.118
+  port: 4433
+  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -186,18 +60,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_2053_481
-  - JP_VLESS_443_579
-  - JP_VLESS_443_620
-  - JP_VLESS_443_640
-  - JP_VLESS_443_717
-  - JP_VLESS_443_591
-  - JP_VLESS_8443_621
-  - JP_VLESS_443_627
-  - JP_VLESS_443_632
-  - JP_VLESS_443_636
-  - JP_VLESS_443_631
-  - JP_VLESS_443_458
+  - JP_HYSTERIA2_443_471
+  - JP_HYSTERIA2_5443_747
+  - JP_VMESS_80_438
+  - JP_VMESS_4433_297
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -210,18 +76,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VLESS_443_458
-  - JP_VLESS_2053_481
-  - JP_VLESS_443_579
-  - JP_VLESS_443_591
-  - JP_VLESS_443_620
-  - JP_VLESS_8443_621
-  - JP_VLESS_443_627
-  - JP_VLESS_443_631
-  - JP_VLESS_443_632
-  - JP_VLESS_443_636
-  - JP_VLESS_443_640
-  - JP_VLESS_443_717
+  - JP_VMESS_4433_297
+  - JP_VMESS_80_438
+  - JP_HYSTERIA2_443_471
+  - JP_HYSTERIA2_5443_747
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -233,18 +91,10 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_2053_481
-  - JP_VLESS_443_579
-  - JP_VLESS_443_620
-  - JP_VLESS_443_640
-  - JP_VLESS_443_717
-  - JP_VLESS_443_591
-  - JP_VLESS_8443_621
-  - JP_VLESS_443_627
-  - JP_VLESS_443_632
-  - JP_VLESS_443_636
-  - JP_VLESS_443_631
-  - JP_VLESS_443_458
+  - JP_HYSTERIA2_443_471
+  - JP_HYSTERIA2_5443_747
+  - JP_VMESS_80_438
+  - JP_VMESS_4433_297
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

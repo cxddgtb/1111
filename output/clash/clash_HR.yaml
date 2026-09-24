@@ -5,42 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ES_HTTP_443_499
-  password: None
+- name: HR_HTTP_443_534
   port: 443
-  server: 82.102.17.178
+  server: 154.47.29.161
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
-  country: ES
-- name: ES_HTTP_443_452
-  port: 443
-  server: 130.195.250.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: ES
-- name: ES_VMESS_22324_271
-  type: vmess
-  network: tcp
-  server: 66.163.118.73
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: ES
-- name: ES_VMESS_22324_251
-  type: vmess
-  network: tcp
-  server: 85.90.217.42
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: ES
+  country: HR
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -49,15 +20,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 ES
+  - 🌍 HR
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_HTTP_443_499
-  - ES_HTTP_443_452
-  - ES_VMESS_22324_271
-  - ES_VMESS_22324_251
+  - HR_HTTP_443_534
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,10 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_VMESS_22324_251
-  - ES_VMESS_22324_271
-  - ES_HTTP_443_452
-  - ES_HTTP_443_499
+  - HR_HTTP_443_534
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -82,13 +47,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 ES
+- name: 🌍 HR
   type: url-test
   proxies:
-  - ES_HTTP_443_499
-  - ES_HTTP_443_452
-  - ES_VMESS_22324_271
-  - ES_VMESS_22324_251
+  - HR_HTTP_443_534
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

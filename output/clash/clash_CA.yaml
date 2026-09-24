@@ -5,105 +5,55 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VLESS_443_165
-  type: vless
-  server: 45.133.16.41
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: CA
-- name: CA_VLESS_443_156
-  type: vless
-  server: 66.154.127.165
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: CA
-- name: CA_VLESS_443_167
-  type: vless
-  server: 147.182.156.112
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: CA
-- name: CA_VLESS_8443_160
-  type: vless
-  server: 45.133.17.118
-  port: 8443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: CA
-- name: CA_VMESS_443_101
+- name: CA_VMESS_22324_44
   type: vmess
-  network: ws
-  server: 23.162.200.227
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: vk.com
-    path: /linkvws
-  country: CA
-- name: CA_VMESS_443_109
-  type: vmess
-  network: ws
-  server: 134.195.198.147
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: vk.com
-    path: /linkvws
-  country: CA
-- name: CA_VLESS_443_99
-  server: 34.186.193.91
-  port: 443
-  type: vless
-  uuid: 2ea95ec3-6b09-470e-952a-ebb171b0d666
-  tls: true
-  reality-opts:
-    public-key: 0dSYzX_uvVr-YmiONeKxPt7TdFkaFeYopYfjobxxEC4
-    short-id: 341ec000a90f1ced
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
   network: tcp
-  udp: true
+  server: 66.163.113.176
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_18000_52
+  type: vmess
+  network: tcp
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_22324_118
+  type: vmess
+  network: tcp
+  server: 158.51.123.42
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_18000_69
+  type: vmess
+  network: tcp
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_22324_58
+  type: vmess
+  network: tcp
+  server: 134.195.198.214
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -118,13 +68,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VLESS_443_165
-  - CA_VLESS_443_156
-  - CA_VLESS_443_167
-  - CA_VLESS_8443_160
-  - CA_VMESS_443_101
-  - CA_VMESS_443_109
-  - CA_VLESS_443_99
+  - CA_VMESS_22324_44
+  - CA_VMESS_18000_52
+  - CA_VMESS_22324_118
+  - CA_VMESS_18000_69
+  - CA_VMESS_22324_58
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -137,13 +85,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VLESS_443_99
-  - CA_VMESS_443_101
-  - CA_VMESS_443_109
-  - CA_VLESS_443_156
-  - CA_VLESS_8443_160
-  - CA_VLESS_443_165
-  - CA_VLESS_443_167
+  - CA_VMESS_22324_44
+  - CA_VMESS_18000_52
+  - CA_VMESS_22324_58
+  - CA_VMESS_18000_69
+  - CA_VMESS_22324_118
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -155,13 +101,11 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VLESS_443_165
-  - CA_VLESS_443_156
-  - CA_VLESS_443_167
-  - CA_VLESS_8443_160
-  - CA_VMESS_443_101
-  - CA_VMESS_443_109
-  - CA_VLESS_443_99
+  - CA_VMESS_22324_44
+  - CA_VMESS_18000_52
+  - CA_VMESS_22324_118
+  - CA_VMESS_18000_69
+  - CA_VMESS_22324_58
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,33 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_8443_517
+- name: FI_VLESS_5432_388
   type: vless
-  server: 31.76.80.230
-  port: 8443
-  uuid: d544c858-b1ba-45b2-8868-8197daf2a6ee
-  network: ws
+  network: tcp
+  server: 193.23.201.65
+  port: 5432
+  uuid: e84e0918-68ca-4fcc-a1d1-b566fd9ac7ee
+  skip-cert-verify: false
   tls: true
-  servername: fin.luxes.network
+  udp: true
+  tfo: false
   client-fingerprint: chrome
-  ws-opts:
-    path: /assets
-    headers:
-      Host: ''
-  country: FI
-- name: FI_VLESS_443_568
-  type: vless
-  server: 95.217.129.198
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
+  flow: xtls-rprx-vision
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +31,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_8443_517
-  - FI_VLESS_443_568
+  - FI_VLESS_5432_388
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +44,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_8443_517
-  - FI_VLESS_443_568
+  - FI_VLESS_5432_388
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +56,7 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_8443_517
-  - FI_VLESS_443_568
+  - FI_VLESS_5432_388
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

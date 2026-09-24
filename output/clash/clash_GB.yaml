@@ -5,87 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_VLESS_443_434
-  type: vless
-  server: 104.194.140.26
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: GB
-- name: GB_VLESS_443_646
-  type: vless
-  server: 104.128.190.209
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: GB
-- name: GB_VLESS_443_431
-  type: vless
-  server: 35.176.75.87
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
-  country: GB
-- name: GB_VLESS_443_289
-  type: vless
-  server: 35.234.143.34
-  port: 443
-  uuid: 9743b4f9-24c3-4e53-8b03-c3b5cd9b71b2
-  udp: true
-  tls: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: bx1ylgNlSmg4i-abKzPcSHGMlIE6gdf66Ysjv25ZrE4
-    short-id: 1b580f160d965b01
-  country: GB
-- name: GB_HTTP_443_404
-  password: None
-  port: 443
-  server: 37.120.233.34
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: GB
-- name: GB_HTTP_443_417
-  port: 443
-  server: 37.120.233.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_387
-  password: None
-  port: 443
-  server: 185.235.0.66
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: GB
-- name: GB_HTTP_443_409
+- name: GB_HTTP_443_408
   password: None
   port: 443
   server: 37.120.233.50
@@ -94,14 +14,37 @@ proxies:
   type: http
   username: null
   country: GB
-- name: GB_HTTP_443_363
+- name: GB_HTTP_443_389
   port: 443
   server: 185.235.0.98
   skip-cert-verify: true
   tls: true
   type: http
   country: GB
-- name: GB_HTTP_443_400
+- name: GB_HTTP_9443_408
+  password: None
+  port: 9443
+  server: 37.120.233.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: GB
+- name: GB_HTTP_443_380
+  port: 443
+  server: 212.102.63.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: GB
+- name: GB_HTTP_443_379
+  port: 443
+  server: 185.235.0.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: GB
+- name: GB_HTTP_443_381
   password: ''
   port: 443
   server: 185.235.0.2
@@ -110,34 +53,38 @@ proxies:
   type: http
   username: ''
   country: GB
-- name: GB_SS_61312_222
-  server: 129.151.73.227
-  port: 61312
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: EG7gd6f1FSkm+x/OoWRHzsRT1Jl/tSx0EWxkprEGZSo=
-  country: GB
-- name: GB_VLESS_443_291
-  server: 35.189.111.134
+- name: GB_HTTP_443_397
   port: 443
-  type: vless
-  uuid: ed492b33-c6b4-463f-8359-3634b0d44251
+  server: 185.235.0.34
+  skip-cert-verify: true
   tls: true
-  reality-opts:
-    public-key: matDwR2fEV41IhLs23SkP9dS6d6qiaRKS4ndb3uR1lk
-    short-id: 89ea42ae375d4933
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
+  type: http
   country: GB
-- name: GB_SS_61312_275
-  server: 129.151.93.37
-  port: 61312
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: RkR6BpEgmuhup6mR/JstADZSQYyzl+44orT0gXZorYA=
-  udp: true
+- name: GB_HTTP_443_383
+  port: 443
+  server: 212.102.63.31
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: GB
+- name: GB_HTTP_443_384
+  password: None
+  port: 443
+  server: 212.102.63.61
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: GB
+- name: GB_VMESS_22324_198
+  type: vmess
+  network: tcp
+  server: 66.163.117.58
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -152,19 +99,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_VLESS_443_434
-  - GB_VLESS_443_646
-  - GB_VLESS_443_431
-  - GB_VLESS_443_289
-  - GB_HTTP_443_404
-  - GB_HTTP_443_417
-  - GB_HTTP_443_387
-  - GB_HTTP_443_409
-  - GB_HTTP_443_363
-  - GB_HTTP_443_400
-  - GB_SS_61312_222
-  - GB_VLESS_443_291
-  - GB_SS_61312_275
+  - GB_HTTP_443_408
+  - GB_HTTP_443_389
+  - GB_HTTP_9443_408
+  - GB_HTTP_443_380
+  - GB_HTTP_443_379
+  - GB_HTTP_443_381
+  - GB_HTTP_443_397
+  - GB_HTTP_443_383
+  - GB_HTTP_443_384
+  - GB_VMESS_22324_198
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -177,19 +121,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_SS_61312_222
-  - GB_SS_61312_275
-  - GB_VLESS_443_289
-  - GB_VLESS_443_291
-  - GB_HTTP_443_363
-  - GB_HTTP_443_387
-  - GB_HTTP_443_400
-  - GB_HTTP_443_404
-  - GB_HTTP_443_409
-  - GB_HTTP_443_417
-  - GB_VLESS_443_431
-  - GB_VLESS_443_434
-  - GB_VLESS_443_646
+  - GB_VMESS_22324_198
+  - GB_HTTP_443_379
+  - GB_HTTP_443_380
+  - GB_HTTP_443_381
+  - GB_HTTP_443_383
+  - GB_HTTP_443_384
+  - GB_HTTP_443_389
+  - GB_HTTP_443_397
+  - GB_HTTP_443_408
+  - GB_HTTP_9443_408
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -201,19 +142,16 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_VLESS_443_434
-  - GB_VLESS_443_646
-  - GB_VLESS_443_431
-  - GB_VLESS_443_289
-  - GB_HTTP_443_404
-  - GB_HTTP_443_417
-  - GB_HTTP_443_387
-  - GB_HTTP_443_409
-  - GB_HTTP_443_363
-  - GB_HTTP_443_400
-  - GB_SS_61312_222
-  - GB_VLESS_443_291
-  - GB_SS_61312_275
+  - GB_HTTP_443_408
+  - GB_HTTP_443_389
+  - GB_HTTP_9443_408
+  - GB_HTTP_443_380
+  - GB_HTTP_443_379
+  - GB_HTTP_443_381
+  - GB_HTTP_443_397
+  - GB_HTTP_443_383
+  - GB_HTTP_443_384
+  - GB_VMESS_22324_198
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
