@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_HYSTERIA2_50160_726
+- name: KR_HYSTERIA2_50160_669
   password: 1beb216e3f60aea9555dae60d219a5ca
   port: 50160
   server: 152-69-231-175.liao.kdns.fr
@@ -13,25 +13,7 @@ proxies:
   tls: false
   type: hysteria2
   country: KR
-- name: KR_SOCKS5_1090_1017
-  password: ''
-  port: '1090'
-  server: 121.169.46.116
-  skip-cert-verify: true
-  type: socks5
-  username: T2clM0QlM0Q6
-  country: KR
-- name: KR_VMESS_443_410
-  type: vmess
-  network: tcp
-  server: 140.238.2.250
-  port: 443
-  uuid: 41a7089a-040b-4538-8b8d-010902405bde
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: KR
-- name: KR_VMESS_8888_1364
+- name: KR_VMESS_8888_375
   type: vmess
   network: tcp
   server: 146.56.112.110
@@ -54,10 +36,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_HYSTERIA2_50160_726
-  - KR_SOCKS5_1090_1017
-  - KR_VMESS_443_410
-  - KR_VMESS_8888_1364
+  - KR_HYSTERIA2_50160_669
+  - KR_VMESS_8888_375
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,10 +50,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_443_410
-  - KR_HYSTERIA2_50160_726
-  - KR_SOCKS5_1090_1017
-  - KR_VMESS_8888_1364
+  - KR_VMESS_8888_375
+  - KR_HYSTERIA2_50160_669
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -85,10 +63,8 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_HYSTERIA2_50160_726
-  - KR_SOCKS5_1090_1017
-  - KR_VMESS_443_410
-  - KR_VMESS_8888_1364
+  - KR_HYSTERIA2_50160_669
+  - KR_VMESS_8888_375
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

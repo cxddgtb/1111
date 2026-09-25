@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_HTTP_443_408
+- name: GB_HTTP_443_575
   password: None
   port: 443
   server: 37.120.233.50
@@ -14,37 +14,28 @@ proxies:
   type: http
   username: null
   country: GB
-- name: GB_HTTP_443_389
+- name: GB_HTTP_443_583
+  port: 443
+  server: 37.120.233.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: GB
+- name: GB_HTTP_443_543
   port: 443
   server: 185.235.0.98
   skip-cert-verify: true
   tls: true
   type: http
   country: GB
-- name: GB_HTTP_9443_408
-  password: None
-  port: 9443
-  server: 37.120.233.34
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: GB
-- name: GB_HTTP_443_380
-  port: 443
-  server: 212.102.63.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_379
+- name: GB_HTTP_443_553
   port: 443
   server: 185.235.0.66
   skip-cert-verify: true
   tls: true
   type: http
   country: GB
-- name: GB_HTTP_443_381
+- name: GB_HTTP_443_567
   password: ''
   port: 443
   server: 185.235.0.2
@@ -53,21 +44,16 @@ proxies:
   type: http
   username: ''
   country: GB
-- name: GB_HTTP_443_397
+- name: GB_HTTP_443_591
+  password: ''
   port: 443
-  server: 185.235.0.34
+  server: 37.120.233.34
   skip-cert-verify: true
   tls: true
   type: http
+  username: ''
   country: GB
-- name: GB_HTTP_443_383
-  port: 443
-  server: 212.102.63.31
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_384
+- name: GB_HTTP_443_548
   password: None
   port: 443
   server: 212.102.63.61
@@ -76,15 +62,21 @@ proxies:
   type: http
   username: null
   country: GB
-- name: GB_VMESS_22324_198
-  type: vmess
-  network: tcp
-  server: 66.163.117.58
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+- name: GB_SS_61312_309
+  server: 129.151.77.63
+  port: 61312
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: /pYDD9iRDQlBUa4aL0lBTCSp6ZNStfL6xHNn4mSFqFE=
+  udp: true
+  country: GB
+- name: GB_SS_61312_288
+  server: 129.151.92.223
+  port: 61312
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: FIKU8rw44Gdi49OR9KrHVRffn85pphhU/+C3IQucB3g=
+  udp: true
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -99,16 +91,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_HTTP_443_408
-  - GB_HTTP_443_389
-  - GB_HTTP_9443_408
-  - GB_HTTP_443_380
-  - GB_HTTP_443_379
-  - GB_HTTP_443_381
-  - GB_HTTP_443_397
-  - GB_HTTP_443_383
-  - GB_HTTP_443_384
-  - GB_VMESS_22324_198
+  - GB_HTTP_443_575
+  - GB_HTTP_443_583
+  - GB_HTTP_443_543
+  - GB_HTTP_443_553
+  - GB_HTTP_443_567
+  - GB_HTTP_443_591
+  - GB_HTTP_443_548
+  - GB_SS_61312_309
+  - GB_SS_61312_288
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -121,16 +112,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_VMESS_22324_198
-  - GB_HTTP_443_379
-  - GB_HTTP_443_380
-  - GB_HTTP_443_381
-  - GB_HTTP_443_383
-  - GB_HTTP_443_384
-  - GB_HTTP_443_389
-  - GB_HTTP_443_397
-  - GB_HTTP_443_408
-  - GB_HTTP_9443_408
+  - GB_SS_61312_288
+  - GB_SS_61312_309
+  - GB_HTTP_443_543
+  - GB_HTTP_443_548
+  - GB_HTTP_443_553
+  - GB_HTTP_443_567
+  - GB_HTTP_443_575
+  - GB_HTTP_443_583
+  - GB_HTTP_443_591
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -142,16 +132,15 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_HTTP_443_408
-  - GB_HTTP_443_389
-  - GB_HTTP_9443_408
-  - GB_HTTP_443_380
-  - GB_HTTP_443_379
-  - GB_HTTP_443_381
-  - GB_HTTP_443_397
-  - GB_HTTP_443_383
-  - GB_HTTP_443_384
-  - GB_VMESS_22324_198
+  - GB_HTTP_443_575
+  - GB_HTTP_443_583
+  - GB_HTTP_443_543
+  - GB_HTTP_443_553
+  - GB_HTTP_443_567
+  - GB_HTTP_443_591
+  - GB_HTTP_443_548
+  - GB_SS_61312_309
+  - GB_SS_61312_288
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

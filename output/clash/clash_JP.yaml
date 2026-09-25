@@ -5,47 +5,43 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- auth: my_super_password_123
-  name: JP_HYSTERIA2_443_471
-  password: my_super_password_123
+- name: JP_VMESS_23462_320
+  type: vmess
+  server: 64.176.51.214
+  port: 23462
+  uuid: 95c5abc1-018d-4628-89a7-25ab9c62ab74
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /a15206
+    headers:
+      Host: ''
+  country: JP
+- cipher: aes-256-cfb
+  name: JP_SS_443_202
+  password: amazonskr05
   port: 443
-  server: open.w2m.ink
-  skip-cert-verify: true
-  sni: open.w2m.ink
-  type: hysteria2
+  server: 54.199.248.166
+  type: ss
   udp: true
   country: JP
-- name: JP_HYSTERIA2_5443_747
-  server: open.2ml.cc.cd
-  port: 5443
+- name: JP_HYSTERIA2_20561_387
+  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  port: 20561
+  server: msjp.mangshe.xyz
+  skip-cert-verify: true
+  sni: www.microsoft.com
   type: hysteria2
-  password: my_super_password_123
-  auth: my_super_password_123
-  skip-cert-verify: true
   country: JP
-- name: JP_VMESS_80_438
-  type: vmess
-  network: ws
-  server: 172.111.146.64
-  port: 80
-  uuid: 05b8c783-7f59-47f9-9923-06a465679f6a
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: 172.111.146.64
-    path: /vmess/
-  country: JP
-- name: JP_VMESS_4433_297
-  type: vmess
-  network: tcp
-  server: 45.32.57.118
-  port: 4433
-  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+- name: JP_SS_443_207
+  server: 18.179.39.119
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -60,10 +56,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_HYSTERIA2_443_471
-  - JP_HYSTERIA2_5443_747
-  - JP_VMESS_80_438
-  - JP_VMESS_4433_297
+  - JP_VMESS_23462_320
+  - JP_SS_443_202
+  - JP_HYSTERIA2_20561_387
+  - JP_SS_443_207
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -76,10 +72,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_4433_297
-  - JP_VMESS_80_438
-  - JP_HYSTERIA2_443_471
-  - JP_HYSTERIA2_5443_747
+  - JP_SS_443_202
+  - JP_SS_443_207
+  - JP_VMESS_23462_320
+  - JP_HYSTERIA2_20561_387
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -91,10 +87,10 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_HYSTERIA2_443_471
-  - JP_HYSTERIA2_5443_747
-  - JP_VMESS_80_438
-  - JP_VMESS_4433_297
+  - JP_VMESS_23462_320
+  - JP_SS_443_202
+  - JP_HYSTERIA2_20561_387
+  - JP_SS_443_207
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

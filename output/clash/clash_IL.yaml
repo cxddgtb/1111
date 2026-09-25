@@ -5,20 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IL_VLESS_443_658
+- name: IL_VLESS_80_699
   type: vless
-  server: 185.159.73.247
-  port: 443
-  uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
-  servername: eu-central.cendora.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: qq
-  reality-opts:
-    public-key: b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI
-    short-id: 00bca5982f82d083
-  skip-cert-verify: true
+  server: platform115.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
   udp: true
+  network: ws
+  ws-opts:
+    path: /platform115
+    headers:
+      Host: platform115.halalkhor.info
   country: IL
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +30,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IL_VLESS_443_658
+  - IL_VLESS_80_699
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +43,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IL_VLESS_443_658
+  - IL_VLESS_80_699
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +55,7 @@ proxy-groups:
 - name: 🌍 IL
   type: url-test
   proxies:
-  - IL_VLESS_443_658
+  - IL_VLESS_80_699
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

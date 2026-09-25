@@ -5,34 +5,62 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_HYSTERIA2_4433_865
-  password: 19f72087-4591-4d72-930b-2697078ec2be
-  port: 4433
-  server: hk2.xiaoliyu.cyou
-  skip-cert-verify: true
-  type: hysteria2
-  country: HK
-- name: HK_VMESS_22324_482
+- name: HK_VMESS_30804_1289
   type: vmess
-  network: tcp
-  server: 89.223.95.77
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
-  country: HK
-- name: HK_VLESS_11907_1905
-  type: vless
   network: tcp
-  server: 195.58.144.56
-  port: 11907
-  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
-  skip-cert-verify: false
-  tls: true
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_VMESS_30835_1102
+  type: vmess
+  server: v35.hdacd.com
+  port: 30835
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_VMESS_30806_1725
+  type: vmess
+  server: v6.hdacd.com
+  port: 30806
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_VMESS_30807_1755
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_ANYTLS_443_898
+  server: ac7548f3ebe045b39a90288ff1e97528.pnuqcnp.cn
+  port: 443
+  type: anytls
+  password: 9sK2mP8xQ7vL3nZ6
   udp: true
-  tfo: false
-  client-fingerprint: chrome
+  sni: ac7548f3ebe045b39a90288ff1e97528.lwdnxf.cn
+  skip-cert-verify: true
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -47,9 +75,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_HYSTERIA2_4433_865
-  - HK_VMESS_22324_482
-  - HK_VLESS_11907_1905
+  - HK_VMESS_30804_1289
+  - HK_VMESS_30835_1102
+  - HK_VMESS_30806_1725
+  - HK_VMESS_30807_1755
+  - HK_ANYTLS_443_898
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,9 +92,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_22324_482
-  - HK_HYSTERIA2_4433_865
-  - HK_VLESS_11907_1905
+  - HK_ANYTLS_443_898
+  - HK_VMESS_30835_1102
+  - HK_VMESS_30804_1289
+  - HK_VMESS_30806_1725
+  - HK_VMESS_30807_1755
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -76,9 +108,11 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_HYSTERIA2_4433_865
-  - HK_VMESS_22324_482
-  - HK_VLESS_11907_1905
+  - HK_VMESS_30804_1289
+  - HK_VMESS_30835_1102
+  - HK_VMESS_30806_1725
+  - HK_VMESS_30807_1755
+  - HK_ANYTLS_443_898
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

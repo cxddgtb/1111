@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HR_HTTP_443_534
+- name: HR_HTTP_443_702
   port: 443
   server: 154.47.29.161
   skip-cert-verify: true
@@ -25,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HR_HTTP_443_534
+  - HR_HTTP_443_702
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HR_HTTP_443_534
+  - HR_HTTP_443_702
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +50,7 @@ proxy-groups:
 - name: 🌍 HR
   type: url-test
   proxies:
-  - HR_HTTP_443_534
+  - HR_HTTP_443_702
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

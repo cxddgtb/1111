@@ -5,23 +5,34 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VMESS_80_525
-  type: vmess
-  server: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-  port: 80
-  uuid: 479526cd-5011-43cf-a788-504da95e07c2
-  alterId: 0
-  cipher: auto
-  network: ws
+- name: FR_HYSTERIA2_443_459
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: 35.181.166.40
+  skip-cert-verify: true
+  sni: vpn-fr-002.fastervpn.world
   tls: false
-  servername: ''
-  ws-opts:
-    path: /
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+  type: hysteria2
+  country: FR
+- name: FR_HYSTERIA2_36723_430
+  password: Krab9Hyst2_Rk7pQ2xL
+  port: 36723
+  server: 151.247.197.253
+  skip-cert-verify: true
+  sni: 151.247.197.253
+  tls: false
+  type: hysteria2
+  country: FR
+- name: FR_HTTP_443_596
+  port: 443
+  server: 103.82.101.44
+  skip-cert-verify: true
+  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
+  tls: true
+  type: http
   country: FR
 - auth: github.com/Alvin9999-newpac/fanqiang
-  name: FR_HYSTERIA2_60111_330
+  name: FR_HYSTERIA2_60111_1712
   password: github.com/Alvin9999-newpac/fanqiang
   port: 60111
   server: 62.210.7.139
@@ -29,14 +40,7 @@ proxies:
   sni: www.bing.com
   type: hysteria2
   country: FR
-- name: FR_HTTP_6103_425
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_418
+- name: FR_HTTP_443_610
   password: None
   port: 443
   server: 149.102.245.65
@@ -45,15 +49,47 @@ proxies:
   type: http
   username: null
   country: FR
-- name: FR_VMESS_22324_224
-  type: vmess
-  network: tcp
-  server: 45.80.215.8
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+- name: FR_VLESS_22223_287
+  type: vless
+  server: 35.180.76.27
+  port: 22223
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  udp: true
+  country: FR
+- name: FR_VLESS_22223_292
+  type: vless
+  server: 15.188.167.181
+  port: 22223
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  udp: true
+  country: FR
+- name: FR_VLESS_22222_292
+  type: vless
+  server: 35.180.76.27
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  udp: true
+  country: FR
+- name: FR_VLESS_22222_279
+  type: vless
+  server: 15.188.167.181
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  udp: true
+  country: FR
+- name: FR_VLESS_22224_287
+  type: vless
+  server: 35.180.76.27
+  port: 22224
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  udp: true
+  country: FR
+- name: FR_VLESS_22224_293
+  type: vless
+  server: 15.188.167.181
+  port: 22224
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  udp: true
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -68,11 +104,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VMESS_80_525
-  - FR_HYSTERIA2_60111_330
-  - FR_HTTP_6103_425
-  - FR_HTTP_443_418
-  - FR_VMESS_22324_224
+  - FR_HYSTERIA2_443_459
+  - FR_HYSTERIA2_36723_430
+  - FR_HTTP_443_596
+  - FR_HYSTERIA2_60111_1712
+  - FR_HTTP_443_610
+  - FR_VLESS_22223_287
+  - FR_VLESS_22223_292
+  - FR_VLESS_22222_292
+  - FR_VLESS_22222_279
+  - FR_VLESS_22224_287
+  - FR_VLESS_22224_293
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -85,11 +127,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VMESS_22324_224
-  - FR_HYSTERIA2_60111_330
-  - FR_HTTP_443_418
-  - FR_HTTP_6103_425
-  - FR_VMESS_80_525
+  - FR_VLESS_22222_279
+  - FR_VLESS_22223_287
+  - FR_VLESS_22224_287
+  - FR_VLESS_22223_292
+  - FR_VLESS_22222_292
+  - FR_VLESS_22224_293
+  - FR_HYSTERIA2_36723_430
+  - FR_HYSTERIA2_443_459
+  - FR_HTTP_443_596
+  - FR_HTTP_443_610
+  - FR_HYSTERIA2_60111_1712
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -101,11 +149,17 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VMESS_80_525
-  - FR_HYSTERIA2_60111_330
-  - FR_HTTP_6103_425
-  - FR_HTTP_443_418
-  - FR_VMESS_22324_224
+  - FR_HYSTERIA2_443_459
+  - FR_HYSTERIA2_36723_430
+  - FR_HTTP_443_596
+  - FR_HYSTERIA2_60111_1712
+  - FR_HTTP_443_610
+  - FR_VLESS_22223_287
+  - FR_VLESS_22223_292
+  - FR_VLESS_22222_292
+  - FR_VLESS_22222_279
+  - FR_VLESS_22224_287
+  - FR_VLESS_22224_293
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

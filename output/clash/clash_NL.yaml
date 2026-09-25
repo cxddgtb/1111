@@ -5,47 +5,40 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_HYSTERIA2_443_336
-  password: CnVfXXvMzh
-  port: 443
-  server: hys13.wba-pn.ru
+- name: NL_VLESS_62145_275
+  type: vless
+  server: 92.5.231.246
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: NL
+- name: NL_HYSTERIA2_8443_417
+  obfs: salamander
+  obfs-password: HysteriaHowdy
+  password: HowdyHysteria2023w0W
+  port: 8443
+  server: 51.15.19.206
   skip-cert-verify: true
+  sni: sni-here.com
   tls: false
   type: hysteria2
   country: NL
-- name: NL_HTTP_9002_432
-  port: 9002
-  server: 84.17.47.125
+- name: NL_HYSTERIA2_8443_470
+  obfs: salamander
+  obfs-password: HysteriaHowdy
+  password: HowdyHysteria2023w0W
+  port: 8443
+  server: hysteria.udpgw.com
   skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
+  sni: sni-here.com
+  tls: false
+  type: hysteria2
   country: NL
-- name: NL_HTTP_9002_415
-  port: 9002
-  server: 84.17.47.150
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_421
-  port: 9002
-  server: 84.17.47.149
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_428
-  port: 9002
-  server: 84.17.47.148
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_443_399
+- name: NL_HTTP_443_563
   password: None
   port: 443
   server: 5.255.118.82
@@ -54,13 +47,64 @@ proxies:
   type: http
   username: null
   country: NL
-- name: NL_HTTP_9002_415_2
+- name: NL_HTTP_9002_609
   port: 9002
   server: 84.17.47.146
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
+  country: NL
+- name: NL_HTTP_9002_640
+  port: 9002
+  server: 84.17.47.125
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_620
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_443_607
+  port: 443
+  server: 185.140.209.235
+  skip-cert-verify: true
+  sni: 482c8436a1f7c908b48a1757abb5dd79-ce85c45206570905.apache-iv.com
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_9002_580
+  port: 9002
+  server: 84.17.47.150
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_663
+  port: 9002
+  server: 84.17.47.148
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_VLESS_62145_2328
+  type: vless
+  server: 158.101.195.43
+  port: 62145
+  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
+  network: tcp
+  tls: false
+  servername: 158.101.195.43
+  client-fingerprint: chrome
+  ws-opts: null
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -75,13 +119,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_HYSTERIA2_443_336
-  - NL_HTTP_9002_432
-  - NL_HTTP_9002_415
-  - NL_HTTP_9002_421
-  - NL_HTTP_9002_428
-  - NL_HTTP_443_399
-  - NL_HTTP_9002_415_2
+  - NL_VLESS_62145_275
+  - NL_HYSTERIA2_8443_417
+  - NL_HYSTERIA2_8443_470
+  - NL_HTTP_443_563
+  - NL_HTTP_9002_609
+  - NL_HTTP_9002_640
+  - NL_HTTP_9002_620
+  - NL_HTTP_443_607
+  - NL_HTTP_9002_580
+  - NL_HTTP_9002_663
+  - NL_VLESS_62145_2328
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -94,13 +142,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_HYSTERIA2_443_336
-  - NL_HTTP_443_399
-  - NL_HTTP_9002_415
-  - NL_HTTP_9002_415_2
-  - NL_HTTP_9002_421
-  - NL_HTTP_9002_428
-  - NL_HTTP_9002_432
+  - NL_VLESS_62145_275
+  - NL_HYSTERIA2_8443_417
+  - NL_HYSTERIA2_8443_470
+  - NL_HTTP_443_563
+  - NL_HTTP_9002_580
+  - NL_HTTP_443_607
+  - NL_HTTP_9002_609
+  - NL_HTTP_9002_620
+  - NL_HTTP_9002_640
+  - NL_HTTP_9002_663
+  - NL_VLESS_62145_2328
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -112,13 +164,17 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_HYSTERIA2_443_336
-  - NL_HTTP_9002_432
-  - NL_HTTP_9002_415
-  - NL_HTTP_9002_421
-  - NL_HTTP_9002_428
-  - NL_HTTP_443_399
-  - NL_HTTP_9002_415_2
+  - NL_VLESS_62145_275
+  - NL_HYSTERIA2_8443_417
+  - NL_HYSTERIA2_8443_470
+  - NL_HTTP_443_563
+  - NL_HTTP_9002_609
+  - NL_HTTP_9002_640
+  - NL_HTTP_9002_620
+  - NL_HTTP_443_607
+  - NL_HTTP_9002_580
+  - NL_HTTP_9002_663
+  - NL_VLESS_62145_2328
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_ANYTLS_443_1046
+- name: TW_HYSTERIA2_60001_686
+  server: hk01.kfc-520.com
+  port: 60001
+  type: hysteria2
+  password: 8cb0c4fb-03ee-35b8-a47b-cd1d7e76dfd3
+  auth: 8cb0c4fb-03ee-35b8-a47b-cd1d7e76dfd3
+  sni: hk01.kfc-520.com
+  skip-cert-verify: true
+  country: TW
+- name: TW_ANYTLS_443_965
   server: 6ivh.pnuqcnp.cn
   port: 443
   type: anytls
@@ -13,34 +22,6 @@ proxies:
   udp: true
   sni: images.ctfassets.net
   skip-cert-verify: true
-  country: TW
-- name: TW_ANYTLS_443_1163
-  server: ac7548f3ebe045b39a90288ff1e97526.pnuqcnp.cn
-  port: 443
-  type: anytls
-  password: 9sK2mP8xQ7vL3nZ6
-  udp: true
-  sni: ac7548f3ebe045b39a90288ff1e97526.lwdnxf.cn
-  skip-cert-verify: true
-  country: TW
-- name: TW_ANYTLS_443_1555
-  server: awefd2313fefarg23fr24.pnuqcnp.cn
-  port: 443
-  type: anytls
-  password: 9sK2mP8xQ7vL3nZ6
-  udp: true
-  sni: images.ctfassets.net
-  skip-cert-verify: true
-  country: TW
-- name: TW_VMESS_35034_400
-  type: vmess
-  network: tcp
-  server: 165.154.195.38
-  port: 35034
-  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -55,10 +36,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_ANYTLS_443_1046
-  - TW_ANYTLS_443_1163
-  - TW_ANYTLS_443_1555
-  - TW_VMESS_35034_400
+  - TW_HYSTERIA2_60001_686
+  - TW_ANYTLS_443_965
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -71,10 +50,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_400
-  - TW_ANYTLS_443_1046
-  - TW_ANYTLS_443_1163
-  - TW_ANYTLS_443_1555
+  - TW_HYSTERIA2_60001_686
+  - TW_ANYTLS_443_965
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -86,10 +63,8 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_ANYTLS_443_1046
-  - TW_ANYTLS_443_1163
-  - TW_ANYTLS_443_1555
-  - TW_VMESS_35034_400
+  - TW_HYSTERIA2_60001_686
+  - TW_ANYTLS_443_965
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,68 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SC_VLESS_443_56
+- name: SC_VLESS_8443_999
   type: vless
+  server: 154.198.173.7
+  port: 8443
+  uuid: 7967bf59-57e3-4cde-9898-527b0fe60022
   network: ws
-  server: 45.130.125.126
-  port: 443
-  uuid: b69b43d1-091d-4d7c-90b2-7a8bbad9d6a9
-  servername: BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv
-  skip-cert-verify: false
   tls: true
-  udp: true
-  tfo: false
+  servername: speed.dulacloud.store
+  client-fingerprint: chrome
   ws-opts:
+    path: /dula?Telegram-WangCai2fp=chrome
     headers:
-      Host: BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv
-    path: /eyJqdW5rIjoiY0U2T212Y21yeEhUZHRKYSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
-  country: SC
-- name: SC_VLESS_2087_94
-  type: vless
-  server: 154.211.8.227
-  port: 2087
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: proxy-34l.pages.dev
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: proxy-34l.pages.dev
-  country: SC
-- name: SC_VLESS_443_331
-  type: vless
-  server: gesmankos.sadiepinki.com
-  port: 443
-  uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-  servername: gesmankos.sadiepinki.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs
-    short-id: 4fa44664f6a566d3
-  skip-cert-verify: true
-  udp: true
-  country: SC
-- client-fingerprint: firefox
-  encryption: none
-  flow: xtls-rprx-vision
-  name: SC_VLESS_443_278
-  network: tcp
-  port: '443'
-  reality-opts:
-    public-key: rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs
-    short-id: 4fa44664f6a566d3
-  server: 45.95.96.236
-  servername: gesmankos.sadiepinki.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-  xudp: true
+      Host: speed.dulacloud.store
   country: SC
 proxy-groups:
 - name: 🚀 节点选择
@@ -81,10 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SC_VLESS_443_56
-  - SC_VLESS_2087_94
-  - SC_VLESS_443_331
-  - SC_VLESS_443_278
+  - SC_VLESS_8443_999
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -97,10 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SC_VLESS_443_56
-  - SC_VLESS_2087_94
-  - SC_VLESS_443_278
-  - SC_VLESS_443_331
+  - SC_VLESS_8443_999
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -112,10 +57,7 @@ proxy-groups:
 - name: 🌍 SC
   type: url-test
   proxies:
-  - SC_VLESS_443_56
-  - SC_VLESS_2087_94
-  - SC_VLESS_443_331
-  - SC_VLESS_443_278
+  - SC_VLESS_8443_999
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

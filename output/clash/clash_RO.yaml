@@ -5,7 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RO_HYSTERIA2_8443_408
+- name: RO_VLESS_8443_1055
+  type: vless
+  server: 45.12.30.7
+  port: 8443
+  uuid: 7967bf59-57e3-4cde-9898-527b0fe60022
+  network: ws
+  tls: true
+  servername: speed.dulacloud.store
+  client-fingerprint: chrome
+  ws-opts:
+    path: /dula?Telegram-WangCai2fp=chrome
+    headers:
+      Host: speed.dulacloud.store
+  country: RO
+- name: RO_HYSTERIA2_8443_557
   password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
   port: 8443
   server: 85.204.107.172
@@ -14,41 +28,7 @@ proxies:
   tls: false
   type: hysteria2
   country: RO
-- name: RO_HYSTERIA2_8443_407
-  password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
-  port: 8443
-  server: 85.204.107.184
-  skip-cert-verify: false
-  sni: hopp-romania-new.roxa.org
-  tls: false
-  type: hysteria2
-  country: RO
-- name: RO_HYSTERIA2_8080_512
-  password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
-  port: 8080
-  server: 85.204.107.178
-  skip-cert-verify: true
-  sni: hopp-romania-new.roxa.org
-  tls: false
-  type: hysteria2
-  country: RO
-- name: RO_HYSTERIA2_8080_512_2
-  password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
-  port: 8080
-  server: 85.204.107.177
-  sni: hopp-romania-new.roxa.org
-  tls: false
-  type: hysteria2
-  country: RO
-- name: RO_HYSTERIA2_8443_397
-  password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
-  port: 8443
-  server: 85.204.107.187
-  sni: hopp-romania-new.roxa.org
-  tls: false
-  type: hysteria2
-  country: RO
-- name: RO_HYSTERIA2_8443_400
+- name: RO_HYSTERIA2_8443_567
   password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
   port: 8443
   server: 85.204.107.185
@@ -57,25 +37,33 @@ proxies:
   tls: false
   type: hysteria2
   country: RO
-- name: RO_HYSTERIA2_8080_518
+- name: RO_HYSTERIA2_8443_569
+  password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
+  port: 8443
+  server: 85.204.107.184
+  skip-cert-verify: false
+  sni: hopp-romania-new.roxa.org
+  tls: false
+  type: hysteria2
+  country: RO
+- name: RO_HYSTERIA2_8080_655
   password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
   port: 8080
-  server: 85.204.107.181
+  server: 85.204.107.171
   skip-cert-verify: true
   sni: hopp-romania-new.roxa.org
   tls: false
   type: hysteria2
   country: RO
-- name: RO_HYSTERIA2_8080_509
+- name: RO_HYSTERIA2_8080_659
   password: Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0
   port: 8080
-  server: 85.204.107.183
-  skip-cert-verify: true
+  server: 85.204.107.174
   sni: hopp-romania-new.roxa.org
   tls: false
   type: hysteria2
   country: RO
-- name: RO_HYSTERIA2_443_448
+- name: RO_HYSTERIA2_443_624
   obfs: salamander
   obfs-password: c1b4086fea89914496c7e10967a419216566
   password: QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s
@@ -86,69 +74,24 @@ proxies:
   tls: false
   type: hysteria2
   country: RO
-- name: RO_HTTP_9002_599
+- name: RO_HTTP_9002_767
   password: None
   port: 9002
-  server: 193.176.84.23
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_587
-  port: 9002
-  server: 193.176.84.27
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_592
-  password: None
-  port: 9002
-  server: 193.176.84.21
+  server: 193.176.84.22
   skip-cert-verify: true
   tls: true
   type: http
   username: null
   country: RO
-- name: RO_HTTP_9002_601
+- name: RO_HTTP_9002_1093
   port: 9002
-  server: 193.176.84.39
+  server: 193.176.84.19
   skip-cert-verify: true
   sni: www.bing.com
   tls: true
   type: http
-  udp: true
   country: RO
-- name: RO_HTTP_9002_604
-  password: ''
-  port: 9002
-  server: 193.176.84.37
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  username: ''
-  country: RO
-- name: RO_HTTP_9002_581
-  port: 9002
-  server: 193.176.84.20
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_631
-  port: 9002
-  server: 193.176.84.30
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_653
+- name: RO_HTTP_9002_779
   port: 9002
   server: 193.176.84.33
   skip-cert-verify: true
@@ -156,7 +99,15 @@ proxies:
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_651
+- name: RO_HTTP_9002_766
+  port: 9002
+  server: 193.176.84.30
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_777
   port: 9002
   server: 193.176.84.35
   skip-cert-verify: true
@@ -164,7 +115,7 @@ proxies:
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_584
+- name: RO_HTTP_9002_806
   port: 9002
   server: 193.176.84.17
   skip-cert-verify: true
@@ -172,7 +123,7 @@ proxies:
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_588
+- name: RO_HTTP_9002_797
   port: 9002
   server: 193.176.84.24
   skip-cert-verify: true
@@ -180,7 +131,7 @@ proxies:
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_591
+- name: RO_HTTP_9002_811
   port: 9002
   server: 193.176.84.25
   skip-cert-verify: true
@@ -188,7 +139,15 @@ proxies:
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_605
+- name: RO_HTTP_9002_806_2
+  port: 9002
+  server: 193.176.84.20
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_742
   password: None
   port: 9002
   server: 193.176.84.31
@@ -197,9 +156,34 @@ proxies:
   type: http
   udp: true
   country: RO
-- name: RO_HTTP_9002_611
+- name: RO_HTTP_9002_779_2
+  password: None
+  port: 9002
+  server: 193.176.84.23
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_824
+  port: 9002
+  server: 193.176.84.27
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_726
   port: 9002
   server: 193.176.84.32
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: RO
+- name: RO_HTTP_9002_747
+  port: 9002
+  server: 193.176.84.39
   skip-cert-verify: true
   tls: true
   type: http
@@ -218,29 +202,27 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_HYSTERIA2_8443_408
-  - RO_HYSTERIA2_8443_407
-  - RO_HYSTERIA2_8080_512
-  - RO_HYSTERIA2_8080_512_2
-  - RO_HYSTERIA2_8443_397
-  - RO_HYSTERIA2_8443_400
-  - RO_HYSTERIA2_8080_518
-  - RO_HYSTERIA2_8080_509
-  - RO_HYSTERIA2_443_448
-  - RO_HTTP_9002_599
-  - RO_HTTP_9002_587
-  - RO_HTTP_9002_592
-  - RO_HTTP_9002_601
-  - RO_HTTP_9002_604
-  - RO_HTTP_9002_581
-  - RO_HTTP_9002_631
-  - RO_HTTP_9002_653
-  - RO_HTTP_9002_651
-  - RO_HTTP_9002_584
-  - RO_HTTP_9002_588
-  - RO_HTTP_9002_591
-  - RO_HTTP_9002_605
-  - RO_HTTP_9002_611
+  - RO_VLESS_8443_1055
+  - RO_HYSTERIA2_8443_557
+  - RO_HYSTERIA2_8443_567
+  - RO_HYSTERIA2_8443_569
+  - RO_HYSTERIA2_8080_655
+  - RO_HYSTERIA2_8080_659
+  - RO_HYSTERIA2_443_624
+  - RO_HTTP_9002_767
+  - RO_HTTP_9002_1093
+  - RO_HTTP_9002_779
+  - RO_HTTP_9002_766
+  - RO_HTTP_9002_777
+  - RO_HTTP_9002_806
+  - RO_HTTP_9002_797
+  - RO_HTTP_9002_811
+  - RO_HTTP_9002_806_2
+  - RO_HTTP_9002_742
+  - RO_HTTP_9002_779_2
+  - RO_HTTP_9002_824
+  - RO_HTTP_9002_726
+  - RO_HTTP_9002_747
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -253,29 +235,27 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_HYSTERIA2_8443_397
-  - RO_HYSTERIA2_8443_400
-  - RO_HYSTERIA2_8443_407
-  - RO_HYSTERIA2_8443_408
-  - RO_HYSTERIA2_443_448
-  - RO_HYSTERIA2_8080_509
-  - RO_HYSTERIA2_8080_512
-  - RO_HYSTERIA2_8080_512_2
-  - RO_HYSTERIA2_8080_518
-  - RO_HTTP_9002_581
-  - RO_HTTP_9002_584
-  - RO_HTTP_9002_587
-  - RO_HTTP_9002_588
-  - RO_HTTP_9002_591
-  - RO_HTTP_9002_592
-  - RO_HTTP_9002_599
-  - RO_HTTP_9002_601
-  - RO_HTTP_9002_604
-  - RO_HTTP_9002_605
-  - RO_HTTP_9002_611
-  - RO_HTTP_9002_631
-  - RO_HTTP_9002_651
-  - RO_HTTP_9002_653
+  - RO_HYSTERIA2_8443_557
+  - RO_HYSTERIA2_8443_567
+  - RO_HYSTERIA2_8443_569
+  - RO_HYSTERIA2_443_624
+  - RO_HYSTERIA2_8080_655
+  - RO_HYSTERIA2_8080_659
+  - RO_HTTP_9002_726
+  - RO_HTTP_9002_742
+  - RO_HTTP_9002_747
+  - RO_HTTP_9002_766
+  - RO_HTTP_9002_767
+  - RO_HTTP_9002_777
+  - RO_HTTP_9002_779
+  - RO_HTTP_9002_779_2
+  - RO_HTTP_9002_797
+  - RO_HTTP_9002_806
+  - RO_HTTP_9002_806_2
+  - RO_HTTP_9002_811
+  - RO_HTTP_9002_824
+  - RO_VLESS_8443_1055
+  - RO_HTTP_9002_1093
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -287,29 +267,27 @@ proxy-groups:
 - name: 🌍 RO
   type: url-test
   proxies:
-  - RO_HYSTERIA2_8443_408
-  - RO_HYSTERIA2_8443_407
-  - RO_HYSTERIA2_8080_512
-  - RO_HYSTERIA2_8080_512_2
-  - RO_HYSTERIA2_8443_397
-  - RO_HYSTERIA2_8443_400
-  - RO_HYSTERIA2_8080_518
-  - RO_HYSTERIA2_8080_509
-  - RO_HYSTERIA2_443_448
-  - RO_HTTP_9002_599
-  - RO_HTTP_9002_587
-  - RO_HTTP_9002_592
-  - RO_HTTP_9002_601
-  - RO_HTTP_9002_604
-  - RO_HTTP_9002_581
-  - RO_HTTP_9002_631
-  - RO_HTTP_9002_653
-  - RO_HTTP_9002_651
-  - RO_HTTP_9002_584
-  - RO_HTTP_9002_588
-  - RO_HTTP_9002_591
-  - RO_HTTP_9002_605
-  - RO_HTTP_9002_611
+  - RO_VLESS_8443_1055
+  - RO_HYSTERIA2_8443_557
+  - RO_HYSTERIA2_8443_567
+  - RO_HYSTERIA2_8443_569
+  - RO_HYSTERIA2_8080_655
+  - RO_HYSTERIA2_8080_659
+  - RO_HYSTERIA2_443_624
+  - RO_HTTP_9002_767
+  - RO_HTTP_9002_1093
+  - RO_HTTP_9002_779
+  - RO_HTTP_9002_766
+  - RO_HTTP_9002_777
+  - RO_HTTP_9002_806
+  - RO_HTTP_9002_797
+  - RO_HTTP_9002_811
+  - RO_HTTP_9002_806_2
+  - RO_HTTP_9002_742
+  - RO_HTTP_9002_779_2
+  - RO_HTTP_9002_824
+  - RO_HTTP_9002_726
+  - RO_HTTP_9002_747
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
