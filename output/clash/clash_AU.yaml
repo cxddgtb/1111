@@ -5,36 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AU_HYSTERIA2_443_616
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: 443
-  server: vpn-au-002.fastervpn.world
-  skip-cert-verify: true
-  sni: whatsapp.com
-  tls: false
-  type: hysteria2
-  country: AU
-- name: AU_HTTP_443_818
+- name: AU_HTTP_443_639
   port: 443
   server: 103.62.50.130
   skip-cert-verify: true
   tls: true
   type: http
-  country: AU
-- name: AU_VLESS_20270_939
-  server: au1.gsafevpnapi.com
-  port: 20270
-  type: vless
-  uuid: 3da32b09-10e5-4ef9-b422-2e476dd72d87
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RHLiKldLu3DONcQoX4Kjs7Xmd2K25ndVbw4pwxe45XE
-    short-id: e6a5a4a9115456de
-  servername: www.yahoo.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
   country: AU
 proxy-groups:
 - name: 🚀 节点选择
@@ -49,9 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AU_HYSTERIA2_443_616
-  - AU_HTTP_443_818
-  - AU_VLESS_20270_939
+  - AU_HTTP_443_639
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,9 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AU_HYSTERIA2_443_616
-  - AU_HTTP_443_818
-  - AU_VLESS_20270_939
+  - AU_HTTP_443_639
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -78,9 +50,7 @@ proxy-groups:
 - name: 🌍 AU
   type: url-test
   proxies:
-  - AU_HYSTERIA2_443_616
-  - AU_HTTP_443_818
-  - AU_VLESS_20270_939
+  - AU_HTTP_443_639
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

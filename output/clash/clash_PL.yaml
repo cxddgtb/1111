@@ -5,14 +5,63 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_HYSTERIA2_443_484
-  password: 865e271f7c97b549b024255c9d02cebe9cc0c2c070a82b1e11bb11b9cd88dd01
+- name: PL_HTTP_443_691
+  password: None
   port: 443
-  server: 217.60.33.215
+  server: 37.120.156.18
   skip-cert-verify: true
-  sni: streambox.wwwinternetvideo.click
-  tls: false
-  type: hysteria2
+  tls: true
+  type: http
+  username: null
+  country: PL
+- name: PL_HTTP_443_665
+  port: 443
+  server: 37.120.156.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: PL
+- name: PL_VLESS_443_1563
+  type: vless
+  network: tcp
+  server: 144.31.5.64
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl6.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_1989
+  type: vless
+  network: tcp
+  server: 144.31.2.33
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl3.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: PL
+- name: PL_VLESS_443_2180
+  type: vless
+  network: tcp
+  server: 144.31.5.3
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl4.moritech.net
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +76,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_HYSTERIA2_443_484
+  - PL_HTTP_443_691
+  - PL_HTTP_443_665
+  - PL_VLESS_443_1563
+  - PL_VLESS_443_1989
+  - PL_VLESS_443_2180
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +93,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HYSTERIA2_443_484
+  - PL_HTTP_443_665
+  - PL_HTTP_443_691
+  - PL_VLESS_443_1563
+  - PL_VLESS_443_1989
+  - PL_VLESS_443_2180
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +109,11 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_HYSTERIA2_443_484
+  - PL_HTTP_443_691
+  - PL_HTTP_443_665
+  - PL_VLESS_443_1563
+  - PL_VLESS_443_1989
+  - PL_VLESS_443_2180
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,16 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ES_HTTP_443_634
-  password: None
-  port: 443
-  server: 130.195.250.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: ES
-- name: ES_HTTP_443_634_2
+- name: ES_HTTP_443_613
   password: None
   port: 443
   server: 130.195.250.34
@@ -22,6 +13,57 @@ proxies:
   tls: true
   type: http
   username: null
+  country: ES
+- name: ES_HTTP_443_665
+  password: None
+  port: 443
+  server: 82.102.17.178
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: ES
+- name: ES_HTTP_443_617
+  port: 443
+  server: 130.195.250.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: ES
+- name: ES_VLESS_443_621
+  server: esbe.vihodest.net
+  port: 443
+  type: vless
+  uuid: 88956de8-38db-449c-8410-4b70a4fb5c9b
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: ihEweXseofZYKT-AB6cTtQ1IlXgC3a7HHAsi-o50yFE
+    short-id: e93196a756abca09
+  servername: esbe.vihodest.net
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+  country: ES
+- name: ES_VMESS_22324_361
+  type: vmess
+  network: tcp
+  server: 66.163.118.73
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: ES
+- name: ES_VMESS_22324_327
+  type: vmess
+  network: tcp
+  server: 85.90.217.42
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: ES
 proxy-groups:
 - name: 🚀 节点选择
@@ -36,8 +78,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_HTTP_443_634
-  - ES_HTTP_443_634_2
+  - ES_HTTP_443_613
+  - ES_HTTP_443_665
+  - ES_HTTP_443_617
+  - ES_VLESS_443_621
+  - ES_VMESS_22324_361
+  - ES_VMESS_22324_327
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +96,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_HTTP_443_634
-  - ES_HTTP_443_634_2
+  - ES_VMESS_22324_327
+  - ES_VMESS_22324_361
+  - ES_HTTP_443_613
+  - ES_HTTP_443_617
+  - ES_VLESS_443_621
+  - ES_HTTP_443_665
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +113,12 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_HTTP_443_634
-  - ES_HTTP_443_634_2
+  - ES_HTTP_443_613
+  - ES_HTTP_443_665
+  - ES_HTTP_443_617
+  - ES_VLESS_443_621
+  - ES_VMESS_22324_361
+  - ES_VMESS_22324_327
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,19 +5,46 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CL_VLESS_80_644
-  type: vless
-  server: platform109.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+- name: CL_VLESS_80_632
   network: ws
+  port: 80
+  server: platform101.golnamakcert.top
   tls: false
-  servername: platform109.halalkhor.info
-  client-fingerprint: chrome
+  type: vless
+  udp: true
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
   ws-opts:
-    path: /platform109
     headers:
-      Host: platform109.halalkhor.info
+      Host: platform101.halalkhor.info
+    path: /platform101
+  country: CL
+- name: CL_VLESS_80_518
+  server: platform103.golnamakcert.top
+  port: 80
+  type: vless
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  tls: false
+  servername: platform103.halalkhor.info
+  network: ws
+  ws-opts:
+    path: /platform103
+    headers:
+      Host: platform103.halalkhor.info
+  udp: true
+  country: CL
+- name: CL_VLESS_80_601
+  server: platform115.golnamakcert.top
+  port: 80
+  type: vless
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  tls: false
+  servername: platform115.halalkhor.info
+  network: ws
+  ws-opts:
+    path: /platform115
+    headers:
+      Host: platform115.halalkhor.info
+  udp: true
   country: CL
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +59,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CL_VLESS_80_644
+  - CL_VLESS_80_632
+  - CL_VLESS_80_518
+  - CL_VLESS_80_601
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +74,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CL_VLESS_80_644
+  - CL_VLESS_80_518
+  - CL_VLESS_80_601
+  - CL_VLESS_80_632
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +88,9 @@ proxy-groups:
 - name: 🌍 CL
   type: url-test
   proxies:
-  - CL_VLESS_80_644
+  - CL_VLESS_80_632
+  - CL_VLESS_80_518
+  - CL_VLESS_80_601
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

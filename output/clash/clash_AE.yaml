@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_HYSTERIA2_443_452
+- name: AE_HYSTERIA2_443_494
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -15,6 +15,21 @@ proxies:
   sni: hy2.aspidnet.xyz
   tls: false
   type: hysteria2
+  country: AE
+- name: AE_VLESS_8444_1627
+  server: 151.241.138.151
+  port: 8444
+  type: vless
+  uuid: 02bd8b5a-170b-4a79-8e68-9cec710272c7
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: sQ9CcspZ6urWlzGNjjmtfp8EuuDll5RVtcsVoq_EfUE
+    short-id: a3f509aa7a4b41cc
+  servername: pl1.gursub.com
+  client-fingerprint: safari
+  network: tcp
+  udp: true
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +44,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_HYSTERIA2_443_452
+  - AE_HYSTERIA2_443_494
+  - AE_VLESS_8444_1627
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +58,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_452
+  - AE_HYSTERIA2_443_494
+  - AE_VLESS_8444_1627
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +71,8 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_HYSTERIA2_443_452
+  - AE_HYSTERIA2_443_494
+  - AE_VLESS_8444_1627
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

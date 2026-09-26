@@ -5,7 +5,46 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_443_286
+- name: CA_HYSTERIA2_443_258
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: 15.223.122.197
+  skip-cert-verify: true
+  sni: 'off'
+  tls: false
+  type: hysteria2
+  country: CA
+- name: CA_VMESS_22324_152
+  type: vmess
+  network: tcp
+  server: 134.195.198.214
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_18000_157
+  type: vmess
+  network: tcp
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_22324_135
+  type: vmess
+  network: tcp
+  server: 66.163.113.176
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_443_315
   type: vmess
   network: ws
   server: 23.162.200.227
@@ -20,6 +59,26 @@ proxies:
       Host: vk.com
     path: /linkvws
   country: CA
+- name: CA_VMESS_22324_58
+  type: vmess
+  network: tcp
+  server: 158.51.123.42
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_18000_133
+  type: vmess
+  network: tcp
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -33,7 +92,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_443_286
+  - CA_HYSTERIA2_443_258
+  - CA_VMESS_22324_152
+  - CA_VMESS_18000_157
+  - CA_VMESS_22324_135
+  - CA_VMESS_443_315
+  - CA_VMESS_22324_58
+  - CA_VMESS_18000_133
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +111,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_443_286
+  - CA_VMESS_22324_58
+  - CA_VMESS_18000_133
+  - CA_VMESS_22324_135
+  - CA_VMESS_22324_152
+  - CA_VMESS_18000_157
+  - CA_HYSTERIA2_443_258
+  - CA_VMESS_443_315
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +129,13 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_443_286
+  - CA_HYSTERIA2_443_258
+  - CA_VMESS_22324_152
+  - CA_VMESS_18000_157
+  - CA_VMESS_22324_135
+  - CA_VMESS_443_315
+  - CA_VMESS_22324_58
+  - CA_VMESS_18000_133
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
