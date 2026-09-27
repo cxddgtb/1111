@@ -5,22 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: safari
-  flow: xtls-rprx-vision
-  name: SG_VLESS_443_525
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: -LuhwN_cSgNr7nYIfCcu_XAjviKVSGwVGHxmB-s1AD0
-    short-id: e3a4bdfe3d6fd8ec
-  server: 163.128.99.14
-  servername: www.apple.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: bda35755-c838-49c3-a19e-3712f2d54275
+- name: SG_VMESS_59121_441
+  type: vmess
+  server: 129.226.157.220
+  port: 59121
+  uuid: d9865d63-d95c-454b-ba07-8e88b838a801
+  alterId: 0
+  cipher: auto
+  network: http
+  tls: false
+  servername: ''
+  ws-opts: null
   country: SG
-- name: SG_HTTP_9443_678
+- down: ''
+  fingerprint: ''
+  name: SG_HYSTERIA2_443_738
+  obfs: ''
+  obfs-password: ''
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  port: '443'
+  server: vpn-sg-001.fastervpn.world
+  skip-cert-verify: true
+  sni: vpn-sg-001.fastervpn.world
+  type: hysteria2
+  up: ''
+  country: SG
+- name: SG_HTTP_9443_935
   password: ''
   port: 9443
   server: 149.88.99.209
@@ -29,44 +39,6 @@ proxies:
   type: http
   udp: true
   username: ''
-  country: SG
-- name: SG_VMESS_59121_342
-  server: 129.226.157.220
-  port: 59121
-  type: vmess
-  uuid: d9865d63-d95c-454b-ba07-8e88b838a801
-  alterId: 0
-  cipher: auto
-  tls: false
-  alpn:
-  - ''
-  skip-cert-verify: true
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-  udp: true
-  country: SG
-- name: SG_VMESS_18000_344
-  type: vmess
-  network: tcp
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: SG
-- name: SG_VMESS_22324_354
-  type: vmess
-  network: tcp
-  server: 172.237.70.226
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -81,11 +53,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_443_525
-  - SG_HTTP_9443_678
-  - SG_VMESS_59121_342
-  - SG_VMESS_18000_344
-  - SG_VMESS_22324_354
+  - SG_VMESS_59121_441
+  - SG_HYSTERIA2_443_738
+  - SG_HTTP_9443_935
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -98,11 +68,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VMESS_59121_342
-  - SG_VMESS_18000_344
-  - SG_VMESS_22324_354
-  - SG_VLESS_443_525
-  - SG_HTTP_9443_678
+  - SG_VMESS_59121_441
+  - SG_HYSTERIA2_443_738
+  - SG_HTTP_9443_935
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -114,11 +82,9 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_443_525
-  - SG_HTTP_9443_678
-  - SG_VMESS_59121_342
-  - SG_VMESS_18000_344
-  - SG_VMESS_22324_354
+  - SG_VMESS_59121_441
+  - SG_HYSTERIA2_443_738
+  - SG_HTTP_9443_935
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

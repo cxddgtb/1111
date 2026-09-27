@@ -5,145 +5,65 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_HTTP_11111_450
+- name: DE_VLESS_80_297
+  type: vless
+  server: 188.245.24.225
+  port: 80
+  uuid: acfc7e1f-85c1-4b75-bfc6-fc815a5550c6
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  country: DE
+- name: DE_VLESS_80_302
+  type: vless
+  server: 159.69.91.8
+  port: 80
+  uuid: 3728d3fa-e004-47b9-b334-9f0723efeef2
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  country: DE
+- name: DE_HTTP_443_364
+  password: None
+  port: 443
+  server: 149.36.50.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: DE
+- name: DE_HTTP_443_366
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_374
+  password: None
+  port: 443
+  server: 87.249.132.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: DE
+- name: DE_HTTP_11111_291
   password: None
   port: 11111
   server: 103.237.102.191
   type: http
   username: null
-  country: DE
-- name: DE_VLESS_57007_687
-  server: iranivib.kashimo.top
-  port: 57007
-  type: vless
-  uuid: 1e68828d-bcae-43f8-953e-ab9611cdc07b
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: xJrOVncq9U06-mrcoQMJRVT0ZI3pKiL870j_FYHnswg
-    short-id: 86652c20afc7a2bc
-  servername: scone-pa.clients6.google.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-  country: DE
-- name: DE_VLESS_2434_734
-  server: de18.bexait.ir
-  port: 2434
-  type: vless
-  uuid: 8dfc237e-0376-48b4-9822-5f4e627d41f1
-  tls: true
-  reality-opts:
-    public-key: yzCvRpbQ-cRePaJAuQkw42_xEf-R860gFsQwoPki2E0
-    short-id: 9de041877612a718
-  servername: icloud.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-  country: DE
-- name: DE_VMESS_57361_941
-  type: vmess
-  network: tcp
-  server: me6.movieseryalirani.ir
-  port: 57361
-  uuid: ed815caa-bff1-4419-8c61-1d108eabaf1f
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_180_23
-  type: vmess
-  network: tcp
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_180_23_2
-  type: vmess
-  network: tcp
-  server: 82.198.246.233
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_180_23_3
-  type: vmess
-  network: tcp
-  server: 82.198.246.37
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_180_23_4
-  type: vmess
-  network: tcp
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_22324_292
-  type: vmess
-  network: tcp
-  server: 216.106.187.60
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VLESS_2096_625
-  type: vless
-  network: ws
-  server: 46.101.196.101
-  port: 2096
-  uuid: 8525fe74-67e6-4a55-8a26-95f227bd1384
-  servername: lucky-sky-0104.alvlirm444.workers.dev
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: lucky-sky-0104.alvlirm444.workers.dev
-    path: /
-  country: DE
-- name: DE_VLESS_443_439
-  type: vless
-  network: tcp
-  server: 144.31.159.86
-  port: 443
-  uuid: b5d6221d-e3ad-4453-b5c6-8bf7ccaa7aa5
-  servername: de3.duck-proxy.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: DE
-- name: DE_VLESS_443_471
-  type: vless
-  network: tcp
-  server: 57.129.96.67
-  port: 443
-  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
-  servername: nasnet-571299667-direct.mbghalibaf.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  flow: xtls-rprx-vision
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -158,18 +78,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_HTTP_11111_450
-  - DE_VLESS_57007_687
-  - DE_VLESS_2434_734
-  - DE_VMESS_57361_941
-  - DE_VMESS_180_23
-  - DE_VMESS_180_23_2
-  - DE_VMESS_180_23_3
-  - DE_VMESS_180_23_4
-  - DE_VMESS_22324_292
-  - DE_VLESS_2096_625
-  - DE_VLESS_443_439
-  - DE_VLESS_443_471
+  - DE_VLESS_80_297
+  - DE_VLESS_80_302
+  - DE_HTTP_443_364
+  - DE_HTTP_443_366
+  - DE_HTTP_443_374
+  - DE_HTTP_11111_291
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -182,18 +96,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VMESS_180_23
-  - DE_VMESS_180_23_2
-  - DE_VMESS_180_23_3
-  - DE_VMESS_180_23_4
-  - DE_VMESS_22324_292
-  - DE_VLESS_443_439
-  - DE_HTTP_11111_450
-  - DE_VLESS_443_471
-  - DE_VLESS_2096_625
-  - DE_VLESS_57007_687
-  - DE_VLESS_2434_734
-  - DE_VMESS_57361_941
+  - DE_HTTP_11111_291
+  - DE_VLESS_80_297
+  - DE_VLESS_80_302
+  - DE_HTTP_443_364
+  - DE_HTTP_443_366
+  - DE_HTTP_443_374
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -205,18 +113,12 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_HTTP_11111_450
-  - DE_VLESS_57007_687
-  - DE_VLESS_2434_734
-  - DE_VMESS_57361_941
-  - DE_VMESS_180_23
-  - DE_VMESS_180_23_2
-  - DE_VMESS_180_23_3
-  - DE_VMESS_180_23_4
-  - DE_VMESS_22324_292
-  - DE_VLESS_2096_625
-  - DE_VLESS_443_439
-  - DE_VLESS_443_471
+  - DE_VLESS_80_297
+  - DE_VLESS_80_302
+  - DE_HTTP_443_364
+  - DE_HTTP_443_366
+  - DE_HTTP_443_374
+  - DE_HTTP_11111_291
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

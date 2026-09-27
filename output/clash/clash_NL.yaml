@@ -5,27 +5,42 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_VLESS_62145_293
+- name: NL_VLESS_2063_409
   type: vless
-  server: 158.101.195.43
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  servername: 158.101.195.43
-  tls: false
-  client-fingerprint: chrome
-  skip-cert-verify: true
+  server: pl-waw.dontblockmepls.com
+  port: 2063
+  uuid: b18d5990-96eb-4587-a386-7f8ef7591e6a
+  flow: xtls-rprx-vision
   udp: true
+  tls: true
+  client-fingerprint: firefox
+  servername: rusbid.de
+  reality-opts:
+    public-key: MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM
   country: NL
-- name: NL_HTTP_443_570
+- name: NL_VLESS_2063_387
+  type: vless
+  server: 31.77.13.19
+  port: 2063
+  uuid: b18d5990-96eb-4587-a386-7f8ef7591e6a
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  client-fingerprint: chrome
+  servername: rusbid.de
+  reality-opts:
+    public-key: MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM
+  country: NL
+- name: NL_HTTP_443_352
   password: None
   port: 443
-  server: 5.255.118.82
+  server: 149.36.51.129
   skip-cert-verify: true
   tls: true
   type: http
   username: null
   country: NL
-- name: NL_HTTP_9002_639
+- name: NL_HTTP_9002_368
   port: 9002
   server: 84.17.47.148
   skip-cert-verify: true
@@ -33,7 +48,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_596
+- name: NL_HTTP_9002_372
   port: 9002
   server: 84.17.47.125
   skip-cert-verify: true
@@ -41,14 +56,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_443_630
-  port: 443
-  server: 149.36.51.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_9002_596_2
+- name: NL_HTTP_9002_365
   port: 9002
   server: 84.17.47.150
   skip-cert-verify: true
@@ -56,7 +64,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_601
+- name: NL_HTTP_9002_364
   port: 9002
   server: 84.17.47.146
   skip-cert-verify: true
@@ -64,7 +72,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_632
+- name: NL_HTTP_9002_369
   port: 9002
   server: 84.17.47.149
   skip-cert-verify: true
@@ -72,23 +80,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_443_573
-  port: 443
-  server: 185.140.209.235
-  skip-cert-verify: true
-  sni: 482c8436a1f7c908b48a1757abb5dd79-ce85c45206570905.apache-iv.com
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_443_576
-  port: 443
-  server: 185.246.153.28
-  skip-cert-verify: true
-  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_9002_586
+- name: NL_HTTP_9002_362
   password: None
   port: 9002
   server: 84.17.47.147
@@ -97,30 +89,14 @@ proxies:
   type: http
   username: null
   country: NL
-- name: NL_HTTP_23856_590
-  password: ''
-  port: 23856
+- name: NL_HTTP_23856_356
+  password: 'null'
+  port: '23856'
   server: 51.159.225.196
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-  username: ''
-  country: NL
-- name: NL_VLESS_443_505
-  server: 132.243.166.106
-  port: 443
-  type: vless
-  uuid: 0a975d79-6930-4861-a105-dc50793456de
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: TCuyY9xiZLVJVLzTmXvX9pqcWgPOfb7YfKlYeGB1umY
-    short-id: 33e3ae5cce550a0a
-  servername: blog.chatbaza.fun
-  client-fingerprint: safari
-  network: tcp
-  udp: true
+  username: 'null'
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -135,19 +111,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_VLESS_62145_293
-  - NL_HTTP_443_570
-  - NL_HTTP_9002_639
-  - NL_HTTP_9002_596
-  - NL_HTTP_443_630
-  - NL_HTTP_9002_596_2
-  - NL_HTTP_9002_601
-  - NL_HTTP_9002_632
-  - NL_HTTP_443_573
-  - NL_HTTP_443_576
-  - NL_HTTP_9002_586
-  - NL_HTTP_23856_590
-  - NL_VLESS_443_505
+  - NL_VLESS_2063_409
+  - NL_VLESS_2063_387
+  - NL_HTTP_443_352
+  - NL_HTTP_9002_368
+  - NL_HTTP_9002_372
+  - NL_HTTP_9002_365
+  - NL_HTTP_9002_364
+  - NL_HTTP_9002_369
+  - NL_HTTP_9002_362
+  - NL_HTTP_23856_356
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -160,19 +133,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_VLESS_62145_293
-  - NL_VLESS_443_505
-  - NL_HTTP_443_570
-  - NL_HTTP_443_573
-  - NL_HTTP_443_576
-  - NL_HTTP_9002_586
-  - NL_HTTP_23856_590
-  - NL_HTTP_9002_596
-  - NL_HTTP_9002_596_2
-  - NL_HTTP_9002_601
-  - NL_HTTP_443_630
-  - NL_HTTP_9002_632
-  - NL_HTTP_9002_639
+  - NL_HTTP_443_352
+  - NL_HTTP_23856_356
+  - NL_HTTP_9002_362
+  - NL_HTTP_9002_364
+  - NL_HTTP_9002_365
+  - NL_HTTP_9002_368
+  - NL_HTTP_9002_369
+  - NL_HTTP_9002_372
+  - NL_VLESS_2063_387
+  - NL_VLESS_2063_409
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -184,19 +154,16 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_62145_293
-  - NL_HTTP_443_570
-  - NL_HTTP_9002_639
-  - NL_HTTP_9002_596
-  - NL_HTTP_443_630
-  - NL_HTTP_9002_596_2
-  - NL_HTTP_9002_601
-  - NL_HTTP_9002_632
-  - NL_HTTP_443_573
-  - NL_HTTP_443_576
-  - NL_HTTP_9002_586
-  - NL_HTTP_23856_590
-  - NL_VLESS_443_505
+  - NL_VLESS_2063_409
+  - NL_VLESS_2063_387
+  - NL_HTTP_443_352
+  - NL_HTTP_9002_368
+  - NL_HTTP_9002_372
+  - NL_HTTP_9002_365
+  - NL_HTTP_9002_364
+  - NL_HTTP_9002_369
+  - NL_HTTP_9002_362
+  - NL_HTTP_23856_356
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

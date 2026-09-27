@@ -5,7 +5,45 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_HTTP_9443_570
+- name: GB_VLESS_22224_167
+  type: vless
+  server: 18.169.206.105
+  port: 22224
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: GB
+- name: GB_VLESS_22222_165
+  type: vless
+  server: 18.169.206.105
+  port: 22222
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: GB
+- name: GB_HTTP_443_341
+  port: 443
+  server: 212.102.63.61
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: GB
+- name: GB_HTTP_443_314
+  password: None
+  port: 443
+  server: 185.235.0.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+  country: GB
+- name: GB_HTTP_9443_347
   password: None
   port: 9443
   server: 37.120.233.34
@@ -14,85 +52,14 @@ proxies:
   type: http
   username: null
   country: GB
-- name: GB_HTTP_443_557
-  password: None
+- name: GB_HTTP_443_315
   port: 443
   server: 185.235.0.2
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
   country: GB
-- http-opts:
-    headers:
-      Host:
-      - cafebazaar.ir
-    method: GET
-    path:
-    - /
-  name: GB_VLESS_11186_286
-  network: http
-  port: 11186
-  server: 188.166.146.136
-  tls: false
-  type: vless
-  udp: true
-  uuid: fd4b654f-9ae2-42c5-977b-6aa54e8e9a83
-  country: GB
-- name: GB_HTTP_443_551
-  port: 443
-  server: 212.102.63.61
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_554
-  port: 443
-  server: 185.235.0.66
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_577
-  password: None
-  port: 443
-  server: 37.120.233.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: GB
-- name: GB_HTTP_443_566
-  port: 443
-  server: 185.235.0.34
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_571
-  port: 443
-  server: 84.17.50.193
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_572
-  port: 443
-  server: 185.235.0.98
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_579
-  password: None
-  port: 443
-  server: 37.120.233.50
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-  country: GB
-- name: GB_HTTP_443_576
+- name: GB_HTTP_443_344
   password: None
   port: 443
   server: 212.102.63.1
@@ -101,22 +68,23 @@ proxies:
   type: http
   username: null
   country: GB
-- name: GB_VLESS_2087_69
-  type: vless
-  network: ws
-  server: 91.193.59.191
-  port: 2087
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-  servername: vlso5.1d.mom
-  skip-cert-verify: false
+- name: GB_HTTP_443_341_2
+  password: None
+  port: 443
+  server: 37.120.233.18
+  skip-cert-verify: true
   tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: vlso5.1d.mom
-    path: /socks5=888:888
+  type: http
+  username: null
+  country: GB
+- name: GB_HTTP_443_348
+  password: None
+  port: 443
+  server: 37.120.233.50
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -131,18 +99,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_HTTP_9443_570
-  - GB_HTTP_443_557
-  - GB_VLESS_11186_286
-  - GB_HTTP_443_551
-  - GB_HTTP_443_554
-  - GB_HTTP_443_577
-  - GB_HTTP_443_566
-  - GB_HTTP_443_571
-  - GB_HTTP_443_572
-  - GB_HTTP_443_579
-  - GB_HTTP_443_576
-  - GB_VLESS_2087_69
+  - GB_VLESS_22224_167
+  - GB_VLESS_22222_165
+  - GB_HTTP_443_341
+  - GB_HTTP_443_314
+  - GB_HTTP_9443_347
+  - GB_HTTP_443_315
+  - GB_HTTP_443_344
+  - GB_HTTP_443_341_2
+  - GB_HTTP_443_348
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -155,18 +120,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_VLESS_2087_69
-  - GB_VLESS_11186_286
-  - GB_HTTP_443_551
-  - GB_HTTP_443_554
-  - GB_HTTP_443_557
-  - GB_HTTP_443_566
-  - GB_HTTP_9443_570
-  - GB_HTTP_443_571
-  - GB_HTTP_443_572
-  - GB_HTTP_443_576
-  - GB_HTTP_443_577
-  - GB_HTTP_443_579
+  - GB_VLESS_22222_165
+  - GB_VLESS_22224_167
+  - GB_HTTP_443_314
+  - GB_HTTP_443_315
+  - GB_HTTP_443_341
+  - GB_HTTP_443_341_2
+  - GB_HTTP_443_344
+  - GB_HTTP_9443_347
+  - GB_HTTP_443_348
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -178,18 +140,15 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_HTTP_9443_570
-  - GB_HTTP_443_557
-  - GB_VLESS_11186_286
-  - GB_HTTP_443_551
-  - GB_HTTP_443_554
-  - GB_HTTP_443_577
-  - GB_HTTP_443_566
-  - GB_HTTP_443_571
-  - GB_HTTP_443_572
-  - GB_HTTP_443_579
-  - GB_HTTP_443_576
-  - GB_VLESS_2087_69
+  - GB_VLESS_22224_167
+  - GB_VLESS_22222_165
+  - GB_HTTP_443_341
+  - GB_HTTP_443_314
+  - GB_HTTP_9443_347
+  - GB_HTTP_443_315
+  - GB_HTTP_443_344
+  - GB_HTTP_443_341_2
+  - GB_HTTP_443_348
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

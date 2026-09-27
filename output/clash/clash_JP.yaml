@@ -5,33 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_HYSTERIA2_443_720
-  server: open.2ml.bid
+- name: JP_SS_443_2811
+  server: 3.112.209.209
   port: 443
-  type: hysteria2
-  password: my_super_password_123
-  auth: my_super_password_123
-  sni: open.2ml.bid
-  skip-cert-verify: true
-  country: JP
-- name: JP_HYSTERIA2_443_950
-  server: 43.167.208.94
-  port: 443
-  type: hysteria2
-  password: RQBXe4kpsRant_2u1PzdneBOPuCSwUSI
-  auth: RQBXe4kpsRant_2u1PzdneBOPuCSwUSI
-  sni: 43.167.208.94
-  skip-cert-verify: true
-  country: JP
-- name: JP_VMESS_4433_213
-  type: vmess
-  network: tcp
-  server: 45.32.57.118
-  port: 4433
-  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,9 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_HYSTERIA2_443_720
-  - JP_HYSTERIA2_443_950
-  - JP_VMESS_4433_213
+  - JP_SS_443_2811
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -61,9 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_4433_213
-  - JP_HYSTERIA2_443_720
-  - JP_HYSTERIA2_443_950
+  - JP_SS_443_2811
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,9 +51,7 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_HYSTERIA2_443_720
-  - JP_HYSTERIA2_443_950
-  - JP_VMESS_4433_213
+  - JP_SS_443_2811
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

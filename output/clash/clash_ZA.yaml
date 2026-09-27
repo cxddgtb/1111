@@ -5,15 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_HYSTERIA2_443_351
-  password: sOiWCQ2AdIV0OWNuqQVyWp4JZnRxdyLROSjX
-  port: 443
-  server: 217.60.182.79
-  skip-cert-verify: true
-  sni: cabinet.wwwinternetvideo.click
+- name: ZA_VLESS_80_665
+  type: vless
+  server: platform103.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  network: ws
   tls: false
-  type: hysteria2
-  country: EE
+  servername: platform103.halalkhor.info
+  client-fingerprint: chrome
+  ws-opts:
+    path: /platform103
+    headers:
+      Host: platform103.halalkhor.info
+  country: ZA
+- name: ZA_VLESS_80_658
+  type: vless
+  server: platform107.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  udp: true
+  network: ws
+  ws-opts:
+    path: /platform107
+    headers:
+      Host: platform107.halalkhor.info
+  country: ZA
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -22,12 +39,13 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 EE
+  - 🌍 ZA
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_HYSTERIA2_443_351
+  - ZA_VLESS_80_665
+  - ZA_VLESS_80_658
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +58,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_HYSTERIA2_443_351
+  - ZA_VLESS_80_658
+  - ZA_VLESS_80_665
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -49,10 +68,11 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 EE
+- name: 🌍 ZA
   type: url-test
   proxies:
-  - EE_HYSTERIA2_443_351
+  - ZA_VLESS_80_665
+  - ZA_VLESS_80_658
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

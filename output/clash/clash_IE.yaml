@@ -5,7 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IE_HTTP_443_581
+- name: IE_HTTP_443_362
+  port: 443
+  server: 149.88.96.12
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: IE
+- name: IE_HTTP_443_363
   password: None
   port: 443
   server: 149.88.96.1
@@ -13,24 +20,6 @@ proxies:
   tls: true
   type: http
   username: null
-  country: IE
-- name: IE_HTTP_443_586
-  port: 443
-  server: 149.88.96.12
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: IE
-- name: IE_VLESS_443_633
-  server: ireland-new-ded1.failspace.top
-  port: 443
-  type: vless
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
   country: IE
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,9 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IE_HTTP_443_581
-  - IE_HTTP_443_586
-  - IE_VLESS_443_633
+  - IE_HTTP_443_362
+  - IE_HTTP_443_363
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,9 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IE_HTTP_443_581
-  - IE_HTTP_443_586
-  - IE_VLESS_443_633
+  - IE_HTTP_443_362
+  - IE_HTTP_443_363
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -74,9 +61,8 @@ proxy-groups:
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_HTTP_443_581
-  - IE_HTTP_443_586
-  - IE_VLESS_443_633
+  - IE_HTTP_443_362
+  - IE_HTTP_443_363
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

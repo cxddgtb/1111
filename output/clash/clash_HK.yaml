@@ -5,67 +5,74 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_30836_1074
-  type: vmess
-  server: v36.hdacd.com
-  port: 30836
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: HK
-- name: HK_VMESS_30833_1198
-  type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: HK
-- name: HK_VMESS_30806_1356
-  type: vmess
-  server: v6.hdacd.com
-  port: 30806
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: HK
-- name: HK_VMESS_30804_1903
+- name: HK_VMESS_30804_1535
   type: vmess
   server: v4.hdacd.com
   port: 30804
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
+  network: tcp
   tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_VMESS_30807_2382
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_VMESS_30806_2463
+  type: vmess
+  server: v6.hdacd.com
+  port: 30806
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_VLESS_8030_846
+  type: vless
+  server: 54.46.72.234
+  port: 8030
+  uuid: 37665857-8b6e-4daa-8231-3e2927221558
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: spjd.cbc.qzz.io
+  network: ws
+  ws-opts:
+    path: /proxyip=ProxyIP.US.CMLiussss.net
+    headers:
+      Host: spjd.cbc.qzz.io
+  country: HK
+- name: HK_ANYTLS_443_1713
+  type: anytls
+  server: ac7548f3ebe045b39a90288ff1e97528.pnuqcnp.cn
+  port: 443
+  password: 9sK2mP8xQ7vL3nZ6
+  sni: ac7548f3ebe045b39a90288ff1e97528.lwdnxf.cn
   skip-cert-verify: true
+  tls: false
   udp: true
   country: HK
-- name: HK_SOCKS5_8899_754
-  password: admin
-  port: 8899
-  server: 47.242.19.215
+- name: HK_SOCKS5_1080_1830
+  password: Og==
+  port: '1080'
+  server: 103.210.161.8
   skip-cert-verify: true
   type: socks5
-  username: admin
-  country: HK
-- name: HK_VMESS_22324_356
-  type: vmess
-  network: tcp
-  server: 89.223.95.77
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  username: Og==
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -80,12 +87,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_30836_1074
-  - HK_VMESS_30833_1198
-  - HK_VMESS_30806_1356
-  - HK_VMESS_30804_1903
-  - HK_SOCKS5_8899_754
-  - HK_VMESS_22324_356
+  - HK_VMESS_30804_1535
+  - HK_VMESS_30807_2382
+  - HK_VMESS_30806_2463
+  - HK_VLESS_8030_846
+  - HK_ANYTLS_443_1713
+  - HK_SOCKS5_1080_1830
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -98,12 +105,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_22324_356
-  - HK_SOCKS5_8899_754
-  - HK_VMESS_30836_1074
-  - HK_VMESS_30833_1198
-  - HK_VMESS_30806_1356
-  - HK_VMESS_30804_1903
+  - HK_VLESS_8030_846
+  - HK_VMESS_30804_1535
+  - HK_ANYTLS_443_1713
+  - HK_SOCKS5_1080_1830
+  - HK_VMESS_30807_2382
+  - HK_VMESS_30806_2463
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -115,12 +122,12 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_30836_1074
-  - HK_VMESS_30833_1198
-  - HK_VMESS_30806_1356
-  - HK_VMESS_30804_1903
-  - HK_SOCKS5_8899_754
-  - HK_VMESS_22324_356
+  - HK_VMESS_30804_1535
+  - HK_VMESS_30807_2382
+  - HK_VMESS_30806_2463
+  - HK_VLESS_8030_846
+  - HK_ANYTLS_443_1713
+  - HK_SOCKS5_1080_1830
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

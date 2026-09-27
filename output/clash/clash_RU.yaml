@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_1002
+- name: RU_VLESS_443_812
   type: vless
   server: fbsv6.guardora.pro
   port: 443
@@ -19,47 +19,13 @@ proxies:
     headers:
       Host: fbsv6.guardora.pro
   country: RU
-- name: RU_HYSTERIA2_443_2485
-  password: f317b5d6-d399-4d3d-a051-89d674ae953c
-  port: 443
-  server: msk.frkn.org
-  tls: false
-  type: hysteria2
-  country: RU
-- name: RU_VLESS_10654_1191
-  server: 37.18.14.168
-  port: 10654
-  type: vless
-  uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
-  tls: true
-  reality-opts:
-    public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
-    short-id: 5c3fb122
-  servername: bl3fk52.sysopnova.art
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /xhttp_client_upload
-    host: bl3fk52.sysopnova.art
-    mode: packet-up
+- name: RU_SS_2_319
+  type: ss
+  server: 139.100.236.74
+  port: 2
+  cipher: chacha20-ietf-poly1305
+  password: WxYpOK1iPSJySbVNMMJDtw
   udp: true
-  country: RU
-- name: RU_VLESS_443_841
-  type: vless
-  network: ws
-  server: 91.210.169.181
-  port: 443
-  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
-  servername: wstg.datasynctrue.online
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  flow: ''
-  ws-opts:
-    headers:
-      Host: wstg.datasynctrue.online
-    path: /api/connect
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -74,10 +40,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_1002
-  - RU_HYSTERIA2_443_2485
-  - RU_VLESS_10654_1191
-  - RU_VLESS_443_841
+  - RU_VLESS_443_812
+  - RU_SS_2_319
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -90,10 +54,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_443_841
-  - RU_VLESS_443_1002
-  - RU_VLESS_10654_1191
-  - RU_HYSTERIA2_443_2485
+  - RU_SS_2_319
+  - RU_VLESS_443_812
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -105,10 +67,8 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_1002
-  - RU_HYSTERIA2_443_2485
-  - RU_VLESS_10654_1191
-  - RU_VLESS_443_841
+  - RU_VLESS_443_812
+  - RU_SS_2_319
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
