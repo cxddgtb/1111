@@ -5,40 +5,118 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VMESS_59121_441
+- name: SG_VLESS_443_549
+  type: vless
+  server: onhit.shalana.xyz
+  port: 443
+  uuid: 408fbae6-a40b-4f0b-9723-0b4ce8e3d035
+  tls: true
+  skip-cert-verify: true
+  udp: true
+  country: SG
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  name: SG_VLESS_20975_542
+  network: tcp
+  port: '20975'
+  reality-opts:
+    public-key: GVg6RWWCJfXATSmArzQD69rXqs9-804Ot-_uX3WrJE4
+    short-id: 2bb0dc48
+  server: 18.136.119.69
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: d00d9d18-20cf-4191-be76-6f73d43a27ec
+  xudp: true
+  country: SG
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  name: SG_VLESS_26415_542
+  network: tcp
+  port: '26415'
+  reality-opts:
+    public-key: eC5S3o9uFN6i_YjDjiALCXbc_dzh3kEm2C5zduDGtS8
+    short-id: b7dd999667b0406e
+  server: 54.251.239.81
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: d00d9d18-20cf-4191-be76-6f73d43a27ec
+  xudp: true
+  country: SG
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  name: SG_VLESS_23070_533
+  network: tcp
+  port: '23070'
+  reality-opts:
+    public-key: px79hKhwQDhnVMdX3CF8dHKQsAVT8-FJ8ilk7JZAO2U
+    short-id: c7f5ef2673cc86bc
+  server: 18.140.72.106
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: d00d9d18-20cf-4191-be76-6f73d43a27ec
+  xudp: true
+  country: SG
+- name: SG_VLESS_21464_548
+  server: 18.143.191.201
+  port: 21464
+  type: vless
+  uuid: d00d9d18-20cf-4191-be76-6f73d43a27ec
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 7TVqIgOMgFzxjYG4nSSQxWWTE7cBPXjpoZwCsd337lY
+    short-id: 52f8
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+  country: SG
+- name: SG_HYSTERIA2_443_565
+  server: 138.2.89.249
+  port: 443
+  type: hysteria2
+  password: d042d150716709bb778cc73889cddb02
+  auth: d042d150716709bb778cc73889cddb02
+  sni: www.bing.com
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: 309502c4a8df10b46fb976d4a8c43f42
+  country: SG
+- name: SG_VMESS_18000_334
   type: vmess
-  server: 129.226.157.220
-  port: 59121
-  uuid: d9865d63-d95c-454b-ba07-8e88b838a801
+  network: tcp
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
   alterId: 0
   cipher: auto
-  network: http
-  tls: false
-  servername: ''
-  ws-opts: null
   country: SG
-- down: ''
-  fingerprint: ''
-  name: SG_HYSTERIA2_443_738
-  obfs: ''
-  obfs-password: ''
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  port: '443'
-  server: vpn-sg-001.fastervpn.world
-  skip-cert-verify: true
-  sni: vpn-sg-001.fastervpn.world
-  type: hysteria2
-  up: ''
-  country: SG
-- name: SG_HTTP_9443_935
-  password: ''
-  port: 9443
-  server: 149.88.99.209
-  skip-cert-verify: true
+- name: SG_VLESS_2083_236
+  type: vless
+  network: ws
+  server: 27.50.49.154
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  servername: proxy-34l.pages.dev
+  skip-cert-verify: false
   tls: true
-  type: http
   udp: true
-  username: ''
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: proxy-34l.pages.dev
+    path: /
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -53,9 +131,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VMESS_59121_441
-  - SG_HYSTERIA2_443_738
-  - SG_HTTP_9443_935
+  - SG_VLESS_443_549
+  - SG_VLESS_20975_542
+  - SG_VLESS_26415_542
+  - SG_VLESS_23070_533
+  - SG_VLESS_21464_548
+  - SG_HYSTERIA2_443_565
+  - SG_VMESS_18000_334
+  - SG_VLESS_2083_236
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -68,9 +151,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VMESS_59121_441
-  - SG_HYSTERIA2_443_738
-  - SG_HTTP_9443_935
+  - SG_VLESS_2083_236
+  - SG_VMESS_18000_334
+  - SG_VLESS_23070_533
+  - SG_VLESS_20975_542
+  - SG_VLESS_26415_542
+  - SG_VLESS_21464_548
+  - SG_VLESS_443_549
+  - SG_HYSTERIA2_443_565
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -82,9 +170,14 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VMESS_59121_441
-  - SG_HYSTERIA2_443_738
-  - SG_HTTP_9443_935
+  - SG_VLESS_443_549
+  - SG_VLESS_20975_542
+  - SG_VLESS_26415_542
+  - SG_VLESS_23070_533
+  - SG_VLESS_21464_548
+  - SG_HYSTERIA2_443_565
+  - SG_VMESS_18000_334
+  - SG_VLESS_2083_236
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

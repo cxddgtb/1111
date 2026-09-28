@@ -5,14 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_HYSTERIA2_443_351
-  password: sOiWCQ2AdIV0OWNuqQVyWp4JZnRxdyLROSjX
+- name: EE_VLESS_443_604
+  type: vless
+  server: 5.181.201.44
   port: 443
-  server: 217.60.182.79
+  uuid: 47b63e55-a4e4-43ce-97dc-946e6a26971d
+  servername: bababoy.karp1pdd.life
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 98MNvJC4t0ZjK_xHlQjOx2WfLfAPluNDb71MzS9sPT8
+    short-id: 38018dde3e27335e
   skip-cert-verify: true
-  sni: cabinet.wwwinternetvideo.click
-  tls: false
-  type: hysteria2
+  udp: true
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_HYSTERIA2_443_351
+  - EE_VLESS_443_604
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_HYSTERIA2_443_351
+  - EE_VLESS_443_604
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +58,7 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_HYSTERIA2_443_351
+  - EE_VLESS_443_604
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

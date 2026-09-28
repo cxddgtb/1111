@@ -5,30 +5,76 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_HTTP_443_441
-  password: None
+- name: PL_VLESS_443_1411
+  type: vless
+  server: 144.31.5.3
   port: 443
-  server: 37.120.156.18
-  skip-cert-verify: true
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl4.moritech.net
   tls: true
-  type: http
-  username: null
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: true
+  udp: true
   country: PL
-- name: PL_HTTP_443_441_2
+- name: PL_VLESS_443_1514
+  type: vless
+  server: pl3.moritech.net
   port: 443
-  server: 37.120.156.34
-  skip-cert-verify: true
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: -i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN-i10VPN
   tls: true
-  type: http
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: true
+  udp: true
   country: PL
-- name: PL_HTTP_443_423
-  password: ''
+- name: PL_VLESS_443_1830
+  type: vless
+  server: 144.31.2.33
   port: 443
-  server: 151.115.54.133
-  skip-cert-verify: true
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: /?TELEGRAM--MARAMBASHI--MARAMBASHI
   tls: true
-  type: http
-  username: ''
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: true
+  udp: true
+  country: PL
+- name: PL_VLESS_443_2203
+  type: vless
+  server: pl4.moritech.net
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  servername: pl4.moritech.net
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: true
+  udp: true
+  country: PL
+- down: ''
+  fingerprint: ''
+  name: PL_HYSTERIA2_443_483
+  obfs: ''
+  obfs-password: ''
+  password: 865e271f7c97b549b024255c9d02cebe9cc0c2c070a82b1e11bb11b9cd88dd01
+  port: '443'
+  server: 217.60.33.215
+  skip-cert-verify: true
+  sni: streambox.wwwinternetvideo.click
+  type: hysteria2
+  up: ''
+  country: PL
+- name: PL_VLESS_443_624
+  type: vless
+  server: polka.failspace.top
+  port: 443
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  flow: xtls-rprx-vision-udp443
+  udp: true
+  tls: true
+  skip-cert-verify: false
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -43,9 +89,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_HTTP_443_441
-  - PL_HTTP_443_441_2
-  - PL_HTTP_443_423
+  - PL_VLESS_443_1411
+  - PL_VLESS_443_1514
+  - PL_VLESS_443_1830
+  - PL_VLESS_443_2203
+  - PL_HYSTERIA2_443_483
+  - PL_VLESS_443_624
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,9 +107,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HTTP_443_423
-  - PL_HTTP_443_441
-  - PL_HTTP_443_441_2
+  - PL_HYSTERIA2_443_483
+  - PL_VLESS_443_624
+  - PL_VLESS_443_1411
+  - PL_VLESS_443_1514
+  - PL_VLESS_443_1830
+  - PL_VLESS_443_2203
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,9 +124,12 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_HTTP_443_441
-  - PL_HTTP_443_441_2
-  - PL_HTTP_443_423
+  - PL_VLESS_443_1411
+  - PL_VLESS_443_1514
+  - PL_VLESS_443_1830
+  - PL_VLESS_443_2203
+  - PL_HYSTERIA2_443_483
+  - PL_VLESS_443_624
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

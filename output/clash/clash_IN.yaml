@@ -5,7 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_VMESS_443_1247
+- name: IN_VMESS_80_654
+  type: vmess
+  server: 152.67.8.205
+  port: 80
+  uuid: 9db4c708-aef8-4359-821b-38e47990be0d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+  udp: true
+  country: IN
+- name: IN_VMESS_443_2274
   type: vmess
   server: 20.235.220.189
   port: 443
@@ -34,7 +48,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VMESS_443_1247
+  - IN_VMESS_80_654
+  - IN_VMESS_443_2274
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +62,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VMESS_443_1247
+  - IN_VMESS_80_654
+  - IN_VMESS_443_2274
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +75,8 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VMESS_443_1247
+  - IN_VMESS_80_654
+  - IN_VMESS_443_2274
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

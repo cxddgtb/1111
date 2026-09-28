@@ -5,19 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EG_VLESS_443_100
-  type: vless
-  server: 166.1.228.218
+- name: EG_VLESS_443_914
+  server: 38.54.59.70
   port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
+  type: vless
+  uuid: 97532b08-357e-4140-a6f0-8e07f2ed3327
   tls: true
-  servername: shuma.ccwu.cc
-  client-fingerprint: chrome
+  servername: yf.962456.xyz
+  client-fingerprint: random
+  network: ws
   ws-opts:
-    path: /
+    path: /proxyip=kr.william.us.ci
     headers:
-      Host: shuma.ccwu.cc
+      Host: yf.962456.xyz
+  udp: true
   country: EG
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EG_VLESS_443_100
+  - EG_VLESS_443_914
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EG_VLESS_443_100
+  - EG_VLESS_443_914
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +58,7 @@ proxy-groups:
 - name: 🌍 EG
   type: url-test
   proxies:
-  - EG_VLESS_443_100
+  - EG_VLESS_443_914
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

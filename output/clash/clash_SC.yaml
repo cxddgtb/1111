@@ -5,19 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SC_VLESS_8443_999
+- name: SC_VLESS_2083_168
   type: vless
-  server: 154.198.173.7
-  port: 8443
-  uuid: 7967bf59-57e3-4cde-9898-527b0fe60022
   network: ws
+  server: 154.218.15.250
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  servername: proxy-1cu.pages.dev
+  skip-cert-verify: false
   tls: true
-  servername: speed.dulacloud.store
-  client-fingerprint: chrome
+  udp: true
+  tfo: false
   ws-opts:
-    path: /dula?Telegram-WangCai2fp=chrome
     headers:
-      Host: speed.dulacloud.store
+      Host: proxy-1cu.pages.dev
+    path: /
   country: SC
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SC_VLESS_8443_999
+  - SC_VLESS_2083_168
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SC_VLESS_8443_999
+  - SC_VLESS_2083_168
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +59,7 @@ proxy-groups:
 - name: 🌍 SC
   type: url-test
   proxies:
-  - SC_VLESS_8443_999
+  - SC_VLESS_2083_168
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

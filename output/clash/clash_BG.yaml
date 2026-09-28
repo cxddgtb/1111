@@ -5,7 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BG_VLESS_443_681
+- name: BG_VLESS_443_487
+  type: vless
+  server: 87.120.216.144
+  port: 443
+  uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
+  servername: gerwai1488.vvzzkontaktezzvv.garden
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: EYfpgja4VjpLUnWHtDJQ1XZk6xL5j4rXwf80Sw6keV0
+    short-id: 0c13e8822e7f58aa
+  skip-cert-verify: true
+  udp: true
+  country: BG
+- name: BG_VLESS_443_772
   type: vless
   server: gerwai1488.vvzzkontaktezzvv.garden
   port: 443
@@ -13,12 +28,21 @@ proxies:
   servername: gerwai1488.vvzzkontaktezzvv.garden
   tls: true
   flow: xtls-rprx-vision
-  client-fingerprint: edge
+  client-fingerprint: chrome
   reality-opts:
     public-key: EYfpgja4VjpLUnWHtDJQ1XZk6xL5j4rXwf80Sw6keV0
     short-id: 0c13e8822e7f58aa
   skip-cert-verify: true
   udp: true
+  country: BG
+- name: BG_HTTP_443_800
+  password: None
+  port: 443
+  server: 185.94.192.210
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
   country: BG
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +57,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_VLESS_443_681
+  - BG_VLESS_443_487
+  - BG_VLESS_443_772
+  - BG_HTTP_443_800
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +72,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_VLESS_443_681
+  - BG_VLESS_443_487
+  - BG_VLESS_443_772
+  - BG_HTTP_443_800
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +86,9 @@ proxy-groups:
 - name: 🌍 BG
   type: url-test
   proxies:
-  - BG_VLESS_443_681
+  - BG_VLESS_443_487
+  - BG_VLESS_443_772
+  - BG_HTTP_443_800
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,34 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_SS_50099_329
-  type: ss
-  server: namrcg001640lrm.cybervena.com
-  port: 50099
-  cipher: chacha20-ietf-poly1305
-  password: a9a0d092-6f0e-4701-81ee-454643d6d506
-  skip-cert-verify: true
-  udp: true
-  country: TW
-- name: TW_ANYTLS_443_781
-  server: ac7548f3ebe045b39a90288ff1e97526.pnuqcnp.cn
-  port: 443
-  type: anytls
+- fingerprint: ''
+  name: TW_ANYTLS_443_811
   password: 9sK2mP8xQ7vL3nZ6
-  udp: true
-  sni: ac7548f3ebe045b39a90288ff1e97526.lwdnxf.cn
+  port: '443'
+  server: 6ivh.pnuqcnp.cn
   skip-cert-verify: true
+  sni: ''
+  type: anytls
+  udp: true
+  username: 9sK2mP8xQ7vL3nZ6
   country: TW
-- name: TW_ANYTLS_443_1691
+- fingerprint: ''
+  name: TW_ANYTLS_443_2159
+  password: 9sK2mP8xQ7vL3nZ6
+  port: '443'
   server: awefd2313fefarg23fr24.pnuqcnp.cn
-  port: 443
-  type: anytls
-  password: 9sK2mP8xQ7vL3nZ6
-  udp: true
-  sni: images.ctfassets.net
   skip-cert-verify: true
+  sni: images.ctfassets.net
+  type: anytls
+  udp: true
+  username: 9sK2mP8xQ7vL3nZ6
   country: TW
-- name: TW_VMESS_35034_347
+- name: TW_VMESS_35034_302
   type: vmess
   network: tcp
   server: 165.154.195.38
@@ -55,10 +50,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_SS_50099_329
-  - TW_ANYTLS_443_781
-  - TW_ANYTLS_443_1691
-  - TW_VMESS_35034_347
+  - TW_ANYTLS_443_811
+  - TW_ANYTLS_443_2159
+  - TW_VMESS_35034_302
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -71,10 +65,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_SS_50099_329
-  - TW_VMESS_35034_347
-  - TW_ANYTLS_443_781
-  - TW_ANYTLS_443_1691
+  - TW_VMESS_35034_302
+  - TW_ANYTLS_443_811
+  - TW_ANYTLS_443_2159
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -86,10 +79,9 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_SS_50099_329
-  - TW_ANYTLS_443_781
-  - TW_ANYTLS_443_1691
-  - TW_VMESS_35034_347
+  - TW_ANYTLS_443_811
+  - TW_ANYTLS_443_2159
+  - TW_VMESS_35034_302
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
