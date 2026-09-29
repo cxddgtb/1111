@@ -5,22 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KZ_VLESS_443_846
-  type: vless
-  server: kazartip.thewalkingded.life
-  port: 443
-  uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
-  servername: kazartip.thewalkingded.life
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 5JhqvTTHIhhA_2Jjc3_y6pwLmKfe4wtwq3vSt43P00I
-    short-id: 7cf408996c82639f
-  skip-cert-verify: true
-  udp: true
-  country: KZ
-- name: KZ_VLESS_10002_1106
+- name: KZ_VLESS_10002_1145
   type: vless
   network: ws
   server: 89.218.15.90
@@ -49,8 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KZ_VLESS_443_846
-  - KZ_VLESS_10002_1106
+  - KZ_VLESS_10002_1145
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -63,8 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KZ_VLESS_443_846
-  - KZ_VLESS_10002_1106
+  - KZ_VLESS_10002_1145
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -76,8 +59,7 @@ proxy-groups:
 - name: 🌍 KZ
   type: url-test
   proxies:
-  - KZ_VLESS_443_846
-  - KZ_VLESS_10002_1106
+  - KZ_VLESS_10002_1145
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

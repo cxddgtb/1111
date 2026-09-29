@@ -5,61 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: CA_VLESS_50181_186
-  network: tcp
-  port: '50181'
-  reality-opts:
-    public-key: JVeVJbl4s1xB7afO1BpIvCsgULTmY3b__2wMxQQmW0s
-    short-id: ae5e3d8a99373629
-  server: 172.105.17.84
-  servername: www.cloudflare.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 24f17960-8b89-48fa-828f-edd2c048ed26
-  xudp: true
-  country: CA
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: CA_VLESS_27204_180
-  network: tcp
-  port: '27204'
-  reality-opts:
-    public-key: tDCQIafB0NQjbKoef_8CU4rr_afYJUOKjY8KX4cIJj8
-    short-id: 4c1d
-  server: 172.105.20.134
-  servername: www.cloudflare.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 24f17960-8b89-48fa-828f-edd2c048ed26
-  xudp: true
-  country: CA
-- name: CA_VMESS_22324_152
-  type: vmess
-  network: tcp
-  server: 134.195.198.214
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: CA
-- name: CA_VMESS_18000_167
-  type: vmess
-  network: tcp
-  server: 23.162.200.198
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: CA
-- name: CA_VMESS_22324_152_2
+- name: CA_VMESS_22324_128
   type: vmess
   network: tcp
   server: 66.163.113.176
@@ -69,7 +15,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VMESS_18000_133
+- name: CA_VMESS_18000_139
   type: vmess
   network: tcp
   server: 134.195.196.211
@@ -79,7 +25,17 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VMESS_22324_36
+- name: CA_VMESS_22324_146
+  type: vmess
+  network: tcp
+  server: 134.195.198.214
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_22324_69
   type: vmess
   network: tcp
   server: 158.51.123.42
@@ -88,6 +44,52 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
+  country: CA
+- name: CA_VMESS_443_291
+  type: vmess
+  network: ws
+  server: 158.51.121.63
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: seribus.org
+    path: linkvws
+  country: CA
+- name: CA_VMESS_18000_176
+  type: vmess
+  network: tcp
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_HTTP_9443_247
+  port: 9443
+  server: 198.44.157.27
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CA
+- name: CA_HTTP_443_290
+  port: 443
+  server: 206.223.161.47
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CA
+- name: CA_HTTP_443_268
+  port: 443
+  server: 206.223.183.21
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -102,13 +104,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VLESS_50181_186
-  - CA_VLESS_27204_180
-  - CA_VMESS_22324_152
-  - CA_VMESS_18000_167
-  - CA_VMESS_22324_152_2
-  - CA_VMESS_18000_133
-  - CA_VMESS_22324_36
+  - CA_VMESS_22324_128
+  - CA_VMESS_18000_139
+  - CA_VMESS_22324_146
+  - CA_VMESS_22324_69
+  - CA_VMESS_443_291
+  - CA_VMESS_18000_176
+  - CA_HTTP_9443_247
+  - CA_HTTP_443_290
+  - CA_HTTP_443_268
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -121,13 +125,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_22324_36
-  - CA_VMESS_18000_133
-  - CA_VMESS_22324_152
-  - CA_VMESS_22324_152_2
-  - CA_VMESS_18000_167
-  - CA_VLESS_27204_180
-  - CA_VLESS_50181_186
+  - CA_VMESS_22324_69
+  - CA_VMESS_22324_128
+  - CA_VMESS_18000_139
+  - CA_VMESS_22324_146
+  - CA_VMESS_18000_176
+  - CA_HTTP_9443_247
+  - CA_HTTP_443_268
+  - CA_HTTP_443_290
+  - CA_VMESS_443_291
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -139,13 +145,15 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VLESS_50181_186
-  - CA_VLESS_27204_180
-  - CA_VMESS_22324_152
-  - CA_VMESS_18000_167
-  - CA_VMESS_22324_152_2
-  - CA_VMESS_18000_133
-  - CA_VMESS_22324_36
+  - CA_VMESS_22324_128
+  - CA_VMESS_18000_139
+  - CA_VMESS_22324_146
+  - CA_VMESS_22324_69
+  - CA_VMESS_443_291
+  - CA_VMESS_18000_176
+  - CA_HTTP_9443_247
+  - CA_HTTP_443_290
+  - CA_HTTP_443_268
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

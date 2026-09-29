@@ -5,23 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ES_VMESS_443_524
-  type: vmess
-  server: mygptagent.org
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: mygptagent.org
-  udp: true
-  country: ES
-- name: ES_VMESS_22324_366
+- name: ES_VMESS_22324_363
   type: vmess
   network: tcp
   server: 66.163.118.73
@@ -30,6 +14,31 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
+  country: ES
+- name: ES_VMESS_22324_327
+  type: vmess
+  network: tcp
+  server: 85.90.217.42
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: ES
+- name: ES_HTTP_8443_602
+  port: 8443
+  server: 45.147.251.19
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: ES
+- name: ES_HYSTERIA2_2060_439
+  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  port: 2060
+  server: xby.mangshe.xyz
+  skip-cert-verify: true
+  sni: xby.mangshe.xyz
+  type: hysteria2
   country: ES
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,8 +53,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_VMESS_443_524
-  - ES_VMESS_22324_366
+  - ES_VMESS_22324_363
+  - ES_VMESS_22324_327
+  - ES_HTTP_8443_602
+  - ES_HYSTERIA2_2060_439
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,8 +69,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_VMESS_22324_366
-  - ES_VMESS_443_524
+  - ES_VMESS_22324_327
+  - ES_VMESS_22324_363
+  - ES_HYSTERIA2_2060_439
+  - ES_HTTP_8443_602
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -71,8 +84,10 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_VMESS_443_524
-  - ES_VMESS_22324_366
+  - ES_VMESS_22324_363
+  - ES_VMESS_22324_327
+  - ES_HTTP_8443_602
+  - ES_HYSTERIA2_2060_439
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

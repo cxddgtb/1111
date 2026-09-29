@@ -5,124 +5,31 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_443_431
+- name: FR_VLESS_8443_605
   type: vless
-  server: 185.171.202.105
-  port: 443
-  uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
-  servername: fra.loozerp.wiki
+  server: 45.38.228.94
+  port: 8443
+  uuid: 9e3132b8-b595-444a-833a-2de44789f9d7
+  network: ws
   tls: true
-  flow: xtls-rprx-vision
+  servername: shephe.dpdns.org
   client-fingerprint: chrome
-  reality-opts:
-    public-key: bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk
-    short-id: ff776ff77be48b88
-  skip-cert-verify: true
-  udp: true
+  ws-opts:
+    path: /fp=chrome
+    headers:
+      Host: shephe.dpdns.org
   country: FR
-- name: FR_VLESS_443_452
-  type: vless
-  server: fra.loozerp.wiki
-  port: 443
-  uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
-  servername: fra.loozerp.wiki
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk
-    short-id: ff776ff77be48b88
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_VLESS_443_453
-  type: vless
-  server: 185.171.202.106
-  port: 443
-  uuid: f495298f-2bdb-4fd8-9ac9-5dd33d1b482a
-  servername: fra2.loozerp.wiki
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE
-    short-id: ff776ff77be48b88
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_VLESS_443_485
-  type: vless
-  server: fra2.loozerp.wiki
-  port: 443
-  uuid: f495298f-2bdb-4fd8-9ac9-5dd33d1b482a
-  servername: fra2.loozerp.wiki
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE
-    short-id: ff776ff77be48b88
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_VLESS_443_631
-  type: vless
-  server: nasnet-162191099-direct.mbghalibaf.com
-  port: 443
-  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
-  servername: nasnet-162191099-direct.mbghalibaf.com
-  tls: true
-  flow: xtls-rprx-vision
-  skip-cert-verify: true
-  udp: true
-  country: FR
-- name: FR_VMESS_80_706
+- name: FR_VMESS_22324_295
   type: vmess
-  server: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-  port: 80
-  uuid: 479526cd-5011-43cf-a788-504da95e07c2
+  network: tcp
+  server: 45.80.215.8
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
   alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-  udp: true
   country: FR
-- down: ''
-  fingerprint: ''
-  name: FR_HYSTERIA2_443_689
-  obfs: ''
-  obfs-password: ''
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: '443'
-  server: vpn-fr-002.fastervpn.world
-  skip-cert-verify: true
-  sni: 127.0.0.1
-  type: hysteria2
-  up: ''
-  country: FR
-- name: FR_HTTP_443_620
-  password: ''
-  port: 443
-  server: 149.102.245.65
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: ''
-  country: FR
-- name: FR_HTTP_443_574
-  port: 443
-  server: 103.82.101.44
-  skip-cert-verify: true
-  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
-  tls: true
-  type: http
-  country: FR
-- name: FR_VLESS_443_509
+- name: FR_VLESS_443_523
   type: vless
   network: tcp
   server: 162.19.10.99
@@ -135,6 +42,30 @@ proxies:
   tfo: false
   client-fingerprint: chrome
   flow: xtls-rprx-vision
+  country: FR
+- name: FR_ANYTLS_30099_507
+  password: github.com/Alvin9999-newpac/fanqiang
+  port: 30099
+  server: ip5.934618.xyz
+  sni: ip5.934618.xyz
+  type: anytls
+  udp: true
+  country: FR
+- name: FR_HTTP_443_608
+  port: 443
+  server: 51.210.167.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HYSTERIA2_443_480
+  server: vpn-fr-002.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  auth: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  sni: 127.0.0.1
+  skip-cert-verify: true
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -149,16 +80,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_443_431
-  - FR_VLESS_443_452
-  - FR_VLESS_443_453
-  - FR_VLESS_443_485
-  - FR_VLESS_443_631
-  - FR_VMESS_80_706
-  - FR_HYSTERIA2_443_689
-  - FR_HTTP_443_620
-  - FR_HTTP_443_574
-  - FR_VLESS_443_509
+  - FR_VLESS_8443_605
+  - FR_VMESS_22324_295
+  - FR_VLESS_443_523
+  - FR_ANYTLS_30099_507
+  - FR_HTTP_443_608
+  - FR_HYSTERIA2_443_480
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -171,16 +98,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_443_431
-  - FR_VLESS_443_452
-  - FR_VLESS_443_453
-  - FR_VLESS_443_485
-  - FR_VLESS_443_509
-  - FR_HTTP_443_574
-  - FR_HTTP_443_620
-  - FR_VLESS_443_631
-  - FR_HYSTERIA2_443_689
-  - FR_VMESS_80_706
+  - FR_VMESS_22324_295
+  - FR_HYSTERIA2_443_480
+  - FR_ANYTLS_30099_507
+  - FR_VLESS_443_523
+  - FR_VLESS_8443_605
+  - FR_HTTP_443_608
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -192,16 +115,12 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_443_431
-  - FR_VLESS_443_452
-  - FR_VLESS_443_453
-  - FR_VLESS_443_485
-  - FR_VLESS_443_631
-  - FR_VMESS_80_706
-  - FR_HYSTERIA2_443_689
-  - FR_HTTP_443_620
-  - FR_HTTP_443_574
-  - FR_VLESS_443_509
+  - FR_VLESS_8443_605
+  - FR_VMESS_22324_295
+  - FR_VLESS_443_523
+  - FR_ANYTLS_30099_507
+  - FR_HTTP_443_608
+  - FR_HYSTERIA2_443_480
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
