@@ -5,30 +5,26 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VMESS_443_312
-  type: vmess
-  server: 140.238.2.250
-  port: 443
-  uuid: 41a7089a-040b-4538-8b8d-010902405bde
-  alterId: 0
-  cipher: auto
-  tls: false
+- down: ''
+  fingerprint: ''
+  name: KR_HYSTERIA2_50160_474
+  obfs: ''
+  obfs-password: ''
+  password: 1671a252e2a97dc2bda4e515475931da
+  port: '50160'
+  server: 132.226.226.189
   skip-cert-verify: true
-  udp: true
+  sni: www.bing.com
+  type: hysteria2
+  up: ''
   country: KR
-- name: KR_VMESS_80_423
-  type: vmess
-  server: 132.145.80.230
-  port: 80
-  uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-  alterId: 0
-  cipher: auto
-  tls: false
+- name: KR_ANYTLS_60005_891
+  server: svip.skycon808.com
+  port: 60005
+  type: anytls
+  password: 13f0acfa-38c1-4e82-a758-583aa31740df
+  sni: xjp18.2uuzhe.com
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /cctv13.m3u8
-  udp: true
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -43,8 +39,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_443_312
-  - KR_VMESS_80_423
+  - KR_HYSTERIA2_50160_474
+  - KR_ANYTLS_60005_891
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -57,8 +53,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_443_312
-  - KR_VMESS_80_423
+  - KR_HYSTERIA2_50160_474
+  - KR_ANYTLS_60005_891
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,8 +66,8 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_443_312
-  - KR_VMESS_80_423
+  - KR_HYSTERIA2_50160_474
+  - KR_ANYTLS_60005_891
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

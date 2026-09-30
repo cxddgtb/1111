@@ -5,19 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CY_VLESS_443_617
+- name: CY_VLESS_443_806
   type: vless
-  server: 213.111.177.107
+  server: india.letsconnectpoint.com
   port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  servername: shuma.ccwu.cc
+  uuid: 914f3806-07a1-4158-9624-e183de065a38
+  servername: india.letsconnectpoint.com
   tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  reality-opts:
+    public-key: erUEmyU1QK8y2corQh9bOjk0oHl2Mo6Z9WgoyKg_rC0
+    short-id: c1e3d5d4
   skip-cert-verify: true
   udp: true
   country: CY
@@ -34,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CY_VLESS_443_617
+  - CY_VLESS_443_806
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CY_VLESS_443_617
+  - CY_VLESS_443_806
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +58,7 @@ proxy-groups:
 - name: 🌍 CY
   type: url-test
   proxies:
-  - CY_VLESS_443_617
+  - CY_VLESS_443_806
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,47 +5,40 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VLESS_443_670
+- name: HK_VLESS_443_871
   type: vless
-  server: 141.11.90.160
+  server: 103.143.81.178
   port: 443
-  uuid: 9e3132b8-b595-444a-833a-2de44789f9d7
-  network: ws
+  uuid: 37665857-8b6e-4daa-8231-3e2927221558
+  udp: true
   tls: true
-  servername: shephe.dpdns.org
-  client-fingerprint: chrome
+  skip-cert-verify: false
+  servername: spjd.cbc.qzz.io
+  network: ws
   ws-opts:
-    path: /fp=chrome
+    path: /proxyip=ProxyIP.US.CMLiussss.net
     headers:
-      Host: shephe.dpdns.org
+      Host: spjd.cbc.qzz.io
   country: HK
-- name: HK_VMESS_30836_1019
+- name: HK_VMESS_30807_2743
   type: vmess
-  server: v36.hdacd.com
-  port: 30836
+  server: v10.hdacd.com
+  port: 30807
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
-  network: tcp
   tls: false
-  servername: ''
-  ws-opts: null
-  country: HK
-- name: HK_SOCKS5_1080_603
-  password: Og
-  port: 1080
-  server: 103.210.161.8
-  type: socks5
-  udp: true
-  username: Og
-  country: HK
-- name: HK_HYSTERIA2_2060_501
-  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
-  port: 2060
-  server: xg1.mangshe.xyz
   skip-cert-verify: true
-  sni: xg1.mangshe.xyz
+  udp: true
+  country: HK
+- name: HK_HYSTERIA2_60001_692
+  server: hk01.kfc-520.com
+  port: 60001
   type: hysteria2
+  password: 5ec96249-b753-317a-b065-b67ad66b8185
+  auth: 5ec96249-b753-317a-b065-b67ad66b8185
+  sni: hk01.kfc-520.com
+  skip-cert-verify: true
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -60,10 +53,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_443_670
-  - HK_VMESS_30836_1019
-  - HK_SOCKS5_1080_603
-  - HK_HYSTERIA2_2060_501
+  - HK_VLESS_443_871
+  - HK_VMESS_30807_2743
+  - HK_HYSTERIA2_60001_692
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -76,10 +68,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_HYSTERIA2_2060_501
-  - HK_SOCKS5_1080_603
-  - HK_VLESS_443_670
-  - HK_VMESS_30836_1019
+  - HK_HYSTERIA2_60001_692
+  - HK_VLESS_443_871
+  - HK_VMESS_30807_2743
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -91,10 +82,9 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_443_670
-  - HK_VMESS_30836_1019
-  - HK_SOCKS5_1080_603
-  - HK_HYSTERIA2_2060_501
+  - HK_VLESS_443_871
+  - HK_VMESS_30807_2743
+  - HK_HYSTERIA2_60001_692
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

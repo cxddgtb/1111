@@ -5,42 +5,27 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_443_2149
-  type: vless
-  network: tcp
-  server: 144.31.5.3
-  port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: pl4.moritech.net
+- down: ''
+  fingerprint: ''
+  name: PL_HYSTERIA2_443_2185
+  obfs: ''
+  obfs-password: ''
+  password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
+  port: '443'
+  server: admin.wwwinternetvideo.click
   skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
+  sni: admin.wwwinternetvideo.click
+  type: hysteria2
+  up: ''
   country: PL
-- name: PL_VLESS_443_2431
-  type: vless
-  network: tcp
-  server: 144.31.2.33
+- name: PL_HYSTERIA2_443_2736
+  server: 45.192.12.93
   port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  servername: pl3.moritech.net
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: PL
-- name: PL_HTTP_443_696
-  password: None
-  port: 443
-  server: 37.120.156.18
+  type: hysteria2
+  password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
+  auth: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
+  sni: admin.wwwinternetvideo.click
   skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -55,9 +40,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_443_2149
-  - PL_VLESS_443_2431
-  - PL_HTTP_443_696
+  - PL_HYSTERIA2_443_2185
+  - PL_HYSTERIA2_443_2736
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,9 +54,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HTTP_443_696
-  - PL_VLESS_443_2149
-  - PL_VLESS_443_2431
+  - PL_HYSTERIA2_443_2185
+  - PL_HYSTERIA2_443_2736
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,9 +67,8 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_443_2149
-  - PL_VLESS_443_2431
-  - PL_HTTP_443_696
+  - PL_HYSTERIA2_443_2185
+  - PL_HYSTERIA2_443_2736
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

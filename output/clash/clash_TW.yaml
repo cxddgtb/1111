@@ -5,33 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VMESS_35034_309
-  type: vmess
-  network: tcp
-  server: 165.154.195.38
-  port: 35034
-  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: TW
-- name: TW_ANYTLS_443_757
-  server: ac7548f3ebe045b39a90288ff1e97526.pnuqcnp.cn
+- name: TW_VLESS_443_489
+  type: vless
+  server: 35.201.181.122
   port: 443
-  type: anytls
-  password: 9sK2mP8xQ7vL3nZ6
+  uuid: 22a0b0bd-1cd0-43fa-a7c3-73b24eae44e2
   udp: true
-  sni: ac7548f3ebe045b39a90288ff1e97526.lwdnxf.cn
-  skip-cert-verify: true
+  tls: true
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: PLslPQOBA3bfWO5hXLv7jioCTuNR8vCxa_axi0dC7C0
+    short-id: 32f66f37df3f58d2
   country: TW
-- name: TW_ANYTLS_443_740
-  server: 6ivh.pnuqcnp.cn
-  port: 443
-  type: anytls
+- fingerprint: ''
+  name: TW_ANYTLS_443_1489
   password: 9sK2mP8xQ7vL3nZ6
-  udp: true
+  port: '443'
+  server: awefd2313fefarg23fr24.pnuqcnp.cn
+  skip-cert-verify: true
   sni: images.ctfassets.net
-  skip-cert-verify: true
+  type: anytls
+  udp: true
+  username: 9sK2mP8xQ7vL3nZ6
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,9 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VMESS_35034_309
-  - TW_ANYTLS_443_757
-  - TW_ANYTLS_443_740
+  - TW_VLESS_443_489
+  - TW_ANYTLS_443_1489
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -61,9 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_309
-  - TW_ANYTLS_443_740
-  - TW_ANYTLS_443_757
+  - TW_VLESS_443_489
+  - TW_ANYTLS_443_1489
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,9 +69,8 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VMESS_35034_309
-  - TW_ANYTLS_443_757
-  - TW_ANYTLS_443_740
+  - TW_VLESS_443_489
+  - TW_ANYTLS_443_1489
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
