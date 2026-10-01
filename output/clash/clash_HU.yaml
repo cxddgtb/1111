@@ -5,14 +5,33 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HU_HTTP_443_722
-  password: None
+- client-fingerprint: edge
+  name: HU_VLESS_443_1337
+  network: ws
   port: 443
-  server: 146.70.203.18
-  skip-cert-verify: true
+  server: 37.221.210.113
+  servername: hk.152568.xyz
   tls: true
-  type: http
-  username: null
+  type: vless
+  udp: true
+  uuid: 0250424c-ae75-4b6b-890f-3fe26fae36c3
+  ws-opts:
+    headers:
+      Host: hk.152568.xyz
+    path: /cdn/packages/runtime-core.tar.gz
+  country: HU
+- name: HU_TROJAN_443_745
+  network: ws
+  password: humanity
+  port: 443
+  server: 185.225.68.232
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  ws-opts:
+    headers:
+      Host: www.calmlunch.com
+    path: /assignment
   country: HU
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +46,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HU_HTTP_443_722
+  - HU_VLESS_443_1337
+  - HU_TROJAN_443_745
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +60,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HU_HTTP_443_722
+  - HU_TROJAN_443_745
+  - HU_VLESS_443_1337
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +73,8 @@ proxy-groups:
 - name: 🌍 HU
   type: url-test
   proxies:
-  - HU_HTTP_443_722
+  - HU_VLESS_443_1337
+  - HU_TROJAN_443_745
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

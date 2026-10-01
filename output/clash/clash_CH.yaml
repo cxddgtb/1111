@@ -5,7 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CH_HYSTERIA2_8443_459
+- name: CH_HYSTERIA2_8443_495
+  password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
+  port: 8443
+  server: 82.38.64.235
+  skip-cert-verify: true
+  sni: hopp-swizland-new.mysynology.net
+  tls: false
+  type: hysteria2
+  country: CH
+- name: CH_HYSTERIA2_8443_494
   password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
   port: 8443
   server: 82.38.64.237
@@ -14,7 +23,7 @@ proxies:
   tls: false
   type: hysteria2
   country: CH
-- name: CH_HYSTERIA2_8443_449
+- name: CH_HYSTERIA2_8443_504
   password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
   port: 8443
   server: 82.38.64.239
@@ -22,26 +31,12 @@ proxies:
   tls: false
   type: hysteria2
   country: CH
-- name: CH_HTTP_443_555
-  port: 443
-  server: 31.7.62.50
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_443_546
-  port: 443
-  server: 199.68.196.153
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_9443_528
-  port: 9443
-  server: 149.88.27.46
-  skip-cert-verify: true
-  tls: true
-  type: http
+- cipher: chacha20-ietf-poly1305
+  name: CH_SS_8388_331
+  password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
+  port: 8388
+  server: 132.243.175.144
+  type: ss
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -56,11 +51,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_HYSTERIA2_8443_459
-  - CH_HYSTERIA2_8443_449
-  - CH_HTTP_443_555
-  - CH_HTTP_443_546
-  - CH_HTTP_9443_528
+  - CH_HYSTERIA2_8443_495
+  - CH_HYSTERIA2_8443_494
+  - CH_HYSTERIA2_8443_504
+  - CH_SS_8388_331
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,11 +67,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_HYSTERIA2_8443_449
-  - CH_HYSTERIA2_8443_459
-  - CH_HTTP_9443_528
-  - CH_HTTP_443_546
-  - CH_HTTP_443_555
+  - CH_SS_8388_331
+  - CH_HYSTERIA2_8443_494
+  - CH_HYSTERIA2_8443_495
+  - CH_HYSTERIA2_8443_504
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -89,11 +82,10 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_HYSTERIA2_8443_459
-  - CH_HYSTERIA2_8443_449
-  - CH_HTTP_443_555
-  - CH_HTTP_443_546
-  - CH_HTTP_9443_528
+  - CH_HYSTERIA2_8443_495
+  - CH_HYSTERIA2_8443_494
+  - CH_HYSTERIA2_8443_504
+  - CH_SS_8388_331
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

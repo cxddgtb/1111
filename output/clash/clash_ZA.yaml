@@ -5,31 +5,26 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ZA_VLESS_80_665
-  type: vless
-  server: platform103.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: platform103.halalkhor.info
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform103
-    headers:
-      Host: platform103.halalkhor.info
+- cipher: chacha20-ietf-poly1305
+  name: ZA_SS_8388_515
+  password: tfAcRikawhNoZAhu
+  port: 8388
+  server: 139.84.247.164
+  type: ss
   country: ZA
-- name: ZA_VLESS_80_658
-  type: vless
-  server: platform107.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  udp: true
-  network: ws
-  ws-opts:
-    path: /platform107
-    headers:
-      Host: platform107.halalkhor.info
+- cipher: chacha20-ietf-poly1305
+  name: ZA_SS_16233_526
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  port: 16233
+  server: 102.133.165.160
+  type: ss
+  country: ZA
+- cipher: chacha20-ietf-poly1305
+  name: ZA_SS_443_536
+  password: aduB9HGxQHjA2SBMRjkHX6
+  port: 443
+  server: 102.37.156.224
+  type: ss
   country: ZA
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,8 +39,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ZA_VLESS_80_665
-  - ZA_VLESS_80_658
+  - ZA_SS_8388_515
+  - ZA_SS_16233_526
+  - ZA_SS_443_536
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,8 +54,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ZA_VLESS_80_658
-  - ZA_VLESS_80_665
+  - ZA_SS_8388_515
+  - ZA_SS_16233_526
+  - ZA_SS_443_536
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -71,8 +68,9 @@ proxy-groups:
 - name: 🌍 ZA
   type: url-test
   proxies:
-  - ZA_VLESS_80_665
-  - ZA_VLESS_80_658
+  - ZA_SS_8388_515
+  - ZA_SS_16233_526
+  - ZA_SS_443_536
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

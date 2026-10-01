@@ -5,18 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: cdn.v1.AssetService
-  name: IL_VLESS_443_477
-  network: grpc
+- name: QA_VLESS_443_800
+  server: 34.18.222.19
   port: 443
-  server: 72.4.65.116
-  servername: assets-de2.pleiades.codes
-  tls: true
   type: vless
-  uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
-  country: IL
+  uuid: bd82d5e7-4395-40e1-b34e-2974eb0c8555
+  tls: true
+  reality-opts:
+    public-key: ZRWl48Ahw4vlnPSTMkNs6xcCEDd9Qq4AsChUp-mg7A4
+    short-id: 9c8748aa3f7d4219
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  network: tcp
+  country: QA
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -25,12 +26,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 IL
+  - 🌍 QA
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IL_VLESS_443_477
+  - QA_VLESS_443_800
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +44,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IL_VLESS_443_477
+  - QA_VLESS_443_800
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,10 +53,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 IL
+- name: 🌍 QA
   type: url-test
   proxies:
-  - IL_VLESS_443_477
+  - QA_VLESS_443_800
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

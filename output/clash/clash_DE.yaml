@@ -5,61 +5,182 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_443_420
+- name: DE_VLESS_2083_626
   type: vless
-  server: 91.132.160.209
+  server: 45.88.12.119
+  port: 2083
+  uuid: 8dd437e1-5f3f-446e-98fe-aa29b80057fb
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  servername: crt.dodopanel.biz
+  network: ws
+  ws-opts:
+    path: /vless-ws
+  country: DE
+- name: DE_VLESS_8080_608
+  type: vless
+  server: 0cf703b86ea5a239.ravenlo.ir
+  port: 8080
+  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
+  country: DE
+- name: DE_VLESS_8080_591
+  type: vless
+  server: 0cf703b86ea5a239.RaVEnlO.iR
+  port: 8080
+  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+  network: ws
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  country: DE
+- name: DE_VLESS_26070_269
+  network: tcp
+  port: 26070
+  server: 31.76.11.83
+  tls: false
+  type: vless
+  uuid: e676c6c8-44a8-4a1d-82cc-821a1f70f0c0
+  country: DE
+- name: DE_VLESS_80_435
+  network: ws
+  port: 80
+  server: 199.247.23.162
+  tls: false
+  type: vless
+  uuid: 306dcb21-d02d-49dd-8ec7-0005b972b47a
+  ws-opts:
+    path: /
+  country: DE
+- name: DE_VLESS_2053_1238
+  port: 2053
+  server: test.keoplentuio.xyz
+  tls: false
+  type: vless
+  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
+  country: DE
+- name: DE_VLESS_8880_2030
+  network: ws
+  port: 8880
+  server: 45.80.111.45
+  tls: false
+  type: vless
+  uuid: 5ffd914e-9594-4198-8327-145f096f8e4c
+  ws-opts:
+    headers:
+      Host: cnd.singapure.mygold.stream
+    path: /cdn/assets/stream
+  country: DE
+- name: DE_TROJAN_443_697
+  network: ws
+  password: humanity
   port: 443
-  uuid: 2412bd96-925b-43f2-81d1-0ed4f0793699
-  servername: dlcdn.apache.org
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: 9XSdNkmBhBszLYoODqMrm7r_JRur2PRbzF9T1Uf2AV0
-    short-id: f1004027e382c2fa
+  server: 185.255.179.166
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  ws-opts:
+    headers:
+      Host: www.calmlunch.com
+    path: /assignment
+  country: DE
+- name: DE_TROJAN_443_558
+  password: UX82473651
+  port: 443
+  server: alive-flea.rooster465.autos
   skip-cert-verify: true
+  sni: alive-flea.rooster465.autos
+  type: trojan
   udp: true
   country: DE
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: DE_VLESS_443_648
-  network: tcp
-  port: '443'
-  reality-opts:
-    public-key: SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I
-    short-id: ''
-  server: germa12.ggisopi.su
-  servername: germa12.ggisopi.su
-  tls: true
+- name: DE_VLESS_443_754
+  server: de-e75d6467.sishka.network
+  port: 443
   type: vless
+  uuid: e0c43b23-5032-4a6b-ab43-02f4ffa64b9c
+  tls: true
+  flow: xtls-rprx-vision
+  servername: de-e75d6467.sishka.network
+  client-fingerprint: edge
+  network: tcp
   udp: true
-  uuid: d0f0a880-0df1-48c9-bdf1-5669fb9483ce
-  xudp: true
   country: DE
-- name: DE_HTTP_9002_594
-  port: 9002
-  server: 158.173.154.3
+- name: DE_VLESS_11000_468
+  server: 3557942hol97645z1.garqino.ir
+  port: 11000
+  type: vless
+  uuid: fc40ce64-3c90-4d32-8e2f-ed456a0553fd
+  tls: false
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+    headers:
+      Host:
+      - wordpress.org
+  udp: true
+  country: DE
+- name: DE_VMESS_22324_294
+  type: vmess
+  network: tcp
+  server: 216.106.187.60
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VLESS_2083_642
+  type: vless
+  network: ws
+  server: 167.172.165.106
+  port: 2083
+  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
+  servername: edge.yzkvm.top
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: edge.yzkvm.top
+    path: /
+  country: DE
+- name: DE_VLESS_443_479
+  type: vless
+  network: tcp
+  server: 57.129.96.67
+  port: 443
+  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
+  servername: nasnet-571299667-direct.mbghalibaf.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  flow: xtls-rprx-vision
+  country: DE
+- name: DE_VMESS_443_569
+  type: vmess
+  network: ws
+  server: 193.108.117.54
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   skip-cert-verify: true
   tls: true
-  type: http
-  country: DE
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: DE_VLESS_443_406
-  network: tcp
-  port: '443'
-  reality-opts:
-    public-key: SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I
-    short-id: ''
-  server: 213.178.141.33
-  servername: germa12.ggisopi.su
-  tls: true
-  type: vless
-  udp: true
-  uuid: d0f0a880-0df1-48c9-bdf1-5669fb9483ce
-  xudp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: aidrivercat.org
+    path: /linkvws
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -74,10 +195,21 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_443_420
-  - DE_VLESS_443_648
-  - DE_HTTP_9002_594
-  - DE_VLESS_443_406
+  - DE_VLESS_2083_626
+  - DE_VLESS_8080_608
+  - DE_VLESS_8080_591
+  - DE_VLESS_26070_269
+  - DE_VLESS_80_435
+  - DE_VLESS_2053_1238
+  - DE_VLESS_8880_2030
+  - DE_TROJAN_443_697
+  - DE_TROJAN_443_558
+  - DE_VLESS_443_754
+  - DE_VLESS_11000_468
+  - DE_VMESS_22324_294
+  - DE_VLESS_2083_642
+  - DE_VLESS_443_479
+  - DE_VMESS_443_569
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -90,10 +222,21 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VLESS_443_406
-  - DE_VLESS_443_420
-  - DE_HTTP_9002_594
-  - DE_VLESS_443_648
+  - DE_VLESS_26070_269
+  - DE_VMESS_22324_294
+  - DE_VLESS_80_435
+  - DE_VLESS_11000_468
+  - DE_VLESS_443_479
+  - DE_TROJAN_443_558
+  - DE_VMESS_443_569
+  - DE_VLESS_8080_591
+  - DE_VLESS_8080_608
+  - DE_VLESS_2083_626
+  - DE_VLESS_2083_642
+  - DE_TROJAN_443_697
+  - DE_VLESS_443_754
+  - DE_VLESS_2053_1238
+  - DE_VLESS_8880_2030
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -105,10 +248,21 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_443_420
-  - DE_VLESS_443_648
-  - DE_HTTP_9002_594
-  - DE_VLESS_443_406
+  - DE_VLESS_2083_626
+  - DE_VLESS_8080_608
+  - DE_VLESS_8080_591
+  - DE_VLESS_26070_269
+  - DE_VLESS_80_435
+  - DE_VLESS_2053_1238
+  - DE_VLESS_8880_2030
+  - DE_TROJAN_443_697
+  - DE_TROJAN_443_558
+  - DE_VLESS_443_754
+  - DE_VLESS_11000_468
+  - DE_VMESS_22324_294
+  - DE_VLESS_2083_642
+  - DE_VLESS_443_479
+  - DE_VMESS_443_569
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

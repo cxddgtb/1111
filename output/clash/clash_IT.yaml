@@ -5,7 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_VMESS_22324_333
+- encryption: none
+  name: IT_VLESS_10086_329
+  network: tcp
+  port: 10086
+  server: 204.216.216.23
+  tls: false
+  type: vless
+  uuid: 9f0285ee-20ca-4953-bcdb-86a920652923
+  country: IT
+- name: IT_VLESS_443_449
+  server: 34.154.251.151
+  port: 443
+  type: vless
+  uuid: 4d4bfd21-88fc-4de7-87bd-c2ddaedc4078
+  tls: true
+  reality-opts:
+    public-key: jGfJxbIyf2aLRFQyT9NsJBu1CzJmrAa2sF19GNw46z8
+    short-id: 29615707650b941d
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  network: tcp
+  country: IT
+- name: IT_VMESS_22324_307
   type: vmess
   network: tcp
   server: 89.41.172.85
@@ -14,23 +36,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-  country: IT
-- name: IT_HYSTERIA2_18333_701
-  password: 19f72087-4591-4d72-930b-2697078ec2be
-  port: 18333
-  server: us4.xiaoliyu.cyou
-  skip-cert-verify: true
-  sni: us4.xiaoliyu.cyou
-  type: hysteria2
-  country: IT
-- name: IT_HTTP_443_1111
-  password: None
-  port: 443
-  server: 93.42.177.250
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
   country: IT
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,9 +50,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_VMESS_22324_333
-  - IT_HYSTERIA2_18333_701
-  - IT_HTTP_443_1111
+  - IT_VLESS_10086_329
+  - IT_VLESS_443_449
+  - IT_VMESS_22324_307
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,9 +65,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_VMESS_22324_333
-  - IT_HYSTERIA2_18333_701
-  - IT_HTTP_443_1111
+  - IT_VMESS_22324_307
+  - IT_VLESS_10086_329
+  - IT_VLESS_443_449
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -74,9 +79,9 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_VMESS_22324_333
-  - IT_HYSTERIA2_18333_701
-  - IT_HTTP_443_1111
+  - IT_VLESS_10086_329
+  - IT_VLESS_443_449
+  - IT_VMESS_22324_307
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

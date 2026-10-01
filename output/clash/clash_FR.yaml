@@ -5,60 +5,85 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_SS_49548_711
-  type: ss
-  server: nl-irancell3.xelfona.ir
-  port: 49548
-  cipher: 2022-blake3-aes-256-gcm
-  password: zZ+k8UwdTQ9ZTnxEodTN2YI6KrFKEAcBWgCbLZIVUTE=:LbWEdFyjKcvZcv9agyGttSn0HNap+ecf50/UrlGMBCQ=
-  udp: true
-  country: FR
-- auth: github.com/Alvin9999-newpac/fanqiang
-  name: FR_HYSTERIA2_60111_443
-  password: github.com/Alvin9999-newpac/fanqiang
-  port: 60111
-  server: 62.210.7.139
-  skip-cert-verify: true
-  sni: t.me
-  type: hysteria2
-  country: FR
-- down: ''
-  fingerprint: ''
-  name: FR_HYSTERIA2_443_477
-  obfs: ''
-  obfs-password: ''
-  password: gf1:gfhysteria2024
-  port: '443'
-  server: 173.212.201.85
-  skip-cert-verify: true
-  sni: www.docker.com
-  type: hysteria2
-  up: ''
-  country: FR
-- name: FR_ANYTLS_30099_434
-  password: github.com/Alvin9999-newpac/fanqiang
-  port: 30099
-  server: ip5.934618.xyz
-  sni: ip5.934618.xyz
-  type: anytls
-  udp: true
-  country: FR
-- name: FR_HTTP_443_512
+- name: FR_VLESS_443_666
+  type: vless
+  server: 34.155.146.201
   port: 443
-  server: 103.82.101.44
-  skip-cert-verify: true
-  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
+  uuid: 069a2bbd-3fc9-470f-a251-c836a96ed04a
+  udp: true
   tls: true
-  type: http
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: SVT2WeXMIrumlh5VG1lbHN6YbqL7-u2iRkv1js8XEU4
+    short-id: 3f95392a418ec8fd
   country: FR
-- name: FR_HYSTERIA2_443_451
-  server: vpn-fr-002.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  auth: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: 127.0.0.1
+- alpn:
+  - h3
+  auth-str: github.com/Alvin9999-newpac/fanqiang
+  down: 55 Mbps
+  name: FR_HYSTERIA_23556_2531
+  port: 23556
+  protocol: udp
+  server: 62.210.70.191
   skip-cert-verify: true
+  sni: bing.com
+  type: hysteria
+  up: 11 Mbps
+  country: FR
+- cipher: aes-256-gcm
+  name: FR_SS_20076_305
+  password: dHHIUyBuva3crUBRwpOXCA
+  port: 20076
+  server: 51.83.6.5
+  type: ss
+  country: FR
+- cipher: chacha20-ietf-poly1305
+  name: FR_SS_8388_300
+  password: BqnqToih0PbU
+  port: 8388
+  server: 51.255.13.232
+  type: ss
+  country: FR
+- cipher: 2022-blake3-aes-256-gcm
+  name: FR_SS_49548_760
+  password: zZ+k8UwdTQ9ZTnxEodTN2YI6KrFKEAcBWgCbLZIVUTE=:LbWEdFyjKcvZcv9agyGttSn0HNap+ecf50/UrlGMBCQ=
+  port: 49548
+  server: nl-irancell3.xelfona.ir
+  type: ss
+  country: FR
+- name: FR_ANYTLS_30099_529
+  server: ip5.934618.xyz
+  port: 30099
+  type: anytls
+  password: github.com/Alvin9999-newpac/fanqiang
+  udp: true
+  sni: ip5.934618.xyz
+  skip-cert-verify: true
+  country: FR
+- name: FR_VMESS_22324_819
+  type: vmess
+  network: tcp
+  server: 45.80.215.8
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: FR
+- name: FR_VLESS_443_515
+  type: vless
+  network: tcp
+  server: 162.19.10.99
+  port: 443
+  uuid: e8b1500b-e9e8-5492-8312-f4eadf7d0767
+  servername: nasnet-162191099-direct.mbghalibaf.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -73,12 +98,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_SS_49548_711
-  - FR_HYSTERIA2_60111_443
-  - FR_HYSTERIA2_443_477
-  - FR_ANYTLS_30099_434
-  - FR_HTTP_443_512
-  - FR_HYSTERIA2_443_451
+  - FR_VLESS_443_666
+  - FR_HYSTERIA_23556_2531
+  - FR_SS_20076_305
+  - FR_SS_8388_300
+  - FR_SS_49548_760
+  - FR_ANYTLS_30099_529
+  - FR_VMESS_22324_819
+  - FR_VLESS_443_515
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -91,12 +118,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_ANYTLS_30099_434
-  - FR_HYSTERIA2_60111_443
-  - FR_HYSTERIA2_443_451
-  - FR_HYSTERIA2_443_477
-  - FR_HTTP_443_512
-  - FR_SS_49548_711
+  - FR_SS_8388_300
+  - FR_SS_20076_305
+  - FR_VLESS_443_515
+  - FR_ANYTLS_30099_529
+  - FR_VLESS_443_666
+  - FR_SS_49548_760
+  - FR_VMESS_22324_819
+  - FR_HYSTERIA_23556_2531
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -108,12 +137,14 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_SS_49548_711
-  - FR_HYSTERIA2_60111_443
-  - FR_HYSTERIA2_443_477
-  - FR_ANYTLS_30099_434
-  - FR_HTTP_443_512
-  - FR_HYSTERIA2_443_451
+  - FR_VLESS_443_666
+  - FR_HYSTERIA_23556_2531
+  - FR_SS_20076_305
+  - FR_SS_8388_300
+  - FR_SS_49548_760
+  - FR_ANYTLS_30099_529
+  - FR_VMESS_22324_819
+  - FR_VLESS_443_515
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

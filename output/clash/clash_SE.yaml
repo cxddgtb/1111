@@ -5,14 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_HTTP_443_585
-  password: None
+- name: SE_VLESS_443_840
+  type: vless
+  server: 34.51.187.118
   port: 443
-  server: 79.142.77.63
-  skip-cert-verify: true
+  uuid: e4be912f-68e8-4d51-80a4-1342b646f8e0
+  udp: true
   tls: true
-  type: http
-  username: null
+  client-fingerprint: chrome
+  servername: www.cloudflare.com
+  reality-opts:
+    public-key: fV003yDr_sb_Wkgz6MxnIUJMgD15osWhzU-HZ5fLPFg
+    short-id: 79ff7d51e3c56323
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +31,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_HTTP_443_585
+  - SE_VLESS_443_840
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +44,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_HTTP_443_585
+  - SE_VLESS_443_840
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +56,7 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_HTTP_443_585
+  - SE_VLESS_443_840
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

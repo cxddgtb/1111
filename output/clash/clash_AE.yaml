@@ -5,46 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_443_1654
-  type: vless
-  server: 103.71.23.247
-  port: 443
-  uuid: 0250424c-ae75-4b6b-890f-3fe26fae36c3
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: hk.152568.xyz
+- name: AE_VLESS_22573_742
   network: ws
-  ws-opts:
-    path: /cdn/packages/runtime-core.tar.gz
-    headers:
-      Host: hk.152568.xyz
-  country: AE
-- name: AE_HYSTERIA2_443_396
-  obfs: salamander
-  obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
-  password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
-  port: 443
-  server: 130.49.161.70
-  skip-cert-verify: false
-  sni: hy2.aspidnet.xyz
+  port: 22573
+  server: uae.unixzone.us
   tls: false
-  type: hysteria2
-  country: AE
-- name: AE_VLESS_443_585
-  server: 78.17.161.75
-  port: 443
   type: vless
-  uuid: 6db7ea14-ed33-4591-a9b1-f1e91b1c0ff5
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  ws-opts:
+    headers:
+      Host: uae.unixzone.us
+    path: /
+  country: AE
+- name: AE_VLESS_2053_698
+  network: ws
+  port: 2053
+  server: 185.112.249.201
+  servername: edgetunnel-4uw.pages.dev
   tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Jx7Z4PZ5DvGyEniIJhf6LwetaZ1_WDvPdpqtBDYOjyM
-    short-id: c2798cd4032a02b8
-  servername: www.nl.ozone.nl
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
+  type: vless
+  uuid: fdc48be3-a615-41ac-8bd1-ed844c931048
+  ws-opts:
+    headers:
+      Host: edgetunnel-4uw.pages.dev
+    path: /fp=chrome
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -59,9 +43,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_443_1654
-  - AE_HYSTERIA2_443_396
-  - AE_VLESS_443_585
+  - AE_VLESS_22573_742
+  - AE_VLESS_2053_698
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -74,9 +57,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_396
-  - AE_VLESS_443_585
-  - AE_VLESS_443_1654
+  - AE_VLESS_2053_698
+  - AE_VLESS_22573_742
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -88,9 +70,8 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_443_1654
-  - AE_HYSTERIA2_443_396
-  - AE_VLESS_443_585
+  - AE_VLESS_22573_742
+  - AE_VLESS_2053_698
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
