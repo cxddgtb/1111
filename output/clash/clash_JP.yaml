@@ -5,30 +5,41 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- encryption: none
-  name: JP_VLESS_443_264
-  network: tcp
-  port: 443
-  server: 137.220.221.179
-  tls: false
+- name: JP_VLESS_443_339
   type: vless
+  server: 137.220.221.179
+  port: 443
   uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
   country: JP
 - cipher: aes-128-gcm
-  name: JP_SS_443_221
+  name: JP_SS_443_309
   password: shadowsocks
   port: 443
   server: 149.22.87.204
   type: ss
   country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_80_377
+  name: JP_SS_443_515
   password: 3eOFeNssde7PYYMv
-  port: 80
+  port: 443
   server: 84.247.155.196
   type: ss
   country: JP
-- name: JP_ANYTLS_53274_498
+- name: JP_ANYTLS_65308_673
+  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
+  port: 65308
+  server: jpglobal-identity-federation-auth.younai-ytl.shop
+  skip-cert-verify: true
+  sni: jp11.pulsarcore.site
+  type: anytls
+  udp: true
+  country: JP
+- name: JP_ANYTLS_53274_708
   password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
   port: 53274
   server: jp-02-hdja-kido.younai-ytl.shop
@@ -37,109 +48,39 @@ proxies:
   type: anytls
   udp: true
   country: JP
-- name: JP_ANYTLS_1008_367
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  port: 1008
-  server: 3eqhzekn.zf-mix.9999231.xyz
-  skip-cert-verify: true
-  sni: co-af01e9.9999231.xyz
-  type: anytls
-  udp: true
-  country: JP
-- name: JP_ANYTLS_38302_760
+- name: JP_ANYTLS_37236_753
   password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  port: 38302
-  server: jpglobal-identity-federation-auth.younai-ytl.shop
-  skip-cert-verify: true
-  sni: us71.pulsarcore.site
-  type: anytls
-  udp: true
-  country: JP
-- name: JP_ANYTLS_28219_855
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  port: 28219
-  server: jpglobal-identity-federation-auth.younai-ytl.shop
-  skip-cert-verify: true
-  sni: us05.pulsarcore.site
-  type: anytls
-  udp: true
-  country: JP
-- name: JP_ANYTLS_38400_1212
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  port: 38400
-  server: jp-02-hdja-kido.younai-ytl.shop
-  skip-cert-verify: true
-  sni: us16.pulsarcore.site
-  type: anytls
-  udp: true
-  country: JP
-- name: JP_ANYTLS_27011_701
-  server: jpglobal-identity-federation-auth.younai-ytl.shop
-  port: 27011
-  type: anytls
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  udp: true
-  sni: flb01.pulsarcore.site
-  skip-cert-verify: true
-  country: JP
-- name: JP_VLESS_8443_733
-  server: 154.31.114.162
-  port: 8443
-  type: vless
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  tls: true
-  servername: jp3.yohototo.top
-  client-fingerprint: unsafe
-  network: ws
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-  udp: true
-  country: JP
-- name: JP_ANYTLS_65308_503
-  server: jpglobal-identity-federation-auth.younai-ytl.shop
-  port: 65308
-  type: anytls
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  udp: true
-  sni: jp11.pulsarcore.site
-  skip-cert-verify: true
-  country: JP
-- name: JP_ANYTLS_37236_574
-  server: jp-02-hdja-kido.younai-ytl.shop
   port: 37236
-  type: anytls
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  udp: true
+  server: jp-02-hdja-kido.younai-ytl.shop
+  skip-cert-verify: true
   sni: tw16.swiftrelay.cc
-  skip-cert-verify: true
-  country: JP
-- name: JP_ANYTLS_11996_675
-  server: jpglobal-identity-federation-auth.younai-ytl.shop
-  port: 11996
   type: anytls
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
   udp: true
-  sni: us67.pulsarcore.site
+  country: JP
+- name: JP_ANYTLS_1040_1366
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  port: 1040
+  server: 6ixwozox.zf-mix.9999231.xyz
   skip-cert-verify: true
-  country: JP
-- name: JP_VLESS_49152_919
-  server: qp.lichao0223.cn
-  port: 49152
-  type: vless
-  uuid: 71b460a1-8f78-45c5-fb3c-ab26a2a1f7b9
-  tls: true
-  servername: qp.lichao0223.cn
-  client-fingerprint: safari
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: qp.lichao0223.cn
+  sni: si-wy.9999231.xyz
+  type: anytls
   udp: true
   country: JP
-- name: JP_VMESS_4433_224
+- name: JP_VMESS_80_498
+  type: vmess
+  network: ws
+  server: 168.138.43.75
+  port: 80
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: jp01.a0a.xyz
+    path: /cctv13.m3u8
+  country: JP
+- name: JP_VMESS_4433_307
   type: vmess
   network: tcp
   server: 45.32.57.118
@@ -162,21 +103,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_443_264
-  - JP_SS_443_221
-  - JP_SS_80_377
-  - JP_ANYTLS_53274_498
-  - JP_ANYTLS_1008_367
-  - JP_ANYTLS_38302_760
-  - JP_ANYTLS_28219_855
-  - JP_ANYTLS_38400_1212
-  - JP_ANYTLS_27011_701
-  - JP_VLESS_8443_733
-  - JP_ANYTLS_65308_503
-  - JP_ANYTLS_37236_574
-  - JP_ANYTLS_11996_675
-  - JP_VLESS_49152_919
-  - JP_VMESS_4433_224
+  - JP_VLESS_443_339
+  - JP_SS_443_309
+  - JP_SS_443_515
+  - JP_ANYTLS_65308_673
+  - JP_ANYTLS_53274_708
+  - JP_ANYTLS_37236_753
+  - JP_ANYTLS_1040_1366
+  - JP_VMESS_80_498
+  - JP_VMESS_4433_307
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -189,21 +124,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_SS_443_221
-  - JP_VMESS_4433_224
-  - JP_VLESS_443_264
-  - JP_ANYTLS_1008_367
-  - JP_SS_80_377
-  - JP_ANYTLS_53274_498
-  - JP_ANYTLS_65308_503
-  - JP_ANYTLS_37236_574
-  - JP_ANYTLS_11996_675
-  - JP_ANYTLS_27011_701
-  - JP_VLESS_8443_733
-  - JP_ANYTLS_38302_760
-  - JP_ANYTLS_28219_855
-  - JP_VLESS_49152_919
-  - JP_ANYTLS_38400_1212
+  - JP_VMESS_4433_307
+  - JP_SS_443_309
+  - JP_VLESS_443_339
+  - JP_VMESS_80_498
+  - JP_SS_443_515
+  - JP_ANYTLS_65308_673
+  - JP_ANYTLS_53274_708
+  - JP_ANYTLS_37236_753
+  - JP_ANYTLS_1040_1366
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -215,21 +144,15 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_443_264
-  - JP_SS_443_221
-  - JP_SS_80_377
-  - JP_ANYTLS_53274_498
-  - JP_ANYTLS_1008_367
-  - JP_ANYTLS_38302_760
-  - JP_ANYTLS_28219_855
-  - JP_ANYTLS_38400_1212
-  - JP_ANYTLS_27011_701
-  - JP_VLESS_8443_733
-  - JP_ANYTLS_65308_503
-  - JP_ANYTLS_37236_574
-  - JP_ANYTLS_11996_675
-  - JP_VLESS_49152_919
-  - JP_VMESS_4433_224
+  - JP_VLESS_443_339
+  - JP_SS_443_309
+  - JP_SS_443_515
+  - JP_ANYTLS_65308_673
+  - JP_ANYTLS_53274_708
+  - JP_ANYTLS_37236_753
+  - JP_ANYTLS_1040_1366
+  - JP_VMESS_80_498
+  - JP_VMESS_4433_307
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

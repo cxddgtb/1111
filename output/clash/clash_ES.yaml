@@ -6,46 +6,20 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: chacha20-ietf-poly1305
-  name: ES_SS_8388_323
-  password: qItG8SueYQcP
-  port: 8388
-  server: 140.174.184.5
-  type: ss
-  country: ES
-- cipher: chacha20-ietf-poly1305
-  name: ES_SS_8388_348
+  name: ES_SS_8388_248
   password: WSyL4XTwNsdv
   port: 8388
   server: 108.181.121.226
   type: ss
   country: ES
-- name: ES_TROJAN_2053_576
-  network: ws
-  password: humanity
-  port: 2053
-  server: 185.114.72.31
-  skip-cert-verify: false
-  sni: www.calmlunch.com
-  type: trojan
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: /assignment
+- cipher: chacha20-ietf-poly1305
+  name: ES_SS_8388_237
+  password: qItG8SueYQcP
+  port: 8388
+  server: 140.174.184.5
+  type: ss
   country: ES
-- name: ES_VLESS_443_789
-  server: 34.175.19.8
-  port: 443
-  type: vless
-  uuid: 0b4b1548-c7ca-45a5-9096-6c3cc4b1c43b
-  tls: true
-  reality-opts:
-    public-key: iI9J--AfPKCXbVle3Om-WMn_g-3bO3SsVzUCNtwUkU0
-    short-id: fe85cb6a5c84e64c
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  network: tcp
-  country: ES
-- name: ES_VMESS_22324_341
+- name: ES_VMESS_22324_244
   type: vmess
   network: tcp
   server: 66.163.118.73
@@ -55,7 +29,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: ES
-- name: ES_VMESS_22324_313
+- name: ES_VMESS_22324_209
   type: vmess
   network: tcp
   server: 85.90.217.42
@@ -64,21 +38,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-  country: ES
-- name: ES_VMESS_443_633
-  type: vmess
-  network: ws
-  server: 66.163.118.73
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: mygptagent.org
-    path: /linkvws
   country: ES
 proxy-groups:
 - name: 🚀 节点选择
@@ -93,13 +52,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_SS_8388_323
-  - ES_SS_8388_348
-  - ES_TROJAN_2053_576
-  - ES_VLESS_443_789
-  - ES_VMESS_22324_341
-  - ES_VMESS_22324_313
-  - ES_VMESS_443_633
+  - ES_SS_8388_248
+  - ES_SS_8388_237
+  - ES_VMESS_22324_244
+  - ES_VMESS_22324_209
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -112,13 +68,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_VMESS_22324_313
-  - ES_SS_8388_323
-  - ES_VMESS_22324_341
-  - ES_SS_8388_348
-  - ES_TROJAN_2053_576
-  - ES_VMESS_443_633
-  - ES_VLESS_443_789
+  - ES_VMESS_22324_209
+  - ES_SS_8388_237
+  - ES_VMESS_22324_244
+  - ES_SS_8388_248
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -130,13 +83,10 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_SS_8388_323
-  - ES_SS_8388_348
-  - ES_TROJAN_2053_576
-  - ES_VLESS_443_789
-  - ES_VMESS_22324_341
-  - ES_VMESS_22324_313
-  - ES_VMESS_443_633
+  - ES_SS_8388_248
+  - ES_SS_8388_237
+  - ES_VMESS_22324_244
+  - ES_VMESS_22324_209
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

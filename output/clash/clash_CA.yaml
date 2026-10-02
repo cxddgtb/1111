@@ -5,64 +5,70 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_SS_9443_187
-  type: ss
-  server: yyz-ca-01.blncvpn4u.cc
-  port: 9443
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-  udp: true
-  country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_9443_128
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-  port: 9443
-  server: 185.156.47.97
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_445_148
+  name: CA_SS_445_41
   password: zDNVedRFPQexG9v
   port: 445
   server: 51.222.141.125
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5000_145
-  password: Y6R9pAtvxxzmGC
-  port: 5000
-  server: 51.222.200.165
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8882_175
+  name: CA_SS_8882_42
   password: kDWvXYZoTBcGkC4
   port: 8882
   server: 51.222.136.236
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8119_284
+  name: CA_SS_5000_90
+  password: Y6R9pAtvxxzmGC
+  port: 5000
+  server: 51.222.200.165
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_9443_91
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  port: 9443
+  server: yyz-ca-01.blncvpn4u.cc
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_5601_67
+  password: Y6R9pAtvxxzmGC
+  port: 5601
+  server: 51.222.155.113
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_8882_41
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.79.49.116
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_8119_93
   password: cdBIDV42DCwnfIN
   port: 8119
   server: 51.79.64.198
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8118_430
+  name: CA_SS_5003_445
+  password: g5MeD6Ft3CWlJId
+  port: 5003
+  server: 51.222.155.32
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_8118_585
   password: cdBIDV42DCwnfIN
   port: 8118
   server: 51.79.85.185
   type: ss
   country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5601_757
-  password: Y6R9pAtvxxzmGC
-  port: 5601
-  server: 51.222.155.113
-  type: ss
-  country: CA
-- name: CA_VMESS_22324_139
+- name: CA_VMESS_22324_54
   type: vmess
   network: tcp
   server: 66.163.113.176
@@ -72,7 +78,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VMESS_18000_142
+- name: CA_VMESS_18000_71
   type: vmess
   network: tcp
   server: 134.195.196.211
@@ -82,7 +88,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VMESS_22324_157
+- name: CA_VMESS_22324_65
   type: vmess
   network: tcp
   server: 134.195.198.214
@@ -92,7 +98,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VMESS_22324_95
+- name: CA_VMESS_22324_159
   type: vmess
   network: tcp
   server: 158.51.123.42
@@ -102,22 +108,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VMESS_443_300
-  type: vmess
-  network: ws
-  server: 158.51.121.123
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: mygptagent.org
-    path: /linkvws
-  country: CA
-- name: CA_VMESS_22324_195
+- name: CA_VMESS_22324_54_2
   type: vmess
   network: tcp
   server: 198.57.27.190
@@ -127,12 +118,22 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VMESS_18000_163
+- name: CA_VMESS_18000_109
   type: vmess
   network: tcp
   server: 23.162.200.198
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_22324_62
+  type: vmess
+  network: tcp
+  server: 158.51.121.63
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   skip-cert-verify: true
   alterId: 0
   cipher: auto
@@ -150,21 +151,22 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_SS_9443_187
-  - CA_SS_9443_128
-  - CA_SS_445_148
-  - CA_SS_5000_145
-  - CA_SS_8882_175
-  - CA_SS_8119_284
-  - CA_SS_8118_430
-  - CA_SS_5601_757
-  - CA_VMESS_22324_139
-  - CA_VMESS_18000_142
-  - CA_VMESS_22324_157
-  - CA_VMESS_22324_95
-  - CA_VMESS_443_300
-  - CA_VMESS_22324_195
-  - CA_VMESS_18000_163
+  - CA_SS_445_41
+  - CA_SS_8882_42
+  - CA_SS_5000_90
+  - CA_SS_9443_91
+  - CA_SS_5601_67
+  - CA_SS_8882_41
+  - CA_SS_8119_93
+  - CA_SS_5003_445
+  - CA_SS_8118_585
+  - CA_VMESS_22324_54
+  - CA_VMESS_18000_71
+  - CA_VMESS_22324_65
+  - CA_VMESS_22324_159
+  - CA_VMESS_22324_54_2
+  - CA_VMESS_18000_109
+  - CA_VMESS_22324_62
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -177,21 +179,22 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_22324_95
-  - CA_SS_9443_128
-  - CA_VMESS_22324_139
-  - CA_VMESS_18000_142
-  - CA_SS_5000_145
-  - CA_SS_445_148
-  - CA_VMESS_22324_157
-  - CA_VMESS_18000_163
-  - CA_SS_8882_175
-  - CA_SS_9443_187
-  - CA_VMESS_22324_195
-  - CA_SS_8119_284
-  - CA_VMESS_443_300
-  - CA_SS_8118_430
-  - CA_SS_5601_757
+  - CA_SS_445_41
+  - CA_SS_8882_41
+  - CA_SS_8882_42
+  - CA_VMESS_22324_54
+  - CA_VMESS_22324_54_2
+  - CA_VMESS_22324_62
+  - CA_VMESS_22324_65
+  - CA_SS_5601_67
+  - CA_VMESS_18000_71
+  - CA_SS_5000_90
+  - CA_SS_9443_91
+  - CA_SS_8119_93
+  - CA_VMESS_18000_109
+  - CA_VMESS_22324_159
+  - CA_SS_5003_445
+  - CA_SS_8118_585
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -203,21 +206,22 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_SS_9443_187
-  - CA_SS_9443_128
-  - CA_SS_445_148
-  - CA_SS_5000_145
-  - CA_SS_8882_175
-  - CA_SS_8119_284
-  - CA_SS_8118_430
-  - CA_SS_5601_757
-  - CA_VMESS_22324_139
-  - CA_VMESS_18000_142
-  - CA_VMESS_22324_157
-  - CA_VMESS_22324_95
-  - CA_VMESS_443_300
-  - CA_VMESS_22324_195
-  - CA_VMESS_18000_163
+  - CA_SS_445_41
+  - CA_SS_8882_42
+  - CA_SS_5000_90
+  - CA_SS_9443_91
+  - CA_SS_5601_67
+  - CA_SS_8882_41
+  - CA_SS_8119_93
+  - CA_SS_5003_445
+  - CA_SS_8118_585
+  - CA_VMESS_22324_54
+  - CA_VMESS_18000_71
+  - CA_VMESS_22324_65
+  - CA_VMESS_22324_159
+  - CA_VMESS_22324_54_2
+  - CA_VMESS_18000_109
+  - CA_VMESS_22324_62
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
