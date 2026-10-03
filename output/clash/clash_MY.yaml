@@ -5,91 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MY_VLESS_80_743
-  type: vless
-  server: platform101.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform101
-    headers:
-      Host: platform101.halalkhor.info
-  country: MY
-- name: MY_VLESS_80_727
-  type: vless
-  server: platform117.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform117
-    headers:
-      Host: platform117.halalkhor.info
-  country: MY
-- name: MY_VLESS_80_729
-  type: vless
-  server: platform115.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: platform115.halalkhor.info
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform115
-    headers:
-      Host: platform115.halalkhor.info
-  country: MY
-- name: MY_VLESS_80_749
-  type: vless
-  server: platform106.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform106
-    headers:
-      Host: platform106.halalkhor.info
-  country: MY
-- name: MY_VLESS_80_797
-  type: vless
-  server: platform102.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: platform102.golnamakcert.top
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform102
-    headers:
-      Host: platform102.halalkhor.info
-  country: MY
-- name: MY_VLESS_80_717
-  type: vless
-  server: platform113.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: platform113.halalkhor.info
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform113
-    headers:
-      Host: platform113.halalkhor.info
-  country: MY
-- name: MY_VLESS_80_800
+- name: MY_VLESS_80_674
   type: vless
   server: platform118.golnamakcert.top
   port: 80
@@ -103,47 +19,19 @@ proxies:
     headers:
       Host: platform118.halalkhor.info
   country: MY
-- name: MY_VLESS_80_871
+- name: MY_VLESS_80_685
   type: vless
-  server: platform103.golnamakcert.top
+  server: platform115.golnamakcert.top
   port: 80
   uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
   network: ws
   tls: false
-  servername: platform103.halalkhor.info
+  servername: platform115.halalkhor.info
   client-fingerprint: chrome
   ws-opts:
-    path: /platform103
+    path: /platform115
     headers:
-      Host: platform103.halalkhor.info
-  country: MY
-- name: MY_VLESS_80_731
-  type: vless
-  server: platform107.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: platform107.halalkhor.info
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform107
-    headers:
-      Host: platform107.halalkhor.info
-  country: MY
-- name: MY_VLESS_80_774
-  type: vless
-  server: platform109.golnamakcert.top
-  port: 80
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  network: ws
-  tls: false
-  servername: platform109.halalkhor.info
-  client-fingerprint: chrome
-  ws-opts:
-    path: /platform109
-    headers:
-      Host: platform109.halalkhor.info
+      Host: platform115.halalkhor.info
   country: MY
 proxy-groups:
 - name: 🚀 节点选择
@@ -158,16 +46,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MY_VLESS_80_743
-  - MY_VLESS_80_727
-  - MY_VLESS_80_729
-  - MY_VLESS_80_749
-  - MY_VLESS_80_797
-  - MY_VLESS_80_717
-  - MY_VLESS_80_800
-  - MY_VLESS_80_871
-  - MY_VLESS_80_731
-  - MY_VLESS_80_774
+  - MY_VLESS_80_674
+  - MY_VLESS_80_685
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -180,16 +60,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MY_VLESS_80_717
-  - MY_VLESS_80_727
-  - MY_VLESS_80_729
-  - MY_VLESS_80_731
-  - MY_VLESS_80_743
-  - MY_VLESS_80_749
-  - MY_VLESS_80_774
-  - MY_VLESS_80_797
-  - MY_VLESS_80_800
-  - MY_VLESS_80_871
+  - MY_VLESS_80_674
+  - MY_VLESS_80_685
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -201,16 +73,8 @@ proxy-groups:
 - name: 🌍 MY
   type: url-test
   proxies:
-  - MY_VLESS_80_743
-  - MY_VLESS_80_727
-  - MY_VLESS_80_729
-  - MY_VLESS_80_749
-  - MY_VLESS_80_797
-  - MY_VLESS_80_717
-  - MY_VLESS_80_800
-  - MY_VLESS_80_871
-  - MY_VLESS_80_731
-  - MY_VLESS_80_774
+  - MY_VLESS_80_674
+  - MY_VLESS_80_685
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,18 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_26070_198
+- name: DE_VLESS_80_365
   type: vless
-  server: 31.76.11.83
-  port: 26070
-  uuid: e676c6c8-44a8-4a1d-82cc-821a1f70f0c0
-  network: tcp
+  server: 139.162.149.105
+  port: 80
+  uuid: 5aae7d2d-c152-42cc-afb6-fe805fb94531
+  network: ws
   tls: false
   servername: ''
   client-fingerprint: chrome
-  ws-opts: null
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
   country: DE
-- name: DE_VLESS_2053_345
+- name: DE_VLESS_2053_400
   type: vless
   server: 178.83.46.216
   port: 2053
@@ -27,7 +30,7 @@ proxies:
   client-fingerprint: chrome
   ws-opts: null
   country: DE
-- name: DE_VLESS_8880_920
+- name: DE_VLESS_8880_837
   type: vless
   server: 45.80.111.45
   port: 8880
@@ -41,75 +44,19 @@ proxies:
     headers:
       Host: cnd.singapure.mygold.stream
   country: DE
-- name: DE_HYSTERIA2_443_312
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: 443
-  server: vpn-de-002.fastervpn.world
-  skip-cert-verify: true
-  sni: vpn-de-002.fastervpn.world
-  tls: false
-  type: hysteria2
-  country: DE
-- cipher: 2022-blake3-chacha20-poly1305
-  name: DE_SS_59924_195
-  password: tGXsbUDisR28c/KS0RDOlgQS1gVT7UJ5Sf0/5QvMwR4=
-  port: 59924
-  server: 130.61.42.148
-  type: ss
-  udp: true
-  country: DE
-- alpn:
-  - h3
-  auth-str: dongtaiwang.com
-  auth_str: dongtaiwang.com
-  down: 1000
-  name: DE_HYSTERIA_54177_1376
-  port: 54177
-  protocol: udp
+- name: DE_HYSTERIA_54177_1542
   server: 5.83.129.90
-  skip-cert-verify: true
-  sni: apple.com
+  port: 54177
   type: hysteria
+  auth_str: dongtaiwang.com
+  auth-str: dongtaiwang.com
   up: 500
-  country: DE
-- name: DE_VLESS_2053_941
-  type: vless
-  network: tcp
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  tls: false
-  encryption: none
-  country: DE
-- name: DE_VMESS_23326_183
-  type: vmess
-  network: tcp
-  server: 31.76.11.83
-  port: 23326
-  uuid: 3dff544a-379e-41f9-95d9-4b95a8e4026e
+  down: 1000
+  protocol: udp
+  sni: apple.com
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_110_182
-  type: vmess
-  network: tcp
-  server: 31.77.8.97
-  port: 110
-  uuid: d2d8601b-c14b-42c6-b8ea-33889bce152a
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: DE
-- name: DE_VMESS_22324_179
-  type: vmess
-  network: tcp
-  server: 185.177.229.129
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  alpn:
+  - h3
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -124,16 +71,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_26070_198
-  - DE_VLESS_2053_345
-  - DE_VLESS_8880_920
-  - DE_HYSTERIA2_443_312
-  - DE_SS_59924_195
-  - DE_HYSTERIA_54177_1376
-  - DE_VLESS_2053_941
-  - DE_VMESS_23326_183
-  - DE_VMESS_110_182
-  - DE_VMESS_22324_179
+  - DE_VLESS_80_365
+  - DE_VLESS_2053_400
+  - DE_VLESS_8880_837
+  - DE_HYSTERIA_54177_1542
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -146,16 +87,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VMESS_22324_179
-  - DE_VMESS_110_182
-  - DE_VMESS_23326_183
-  - DE_SS_59924_195
-  - DE_VLESS_26070_198
-  - DE_HYSTERIA2_443_312
-  - DE_VLESS_2053_345
-  - DE_VLESS_8880_920
-  - DE_VLESS_2053_941
-  - DE_HYSTERIA_54177_1376
+  - DE_VLESS_80_365
+  - DE_VLESS_2053_400
+  - DE_VLESS_8880_837
+  - DE_HYSTERIA_54177_1542
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -167,16 +102,10 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_26070_198
-  - DE_VLESS_2053_345
-  - DE_VLESS_8880_920
-  - DE_HYSTERIA2_443_312
-  - DE_SS_59924_195
-  - DE_HYSTERIA_54177_1376
-  - DE_VLESS_2053_941
-  - DE_VMESS_23326_183
-  - DE_VMESS_110_182
-  - DE_VMESS_22324_179
+  - DE_VLESS_80_365
+  - DE_VLESS_2053_400
+  - DE_VLESS_8880_837
+  - DE_HYSTERIA_54177_1542
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

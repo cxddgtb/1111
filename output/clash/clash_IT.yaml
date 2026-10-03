@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_VLESS_10086_223
+- name: IT_VLESS_10086_457
   type: vless
   server: 204.216.216.23
   port: 10086
@@ -15,16 +15,6 @@ proxies:
   servername: ''
   client-fingerprint: chrome
   ws-opts: null
-  country: IT
-- name: IT_VMESS_22324_229
-  type: vmess
-  network: tcp
-  server: 89.41.172.85
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
   country: IT
 proxy-groups:
 - name: 🚀 节点选择
@@ -39,8 +29,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_VLESS_10086_223
-  - IT_VMESS_22324_229
+  - IT_VLESS_10086_457
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -53,8 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_VLESS_10086_223
-  - IT_VMESS_22324_229
+  - IT_VLESS_10086_457
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -66,8 +54,7 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_VLESS_10086_223
-  - IT_VMESS_22324_229
+  - IT_VLESS_10086_457
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

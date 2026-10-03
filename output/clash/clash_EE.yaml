@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_VLESS_8443_355
+- name: EE_VLESS_8443_459
   type: vless
   server: 94.183.170.135
   port: 8443
@@ -15,6 +15,20 @@ proxies:
   servername: estproxy4.lockdwn.com
   client-fingerprint: chrome
   ws-opts: null
+  country: EE
+- name: EE_VLESS_8443_741
+  type: vless
+  server: ee10.zazazuza.ru
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  network: ws
+  tls: true
+  servername: fdghyt.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vpn-wss/fluxor/59011/
+    headers:
+      Host: fdghyt.com
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +43,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_8443_355
+  - EE_VLESS_8443_459
+  - EE_VLESS_8443_741
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +57,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_8443_355
+  - EE_VLESS_8443_459
+  - EE_VLESS_8443_741
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +70,8 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_8443_355
+  - EE_VLESS_8443_459
+  - EE_VLESS_8443_741
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

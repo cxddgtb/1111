@@ -5,7 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_80_669
+- name: SG_VLESS_443_784
+  type: vless
+  server: trackydev.site
+  port: 443
+  uuid: 92d67828-4c56-4795-af5a-f387651380dc
+  network: ws
+  tls: true
+  servername: trackydev.site
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: trackydev.site
+  country: SG
+- name: SG_VLESS_80_547
   type: vless
   server: 5.223.41.93
   port: 80
@@ -19,71 +33,23 @@ proxies:
     headers:
       Host: ''
   country: SG
-- name: SG_VLESS_443_1198
-  type: vless
-  server: 134.122.154.210
-  port: 443
-  uuid: 7f549a50-4655-46b6-962d-183cfc532fc9
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: SG
-- name: SG_HYSTERIA2_20654_753
-  obfs: salamander
-  obfs-password: xK9mN2pLq5vR8wB3
-  password: 8A9905B7-801B-41AF-BFC9-2034212770F6
-  port: 20654
-  server: sg4.dexlos.com
-  skip-cert-verify: false
-  sni: sg4.dexlos.com
-  tls: false
+- name: SG_HYSTERIA2_50160_1181
+  server: 138.2.73.238
+  port: 50160
   type: hysteria2
-  country: SG
-- cipher: chacha20-ietf-poly1305
-  name: SG_SS_14249_1269
-  password: 9epp3o9ng8ej59uv
-  port: 14249
-  server: 45.128.12.20
-  type: ss
-  country: SG
-- name: SG_ANYTLS_28680_836
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  port: 28680
-  server: test01.y1static-content-distribution.shop
+  password: f87376e17da040ed04c9665ce8972930
+  auth: f87376e17da040ed04c9665ce8972930
+  sni: www.bing.com
   skip-cert-verify: true
-  sni: hk15.swiftrelay.cc
+  country: SG
+- name: SG_ANYTLS_1010_1395
+  server: tfk1yyx4.zf-mix.9999231.xyz
+  port: 1010
   type: anytls
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
   udp: true
-  country: SG
-- name: SG_ANYTLS_47096_830
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  port: 47096
-  server: test01.y1static-content-distribution.shop
+  sni: tr-house.9999231.xyz
   skip-cert-verify: true
-  sni: xjp33.pulsarcore.site
-  type: anytls
-  udp: true
-  country: SG
-- name: SG_ANYTLS_16406_1152
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  port: 16406
-  server: test01.y1static-content-distribution.shop
-  skip-cert-verify: true
-  sni: yz203.y1static-content-distribution.shop
-  type: anytls
-  udp: true
-  country: SG
-- name: SG_VMESS_18000_1012
-  type: vmess
-  network: tcp
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -98,14 +64,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_80_669
-  - SG_VLESS_443_1198
-  - SG_HYSTERIA2_20654_753
-  - SG_SS_14249_1269
-  - SG_ANYTLS_28680_836
-  - SG_ANYTLS_47096_830
-  - SG_ANYTLS_16406_1152
-  - SG_VMESS_18000_1012
+  - SG_VLESS_443_784
+  - SG_VLESS_80_547
+  - SG_HYSTERIA2_50160_1181
+  - SG_ANYTLS_1010_1395
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -118,14 +80,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VLESS_80_669
-  - SG_HYSTERIA2_20654_753
-  - SG_ANYTLS_47096_830
-  - SG_ANYTLS_28680_836
-  - SG_VMESS_18000_1012
-  - SG_ANYTLS_16406_1152
-  - SG_VLESS_443_1198
-  - SG_SS_14249_1269
+  - SG_VLESS_80_547
+  - SG_VLESS_443_784
+  - SG_HYSTERIA2_50160_1181
+  - SG_ANYTLS_1010_1395
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -137,14 +95,10 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_80_669
-  - SG_VLESS_443_1198
-  - SG_HYSTERIA2_20654_753
-  - SG_SS_14249_1269
-  - SG_ANYTLS_28680_836
-  - SG_ANYTLS_47096_830
-  - SG_ANYTLS_16406_1152
-  - SG_VMESS_18000_1012
+  - SG_VLESS_443_784
+  - SG_VLESS_80_547
+  - SG_HYSTERIA2_50160_1181
+  - SG_ANYTLS_1010_1395
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

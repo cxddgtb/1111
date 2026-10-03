@@ -5,16 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CO_VLESS_62145_199
-  type: vless
-  server: 157.137.219.244
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+- cipher: aes-256-gcm
+  name: CO_SS_8090_179
+  password: PCnnH6SQSnfoS27
+  port: 8090
+  server: 149.104.107.41
+  type: ss
   country: CO
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CO_VLESS_62145_199
+  - CO_SS_8090_179
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CO_VLESS_62145_199
+  - CO_SS_8090_179
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +50,7 @@ proxy-groups:
 - name: 🌍 CO
   type: url-test
   proxies:
-  - CO_VLESS_62145_199
+  - CO_SS_8090_179
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

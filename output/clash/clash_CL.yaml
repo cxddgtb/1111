@@ -5,18 +5,96 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CL_VLESS_443_480
+- name: CL_VLESS_80_498
   type: vless
-  server: 34.176.187.219
-  port: 443
-  uuid: ad5325f8-f0b3-41c4-a561-113529b60e70
-  udp: true
-  tls: true
+  server: platform109.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  network: ws
+  tls: false
+  servername: platform109.halalkhor.info
   client-fingerprint: chrome
-  servername: www.cloudflare.com
-  reality-opts:
-    public-key: HnHVuSObMrldWGzq1-Eb93fwgu6QQRp6H0_8LX3ikDc
-    short-id: 2c2d919f5183d0b7
+  ws-opts:
+    path: /platform109
+    headers:
+      Host: platform109.halalkhor.info
+  country: CL
+- name: CL_VLESS_80_492
+  type: vless
+  server: platform107.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  network: ws
+  tls: false
+  servername: platform107.halalkhor.info
+  client-fingerprint: chrome
+  ws-opts:
+    path: /platform107
+    headers:
+      Host: platform107.halalkhor.info
+  country: CL
+- name: CL_VLESS_80_487
+  type: vless
+  server: platform101.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /platform101
+    headers:
+      Host: platform101.halalkhor.info
+  country: CL
+- name: CL_VLESS_80_496
+  type: vless
+  server: platform106.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /platform106
+    headers:
+      Host: platform106.halalkhor.info
+  country: CL
+- name: CL_VLESS_80_488
+  type: vless
+  server: platform102.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  network: ws
+  tls: false
+  servername: platform102.golnamakcert.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /platform102
+    headers:
+      Host: platform102.halalkhor.info
+  country: CL
+- name: CL_VLESS_80_535
+  type: vless
+  server: platform103.golnamakcert.top
+  port: 80
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  network: ws
+  tls: false
+  servername: platform103.halalkhor.info
+  client-fingerprint: chrome
+  ws-opts:
+    path: /platform103
+    headers:
+      Host: platform103.halalkhor.info
+  country: CL
+- cipher: aes-256-gcm
+  name: CL_SS_8388_311
+  password: xBStBEVqvGwHPocc
+  port: 8388
+  server: 64.176.2.21
+  type: ss
   country: CL
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +109,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CL_VLESS_443_480
+  - CL_VLESS_80_498
+  - CL_VLESS_80_492
+  - CL_VLESS_80_487
+  - CL_VLESS_80_496
+  - CL_VLESS_80_488
+  - CL_VLESS_80_535
+  - CL_SS_8388_311
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +128,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CL_VLESS_443_480
+  - CL_SS_8388_311
+  - CL_VLESS_80_487
+  - CL_VLESS_80_488
+  - CL_VLESS_80_492
+  - CL_VLESS_80_496
+  - CL_VLESS_80_498
+  - CL_VLESS_80_535
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +146,13 @@ proxy-groups:
 - name: 🌍 CL
   type: url-test
   proxies:
-  - CL_VLESS_443_480
+  - CL_VLESS_80_498
+  - CL_VLESS_80_492
+  - CL_VLESS_80_487
+  - CL_VLESS_80_496
+  - CL_VLESS_80_488
+  - CL_VLESS_80_535
+  - CL_SS_8388_311
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -6,27 +6,35 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: aes-256-gcm
-  name: KR_SS_49642_1829
+  name: KR_SS_8119_1415
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 141.164.45.187
+  type: ss
+  country: KR
+- name: KR_ANYTLS_60005_735
+  password: 13f0acfa-38c1-4e82-a758-583aa31740df
+  port: 60005
+  server: svip.skycon808.com
+  skip-cert-verify: true
+  sni: xjp18.2uuzhe.com
+  type: anytls
+  country: KR
+- cipher: aes-256-gcm
+  name: KR_SS_49642_2221
   password: ac9c0a7b
   port: 49642
   server: ce1fc2d8.krkt.hkssip.com
   type: ss
   country: KR
-- name: KR_ANYTLS_22216_1151
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  port: 22216
-  server: svip.skycon808.com
-  skip-cert-verify: true
-  sni: us72.pulsarcore.site
+- name: KR_ANYTLS_1892_579
+  server: icn-a-02.auuas.com
+  port: 1892
   type: anytls
+  password: 81c4547b-e5d8-4af8-baf0-91c5c0c05a9b
   udp: true
-  country: KR
-- cipher: aes-256-gcm
-  name: KR_SS_9101_2413
-  password: e4FCWrgpkji3QY
-  port: 9101
-  server: 141.164.45.187
-  type: ss
+  sni: images.apple.com
+  skip-cert-verify: true
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -41,9 +49,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_SS_49642_1829
-  - KR_ANYTLS_22216_1151
-  - KR_SS_9101_2413
+  - KR_SS_8119_1415
+  - KR_ANYTLS_60005_735
+  - KR_SS_49642_2221
+  - KR_ANYTLS_1892_579
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,9 +65,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_ANYTLS_22216_1151
-  - KR_SS_49642_1829
-  - KR_SS_9101_2413
+  - KR_ANYTLS_1892_579
+  - KR_ANYTLS_60005_735
+  - KR_SS_8119_1415
+  - KR_SS_49642_2221
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,9 +80,10 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_SS_49642_1829
-  - KR_ANYTLS_22216_1151
-  - KR_SS_9101_2413
+  - KR_SS_8119_1415
+  - KR_ANYTLS_60005_735
+  - KR_SS_49642_2221
+  - KR_ANYTLS_1892_579
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

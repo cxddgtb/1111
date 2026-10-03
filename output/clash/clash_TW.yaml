@@ -5,38 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_ANYTLS_443_998
-  password: 9sK2mP8xQ7vL3nZ6
+- name: TW_ANYTLS_443_1585
+  server: awefd2313fefarg23fr24.pnuqcnp.cn
   port: 443
-  server: ac7548f3ebe045b39a90288ff1e97526.pnuqcnp.cn
-  skip-cert-verify: true
-  sni: ac7548f3ebe045b39a90288ff1e97526.lwdnxf.cn
   type: anytls
+  password: 9sK2mP8xQ7vL3nZ6
   udp: true
-  country: TW
-- name: TW_VMESS_35034_412
-  type: vmess
-  network: tcp
-  server: 165.154.195.38
-  port: 35034
-  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
+  sni: images.ctfassets.net
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: TW
-- name: TW_VMESS_52300_1254
-  type: vmess
-  server: hi.northcluster.info
-  port: 52300
-  uuid: 6e571484-4166-4699-8f58-b34a1823691f
-  cipher: auto
-  alterId: 0
-  udp: true
-  network: ws
-  ws-opts:
-    path: /video
-    headers:
-      Host: hi.northcluster.info
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -51,9 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_ANYTLS_443_998
-  - TW_VMESS_35034_412
-  - TW_VMESS_52300_1254
+  - TW_ANYTLS_443_1585
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -66,9 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_412
-  - TW_ANYTLS_443_998
-  - TW_VMESS_52300_1254
+  - TW_ANYTLS_443_1585
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -80,9 +52,7 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_ANYTLS_443_998
-  - TW_VMESS_35034_412
-  - TW_VMESS_52300_1254
+  - TW_ANYTLS_443_1585
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

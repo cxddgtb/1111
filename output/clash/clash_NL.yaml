@@ -5,29 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_VLESS_59228_362
+- name: NL_VLESS_443_380
   type: vless
-  server: netherlands.diginoisb.ir
-  port: 59228
-  uuid: 26c88828-53a0-40b9-84fc-e9a50fde5e7d
+  server: 107.189.18.145
+  port: 443
+  uuid: 67a171fb-a31d-49f3-a9d6-98de350763e8
   network: tcp
-  tls: false
-  servername: ''
+  tls: true
+  servername: restnet.duckdns.org
   client-fingerprint: chrome
   ws-opts: null
   country: NL
-- name: NL_VLESS_62145_178
-  type: vless
-  server: 158.101.202.50
-  port: 62145
-  uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
-  network: tcp
-  tls: false
-  servername: 158.101.202.50
-  client-fingerprint: chrome
-  ws-opts: null
-  country: NL
-- name: NL_HTTP_443_377
+- name: NL_HTTP_443_477
   port: 443
   server: 149.36.51.129
   skip-cert-verify: true
@@ -35,14 +24,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- cipher: aes-256-gcm
-  name: NL_SS_8388_1229
-  password: iOaIXNsQXVIxwmkY
-  port: 8388
-  server: 140.82.56.38
-  type: ss
-  country: NL
-- name: NL_HTTP_9002_378
+- name: NL_HTTP_9002_492
   port: 9002
   server: 84.17.47.125
   skip-cert-verify: true
@@ -50,7 +32,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_378_2
+- name: NL_HTTP_9002_482
   port: 9002
   server: 84.17.47.150
   skip-cert-verify: true
@@ -58,7 +40,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_394
+- name: NL_HTTP_9002_490
   port: 9002
   server: 84.17.47.148
   skip-cert-verify: true
@@ -66,7 +48,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_382
+- name: NL_HTTP_9002_513
   port: 9002
   server: 84.17.47.146
   skip-cert-verify: true
@@ -74,30 +56,13 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_388
+- name: NL_HTTP_9002_500
   port: 9002
   server: 84.17.47.149
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-  country: NL
-- name: NL_VLESS_443_566
-  type: vless
-  network: ws
-  server: 177.3.208.65
-  port: 443
-  uuid: 4f34bc04-479c-49ba-91a8-6bb9ed15031c
-  servername: tgmansion.site
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: tgmansion.site
-    path: /vless-il
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -112,16 +77,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_VLESS_59228_362
-  - NL_VLESS_62145_178
-  - NL_HTTP_443_377
-  - NL_SS_8388_1229
-  - NL_HTTP_9002_378
-  - NL_HTTP_9002_378_2
-  - NL_HTTP_9002_394
-  - NL_HTTP_9002_382
-  - NL_HTTP_9002_388
-  - NL_VLESS_443_566
+  - NL_VLESS_443_380
+  - NL_HTTP_443_477
+  - NL_HTTP_9002_492
+  - NL_HTTP_9002_482
+  - NL_HTTP_9002_490
+  - NL_HTTP_9002_513
+  - NL_HTTP_9002_500
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -134,16 +96,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_VLESS_62145_178
-  - NL_VLESS_59228_362
-  - NL_HTTP_443_377
-  - NL_HTTP_9002_378
-  - NL_HTTP_9002_378_2
-  - NL_HTTP_9002_382
-  - NL_HTTP_9002_388
-  - NL_HTTP_9002_394
-  - NL_VLESS_443_566
-  - NL_SS_8388_1229
+  - NL_VLESS_443_380
+  - NL_HTTP_443_477
+  - NL_HTTP_9002_482
+  - NL_HTTP_9002_490
+  - NL_HTTP_9002_492
+  - NL_HTTP_9002_500
+  - NL_HTTP_9002_513
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -155,16 +114,13 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_59228_362
-  - NL_VLESS_62145_178
-  - NL_HTTP_443_377
-  - NL_SS_8388_1229
-  - NL_HTTP_9002_378
-  - NL_HTTP_9002_378_2
-  - NL_HTTP_9002_394
-  - NL_HTTP_9002_382
-  - NL_HTTP_9002_388
-  - NL_VLESS_443_566
+  - NL_VLESS_443_380
+  - NL_HTTP_443_477
+  - NL_HTTP_9002_492
+  - NL_HTTP_9002_482
+  - NL_HTTP_9002_490
+  - NL_HTTP_9002_513
+  - NL_HTTP_9002_500
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

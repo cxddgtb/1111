@@ -5,24 +5,27 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VLESS_11907_722
-  type: vless
-  server: 195.58.144.56
-  port: 11907
-  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
-  network: tcp
-  tls: true
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+- cipher: chacha20-ietf-poly1305
+  name: HK_SS_1080_1240
+  password: m5nsedvdczx6x06e
+  port: 1080
+  server: telegramx.khp25.com
+  type: ss
   country: HK
-- name: HK_SOCKS5_8899_2796
+- name: HK_SOCKS5_8899_894
   password: admin
   port: 8899
   server: 47.242.19.215
   skip-cert-verify: true
   type: socks5
   username: admin
+  country: HK
+- cipher: chacha20-ietf-poly1305
+  name: HK_SS_1080_2791
+  password: pno0e2keji2gsfea
+  port: 1080
+  server: telegram.khp25.com
+  type: ss
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +40,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_11907_722
-  - HK_SOCKS5_8899_2796
+  - HK_SS_1080_1240
+  - HK_SOCKS5_8899_894
+  - HK_SS_1080_2791
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +55,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VLESS_11907_722
-  - HK_SOCKS5_8899_2796
+  - HK_SOCKS5_8899_894
+  - HK_SS_1080_1240
+  - HK_SS_1080_2791
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +69,9 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_11907_722
-  - HK_SOCKS5_8899_2796
+  - HK_SS_1080_1240
+  - HK_SOCKS5_8899_894
+  - HK_SS_1080_2791
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,46 +5,48 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: US_VLESS_8081_40
-  type: vless
-  server: 162.35.104.144
-  port: 8081
-  uuid: 54ee5e59-55a3-4599-83ff-0c67b3f411b2
-  network: ws
+- name: US_SS_443_203
+  type: ss
+  server: 98.89.22.134
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  skip-cert-verify: true
+  udp: true
+  country: US
+- name: US_HYSTERIA2_51285_139
+  password: 6c077487-06af-4fb1-9e46-d485d98f0a31
+  port: 51285
+  server: 108.181.5.106
+  skip-cert-verify: true
+  sni: www.bing.com
   tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless-test
-    headers:
-      Host: ''
+  type: hysteria2
   country: US
 - cipher: aes-128-gcm
-  name: US_SS_15240_120
-  password: 62dd75ba944947d4ca983cf1679b3797
-  port: 15240
-  server: 173.234.25.90
+  name: US_SS_14680_69
+  password: 1377d5cfafc9279a904deb3bfa4f3de2
+  port: 14680
+  server: 74.201.177.54
   type: ss
   country: US
-- name: US_ANYTLS_443_352
-  password: 3fc0f254-54c3-4cf3-896b-5999a2b4c757
-  port: 443
-  server: as-us73.y1static-content-distribution.shop
+- alpn:
+  - h3
+  congestion-controller: bbr
+  disable-sni: false
+  name: US_TUIC_8443_405
+  password: 56d8a8fd-68b8-47f8-8c7f-98cc675902db
+  port: 8443
+  reduce-rtt: false
+  request-timeout: 0
+  server: us02.uzifan.monster
   skip-cert-verify: true
-  sni: as-us73.y1static-content-distribution.shop
-  type: anytls
-  udp: true
+  sni: www.bing.com
+  type: tuic
+  udp-relay-mode: native
+  uuid: 56d8a8fd-68b8-47f8-8c7f-98cc675902db
   country: US
-- name: US_ANYTLS_19000_238
-  password: github.com/Alvin9999-newpac/fanqiang
-  port: 19000
-  server: anytls2.864106.xyz
-  skip-cert-verify: true
-  sni: anytls2.864106.xyz
-  type: anytls
-  udp: true
-  country: US
-- name: US_HTTP_9002_213
+- name: US_HTTP_9002_105
   password: 'null'
   port: 9002
   server: 138.199.35.216
@@ -54,38 +56,14 @@ proxies:
   udp: true
   username: 'null'
   country: US
-- name: US_HTTP_9002_213_2
-  port: 9002
-  server: 138.199.35.198
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: US
-- name: US_HTTP_443_303
-  port: 443
-  server: fan.365747.xyz
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: US
-- name: US_HTTP_443_424
+- name: US_HTTP_443_224
   port: 443
   server: voteshirleysew.club
   tls: true
   type: http
   udp: true
   country: US
-- name: US_HTTP_443_415
-  port: 443
-  server: 38.28.193.188
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: US
-- name: US_HTTP_443_548
+- name: US_HTTP_443_205
   password: None
   port: 443
   server: purposebydesig.club
@@ -93,167 +71,31 @@ proxies:
   type: http
   udp: true
   country: US
-- name: US_VLESS_443_564
-  type: vless
-  network: grpc
-  server: assets-de2.pleiades.codes
-  port: 443
-  uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
-  servername: assets-de2.pleiades.codes
+- name: US_HTTP_9002_99
+  port: 9002
+  server: 138.199.35.198
+  skip-cert-verify: true
   tls: true
-  client-fingerprint: qq
-  grpc-opts:
-    grpc-service-name: cdn.v1.AssetService
-  country: US
-- name: US_VMESS_22324_122
-  type: vmess
-  network: tcp
-  server: 167.17.68.89
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_18000_148
-  type: vmess
-  network: tcp
-  server: 84.17.41.2
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_22324_214
-  type: vmess
-  network: tcp
-  server: 67.220.72.237
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_18000_76
-  type: vmess
-  network: tcp
-  server: 67.220.95.3
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_22324_35
-  type: vmess
-  network: tcp
-  server: 167.88.63.59
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_22324_76
-  type: vmess
-  network: tcp
-  server: 167.88.62.124
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_39495_169
-  type: vmess
-  network: ws
-  server: 129.146.77.248
-  port: 39495
-  uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: 129.146.77.248
-    path: /cctv13.m3u8
-  country: US
-- name: US_VMESS_22324_88
-  type: vmess
-  network: tcp
-  server: 172.111.38.100
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_22324_121
-  type: vmess
-  network: tcp
-  server: 216.152.152.187
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_18000_85
-  type: vmess
-  network: tcp
-  server: 38.110.1.246
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_18000_71
-  type: vmess
-  network: tcp
-  server: 38.91.107.49
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_22324_40
-  type: vmess
-  network: tcp
-  server: 38.107.226.227
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_22324_151
-  type: vmess
-  network: tcp
-  server: 169.197.143.116
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VLESS_443_604
-  type: vless
-  network: ws
-  server: 200.165.231.209
-  port: 443
-  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
-  servername: wstg.datasynctrue.online
-  skip-cert-verify: false
-  tls: true
+  type: http
   udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: wstg.datasynctrue.online
-    path: /api/connect
+  country: US
+- name: US_HTTP_443_317
+  port: 443
+  server: 38.28.193.188
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: US
+- name: US_HYSTERIA2_443_1185
+  server: starlink-ft.251313.xyz
+  port: 443
+  type: hysteria2
+  password: https://xship.best
+  auth: https://xship.best
+  sni: xship.top
+  skip-cert-verify: true
+  udp: true
   country: US
 proxy-groups:
 - name: 🚀 节点选择
@@ -268,31 +110,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - US_VLESS_8081_40
-  - US_SS_15240_120
-  - US_ANYTLS_443_352
-  - US_ANYTLS_19000_238
-  - US_HTTP_9002_213
-  - US_HTTP_9002_213_2
-  - US_HTTP_443_303
-  - US_HTTP_443_424
-  - US_HTTP_443_415
-  - US_HTTP_443_548
-  - US_VLESS_443_564
-  - US_VMESS_22324_122
-  - US_VMESS_18000_148
-  - US_VMESS_22324_214
-  - US_VMESS_18000_76
-  - US_VMESS_22324_35
-  - US_VMESS_22324_76
-  - US_VMESS_39495_169
-  - US_VMESS_22324_88
-  - US_VMESS_22324_121
-  - US_VMESS_18000_85
-  - US_VMESS_18000_71
-  - US_VMESS_22324_40
-  - US_VMESS_22324_151
-  - US_VLESS_443_604
+  - US_SS_443_203
+  - US_HYSTERIA2_51285_139
+  - US_SS_14680_69
+  - US_TUIC_8443_405
+  - US_HTTP_9002_105
+  - US_HTTP_443_224
+  - US_HTTP_443_205
+  - US_HTTP_9002_99
+  - US_HTTP_443_317
+  - US_HYSTERIA2_443_1185
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -305,31 +132,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - US_VMESS_22324_35
-  - US_VLESS_8081_40
-  - US_VMESS_22324_40
-  - US_VMESS_18000_71
-  - US_VMESS_18000_76
-  - US_VMESS_22324_76
-  - US_VMESS_18000_85
-  - US_VMESS_22324_88
-  - US_SS_15240_120
-  - US_VMESS_22324_121
-  - US_VMESS_22324_122
-  - US_VMESS_18000_148
-  - US_VMESS_22324_151
-  - US_VMESS_39495_169
-  - US_HTTP_9002_213
-  - US_HTTP_9002_213_2
-  - US_VMESS_22324_214
-  - US_ANYTLS_19000_238
-  - US_HTTP_443_303
-  - US_ANYTLS_443_352
-  - US_HTTP_443_415
-  - US_HTTP_443_424
-  - US_HTTP_443_548
-  - US_VLESS_443_564
-  - US_VLESS_443_604
+  - US_SS_14680_69
+  - US_HTTP_9002_99
+  - US_HTTP_9002_105
+  - US_HYSTERIA2_51285_139
+  - US_SS_443_203
+  - US_HTTP_443_205
+  - US_HTTP_443_224
+  - US_HTTP_443_317
+  - US_TUIC_8443_405
+  - US_HYSTERIA2_443_1185
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -341,31 +153,16 @@ proxy-groups:
 - name: 🌍 US
   type: url-test
   proxies:
-  - US_VLESS_8081_40
-  - US_SS_15240_120
-  - US_ANYTLS_443_352
-  - US_ANYTLS_19000_238
-  - US_HTTP_9002_213
-  - US_HTTP_9002_213_2
-  - US_HTTP_443_303
-  - US_HTTP_443_424
-  - US_HTTP_443_415
-  - US_HTTP_443_548
-  - US_VLESS_443_564
-  - US_VMESS_22324_122
-  - US_VMESS_18000_148
-  - US_VMESS_22324_214
-  - US_VMESS_18000_76
-  - US_VMESS_22324_35
-  - US_VMESS_22324_76
-  - US_VMESS_39495_169
-  - US_VMESS_22324_88
-  - US_VMESS_22324_121
-  - US_VMESS_18000_85
-  - US_VMESS_18000_71
-  - US_VMESS_22324_40
-  - US_VMESS_22324_151
-  - US_VLESS_443_604
+  - US_SS_443_203
+  - US_HYSTERIA2_51285_139
+  - US_SS_14680_69
+  - US_TUIC_8443_405
+  - US_HTTP_9002_105
+  - US_HTTP_443_224
+  - US_HTTP_443_205
+  - US_HTTP_9002_99
+  - US_HTTP_443_317
+  - US_HYSTERIA2_443_1185
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

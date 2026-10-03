@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TR_VLESS_30303_622
+- name: TR_VLESS_30303_882
   type: vless
   server: 155.103.70.53
   port: 30303
@@ -18,6 +18,17 @@ proxies:
     path: /video/HxNMGkZdGw0PRk1GVw8YF14OXkwNVVtIRg1HAAQNCV1EClxZAgMWAlBZXRlKXU4aTV8WGRQRQkoXFgweUABdHg==fp=chrome
     headers:
       Host: wzs.echo.net.eu.org
+  country: TR
+- auth: M8LP9DztTr3znqCkmf-r08CQLBLLFK1r
+  name: TR_HYSTERIA2_7443_655
+  obfs: salamander
+  obfs-password: u3Soh9_Ui0UmcuY6vk0ug8Lq
+  password: M8LP9DztTr3znqCkmf-r08CQLBLLFK1r
+  port: 7443
+  server: me17.msjia8844.site
+  skip-cert-verify: true
+  sni: me17.msjia8844.site
+  type: hysteria2
   country: TR
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +43,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_VLESS_30303_622
+  - TR_VLESS_30303_882
+  - TR_HYSTERIA2_7443_655
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +57,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_VLESS_30303_622
+  - TR_HYSTERIA2_7443_655
+  - TR_VLESS_30303_882
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +70,8 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_VLESS_30303_622
+  - TR_VLESS_30303_882
+  - TR_HYSTERIA2_7443_655
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

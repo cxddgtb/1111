@@ -5,22 +5,36 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_8444_473
+- name: RU_VLESS_5002_835
   type: vless
-  server: germany.tofreedom.ru
-  port: 8444
-  uuid: 9cb2520c-148b-4bbc-a149-9d5a43ff0db3
+  server: 176.108.242.55
+  port: 5002
+  uuid: 8e8ea5d2-6941-40fb-9efe-f9062b11b2b9
   network: ws
   tls: true
-  servername: germany.tofreedom.ru
+  servername: lm.centermass.net
   client-fingerprint: chrome
   ws-opts:
-    path: /c7f5317cd04691bc
+    path: media.playback.v1.SessionGateway
     headers:
-      Host: germany.tofreedom.ru
+      Host: ''
+  country: RU
+- name: RU_VLESS_5002_1423
+  type: vless
+  server: 213.171.31.34
+  port: 5002
+  uuid: 8e8ea5d2-6941-40fb-9efe-f9062b11b2b9
+  network: ws
+  tls: true
+  servername: us.centermass.net
+  client-fingerprint: chrome
+  ws-opts:
+    path: media.playback.v1.SessionGateway
+    headers:
+      Host: ''
   country: RU
 - auth: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-  name: RU_HYSTERIA2_22443_400
+  name: RU_HYSTERIA2_22443_525
   password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
   port: 22443
   server: 91.240.86.70
@@ -28,22 +42,6 @@ proxies:
   sni: 91.240.86.70
   tls: false
   type: hysteria2
-  country: RU
-- name: RU_VLESS_443_570
-  type: vless
-  network: ws
-  server: 91.210.169.181
-  port: 443
-  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
-  servername: wstg.datasynctrue.online
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: wstg.datasynctrue.online
-    path: /api/connect
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,9 +56,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_8444_473
-  - RU_HYSTERIA2_22443_400
-  - RU_VLESS_443_570
+  - RU_VLESS_5002_835
+  - RU_VLESS_5002_1423
+  - RU_HYSTERIA2_22443_525
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,9 +71,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_22443_400
-  - RU_VLESS_8444_473
-  - RU_VLESS_443_570
+  - RU_HYSTERIA2_22443_525
+  - RU_VLESS_5002_835
+  - RU_VLESS_5002_1423
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,9 +85,9 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_8444_473
-  - RU_HYSTERIA2_22443_400
-  - RU_VLESS_443_570
+  - RU_VLESS_5002_835
+  - RU_VLESS_5002_1423
+  - RU_HYSTERIA2_22443_525
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

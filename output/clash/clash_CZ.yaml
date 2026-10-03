@@ -5,14 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CZ_HTTP_443_589
-  password: None
+- name: CZ_VLESS_443_659
+  type: vless
+  server: 85.137.165.97
   port: 443
-  server: 185.216.35.66
-  skip-cert-verify: true
+  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
+  network: ws
   tls: true
-  type: http
-  username: null
+  servername: kclx.eu.org
+  client-fingerprint: chrome
+  ws-opts:
+    path: /154.16.10.34-8080
+    headers:
+      Host: kclx.eu.org
   country: CZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CZ_HTTP_443_589
+  - CZ_VLESS_443_659
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CZ_HTTP_443_589
+  - CZ_VLESS_443_659
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +57,7 @@ proxy-groups:
 - name: 🌍 CZ
   type: url-test
   proxies:
-  - CZ_HTTP_443_589
+  - CZ_VLESS_443_659
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

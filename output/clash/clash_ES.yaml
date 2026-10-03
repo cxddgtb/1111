@@ -6,38 +6,27 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: chacha20-ietf-poly1305
-  name: ES_SS_8388_248
-  password: WSyL4XTwNsdv
-  port: 8388
-  server: 108.181.121.226
-  type: ss
-  country: ES
-- cipher: chacha20-ietf-poly1305
-  name: ES_SS_8388_237
+  name: ES_SS_8388_335
   password: qItG8SueYQcP
   port: 8388
   server: 140.174.184.5
   type: ss
   country: ES
-- name: ES_VMESS_22324_244
-  type: vmess
-  network: tcp
-  server: 66.163.118.73
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+- cipher: chacha20-ietf-poly1305
+  name: ES_SS_8388_348
+  password: WSyL4XTwNsdv
+  port: 8388
+  server: 108.181.121.226
+  type: ss
   country: ES
-- name: ES_VMESS_22324_209
-  type: vmess
-  network: tcp
-  server: 85.90.217.42
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+- auth: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  name: ES_HYSTERIA2_2060_958
+  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  port: 2060
+  server: xby.mangshe.xyz
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  tls: false
+  type: hysteria2
   country: ES
 proxy-groups:
 - name: 🚀 节点选择
@@ -52,10 +41,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_SS_8388_248
-  - ES_SS_8388_237
-  - ES_VMESS_22324_244
-  - ES_VMESS_22324_209
+  - ES_SS_8388_335
+  - ES_SS_8388_348
+  - ES_HYSTERIA2_2060_958
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -68,10 +56,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_VMESS_22324_209
-  - ES_SS_8388_237
-  - ES_VMESS_22324_244
-  - ES_SS_8388_248
+  - ES_SS_8388_335
+  - ES_SS_8388_348
+  - ES_HYSTERIA2_2060_958
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -83,10 +70,9 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_SS_8388_248
-  - ES_SS_8388_237
-  - ES_VMESS_22324_244
-  - ES_VMESS_22324_209
+  - ES_SS_8388_335
+  - ES_SS_8388_348
+  - ES_HYSTERIA2_2060_958
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
