@@ -5,21 +5,23 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_443_784
-  type: vless
-  server: trackydev.site
+- name: SG_TROJAN_443_772
+  type: trojan
+  server: desired-boxer.rooster465.autos
   port: 443
-  uuid: 92d67828-4c56-4795-af5a-f387651380dc
-  network: ws
-  tls: true
-  servername: trackydev.site
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: trackydev.site
+  password: UX82473651
+  sni: desired-boxer.rooster465.autos
+  network: tcp
   country: SG
-- name: SG_VLESS_80_547
+- name: SG_TROJAN_443_774
+  type: trojan
+  server: real-cardinal.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: real-cardinal.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_VLESS_80_551
   type: vless
   server: 5.223.41.93
   port: 80
@@ -33,23 +35,70 @@ proxies:
     headers:
       Host: ''
   country: SG
-- name: SG_HYSTERIA2_50160_1181
-  server: 138.2.73.238
-  port: 50160
-  type: hysteria2
-  password: f87376e17da040ed04c9665ce8972930
-  auth: f87376e17da040ed04c9665ce8972930
-  sni: www.bing.com
-  skip-cert-verify: true
+- name: SG_TROJAN_443_610
+  type: trojan
+  server: glowing-marmoset.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: glowing-marmoset.rooster465.autos
+  network: tcp
   country: SG
-- name: SG_ANYTLS_1010_1395
-  server: tfk1yyx4.zf-mix.9999231.xyz
-  port: 1010
-  type: anytls
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  udp: true
-  sni: tr-house.9999231.xyz
+- name: SG_TROJAN_443_606
+  type: trojan
+  server: holy-lamb.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: holy-lamb.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_610_2
+  type: trojan
+  server: inviting-ferret.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: inviting-ferret.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_20008_1300
+  type: trojan
+  server: gsg192i.zxom.eu.org
+  port: 20008
+  password: 5b140fc6a0a74e7f
+  sni: gsg192i.zxom.eu.org
+  network: tcp
+  country: SG
+- name: SG_VMESS_18000_386
+  type: vmess
+  network: tcp
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: SG_VLESS_2083_123
+  type: vless
+  network: ws
+  server: 27.50.49.154
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  servername: proxy-34l.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: proxy-34l.pages.dev
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
+  country: SG
+- cipher: chacha20-ietf-poly1305
+  name: SG_SS_14249_1661
+  password: 9epp3o9ng8ej59uv
+  port: 14249
+  server: 45.128.12.20
+  type: ss
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -64,10 +113,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_443_784
-  - SG_VLESS_80_547
-  - SG_HYSTERIA2_50160_1181
-  - SG_ANYTLS_1010_1395
+  - SG_TROJAN_443_772
+  - SG_TROJAN_443_774
+  - SG_VLESS_80_551
+  - SG_TROJAN_443_610
+  - SG_TROJAN_443_606
+  - SG_TROJAN_443_610_2
+  - SG_TROJAN_20008_1300
+  - SG_VMESS_18000_386
+  - SG_VLESS_2083_123
+  - SG_SS_14249_1661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,10 +135,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VLESS_80_547
-  - SG_VLESS_443_784
-  - SG_HYSTERIA2_50160_1181
-  - SG_ANYTLS_1010_1395
+  - SG_VLESS_2083_123
+  - SG_VMESS_18000_386
+  - SG_VLESS_80_551
+  - SG_TROJAN_443_606
+  - SG_TROJAN_443_610
+  - SG_TROJAN_443_610_2
+  - SG_TROJAN_443_772
+  - SG_TROJAN_443_774
+  - SG_TROJAN_20008_1300
+  - SG_SS_14249_1661
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -95,10 +156,16 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_443_784
-  - SG_VLESS_80_547
-  - SG_HYSTERIA2_50160_1181
-  - SG_ANYTLS_1010_1395
+  - SG_TROJAN_443_772
+  - SG_TROJAN_443_774
+  - SG_VLESS_80_551
+  - SG_TROJAN_443_610
+  - SG_TROJAN_443_606
+  - SG_TROJAN_443_610_2
+  - SG_TROJAN_20008_1300
+  - SG_VMESS_18000_386
+  - SG_VLESS_2083_123
+  - SG_SS_14249_1661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

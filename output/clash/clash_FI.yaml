@@ -5,38 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_1280_434
-  type: vless
-  server: 77.42.28.120
-  port: 1280
-  uuid: c0e8fb58-a60f-4c15-9444-4e7c109797a8
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: is1-ssl.mzstatic.com
-  country: FI
-- name: FI_HYSTERIA2_443_440
-  password: 06e88dd6-e264-4981-8c26-d7ab17348ab2
-  port: 443
-  server: 144.31.232.216
-  skip-cert-verify: false
-  sni: fi01.clgate.network
-  tls: false
-  type: hysteria2
-  country: FI
-- auth: cf83b611-6cba-4535-adcb-8da06c6a9146
-  name: FI_HYSTERIA2_443_958
-  password: cf83b611-6cba-4535-adcb-8da06c6a9146
-  port: 443
+- name: FI_HYSTERIA2_443_1924
   server: 144.31.212.253
-  skip-cert-verify: true
-  sni: vps155-edge.kermemehori.ru
-  tls: false
+  port: 443
   type: hysteria2
+  password: cf83b611-6cba-4535-adcb-8da06c6a9146
+  auth: cf83b611-6cba-4535-adcb-8da06c6a9146
+  sni: vps155-edge.kermemehori.ru
+  skip-cert-verify: true
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -51,9 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_1280_434
-  - FI_HYSTERIA2_443_440
-  - FI_HYSTERIA2_443_958
+  - FI_HYSTERIA2_443_1924
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -66,9 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_1280_434
-  - FI_HYSTERIA2_443_440
-  - FI_HYSTERIA2_443_958
+  - FI_HYSTERIA2_443_1924
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -80,9 +52,7 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_1280_434
-  - FI_HYSTERIA2_443_440
-  - FI_HYSTERIA2_443_958
+  - FI_HYSTERIA2_443_1924
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

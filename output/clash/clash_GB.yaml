@@ -5,35 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: chacha20-ietf-poly1305
-  name: GB_SS_8080_211
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.42
-  type: ss
-  country: GB
-- cipher: chacha20-ietf-poly1305
-  name: GB_SS_8080_507
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.46
-  type: ss
-  country: GB
-- name: GB_VLESS_52006_353
-  type: vless
-  network: tcp
-  server: 87.192.47.10
-  port: 52006
-  uuid: bc659d88-a1e0-4c65-a49a-7b51b26a7a7f
-  servername: grok.setlisting.ru
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: GB
-- name: GB_VMESS_22324_178
+- name: GB_VMESS_22324_246
   type: vmess
   network: tcp
   server: 186.190.211.147
@@ -42,6 +14,21 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
+  country: GB
+- name: GB_VMESS_443_749
+  type: vmess
+  network: ws
+  server: 186.190.211.67
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: pahobac.org
+    path: /linkvws
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -56,10 +43,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_SS_8080_211
-  - GB_SS_8080_507
-  - GB_VLESS_52006_353
-  - GB_VMESS_22324_178
+  - GB_VMESS_22324_246
+  - GB_VMESS_443_749
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -72,10 +57,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_VMESS_22324_178
-  - GB_SS_8080_211
-  - GB_VLESS_52006_353
-  - GB_SS_8080_507
+  - GB_VMESS_22324_246
+  - GB_VMESS_443_749
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,10 +70,8 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_SS_8080_211
-  - GB_SS_8080_507
-  - GB_VLESS_52006_353
-  - GB_VMESS_22324_178
+  - GB_VMESS_22324_246
+  - GB_VMESS_443_749
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

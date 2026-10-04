@@ -5,36 +5,107 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- name: KR_TROJAN_443_580
+  type: trojan
+  server: kind-stork.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: kind-stork.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_649
+  type: trojan
+  server: evolving-ewe.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: evolving-ewe.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_667
+  type: trojan
+  server: liked-eft.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: liked-eft.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_574
+  type: trojan
+  server: optimum-snapper.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: optimum-snapper.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_1550
+  type: trojan
+  server: noted-cougar.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: noted-cougar.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_498
+  type: trojan
+  server: engaging-toucan.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: engaging-toucan.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_545
+  type: trojan
+  server: main-fawn.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: main-fawn.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_522
+  type: trojan
+  server: balanced-stag.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: balanced-stag.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_535
+  type: trojan
+  server: pretty-rat.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: pretty-rat.rooster465.autos
+  network: tcp
+  country: KR
+- name: KR_TROJAN_443_514
+  type: trojan
+  server: delicate-buck.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: delicate-buck.rooster465.autos
+  network: tcp
+  country: KR
 - cipher: aes-256-gcm
-  name: KR_SS_8119_1415
-  password: cdBIDV42DCwnfIN
-  port: 8119
+  name: KR_SS_6697_345
+  password: TEzjfAYq2IjtuoS
+  port: 6697
   server: 141.164.45.187
   type: ss
   country: KR
-- name: KR_ANYTLS_60005_735
-  password: 13f0acfa-38c1-4e82-a758-583aa31740df
-  port: 60005
-  server: svip.skycon808.com
-  skip-cert-verify: true
-  sni: xjp18.2uuzhe.com
-  type: anytls
-  country: KR
 - cipher: aes-256-gcm
-  name: KR_SS_49642_2221
+  name: KR_SS_49642_1573
   password: ac9c0a7b
   port: 49642
   server: ce1fc2d8.krkt.hkssip.com
   type: ss
   country: KR
-- name: KR_ANYTLS_1892_579
-  server: icn-a-02.auuas.com
-  port: 1892
-  type: anytls
-  password: 81c4547b-e5d8-4af8-baf0-91c5c0c05a9b
+- name: KR_SS_8443_413
+  server: 43.201.103.218
+  port: 8443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
   udp: true
-  sni: images.apple.com
-  skip-cert-verify: true
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -49,10 +120,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_SS_8119_1415
-  - KR_ANYTLS_60005_735
-  - KR_SS_49642_2221
-  - KR_ANYTLS_1892_579
+  - KR_TROJAN_443_580
+  - KR_TROJAN_443_649
+  - KR_TROJAN_443_667
+  - KR_TROJAN_443_574
+  - KR_TROJAN_443_1550
+  - KR_TROJAN_443_498
+  - KR_TROJAN_443_545
+  - KR_TROJAN_443_522
+  - KR_TROJAN_443_535
+  - KR_TROJAN_443_514
+  - KR_SS_6697_345
+  - KR_SS_49642_1573
+  - KR_SS_8443_413
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -65,10 +145,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_ANYTLS_1892_579
-  - KR_ANYTLS_60005_735
-  - KR_SS_8119_1415
-  - KR_SS_49642_2221
+  - KR_SS_6697_345
+  - KR_SS_8443_413
+  - KR_TROJAN_443_498
+  - KR_TROJAN_443_514
+  - KR_TROJAN_443_522
+  - KR_TROJAN_443_535
+  - KR_TROJAN_443_545
+  - KR_TROJAN_443_574
+  - KR_TROJAN_443_580
+  - KR_TROJAN_443_649
+  - KR_TROJAN_443_667
+  - KR_TROJAN_443_1550
+  - KR_SS_49642_1573
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -80,10 +169,19 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_SS_8119_1415
-  - KR_ANYTLS_60005_735
-  - KR_SS_49642_2221
-  - KR_ANYTLS_1892_579
+  - KR_TROJAN_443_580
+  - KR_TROJAN_443_649
+  - KR_TROJAN_443_667
+  - KR_TROJAN_443_574
+  - KR_TROJAN_443_1550
+  - KR_TROJAN_443_498
+  - KR_TROJAN_443_545
+  - KR_TROJAN_443_522
+  - KR_TROJAN_443_535
+  - KR_TROJAN_443_514
+  - KR_SS_6697_345
+  - KR_SS_49642_1573
+  - KR_SS_8443_413
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

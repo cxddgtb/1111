@@ -5,18 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_443_840
+- name: SE_VLESS_443_752
   type: vless
-  server: 34.51.187.118
+  server: swed4.o4ka-internet.com
   port: 443
-  uuid: e4be912f-68e8-4d51-80a4-1342b646f8e0
+  uuid: 8f6e49e6-7f03-4f10-9da9-1716158d80ed
+  flow: xtls-rprx-vision
   udp: true
   tls: true
-  client-fingerprint: chrome
-  servername: www.cloudflare.com
+  client-fingerprint: random
+  servername: swed4.o4ka-internet.com
   reality-opts:
-    public-key: fV003yDr_sb_Wkgz6MxnIUJMgD15osWhzU-HZ5fLPFg
-    short-id: 79ff7d51e3c56323
+    public-key: V2JprbR_aJkS7uX6anyU3nrswGxdvDQT2HpY4WnzuC8
+    short-id: 5629431325884ff0
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_443_840
+  - SE_VLESS_443_752
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_443_840
+  - SE_VLESS_443_752
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +57,7 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_443_840
+  - SE_VLESS_443_752
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

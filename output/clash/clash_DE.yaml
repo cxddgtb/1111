@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_80_365
+- name: DE_VLESS_80_411
   type: vless
   server: 139.162.149.105
   port: 80
@@ -19,18 +19,7 @@ proxies:
     headers:
       Host: ''
   country: DE
-- name: DE_VLESS_2053_400
-  type: vless
-  server: 178.83.46.216
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: DE
-- name: DE_VLESS_8880_837
+- name: DE_VLESS_8880_817
   type: vless
   server: 45.80.111.45
   port: 8880
@@ -44,19 +33,121 @@ proxies:
     headers:
       Host: cnd.singapure.mygold.stream
   country: DE
-- name: DE_HYSTERIA_54177_1542
-  server: 5.83.129.90
-  port: 54177
-  type: hysteria
-  auth_str: dongtaiwang.com
-  auth-str: dongtaiwang.com
-  up: 500
-  down: 1000
-  protocol: udp
-  sni: apple.com
+- name: DE_TROJAN_443_433
+  type: trojan
+  server: pleased-albacore.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: pleased-albacore.rooster465.autos
+  network: tcp
+  country: DE
+- name: DE_TROJAN_443_452
+  type: trojan
+  server: meet-goshawk.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: meet-goshawk.rooster465.autos
+  network: tcp
+  country: DE
+- name: DE_VMESS_22324_294
+  type: vmess
+  network: tcp
+  server: 185.177.229.129
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   skip-cert-verify: true
-  alpn:
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_22324_270
+  type: vmess
+  network: tcp
+  server: 185.177.229.128
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_1_295
+  type: vmess
+  network: tcp
+  server: 91.107.191.165
+  port: 1
+  uuid: 9f15b600-ce52-447f-b388-ef70de75308e
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_22324_273
+  type: vmess
+  network: tcp
+  server: 216.106.187.60
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_110_274
+  type: vmess
+  network: tcp
+  server: 31.77.8.97
+  port: 110
+  uuid: d2d8601b-c14b-42c6-b8ea-33889bce152a
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VLESS_443_677
+  type: vless
+  network: ws
+  server: 81.95.4.189
+  port: 443
+  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
+  servername: bab-6.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: bab-6.site
+    path: /vws/
+  country: DE
+- name: DE_HYSTERIA2_28015_464
+  password: e19b5aa3-16c9-435a-8bc9-76f2f6ddff43
+  port: 28015
+  server: 64.188.119.177
+  skip-cert-verify: false
+  sni: api-test-udp-trf.kaneki.cfd
+  tls: false
+  type: hysteria2
+  country: DE
+- alpn:
   - h3
+  auth-str: dongtaiwang.com
+  auth_str: dongtaiwang.com
+  down: 1000
+  name: DE_HYSTERIA_54177_1649
+  port: 54177
+  protocol: udp
+  server: 5.83.129.90
+  skip-cert-verify: true
+  sni: apple.com
+  type: hysteria
+  up: 500
+  country: DE
+- auth: 6a3fe9d0-0d68-4f29-ae99-5771d4217a45
+  name: DE_HYSTERIA2_4433_2363
+  password: 6a3fe9d0-0d68-4f29-ae99-5771d4217a45
+  port: 4433
+  server: de1.xiaoliyu.cyou
+  skip-cert-verify: true
+  sni: de1.xiaoliyu.cyou
+  tls: false
+  type: hysteria2
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -71,10 +162,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_80_365
-  - DE_VLESS_2053_400
-  - DE_VLESS_8880_837
-  - DE_HYSTERIA_54177_1542
+  - DE_VLESS_80_411
+  - DE_VLESS_8880_817
+  - DE_TROJAN_443_433
+  - DE_TROJAN_443_452
+  - DE_VMESS_22324_294
+  - DE_VMESS_22324_270
+  - DE_VMESS_1_295
+  - DE_VMESS_22324_273
+  - DE_VMESS_110_274
+  - DE_VLESS_443_677
+  - DE_HYSTERIA2_28015_464
+  - DE_HYSTERIA_54177_1649
+  - DE_HYSTERIA2_4433_2363
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -87,10 +187,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_VLESS_80_365
-  - DE_VLESS_2053_400
-  - DE_VLESS_8880_837
-  - DE_HYSTERIA_54177_1542
+  - DE_VMESS_22324_270
+  - DE_VMESS_22324_273
+  - DE_VMESS_110_274
+  - DE_VMESS_22324_294
+  - DE_VMESS_1_295
+  - DE_VLESS_80_411
+  - DE_TROJAN_443_433
+  - DE_TROJAN_443_452
+  - DE_HYSTERIA2_28015_464
+  - DE_VLESS_443_677
+  - DE_VLESS_8880_817
+  - DE_HYSTERIA_54177_1649
+  - DE_HYSTERIA2_4433_2363
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -102,10 +211,19 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_80_365
-  - DE_VLESS_2053_400
-  - DE_VLESS_8880_837
-  - DE_HYSTERIA_54177_1542
+  - DE_VLESS_80_411
+  - DE_VLESS_8880_817
+  - DE_TROJAN_443_433
+  - DE_TROJAN_443_452
+  - DE_VMESS_22324_294
+  - DE_VMESS_22324_270
+  - DE_VMESS_1_295
+  - DE_VMESS_22324_273
+  - DE_VMESS_110_274
+  - DE_VLESS_443_677
+  - DE_HYSTERIA2_28015_464
+  - DE_HYSTERIA_54177_1649
+  - DE_HYSTERIA2_4433_2363
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,27 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: chacha20-ietf-poly1305
-  name: HK_SS_1080_1240
-  password: m5nsedvdczx6x06e
-  port: 1080
-  server: telegramx.khp25.com
-  type: ss
+- auth: 19f72087-4591-4d72-930b-2697078ec2be
+  name: HK_HYSTERIA2_4433_760
+  password: 19f72087-4591-4d72-930b-2697078ec2be
+  port: 4433
+  server: hk2.xiaoliyu.cyou
+  skip-cert-verify: true
+  tls: false
+  type: hysteria2
   country: HK
-- name: HK_SOCKS5_8899_894
+- name: HK_SOCKS5_8899_1145
   password: admin
   port: 8899
   server: 47.242.19.215
   skip-cert-verify: true
   type: socks5
   username: admin
-  country: HK
-- cipher: chacha20-ietf-poly1305
-  name: HK_SS_1080_2791
-  password: pno0e2keji2gsfea
-  port: 1080
-  server: telegram.khp25.com
-  type: ss
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -40,9 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_SS_1080_1240
-  - HK_SOCKS5_8899_894
-  - HK_SS_1080_2791
+  - HK_HYSTERIA2_4433_760
+  - HK_SOCKS5_8899_1145
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -55,9 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_SOCKS5_8899_894
-  - HK_SS_1080_1240
-  - HK_SS_1080_2791
+  - HK_HYSTERIA2_4433_760
+  - HK_SOCKS5_8899_1145
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,9 +62,8 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_SS_1080_1240
-  - HK_SOCKS5_8899_894
-  - HK_SS_1080_2791
+  - HK_HYSTERIA2_4433_760
+  - HK_SOCKS5_8899_1145
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
