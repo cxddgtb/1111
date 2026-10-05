@@ -5,21 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_VLESS_8443_418
+- name: NL_VLESS_8880_82
   type: vless
-  server: 217.60.35.228
-  port: 8443
-  uuid: e19b5aa3-16c9-435a-8bc9-76f2f6ddff43
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: firefox
-  servername: kaneki.cfd
-  reality-opts:
-    public-key: 4jeCe2efqOkTQ-r99RHuACTH8_BuNNP1Rx6cuBXS4hg
-    short-id: a4f8c92d
+  server: 45.131.210.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  servername: vms.lifetime05.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime05.workers.dev
   country: NL
-- name: NL_VLESS_443_409
+- name: NL_VLESS_443_1291
   type: vless
   server: 107.189.18.145
   port: 443
@@ -30,41 +30,107 @@ proxies:
   client-fingerprint: chrome
   ws-opts: null
   country: NL
-- name: NL_VLESS_2053_659
+- name: NL_VLESS_443_280
   type: vless
-  network: ws
-  server: 89.125.96.74
-  port: 2053
-  uuid: 6c713691-3ca2-0008-ad25-113d1bed6b03
-  servername: wss.zazazuza.ru
-  skip-cert-verify: false
+  server: 84.32.184.221
+  port: 443
+  uuid: 51f43f39-bb49-4be2-9ab1-9dd1ef9968e6
+  network: xhttp
   tls: true
-  udp: true
-  tfo: false
+  servername: 6ac21b76-51f43f39.ferrin.uk
   client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: wss.zazazuza.ru
-    path: /vpn-wss/fluxor/59011/
+  ws-opts: null
   country: NL
-- name: NL_VLESS_2053_640
-  type: vless
-  network: ws
-  server: 89.125.96.75
-  port: 2053
-  uuid: 6c713691-3ca2-0008-ad25-113d1bed6b03
-  servername: wss.zazazuza.ru
+- name: NL_HYSTERIA2_11592_285
+  obfs: salamander
+  obfs-password: 87d72c2949c0ca85bbda09459244e374
+  password: 35d26d53bc
+  port: 11592
+  server: 109.104.153.124
   skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: wss.zazazuza.ru
-    path: /vpn-wss/fluxor/59011/
+  sni: srv-0e5387.frd21.ru
+  tls: false
+  type: hysteria2
   country: NL
-- name: NL_VLESS_2053_634
+- name: NL_HTTP_443_379
+  port: 443
+  server: 149.36.51.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_376
+  password: None
+  port: 9002
+  server: 84.17.47.148
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_14287_367
+  port: 14287
+  server: 51.158.202.56
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_443_358
+  port: 443
+  server: 185.246.153.28
+  skip-cert-verify: true
+  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_443_337
+  port: 443
+  server: 5.255.118.82
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_9443_374
+  port: 9443
+  server: 161.129.60.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_9002_385
+  port: 9002
+  server: 84.17.47.125
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_362
+  port: 9002
+  server: 84.17.47.150
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_382
+  port: 9002
+  server: 84.17.47.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_394
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_VLESS_2053_2904
   type: vless
   network: ws
   server: 89.125.96.76
@@ -81,88 +147,6 @@ proxies:
       Host: wss.zazazuza.ru
     path: /vpn-wss/fluxor/59011/
   country: NL
-- name: NL_VLESS_2053_646
-  type: vless
-  network: ws
-  server: 89.125.96.79
-  port: 2053
-  uuid: 6c713691-3ca2-0008-ad25-113d1bed6b03
-  servername: wss.zazazuza.ru
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: wss.zazazuza.ru
-    path: /vpn-wss/fluxor/59011/
-  country: NL
-- name: NL_VLESS_2053_632
-  type: vless
-  network: ws
-  server: 89.125.96.80
-  port: 2053
-  uuid: 6c713691-3ca2-0008-ad25-113d1bed6b03
-  servername: wss.zazazuza.ru
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: wss.zazazuza.ru
-    path: /vpn-wss/fluxor/59011/
-  country: NL
-- name: NL_HTTP_443_476
-  port: 443
-  server: 149.36.51.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_511
-  port: 9002
-  server: 84.17.47.125
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_495
-  port: 9002
-  server: 84.17.47.150
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_495_2
-  port: 9002
-  server: 84.17.47.148
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_495_3
-  port: 9002
-  server: 84.17.47.146
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_499
-  port: 9002
-  server: 84.17.47.149
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -176,19 +160,21 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_VLESS_8443_418
-  - NL_VLESS_443_409
-  - NL_VLESS_2053_659
-  - NL_VLESS_2053_640
-  - NL_VLESS_2053_634
-  - NL_VLESS_2053_646
-  - NL_VLESS_2053_632
-  - NL_HTTP_443_476
-  - NL_HTTP_9002_511
-  - NL_HTTP_9002_495
-  - NL_HTTP_9002_495_2
-  - NL_HTTP_9002_495_3
-  - NL_HTTP_9002_499
+  - NL_VLESS_8880_82
+  - NL_VLESS_443_1291
+  - NL_VLESS_443_280
+  - NL_HYSTERIA2_11592_285
+  - NL_HTTP_443_379
+  - NL_HTTP_9002_376
+  - NL_HTTP_14287_367
+  - NL_HTTP_443_358
+  - NL_HTTP_443_337
+  - NL_HTTP_9443_374
+  - NL_HTTP_9002_385
+  - NL_HTTP_9002_362
+  - NL_HTTP_9002_382
+  - NL_HTTP_9002_394
+  - NL_VLESS_2053_2904
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -201,19 +187,21 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_VLESS_443_409
-  - NL_VLESS_8443_418
-  - NL_HTTP_443_476
-  - NL_HTTP_9002_495
-  - NL_HTTP_9002_495_2
-  - NL_HTTP_9002_495_3
-  - NL_HTTP_9002_499
-  - NL_HTTP_9002_511
-  - NL_VLESS_2053_632
-  - NL_VLESS_2053_634
-  - NL_VLESS_2053_640
-  - NL_VLESS_2053_646
-  - NL_VLESS_2053_659
+  - NL_VLESS_8880_82
+  - NL_VLESS_443_280
+  - NL_HYSTERIA2_11592_285
+  - NL_HTTP_443_337
+  - NL_HTTP_443_358
+  - NL_HTTP_9002_362
+  - NL_HTTP_14287_367
+  - NL_HTTP_9443_374
+  - NL_HTTP_9002_376
+  - NL_HTTP_443_379
+  - NL_HTTP_9002_382
+  - NL_HTTP_9002_385
+  - NL_HTTP_9002_394
+  - NL_VLESS_443_1291
+  - NL_VLESS_2053_2904
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -225,19 +213,21 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_8443_418
-  - NL_VLESS_443_409
-  - NL_VLESS_2053_659
-  - NL_VLESS_2053_640
-  - NL_VLESS_2053_634
-  - NL_VLESS_2053_646
-  - NL_VLESS_2053_632
-  - NL_HTTP_443_476
-  - NL_HTTP_9002_511
-  - NL_HTTP_9002_495
-  - NL_HTTP_9002_495_2
-  - NL_HTTP_9002_495_3
-  - NL_HTTP_9002_499
+  - NL_VLESS_8880_82
+  - NL_VLESS_443_1291
+  - NL_VLESS_443_280
+  - NL_HYSTERIA2_11592_285
+  - NL_HTTP_443_379
+  - NL_HTTP_9002_376
+  - NL_HTTP_14287_367
+  - NL_HTTP_443_358
+  - NL_HTTP_443_337
+  - NL_HTTP_9443_374
+  - NL_HTTP_9002_385
+  - NL_HTTP_9002_362
+  - NL_HTTP_9002_382
+  - NL_HTTP_9002_394
+  - NL_VLESS_2053_2904
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

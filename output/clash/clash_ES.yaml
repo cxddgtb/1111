@@ -5,43 +5,27 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ES_VLESS_443_558
-  type: vless
-  network: grpc
-  server: assets-es.pleiades.codes
-  port: 443
-  uuid: e0b9fb0f-1bbd-478b-9580-c2294778338b
-  servername: assets-es.pleiades.codes
-  skip-cert-verify: false
-  tls: true
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: cdn.v1.AssetService
-  encryption: none
-  country: ES
-- name: ES_VMESS_22324_317
-  type: vmess
-  network: tcp
-  server: 85.90.217.42
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: ES
 - cipher: chacha20-ietf-poly1305
-  name: ES_SS_8388_330
+  name: ES_SS_8388_236
   password: qItG8SueYQcP
   port: 8388
   server: 140.174.184.5
   type: ss
   country: ES
 - cipher: chacha20-ietf-poly1305
-  name: ES_SS_8388_345
+  name: ES_SS_8388_248
   password: WSyL4XTwNsdv
   port: 8388
   server: 108.181.121.226
   type: ss
+  country: ES
+- name: ES_HTTP_443_389
+  password: None
+  port: 443
+  server: 130.195.250.18
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: ES
 proxy-groups:
 - name: 🚀 节点选择
@@ -56,10 +40,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_VLESS_443_558
-  - ES_VMESS_22324_317
-  - ES_SS_8388_330
-  - ES_SS_8388_345
+  - ES_SS_8388_236
+  - ES_SS_8388_248
+  - ES_HTTP_443_389
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -72,10 +55,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_VMESS_22324_317
-  - ES_SS_8388_330
-  - ES_SS_8388_345
-  - ES_VLESS_443_558
+  - ES_SS_8388_236
+  - ES_SS_8388_248
+  - ES_HTTP_443_389
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,10 +69,9 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_VLESS_443_558
-  - ES_VMESS_22324_317
-  - ES_SS_8388_330
-  - ES_SS_8388_345
+  - ES_SS_8388_236
+  - ES_SS_8388_248
+  - ES_HTTP_443_389
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

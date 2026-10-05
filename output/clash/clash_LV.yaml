@@ -5,39 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: LV_VLESS_443_921
-  network: tcp
-  port: '443'
-  reality-opts:
-    public-key: gE8LUmGFXik94SoDXNiAG5KprGyhjoRwDuhGebgAVWk
-    short-id: 5ee019e02e6ed99a
-  server: 193.163.203.253
-  servername: yandex.ru
+- name: LV_HTTP_443_517
+  port: 443
+  server: 185.219.159.15
+  skip-cert-verify: true
   tls: true
-  type: vless
-  udp: true
-  uuid: 441afe11-a180-4516-bb80-80a8a6b38705
-  xudp: true
+  type: http
   country: LV
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  name: LV_VLESS_443_1140
-  network: tcp#3🔥@oneclickvpnkeysvless://607801ac-dbdd-4938-a167-129015d9978e@91.192.81.214:443?encryption=none
-  port: '443'
-  reality-opts:
-    public-key: gE8LUmGFXik94SoDXNiAG5KprGyhjoRwDuhGebgAVWk
-    short-id: 5ee019e02e6ed99a
-  server: bl3fk52.sysopnova.art
-  servername: yandex.ru
+- name: LV_HTTP_443_539
+  port: 443
+  server: 185.219.159.16
+  skip-cert-verify: true
   tls: true
-  type: vless
-  udp: true
-  uuid: 441afe11-a180-4516-bb80-80a8a6b38705
-  xudp: true
+  type: http
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -52,8 +32,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_VLESS_443_921
-  - LV_VLESS_443_1140
+  - LV_HTTP_443_517
+  - LV_HTTP_443_539
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -66,8 +46,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_VLESS_443_921
-  - LV_VLESS_443_1140
+  - LV_HTTP_443_517
+  - LV_HTTP_443_539
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -79,8 +59,8 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_VLESS_443_921
-  - LV_VLESS_443_1140
+  - LV_HTTP_443_517
+  - LV_HTTP_443_539
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

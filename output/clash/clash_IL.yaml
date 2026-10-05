@@ -5,17 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: cdn.v1.AssetService
-  name: IL_VLESS_443_477
-  network: grpc
-  port: 443
-  server: 72.4.65.116
-  servername: assets-de2.pleiades.codes
-  tls: true
+- name: IL_VLESS_443_661
   type: vless
-  uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+  server: 185.253.75.119
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  network: ws
+  tls: true
+  servername: ccc.010304.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fp=chrome
+    headers:
+      Host: ccc.010304.xyz
   country: IL
 proxy-groups:
 - name: 🚀 节点选择
@@ -30,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IL_VLESS_443_477
+  - IL_VLESS_443_661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IL_VLESS_443_477
+  - IL_VLESS_443_661
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +57,7 @@ proxy-groups:
 - name: 🌍 IL
   type: url-test
   proxies:
-  - IL_VLESS_443_477
+  - IL_VLESS_443_661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

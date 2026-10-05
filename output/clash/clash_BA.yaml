@@ -5,13 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BE_HTTP_443_382
+- name: BA_HTTP_443_516
   port: 443
-  server: 146.70.176.242
+  server: 185.164.35.16
   skip-cert-verify: true
   tls: true
   type: http
-  country: BE
+  country: BA
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -20,12 +20,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 BE
+  - 🌍 BA
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BE_HTTP_443_382
+  - BA_HTTP_443_516
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BE_HTTP_443_382
+  - BA_HTTP_443_516
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -47,10 +47,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 BE
+- name: 🌍 BA
   type: url-test
   proxies:
-  - BE_HTTP_443_382
+  - BA_HTTP_443_516
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

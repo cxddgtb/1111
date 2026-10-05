@@ -5,25 +5,41 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_443_884
-  type: vless
-  server: polkadotnewone.failspace.top
+- name: PL_TROJAN_443_506
+  type: trojan
+  server: cheerful-swan.rooster465.autos
   port: 443
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: polkadotnewone.failspace.top
+  password: UX82473651
+  sni: cheerful-swan.rooster465.autos
+  network: tcp
   country: PL
-- name: PL_HYSTERIA2_28015_433
-  password: e19b5aa3-16c9-435a-8bc9-76f2f6ddff43
-  port: 28015
-  server: 222.167.245.240
-  skip-cert-verify: false
-  sni: api-test-udp-traffic.kaneki.cfd
+- name: PL_VLESS_80_304
+  type: vless
+  server: 70.34.255.101
+  port: 80
+  uuid: a889262f-5fe3-4c93-9aaa-3721318dd389
+  network: ws
   tls: false
-  type: hysteria2
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  country: PL
+- name: PL_VLESS_80_297
+  type: vless
+  server: 70.34.252.154
+  port: 80
+  uuid: d9c7ec1f-5aa3-469a-b860-760c686806b0
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -38,8 +54,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_443_884
-  - PL_HYSTERIA2_28015_433
+  - PL_TROJAN_443_506
+  - PL_VLESS_80_304
+  - PL_VLESS_80_297
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +69,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HYSTERIA2_28015_433
-  - PL_VLESS_443_884
+  - PL_VLESS_80_297
+  - PL_VLESS_80_304
+  - PL_TROJAN_443_506
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +83,9 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_443_884
-  - PL_HYSTERIA2_28015_433
+  - PL_TROJAN_443_506
+  - PL_VLESS_80_304
+  - PL_VLESS_80_297
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,17 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VMESS_35034_335
-  type: vmess
-  network: tcp
-  server: 165.154.195.38
-  port: 35034
-  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: TW
-- name: TW_ANYTLS_443_2122
+- name: TW_ANYTLS_443_973
   password: 9sK2mP8xQ7vL3nZ6
   port: 443
   server: ac7548f3ebe045b39a90288ff1e97526.pnuqcnp.cn
@@ -23,6 +13,63 @@ proxies:
   sni: ac7548f3ebe045b39a90288ff1e97526.lwdnxf.cn
   type: anytls
   udp: true
+  country: TW
+- alpn:
+  - h3
+  congestion-controller: bbr
+  disable-sni: false
+  name: TW_TUIC_8080_1326
+  password: D7286728-678E-443B-B76B-B699654C66DD
+  port: 8080
+  reduce-rtt: false
+  request-timeout: 0
+  server: tw1.dexlos.com
+  skip-cert-verify: true
+  sni: tw1.dexlos.com
+  type: tuic
+  udp-relay-mode: native
+  uuid: D7286728-678E-443B-B76B-B699654C66DD
+  country: TW
+- name: TW_TUIC_8080_1636
+  server: tw3.dexlos.com
+  port: 8080
+  type: tuic
+  password: 8A9905B7-801B-41AF-BFC9-2034212770F6
+  uuid: 8A9905B7-801B-41AF-BFC9-2034212770F6
+  sni: tw3.dexlos.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  disable-sni: false
+  reduce-rtt: false
+  request-timeout: 0
+  udp-relay-mode: native
+  congestion-controller: bbr
+  country: TW
+- name: TW_ANYTLS_443_1539
+  server: awefd2313fefarg23fr24.pnuqcnp.cn
+  port: 443
+  type: anytls
+  password: 9sK2mP8xQ7vL3nZ6
+  udp: true
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+  country: TW
+- name: TW_TUIC_8080_2590
+  server: tw6.dexlos.com
+  port: 8080
+  type: tuic
+  password: D7286728-678E-443B-B76B-B699654C66DD
+  uuid: D7286728-678E-443B-B76B-B699654C66DD
+  sni: tw6.dexlos.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  disable-sni: false
+  reduce-rtt: false
+  request-timeout: 0
+  udp-relay-mode: native
+  congestion-controller: bbr
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +84,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VMESS_35034_335
-  - TW_ANYTLS_443_2122
+  - TW_ANYTLS_443_973
+  - TW_TUIC_8080_1326
+  - TW_TUIC_8080_1636
+  - TW_ANYTLS_443_1539
+  - TW_TUIC_8080_2590
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +101,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_335
-  - TW_ANYTLS_443_2122
+  - TW_ANYTLS_443_973
+  - TW_TUIC_8080_1326
+  - TW_ANYTLS_443_1539
+  - TW_TUIC_8080_1636
+  - TW_TUIC_8080_2590
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +117,11 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VMESS_35034_335
-  - TW_ANYTLS_443_2122
+  - TW_ANYTLS_443_973
+  - TW_TUIC_8080_1326
+  - TW_TUIC_8080_1636
+  - TW_ANYTLS_443_1539
+  - TW_TUIC_8080_2590
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
