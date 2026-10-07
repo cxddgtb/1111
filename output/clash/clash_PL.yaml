@@ -5,41 +5,65 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_TROJAN_443_506
-  type: trojan
-  server: cheerful-swan.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: cheerful-swan.rooster465.autos
-  network: tcp
-  country: PL
-- name: PL_VLESS_80_304
-  type: vless
-  server: 70.34.255.101
-  port: 80
-  uuid: a889262f-5fe3-4c93-9aaa-3721318dd389
+- name: PL_VLESS_80_403
   network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  country: PL
-- name: PL_VLESS_80_297
-  type: vless
+  port: 80
   server: 70.34.252.154
-  port: 80
-  uuid: d9c7ec1f-5aa3-469a-b860-760c686806b0
-  network: ws
   tls: false
-  servername: ''
-  client-fingerprint: chrome
+  type: vless
+  uuid: d9c7ec1f-5aa3-469a-b860-760c686806b0
   ws-opts:
     path: /
+  country: PL
+- name: PL_HTTP_443_612
+  port: 443
+  server: 37.120.156.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: PL
+- client-fingerprint: chrome
+  name: PL_VLESS_443_1043
+  network: ws
+  port: 443
+  server: 149.50.105.60
+  servername: bab-6.site
+  tls: true
+  type: vless
+  udp: true
+  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
+  ws-opts:
     headers:
-      Host: ''
+      Host: bab-6.site
+    path: /vws/
+  country: PL
+- name: PL_VLESS_443_457
+  server: 177.1.192.72
+  port: 443
+  type: vless
+  uuid: 4d852af3-a121-41aa-9aed-4ca40a6f7b4d
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: y3YCXTqEVks0nGfiSwJ43ol4pY69-mWFUZsdmveoVDM
+    short-id: 46455ff0
+  servername: addons.mozilla.org
+  client-fingerprint: randomized
+  network: tcp
+  udp: true
+  country: PL
+- name: PL_VLESS_443_482
+  type: vless
+  network: tcp
+  server: 81.90.20.200
+  port: 443
+  uuid: 51c14658-8873-4454-9383-c41fc80bde4b
+  servername: pl.pupoe.sbs
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  delay: 890
+  flow: xtls-rprx-vision
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -54,9 +78,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_TROJAN_443_506
-  - PL_VLESS_80_304
-  - PL_VLESS_80_297
+  - PL_VLESS_80_403
+  - PL_HTTP_443_612
+  - PL_VLESS_443_1043
+  - PL_VLESS_443_457
+  - PL_VLESS_443_482
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -69,9 +95,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_80_297
-  - PL_VLESS_80_304
-  - PL_TROJAN_443_506
+  - PL_VLESS_80_403
+  - PL_VLESS_443_457
+  - PL_VLESS_443_482
+  - PL_HTTP_443_612
+  - PL_VLESS_443_1043
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -83,9 +111,11 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_TROJAN_443_506
-  - PL_VLESS_80_304
-  - PL_VLESS_80_297
+  - PL_VLESS_80_403
+  - PL_HTTP_443_612
+  - PL_VLESS_443_1043
+  - PL_VLESS_443_457
+  - PL_VLESS_443_482
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

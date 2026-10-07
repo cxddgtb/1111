@@ -5,33 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TR_VLESS_30303_585
-  type: vless
-  server: 155.103.70.53
-  port: 30303
-  uuid: d18c6897-2849-456a-8c46-d7ecece47c20
+- client-fingerprint: chrome
+  name: TR_VLESS_30303_1167
   network: ws
-  tls: true
+  port: 30303
+  server: 155.103.70.53
   servername: wzs.echo.net.eu.org
-  client-fingerprint: chrome
+  tls: true
+  type: vless
+  uuid: d18c6897-2849-456a-8c46-d7ecece47c20
   ws-opts:
-    path: /video/HxNMGkZdGw0PRk1GVw8YF14OXkwNVVtIRg1HAAQNCV1EClxZAgMWAlBZXRlKXU4aTV8WGRQRQkoXFgweUABdHg==fp=chrome
     headers:
       Host: wzs.echo.net.eu.org
-  country: TR
-- name: TR_VLESS_43233_411
-  type: vless
-  server: cookie.wookshop.ir
-  port: 43233
-  uuid: 568bcbbc-7a90-4164-8b5d-1c0bbeccfa38
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: cookie.wookshop.ir
+    path: /video/HxNMGkZdGw0PRk1GVw8YF14OXkwNVVtIRg1HAAQNCV1EClxZAgMWAlBZXRlKXU4aTV8WGRQRQkoXFgweUABdHg==
   country: TR
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_VLESS_30303_585
-  - TR_VLESS_43233_411
+  - TR_VLESS_30303_1167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_VLESS_43233_411
-  - TR_VLESS_30303_585
+  - TR_VLESS_30303_1167
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +57,7 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_VLESS_30303_585
-  - TR_VLESS_43233_411
+  - TR_VLESS_30303_1167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
