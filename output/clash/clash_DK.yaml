@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DK_HTTP_443_549
+- name: DK_HTTP_443_475
   port: 443
   server: 185.245.84.50
   skip-cert-verify: true
@@ -25,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DK_HTTP_443_549
+  - DK_HTTP_443_475
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DK_HTTP_443_549
+  - DK_HTTP_443_475
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +50,7 @@ proxy-groups:
 - name: 🌍 DK
   type: url-test
   proxies:
-  - DK_HTTP_443_549
+  - DK_HTTP_443_475
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

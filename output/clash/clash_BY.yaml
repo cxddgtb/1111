@@ -5,18 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BY_VLESS_443_716
+- name: BY_VLESS_443_674
+  type: vless
   network: ws
-  port: 443
   server: 62.182.102.93
+  port: 443
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
   servername: free.cndyw.ggff.net
   tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  client-fingerprint: random
   ws-opts:
     headers:
       Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=random
+    path: pyip=bpb.yousef.isegaro.com
   country: BY
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BY_VLESS_443_716
+  - BY_VLESS_443_674
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BY_VLESS_443_716
+  - BY_VLESS_443_674
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +57,7 @@ proxy-groups:
 - name: 🌍 BY
   type: url-test
   proxies:
-  - BY_VLESS_443_716
+  - BY_VLESS_443_674
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,126 +5,43 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  name: JP_VLESS_443_1808
+- name: JP_VMESS_80_423
+  type: vmess
   network: ws
-  port: 443
-  server: 167.179.103.224
-  servername: s3ws.ragingbull.de5.net
-  tls: true
-  type: vless
-  uuid: f49d04d6-aaa7-4013-b323-bc35b78230db
+  server: 168.138.43.75
+  port: 80
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   ws-opts:
     headers:
-      Host: s3ws.ragingbull.de5.net
-    path: /wsrb7k2m
+      Host: 168.138.43.75
+    path: /cctv13.m3u8
   country: JP
-- name: JP_TROJAN_443_429
-  password: UX82473651
+- name: JP_VLESS_443_583
+  type: vless
+  server: 152.69.199.75
   port: 443
-  server: organic-caribou.rooster465.autos
-  sni: organic-caribou.rooster465.autos
-  type: trojan
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  servername: proxy-1cu.pages.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: proxy-1cu.pages.dev
   country: JP
-- name: JP_TROJAN_443_468
-  password: UX82473651
-  port: 443
-  server: winning-marten.rooster465.autos
-  sni: winning-marten.rooster465.autos
-  type: trojan
+- name: JP_SS_35601_1442
+  type: ss
+  server: gw.lydwan.com
+  port: 35601
+  cipher: chacha20-ietf-poly1305
+  password: 4c8fced0-8987-4504-b8cf-15aca9cbb82e
+  udp: true
   country: JP
-- name: JP_TROJAN_443_490
-  password: UX82473651
-  port: 443
-  server: accurate-frog.rooster465.autos
-  sni: accurate-frog.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_493
-  password: UX82473651
-  port: 443
-  server: dynamic-imp.rooster465.autos
-  sni: dynamic-imp.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_562
-  password: UX82473651
-  port: 443
-  server: obliging-louse.rooster465.autos
-  sni: obliging-louse.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_459
-  password: UX82473651
-  port: 443
-  server: assuring-skink.rooster465.autos
-  sni: assuring-skink.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_694
-  password: UX82473651
-  port: 443
-  server: prime-corgi.rooster465.autos
-  sni: prime-corgi.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_646
-  password: UX82473651
-  port: 443
-  server: musical-terrier.rooster465.autos
-  sni: musical-terrier.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_564
-  password: UX82473651
-  port: 443
-  server: integral-rodent.rooster465.autos
-  sni: integral-rodent.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_556
-  password: UX82473651
-  port: 443
-  server: intense-sole.rooster465.autos
-  sni: intense-sole.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_567
-  password: UX82473651
-  port: 443
-  server: comic-poodle.rooster465.autos
-  sni: comic-poodle.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_522
-  password: UX82473651
-  port: 443
-  server: promoted-rattler.rooster465.autos
-  sni: promoted-rattler.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_708
-  password: UX82473651
-  port: 443
-  server: concrete-aardvark.rooster465.autos
-  sni: concrete-aardvark.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_727
-  password: UX82473651
-  port: 443
-  server: evolving-platypus.rooster465.autos
-  sni: evolving-platypus.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_443_796
-  password: UX82473651
-  port: 443
-  server: fancy-javelin.rooster465.autos
-  sni: fancy-javelin.rooster465.autos
-  type: trojan
-  country: JP
-- name: JP_TROJAN_8886_1442
+- name: JP_TROJAN_8886_405
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   port: 8886
   server: 45.32.52.173
@@ -132,21 +49,137 @@ proxies:
   sni: 45.32.52.173
   type: trojan
   country: JP
-- name: JP_TROJAN_443_2335
+- name: JP_TROJAN_443_470
+  password: UX82473651
+  port: 443
+  server: dynamic-imp.rooster465.autos
+  sni: dynamic-imp.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_548
+  password: UX82473651
+  port: 443
+  server: musical-terrier.rooster465.autos
+  sni: musical-terrier.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_552
+  password: UX82473651
+  port: 443
+  server: obliging-louse.rooster465.autos
+  sni: obliging-louse.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_578
+  password: UX82473651
+  port: 443
+  server: prime-corgi.rooster465.autos
+  sni: prime-corgi.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_629
+  password: UX82473651
+  port: 443
+  server: winning-marten.rooster465.autos
+  sni: winning-marten.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_545
+  password: UX82473651
+  port: 443
+  server: comic-poodle.rooster465.autos
+  sni: comic-poodle.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_602
+  password: UX82473651
+  port: 443
+  server: fancy-javelin.rooster465.autos
+  sni: fancy-javelin.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_666
+  password: UX82473651
+  port: 443
+  server: accurate-frog.rooster465.autos
+  sni: accurate-frog.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_546
+  password: UX82473651
+  port: 443
+  server: assuring-skink.rooster465.autos
+  sni: assuring-skink.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_599
+  password: UX82473651
+  port: 443
+  server: evolving-platypus.rooster465.autos
+  sni: evolving-platypus.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_596
   password: UX82473651
   port: 443
   server: brief-glider.rooster465.autos
   sni: brief-glider.rooster465.autos
   type: trojan
   country: JP
-- name: JP_ANYTLS_1044_1061
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  port: 1044
-  server: d455uk1w.zf-mix.9999231.xyz
+- name: JP_TROJAN_443_702
+  password: UX82473651
+  port: 443
+  server: integral-rodent.rooster465.autos
+  sni: integral-rodent.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_933
+  password: UX82473651
+  port: 443
+  server: promoted-rattler.rooster465.autos
+  sni: promoted-rattler.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_1223
+  password: UX82473651
+  port: 443
+  server: organic-caribou.rooster465.autos
+  sni: organic-caribou.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_1482
+  password: UX82473651
+  port: 443
+  server: concrete-aardvark.rooster465.autos
+  sni: concrete-aardvark.rooster465.autos
+  type: trojan
+  country: JP
+- name: JP_TROJAN_443_1602
+  password: UX82473651
+  port: 443
+  server: intense-sole.rooster465.autos
+  sni: intense-sole.rooster465.autos
+  type: trojan
+  country: JP
+- auth: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  name: JP_HYSTERIA2_2060_750
+  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  port: 2060
+  server: rb.mangshe.xyz
   skip-cert-verify: true
-  sni: sg-cc.9999231.xyz
-  type: anytls
-  udp: true
+  sni: 127.0.0.1
+  tls: false
+  type: hysteria2
+  country: JP
+- auth: u63SxILNwtrQZ7Y1ZrFaZfsA
+  name: JP_HYSTERIA2_8443_1542
+  password: u63SxILNwtrQZ7Y1ZrFaZfsA
+  port: 8443
+  server: 8.211.175.236
+  skip-cert-verify: true
+  sni: bing.com
+  tls: false
+  type: hysteria2
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -161,25 +194,28 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_443_1808
-  - JP_TROJAN_443_429
-  - JP_TROJAN_443_468
-  - JP_TROJAN_443_490
-  - JP_TROJAN_443_493
-  - JP_TROJAN_443_562
-  - JP_TROJAN_443_459
-  - JP_TROJAN_443_694
-  - JP_TROJAN_443_646
-  - JP_TROJAN_443_564
-  - JP_TROJAN_443_556
-  - JP_TROJAN_443_567
-  - JP_TROJAN_443_522
-  - JP_TROJAN_443_708
-  - JP_TROJAN_443_727
-  - JP_TROJAN_443_796
-  - JP_TROJAN_8886_1442
-  - JP_TROJAN_443_2335
-  - JP_ANYTLS_1044_1061
+  - JP_VMESS_80_423
+  - JP_VLESS_443_583
+  - JP_SS_35601_1442
+  - JP_TROJAN_8886_405
+  - JP_TROJAN_443_470
+  - JP_TROJAN_443_548
+  - JP_TROJAN_443_552
+  - JP_TROJAN_443_578
+  - JP_TROJAN_443_629
+  - JP_TROJAN_443_545
+  - JP_TROJAN_443_602
+  - JP_TROJAN_443_666
+  - JP_TROJAN_443_546
+  - JP_TROJAN_443_599
+  - JP_TROJAN_443_596
+  - JP_TROJAN_443_702
+  - JP_TROJAN_443_933
+  - JP_TROJAN_443_1223
+  - JP_TROJAN_443_1482
+  - JP_TROJAN_443_1602
+  - JP_HYSTERIA2_2060_750
+  - JP_HYSTERIA2_8443_1542
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -192,25 +228,28 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_TROJAN_443_429
-  - JP_TROJAN_443_459
-  - JP_TROJAN_443_468
-  - JP_TROJAN_443_490
-  - JP_TROJAN_443_493
-  - JP_TROJAN_443_522
-  - JP_TROJAN_443_556
-  - JP_TROJAN_443_562
-  - JP_TROJAN_443_564
-  - JP_TROJAN_443_567
-  - JP_TROJAN_443_646
-  - JP_TROJAN_443_694
-  - JP_TROJAN_443_708
-  - JP_TROJAN_443_727
-  - JP_TROJAN_443_796
-  - JP_ANYTLS_1044_1061
-  - JP_TROJAN_8886_1442
-  - JP_VLESS_443_1808
-  - JP_TROJAN_443_2335
+  - JP_TROJAN_8886_405
+  - JP_VMESS_80_423
+  - JP_TROJAN_443_470
+  - JP_TROJAN_443_545
+  - JP_TROJAN_443_546
+  - JP_TROJAN_443_548
+  - JP_TROJAN_443_552
+  - JP_TROJAN_443_578
+  - JP_VLESS_443_583
+  - JP_TROJAN_443_596
+  - JP_TROJAN_443_599
+  - JP_TROJAN_443_602
+  - JP_TROJAN_443_629
+  - JP_TROJAN_443_666
+  - JP_TROJAN_443_702
+  - JP_HYSTERIA2_2060_750
+  - JP_TROJAN_443_933
+  - JP_TROJAN_443_1223
+  - JP_SS_35601_1442
+  - JP_TROJAN_443_1482
+  - JP_HYSTERIA2_8443_1542
+  - JP_TROJAN_443_1602
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -222,25 +261,28 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_443_1808
-  - JP_TROJAN_443_429
-  - JP_TROJAN_443_468
-  - JP_TROJAN_443_490
-  - JP_TROJAN_443_493
-  - JP_TROJAN_443_562
-  - JP_TROJAN_443_459
-  - JP_TROJAN_443_694
-  - JP_TROJAN_443_646
-  - JP_TROJAN_443_564
-  - JP_TROJAN_443_556
-  - JP_TROJAN_443_567
-  - JP_TROJAN_443_522
-  - JP_TROJAN_443_708
-  - JP_TROJAN_443_727
-  - JP_TROJAN_443_796
-  - JP_TROJAN_8886_1442
-  - JP_TROJAN_443_2335
-  - JP_ANYTLS_1044_1061
+  - JP_VMESS_80_423
+  - JP_VLESS_443_583
+  - JP_SS_35601_1442
+  - JP_TROJAN_8886_405
+  - JP_TROJAN_443_470
+  - JP_TROJAN_443_548
+  - JP_TROJAN_443_552
+  - JP_TROJAN_443_578
+  - JP_TROJAN_443_629
+  - JP_TROJAN_443_545
+  - JP_TROJAN_443_602
+  - JP_TROJAN_443_666
+  - JP_TROJAN_443_546
+  - JP_TROJAN_443_599
+  - JP_TROJAN_443_596
+  - JP_TROJAN_443_702
+  - JP_TROJAN_443_933
+  - JP_TROJAN_443_1223
+  - JP_TROJAN_443_1482
+  - JP_TROJAN_443_1602
+  - JP_HYSTERIA2_2060_750
+  - JP_HYSTERIA2_8443_1542
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

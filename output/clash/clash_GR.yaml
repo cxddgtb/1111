@@ -5,18 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GR_VLESS_443_690
-  network: ws
+- name: GR_HTTP_443_646
   port: 443
-  server: 85.90.197.156
-  servername: free.cndyw.ggff.net
+  server: 149.22.85.78
+  skip-cert-verify: true
   tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=random
+  type: http
   country: GR
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GR_VLESS_443_690
+  - GR_HTTP_443_646
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GR_VLESS_443_690
+  - GR_HTTP_443_646
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +50,7 @@ proxy-groups:
 - name: 🌍 GR
   type: url-test
   proxies:
-  - GR_VLESS_443_690
+  - GR_HTTP_443_646
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

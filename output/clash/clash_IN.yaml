@@ -5,35 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_VMESS_443_1089
-  type: vmess
-  server: 20.235.220.189
+- name: IN_HTTP_443_1031
   port: 443
-  uuid: f23bb427c1f94373876c2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  network: ws
+  server: 165.231.253.210
+  skip-cert-verify: true
   tls: true
-  servername: ''
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
-  country: IN
-- name: IN_VMESS_80_720
-  type: vmess
-  server: 152.67.8.205
-  port: 80
-  uuid: 9db4c708-aef8-4359-821b-38e47990be0d
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
+  type: http
   country: IN
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VMESS_443_1089
-  - IN_VMESS_80_720
+  - IN_HTTP_443_1031
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VMESS_80_720
-  - IN_VMESS_443_1089
+  - IN_HTTP_443_1031
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,8 +50,7 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VMESS_443_1089
-  - IN_VMESS_80_720
+  - IN_HTTP_443_1031
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

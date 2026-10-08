@@ -5,63 +5,50 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- name: EE_VLESS_8443_545
+  type: vless
+  network: ws
+  server: 194.26.141.148
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  servername: fdghyt.com
+  tls: true
+  client-fingerprint: firefox
+  ws-opts:
+    headers:
+      Host: fdghyt.com
+    path: /vpn-wss/fluxor/59011/
+  country: EE
+- name: EE_VLESS_8443_591
+  type: vless
+  network: ws
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  servername: fdghyt.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: fdghyt.com
+    path: /vpn-wss/fluxor/59011/
+  country: EE
 - client-fingerprint: chrome
-  name: EE_VLESS_8443_435
+  encryption: none
+  name: EE_VLESS_8443_483
+  network: tcp
   port: 8443
   server: 94.183.170.135
   servername: estproxy4.lockdwn.com
   tls: true
   type: vless
   uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
-  country: EE
-- client-fingerprint: firefox
-  name: EE_VLESS_8443_630
-  network: ws
-  port: 8443
-  server: 194.26.141.148
-  servername: fdghyt.com
-  tls: true
-  type: vless
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   ws-opts:
-    headers:
-      Host: fdghyt.com
-    path: /vpn-wss/fluxor/59011/
+    path: /
   country: EE
-- alpn:
-  - http/1.1
-  encryption: none
-  name: EE_VLESS_8443_640
-  network: ws
-  port: 8443
-  server: 77.72.85.246
-  servername: fdghyt.com
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  ws-opts:
-    headers:
-      Host: fdghyt.com
-    path: /vpn-wss/fluxor/59011/
-  country: EE
-- alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  name: EE_VLESS_8443_769
-  network: ws
-  port: 8443
-  server: ee10.zazazuza.ru
-  servername: fdghyt.com
-  tls: true
-  type: vless
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  ws-opts:
-    headers:
-      Host: fdghyt.com
-    path: /vpn-wss/fluxor/59011/
-  country: EE
-- name: EE_HTTP_9443_525
+- name: EE_HTTP_9443_548
   port: 9443
   server: 95.153.31.66
   skip-cert-verify: true
@@ -81,11 +68,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_8443_435
-  - EE_VLESS_8443_630
-  - EE_VLESS_8443_640
-  - EE_VLESS_8443_769
-  - EE_HTTP_9443_525
+  - EE_VLESS_8443_545
+  - EE_VLESS_8443_591
+  - EE_VLESS_8443_483
+  - EE_HTTP_9443_548
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -98,11 +84,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_8443_435
-  - EE_HTTP_9443_525
-  - EE_VLESS_8443_630
-  - EE_VLESS_8443_640
-  - EE_VLESS_8443_769
+  - EE_VLESS_8443_483
+  - EE_VLESS_8443_545
+  - EE_HTTP_9443_548
+  - EE_VLESS_8443_591
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -114,11 +99,10 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_8443_435
-  - EE_VLESS_8443_630
-  - EE_VLESS_8443_640
-  - EE_VLESS_8443_769
-  - EE_HTTP_9443_525
+  - EE_VLESS_8443_545
+  - EE_VLESS_8443_591
+  - EE_VLESS_8443_483
+  - EE_HTTP_9443_548
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

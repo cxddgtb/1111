@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CH_HYSTERIA2_8443_439
+- name: CH_HYSTERIA2_8443_440
   password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
   port: 8443
   server: 82.38.64.237
@@ -15,26 +15,11 @@ proxies:
   type: hysteria2
   country: CH
 - cipher: chacha20-ietf-poly1305
-  name: CH_SS_8388_286
+  name: CH_SS_8388_272
   password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
   port: 8388
   server: 132.243.175.144
   type: ss
-  country: CH
-- name: CH_HTTP_9443_505
-  password: None
-  port: 9443
-  server: 37.120.213.210
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_9443_510
-  port: 9443
-  server: 149.88.27.46
-  skip-cert-verify: true
-  tls: true
-  type: http
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -49,10 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_HYSTERIA2_8443_439
-  - CH_SS_8388_286
-  - CH_HTTP_9443_505
-  - CH_HTTP_9443_510
+  - CH_HYSTERIA2_8443_440
+  - CH_SS_8388_272
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -65,10 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_SS_8388_286
-  - CH_HYSTERIA2_8443_439
-  - CH_HTTP_9443_505
-  - CH_HTTP_9443_510
+  - CH_SS_8388_272
+  - CH_HYSTERIA2_8443_440
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -80,10 +61,8 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_HYSTERIA2_8443_439
-  - CH_SS_8388_286
-  - CH_HTTP_9443_505
-  - CH_HTTP_9443_510
+  - CH_HYSTERIA2_8443_440
+  - CH_SS_8388_272
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

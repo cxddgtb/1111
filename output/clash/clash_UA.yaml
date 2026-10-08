@@ -5,19 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  name: UA_VLESS_8443_749
-  network: ws
-  port: 8443
-  server: 173.242.63.235
-  servername: edgetunnel-4uw.pages.dev
-  tls: true
+- name: UA_VLESS_443_768
   type: vless
-  uuid: fdc48be3-a615-41ac-8bd1-ed844c931048
+  server: 213.111.148.137
+  port: 443
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  network: ws
+  tls: true
+  servername: proxy-1cu.pages.dev
+  client-fingerprint: chrome
   ws-opts:
-    headers:
-      Host: edgetunnel-4uw.pages.dev
     path: /
+    headers:
+      Host: proxy-1cu.pages.dev
   country: UA
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - UA_VLESS_8443_749
+  - UA_VLESS_443_768
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - UA_VLESS_8443_749
+  - UA_VLESS_443_768
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +57,7 @@ proxy-groups:
 - name: 🌍 UA
   type: url-test
   proxies:
-  - UA_VLESS_8443_749
+  - UA_VLESS_443_768
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

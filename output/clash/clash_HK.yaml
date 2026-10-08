@@ -5,10 +5,74 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_30833_1149
+- name: HK_VMESS_443_1093
   type: vmess
-  server: v33.hdacd.com
-  port: 30833
+  network: ws
+  server: i2psm3knof5qjjix.v.3dns.vip
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: i2psm3knof5qjjix.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- name: HK_VMESS_443_1340
+  type: vmess
+  network: ws
+  server: 8.218.195.61
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: EX1oGt73NzPQKAc2.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- name: HK_VMESS_443_2394
+  type: vmess
+  network: ws
+  server: 47.243.65.243
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  servername: lcv8v9l7oyamxxfz.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- name: HK_VMESS_443_2631
+  type: vmess
+  network: ws
+  server: 6jdvarazgu3qqr6q.v.3dns.vip
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- name: HK_VMESS_30835_1032
+  type: vmess
+  server: v35.hdacd.com
+  port: 30835
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
@@ -16,7 +80,22 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: HK
-- name: HK_VMESS_30836_1187
+- name: HK_VMESS_443_2762
+  type: vmess
+  network: ws
+  server: 47.243.153.153
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: i2psm3knof5qjjix.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- name: HK_VMESS_30836_1006
   type: vmess
   server: v36.hdacd.com
   port: 30836
@@ -27,29 +106,7 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: HK
-- name: HK_VMESS_30804_1299
-  type: vmess
-  server: v4.hdacd.com
-  port: 30804
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: HK
-- name: HK_VMESS_30806_1412
-  type: vmess
-  server: v6.hdacd.com
-  port: 30806
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-  country: HK
-- name: HK_VMESS_30829_1809
+- name: HK_VMESS_30829_1250
   type: vmess
   server: v29.hdacd.com
   port: 30829
@@ -60,33 +117,150 @@ proxies:
   skip-cert-verify: true
   udp: true
   country: HK
-- name: HK_TROJAN_443_724
-  password: UX82473651
-  port: 443
-  server: strong-haddock.rooster465.autos
-  sni: strong-haddock.rooster465.autos
-  type: trojan
+- name: HK_VMESS_30806_1210
+  type: vmess
+  server: v6.hdacd.com
+  port: 30806
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- name: HK_VMESS_30807_2626
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  country: HK
+- cipher: chacha20-ietf-poly1305
+  name: HK_SS_1080_419
+  password: pno0e2keji2gsfea
+  port: 1080
+  server: telegram.khp25.com
+  type: ss
+  country: HK
+- cipher: chacha20-ietf-poly1305
+  name: HK_SS_1080_514
+  password: m5nsedvdczx6x06e
+  port: 1080
+  server: telegramx.khp25.com
+  type: ss
+  country: HK
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  encryption: none
+  name: HK_VLESS_11907_2746
+  network: tcp
+  port: 11907
+  server: 195.58.144.56
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
   country: HK
 - alpn:
   - ''
   alterId: 0
   cipher: auto
-  http-opts:
-    headers:
-      Host:
-      - sjskendn.dingtalk.com
-    method: GET
-    path:
-    - /x
-  name: HK_VMESS_800_375
-  network: http
-  port: 800
-  server: 47.86.167.194
+  name: HK_VMESS_36703_632
+  network: ws
+  port: 36703
+  server: 47.244.120.197
   skip-cert-verify: true
   tls: false
   type: vmess
   udp: true
-  uuid: f2c67cae-c09d-4739-947d-f5302d87a3c0
+  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
+  ws-opts:
+    path: /arki
+  country: HK
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  name: HK_VMESS_23026_976
+  network: ws
+  port: 23026
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  ws-opts:
+    path: /arki
+  country: HK
+- alterId: 0
+  cipher: auto
+  name: HK_VMESS_443_986
+  network: ws
+  port: 443
+  server: ex1ogt73nzpqkac2.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  ws-opts:
+    headers:
+      Host: ex1ogt73nzpqkac2.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- alterId: 0
+  cipher: auto
+  name: HK_VMESS_443_2174
+  network: ws
+  port: 443
+  server: 93ucrn4i0pffuabk.v.3dns.vip
+  servername: 93ucrn4i0pffuabk.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  ws-opts:
+    headers:
+      Host: 93ucrn4i0pffuabk.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- alterId: 0
+  cipher: auto
+  name: HK_VMESS_443_2613
+  network: ws
+  port: 443
+  server: 6JDvArazgU3qQR6Q.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  ws-opts:
+    headers:
+      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- name: HK_VLESS_13779_542
+  server: 47.238.210.5
+  port: 13779
+  type: vless
+  uuid: 928e6cce-8ced-4243-9a48-a6642edd09b0
+  tls: true
+  reality-opts:
+    public-key: llTyp52oRXnJmQ3I9UUrmlwbMA79B-wLCRHCu-8dLGg
+    short-id: af1bdd293097b664
+  servername: tesla.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -101,13 +275,25 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_30833_1149
-  - HK_VMESS_30836_1187
-  - HK_VMESS_30804_1299
-  - HK_VMESS_30806_1412
-  - HK_VMESS_30829_1809
-  - HK_TROJAN_443_724
-  - HK_VMESS_800_375
+  - HK_VMESS_443_1093
+  - HK_VMESS_443_1340
+  - HK_VMESS_443_2394
+  - HK_VMESS_443_2631
+  - HK_VMESS_30835_1032
+  - HK_VMESS_443_2762
+  - HK_VMESS_30836_1006
+  - HK_VMESS_30829_1250
+  - HK_VMESS_30806_1210
+  - HK_VMESS_30807_2626
+  - HK_SS_1080_419
+  - HK_SS_1080_514
+  - HK_VLESS_11907_2746
+  - HK_VMESS_36703_632
+  - HK_VMESS_23026_976
+  - HK_VMESS_443_986
+  - HK_VMESS_443_2174
+  - HK_VMESS_443_2613
+  - HK_VLESS_13779_542
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -120,13 +306,25 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_800_375
-  - HK_TROJAN_443_724
-  - HK_VMESS_30833_1149
-  - HK_VMESS_30836_1187
-  - HK_VMESS_30804_1299
-  - HK_VMESS_30806_1412
-  - HK_VMESS_30829_1809
+  - HK_SS_1080_419
+  - HK_SS_1080_514
+  - HK_VLESS_13779_542
+  - HK_VMESS_36703_632
+  - HK_VMESS_23026_976
+  - HK_VMESS_443_986
+  - HK_VMESS_30836_1006
+  - HK_VMESS_30835_1032
+  - HK_VMESS_443_1093
+  - HK_VMESS_30806_1210
+  - HK_VMESS_30829_1250
+  - HK_VMESS_443_1340
+  - HK_VMESS_443_2174
+  - HK_VMESS_443_2394
+  - HK_VMESS_443_2613
+  - HK_VMESS_30807_2626
+  - HK_VMESS_443_2631
+  - HK_VLESS_11907_2746
+  - HK_VMESS_443_2762
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -138,13 +336,25 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_30833_1149
-  - HK_VMESS_30836_1187
-  - HK_VMESS_30804_1299
-  - HK_VMESS_30806_1412
-  - HK_VMESS_30829_1809
-  - HK_TROJAN_443_724
-  - HK_VMESS_800_375
+  - HK_VMESS_443_1093
+  - HK_VMESS_443_1340
+  - HK_VMESS_443_2394
+  - HK_VMESS_443_2631
+  - HK_VMESS_30835_1032
+  - HK_VMESS_443_2762
+  - HK_VMESS_30836_1006
+  - HK_VMESS_30829_1250
+  - HK_VMESS_30806_1210
+  - HK_VMESS_30807_2626
+  - HK_SS_1080_419
+  - HK_SS_1080_514
+  - HK_VLESS_11907_2746
+  - HK_VMESS_36703_632
+  - HK_VMESS_23026_976
+  - HK_VMESS_443_986
+  - HK_VMESS_443_2174
+  - HK_VMESS_443_2613
+  - HK_VLESS_13779_542
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

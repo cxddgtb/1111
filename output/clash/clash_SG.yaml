@@ -5,7 +5,50 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_443_952
+- name: SG_VLESS_2096_981
+  type: vless
+  network: ws
+  server: free-server.techsonic.dev
+  port: 2096
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  servername: free-server.techsonic.dev
+  skip-cert-verify: false
+  tls: true
+  client-fingerprint: chrome
+  encryption: none
+  ws-opts:
+    headers:
+      Host: free-server.techsonic.dev
+    path: /free-server.techsonic.dev
+  country: SG
+- name: SG_VMESS_18000_403
+  type: vmess
+  network: tcp
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: SG_VLESS_2083_121
+  type: vless
+  network: ws
+  server: 27.50.49.154
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  servername: proxy-34l.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: proxy-34l.pages.dev
+    path: /
+  country: SG
+- name: SG_VLESS_443_833
   type: vless
   server: asia.csmaster.site
   port: 443
@@ -14,12 +57,13 @@ proxies:
   tls: true
   client-fingerprint: chrome
   ws-opts:
+    path: /
     headers:
       Host: asia.csmaster.site
   skip-cert-verify: true
   udp: true
   country: SG
-- name: SG_VLESS_8443_953
+- name: SG_VLESS_8443_833
   type: vless
   server: asia.csmaster.site
   port: 8443
@@ -29,104 +73,27 @@ proxies:
   tls: true
   client-fingerprint: chrome
   ws-opts:
+    path: /
     headers:
       Host: asia.csmaster.site
   skip-cert-verify: true
   udp: true
   country: SG
-- name: SG_VLESS_16263_402
+- name: SG_VLESS_16263_399
   port: 16263
   server: 47.237.74.17
   tls: false
   type: vless
   uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
   country: SG
-- name: SG_VLESS_34249_612
-  port: 34249
-  server: 129.150.51.127
-  servername: www.microsoft.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  uuid: 0590ab38-cb22-41d3-8312-6f396a5cec58
-  country: SG
-- client-fingerprint: chrome
-  name: SG_VLESS_443_867
-  network: ws
-  port: 443
-  server: 185.115.207.141
-  servername: wzs.echo.net.eu.org
-  tls: true
-  type: vless
-  uuid: d18c6897-2849-456a-8c46-d7ecece47c20
-  ws-opts:
-    headers:
-      Host: wzs.echo.net.eu.org
-    path: /video/HxNMGkZdGw0PRk1GVw8YF14OXkwNVVtIRg1HV1ZNVwcHTQsJSgAJVBQUG0dCQEwWAx4AAg4c
-  country: SG
 - cipher: chacha20-ietf-poly1305
-  name: SG_SS_14249_969
+  name: SG_SS_14249_574
   password: 9epp3o9ng8ej59uv
   port: 14249
   server: 45.128.12.20
   type: ss
   country: SG
-- name: SG_TROJAN_443_725
-  password: UX82473651
-  port: 443
-  server: inviting-ferret.rooster465.autos
-  sni: inviting-ferret.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_679
-  password: UX82473651
-  port: 443
-  server: glowing-marmoset.rooster465.autos
-  sni: glowing-marmoset.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_745
-  password: UX82473651
-  port: 443
-  server: real-cardinal.rooster465.autos
-  sni: real-cardinal.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_848
-  password: UX82473651
-  port: 443
-  server: desired-boxer.rooster465.autos
-  sni: desired-boxer.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_946
-  password: UX82473651
-  port: 443
-  server: holy-lamb.rooster465.autos
-  sni: holy-lamb.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_1384
-  password: UX82473651
-  port: 443
-  server: pet-antelope.rooster465.autos
-  sni: pet-antelope.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_HTTP_9090_640
-  port: 9090
-  server: 152.42.170.187
-  type: http
-  country: SG
-- name: SG_HTTP_9443_796
-  port: 9443
-  server: 149.88.99.209
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: SG
-- name: SG_TROJAN_8886_598
+- name: SG_TROJAN_8886_590
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   port: 8886
   server: 139.180.146.200
@@ -134,16 +101,104 @@ proxies:
   sni: 139.180.146.200
   type: trojan
   country: SG
-- name: SG_ANYTLS_1001_577
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  port: 1001
-  server: fwj0bkq7.zf-mix.9999231.xyz
+- name: SG_TROJAN_443_627
+  password: UX82473651
+  port: 443
+  server: desired-boxer.rooster465.autos
+  sni: desired-boxer.rooster465.autos
+  type: trojan
+  country: SG
+- name: SG_TROJAN_443_690
+  password: UX82473651
+  port: 443
+  server: holy-lamb.rooster465.autos
+  sni: holy-lamb.rooster465.autos
+  type: trojan
+  country: SG
+- name: SG_TROJAN_443_789
+  password: UX82473651
+  port: 443
+  server: pet-antelope.rooster465.autos
+  sni: pet-antelope.rooster465.autos
+  type: trojan
+  country: SG
+- name: SG_TROJAN_443_758
+  password: UX82473651
+  port: 443
+  server: glowing-marmoset.rooster465.autos
+  sni: glowing-marmoset.rooster465.autos
+  type: trojan
+  country: SG
+- name: SG_TROJAN_443_2019
+  password: UX82473651
+  port: 443
+  server: inviting-ferret.rooster465.autos
+  sni: inviting-ferret.rooster465.autos
+  type: trojan
+  country: SG
+- cipher: chacha20-ietf-poly1305
+  name: SG_SS_8443_545
+  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
+  port: 8443
+  server: 13.229.58.5
+  type: ss
+  udp: true
+  country: SG
+- name: SG_ANYTLS_1024_1181
+  password: 6cdc1a00-e9e7-4ef2-8d53-541688f9324c
+  port: 1024
+  server: ksfz1g3r.zf-mix.9999231.xyz
   skip-cert-verify: true
-  sni: tw01.9999231.xyz
+  sni: ch-wy.9999231.xyz
   type: anytls
   udp: true
   country: SG
-- name: SG_ANYTLS_1010_1486
+- name: SG_TROJAN_443_2725
+  password: UX82473651
+  port: 443
+  server: real-cardinal.rooster465.autos
+  sni: real-cardinal.rooster465.autos
+  type: trojan
+  country: SG
+- auth: WvH8ooM9hom4KOOJHFJz1x5umE0aV4R0
+  name: SG_HYSTERIA2_8443_999
+  password: WvH8ooM9hom4KOOJHFJz1x5umE0aV4R0
+  port: 8443
+  server: 43.156.36.253
+  skip-cert-verify: true
+  sni: 43.156.36.253
+  tls: false
+  type: hysteria2
+  country: SG
+- name: SG_ANYTLS_1019_1204
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  port: 1019
+  server: fux02f0q.zf-mix.9999231.xyz
+  skip-cert-verify: true
+  sni: pl-house.9999231.xyz
+  type: anytls
+  udp: true
+  country: SG
+- auth: 7e68e32f-8015-4f37-9082-70e8b0b58043
+  name: SG_HYSTERIA2_443_1165
+  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
+  port: 443
+  server: 13.229.58.5
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: false
+  type: hysteria2
+  country: SG
+- name: SG_ANYTLS_1019_1292
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  port: 1019
+  server: q7mtpgxo.zf-mix.9999231.xyz
+  skip-cert-verify: true
+  sni: pl-house.9999231.xyz
+  type: anytls
+  udp: true
+  country: SG
+- name: SG_ANYTLS_1010_1516
   password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
   port: 1010
   server: 8l3bf3ca.zf-mix.9999231.xyz
@@ -152,20 +207,28 @@ proxies:
   type: anytls
   udp: true
   country: SG
-- name: SG_VLESS_443_751
-  type: vless
-  server: 43.174.195.1
-  port: 443
-  uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
-  network: ws
-  servername: kv.074167.xyz
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: kv.074167.xyz
+- name: SG_ANYTLS_1024_2278
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  port: 1024
+  server: jkb4llyw.zf-mix.9999231.xyz
   skip-cert-verify: true
+  sni: ch-wy.9999231.xyz
+  type: anytls
+  udp: true
+  country: SG
+- name: SG_VLESS_443_1100
+  server: 13.229.58.5
+  port: 443
+  type: vless
+  uuid: 7e68e32f-8015-4f37-9082-70e8b0b58043
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: PhOIlEfiYVUhkWKIfX_IOwJ6zz_Zk0QEj4sfcZyuShY
+    short-id: abcddb0c38896b8b
+  servername: blog.metawork.network
+  client-fingerprint: chrome
+  network: tcp
   udp: true
   country: SG
 proxy-groups:
@@ -181,24 +244,29 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_443_952
-  - SG_VLESS_8443_953
-  - SG_VLESS_16263_402
-  - SG_VLESS_34249_612
-  - SG_VLESS_443_867
-  - SG_SS_14249_969
-  - SG_TROJAN_443_725
-  - SG_TROJAN_443_679
-  - SG_TROJAN_443_745
-  - SG_TROJAN_443_848
-  - SG_TROJAN_443_946
-  - SG_TROJAN_443_1384
-  - SG_HTTP_9090_640
-  - SG_HTTP_9443_796
-  - SG_TROJAN_8886_598
-  - SG_ANYTLS_1001_577
-  - SG_ANYTLS_1010_1486
-  - SG_VLESS_443_751
+  - SG_VLESS_2096_981
+  - SG_VMESS_18000_403
+  - SG_VLESS_2083_121
+  - SG_VLESS_443_833
+  - SG_VLESS_8443_833
+  - SG_VLESS_16263_399
+  - SG_SS_14249_574
+  - SG_TROJAN_8886_590
+  - SG_TROJAN_443_627
+  - SG_TROJAN_443_690
+  - SG_TROJAN_443_789
+  - SG_TROJAN_443_758
+  - SG_TROJAN_443_2019
+  - SG_SS_8443_545
+  - SG_ANYTLS_1024_1181
+  - SG_TROJAN_443_2725
+  - SG_HYSTERIA2_8443_999
+  - SG_ANYTLS_1019_1204
+  - SG_HYSTERIA2_443_1165
+  - SG_ANYTLS_1019_1292
+  - SG_ANYTLS_1010_1516
+  - SG_ANYTLS_1024_2278
+  - SG_VLESS_443_1100
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -211,24 +279,29 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VLESS_16263_402
-  - SG_ANYTLS_1001_577
-  - SG_TROJAN_8886_598
-  - SG_VLESS_34249_612
-  - SG_HTTP_9090_640
-  - SG_TROJAN_443_679
-  - SG_TROJAN_443_725
-  - SG_TROJAN_443_745
-  - SG_VLESS_443_751
-  - SG_HTTP_9443_796
-  - SG_TROJAN_443_848
-  - SG_VLESS_443_867
-  - SG_TROJAN_443_946
-  - SG_VLESS_443_952
-  - SG_VLESS_8443_953
-  - SG_SS_14249_969
-  - SG_TROJAN_443_1384
-  - SG_ANYTLS_1010_1486
+  - SG_VLESS_2083_121
+  - SG_VLESS_16263_399
+  - SG_VMESS_18000_403
+  - SG_SS_8443_545
+  - SG_SS_14249_574
+  - SG_TROJAN_8886_590
+  - SG_TROJAN_443_627
+  - SG_TROJAN_443_690
+  - SG_TROJAN_443_758
+  - SG_TROJAN_443_789
+  - SG_VLESS_443_833
+  - SG_VLESS_8443_833
+  - SG_VLESS_2096_981
+  - SG_HYSTERIA2_8443_999
+  - SG_VLESS_443_1100
+  - SG_HYSTERIA2_443_1165
+  - SG_ANYTLS_1024_1181
+  - SG_ANYTLS_1019_1204
+  - SG_ANYTLS_1019_1292
+  - SG_ANYTLS_1010_1516
+  - SG_TROJAN_443_2019
+  - SG_ANYTLS_1024_2278
+  - SG_TROJAN_443_2725
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -240,24 +313,29 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_443_952
-  - SG_VLESS_8443_953
-  - SG_VLESS_16263_402
-  - SG_VLESS_34249_612
-  - SG_VLESS_443_867
-  - SG_SS_14249_969
-  - SG_TROJAN_443_725
-  - SG_TROJAN_443_679
-  - SG_TROJAN_443_745
-  - SG_TROJAN_443_848
-  - SG_TROJAN_443_946
-  - SG_TROJAN_443_1384
-  - SG_HTTP_9090_640
-  - SG_HTTP_9443_796
-  - SG_TROJAN_8886_598
-  - SG_ANYTLS_1001_577
-  - SG_ANYTLS_1010_1486
-  - SG_VLESS_443_751
+  - SG_VLESS_2096_981
+  - SG_VMESS_18000_403
+  - SG_VLESS_2083_121
+  - SG_VLESS_443_833
+  - SG_VLESS_8443_833
+  - SG_VLESS_16263_399
+  - SG_SS_14249_574
+  - SG_TROJAN_8886_590
+  - SG_TROJAN_443_627
+  - SG_TROJAN_443_690
+  - SG_TROJAN_443_789
+  - SG_TROJAN_443_758
+  - SG_TROJAN_443_2019
+  - SG_SS_8443_545
+  - SG_ANYTLS_1024_1181
+  - SG_TROJAN_443_2725
+  - SG_HYSTERIA2_8443_999
+  - SG_ANYTLS_1019_1204
+  - SG_HYSTERIA2_443_1165
+  - SG_ANYTLS_1019_1292
+  - SG_ANYTLS_1010_1516
+  - SG_ANYTLS_1024_2278
+  - SG_VLESS_443_1100
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

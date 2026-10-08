@@ -5,21 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- alpn:
-  - h3
-  congestion-controller: bbr
-  disable-sni: false
-  name: TW_TUIC_8080_2998
-  password: 8A9905B7-801B-41AF-BFC9-2034212770F6
-  port: 8080
-  reduce-rtt: false
-  request-timeout: 0
-  server: tw3.dexlos.com
+- name: TW_VMESS_35034_355
+  type: vmess
+  network: tcp
+  server: 165.154.195.38
+  port: 35034
+  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
   skip-cert-verify: true
-  sni: tw3.dexlos.com
-  type: tuic
-  udp-relay-mode: native
-  uuid: 8A9905B7-801B-41AF-BFC9-2034212770F6
+  alterId: 0
+  cipher: auto
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -34,7 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_TUIC_8080_2998
+  - TW_VMESS_35034_355
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_TUIC_8080_2998
+  - TW_VMESS_35034_355
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +53,7 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_TUIC_8080_2998
+  - TW_VMESS_35034_355
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

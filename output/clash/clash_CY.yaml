@@ -5,14 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CY_VLESS_2087_976
+- name: CY_VLESS_2087_1014
+  type: vless
   network: ws
-  port: 2087
   server: 194.55.166.65
+  port: 2087
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
   servername: free.cndyw.ggff.net
   tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
   ws-opts:
     headers:
       Host: free.cndyw.ggff.net
@@ -31,7 +31,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CY_VLESS_2087_976
+  - CY_VLESS_2087_1014
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +44,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CY_VLESS_2087_976
+  - CY_VLESS_2087_1014
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +56,7 @@ proxy-groups:
 - name: 🌍 CY
   type: url-test
   proxies:
-  - CY_VLESS_2087_976
+  - CY_VLESS_2087_1014
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
