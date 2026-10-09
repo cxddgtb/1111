@@ -5,31 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SC_VLESS_8880_109
-  type: vless
+- name: SC_VLESS_8880_67
   network: ws
-  server: 154.197.64.30
   port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 154.197.75.40
   tls: false
-  encryption: none
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
     headers:
-      Host: vms.lifetime36.workers.dev
+      Host: vms.lifetime37.workers.dev
     path: /
   country: SC
-- name: SC_TROJAN_443_444
-  type: trojan
+- name: SC_TROJAN_443_279
   network: ws
-  server: 45.130.125.160
-  port: 443
   password: humanity
+  port: 443
+  server: 45.130.125.160
   skip-cert-verify: false
   sni: www.calmlunch.com
+  type: trojan
   ws-opts:
     headers:
       Host: www.calmlunch.com
-    path: /assignment
+    path: '%2Fassignment'
   country: SC
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,8 +43,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SC_VLESS_8880_109
-  - SC_TROJAN_443_444
+  - SC_VLESS_8880_67
+  - SC_TROJAN_443_279
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,8 +57,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SC_VLESS_8880_109
-  - SC_TROJAN_443_444
+  - SC_VLESS_8880_67
+  - SC_TROJAN_443_279
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -71,8 +70,8 @@ proxy-groups:
 - name: 🌍 SC
   type: url-test
   proxies:
-  - SC_VLESS_8880_109
-  - SC_TROJAN_443_444
+  - SC_VLESS_8880_67
+  - SC_TROJAN_443_279
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

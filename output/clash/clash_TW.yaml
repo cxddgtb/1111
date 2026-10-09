@@ -5,15 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VMESS_35034_355
-  type: vmess
-  network: tcp
-  server: 165.154.195.38
-  port: 35034
-  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
+- name: TW_ANYTLS_443_1604
+  password: 6725d134ee80
+  port: 443
+  server: 98416548.df6h451rh.xin
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  sni: images.ctfassets.net
+  type: anytls
+  udp: true
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -28,7 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VMESS_35034_355
+  - TW_ANYTLS_443_1604
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_355
+  - TW_ANYTLS_443_1604
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +52,7 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VMESS_35034_355
+  - TW_ANYTLS_443_1604
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

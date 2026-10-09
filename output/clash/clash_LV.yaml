@@ -5,26 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_VLESS_443_2476
-  type: vless
-  network: ws
-  server: 217.19.4.61
+- name: LV_HTTP_443_540
   port: 443
-  uuid: b585dc5e-55bf-4a8b-913a-27c9ccac05c3
-  servername: bab-6.site
+  server: 85.203.39.130
+  skip-cert-verify: true
   tls: true
-  udp: true
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: bab-6.site
-    path: /vws/
+  type: http
   country: LV
 - auth: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
-  name: LV_HYSTERIA2_9443_472
+  name: LV_HYSTERIA2_9443_447
   password: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
   port: 9443
-  server: 104.165.205.46
+  server: lv02.gotosvo.com
   skip-cert-verify: true
   sni: onecloudstream.com
   tls: false
@@ -43,8 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_VLESS_443_2476
-  - LV_HYSTERIA2_9443_472
+  - LV_HTTP_443_540
+  - LV_HYSTERIA2_9443_447
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -57,8 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_HYSTERIA2_9443_472
-  - LV_VLESS_443_2476
+  - LV_HYSTERIA2_9443_447
+  - LV_HTTP_443_540
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,8 +62,8 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_VLESS_443_2476
-  - LV_HYSTERIA2_9443_472
+  - LV_HTTP_443_540
+  - LV_HYSTERIA2_9443_447
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

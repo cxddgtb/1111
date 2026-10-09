@@ -5,18 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MX_HTTP_999_142
-  port: 999
-  server: 38.194.236.106
-  type: http
-  country: MX
-- name: MX_HTTP_443_556
+- client-fingerprint: chrome
+  name: MX_VLESS_443_366
+  network: ws
   port: 443
-  server: 45.134.9.41
-  skip-cert-verify: true
-  sni: 991cc80f13caf81d3426ddebb2da7f49-240d6105b6ef86f0.apache-iv.com
+  server: 131.196.253.141
+  servername: kclx.eu.org
   tls: true
-  type: http
+  type: vless
+  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
+  ws-opts:
+    headers:
+      Host: kclx.eu.org
+    path: /154.16.10.34-8080
   country: MX
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,8 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MX_HTTP_999_142
-  - MX_HTTP_443_556
+  - MX_VLESS_443_366
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,8 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MX_HTTP_999_142
-  - MX_HTTP_443_556
+  - MX_VLESS_443_366
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,8 +57,7 @@ proxy-groups:
 - name: 🌍 MX
   type: url-test
   proxies:
-  - MX_HTTP_999_142
-  - MX_HTTP_443_556
+  - MX_VLESS_443_366
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

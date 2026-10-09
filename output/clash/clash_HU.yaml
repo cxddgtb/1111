@@ -5,31 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HU_TROJAN_443_1390
-  type: trojan
-  network: ws
-  server: 185.225.68.232
+- name: HU_HTTP_443_479
   port: 443
-  password: humanity
-  skip-cert-verify: false
-  sni: www.calmlunch.com
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: /assignment
-  country: HU
-- name: HU_VLESS_8443_633
-  network: ws
-  port: 8443
-  server: 37.221.210.113
-  servername: free.cndyw.ggff.net
+  server: 146.70.203.18
+  skip-cert-verify: true
   tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=random
+  type: http
   country: HU
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HU_TROJAN_443_1390
-  - HU_VLESS_8443_633
+  - HU_HTTP_443_479
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HU_VLESS_8443_633
-  - HU_TROJAN_443_1390
+  - HU_HTTP_443_479
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -71,8 +50,7 @@ proxy-groups:
 - name: 🌍 HU
   type: url-test
   proxies:
-  - HU_TROJAN_443_1390
-  - HU_VLESS_8443_633
+  - HU_HTTP_443_479
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

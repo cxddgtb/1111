@@ -5,61 +5,40 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_443_731
+- name: FI_VLESS_8080_816
+  port: 8080
+  server: milo.rubinaz.xyz
+  tls: false
   type: vless
-  network: ws
-  server: 144.31.99.252
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  servername: ccc.010304.xyz
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /
+  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
   country: FI
 - cipher: aes-128-gcm
-  name: FI_SS_18283_337
+  name: FI_SS_18283_243
   password: f9300a9bf39ae0347c3a3bfbc4dd7754
   port: 18283
   server: 185.103.110.68
   type: ss
   country: FI
-- cipher: chacha20-ietf-poly1305
-  name: FI_SS_777_1351
-  password: Jeoq8ujfkqZKKvACQhoqBQ1PA3uq4242
-  port: 777
-  server: 45.149.114.171
-  type: ss
-  country: FI
-- auth: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
-  name: FI_HYSTERIA2_9443_461
-  password: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
-  port: 9443
-  server: 87.251.17.11
-  skip-cert-verify: true
-  sni: onecloudstream.com
-  tls: false
-  type: hysteria2
-  country: FI
-- name: FI_VLESS_8446_660
-  server: van2.ragnarok-it.xyz
-  port: 8446
-  type: vless
-  uuid: a61496c3-f256-4a36-8a52-8638b9cc900a
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Y6ZtoxCUW1qFIvLTNfbrsyfCDoIBaRsqGNtbF_mcAXM
-    short-id: 7bac4b112d30d1
-  servername: amd.com
-  client-fingerprint: edge
+- encryption: none
+  name: FI_VLESS_2053_1144
   network: tcp
-  udp: true
+  port: 2053
+  server: test.keoplentuio.xyz
+  tls: false
+  type: vless
+  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
+  country: FI
+- name: FI_HYSTERIA2_21000_636
+  server: 79.137.206.157
+  port: 21000
+  type: hysteria2
+  password: 81d953a0-f0cf-4452-a669-747d32efd6c1
+  auth: 81d953a0-f0cf-4452-a669-747d32efd6c1
+  sni: hy.kirian.su
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: 9VK3Nqd0bcXGPxcay9hRLY28HBtKo5
+  ports: 21000-21999
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -74,11 +53,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_443_731
-  - FI_SS_18283_337
-  - FI_SS_777_1351
-  - FI_HYSTERIA2_9443_461
-  - FI_VLESS_8446_660
+  - FI_VLESS_8080_816
+  - FI_SS_18283_243
+  - FI_VLESS_2053_1144
+  - FI_HYSTERIA2_21000_636
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -91,11 +69,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_SS_18283_337
-  - FI_HYSTERIA2_9443_461
-  - FI_VLESS_8446_660
-  - FI_VLESS_443_731
-  - FI_SS_777_1351
+  - FI_SS_18283_243
+  - FI_HYSTERIA2_21000_636
+  - FI_VLESS_8080_816
+  - FI_VLESS_2053_1144
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -107,11 +84,10 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_443_731
-  - FI_SS_18283_337
-  - FI_SS_777_1351
-  - FI_HYSTERIA2_9443_461
-  - FI_VLESS_8446_660
+  - FI_VLESS_8080_816
+  - FI_SS_18283_243
+  - FI_VLESS_2053_1144
+  - FI_HYSTERIA2_21000_636
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

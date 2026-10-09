@@ -5,22 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AT_TROJAN_443_418
-  type: trojan
+- name: AT_TROJAN_443_285
   network: ws
-  server: 212.183.88.136
-  port: 443
   password: humanity
+  port: 443
+  server: 212.183.88.136
   sni: www.calmlunch.com
+  type: trojan
   ws-opts:
     headers:
       Host: www.calmlunch.com
-    path: /assignment
+    path: '%2Fassignment'
   country: AT
-- name: AT_HTTP_443_589
+- name: AT_HTTP_443_440
   password: None
   port: 443
   server: 146.70.244.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: AT
+- name: AT_HTTP_443_450
+  password: None
+  port: 443
+  server: 146.70.244.2
   skip-cert-verify: true
   tls: true
   type: http
@@ -38,8 +46,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AT_TROJAN_443_418
-  - AT_HTTP_443_589
+  - AT_TROJAN_443_285
+  - AT_HTTP_443_440
+  - AT_HTTP_443_450
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +61,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AT_TROJAN_443_418
-  - AT_HTTP_443_589
+  - AT_TROJAN_443_285
+  - AT_HTTP_443_440
+  - AT_HTTP_443_450
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +75,9 @@ proxy-groups:
 - name: 🌍 AT
   type: url-test
   proxies:
-  - AT_TROJAN_443_418
-  - AT_HTTP_443_589
+  - AT_TROJAN_443_285
+  - AT_HTTP_443_440
+  - AT_HTTP_443_450
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

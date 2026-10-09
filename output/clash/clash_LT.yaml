@@ -5,17 +5,25 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LT_VLESS_8880_82
-  type: vless
+- encryption: none
+  name: LT_VLESS_8880_40
   network: ws
-  server: 89.117.112.40
   port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 89.116.180.30
   tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
     headers:
-      Host: vms.lifetime11.workers.dev
+      Host: vms.lifetime09.workers.dev
     path: /
+  country: LT
+- name: LT_HTTP_443_499
+  port: 443
+  server: 89.124.11.9
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: LT
 proxy-groups:
 - name: 🚀 节点选择
@@ -30,7 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LT_VLESS_8880_82
+  - LT_VLESS_8880_40
+  - LT_HTTP_443_499
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LT_VLESS_8880_82
+  - LT_VLESS_8880_40
+  - LT_HTTP_443_499
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +65,8 @@ proxy-groups:
 - name: 🌍 LT
   type: url-test
   proxies:
-  - LT_VLESS_8880_82
+  - LT_VLESS_8880_40
+  - LT_HTTP_443_499
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

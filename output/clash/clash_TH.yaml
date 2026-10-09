@@ -5,21 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TH_VLESS_80_2552
-  type: vless
+- encryption: none
+  name: TH_VLESS_80_757
   network: ws
-  server: 103.86.49.57
   port: 80
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
+  server: 103.86.49.57
   tls: false
-  encryption: none
+  type: vless
+  uuid: 3c52e091-6714-4915-949f-2149fe69951b
   ws-opts:
     headers:
       Host: aIs.SpEeDtEsT.nEt
     path: /ws
   country: TH
 - cipher: aes-256-gcm
-  name: TH_SS_52351_1186
+  name: TH_SS_52351_2070
   password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
   port: 52351
   server: pphfree2.mvpnpvpn.de5.net
@@ -38,8 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TH_VLESS_80_2552
-  - TH_SS_52351_1186
+  - TH_VLESS_80_757
+  - TH_SS_52351_2070
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TH_SS_52351_1186
-  - TH_VLESS_80_2552
+  - TH_VLESS_80_757
+  - TH_SS_52351_2070
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +65,8 @@ proxy-groups:
 - name: 🌍 TH
   type: url-test
   proxies:
-  - TH_VLESS_80_2552
-  - TH_SS_52351_1186
+  - TH_VLESS_80_757
+  - TH_SS_52351_2070
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

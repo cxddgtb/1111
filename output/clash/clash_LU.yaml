@@ -5,20 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- alpn:
-  - http/1.1
-  name: LU_TROJAN_443_398
-  network: ws
-  password: humanity
-  port: 443
-  server: 188.42.145.180
+- name: LU_HTTP_9443_426
+  port: 9443
+  server: 185.221.132.226
   skip-cert-verify: true
-  sni: www.volumeroot.com
-  type: trojan
-  ws-opts:
-    headers:
-      Host: www.volumeroot.com
-    path: /assignment
+  tls: true
+  type: http
   country: LU
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LU_TROJAN_443_398
+  - LU_HTTP_9443_426
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LU_TROJAN_443_398
+  - LU_HTTP_9443_426
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +50,7 @@ proxy-groups:
 - name: 🌍 LU
   type: url-test
   proxies:
-  - LU_TROJAN_443_398
+  - LU_HTTP_9443_426
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

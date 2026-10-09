@@ -5,14 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AU_HTTP_443_831
-  password: None
+- name: GE_HTTP_443_686
   port: 443
-  server: 159.13.44.228
+  server: 195.54.178.210
   skip-cert-verify: true
   tls: true
   type: http
-  country: AU
+  country: GE
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -21,12 +20,12 @@ proxy-groups:
   - ♻️ 自动故障转移
   - ⚖️ 负载均衡
   - 📺 YouTube 优选
-  - 🌍 AU
+  - 🌍 GE
   - DIRECT
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AU_HTTP_443_831
+  - GE_HTTP_443_686
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AU_HTTP_443_831
+  - GE_HTTP_443_686
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -48,10 +47,10 @@ proxy-groups:
   proxies: *id001
   url: http://www.gstatic.com/generate_204
   interval: 300
-- name: 🌍 AU
+- name: 🌍 GE
   type: url-test
   proxies:
-  - AU_HTTP_443_831
+  - GE_HTTP_443_686
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
