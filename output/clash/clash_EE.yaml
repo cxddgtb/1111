@@ -6,16 +6,37 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - client-fingerprint: chrome
-  name: EE_VLESS_8443_328
+  encryption: none
+  name: EE_VLESS_8443_475
+  network: tcp
   port: 8443
   server: 94.183.170.135
   servername: estproxy4.lockdwn.com
   tls: true
   type: vless
   uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  ws-opts:
+    path: /
+  country: EE
+- alpn:
+  - http/1.1
+  encryption: none
+  name: EE_VLESS_8443_558
+  network: ws
+  port: 8443
+  server: 77.72.85.246
+  servername: fdghyt.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  ws-opts:
+    headers:
+      Host: fdghyt.com
+    path: /vpn-wss/fluxor/59011/
   country: EE
 - client-fingerprint: firefox
-  name: EE_VLESS_8443_528
+  name: EE_VLESS_8443_585
   network: ws
   port: 8443
   server: 194.26.141.148
@@ -30,13 +51,12 @@ proxies:
   country: EE
 - alpn:
   - http/1.1
-  encryption: none
-  name: EE_VLESS_8443_509
+  client-fingerprint: chrome
+  name: EE_VLESS_8443_781
   network: ws
   port: 8443
-  server: 77.72.85.246
+  server: ee10.zazazuza.ru
   servername: fdghyt.com
-  skip-cert-verify: false
   tls: true
   type: vless
   uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
@@ -44,6 +64,13 @@ proxies:
     headers:
       Host: fdghyt.com
     path: /vpn-wss/fluxor/59011/
+  country: EE
+- name: EE_HTTP_9443_521
+  port: 9443
+  server: 95.153.31.66
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,9 +85,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_8443_328
-  - EE_VLESS_8443_528
-  - EE_VLESS_8443_509
+  - EE_VLESS_8443_475
+  - EE_VLESS_8443_558
+  - EE_VLESS_8443_585
+  - EE_VLESS_8443_781
+  - EE_HTTP_9443_521
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,9 +102,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_8443_328
-  - EE_VLESS_8443_509
-  - EE_VLESS_8443_528
+  - EE_VLESS_8443_475
+  - EE_HTTP_9443_521
+  - EE_VLESS_8443_558
+  - EE_VLESS_8443_585
+  - EE_VLESS_8443_781
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,9 +118,11 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_8443_328
-  - EE_VLESS_8443_528
-  - EE_VLESS_8443_509
+  - EE_VLESS_8443_475
+  - EE_VLESS_8443_558
+  - EE_VLESS_8443_585
+  - EE_VLESS_8443_781
+  - EE_HTTP_9443_521
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -6,97 +6,69 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: aes-256-gcm
-  name: CA_SS_8882_34
+  name: CA_SS_8882_60
   password: kDWvXYZoTBcGkC4
   port: 8882
   server: 51.222.136.236
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5601_50
-  password: Y6R9pAtvxxzmGC
-  port: 5601
-  server: 51.222.155.113
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8119_40
-  password: cdBIDV42DCwnfIN
-  port: 8119
-  server: 51.79.64.198
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8118_880
-  password: cdBIDV42DCwnfIN
-  port: 8118
-  server: 51.79.85.185
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_445_920
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.141.125
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_445_1256
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.12.127
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5000_1557
+  name: CA_SS_5000_61
   password: Y6R9pAtvxxzmGC
   port: 5000
   server: 51.222.200.165
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8882_1949
+  name: CA_SS_8118_131
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 51.79.85.185
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_8882_86
   password: kDWvXYZoTBcGkC4
   port: 8882
   server: 51.79.49.116
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5003_2476
+  name: CA_SS_8119_124
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 51.79.64.198
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_445_406
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.141.125
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_5601_514
+  password: Y6R9pAtvxxzmGC
+  port: 5601
+  server: 51.222.155.113
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_445_868
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.12.127
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_5003_986
   password: g5MeD6Ft3CWlJId
   port: 5003
   server: 51.222.155.32
   type: ss
   country: CA
-- name: CA_HTTP_9443_99
-  port: 9443
-  server: 198.44.157.27
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CA
-- name: CA_HTTP_9443_106
-  port: 9443
-  server: 149.88.98.81
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CA
-- name: CA_HTTP_443_114
-  port: 443
-  server: 206.223.183.13
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CA
-- name: CA_HTTP_443_94
-  port: 443
-  server: 206.223.161.47
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CA
-- name: CA_HTTP_443_108
+- name: CA_HTTP_443_126
   port: 443
   server: 206.223.183.21
   skip-cert-verify: true
@@ -116,20 +88,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_SS_8882_34
-  - CA_SS_5601_50
-  - CA_SS_8119_40
-  - CA_SS_8118_880
-  - CA_SS_445_920
-  - CA_SS_445_1256
-  - CA_SS_5000_1557
-  - CA_SS_8882_1949
-  - CA_SS_5003_2476
-  - CA_HTTP_9443_99
-  - CA_HTTP_9443_106
-  - CA_HTTP_443_114
-  - CA_HTTP_443_94
-  - CA_HTTP_443_108
+  - CA_SS_8882_60
+  - CA_SS_5000_61
+  - CA_SS_8118_131
+  - CA_SS_8882_86
+  - CA_SS_8119_124
+  - CA_SS_445_406
+  - CA_SS_5601_514
+  - CA_SS_445_868
+  - CA_SS_5003_986
+  - CA_HTTP_443_126
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -142,20 +110,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_8882_34
-  - CA_SS_8119_40
-  - CA_SS_5601_50
-  - CA_HTTP_443_94
-  - CA_HTTP_9443_99
-  - CA_HTTP_9443_106
-  - CA_HTTP_443_108
-  - CA_HTTP_443_114
-  - CA_SS_8118_880
-  - CA_SS_445_920
-  - CA_SS_445_1256
-  - CA_SS_5000_1557
-  - CA_SS_8882_1949
-  - CA_SS_5003_2476
+  - CA_SS_8882_60
+  - CA_SS_5000_61
+  - CA_SS_8882_86
+  - CA_SS_8119_124
+  - CA_HTTP_443_126
+  - CA_SS_8118_131
+  - CA_SS_445_406
+  - CA_SS_5601_514
+  - CA_SS_445_868
+  - CA_SS_5003_986
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -167,20 +131,16 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_SS_8882_34
-  - CA_SS_5601_50
-  - CA_SS_8119_40
-  - CA_SS_8118_880
-  - CA_SS_445_920
-  - CA_SS_445_1256
-  - CA_SS_5000_1557
-  - CA_SS_8882_1949
-  - CA_SS_5003_2476
-  - CA_HTTP_9443_99
-  - CA_HTTP_9443_106
-  - CA_HTTP_443_114
-  - CA_HTTP_443_94
-  - CA_HTTP_443_108
+  - CA_SS_8882_60
+  - CA_SS_5000_61
+  - CA_SS_8118_131
+  - CA_SS_8882_86
+  - CA_SS_8119_124
+  - CA_SS_445_406
+  - CA_SS_5601_514
+  - CA_SS_445_868
+  - CA_SS_5003_986
+  - CA_HTTP_443_126
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

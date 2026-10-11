@@ -8,7 +8,7 @@ proxies:
 - alpn:
   - http/1.1
   client-fingerprint: chrome
-  name: GB_VLESS_443_250
+  name: GB_VLESS_443_374
   port: 443
   server: 186.190.211.188
   servername: 186.190.211.188
@@ -17,35 +17,91 @@ proxies:
   type: vless
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   country: GB
-- cipher: aes-256-gcm
-  name: GB_SS_443_173
-  password: LXchLsIwtCeUAUgu
+- client-fingerprint: chrome
+  name: GB_VLESS_443_440
+  network: ws
   port: 443
-  server: 149.102.149.207
-  type: ss
+  server: 159.65.51.189
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+  country: GB
+- name: GB_VLESS_8443_923
+  port: 8443
+  server: node-uk.connectsuite.org
+  tls: true
+  type: vless
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_80_174
+  name: GB_SS_80_223
   password: g5h5jleTRSyO3Rk4
   port: 80
   server: 149.102.132.184
   type: ss
   country: GB
-- cipher: chacha20-ietf-poly1305
-  name: GB_SS_443_216
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 443
-  server: 82.38.31.159
+- cipher: aes-256-gcm
+  name: GB_SS_80_210
+  password: LXchLsIwtCeUAUgu
+  port: 80
+  server: 149.102.149.207
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_7001_710
+  name: GB_SS_7001_290
   password: RexnBgU7EV5ADxG
   port: 7001
   server: 94.156.250.148
   type: ss
   country: GB
-- name: GB_HTTP_443_344
+- name: GB_VLESS_2053_722
+  port: 2053
+  server: test.keoplentuio.xyz
+  tls: false
+  type: vless
+  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
+  country: GB
+- cipher: chacha20-ietf-poly1305
+  name: GB_SS_443_245
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 443
+  server: 82.38.31.170
+  type: ss
+  country: GB
+- cipher: chacha20-ietf-poly1305
+  name: GB_SS_443_257
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 443
+  server: 82.38.31.159
+  type: ss
+  country: GB
+- name: GB_HTTP_443_406
+  port: 443
+  server: 84.17.50.193
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: GB
+- name: GB_HTTP_9443_428
+  port: 9443
+  server: 84.17.50.214
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: GB
+- name: GB_HTTP_443_412
+  port: 443
+  server: 212.102.63.61
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: GB
+- name: GB_HTTP_443_440
   password: None
   port: 443
   server: 37.120.233.18
@@ -53,33 +109,36 @@ proxies:
   tls: true
   type: http
   country: GB
-- name: GB_HTTP_443_343
-  port: 443
-  server: 212.102.63.31
-  skip-cert-verify: true
-  tls: true
-  type: http
+- name: GB_VLESS_20018_434
+  server: lv-store.rovilo.ir
+  port: 20018
+  type: vless
+  uuid: 5ea90a32-909e-45d2-8525-7e19c0f9d854
+  tls: false
+  encryption: mlkem768x25519plus.native.0rtt.3yYZRBUbOREiit9nPAtdnx2rzs0sFb9skBmEh09XfVo
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+    headers:
+      Host:
+      - connectivitycheck.android.com
+  udp: true
   country: GB
-- name: GB_HTTP_443_348
+- name: GB_VLESS_443_490
+  type: vless
+  server: 5.199.0.226
   port: 443
-  server: 37.120.233.34
-  skip-cert-verify: true
+  uuid: b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+  network: ws
   tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_341
-  port: 443
-  server: 212.102.63.61
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_338
-  port: 443
-  server: 84.17.50.193
-  skip-cert-verify: true
-  tls: true
-  type: http
+  servername: rnxq-1lpi3m.linmeisoft.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+    headers:
+      Host: rnxq-1lpi3m.linmeisoft.com
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -94,16 +153,21 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_VLESS_443_250
-  - GB_SS_443_173
-  - GB_SS_80_174
-  - GB_SS_443_216
-  - GB_SS_7001_710
-  - GB_HTTP_443_344
-  - GB_HTTP_443_343
-  - GB_HTTP_443_348
-  - GB_HTTP_443_341
-  - GB_HTTP_443_338
+  - GB_VLESS_443_374
+  - GB_VLESS_443_440
+  - GB_VLESS_8443_923
+  - GB_SS_80_223
+  - GB_SS_80_210
+  - GB_SS_7001_290
+  - GB_VLESS_2053_722
+  - GB_SS_443_245
+  - GB_SS_443_257
+  - GB_HTTP_443_406
+  - GB_HTTP_9443_428
+  - GB_HTTP_443_412
+  - GB_HTTP_443_440
+  - GB_VLESS_20018_434
+  - GB_VLESS_443_490
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -116,16 +180,21 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_SS_443_173
-  - GB_SS_80_174
-  - GB_SS_443_216
-  - GB_VLESS_443_250
-  - GB_HTTP_443_338
-  - GB_HTTP_443_341
-  - GB_HTTP_443_343
-  - GB_HTTP_443_344
-  - GB_HTTP_443_348
-  - GB_SS_7001_710
+  - GB_SS_80_210
+  - GB_SS_80_223
+  - GB_SS_443_245
+  - GB_SS_443_257
+  - GB_SS_7001_290
+  - GB_VLESS_443_374
+  - GB_HTTP_443_406
+  - GB_HTTP_443_412
+  - GB_HTTP_9443_428
+  - GB_VLESS_20018_434
+  - GB_VLESS_443_440
+  - GB_HTTP_443_440
+  - GB_VLESS_443_490
+  - GB_VLESS_2053_722
+  - GB_VLESS_8443_923
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -137,16 +206,21 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_VLESS_443_250
-  - GB_SS_443_173
-  - GB_SS_80_174
-  - GB_SS_443_216
-  - GB_SS_7001_710
-  - GB_HTTP_443_344
-  - GB_HTTP_443_343
-  - GB_HTTP_443_348
-  - GB_HTTP_443_341
-  - GB_HTTP_443_338
+  - GB_VLESS_443_374
+  - GB_VLESS_443_440
+  - GB_VLESS_8443_923
+  - GB_SS_80_223
+  - GB_SS_80_210
+  - GB_SS_7001_290
+  - GB_VLESS_2053_722
+  - GB_SS_443_245
+  - GB_SS_443_257
+  - GB_HTTP_443_406
+  - GB_HTTP_9443_428
+  - GB_HTTP_443_412
+  - GB_HTTP_443_440
+  - GB_VLESS_20018_434
+  - GB_VLESS_443_490
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,9 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_HTTP_443_1031
+- name: IN_HTTP_9443_934
+  port: 9443
+  server: 165.231.253.58
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: IN
+- name: IN_HTTP_443_914
   port: 443
-  server: 165.231.253.210
+  server: 165.231.253.66
   skip-cert-verify: true
   tls: true
   type: http
@@ -25,7 +32,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_HTTP_443_1031
+  - IN_HTTP_9443_934
+  - IN_HTTP_443_914
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +46,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_HTTP_443_1031
+  - IN_HTTP_443_914
+  - IN_HTTP_9443_934
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +59,8 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_HTTP_443_1031
+  - IN_HTTP_9443_934
+  - IN_HTTP_443_914
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

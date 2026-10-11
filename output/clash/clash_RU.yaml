@@ -5,36 +5,176 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_HYSTERIA2_443_316
-  password: mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj
-  port: 443
-  server: 91.196.32.163
-  skip-cert-verify: true
-  sni: germany3.h2corp.local
-  tls: false
-  type: hysteria2
-  country: RU
-- name: RU_HTTP_8443_598
-  port: 8443
-  server: 87.242.85.187
+- name: RU_HTTP_1446_646
+  port: 1446
+  server: 46.29.166.134
   skip-cert-verify: true
   tls: true
   type: http
   country: RU
-- client-fingerprint: chrome
-  name: RU_VLESS_443_1028
-  network: ws
-  port: 443
-  server: 45.9.13.99
-  servername: x.m-90.xyz
+- alpn:
+  - http/1.1
+  - h2
+  client-fingerprint: firefox
+  name: RU_VLESS_2053_593
+  network: xhttp
+  port: 2053
+  server: 78.159.246.85
+  servername: fitindoor.net
   tls: true
   type: vless
   udp: true
-  uuid: 489f1717-d3c7-4940-ad68-bdbdbab857f4
+  uuid: 6a2aff19-ff1f-4a13-96c8-a4d8986a9699
+  xhttp-opts:
+    host: fitindoor.net
+    mode: auto
+    path: /api/v1/upload
+    x-padding-bytes: 100-1000
+  country: RU
+- name: RU_VLESS_2096_754
+  server: 80.87.194.252
+  port: 2096
+  type: vless
+  uuid: f13b36ac-3765-4458-8a4d-08575038c463
+  tls: true
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  servername: id.vk.com
+  client-fingerprint: edge
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: vless-grpc-reality
+  udp: true
+  country: RU
+- name: RU_VLESS_2096_772
+  server: 153.76.161.57
+  port: 2096
+  type: vless
+  uuid: 3fcec4e4-a674-44d2-8cae-c253cec43b9c
+  tls: true
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  servername: id.vk.com
+  client-fingerprint: random
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: vless-grpc-reality
+  udp: true
+  country: RU
+- name: RU_VLESS_2087_685
+  server: 194.226.121.119
+  port: 2087
+  type: vless
+  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
+  tls: true
+  reality-opts:
+    public-key: sXOLkj_L8EpGL0yZA9laLDaPfpwVEcBVHLSvunPVQwA
+    short-id: a644f94155c87551
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc
+  udp: true
+  country: RU
+- name: RU_VLESS_2096_1120
+  server: 153.76.161.59
+  port: 2096
+  type: vless
+  uuid: 3fcec4e4-a674-44d2-8cae-c253cec43b9c
+  tls: true
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  servername: id.vk.com
+  client-fingerprint: random
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: vless-grpc-reality
+  udp: true
+  country: RU
+- name: RU_VLESS_8468_553
+  server: 188.225.77.143
+  port: 8468
+  type: vless
+  uuid: 40c12ce6-b1c6-424e-862e-010a4585ff52
+  tls: true
+  reality-opts:
+    public-key: mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc
+    short-id: 6ba85179e30d4fc2
+  servername: ads.x5.ru
+  client-fingerprint: qq
+  network: xhttp
+  xhttp-opts:
+    path: /xh
+    host: ads.x5.ru
+    mode: auto
+  udp: true
+  country: RU
+- name: RU_VLESS_7444_587
+  server: 87.242.95.77
+  port: 7444
+  type: vless
+  uuid: edd934cd-f925-44ff-b849-037d99db458d
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: PZajgWT2dtEu0Avc2QWiZELK9wDQW9p9vvcckfQBfCE
+    short-id: 632cd48001bdb09a
+  servername: novosrv.raw-srv.org
+  client-fingerprint: random
+  network: tcp
+  udp: true
+  country: RU
+- name: RU_VLESS_443_1322
+  server: msk.ai-boost.tech
+  port: 443
+  type: vless
+  uuid: 513e7ad9-318b-4495-8f5b-d88c4302fdc1
+  tls: true
+  servername: msk.ai-boost.tech
+  client-fingerprint: android
+  network: ws
   ws-opts:
+    path: /3a7lzIHlgUuz2QnV1CaQ
     headers:
-      Host: x.m-90.xyz
-    path: t.me/TEAMNETGRATISCOL
+      Host: msk.ai-boost.tech
+  udp: true
+  country: RU
+- name: RU_VLESS_443_1744
+  server: 93.188.184.150
+  port: 443
+  type: vless
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  tls: true
+  reality-opts:
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
+  servername: ru-1-2.unturned-rust-dead.lol
+  client-fingerprint: random
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: ru-api
+  udp: true
+  country: RU
+- name: RU_VLESS_443_2203
+  server: ru-1-2.unturned-rust-dead.lol
+  port: 443
+  type: vless
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  tls: true
+  reality-opts:
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
+  servername: ru-1-2.unturned-rust-dead.lol
+  client-fingerprint: safari
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: ru-api
+  udp: true
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -49,9 +189,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_HYSTERIA2_443_316
-  - RU_HTTP_8443_598
-  - RU_VLESS_443_1028
+  - RU_HTTP_1446_646
+  - RU_VLESS_2053_593
+  - RU_VLESS_2096_754
+  - RU_VLESS_2096_772
+  - RU_VLESS_2087_685
+  - RU_VLESS_2096_1120
+  - RU_VLESS_8468_553
+  - RU_VLESS_7444_587
+  - RU_VLESS_443_1322
+  - RU_VLESS_443_1744
+  - RU_VLESS_443_2203
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,9 +212,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_443_316
-  - RU_HTTP_8443_598
-  - RU_VLESS_443_1028
+  - RU_VLESS_8468_553
+  - RU_VLESS_7444_587
+  - RU_VLESS_2053_593
+  - RU_HTTP_1446_646
+  - RU_VLESS_2087_685
+  - RU_VLESS_2096_754
+  - RU_VLESS_2096_772
+  - RU_VLESS_2096_1120
+  - RU_VLESS_443_1322
+  - RU_VLESS_443_1744
+  - RU_VLESS_443_2203
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -78,9 +234,17 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_HYSTERIA2_443_316
-  - RU_HTTP_8443_598
-  - RU_VLESS_443_1028
+  - RU_HTTP_1446_646
+  - RU_VLESS_2053_593
+  - RU_VLESS_2096_754
+  - RU_VLESS_2096_772
+  - RU_VLESS_2087_685
+  - RU_VLESS_2096_1120
+  - RU_VLESS_8468_553
+  - RU_VLESS_7444_587
+  - RU_VLESS_443_1322
+  - RU_VLESS_443_1744
+  - RU_VLESS_443_2203
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

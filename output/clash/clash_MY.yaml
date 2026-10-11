@@ -5,20 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- encryption: none
-  name: MY_VLESS_80_739
-  network: ws
-  port: 80
-  server: platform117.golnamakcert.top
-  tls: false
-  type: vless
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  ws-opts:
-    headers:
-      Host: platform117.halalkhor.info
-    path: /platform117
-  country: MY
-- name: MY_VLESS_80_737
+- name: MY_VLESS_80_719
   network: ws
   port: 80
   server: platform115.golnamakcert.top
@@ -31,31 +18,21 @@ proxies:
       Host: platform115.halalkhor.info
     path: /platform115
   country: MY
-- name: MY_VLESS_80_761
+- encryption: none
+  name: MY_VLESS_80_721
   network: ws
   port: 80
-  server: platform118.golnamakcert.top
+  server: platform102.golnamakcert.top
+  servername: platform102.golnamakcert.top
   tls: false
   type: vless
   uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
   ws-opts:
     headers:
-      Host: platform118.halalkhor.info
-    path: /platform118
+      Host: platform102.halalkhor.info
+    path: /platform102
   country: MY
-- name: MY_VLESS_80_725
-  network: ws
-  port: 80
-  server: platform106.golnamakcert.top
-  tls: false
-  type: vless
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  ws-opts:
-    headers:
-      Host: platform106.halalkhor.info
-    path: /platform106
-  country: MY
-- name: MY_VLESS_80_784
+- name: MY_VLESS_80_733
   network: ws
   port: 80
   server: platform109.golnamakcert.top
@@ -67,6 +44,97 @@ proxies:
     headers:
       Host: platform109.halalkhor.info
     path: /platform109
+  country: MY
+- name: MY_VLESS_80_788
+  network: ws
+  port: 80
+  server: platform118.golnamakcert.top
+  tls: false
+  type: vless
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  ws-opts:
+    headers:
+      Host: platform118.halalkhor.info
+    path: /platform118
+  country: MY
+- name: MY_VLESS_80_772
+  network: ws
+  port: 80
+  server: platform101.golnamakcert.top
+  tls: false
+  type: vless
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  ws-opts:
+    headers:
+      Host: platform101.halalkhor.info
+    path: /platform101
+  country: MY
+- name: MY_VLESS_80_750
+  network: ws
+  port: 80
+  server: platform106.golnamakcert.top
+  tls: false
+  type: vless
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  ws-opts:
+    headers:
+      Host: platform106.halalkhor.info
+    path: /platform106
+  country: MY
+- name: MY_VLESS_80_805
+  network: ws
+  port: 80
+  server: platform103.golnamakcert.top
+  servername: platform103.halalkhor.info
+  tls: false
+  type: vless
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  ws-opts:
+    headers:
+      Host: platform103.halalkhor.info
+    path: /platform103
+  country: MY
+- encryption: none
+  name: MY_VLESS_80_703
+  network: ws
+  port: 80
+  server: 45.195.69.230
+  tls: false
+  type: vless
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  ws-opts:
+    headers:
+      Host: platform103.halalkhor.info
+    path: /platform103
+  country: MY
+- client-fingerprint: chrome
+  encryption: none
+  name: MY_VLESS_443_926
+  network: ws
+  port: 443
+  server: 216.173.67.59
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+  country: MY
+- encryption: none
+  name: MY_VLESS_80_2556
+  network: ws
+  port: 80
+  server: platform117.golnamakcert.top
+  tls: false
+  type: vless
+  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
+  ws-opts:
+    headers:
+      Host: platform117.halalkhor.info
+    path: /platform117
   country: MY
 proxy-groups:
 - name: 🚀 节点选择
@@ -81,11 +149,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MY_VLESS_80_739
-  - MY_VLESS_80_737
-  - MY_VLESS_80_761
-  - MY_VLESS_80_725
-  - MY_VLESS_80_784
+  - MY_VLESS_80_719
+  - MY_VLESS_80_721
+  - MY_VLESS_80_733
+  - MY_VLESS_80_788
+  - MY_VLESS_80_772
+  - MY_VLESS_80_750
+  - MY_VLESS_80_805
+  - MY_VLESS_80_703
+  - MY_VLESS_443_926
+  - MY_VLESS_80_2556
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -98,11 +171,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MY_VLESS_80_725
-  - MY_VLESS_80_737
-  - MY_VLESS_80_739
-  - MY_VLESS_80_761
-  - MY_VLESS_80_784
+  - MY_VLESS_80_703
+  - MY_VLESS_80_719
+  - MY_VLESS_80_721
+  - MY_VLESS_80_733
+  - MY_VLESS_80_750
+  - MY_VLESS_80_772
+  - MY_VLESS_80_788
+  - MY_VLESS_80_805
+  - MY_VLESS_443_926
+  - MY_VLESS_80_2556
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -114,11 +192,16 @@ proxy-groups:
 - name: 🌍 MY
   type: url-test
   proxies:
-  - MY_VLESS_80_739
-  - MY_VLESS_80_737
-  - MY_VLESS_80_761
-  - MY_VLESS_80_725
-  - MY_VLESS_80_784
+  - MY_VLESS_80_719
+  - MY_VLESS_80_721
+  - MY_VLESS_80_733
+  - MY_VLESS_80_788
+  - MY_VLESS_80_772
+  - MY_VLESS_80_750
+  - MY_VLESS_80_805
+  - MY_VLESS_80_703
+  - MY_VLESS_443_926
+  - MY_VLESS_80_2556
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_HYSTERIA2_443_304
+- name: AE_HYSTERIA2_443_399
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -16,7 +16,7 @@ proxies:
   tls: false
   type: hysteria2
   country: AE
-- name: AE_VLESS_22573_574
+- name: AE_VLESS_22573_602
   network: ws
   port: 22573
   server: uae.unixzone.us
@@ -27,6 +27,109 @@ proxies:
     headers:
       Host: uae.unixzone.us
     path: /
+  country: AE
+- name: AE_VLESS_443_707
+  network: ws
+  port: 443
+  server: 89.125.139.115
+  servername: free.cndyw.ggff.net
+  tls: true
+  type: vless
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=random
+  country: AE
+- name: AE_VLESS_2053_1025
+  network: ws
+  port: 2053
+  server: 147.78.0.186
+  servername: free.cndyw.ggff.net
+  tls: true
+  type: vless
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=random
+  country: AE
+- name: AE_VLESS_8443_971
+  network: ws
+  port: 8443
+  server: 147.78.0.186
+  servername: free.cndyw.ggff.net
+  tls: true
+  type: vless
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=random
+  country: AE
+- name: AE_VLESS_443_446
+  server: de-gdd-1.unturned-rust-dead.lol
+  port: 443
+  type: vless
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  tls: true
+  reality-opts:
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
+  servername: de-gdd-1.unturned-rust-dead.lol
+  client-fingerprint: random
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: gdd-grpc
+  udp: true
+  country: AE
+- name: AE_VLESS_443_576
+  server: 31.59.210.37
+  port: 443
+  type: vless
+  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
+  tls: true
+  reality-opts:
+    public-key: 5k0dtOSzmshCubdYeKppsUdHU4i2ghaB9uSJSzGjHW4
+    short-id: 6dbf4931096f9890
+  servername: www.yandex.ru
+  client-fingerprint: safari
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: astracat
+  udp: true
+  country: AE
+- name: AE_VLESS_2088_778
+  server: 31.59.210.26
+  port: 2088
+  type: vless
+  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
+  tls: true
+  reality-opts:
+    public-key: Eq3c19Y0WGB1APWMADQB-oxCvZFSVFAQxG5L6b8EkUg
+    short-id: b1ad165f903c62fe
+  servername: www.yandex.ru
+  client-fingerprint: qq
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: astracat
+  udp: true
+  country: AE
+- name: AE_VLESS_443_948
+  type: vless
+  server: 103.71.23.244
+  port: 443
+  uuid: 817b61c8-9bf0-4365-8a52-e43dfad274a6
+  network: ws
+  tls: true
+  servername: shin-ra.ccwu.cc
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shin-ra.ccwu.cc
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -41,8 +144,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_HYSTERIA2_443_304
-  - AE_VLESS_22573_574
+  - AE_HYSTERIA2_443_399
+  - AE_VLESS_22573_602
+  - AE_VLESS_443_707
+  - AE_VLESS_2053_1025
+  - AE_VLESS_8443_971
+  - AE_VLESS_443_446
+  - AE_VLESS_443_576
+  - AE_VLESS_2088_778
+  - AE_VLESS_443_948
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -55,8 +165,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_304
-  - AE_VLESS_22573_574
+  - AE_HYSTERIA2_443_399
+  - AE_VLESS_443_446
+  - AE_VLESS_443_576
+  - AE_VLESS_22573_602
+  - AE_VLESS_443_707
+  - AE_VLESS_2088_778
+  - AE_VLESS_443_948
+  - AE_VLESS_8443_971
+  - AE_VLESS_2053_1025
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -68,8 +185,15 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_HYSTERIA2_443_304
-  - AE_VLESS_22573_574
+  - AE_HYSTERIA2_443_399
+  - AE_VLESS_22573_602
+  - AE_VLESS_443_707
+  - AE_VLESS_2053_1025
+  - AE_VLESS_8443_971
+  - AE_VLESS_443_446
+  - AE_VLESS_443_576
+  - AE_VLESS_2088_778
+  - AE_VLESS_443_948
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
