@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CH_HYSTERIA2_8443_445
+- name: CH_HYSTERIA2_8443_450
   password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
   port: 8443
   server: 82.38.64.237
@@ -15,18 +15,34 @@ proxies:
   type: hysteria2
   country: CH
 - cipher: chacha20-ietf-poly1305
-  name: CH_SS_8388_273
+  name: CH_SS_8388_339
   password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
   port: 8388
   server: 132.243.175.144
   type: ss
   country: CH
-- name: CH_HTTP_443_524
+- name: CH_HTTP_443_567
   port: 443
   server: 31.7.62.50
   skip-cert-verify: true
   tls: true
   type: http
+  country: CH
+- name: CH_VLESS_41826_648
+  server: lte.homyak.app
+  port: 41826
+  type: vless
+  uuid: 2eb3f6a0-df6e-49b6-994c-177acdd50a97
+  tls: true
+  servername: sweden.homyak.app
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: lte.homyak.app
+    v2ray-http-upgrade: true
+  udp: true
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -41,9 +57,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_HYSTERIA2_8443_445
-  - CH_SS_8388_273
-  - CH_HTTP_443_524
+  - CH_HYSTERIA2_8443_450
+  - CH_SS_8388_339
+  - CH_HTTP_443_567
+  - CH_VLESS_41826_648
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,9 +73,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_SS_8388_273
-  - CH_HYSTERIA2_8443_445
-  - CH_HTTP_443_524
+  - CH_SS_8388_339
+  - CH_HYSTERIA2_8443_450
+  - CH_HTTP_443_567
+  - CH_VLESS_41826_648
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,9 +88,10 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_HYSTERIA2_8443_445
-  - CH_SS_8388_273
-  - CH_HTTP_443_524
+  - CH_HYSTERIA2_8443_450
+  - CH_SS_8388_339
+  - CH_HTTP_443_567
+  - CH_VLESS_41826_648
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

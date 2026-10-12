@@ -5,74 +5,89 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: aes-256-gcm
-  name: CA_SS_8882_60
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.222.136.236
-  type: ss
+- name: CA_VMESS_18000_142
+  type: vmess
+  network: tcp
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5000_61
-  password: Y6R9pAtvxxzmGC
-  port: 5000
-  server: 51.222.200.165
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8118_131
-  password: cdBIDV42DCwnfIN
-  port: 8118
-  server: 51.79.85.185
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8882_86
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.79.49.116
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8119_124
-  password: cdBIDV42DCwnfIN
-  port: 8119
-  server: 51.79.64.198
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_445_406
+  name: CA_SS_445_97
   password: zDNVedRFPQexG9v
   port: 445
   server: 51.222.141.125
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5601_514
-  password: Y6R9pAtvxxzmGC
-  port: 5601
-  server: 51.222.155.113
+  name: CA_SS_8882_101
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.222.136.236
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_868
+  name: CA_SS_8119_143
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 51.79.64.198
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_8118_333
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 51.79.85.185
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_5000_461
+  password: Y6R9pAtvxxzmGC
+  port: 5000
+  server: 51.222.200.165
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_445_690
   password: zDNVedRFPQexG9v
   port: 445
   server: 51.222.12.127
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5003_986
+  name: CA_SS_8882_1845
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.79.49.116
+  type: ss
+  country: CA
+- name: CA_HTTP_9443_214
+  port: 9443
+  server: 198.44.157.19
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_5003_2849
   password: g5MeD6Ft3CWlJId
   port: 5003
   server: 51.222.155.32
   type: ss
   country: CA
-- name: CA_HTTP_443_126
+- name: CA_HTTP_443_260
   port: 443
-  server: 206.223.183.21
+  server: 206.223.161.47
   skip-cert-verify: true
   tls: true
+  type: http
+  country: CA
+- name: CA_HTTP_8080_201
+  port: 8080
+  server: 173.180.22.3
   type: http
   country: CA
 proxy-groups:
@@ -88,16 +103,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_SS_8882_60
-  - CA_SS_5000_61
-  - CA_SS_8118_131
-  - CA_SS_8882_86
-  - CA_SS_8119_124
-  - CA_SS_445_406
-  - CA_SS_5601_514
-  - CA_SS_445_868
-  - CA_SS_5003_986
-  - CA_HTTP_443_126
+  - CA_VMESS_18000_142
+  - CA_SS_445_97
+  - CA_SS_8882_101
+  - CA_SS_8119_143
+  - CA_SS_8118_333
+  - CA_SS_5000_461
+  - CA_SS_445_690
+  - CA_SS_8882_1845
+  - CA_HTTP_9443_214
+  - CA_SS_5003_2849
+  - CA_HTTP_443_260
+  - CA_HTTP_8080_201
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -110,16 +127,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_8882_60
-  - CA_SS_5000_61
-  - CA_SS_8882_86
-  - CA_SS_8119_124
-  - CA_HTTP_443_126
-  - CA_SS_8118_131
-  - CA_SS_445_406
-  - CA_SS_5601_514
-  - CA_SS_445_868
-  - CA_SS_5003_986
+  - CA_SS_445_97
+  - CA_SS_8882_101
+  - CA_VMESS_18000_142
+  - CA_SS_8119_143
+  - CA_HTTP_8080_201
+  - CA_HTTP_9443_214
+  - CA_HTTP_443_260
+  - CA_SS_8118_333
+  - CA_SS_5000_461
+  - CA_SS_445_690
+  - CA_SS_8882_1845
+  - CA_SS_5003_2849
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -131,16 +150,18 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_SS_8882_60
-  - CA_SS_5000_61
-  - CA_SS_8118_131
-  - CA_SS_8882_86
-  - CA_SS_8119_124
-  - CA_SS_445_406
-  - CA_SS_5601_514
-  - CA_SS_445_868
-  - CA_SS_5003_986
-  - CA_HTTP_443_126
+  - CA_VMESS_18000_142
+  - CA_SS_445_97
+  - CA_SS_8882_101
+  - CA_SS_8119_143
+  - CA_SS_8118_333
+  - CA_SS_5000_461
+  - CA_SS_445_690
+  - CA_SS_8882_1845
+  - CA_HTTP_9443_214
+  - CA_SS_5003_2849
+  - CA_HTTP_443_260
+  - CA_HTTP_8080_201
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

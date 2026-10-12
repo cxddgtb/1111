@@ -5,54 +5,64 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  encryption: none
-  name: EE_VLESS_8443_475
+- name: EE_VLESS_8443_432
+  type: vless
   network: tcp
-  port: 8443
   server: 94.183.170.135
+  port: 8443
+  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
   servername: estproxy4.lockdwn.com
   tls: true
-  type: vless
-  uuid: 06c4e938-2954-478f-a870-ca1b163e30e9
+  client-fingerprint: chrome
+  encryption: none
   ws-opts:
     path: /
   country: EE
-- alpn:
-  - http/1.1
-  encryption: none
-  name: EE_VLESS_8443_558
+- name: EE_VLESS_8443_602
+  type: vless
   network: ws
+  server: 194.26.141.148
   port: 8443
-  server: 77.72.85.246
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  servername: fdghyt.com
+  tls: true
+  client-fingerprint: firefox
+  ws-opts:
+    headers:
+      Host: fdghyt.com
+    path: /vpn-wss/fluxor/59011/
+  country: EE
+- name: EE_VLESS_8443_685
+  type: vless
+  network: ws
+  server: 77.72.85.247
+  port: 8443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
   servername: fdghyt.com
   skip-cert-verify: false
   tls: true
-  type: vless
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  encryption: none
   ws-opts:
     headers:
       Host: fdghyt.com
     path: /vpn-wss/fluxor/59011/
   country: EE
-- client-fingerprint: firefox
-  name: EE_VLESS_8443_585
+- name: EE_VLESS_2053_617
+  type: vless
   network: ws
-  port: 8443
-  server: 194.26.141.148
-  servername: fdghyt.com
+  server: 5.189.254.168
+  port: 2053
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  servername: cf3.schzyc.cc.cd
   tls: true
-  type: vless
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  client-fingerprint: chrome
   ws-opts:
     headers:
-      Host: fdghyt.com
-    path: /vpn-wss/fluxor/59011/
+      Host: cf3.schzyc.cc.cd
+    path: /proxyip=ProxyIP.CMLiussss.net
   country: EE
-- alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  name: EE_VLESS_8443_781
+- encryption: none
+  name: EE_VLESS_8443_783
   network: ws
   port: 8443
   server: ee10.zazazuza.ru
@@ -65,12 +75,32 @@ proxies:
       Host: fdghyt.com
     path: /vpn-wss/fluxor/59011/
   country: EE
-- name: EE_HTTP_9443_521
-  port: 9443
-  server: 95.153.31.66
-  skip-cert-verify: true
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  encryption: none
+  name: EE_VLESS_10443_460
+  network: xhttp
+  port: 10443
+  server: 117.55.202.200
+  servername: origin-nl2.liveflow.space
   tls: true
-  type: http
+  type: vless
+  udp: true
+  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
+  xhttp-opts:
+    host: origin-nl2.liveflow.space
+    mode: packet-up
+    path: /api/uploadFile/
+    sc-max-each-post-bytes: 262144
+    sc-min-posts-interval-ms: 80
+    x-padding-header: X-Cache
+    x-padding-key: _dc
+    x-padding-method: tokenish
+    x-padding-obfs-mode: true
+    x-padding-placement: queryInHeader
+  xudp: true
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -85,11 +115,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_8443_475
-  - EE_VLESS_8443_558
-  - EE_VLESS_8443_585
-  - EE_VLESS_8443_781
-  - EE_HTTP_9443_521
+  - EE_VLESS_8443_432
+  - EE_VLESS_8443_602
+  - EE_VLESS_8443_685
+  - EE_VLESS_2053_617
+  - EE_VLESS_8443_783
+  - EE_VLESS_10443_460
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -102,11 +133,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_8443_475
-  - EE_HTTP_9443_521
-  - EE_VLESS_8443_558
-  - EE_VLESS_8443_585
-  - EE_VLESS_8443_781
+  - EE_VLESS_8443_432
+  - EE_VLESS_10443_460
+  - EE_VLESS_8443_602
+  - EE_VLESS_2053_617
+  - EE_VLESS_8443_685
+  - EE_VLESS_8443_783
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -118,11 +150,12 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_8443_475
-  - EE_VLESS_8443_558
-  - EE_VLESS_8443_585
-  - EE_VLESS_8443_781
-  - EE_HTTP_9443_521
+  - EE_VLESS_8443_432
+  - EE_VLESS_8443_602
+  - EE_VLESS_8443_685
+  - EE_VLESS_2053_617
+  - EE_VLESS_8443_783
+  - EE_VLESS_10443_460
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

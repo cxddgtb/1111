@@ -5,37 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  name: PL_VLESS_2087_373
-  port: 2087
-  server: 95.85.253.241
-  servername: 95.85.253.241
-  skip-cert-verify: false
-  tls: true
+- name: PL_VLESS_8443_1681
   type: vless
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  country: PL
-- name: PL_VLESS_8443_1497
-  port: 8443
+  network: tcp
   server: pl.flen-vpn.xyz
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
   servername: pl.flen-vpn.xyz
   tls: true
+  encryption: none
+  country: PL
+- name: PL_VLESS_8443_414
   type: vless
+  network: tcp
+  server: 2.26.225.89
+  port: 8443
   uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  country: PL
-- name: PL_HTTP_443_534
-  port: 443
-  server: 37.120.156.18
-  skip-cert-verify: true
+  servername: pl.flen-vpn.xyz
+  skip-cert-verify: false
   tls: true
-  type: http
+  udp: true
+  tfo: false
   country: PL
-- name: PL_HTTP_443_538
+- name: PL_HTTP_443_569
   port: 443
   server: 37.120.156.34
   skip-cert-verify: true
   tls: true
   type: http
+  country: PL
+- name: PL_VLESS_443_421
+  server: 80.47.12.94
+  port: 443
+  type: vless
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  tls: true
+  reality-opts:
+    public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
+  servername: pl-1-1.unturned-rust-dead.lol
+  client-fingerprint: random
+  network: tcp
+  udp: true
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -50,10 +60,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_2087_373
-  - PL_VLESS_8443_1497
-  - PL_HTTP_443_534
-  - PL_HTTP_443_538
+  - PL_VLESS_8443_1681
+  - PL_VLESS_8443_414
+  - PL_HTTP_443_569
+  - PL_VLESS_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -66,10 +76,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_2087_373
-  - PL_HTTP_443_534
-  - PL_HTTP_443_538
-  - PL_VLESS_8443_1497
+  - PL_VLESS_8443_414
+  - PL_VLESS_443_421
+  - PL_HTTP_443_569
+  - PL_VLESS_8443_1681
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,10 +91,10 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_2087_373
-  - PL_VLESS_8443_1497
-  - PL_HTTP_443_534
-  - PL_HTTP_443_538
+  - PL_VLESS_8443_1681
+  - PL_VLESS_8443_414
+  - PL_HTTP_443_569
+  - PL_VLESS_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

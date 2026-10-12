@@ -5,13 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IM_VLESS_8880_129
-  network: ws
-  port: 8880
-  server: 185.162.229.30
-  tls: false
+- name: IM_VLESS_8880_81
   type: vless
+  network: ws
+  server: 185.162.229.30
+  port: 8880
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: false
   ws-opts:
     headers:
       Host: vms.lifetime61.workers.dev
@@ -30,7 +30,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IM_VLESS_8880_129
+  - IM_VLESS_8880_81
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +43,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IM_VLESS_8880_129
+  - IM_VLESS_8880_81
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +55,7 @@ proxy-groups:
 - name: 🌍 IM
   type: url-test
   proxies:
-  - IM_VLESS_8880_129
+  - IM_VLESS_8880_81
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
