@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_2083_114
+- name: SG_VLESS_2083_60
   type: vless
   network: ws
   server: 27.50.49.154
@@ -19,17 +19,20 @@ proxies:
       Host: proxy-34l.pages.dev
     path: /?TELEGRAM--MARAMBASHI--MARAMBASHI?ed=512
   country: SG
-- name: SG_VMESS_18000_407
-  type: vmess
-  network: tcp
-  server: 149.88.23.202
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+- name: SG_VLESS_443_78
+  type: vless
+  network: ws
+  server: 27.50.48.8
+  port: 443
+  uuid: c98a16e4-0dc5-42f0-b3db-30f04525c123
+  servername: vless2-8vx.pages.dev
+  tls: true
+  ws-opts:
+    headers:
+      Host: vless2-8vx.pages.dev
+    path: /fp=chrome
   country: SG
-- name: SG_VMESS_18000_396
+- name: SG_VMESS_18000_350
   type: vmess
   network: tcp
   server: 149.88.23.207
@@ -39,7 +42,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: SG
-- name: SG_VLESS_2096_796
+- name: SG_VLESS_2096_689
   type: vless
   network: ws
   server: 139.162.27.96
@@ -56,170 +59,178 @@ proxies:
       Host: free-server.techsonic.dev
     path: /free-server.techsonic.dev
   country: SG
-- encryption: none
-  name: SG_VLESS_16263_402
+- name: SG_VMESS_18000_340
+  type: vmess
   network: tcp
-  port: 16263
-  server: 47.237.74.17
-  tls: false
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: SG_VLESS_16263_343
   type: vless
+  server: 47.237.74.17
+  port: 16263
   uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
   country: SG
-- name: SG_TROJAN_443_605
-  password: UX82473651
-  port: 443
+- name: SG_TROJAN_443_550
+  type: trojan
   server: simple-molly.rooster465.autos
+  port: 443
+  password: UX82473651
   sni: simple-molly.rooster465.autos
-  type: trojan
+  network: tcp
   country: SG
-- name: SG_TROJAN_443_606
-  password: UX82473651
-  port: 443
-  server: intense-wildcat.rooster465.autos
-  sni: intense-wildcat.rooster465.autos
+- name: SG_TROJAN_443_520
   type: trojan
-  country: SG
-- name: SG_TROJAN_443_610
-  password: UX82473651
-  port: 443
-  server: joint-ewe.rooster465.autos
-  sni: joint-ewe.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_619
-  password: UX82473651
-  port: 443
   server: inspired-hound.rooster465.autos
+  port: 443
+  password: UX82473651
   sni: inspired-hound.rooster465.autos
-  type: trojan
+  network: tcp
   country: SG
-- name: SG_TROJAN_443_616
-  password: UX82473651
-  port: 443
-  server: brave-tomcat.rooster465.autos
-  sni: brave-tomcat.rooster465.autos
+- name: SG_TROJAN_443_538
   type: trojan
-  country: SG
-- name: SG_TROJAN_443_609
-  password: UX82473651
+  server: intense-wildcat.rooster465.autos
   port: 443
-  server: rested-seahorse.rooster465.autos
-  sni: rested-seahorse.rooster465.autos
+  password: UX82473651
+  sni: intense-wildcat.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_523
   type: trojan
-  country: SG
-- name: SG_TROJAN_443_599
-  password: UX82473651
+  server: joint-ewe.rooster465.autos
   port: 443
-  server: present-ram.rooster465.autos
-  skip-cert-verify: true
-  sni: present-ram.rooster465.autos
+  password: UX82473651
+  sni: joint-ewe.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_522
   type: trojan
-  country: SG
-- name: SG_TROJAN_443_702
-  password: UX82473651
-  port: 443
   server: fond-mammoth.rooster465.autos
+  port: 443
+  password: UX82473651
   sni: fond-mammoth.rooster465.autos
-  type: trojan
+  network: tcp
   country: SG
-- name: SG_TROJAN_443_667
-  password: UX82473651
-  port: 443
-  server: musical-mouse.rooster465.autos
-  sni: musical-mouse.rooster465.autos
+- name: SG_TROJAN_443_540
   type: trojan
-  country: SG
-- name: SG_TROJAN_443_796
-  password: UX82473651
-  port: 443
-  server: moral-basilisk.rooster465.autos
-  sni: moral-basilisk.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_612
-  password: UX82473651
-  port: 443
-  server: real-werewolf.rooster465.autos
-  skip-cert-verify: true
-  sni: real-werewolf.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_635
-  password: UX82473651
-  port: 443
-  server: inviting-ferret.rooster465.autos
-  sni: inviting-ferret.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_602
-  password: UX82473651
-  port: 443
-  server: holy-lamb.rooster465.autos
-  sni: holy-lamb.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_579
-  password: UX82473651
-  port: 443
-  server: 18.143.92.167
-  skip-cert-verify: false
-  sni: glowing-marmoset.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_822
-  password: UX82473651
-  port: 443
-  server: real-cardinal.rooster465.autos
-  sni: real-cardinal.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_1171
-  password: UX82473651
-  port: 443
   server: ace-liger.rooster465.autos
-  sni: ace-liger.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_1771
+  port: 443
   password: UX82473651
-  port: 443
-  server: pet-antelope.rooster465.autos
-  sni: pet-antelope.rooster465.autos
+  sni: ace-liger.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_544
   type: trojan
-  country: SG
-- name: SG_HTTP_443_1082
+  server: rested-seahorse.rooster465.autos
   port: 443
-  server: 154.26.139.24
+  password: UX82473651
+  sni: rested-seahorse.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_534
+  type: trojan
+  server: present-ram.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: present-ram.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_538_2
+  type: trojan
+  server: holy-lamb.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: holy-lamb.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_534_2
+  type: trojan
+  server: real-cardinal.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: real-cardinal.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_527
+  type: trojan
+  server: 18.143.92.167
+  port: 443
+  password: UX82473651
+  sni: glowing-marmoset.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_690
+  type: trojan
+  server: musical-mouse.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: musical-mouse.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_573
+  type: trojan
+  server: pet-antelope.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: pet-antelope.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_748
+  type: trojan
+  server: moral-basilisk.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: moral-basilisk.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_937
+  type: trojan
+  server: brave-tomcat.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: brave-tomcat.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_976
+  type: trojan
+  server: inviting-ferret.rooster465.autos
+  port: 443
+  password: UX82473651
+  sni: inviting-ferret.rooster465.autos
+  network: tcp
+  country: SG
+- name: SG_TROJAN_443_769
+  type: trojan
+  server: 3.1.252.137
+  port: 443
+  password: UX82473651
+  sni: brave-tomcat.rooster465.autos
   skip-cert-verify: true
+  udp: true
+  country: SG
+- name: SG_VLESS_443_2524
+  type: vless
+  server: 103.195.190.94
+  port: 443
+  uuid: b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+  network: ws
+  servername: rnxq-1lpi3m.linmeisoft.com
   tls: true
-  type: http
-  country: SG
-- name: SG_ANYTLS_1001_988
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  port: 1001
-  server: ce0te2m4.zf-mix.9999231.xyz
+  ws-opts:
+    path: /b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+    headers:
+      Host: rnxq-1lpi3m.linmeisoft.com
   skip-cert-verify: true
-  sni: tw01.9999231.xyz
-  type: anytls
   udp: true
-  country: SG
-- name: SG_ANYTLS_1010_819
-  server: tfk1yyx4.zf-mix.9999231.xyz
-  port: 1010
-  type: anytls
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  udp: true
-  sni: tr-house.9999231.xyz
-  skip-cert-verify: true
-  country: SG
-- name: SG_ANYTLS_1010_1430
-  server: 8l3bf3ca.zf-mix.9999231.xyz
-  port: 1010
-  type: anytls
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  udp: true
-  sni: tr-house.9999231.xyz
-  skip-cert-verify: true
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -234,32 +245,30 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_2083_114
-  - SG_VMESS_18000_407
-  - SG_VMESS_18000_396
-  - SG_VLESS_2096_796
-  - SG_VLESS_16263_402
-  - SG_TROJAN_443_605
-  - SG_TROJAN_443_606
-  - SG_TROJAN_443_610
-  - SG_TROJAN_443_619
-  - SG_TROJAN_443_616
-  - SG_TROJAN_443_609
-  - SG_TROJAN_443_599
-  - SG_TROJAN_443_702
-  - SG_TROJAN_443_667
-  - SG_TROJAN_443_796
-  - SG_TROJAN_443_612
-  - SG_TROJAN_443_635
-  - SG_TROJAN_443_602
-  - SG_TROJAN_443_579
-  - SG_TROJAN_443_822
-  - SG_TROJAN_443_1171
-  - SG_TROJAN_443_1771
-  - SG_HTTP_443_1082
-  - SG_ANYTLS_1001_988
-  - SG_ANYTLS_1010_819
-  - SG_ANYTLS_1010_1430
+  - SG_VLESS_2083_60
+  - SG_VLESS_443_78
+  - SG_VMESS_18000_350
+  - SG_VLESS_2096_689
+  - SG_VMESS_18000_340
+  - SG_VLESS_16263_343
+  - SG_TROJAN_443_550
+  - SG_TROJAN_443_520
+  - SG_TROJAN_443_538
+  - SG_TROJAN_443_523
+  - SG_TROJAN_443_522
+  - SG_TROJAN_443_540
+  - SG_TROJAN_443_544
+  - SG_TROJAN_443_534
+  - SG_TROJAN_443_538_2
+  - SG_TROJAN_443_534_2
+  - SG_TROJAN_443_527
+  - SG_TROJAN_443_690
+  - SG_TROJAN_443_573
+  - SG_TROJAN_443_748
+  - SG_TROJAN_443_937
+  - SG_TROJAN_443_976
+  - SG_TROJAN_443_769
+  - SG_VLESS_443_2524
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -272,32 +281,30 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VLESS_2083_114
-  - SG_VMESS_18000_396
-  - SG_VLESS_16263_402
-  - SG_VMESS_18000_407
-  - SG_TROJAN_443_579
-  - SG_TROJAN_443_599
-  - SG_TROJAN_443_602
-  - SG_TROJAN_443_605
-  - SG_TROJAN_443_606
-  - SG_TROJAN_443_609
-  - SG_TROJAN_443_610
-  - SG_TROJAN_443_612
-  - SG_TROJAN_443_616
-  - SG_TROJAN_443_619
-  - SG_TROJAN_443_635
-  - SG_TROJAN_443_667
-  - SG_TROJAN_443_702
-  - SG_VLESS_2096_796
-  - SG_TROJAN_443_796
-  - SG_ANYTLS_1010_819
-  - SG_TROJAN_443_822
-  - SG_ANYTLS_1001_988
-  - SG_HTTP_443_1082
-  - SG_TROJAN_443_1171
-  - SG_ANYTLS_1010_1430
-  - SG_TROJAN_443_1771
+  - SG_VLESS_2083_60
+  - SG_VLESS_443_78
+  - SG_VMESS_18000_340
+  - SG_VLESS_16263_343
+  - SG_VMESS_18000_350
+  - SG_TROJAN_443_520
+  - SG_TROJAN_443_522
+  - SG_TROJAN_443_523
+  - SG_TROJAN_443_527
+  - SG_TROJAN_443_534
+  - SG_TROJAN_443_534_2
+  - SG_TROJAN_443_538
+  - SG_TROJAN_443_538_2
+  - SG_TROJAN_443_540
+  - SG_TROJAN_443_544
+  - SG_TROJAN_443_550
+  - SG_TROJAN_443_573
+  - SG_VLESS_2096_689
+  - SG_TROJAN_443_690
+  - SG_TROJAN_443_748
+  - SG_TROJAN_443_769
+  - SG_TROJAN_443_937
+  - SG_TROJAN_443_976
+  - SG_VLESS_443_2524
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -309,32 +316,30 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_2083_114
-  - SG_VMESS_18000_407
-  - SG_VMESS_18000_396
-  - SG_VLESS_2096_796
-  - SG_VLESS_16263_402
-  - SG_TROJAN_443_605
-  - SG_TROJAN_443_606
-  - SG_TROJAN_443_610
-  - SG_TROJAN_443_619
-  - SG_TROJAN_443_616
-  - SG_TROJAN_443_609
-  - SG_TROJAN_443_599
-  - SG_TROJAN_443_702
-  - SG_TROJAN_443_667
-  - SG_TROJAN_443_796
-  - SG_TROJAN_443_612
-  - SG_TROJAN_443_635
-  - SG_TROJAN_443_602
-  - SG_TROJAN_443_579
-  - SG_TROJAN_443_822
-  - SG_TROJAN_443_1171
-  - SG_TROJAN_443_1771
-  - SG_HTTP_443_1082
-  - SG_ANYTLS_1001_988
-  - SG_ANYTLS_1010_819
-  - SG_ANYTLS_1010_1430
+  - SG_VLESS_2083_60
+  - SG_VLESS_443_78
+  - SG_VMESS_18000_350
+  - SG_VLESS_2096_689
+  - SG_VMESS_18000_340
+  - SG_VLESS_16263_343
+  - SG_TROJAN_443_550
+  - SG_TROJAN_443_520
+  - SG_TROJAN_443_538
+  - SG_TROJAN_443_523
+  - SG_TROJAN_443_522
+  - SG_TROJAN_443_540
+  - SG_TROJAN_443_544
+  - SG_TROJAN_443_534
+  - SG_TROJAN_443_538_2
+  - SG_TROJAN_443_534_2
+  - SG_TROJAN_443_527
+  - SG_TROJAN_443_690
+  - SG_TROJAN_443_573
+  - SG_TROJAN_443_748
+  - SG_TROJAN_443_937
+  - SG_TROJAN_443_976
+  - SG_TROJAN_443_769
+  - SG_VLESS_443_2524
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

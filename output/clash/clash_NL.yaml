@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_TROJAN_443_520
+- name: NL_TROJAN_443_794
   type: trojan
   network: ws
   server: 45.87.41.18
@@ -18,59 +18,61 @@ proxies:
       Host: www.calmlunch.com
     path: /assignment
   country: NL
-- name: NL_VLESS_2053_613
-  type: vless
-  network: ws
-  server: 89.125.96.89
-  port: 2053
-  uuid: 6c713691-3ca2-0008-ad25-113d1bed6b03
-  servername: wss.zazazuza.ru
-  skip-cert-verify: false
+- name: NL_VMESS_1234_427
+  type: vmess
+  network: tcp
+  server: 159.223.13.109
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
   tls: true
-  udp: true
-  tfo: false
+  alterId: 0
+  cipher: aes-128-gcm
+  country: NL
+- name: NL_VLESS_443_25
+  type: vless
+  server: 188.164.248.216
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  network: ws
+  tls: true
+  servername: ccc.010304.xyz
   client-fingerprint: chrome
   ws-opts:
+    path: /fp=chrome
     headers:
-      Host: wss.zazazuza.ru
-    path: /vpn-wss/fluxor/59011/
+      Host: ccc.010304.xyz
+  country: NL
+- name: NL_VLESS_443_612
+  type: vless
+  server: 103.137.250.68
+  port: 443
+  uuid: b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+  network: ws
+  servername: rnxq-1lpi3m.linmeisoft.com
+  tls: true
+  ws-opts:
+    path: /b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+    headers:
+      Host: rnxq-1lpi3m.linmeisoft.com
+  skip-cert-verify: true
+  udp: true
   country: NL
 - cipher: chacha20-ietf-poly1305
-  name: NL_SS_443_323
+  name: NL_SS_443_315
   password: y7KeRTzmH0vXT2kp
   port: 443
   server: c3.nastuh.link
   type: ss
   country: NL
-- alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  encryption: none
-  name: NL_VLESS_10443_449
-  network: xhttp
-  port: 10443
-  server: 37.49.229.6
-  servername: n3.vimeostream.online
+- name: NL_HTTP_9002_598
+  port: 9002
+  server: 84.17.47.126
+  skip-cert-verify: true
   tls: true
-  type: vless
-  udp: true
-  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
-  xhttp-opts:
-    host: n3.vimeostream.online
-    mode: packet-up
-    path: /api/uploadFile/
-    sc-max-each-post-bytes: 262144
-    sc-min-posts-interval-ms: 80
-    x-padding-header: X-Cache
-    x-padding-key: _dc
-    x-padding-method: tokenish
-    x-padding-obfs-mode: true
-    x-padding-placement: queryInHeader
-  xudp: true
+  type: http
   country: NL
-- name: NL_HTTP_9002_508
-  password: None
+- name: NL_HTTP_9002_599
   port: 9002
   server: 84.17.47.125
   skip-cert-verify: true
@@ -78,8 +80,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_486
-  password: None
+- name: NL_HTTP_9002_627
   port: 9002
   server: 84.17.47.148
   skip-cert-verify: true
@@ -87,7 +88,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_498
+- name: NL_HTTP_9002_643
   port: 9002
   server: 84.17.47.149
   skip-cert-verify: true
@@ -95,95 +96,64 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_496
-  password: 'null'
+- name: NL_HTTP_443_611
+  port: 443
+  server: 185.246.153.42
+  skip-cert-verify: true
+  sni: 482c8436a1f7c908b48a1757abb5dd79-3791fb4df2db250b.apache-iv.com
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_9443_585
+  port: 9443
+  server: 149.36.51.157
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_9002_581
+  port: 9002
+  server: 84.17.47.123
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_443_606
+  port: 443
+  server: 185.246.153.28
+  skip-cert-verify: true
+  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_9443_592
+  port: 9443
+  server: 161.129.60.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_443_749
+  port: 443
+  server: 5.2.73.112
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: NL
+- name: NL_HTTP_9002_600
   port: 9002
   server: 84.17.47.146
   skip-cert-verify: true
   tls: true
   type: http
-  username: 'null'
+  udp: true
   country: NL
-- name: NL_HTTP_443_467
-  password: None
-  port: 443
-  server: 5.255.118.82
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_21384_461
-  port: 21384
-  server: 51.158.204.46
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: NL
-- name: NL_HTTP_9002_509
+- name: NL_HTTP_9002_624
   port: 9002
   server: 84.17.47.150
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-  country: NL
-- name: NL_VLESS_8443_370
-  server: 37.49.229.6
-  port: 8443
-  type: vless
-  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
-  tls: true
-  servername: n3.vimeostream.online
-  client-fingerprint: firefox
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: nl3grpc
-  udp: true
-  country: NL
-- name: NL_VLESS_443_393
-  server: nl-s-1.pythonmakemigreat.wiki
-  port: 443
-  type: vless
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZqVz1kWNxh_5zQ5PPkoPHoaXQOvppM0ZyIo8uKp2dCg
-    short-id: 78f97d82e16aaad6
-  servername: nl-s-1.pythonmakemigreat.wiki
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
-  country: NL
-- name: NL_VLESS_443_471
-  server: w205.luxcloud.space
-  port: 443
-  type: vless
-  uuid: fc87e0d6-0f6a-423a-828e-1fed7e7ef29c
-  tls: true
-  alpn:
-  - h2
-  - http/1.1
-  flow: xtls-rprx-vision
-  servername: w205.luxcloud.space
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-  country: NL
-- name: NL_VLESS_443_808
-  server: c20s5.portablesubmarines.com
-  port: 443
-  type: vless
-  uuid: 85fe968d-fbb5-40dc-8422-30635eccb149
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
-    short-id: 051f20c2344a2dfd
-  servername: portal.citygrainla.com
-  client-fingerprint: chrome
-  network: tcp
   udp: true
   country: NL
 proxy-groups:
@@ -199,21 +169,23 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_TROJAN_443_520
-  - NL_VLESS_2053_613
-  - NL_SS_443_323
-  - NL_VLESS_10443_449
-  - NL_HTTP_9002_508
-  - NL_HTTP_9002_486
-  - NL_HTTP_9002_498
-  - NL_HTTP_9002_496
-  - NL_HTTP_443_467
-  - NL_HTTP_21384_461
-  - NL_HTTP_9002_509
-  - NL_VLESS_8443_370
-  - NL_VLESS_443_393
-  - NL_VLESS_443_471
-  - NL_VLESS_443_808
+  - NL_TROJAN_443_794
+  - NL_VMESS_1234_427
+  - NL_VLESS_443_25
+  - NL_VLESS_443_612
+  - NL_SS_443_315
+  - NL_HTTP_9002_598
+  - NL_HTTP_9002_599
+  - NL_HTTP_9002_627
+  - NL_HTTP_9002_643
+  - NL_HTTP_443_611
+  - NL_HTTP_9443_585
+  - NL_HTTP_9002_581
+  - NL_HTTP_443_606
+  - NL_HTTP_9443_592
+  - NL_HTTP_443_749
+  - NL_HTTP_9002_600
+  - NL_HTTP_9002_624
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -226,21 +198,23 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_SS_443_323
-  - NL_VLESS_8443_370
-  - NL_VLESS_443_393
-  - NL_VLESS_10443_449
-  - NL_HTTP_21384_461
-  - NL_HTTP_443_467
-  - NL_VLESS_443_471
-  - NL_HTTP_9002_486
-  - NL_HTTP_9002_496
-  - NL_HTTP_9002_498
-  - NL_HTTP_9002_508
-  - NL_HTTP_9002_509
-  - NL_TROJAN_443_520
-  - NL_VLESS_2053_613
-  - NL_VLESS_443_808
+  - NL_VLESS_443_25
+  - NL_SS_443_315
+  - NL_VMESS_1234_427
+  - NL_HTTP_9002_581
+  - NL_HTTP_9443_585
+  - NL_HTTP_9443_592
+  - NL_HTTP_9002_598
+  - NL_HTTP_9002_599
+  - NL_HTTP_9002_600
+  - NL_HTTP_443_606
+  - NL_HTTP_443_611
+  - NL_VLESS_443_612
+  - NL_HTTP_9002_624
+  - NL_HTTP_9002_627
+  - NL_HTTP_9002_643
+  - NL_HTTP_443_749
+  - NL_TROJAN_443_794
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -252,21 +226,23 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_TROJAN_443_520
-  - NL_VLESS_2053_613
-  - NL_SS_443_323
-  - NL_VLESS_10443_449
-  - NL_HTTP_9002_508
-  - NL_HTTP_9002_486
-  - NL_HTTP_9002_498
-  - NL_HTTP_9002_496
-  - NL_HTTP_443_467
-  - NL_HTTP_21384_461
-  - NL_HTTP_9002_509
-  - NL_VLESS_8443_370
-  - NL_VLESS_443_393
-  - NL_VLESS_443_471
-  - NL_VLESS_443_808
+  - NL_TROJAN_443_794
+  - NL_VMESS_1234_427
+  - NL_VLESS_443_25
+  - NL_VLESS_443_612
+  - NL_SS_443_315
+  - NL_HTTP_9002_598
+  - NL_HTTP_9002_599
+  - NL_HTTP_9002_627
+  - NL_HTTP_9002_643
+  - NL_HTTP_443_611
+  - NL_HTTP_9443_585
+  - NL_HTTP_9002_581
+  - NL_HTTP_443_606
+  - NL_HTTP_9443_592
+  - NL_HTTP_443_749
+  - NL_HTTP_9002_600
+  - NL_HTTP_9002_624
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

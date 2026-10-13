@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_VLESS_8443_432
+- name: EE_VLESS_8443_520
   type: vless
   network: tcp
   server: 94.183.170.135
@@ -17,90 +17,6 @@ proxies:
   encryption: none
   ws-opts:
     path: /
-  country: EE
-- name: EE_VLESS_8443_602
-  type: vless
-  network: ws
-  server: 194.26.141.148
-  port: 8443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  servername: fdghyt.com
-  tls: true
-  client-fingerprint: firefox
-  ws-opts:
-    headers:
-      Host: fdghyt.com
-    path: /vpn-wss/fluxor/59011/
-  country: EE
-- name: EE_VLESS_8443_685
-  type: vless
-  network: ws
-  server: 77.72.85.247
-  port: 8443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  servername: fdghyt.com
-  skip-cert-verify: false
-  tls: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: fdghyt.com
-    path: /vpn-wss/fluxor/59011/
-  country: EE
-- name: EE_VLESS_2053_617
-  type: vless
-  network: ws
-  server: 5.189.254.168
-  port: 2053
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-  servername: cf3.schzyc.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: cf3.schzyc.cc.cd
-    path: /proxyip=ProxyIP.CMLiussss.net
-  country: EE
-- encryption: none
-  name: EE_VLESS_8443_783
-  network: ws
-  port: 8443
-  server: ee10.zazazuza.ru
-  servername: fdghyt.com
-  tls: true
-  type: vless
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  ws-opts:
-    headers:
-      Host: fdghyt.com
-    path: /vpn-wss/fluxor/59011/
-  country: EE
-- alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  encryption: none
-  name: EE_VLESS_10443_460
-  network: xhttp
-  port: 10443
-  server: 117.55.202.200
-  servername: origin-nl2.liveflow.space
-  tls: true
-  type: vless
-  udp: true
-  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
-  xhttp-opts:
-    host: origin-nl2.liveflow.space
-    mode: packet-up
-    path: /api/uploadFile/
-    sc-max-each-post-bytes: 262144
-    sc-min-posts-interval-ms: 80
-    x-padding-header: X-Cache
-    x-padding-key: _dc
-    x-padding-method: tokenish
-    x-padding-obfs-mode: true
-    x-padding-placement: queryInHeader
-  xudp: true
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -115,12 +31,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_8443_432
-  - EE_VLESS_8443_602
-  - EE_VLESS_8443_685
-  - EE_VLESS_2053_617
-  - EE_VLESS_8443_783
-  - EE_VLESS_10443_460
+  - EE_VLESS_8443_520
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -133,12 +44,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_8443_432
-  - EE_VLESS_10443_460
-  - EE_VLESS_8443_602
-  - EE_VLESS_2053_617
-  - EE_VLESS_8443_685
-  - EE_VLESS_8443_783
+  - EE_VLESS_8443_520
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -150,12 +56,7 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_8443_432
-  - EE_VLESS_8443_602
-  - EE_VLESS_8443_685
-  - EE_VLESS_2053_617
-  - EE_VLESS_8443_783
-  - EE_VLESS_10443_460
+  - EE_VLESS_8443_520
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

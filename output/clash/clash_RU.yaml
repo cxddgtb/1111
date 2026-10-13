@@ -5,115 +5,53 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_771
+- name: RU_VLESS_443_847
   type: vless
   network: ws
   server: 91.215.43.248
   port: 443
   uuid: a5893c8b-28a2-4947-9a1c-708db25506c3
   servername: my.kempekl.online
-  skip-cert-verify: false
   tls: true
-  udp: true
-  tfo: false
   client-fingerprint: chrome
+  encryption: none
   ws-opts:
     headers:
       Host: my.kempekl.online
     path: /gateway/v1/ws/a64eb463966ba9c4bfd628f1de0362ae
   country: RU
-- name: RU_HYSTERIA2_11592_664
-  obfs: salamander
-  obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
-  password: 033dc6b532
-  port: 11592
-  server: 77.232.139.128
-  skip-cert-verify: false
-  sni: srv-8718e6.frd21.ru
-  tls: false
-  type: hysteria2
-  country: RU
-- name: RU_HYSTERIA2_443_1274
-  password: f317b5d6-d399-4d3d-a051-89d674ae953c
+- name: RU_VLESS_443_686
+  type: vless
+  network: tcp
+  server: 77.110.105.122
   port: 443
-  server: 94.198.54.132
-  skip-cert-verify: true
-  sni: msk.frkn.org
+  uuid: 019fbe0f-2d9f-4b89-9f81-e1e36129892a
+  servername: co-pl.speedtec.ru
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: RU
+- name: RU_HYSTERIA2_2053_636
+  password: 7ab3c77e-8fcc-4848-918f-cae3d4eac794
+  port: 2053
+  server: 194.87.118.184
+  sni: match-stream.lovkisport.blog
   tls: false
   type: hysteria2
   country: RU
 - alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  encryption: none
-  name: RU_VLESS_2053_1150
-  network: xhttp
-  port: 2053
-  server: fitindoor.net
-  servername: fitindoor.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  xhttp-opts:
-    host: fitindoor.net
-    mode: auto
-    path: /api/v1/upload
-    reuse-settings:
-      c-max-reuse-times: 64-128
-      max-concurrency: 16-32
-      max-connections: '0'
-    sc-max-each-post-bytes: 1000000
-    sc-min-posts-interval-ms: 30
-    x-padding-bytes: 100-1000
-  xudp: true
-  country: RU
-- client-fingerprint: firefox
-  encryption: none
-  name: RU_VLESS_8443_907
-  network: xhttp
-  port: 8443
-  server: 78.159.246.179
-  servername: randomquaint.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6a2aff19-ff1f-4a13-96c8-a4d8986a9699
-  xhttp-opts:
-    host: randomquaint.net
-    path: /api/v1/upload
-    reuse-settings:
-      c-max-reuse-times: 64-128
-      h-keep-alive-period: 0
-      h-max-request-times: '0'
-      h-max-reusable-secs: '0'
-      max-concurrency: 16-32
-      max-connections: '0'
-    session-length: '0'
-    x-padding-bytes: 100-1000
-    x-padding-obfs-mode: false
-  xudp: true
-  country: RU
-- name: RU_VLESS_2053_2032
-  server: 78.159.246.179
-  port: 2053
-  type: vless
-  uuid: 6a2aff19-ff1f-4a13-96c8-a4d8986a9699
-  tls: true
-  alpn:
-  - http/1.1
-  - h2
-  servername: randomquaint.net
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /api/v1/upload
-    host: randomquaint.net
-    mode: auto
-    x-padding-bytes: 100-1000
-    x-padding-obfs-mode: false
-  udp: true
+  - h3
+  name: RU_HYSTERIA2_28152_1253
+  password: 8bd04756-3beb-4348-82c9-d35453df50ce
+  port: 28152
+  server: alb1337.zaebalsanoproxyklinus.lol
+  skip-cert-verify: false
+  sni: alb1337.zaebalsanoproxyklinus.lol
+  tls: false
+  type: hysteria2
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -128,12 +66,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_771
-  - RU_HYSTERIA2_11592_664
-  - RU_HYSTERIA2_443_1274
-  - RU_VLESS_2053_1150
-  - RU_VLESS_8443_907
-  - RU_VLESS_2053_2032
+  - RU_VLESS_443_847
+  - RU_VLESS_443_686
+  - RU_HYSTERIA2_2053_636
+  - RU_HYSTERIA2_28152_1253
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -146,12 +82,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_11592_664
-  - RU_VLESS_443_771
-  - RU_VLESS_8443_907
-  - RU_VLESS_2053_1150
-  - RU_HYSTERIA2_443_1274
-  - RU_VLESS_2053_2032
+  - RU_HYSTERIA2_2053_636
+  - RU_VLESS_443_686
+  - RU_VLESS_443_847
+  - RU_HYSTERIA2_28152_1253
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -163,12 +97,10 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_771
-  - RU_HYSTERIA2_11592_664
-  - RU_HYSTERIA2_443_1274
-  - RU_VLESS_2053_1150
-  - RU_VLESS_8443_907
-  - RU_VLESS_2053_2032
+  - RU_VLESS_443_847
+  - RU_VLESS_443_686
+  - RU_HYSTERIA2_2053_636
+  - RU_HYSTERIA2_28152_1253
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

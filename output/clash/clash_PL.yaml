@@ -5,47 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_8443_1681
-  type: vless
-  network: tcp
-  server: pl.flen-vpn.xyz
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  servername: pl.flen-vpn.xyz
-  tls: true
-  encryption: none
-  country: PL
-- name: PL_VLESS_8443_414
+- name: PL_VLESS_8443_508
   type: vless
   network: tcp
   server: 2.26.225.89
   port: 8443
   uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
   servername: pl.flen-vpn.xyz
-  skip-cert-verify: false
   tls: true
-  udp: true
-  tfo: false
+  encryption: none
   country: PL
-- name: PL_HTTP_443_569
+- name: PL_HTTP_443_680
   port: 443
   server: 37.120.156.34
   skip-cert-verify: true
   tls: true
   type: http
-  country: PL
-- name: PL_VLESS_443_421
-  server: 80.47.12.94
-  port: 443
-  type: vless
-  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
-  tls: true
-  reality-opts:
-    public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
-  servername: pl-1-1.unturned-rust-dead.lol
-  client-fingerprint: random
-  network: tcp
-  udp: true
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -60,10 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_8443_1681
-  - PL_VLESS_8443_414
-  - PL_HTTP_443_569
-  - PL_VLESS_443_421
+  - PL_VLESS_8443_508
+  - PL_HTTP_443_680
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -76,10 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_8443_414
-  - PL_VLESS_443_421
-  - PL_HTTP_443_569
-  - PL_VLESS_8443_1681
+  - PL_VLESS_8443_508
+  - PL_HTTP_443_680
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -91,10 +62,8 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_8443_1681
-  - PL_VLESS_8443_414
-  - PL_HTTP_443_569
-  - PL_VLESS_443_421
+  - PL_VLESS_8443_508
+  - PL_HTTP_443_680
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
