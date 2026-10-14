@@ -5,52 +5,11 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_443_1257
-  type: vless
-  network: tcp
-  server: 51.255.165.170
-  port: 443
-  uuid: 40fbeade-2b35-55e2-8e72-39893b5917ea
-  servername: tyxyrytyro-51255165170-direct.araghchy.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  flow: xtls-rprx-vision
-  country: FR
-- name: FR_VLESS_443_446
-  type: vless
-  network: tcp
-  server: 51.255.166.202
-  port: 443
-  uuid: 593bf46b-8316-5050-9357-d8a41e4db78b
-  servername: e3k67dwms3-51255166202-direct.tavafog.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: FR
-- name: FR_VLESS_443_971
-  type: vless
-  network: tcp
-  server: 193.70.85.96
-  port: 443
-  uuid: 58756a39-0472-5f8a-89e3-a80fa94af59e
-  servername: 7q4eiwcseu-193708596-direct.rahbarii.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: FR
 - alpn:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
-  name: FR_HYSTERIA_24667_1685
+  name: FR_HYSTERIA_24667_1611
   port: 24667
   protocol: udp
   server: 62.210.70.191
@@ -60,55 +19,49 @@ proxies:
   up: 11 Mbps
   country: FR
 - cipher: chacha20-ietf-poly1305
-  name: FR_SS_8388_312
+  name: FR_SS_8388_304
   password: BqnqToih0PbU
   port: 8388
   server: 51.255.13.232
   type: ss
   country: FR
-- name: FR_HTTP_443_632
+- name: FR_HTTP_9443_575
+  port: 9443
+  server: 138.199.47.247
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_529
   port: 443
-  server: 82.66.235.221
+  server: 82.65.162.76
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_6103_618
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_563
+- name: FR_HTTP_443_562
+  password: None
   port: 443
-  server: 103.82.101.44
-  skip-cert-verify: true
-  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_598
-  port: 443
-  server: 51.210.167.149
+  server: 149.102.245.65
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_8090_674
-  port: 8090
-  server: 82.96.128.175
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_ANYTLS_30099_497
+- name: FR_ANYTLS_30099_430
   password: github.com/Alvin9999-newpac/fanqiang
   port: 30099
   server: ip5.934618.xyz
   skip-cert-verify: true
   sni: ip5.934618.xyz
   type: anytls
+  udp: true
+  country: FR
+- name: FR_SS_443_385
+  server: 54.36.174.140
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: e5c65ph
   udp: true
   country: FR
 proxy-groups:
@@ -124,17 +77,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_443_1257
-  - FR_VLESS_443_446
-  - FR_VLESS_443_971
-  - FR_HYSTERIA_24667_1685
-  - FR_SS_8388_312
-  - FR_HTTP_443_632
-  - FR_HTTP_6103_618
-  - FR_HTTP_443_563
-  - FR_HTTP_443_598
-  - FR_HTTP_8090_674
-  - FR_ANYTLS_30099_497
+  - FR_HYSTERIA_24667_1611
+  - FR_SS_8388_304
+  - FR_HTTP_9443_575
+  - FR_HTTP_443_529
+  - FR_HTTP_443_562
+  - FR_ANYTLS_30099_430
+  - FR_SS_443_385
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -147,17 +96,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_8388_312
-  - FR_VLESS_443_446
-  - FR_ANYTLS_30099_497
-  - FR_HTTP_443_563
-  - FR_HTTP_443_598
-  - FR_HTTP_6103_618
-  - FR_HTTP_443_632
-  - FR_HTTP_8090_674
-  - FR_VLESS_443_971
-  - FR_VLESS_443_1257
-  - FR_HYSTERIA_24667_1685
+  - FR_SS_8388_304
+  - FR_SS_443_385
+  - FR_ANYTLS_30099_430
+  - FR_HTTP_443_529
+  - FR_HTTP_443_562
+  - FR_HTTP_9443_575
+  - FR_HYSTERIA_24667_1611
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -169,17 +114,13 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_443_1257
-  - FR_VLESS_443_446
-  - FR_VLESS_443_971
-  - FR_HYSTERIA_24667_1685
-  - FR_SS_8388_312
-  - FR_HTTP_443_632
-  - FR_HTTP_6103_618
-  - FR_HTTP_443_563
-  - FR_HTTP_443_598
-  - FR_HTTP_8090_674
-  - FR_ANYTLS_30099_497
+  - FR_HYSTERIA_24667_1611
+  - FR_SS_8388_304
+  - FR_HTTP_9443_575
+  - FR_HTTP_443_529
+  - FR_HTTP_443_562
+  - FR_ANYTLS_30099_430
+  - FR_SS_443_385
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

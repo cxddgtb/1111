@@ -5,113 +5,51 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_VLESS_443_573
-  type: vless
-  network: ws
-  server: 159.65.51.189
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  servername: ccc.010304.xyz
-  skip-cert-verify: false
-  tls: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /fp
-  country: GB
-- name: GB_VLESS_443_419
-  type: vless
-  network: tcp
-  server: 186.190.211.188
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  servername: 186.190.211.188
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_356
+  name: GB_SS_19999_321
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 82.110.60.9
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_443_287
+  name: GB_SS_80_264
   password: g5h5jleTRSyO3Rk4
-  port: 443
+  port: 80
   server: 149.102.132.184
   type: ss
   country: GB
-- cipher: aes-256-gcm
-  name: GB_SS_443_294
-  password: LXchLsIwtCeUAUgu
+- cipher: aes-128-gcm
+  name: GB_SS_443_260
+  password: shadowsocks
   port: 443
-  server: 149.102.149.207
+  server: 158.173.24.73
   type: ss
   country: GB
-- name: GB_HTTP_443_554
+- name: GB_HTTP_443_531
   port: 443
-  server: 212.102.63.31
+  server: 37.120.233.50
   skip-cert-verify: true
   tls: true
   type: http
   country: GB
-- name: GB_HTTP_443_572
-  port: 443
-  server: 185.164.138.156
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_577
-  password: None
+- name: GB_HTTP_443_530
   port: 443
   server: 37.120.233.18
   skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  country: GB
-- name: GB_HTTP_443_551
-  port: 443
-  server: 84.17.50.193
-  skip-cert-verify: true
   tls: true
   type: http
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_7001_1816
+  name: GB_SS_7001_2950
   password: RexnBgU7EV5ADxG
   port: 7001
   server: 94.156.250.148
   type: ss
   country: GB
-- name: GB_HTTP_443_582
-  password: None
-  port: 443
-  server: 37.120.233.34
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  country: GB
-- name: GB_HTTP_9443_549
+- name: GB_HTTP_9443_504
   port: 9443
-  server: 84.17.50.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_550
-  port: 443
-  server: 212.102.63.61
+  server: 84.17.50.214
   skip-cert-verify: true
   tls: true
   type: http
@@ -129,19 +67,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_VLESS_443_573
-  - GB_VLESS_443_419
-  - GB_SS_19999_356
-  - GB_SS_443_287
-  - GB_SS_443_294
-  - GB_HTTP_443_554
-  - GB_HTTP_443_572
-  - GB_HTTP_443_577
-  - GB_HTTP_443_551
-  - GB_SS_7001_1816
-  - GB_HTTP_443_582
-  - GB_HTTP_9443_549
-  - GB_HTTP_443_550
+  - GB_SS_19999_321
+  - GB_SS_80_264
+  - GB_SS_443_260
+  - GB_HTTP_443_531
+  - GB_HTTP_443_530
+  - GB_SS_7001_2950
+  - GB_HTTP_9443_504
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -154,19 +86,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_SS_443_287
-  - GB_SS_443_294
-  - GB_SS_19999_356
-  - GB_VLESS_443_419
-  - GB_HTTP_9443_549
-  - GB_HTTP_443_550
-  - GB_HTTP_443_551
-  - GB_HTTP_443_554
-  - GB_HTTP_443_572
-  - GB_VLESS_443_573
-  - GB_HTTP_443_577
-  - GB_HTTP_443_582
-  - GB_SS_7001_1816
+  - GB_SS_443_260
+  - GB_SS_80_264
+  - GB_SS_19999_321
+  - GB_HTTP_9443_504
+  - GB_HTTP_443_530
+  - GB_HTTP_443_531
+  - GB_SS_7001_2950
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -178,19 +104,13 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_VLESS_443_573
-  - GB_VLESS_443_419
-  - GB_SS_19999_356
-  - GB_SS_443_287
-  - GB_SS_443_294
-  - GB_HTTP_443_554
-  - GB_HTTP_443_572
-  - GB_HTTP_443_577
-  - GB_HTTP_443_551
-  - GB_SS_7001_1816
-  - GB_HTTP_443_582
-  - GB_HTTP_9443_549
-  - GB_HTTP_443_550
+  - GB_SS_19999_321
+  - GB_SS_80_264
+  - GB_SS_443_260
+  - GB_HTTP_443_531
+  - GB_HTTP_443_530
+  - GB_SS_7001_2950
+  - GB_HTTP_9443_504
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

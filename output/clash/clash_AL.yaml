@@ -5,14 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AL_HTTP_443_800
-  port: 443
-  server: 31.171.154.66
+- name: AL_HTTP_9443_755
+  port: 9443
+  server: 31.171.155.210
   skip-cert-verify: true
+  sub_tag: K001-260618
   tls: true
   type: http
+  udp: true
   country: AL
-- name: AL_HTTP_443_787
+- name: AL_HTTP_443_761
   password: None
   port: 443
   server: 87.120.103.242
@@ -33,8 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AL_HTTP_443_800
-  - AL_HTTP_443_787
+  - AL_HTTP_9443_755
+  - AL_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,8 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AL_HTTP_443_787
-  - AL_HTTP_443_800
+  - AL_HTTP_9443_755
+  - AL_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -60,8 +62,8 @@ proxy-groups:
 - name: 🌍 AL
   type: url-test
   proxies:
-  - AL_HTTP_443_800
-  - AL_HTTP_443_787
+  - AL_HTTP_9443_755
+  - AL_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

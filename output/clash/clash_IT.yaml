@@ -5,32 +5,26 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_VLESS_10086_343
-  type: vless
+- encryption: none
+  name: IT_VLESS_10086_315
   network: tcp
-  server: 204.216.216.23
   port: 10086
-  uuid: 9f0285ee-20ca-4953-bcdb-86a920652923
+  server: 204.216.216.23
   tls: false
-  encryption: none
+  type: vless
+  uuid: 9f0285ee-20ca-4953-bcdb-86a920652923
   country: IT
 - cipher: aes-256-gcm
-  name: IT_SS_8388_324
-  password: qMvJmCbMduKUoeHq
-  port: 8388
-  server: 66.245.207.70
-  type: ss
-  country: IT
-- cipher: aes-256-gcm
-  name: IT_SS_8388_355
+  name: IT_SS_8388_339
   password: itzvpn@321
   port: 8388
   server: 57.131.48.45
   type: ss
   country: IT
-- name: IT_HTTP_443_850
+- name: IT_HTTP_443_599
+  password: None
   port: 443
-  server: 95.229.15.89
+  server: 185.183.105.146
   skip-cert-verify: true
   tls: true
   type: http
@@ -48,10 +42,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_VLESS_10086_343
-  - IT_SS_8388_324
-  - IT_SS_8388_355
-  - IT_HTTP_443_850
+  - IT_VLESS_10086_315
+  - IT_SS_8388_339
+  - IT_HTTP_443_599
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,10 +57,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_SS_8388_324
-  - IT_VLESS_10086_343
-  - IT_SS_8388_355
-  - IT_HTTP_443_850
+  - IT_VLESS_10086_315
+  - IT_SS_8388_339
+  - IT_HTTP_443_599
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -79,10 +71,9 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_VLESS_10086_343
-  - IT_SS_8388_324
-  - IT_SS_8388_355
-  - IT_HTTP_443_850
+  - IT_VLESS_10086_315
+  - IT_SS_8388_339
+  - IT_HTTP_443_599
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

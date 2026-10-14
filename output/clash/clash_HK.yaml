@@ -5,93 +5,82 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VLESS_11907_955
+- name: HK_VLESS_32134_2142
   type: vless
-  network: tcp
-  server: 195.58.144.56
-  port: 11907
-  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: HK
-- name: HK_VMESS_443_605
-  type: vmess
-  network: ws
-  server: 8.217.254.88
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: 2b9hwy8ocx7q74nm.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- name: HK_VMESS_443_1169
-  type: vmess
-  network: ws
-  server: 47.243.153.153
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: i2psm3knof5qjjix.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- name: HK_VMESS_443_2110
-  type: vmess
-  network: ws
-  server: qtkdr8jxe3wefxjm.v.3dns.vip
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: qTKDR8jXE3wEFxJM.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- name: HK_VLESS_39485_445
-  type: vless
-  server: 103.193.173.51
-  port: 39485
-  uuid: 25b3faeb-89b0-4dff-b0a3-0e70997dc962
-  servername: www.icloud.com
-  tls: true
+  server: 3696b38bsg.murphyweb.sbs
+  port: 32134
+  uuid: 5b01dc2d-6892-49b8-8289-3f73a32e00e4
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: pzmFiyOtVaKJpJlXYC_hJcDw0hiPvPZ661uZn4NO0Xs
-    short-id: b9
-  skip-cert-verify: true
   udp: true
+  tls: true
+  client-fingerprint: chrome
+  servername: buylite.music.apple.com
+  reality-opts:
+    public-key: OdTELUjAUKO_qr-O-uihaAZJAhA8GyIWVI6CpozVCU4
+    short-id: 6c6c7c97
   country: HK
-- name: HK_VMESS_443_627
+- name: HK_VMESS_44867_462
   type: vmess
-  server: 2b9hwy8ocx7q74nm.v.3dns.vip
-  port: 443
-  uuid: f23bb427c1f94373876c2f43e9f790f3
+  server: 47.244.120.197
+  port: 44867
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
   alterId: 0
   cipher: auto
-  tls: true
-  skip-cert-verify: true
   network: ws
+  tls: false
+  servername: ''
   ws-opts:
-    path: /ws-vmess
+    path: /arki
     headers:
-      Host: 2b9hwY8oCx7Q74NM.v.3dns.vip
+      Host: ''
+  country: HK
+- name: HK_HYSTERIA2_5010_534
+  obfs: salamander
+  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
+  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
+  port: 5010
+  server: nas.aizhzo.com
+  skip-cert-verify: false
+  sni: nas.aizhzo.com
+  tls: false
+  type: hysteria2
+  country: HK
+- alterId: 0
+  cipher: auto
+  name: HK_VMESS_23026_465
+  network: ws
+  port: 23026
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
   udp: true
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  ws-opts:
+    headers:
+      Host: 47.244.120.197
+    path: /arki
+  country: HK
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - sjskendn.dingtalk.com
+    method: GET
+    path:
+    - /x
+  name: HK_VMESS_800_1347
+  network: http
+  port: 800
+  server: 47.86.167.194
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: f2c67cae-c09d-4739-947d-f5302d87a3c0
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -106,12 +95,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_11907_955
-  - HK_VMESS_443_605
-  - HK_VMESS_443_1169
-  - HK_VMESS_443_2110
-  - HK_VLESS_39485_445
-  - HK_VMESS_443_627
+  - HK_VLESS_32134_2142
+  - HK_VMESS_44867_462
+  - HK_HYSTERIA2_5010_534
+  - HK_VMESS_23026_465
+  - HK_VMESS_800_1347
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -124,12 +112,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VLESS_39485_445
-  - HK_VMESS_443_605
-  - HK_VMESS_443_627
-  - HK_VLESS_11907_955
-  - HK_VMESS_443_1169
-  - HK_VMESS_443_2110
+  - HK_VMESS_44867_462
+  - HK_VMESS_23026_465
+  - HK_HYSTERIA2_5010_534
+  - HK_VMESS_800_1347
+  - HK_VLESS_32134_2142
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -141,12 +128,11 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_11907_955
-  - HK_VMESS_443_605
-  - HK_VMESS_443_1169
-  - HK_VMESS_443_2110
-  - HK_VLESS_39485_445
-  - HK_VMESS_443_627
+  - HK_VLESS_32134_2142
+  - HK_VMESS_44867_462
+  - HK_HYSTERIA2_5010_534
+  - HK_VMESS_23026_465
+  - HK_VMESS_800_1347
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
