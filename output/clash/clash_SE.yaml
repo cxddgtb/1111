@@ -5,47 +5,65 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_443_841
-  network: ws
-  port: 443
-  server: 77.110.97.245
-  servername: ccc.010304.xyz
-  tls: true
+- name: SE_VLESS_14430_404
   type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
+  server: 5.178.109.174
+  port: 14430
+  uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
+  network: ws
+  tls: false
+  servername: 5.178.109.174
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
-      Host: ccc.010304.xyz
-    path: /fp=chrome
+      Host: 5.178.109.174
   country: SE
-- cipher: aes-256-gcm
-  name: SE_SS_8388_294
-  password: AxIYWtskJWIIaefW
-  port: 8388
-  server: 70.34.212.124
-  type: ss
+- name: SE_VLESS_14430_2594
+  type: vless
+  server: 193.188.21.253
+  port: 14430
+  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
+  network: ws
+  tls: false
+  servername: 193.188.21.253
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 193.188.21.253
   country: SE
-- name: SE_HTTP_443_683
-  port: 443
-  server: 146.70.242.146
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: SE
-- name: SE_HTTP_443_723
-  port: 443
-  server: 217.210.129.243
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: SE
-- name: SE_HTTP_443_618
+- name: SE_HTTP_443_563
   password: None
   port: 443
   server: 149.50.216.65
   skip-cert-verify: true
   tls: true
   type: http
+  country: SE
+- auth: 8bd04756-3beb-4348-82c9-d35453df50ce
+  name: SE_HYSTERIA2_21223_590
+  password: 8bd04756-3beb-4348-82c9-d35453df50ce
+  port: 21223
+  server: sweedenqfds777.qcloud.surf
+  skip-cert-verify: true
+  tls: false
+  type: hysteria2
+  country: SE
+- name: SE_VLESS_443_429
+  type: vless
+  server: 46.246.125.153
+  port: 443
+  uuid: a16a3e32-8d63-4dec-8c67-1361388a64ca
+  servername: res.cdn.office.net
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: ftglT-Ghp2FPiPlwyEAldfiAE1IL_AJ9UCkfCj0zk2I
+    short-id: a83b77e064761e3c
+  skip-cert-verify: true
+  udp: true
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -60,11 +78,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_443_841
-  - SE_SS_8388_294
-  - SE_HTTP_443_683
-  - SE_HTTP_443_723
-  - SE_HTTP_443_618
+  - SE_VLESS_14430_404
+  - SE_VLESS_14430_2594
+  - SE_HTTP_443_563
+  - SE_HYSTERIA2_21223_590
+  - SE_VLESS_443_429
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -77,11 +95,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_SS_8388_294
-  - SE_HTTP_443_618
-  - SE_HTTP_443_683
-  - SE_HTTP_443_723
-  - SE_VLESS_443_841
+  - SE_VLESS_14430_404
+  - SE_VLESS_443_429
+  - SE_HTTP_443_563
+  - SE_HYSTERIA2_21223_590
+  - SE_VLESS_14430_2594
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -93,11 +111,11 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_443_841
-  - SE_SS_8388_294
-  - SE_HTTP_443_683
-  - SE_HTTP_443_723
-  - SE_HTTP_443_618
+  - SE_VLESS_14430_404
+  - SE_VLESS_14430_2594
+  - SE_HTTP_443_563
+  - SE_HYSTERIA2_21223_590
+  - SE_VLESS_443_429
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

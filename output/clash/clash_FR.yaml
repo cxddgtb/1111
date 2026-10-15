@@ -9,7 +9,7 @@ proxies:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
-  name: FR_HYSTERIA_24667_1611
+  name: FR_HYSTERIA_24667_1507
   port: 24667
   protocol: udp
   server: 62.210.70.191
@@ -18,51 +18,102 @@ proxies:
   type: hysteria
   up: 11 Mbps
   country: FR
-- cipher: chacha20-ietf-poly1305
-  name: FR_SS_8388_304
-  password: BqnqToih0PbU
-  port: 8388
-  server: 51.255.13.232
-  type: ss
+- name: FR_HTTP_443_459
+  port: 443
+  server: 103.82.101.44
+  skip-cert-verify: true
+  sni: f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com
+  tls: true
+  type: http
   country: FR
-- name: FR_HTTP_9443_575
-  port: 9443
-  server: 138.199.47.247
+- name: FR_HTTP_443_481
+  port: 443
+  server: 51.210.167.149
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_443_529
+- name: FR_HTTP_443_486
   port: 443
   server: 82.65.162.76
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_443_562
-  password: None
-  port: 443
-  server: 149.102.245.65
+- name: FR_HTTP_8082_405
+  port: 8082
+  server: 213.199.46.59
   skip-cert-verify: true
-  tls: true
   type: http
   country: FR
-- name: FR_ANYTLS_30099_430
-  password: github.com/Alvin9999-newpac/fanqiang
-  port: 30099
-  server: ip5.934618.xyz
+- name: FR_VMESS_80_814
+  type: vmess
+  network: ws
+  server: 54.37.131.126
+  port: 80
+  uuid: 6deef9ad-1357-443d-f95c-cb18952c20b3
   skip-cert-verify: true
-  sni: ip5.934618.xyz
-  type: anytls
-  udp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
+    path: /
   country: FR
-- name: FR_SS_443_385
-  server: 54.36.174.140
+- name: FR_VMESS_80_537
+  type: vmess
+  network: ws
+  server: 145.239.55.210
+  port: 80
+  uuid: 067fcd63-b215-4abd-8529-ae929a9971a9
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+    path: /
+  country: FR
+- name: FR_VLESS_443_367
+  type: vless
+  network: tcp
+  server: 51.255.165.170
   port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: e5c65ph
+  uuid: 40fbeade-2b35-55e2-8e72-39893b5917ea
+  servername: tyxyrytyro-51255165170-direct.araghchy.com
+  skip-cert-verify: false
+  tls: true
   udp: true
+  tfo: false
+  flow: xtls-rprx-vision
+  country: FR
+- name: FR_VLESS_443_369
+  type: vless
+  network: tcp
+  server: 51.255.166.202
+  port: 443
+  uuid: 593bf46b-8316-5050-9357-d8a41e4db78b
+  servername: e3k67dwms3-51255166202-direct.tavafog.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: FR
+- name: FR_VLESS_443_365
+  type: vless
+  network: tcp
+  server: 149.202.57.89
+  port: 443
+  uuid: rgiw5k0gg5
+  servername: rgiw5k0gg5-1492025789-direct.kheibarr.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -77,13 +128,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_HYSTERIA_24667_1611
-  - FR_SS_8388_304
-  - FR_HTTP_9443_575
-  - FR_HTTP_443_529
-  - FR_HTTP_443_562
-  - FR_ANYTLS_30099_430
-  - FR_SS_443_385
+  - FR_HYSTERIA_24667_1507
+  - FR_HTTP_443_459
+  - FR_HTTP_443_481
+  - FR_HTTP_443_486
+  - FR_HTTP_8082_405
+  - FR_VMESS_80_814
+  - FR_VMESS_80_537
+  - FR_VLESS_443_367
+  - FR_VLESS_443_369
+  - FR_VLESS_443_365
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -96,13 +150,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_8388_304
-  - FR_SS_443_385
-  - FR_ANYTLS_30099_430
-  - FR_HTTP_443_529
-  - FR_HTTP_443_562
-  - FR_HTTP_9443_575
-  - FR_HYSTERIA_24667_1611
+  - FR_VLESS_443_365
+  - FR_VLESS_443_367
+  - FR_VLESS_443_369
+  - FR_HTTP_8082_405
+  - FR_HTTP_443_459
+  - FR_HTTP_443_481
+  - FR_HTTP_443_486
+  - FR_VMESS_80_537
+  - FR_VMESS_80_814
+  - FR_HYSTERIA_24667_1507
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -114,13 +171,16 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_HYSTERIA_24667_1611
-  - FR_SS_8388_304
-  - FR_HTTP_9443_575
-  - FR_HTTP_443_529
-  - FR_HTTP_443_562
-  - FR_ANYTLS_30099_430
-  - FR_SS_443_385
+  - FR_HYSTERIA_24667_1507
+  - FR_HTTP_443_459
+  - FR_HTTP_443_481
+  - FR_HTTP_443_486
+  - FR_HTTP_8082_405
+  - FR_VMESS_80_814
+  - FR_VMESS_80_537
+  - FR_VLESS_443_367
+  - FR_VLESS_443_369
+  - FR_VLESS_443_365
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

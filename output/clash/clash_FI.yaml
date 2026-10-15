@@ -5,12 +5,41 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- name: FI_VLESS_14430_434
+  type: vless
+  server: 45.144.234.157
+  port: 14430
+  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
+  network: ws
+  tls: false
+  servername: 45.144.234.157
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 45.144.234.157
+  country: FI
 - cipher: aes-128-gcm
-  name: FI_SS_18280_338
+  name: FI_SS_18280_298
   password: f9300a9bf39ae0347c3a3bfbc4dd7754
   port: 18280
   server: 185.103.110.66
   type: ss
+  country: FI
+- name: FI_VLESS_443_421
+  type: vless
+  server: 95.111.212.241
+  port: 443
+  uuid: 924fe46b-b6e0-479e-ae7f-a3661680e706
+  servername: www.samsung.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: BSTnEthBXhb_UyuWpLBDxg82-C-wcpU2_kOD5ohS12g
+    short-id: 3a697adb4c58d495
+  skip-cert-verify: true
+  udp: true
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -25,7 +54,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_SS_18280_338
+  - FI_VLESS_14430_434
+  - FI_SS_18280_298
+  - FI_VLESS_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +69,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_SS_18280_338
+  - FI_SS_18280_298
+  - FI_VLESS_443_421
+  - FI_VLESS_14430_434
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +83,9 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_SS_18280_338
+  - FI_VLESS_14430_434
+  - FI_SS_18280_298
+  - FI_VLESS_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

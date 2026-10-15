@@ -5,7 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AT_HTTP_443_696
+- name: AT_HTTP_443_547
+  password: None
+  port: 443
+  server: 146.70.244.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: AT
+- name: AT_HTTP_443_550
   password: None
   port: 443
   server: 146.70.244.2
@@ -26,7 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AT_HTTP_443_696
+  - AT_HTTP_443_547
+  - AT_HTTP_443_550
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AT_HTTP_443_696
+  - AT_HTTP_443_547
+  - AT_HTTP_443_550
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +61,8 @@ proxy-groups:
 - name: 🌍 AT
   type: url-test
   proxies:
-  - AT_HTTP_443_696
+  - AT_HTTP_443_547
+  - AT_HTTP_443_550
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

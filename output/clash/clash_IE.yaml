@@ -5,23 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IE_TROJAN_443_374
+- name: IE_TROJAN_443_351
   type: trojan
-  server: 54.72.130.222
+  server: sacred-anemone.rooster465.autos
   port: 443
   password: UX82473651
-  sni: adapting-basilisk.rooster465.autos
+  sni: sacred-anemone.rooster465.autos
   network: tcp
   country: IE
-- name: IE_TROJAN_443_466
-  type: trojan
-  server: 3.253.106.233
-  port: 443
-  password: UX82473651
-  sni: loved-shark.rooster465.autos
-  network: tcp
-  country: IE
-- name: IE_TROJAN_443_428
+- name: IE_TROJAN_443_358
   type: trojan
   server: loved-shark.rooster465.autos
   port: 443
@@ -29,23 +21,25 @@ proxies:
   sni: loved-shark.rooster465.autos
   network: tcp
   country: IE
-- name: IE_TROJAN_443_369
-  password: UX82473651
-  port: 443
-  server: sacred-anemone.rooster465.autos
-  sni: sacred-anemone.rooster465.autos
+- name: IE_TROJAN_443_522
   type: trojan
-  country: IE
-- name: IE_TROJAN_443_399
-  password: UX82473651
-  port: 443
   server: adapting-basilisk.rooster465.autos
-  sni: adapting-basilisk.rooster465.autos
-  type: trojan
-  country: IE
-- name: IE_HTTP_443_467
   port: 443
-  server: 18.200.158.139
+  password: UX82473651
+  sni: adapting-basilisk.rooster465.autos
+  network: tcp
+  country: IE
+- name: IE_HTTP_443_546
+  password: None
+  port: 443
+  server: 149.88.96.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: IE
+- name: IE_HTTP_443_399
+  port: 443
+  server: 34.249.214.108
   skip-cert-verify: true
   tls: true
   type: http
@@ -63,12 +57,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IE_TROJAN_443_374
-  - IE_TROJAN_443_466
-  - IE_TROJAN_443_428
-  - IE_TROJAN_443_369
-  - IE_TROJAN_443_399
-  - IE_HTTP_443_467
+  - IE_TROJAN_443_351
+  - IE_TROJAN_443_358
+  - IE_TROJAN_443_522
+  - IE_HTTP_443_546
+  - IE_HTTP_443_399
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -81,12 +74,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IE_TROJAN_443_369
-  - IE_TROJAN_443_374
-  - IE_TROJAN_443_399
-  - IE_TROJAN_443_428
-  - IE_TROJAN_443_466
-  - IE_HTTP_443_467
+  - IE_TROJAN_443_351
+  - IE_TROJAN_443_358
+  - IE_HTTP_443_399
+  - IE_TROJAN_443_522
+  - IE_HTTP_443_546
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -98,12 +90,11 @@ proxy-groups:
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_TROJAN_443_374
-  - IE_TROJAN_443_466
-  - IE_TROJAN_443_428
-  - IE_TROJAN_443_369
-  - IE_TROJAN_443_399
-  - IE_HTTP_443_467
+  - IE_TROJAN_443_351
+  - IE_TROJAN_443_358
+  - IE_TROJAN_443_522
+  - IE_HTTP_443_546
+  - IE_HTTP_443_399
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

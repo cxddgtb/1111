@@ -5,7 +5,63 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_HYSTERIA2_443_434
+- name: AE_VLESS_22573_625
+  type: vless
+  server: uae.unixzone.us
+  port: 22573
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: uae.unixzone.us
+  country: AE
+- name: AE_VLESS_14430_830
+  type: vless
+  server: 95.174.68.188
+  port: 14430
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  network: ws
+  tls: false
+  servername: 95.174.68.188
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 95.174.68.188
+  country: AE
+- name: AE_VLESS_443_521
+  type: vless
+  server: 31.57.190.17
+  port: 443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  network: ws
+  tls: true
+  servername: lucasjow.us.ci
+  client-fingerprint: chrome
+  ws-opts:
+    path: /cart/docs/www/proxyip=108.160.132.132fp=unsafe
+    headers:
+      Host: lucasjow.us.ci
+  country: AE
+- name: AE_VLESS_14430_423
+  type: vless
+  server: 185.253.116.33
+  port: 14430
+  uuid: aee7ae19-672f-49d8-8a92-aa7cdfc89f89
+  network: ws
+  tls: false
+  servername: 185.253.116.33
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 185.253.116.33
+  country: AE
+- name: AE_HYSTERIA2_443_436
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -16,44 +72,35 @@ proxies:
   tls: false
   type: hysteria2
   country: AE
-- encryption: none
-  name: AE_VLESS_22573_741
-  network: ws
-  port: 22573
-  server: uae.unixzone.us
-  tls: false
+- name: AE_VLESS_443_367
   type: vless
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  ws-opts:
-    headers:
-      Host: uae.unixzone.us
-    path: /
-  country: AE
-- name: AE_VLESS_443_847
-  network: ws
+  server: 157.228.150.34
   port: 443
-  server: 89.125.139.115
-  servername: free.cndyw.ggff.net
+  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
+  servername: addons.mozilla.org
   tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=random
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
+    short-id: 3cef317b
+  skip-cert-verify: true
+  udp: true
   country: AE
-- name: AE_VLESS_2053_1164
-  network: ws
-  port: 2053
-  server: 147.78.0.186
-  servername: free.cndyw.ggff.net
-  tls: true
+- name: AE_VLESS_443_363
   type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=random
+  server: 157.228.160.166
+  port: 443
+  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
+  servername: addons.mozilla.org
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: randomized
+  reality-opts:
+    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
+    short-id: 3cef317b
+  skip-cert-verify: true
+  udp: true
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -68,10 +115,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_HYSTERIA2_443_434
-  - AE_VLESS_22573_741
-  - AE_VLESS_443_847
-  - AE_VLESS_2053_1164
+  - AE_VLESS_22573_625
+  - AE_VLESS_14430_830
+  - AE_VLESS_443_521
+  - AE_VLESS_14430_423
+  - AE_HYSTERIA2_443_436
+  - AE_VLESS_443_367
+  - AE_VLESS_443_363
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -84,10 +134,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_434
-  - AE_VLESS_22573_741
-  - AE_VLESS_443_847
-  - AE_VLESS_2053_1164
+  - AE_VLESS_443_363
+  - AE_VLESS_443_367
+  - AE_VLESS_14430_423
+  - AE_HYSTERIA2_443_436
+  - AE_VLESS_443_521
+  - AE_VLESS_22573_625
+  - AE_VLESS_14430_830
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -99,10 +152,13 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_HYSTERIA2_443_434
-  - AE_VLESS_22573_741
-  - AE_VLESS_443_847
-  - AE_VLESS_2053_1164
+  - AE_VLESS_22573_625
+  - AE_VLESS_14430_830
+  - AE_VLESS_443_521
+  - AE_VLESS_14430_423
+  - AE_HYSTERIA2_443_436
+  - AE_VLESS_443_367
+  - AE_VLESS_443_363
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

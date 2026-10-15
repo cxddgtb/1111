@@ -6,82 +6,60 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: aes-256-gcm
-  name: CA_SS_8118_204
-  password: cdBIDV42DCwnfIN
-  port: 8118
-  server: 51.79.85.185
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8882_141
+  name: CA_SS_8882_96
   password: kDWvXYZoTBcGkC4
   port: 8882
   server: 51.222.136.236
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_170
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.12.127
+  name: CA_SS_8882_98
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.79.49.116
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_828
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.141.125
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5000_716
+  name: CA_SS_5000_244
   password: Y6R9pAtvxxzmGC
   port: 5000
   server: 51.222.200.165
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5003_772
-  password: g5MeD6Ft3CWlJId
-  port: 5003
-  server: 51.222.155.32
+  name: CA_SS_445_95
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.12.127
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5601_860
+  name: CA_SS_8118_580
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 51.79.85.185
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_8119_833
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 51.79.64.198
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_5601_1618
   password: Y6R9pAtvxxzmGC
   port: 5601
   server: 51.222.155.113
   type: ss
   country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8882_2551
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.79.49.116
-  type: ss
-  country: CA
-- name: CA_HTTP_443_376
-  port: 443
-  server: 206.223.183.21
+- name: CA_HTTP_9443_212
+  port: 9443
+  server: 198.44.157.19
   skip-cert-verify: true
   tls: true
   type: http
-  country: CA
-- name: CA_HTTP_443_355
-  port: 443
-  server: 206.223.161.47
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CA
-- cipher: aes-256-cfb
-  name: CA_SS_443_142
-  password: amazonskr05
-  port: 443
-  server: 15.175.220.220
-  type: ss
-  udp: true
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -96,17 +74,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_SS_8118_204
-  - CA_SS_8882_141
-  - CA_SS_445_170
-  - CA_SS_445_828
-  - CA_SS_5000_716
-  - CA_SS_5003_772
-  - CA_SS_5601_860
-  - CA_SS_8882_2551
-  - CA_HTTP_443_376
-  - CA_HTTP_443_355
-  - CA_SS_443_142
+  - CA_SS_8882_96
+  - CA_SS_8882_98
+  - CA_SS_5000_244
+  - CA_SS_445_95
+  - CA_SS_8118_580
+  - CA_SS_8119_833
+  - CA_SS_5601_1618
+  - CA_HTTP_9443_212
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -119,17 +94,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_8882_141
-  - CA_SS_443_142
-  - CA_SS_445_170
-  - CA_SS_8118_204
-  - CA_HTTP_443_355
-  - CA_HTTP_443_376
-  - CA_SS_5000_716
-  - CA_SS_5003_772
-  - CA_SS_445_828
-  - CA_SS_5601_860
-  - CA_SS_8882_2551
+  - CA_SS_445_95
+  - CA_SS_8882_96
+  - CA_SS_8882_98
+  - CA_HTTP_9443_212
+  - CA_SS_5000_244
+  - CA_SS_8118_580
+  - CA_SS_8119_833
+  - CA_SS_5601_1618
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -141,17 +113,14 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_SS_8118_204
-  - CA_SS_8882_141
-  - CA_SS_445_170
-  - CA_SS_445_828
-  - CA_SS_5000_716
-  - CA_SS_5003_772
-  - CA_SS_5601_860
-  - CA_SS_8882_2551
-  - CA_HTTP_443_376
-  - CA_HTTP_443_355
-  - CA_SS_443_142
+  - CA_SS_8882_96
+  - CA_SS_8882_98
+  - CA_SS_5000_244
+  - CA_SS_445_95
+  - CA_SS_8118_580
+  - CA_SS_8119_833
+  - CA_SS_5601_1618
+  - CA_HTTP_9443_212
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

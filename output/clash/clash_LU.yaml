@@ -5,15 +5,8 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LU_HTTP_443_570
+- name: LU_HTTP_443_506
   port: 443
-  server: 185.221.132.242
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: LU
-- name: LU_HTTP_9443_570
-  port: 9443
   server: 185.221.132.226
   skip-cert-verify: true
   tls: true
@@ -32,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LU_HTTP_443_570
-  - LU_HTTP_9443_570
+  - LU_HTTP_443_506
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LU_HTTP_443_570
-  - LU_HTTP_9443_570
+  - LU_HTTP_443_506
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,8 +50,7 @@ proxy-groups:
 - name: 🌍 LU
   type: url-test
   proxies:
-  - LU_HTTP_443_570
-  - LU_HTTP_9443_570
+  - LU_HTTP_443_506
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
