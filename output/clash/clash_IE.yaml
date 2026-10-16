@@ -5,41 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IE_TROJAN_443_351
-  type: trojan
-  server: sacred-anemone.rooster465.autos
-  port: 443
+- name: IE_TROJAN_443_228
   password: UX82473651
-  sni: sacred-anemone.rooster465.autos
-  network: tcp
-  country: IE
-- name: IE_TROJAN_443_358
-  type: trojan
-  server: loved-shark.rooster465.autos
   port: 443
-  password: UX82473651
-  sni: loved-shark.rooster465.autos
-  network: tcp
-  country: IE
-- name: IE_TROJAN_443_522
-  type: trojan
   server: adapting-basilisk.rooster465.autos
-  port: 443
-  password: UX82473651
   sni: adapting-basilisk.rooster465.autos
-  network: tcp
+  type: trojan
   country: IE
-- name: IE_HTTP_443_546
-  password: None
+- name: IE_TROJAN_443_221
+  password: UX82473651
   port: 443
-  server: 149.88.96.1
-  skip-cert-verify: true
-  tls: true
-  type: http
+  server: sacred-anemone.rooster465.autos
+  sni: sacred-anemone.rooster465.autos
+  type: trojan
   country: IE
-- name: IE_HTTP_443_399
+- name: IE_TROJAN_443_340
+  password: UX82473651
   port: 443
-  server: 34.249.214.108
+  server: loved-shark.rooster465.autos
+  sni: loved-shark.rooster465.autos
+  type: trojan
+  country: IE
+- name: IE_HTTP_9443_361
+  port: 9443
+  server: 149.88.96.12
   skip-cert-verify: true
   tls: true
   type: http
@@ -57,11 +46,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IE_TROJAN_443_351
-  - IE_TROJAN_443_358
-  - IE_TROJAN_443_522
-  - IE_HTTP_443_546
-  - IE_HTTP_443_399
+  - IE_TROJAN_443_228
+  - IE_TROJAN_443_221
+  - IE_TROJAN_443_340
+  - IE_HTTP_9443_361
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -74,11 +62,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IE_TROJAN_443_351
-  - IE_TROJAN_443_358
-  - IE_HTTP_443_399
-  - IE_TROJAN_443_522
-  - IE_HTTP_443_546
+  - IE_TROJAN_443_221
+  - IE_TROJAN_443_228
+  - IE_TROJAN_443_340
+  - IE_HTTP_9443_361
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -90,11 +77,10 @@ proxy-groups:
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_TROJAN_443_351
-  - IE_TROJAN_443_358
-  - IE_TROJAN_443_522
-  - IE_HTTP_443_546
-  - IE_HTTP_443_399
+  - IE_TROJAN_443_228
+  - IE_TROJAN_443_221
+  - IE_TROJAN_443_340
+  - IE_HTTP_9443_361
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

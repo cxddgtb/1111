@@ -5,73 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VMESS_123_385
-  type: vmess
-  server: 43.108.103.167
-  port: 123
-  uuid: 35aa0fda-175a-4aec-c468-0231dee1a121
-  alterId: 0
-  cipher: auto
-  network: http
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: KR
-- name: KR_TROJAN_443_489
+- name: KR_TROJAN_443_670
   type: trojan
-  server: fancy-skink.rooster465.autos
+  server: kr.tronsg.com
   port: 443
-  password: UX82473651
-  sni: fancy-skink.rooster465.autos
-  network: tcp
-  country: KR
-- name: KR_TROJAN_443_499
-  type: trojan
-  server: cunning-grub.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: cunning-grub.rooster465.autos
-  network: tcp
-  country: KR
-- name: KR_TROJAN_443_484
-  type: trojan
-  server: glorious-lark.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: glorious-lark.rooster465.autos
-  network: tcp
-  country: KR
-- name: KR_ANYTLS_47531_836
-  server: svip.skycon808.com
-  port: 47531
-  type: anytls
-  password: 87c6ad7b-e450-44a8-8088-bc2234d43de1
-  udp: true
-  sni: tw15.swiftrelay.cc
-  skip-cert-verify: true
-  country: KR
-- name: KR_ANYTLS_22315_1158
-  server: svip.skycon808.com
-  port: 22315
-  type: anytls
-  password: 87c6ad7b-e450-44a8-8088-bc2234d43de1
-  udp: true
-  sni: us53.pulsarcore.site
-  skip-cert-verify: true
-  country: KR
-- name: KR_VLESS_16034_927
-  type: vless
-  server: 220.71.172.2
-  port: 16034
-  uuid: 30e3c098-f963-40ed-aec7-67b692321801
-  network: ws
-  servername: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
+  password: Trojan@82164024
+  sni: kr.tronsg.com
   skip-cert-verify: true
   udp: true
   country: KR
@@ -88,13 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_123_385
-  - KR_TROJAN_443_489
-  - KR_TROJAN_443_499
-  - KR_TROJAN_443_484
-  - KR_ANYTLS_47531_836
-  - KR_ANYTLS_22315_1158
-  - KR_VLESS_16034_927
+  - KR_TROJAN_443_670
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -107,13 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_123_385
-  - KR_TROJAN_443_484
-  - KR_TROJAN_443_489
-  - KR_TROJAN_443_499
-  - KR_ANYTLS_47531_836
-  - KR_VLESS_16034_927
-  - KR_ANYTLS_22315_1158
+  - KR_TROJAN_443_670
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -125,13 +52,7 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_123_385
-  - KR_TROJAN_443_489
-  - KR_TROJAN_443_499
-  - KR_TROJAN_443_484
-  - KR_ANYTLS_47531_836
-  - KR_ANYTLS_22315_1158
-  - KR_VLESS_16034_927
+  - KR_TROJAN_443_670
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

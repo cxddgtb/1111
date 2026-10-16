@@ -5,38 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_VLESS_10086_278
+- cipher: aes-256-gcm
+  name: IT_SS_8388_218
+  password: itzvpn@321
+  port: 8388
+  server: 57.131.48.45
+  type: ss
+  country: IT
+- name: IT_VLESS_443_410
+  server: 43.249.72.255
+  port: 443
   type: vless
-  server: 204.216.216.23
-  port: 10086
-  uuid: 9f0285ee-20ca-4953-bcdb-86a920652923
-  network: tcp
-  tls: false
-  servername: ''
+  uuid: f02e4193-8d89-452f-93d7-c6b133e82b9e
+  tls: true
+  alpn:
+  - h2
+  servername: default.ssl.fastly.net
   client-fingerprint: chrome
-  ws-opts: null
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: henzoo.global.ssl.fastly.net
+  udp: true
   country: IT
-- name: IT_HTTP_443_562
-  password: None
+- name: IT_VLESS_443_443
+  server: 43.249.72.254
   port: 443
-  server: 185.183.105.146
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: IT
-- name: IT_VLESS_443_389
   type: vless
-  server: 31.59.180.155
-  port: 443
-  uuid: ee18d188-14cc-417e-beb1-70e4add6d023
-  servername: italynew.nztvpn.com
+  uuid: f02e4193-8d89-452f-93d7-c6b133e82b9e
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: _0bRaAOYHd4ccDCmnlIq9I13WLRuT4LzlXfV_GGHKE0
-    short-id: 5aab0b0401044801
-  skip-cert-verify: true
+  alpn:
+  - h2
+  - h3
+  - http/1.1
+  servername: default.ssl.fastly.net
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: henzoo.global.ssl.fastly.net
   udp: true
   country: IT
 proxy-groups:
@@ -52,9 +61,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_VLESS_10086_278
-  - IT_HTTP_443_562
-  - IT_VLESS_443_389
+  - IT_SS_8388_218
+  - IT_VLESS_443_410
+  - IT_VLESS_443_443
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -67,9 +76,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_VLESS_10086_278
-  - IT_VLESS_443_389
-  - IT_HTTP_443_562
+  - IT_SS_8388_218
+  - IT_VLESS_443_410
+  - IT_VLESS_443_443
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,9 +90,9 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_VLESS_10086_278
-  - IT_HTTP_443_562
-  - IT_VLESS_443_389
+  - IT_SS_8388_218
+  - IT_VLESS_443_410
+  - IT_VLESS_443_443
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

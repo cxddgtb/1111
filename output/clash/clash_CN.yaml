@@ -5,32 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_VMESS_10086_701
+- name: CN_VMESS_10086_874
+  type: vmess
+  server: 120.48.133.162
+  port: 10086
+  uuid: 2b910c43-51e3-4b15-9be8-b658106ba35e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  udp: true
+  country: CN
+- name: CN_VMESS_10086_1471
   type: vmess
   server: 39.108.113.127
   port: 10086
   uuid: 2b910c43-51e3-4b15-9be8-b658106ba35e
   alterId: 0
   cipher: auto
+  tls: false
+  skip-cert-verify: true
   network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  country: CN
-- name: CN_VMESS_50002_1491
-  type: vmess
-  server: 112.132.215.108
-  port: 50002
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
+  udp: true
   country: CN
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,8 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CN_VMESS_10086_701
-  - CN_VMESS_50002_1491
+  - CN_VMESS_10086_874
+  - CN_VMESS_10086_1471
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CN_VMESS_10086_701
-  - CN_VMESS_50002_1491
+  - CN_VMESS_10086_874
+  - CN_VMESS_10086_1471
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +69,8 @@ proxy-groups:
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_VMESS_10086_701
-  - CN_VMESS_50002_1491
+  - CN_VMESS_10086_874
+  - CN_VMESS_10086_1471
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

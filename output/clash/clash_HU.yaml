@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HU_VLESS_8443_661
+- name: HU_VLESS_8443_512
   network: ws
   port: 8443
   server: 37.221.210.113
@@ -17,6 +17,29 @@ proxies:
     headers:
       Host: free.cndyw.ggff.net
     path: pyip=bpb.yousef.isegaro.comfp=random
+  country: HU
+- name: HU_HTTP_443_487
+  password: None
+  port: 443
+  server: 146.70.203.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: HU
+- name: HU_VLESS_443_368
+  server: hu1.aiage.work
+  port: 443
+  type: vless
+  uuid: 6338c01a-310e-42c3-bf4f-2a20e161054b
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: mPzNFHO4pZMzFviRkIhRd7xDUz4dMHyI-flZLOrgDVg
+    short-id: f8379ce795f2e5ed
+  servername: hu1.aiage.work
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
   country: HU
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +54,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HU_VLESS_8443_661
+  - HU_VLESS_8443_512
+  - HU_HTTP_443_487
+  - HU_VLESS_443_368
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +69,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HU_VLESS_8443_661
+  - HU_VLESS_443_368
+  - HU_HTTP_443_487
+  - HU_VLESS_8443_512
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +83,9 @@ proxy-groups:
 - name: 🌍 HU
   type: url-test
   proxies:
-  - HU_VLESS_8443_661
+  - HU_VLESS_8443_512
+  - HU_HTTP_443_487
+  - HU_VLESS_443_368
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,31 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VMESS_443_1148
-  type: vmess
-  server: fujrdt.d6f54hd1j.cc
-  port: 443
-  uuid: d877dc6f-7323-4b47-a7dd-14228cbae854
-  alterId: 0
-  cipher: auto
-  network: ws
+- name: TW_VLESS_32134_1996
+  type: vless
+  server: 3696b38bsg.murphyweb.sbs
+  port: 32134
+  uuid: 5b01dc2d-6892-49b8-8289-3f73a32e00e4
+  servername: buylite.music.apple.com
   tls: true
-  servername: fujrdt.d6f54hd1j.cc
-  ws-opts:
-    path: /
-    headers:
-      Host: fujrdt.d6f54hd1j.cc
-  country: TW
-- name: TW_ANYTLS_443_934
-  password: ec74bb6a86c2
-  port: 443
-  server: er8u54dh.df6h451rh.xin
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: OdTELUjAUKO_qr-O-uihaAZJAhA8GyIWVI6CpozVCU4
+    short-id: 6c6c7c97
   skip-cert-verify: true
-  sni: px.ads.linkedin.com
-  type: anytls
   udp: true
   country: TW
-- name: TW_ANYTLS_443_1351
+- name: TW_ANYTLS_443_1642
   password: 0324fbc29561
   port: 443
   server: 98416548.df6h451rh.xin
@@ -38,38 +29,23 @@ proxies:
   type: anytls
   udp: true
   country: TW
-- name: TW_ANYTLS_20062_511
-  server: tw02.ccdn3.work
-  port: 20062
+- name: TW_ANYTLS_443_985
+  server: er8u54dh.df6h451rh.xin
+  port: 443
   type: anytls
-  password: fc12fb20-4380-11ec-8c97-d707e267af0b
+  password: ec74bb6a86c2
   udp: true
-  sni: www.bilibili.com
+  sni: px.ads.linkedin.com
   skip-cert-verify: true
   country: TW
-- name: TW_VLESS_25633_665
-  type: vless
-  server: fi-p1.h1cloud.net
-  port: 25633
-  uuid: ec572cf0-1337-4c51-b4ec-ff2f538c1f4c
-  servername: www.icloud.com
-  tls: true
-  client-fingerprint: random
-  reality-opts:
-    public-key: YLIRYJ8UkT0nSSgxJr7YckNuXnokVyEs2G6thNyx1GE
-    short-id: 200811f031ae7463
-  skip-cert-verify: true
+- name: TW_ANYTLS_443_1981
+  server: 684616s4.df6h451rh.xin
+  port: 443
+  type: anytls
+  password: ec74bb6a86c2
   udp: true
-  country: TW
-- name: TW_VMESS_35034_366
-  type: vmess
-  network: tcp
-  server: 165.154.195.38
-  port: 35034
-  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
+  sni: px.ads.linkedin.com
   skip-cert-verify: true
-  alterId: 0
-  cipher: auto
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -84,12 +60,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VMESS_443_1148
-  - TW_ANYTLS_443_934
-  - TW_ANYTLS_443_1351
-  - TW_ANYTLS_20062_511
-  - TW_VLESS_25633_665
-  - TW_VMESS_35034_366
+  - TW_VLESS_32134_1996
+  - TW_ANYTLS_443_1642
+  - TW_ANYTLS_443_985
+  - TW_ANYTLS_443_1981
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -102,12 +76,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_366
-  - TW_ANYTLS_20062_511
-  - TW_VLESS_25633_665
-  - TW_ANYTLS_443_934
-  - TW_VMESS_443_1148
-  - TW_ANYTLS_443_1351
+  - TW_ANYTLS_443_985
+  - TW_ANYTLS_443_1642
+  - TW_ANYTLS_443_1981
+  - TW_VLESS_32134_1996
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -119,12 +91,10 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VMESS_443_1148
-  - TW_ANYTLS_443_934
-  - TW_ANYTLS_443_1351
-  - TW_ANYTLS_20062_511
-  - TW_VLESS_25633_665
-  - TW_VMESS_35034_366
+  - TW_VLESS_32134_1996
+  - TW_ANYTLS_443_1642
+  - TW_ANYTLS_443_985
+  - TW_ANYTLS_443_1981
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
