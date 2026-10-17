@@ -5,43 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_VLESS_14430_585
+- name: IN_VLESS_14430_644
   type: vless
   server: 13.140.56.100
   port: 14430
   uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
   network: ws
-  servername: 13.140.56.100
   tls: false
+  servername: 13.140.56.100
   client-fingerprint: chrome
   ws-opts:
     path: /vless
     headers:
       Host: 13.140.56.100
-  skip-cert-verify: true
-  udp: true
   country: IN
-- name: IN_VLESS_443_1007
-  network: ws
+- name: IN_VMESS_443_1459
+  type: vmess
+  server: 20.235.220.189
   port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: ''
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
+  country: IN
+- name: IN_VLESS_443_1215
+  type: vless
+  network: ws
   server: 168.144.155.167
+  port: 443
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
   servername: cf3.schzyc.cc.cd
   tls: true
-  type: vless
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
   ws-opts:
     headers:
       Host: cf3.schzyc.cc.cd
     path: /proxyip=ProxyIP.CMLiussss.netfp=chrome
-  country: IN
-- name: IN_TROJAN_443_761
-  password: Trojan@82164024
-  port: 443
-  server: in.tronsg.com
-  skip-cert-verify: true
-  sni: in.tronsg.com
-  type: trojan
-  udp: true
   country: IN
 proxy-groups:
 - name: 🚀 节点选择
@@ -56,9 +60,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VLESS_14430_585
-  - IN_VLESS_443_1007
-  - IN_TROJAN_443_761
+  - IN_VLESS_14430_644
+  - IN_VMESS_443_1459
+  - IN_VLESS_443_1215
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -71,9 +75,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VLESS_14430_585
-  - IN_TROJAN_443_761
-  - IN_VLESS_443_1007
+  - IN_VLESS_14430_644
+  - IN_VLESS_443_1215
+  - IN_VMESS_443_1459
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -85,9 +89,9 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VLESS_14430_585
-  - IN_VLESS_443_1007
-  - IN_TROJAN_443_761
+  - IN_VLESS_14430_644
+  - IN_VMESS_443_1459
+  - IN_VLESS_443_1215
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

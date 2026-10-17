@@ -5,204 +5,132 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_21004_1175
+- name: SG_VLESS_2096_805
   type: vless
-  server: 511.150333.xyz
-  port: 21004
-  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
-  servername: www.cloudflare.com
+  network: ws
+  server: 139.162.27.96
+  port: 2096
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  servername: free-server.techsonic.dev
+  skip-cert-verify: false
   tls: true
   client-fingerprint: chrome
-  reality-opts:
-    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-    short-id: 2df2bd9d8366cef1
-  skip-cert-verify: true
-  udp: true
+  encryption: none
+  ws-opts:
+    headers:
+      Host: free-server.techsonic.dev
+    path: /free-server.techsonic.dev
   country: SG
-- name: SG_VLESS_21002_1178
+- name: SG_VLESS_443_811
   type: vless
-  server: 511.150333.xyz
-  port: 21002
-  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
-  servername: www.cloudflare.com
+  network: ws
+  server: 45.118.133.249
+  port: 443
+  uuid: 20ff936a-8eb5-4d27-9cce-93f2016d467b
+  servername: free.nadun.store
+  skip-cert-verify: false
   tls: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-    short-id: 3ab8d93dd9b1a5be
+  client-fingerprint: firefox
+  encryption: none
+  ws-opts:
+    headers:
+      Host: free.nadun.store
+    path: /
+  country: SG
+- name: SG_VMESS_18000_399
+  type: vmess
+  network: tcp
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
-  udp: true
+  alterId: 0
+  cipher: auto
   country: SG
-- name: SG_VLESS_21001_1180
-  type: vless
-  server: 511.150333.xyz
-  port: 21001
-  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
-  servername: www.cloudflare.com
-  tls: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-    short-id: ab39fc68ab3dee81
+- name: SG_VMESS_18000_404
+  type: vmess
+  network: tcp
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   skip-cert-verify: true
-  udp: true
+  alterId: 0
+  cipher: auto
   country: SG
-- name: SG_VLESS_21003_1217
-  type: vless
-  server: 511.150333.xyz
-  port: 21003
-  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
-  servername: www.cloudflare.com
-  tls: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-    short-id: bab49aa4c2a88d27
-  skip-cert-verify: true
-  udp: true
-  country: SG
-- name: SG_VLESS_10444_2355
-  type: vless
-  server: 147.93.173.45
-  port: 10444
-  uuid: 75c5f51b-d548-4eab-a26e-aa10fc3dbc7b
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: safari
-  servername: video.yandex.ru
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  country: SG
-- name: SG_VLESS_16263_444
+- encryption: none
+  name: SG_VLESS_16263_397
+  network: tcp
   port: 16263
   server: 47.237.74.17
   tls: false
   type: vless
   uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
   country: SG
-- client-fingerprint: firefox
-  encryption: none
-  name: SG_VLESS_443_901
-  network: ws
+- name: SG_TROJAN_443_1089
+  password: UX82473651
   port: 443
-  server: 45.118.133.249
-  servername: free.nadun.store
-  skip-cert-verify: false
+  server: inviting-ferret.rooster465.autos
+  sni: inviting-ferret.rooster465.autos
+  type: trojan
+  country: SG
+- name: SG_HTTP_9443_797
+  port: 9443
+  server: 152.233.9.239
+  skip-cert-verify: true
   tls: true
-  type: vless
-  uuid: 20ff936a-8eb5-4d27-9cce-93f2016d467b
-  ws-opts:
-    headers:
-      Host: free.nadun.store
-    path: /
-  country: SG
-- client-fingerprint: chrome
-  encryption: none
-  name: SG_VLESS_2096_889
-  network: ws
-  port: 2096
-  server: 139.162.27.96
-  servername: free-server.techsonic.dev
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  ws-opts:
-    headers:
-      Host: free-server.techsonic.dev
-    path: /free-server.techsonic.dev
-  country: SG
-- name: SG_TROJAN_443_678
-  password: UX82473651
-  port: 443
-  server: inspired-hound.rooster465.autos
-  sni: inspired-hound.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_679
-  password: UX82473651
-  port: 443
-  server: intense-wildcat.rooster465.autos
-  sni: intense-wildcat.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_675
-  password: UX82473651
-  port: 443
-  server: joint-ewe.rooster465.autos
-  sni: joint-ewe.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_705
-  password: UX82473651
-  port: 443
-  server: brave-tomcat.rooster465.autos
-  sni: brave-tomcat.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_678_2
-  password: UX82473651
-  port: 443
-  server: pet-antelope.rooster465.autos
-  sni: pet-antelope.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_772
-  password: UX82473651
-  port: 443
-  server: moral-basilisk.rooster465.autos
-  sni: moral-basilisk.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_675_2
-  password: UX82473651
-  port: 443
-  server: fond-mammoth.rooster465.autos
-  sni: fond-mammoth.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_671
-  password: UX82473651
-  port: 443
-  server: real-cardinal.rooster465.autos
-  sni: real-cardinal.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_676
-  password: UX82473651
-  port: 443
-  server: rested-seahorse.rooster465.autos
-  sni: rested-seahorse.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_684
-  password: UX82473651
-  port: 443
-  server: ace-liger.rooster465.autos
-  sni: ace-liger.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_TROJAN_443_787
-  password: UX82473651
-  port: 443
-  server: musical-mouse.rooster465.autos
-  sni: musical-mouse.rooster465.autos
-  type: trojan
-  country: SG
-- name: SG_HTTP_9090_668
-  password: None
-  port: 9090
-  server: 128.199.254.13
   type: http
   country: SG
-- name: SG_TROJAN_443_2970
-  password: UX82473651
+- name: SG_HTTP_9090_604
+  port: 9090
+  server: 167.99.74.174
+  type: http
+  country: SG
+- name: SG_HTTP_2080_602
+  password: '1234'
+  port: 2080
+  server: 54.151.156.21
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+  country: SG
+- client-fingerprint: chrome
+  name: SG_VLESS_443_680
+  network: ws
   port: 443
-  server: simple-molly.rooster465.autos
-  sni: simple-molly.rooster465.autos
-  type: trojan
+  server: 43.174.193.1
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+  country: SG
+- name: SG_VLESS_10443_403
+  server: 178.94.25.73
+  port: 10443
+  type: vless
+  uuid: 2dacc738-5720-4824-b8bc-e3db57596ba7
+  tls: false
+  servername: 178.94.25.73
+  network: tcp
+  udp: true
+  country: SG
+- name: SG_VLESS_14430_661
+  server: 178.94.25.73
+  port: 14430
+  type: vless
+  uuid: 2dacc738-5720-4824-b8bc-e3db57596ba7
+  tls: false
+  servername: 178.94.25.73
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 178.94.25.73
+  udp: true
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -217,27 +145,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_21004_1175
-  - SG_VLESS_21002_1178
-  - SG_VLESS_21001_1180
-  - SG_VLESS_21003_1217
-  - SG_VLESS_10444_2355
-  - SG_VLESS_16263_444
-  - SG_VLESS_443_901
-  - SG_VLESS_2096_889
-  - SG_TROJAN_443_678
-  - SG_TROJAN_443_679
-  - SG_TROJAN_443_675
-  - SG_TROJAN_443_705
-  - SG_TROJAN_443_678_2
-  - SG_TROJAN_443_772
-  - SG_TROJAN_443_675_2
-  - SG_TROJAN_443_671
-  - SG_TROJAN_443_676
-  - SG_TROJAN_443_684
-  - SG_TROJAN_443_787
-  - SG_HTTP_9090_668
-  - SG_TROJAN_443_2970
+  - SG_VLESS_2096_805
+  - SG_VLESS_443_811
+  - SG_VMESS_18000_399
+  - SG_VMESS_18000_404
+  - SG_VLESS_16263_397
+  - SG_TROJAN_443_1089
+  - SG_HTTP_9443_797
+  - SG_HTTP_9090_604
+  - SG_HTTP_2080_602
+  - SG_VLESS_443_680
+  - SG_VLESS_10443_403
+  - SG_VLESS_14430_661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -250,27 +169,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VLESS_16263_444
-  - SG_HTTP_9090_668
-  - SG_TROJAN_443_671
-  - SG_TROJAN_443_675
-  - SG_TROJAN_443_675_2
-  - SG_TROJAN_443_676
-  - SG_TROJAN_443_678
-  - SG_TROJAN_443_678_2
-  - SG_TROJAN_443_679
-  - SG_TROJAN_443_684
-  - SG_TROJAN_443_705
-  - SG_TROJAN_443_772
-  - SG_TROJAN_443_787
-  - SG_VLESS_2096_889
-  - SG_VLESS_443_901
-  - SG_VLESS_21004_1175
-  - SG_VLESS_21002_1178
-  - SG_VLESS_21001_1180
-  - SG_VLESS_21003_1217
-  - SG_VLESS_10444_2355
-  - SG_TROJAN_443_2970
+  - SG_VLESS_16263_397
+  - SG_VMESS_18000_399
+  - SG_VLESS_10443_403
+  - SG_VMESS_18000_404
+  - SG_HTTP_2080_602
+  - SG_HTTP_9090_604
+  - SG_VLESS_14430_661
+  - SG_VLESS_443_680
+  - SG_HTTP_9443_797
+  - SG_VLESS_2096_805
+  - SG_VLESS_443_811
+  - SG_TROJAN_443_1089
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -282,27 +192,18 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_21004_1175
-  - SG_VLESS_21002_1178
-  - SG_VLESS_21001_1180
-  - SG_VLESS_21003_1217
-  - SG_VLESS_10444_2355
-  - SG_VLESS_16263_444
-  - SG_VLESS_443_901
-  - SG_VLESS_2096_889
-  - SG_TROJAN_443_678
-  - SG_TROJAN_443_679
-  - SG_TROJAN_443_675
-  - SG_TROJAN_443_705
-  - SG_TROJAN_443_678_2
-  - SG_TROJAN_443_772
-  - SG_TROJAN_443_675_2
-  - SG_TROJAN_443_671
-  - SG_TROJAN_443_676
-  - SG_TROJAN_443_684
-  - SG_TROJAN_443_787
-  - SG_HTTP_9090_668
-  - SG_TROJAN_443_2970
+  - SG_VLESS_2096_805
+  - SG_VLESS_443_811
+  - SG_VMESS_18000_399
+  - SG_VMESS_18000_404
+  - SG_VLESS_16263_397
+  - SG_TROJAN_443_1089
+  - SG_HTTP_9443_797
+  - SG_HTTP_9090_604
+  - SG_HTTP_2080_602
+  - SG_VLESS_443_680
+  - SG_VLESS_10443_403
+  - SG_VLESS_14430_661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

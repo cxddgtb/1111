@@ -5,7 +5,28 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_HYSTERIA2_17701_511
+- name: RU_VLESS_8880_150
+  type: vless
+  network: ws
+  server: 185.148.106.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  tls: false
+  encryption: none
+  ws-opts:
+    headers:
+      Host: vms.lifetime54.workers.dev
+    path: /
+  country: RU
+- name: RU_HYSTERIA2_54183_726
+  password: 082f5694-9019-4110-b67b-8125dbb9bab8
+  port: 54183
+  server: outh.yandex-cloud.org
+  sni: outh.yandex-cloud.org
+  tls: false
+  type: hysteria2
+  country: RU
+- name: RU_HYSTERIA2_17701_615
   obfs: salamander
   obfs-password: 588c76723192f87cfe6d6786816177cd2bd9773acdc545928d7d1d5e8338d4ce
   password: 56ff50da-a238-4646-95ab-dd159634bd87
@@ -16,7 +37,15 @@ proxies:
   tls: false
   type: hysteria2
   country: RU
-- name: RU_HYSTERIA2_443_307
+- name: RU_HYSTERIA2_443_384
+  password: 9yOIR2_QAChKs26rYaiX_aoNnOALd0aU
+  port: 443
+  server: nl1server.rabstvo.shop
+  skip-cert-verify: true
+  tls: false
+  type: hysteria2
+  country: RU
+- name: RU_HYSTERIA2_443_403
   password: mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj
   port: 443
   server: 91.196.32.163
@@ -24,58 +53,47 @@ proxies:
   tls: false
   type: hysteria2
   country: RU
-- name: RU_HTTP_36774_494
-  password: 9jkvAVV-9ufV6IGd
-  port: 36774
-  server: chalo-ru.nexorcdn.com
+- cipher: aes-256-gcm
+  name: RU_SS_18443_346
+  password: Lpq5UPVHtQYiuB9jEUNc2WkeIYCUH9DE
+  port: 18443
+  server: 194.87.196.107
+  type: ss
+  country: RU
+- name: RU_HTTP_8443_653
+  port: 8443
+  server: 87.242.85.187
   skip-cert-verify: true
-  sni: chalo-ru.nexorcdn.com
   tls: true
   type: http
-  username: ef37886e2aacd6fa622e3de3810299c2
   country: RU
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: firefox
-  name: RU_VLESS_2053_452
+  name: RU_VLESS_2053_536
   network: xhttp
   port: 2053
+  server: randomquaint.net
+  servername: randomquaint.net
+  tls: true
+  type: vless
+  udp: true
+  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
+  xhttp-opts:
+    host: randomquaint.net
+    mode: auto
+    path: /api/v1/upload
+  country: RU
+- name: RU_VLESS_2053_539
   server: 78.159.246.179
-  servername: randomquaint.net
-  tls: true
+  port: 2053
   type: vless
-  udp: true
   uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  xhttp-opts:
-    host: randomquaint.net
-    mode: auto
-    path: /api/v1/upload
-  country: RU
-- alpn:
+  tls: true
+  alpn:
   - h2
   - http/1.1
-  client-fingerprint: firefox
-  name: RU_VLESS_2053_713
-  network: xhttp
-  port: 2053
-  server: randomquaint.net
-  servername: randomquaint.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
-  xhttp-opts:
-    host: randomquaint.net
-    mode: auto
-    path: /api/v1/upload
-  country: RU
-- name: RU_VLESS_8443_602
-  server: randomquaint.net
-  port: 8443
-  type: vless
-  uuid: 2c634977-584e-4e1f-b501-1b70c77a6743
-  tls: true
   servername: randomquaint.net
   client-fingerprint: firefox
   network: xhttp
@@ -98,12 +116,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_HYSTERIA2_17701_511
-  - RU_HYSTERIA2_443_307
-  - RU_HTTP_36774_494
-  - RU_VLESS_2053_452
-  - RU_VLESS_2053_713
-  - RU_VLESS_8443_602
+  - RU_VLESS_8880_150
+  - RU_HYSTERIA2_54183_726
+  - RU_HYSTERIA2_17701_615
+  - RU_HYSTERIA2_443_384
+  - RU_HYSTERIA2_443_403
+  - RU_SS_18443_346
+  - RU_HTTP_8443_653
+  - RU_VLESS_2053_536
+  - RU_VLESS_2053_539
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -116,12 +137,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_443_307
-  - RU_VLESS_2053_452
-  - RU_HTTP_36774_494
-  - RU_HYSTERIA2_17701_511
-  - RU_VLESS_8443_602
-  - RU_VLESS_2053_713
+  - RU_VLESS_8880_150
+  - RU_SS_18443_346
+  - RU_HYSTERIA2_443_384
+  - RU_HYSTERIA2_443_403
+  - RU_VLESS_2053_536
+  - RU_VLESS_2053_539
+  - RU_HYSTERIA2_17701_615
+  - RU_HTTP_8443_653
+  - RU_HYSTERIA2_54183_726
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -133,12 +157,15 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_HYSTERIA2_17701_511
-  - RU_HYSTERIA2_443_307
-  - RU_HTTP_36774_494
-  - RU_VLESS_2053_452
-  - RU_VLESS_2053_713
-  - RU_VLESS_8443_602
+  - RU_VLESS_8880_150
+  - RU_HYSTERIA2_54183_726
+  - RU_HYSTERIA2_17701_615
+  - RU_HYSTERIA2_443_384
+  - RU_HYSTERIA2_443_403
+  - RU_SS_18443_346
+  - RU_HTTP_8443_653
+  - RU_VLESS_2053_536
+  - RU_VLESS_2053_539
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

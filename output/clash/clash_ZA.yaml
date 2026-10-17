@@ -5,19 +5,40 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- name: ZA_VLESS_443_1007
+  type: vless
+  server: 139.84.242.103
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  tls: true
+  servername: vlso5.1d.mom
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vlso5.1d.mom
+  country: ZA
 - cipher: chacha20-ietf-poly1305
-  name: ZA_SS_443_438
+  name: ZA_SS_16233_494
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  port: 16233
+  server: 102.133.165.160
+  type: ss
+  country: ZA
+- cipher: chacha20-ietf-poly1305
+  name: ZA_SS_443_499
   password: aduB9HGxQHjA2SBMRjkHX6
   port: 443
   server: 102.37.156.224
   type: ss
   country: ZA
-- cipher: chacha20-ietf-poly1305
-  name: ZA_SS_16233_435
-  password: Xsy8Ox4yOV3xLlpxtjzs3X
-  port: 16233
-  server: 102.133.165.160
-  type: ss
+- name: ZA_HTTP_443_988
+  port: 443
+  server: 197.242.159.23
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: ZA
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,8 +53,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ZA_SS_443_438
-  - ZA_SS_16233_435
+  - ZA_VLESS_443_1007
+  - ZA_SS_16233_494
+  - ZA_SS_443_499
+  - ZA_HTTP_443_988
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,8 +69,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ZA_SS_16233_435
-  - ZA_SS_443_438
+  - ZA_SS_16233_494
+  - ZA_SS_443_499
+  - ZA_HTTP_443_988
+  - ZA_VLESS_443_1007
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,8 +84,10 @@ proxy-groups:
 - name: 🌍 ZA
   type: url-test
   proxies:
-  - ZA_SS_443_438
-  - ZA_SS_16233_435
+  - ZA_VLESS_443_1007
+  - ZA_SS_16233_494
+  - ZA_SS_443_499
+  - ZA_HTTP_443_988
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

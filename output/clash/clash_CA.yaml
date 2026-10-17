@@ -5,89 +5,99 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: aes-256-gcm
-  name: CA_SS_8882_38
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.222.136.236
-  type: ss
+- name: CA_VMESS_18000_113
+  type: vmess
+  network: tcp
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5003_157
-  password: g5MeD6Ft3CWlJId
-  port: 5003
-  server: 51.222.155.32
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8119_582
-  password: cdBIDV42DCwnfIN
-  port: 8119
-  server: 51.79.64.198
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_445_839
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.12.127
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5000_1233
+  name: CA_SS_5000_73
   password: Y6R9pAtvxxzmGC
   port: 5000
   server: 51.222.200.165
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8882_1333
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.79.49.116
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8118_1660
+  name: CA_SS_8118_81
   password: cdBIDV42DCwnfIN
   port: 8118
   server: 51.79.85.185
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_1780
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.141.125
+  name: CA_SS_8882_109
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.222.136.236
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5601_1760
+  name: CA_SS_5601_116
   password: Y6R9pAtvxxzmGC
   port: 5601
   server: 51.222.155.113
   type: ss
   country: CA
-- name: CA_HTTP_443_115
+- cipher: aes-256-gcm
+  name: CA_SS_8119_382
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 51.79.64.198
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_445_786
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.12.127
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_8882_1268
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.79.49.116
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_445_1586
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.141.125
+  type: ss
+  country: CA
+- name: CA_HTTP_443_145
   port: 443
   server: 206.223.161.47
   skip-cert-verify: true
   tls: true
   type: http
   country: CA
-- cipher: aes-256-cfb
-  name: CA_SS_443_44
-  password: amazonskr05
+- name: CA_HTTP_443_165
   port: 443
-  server: 15.223.182.197
-  type: ss
+  server: 206.223.183.16
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: CA
-- cipher: aes-256-cfb
-  name: CA_SS_443_45
-  password: amazonskr05
+- name: CA_HTTP_443_121
   port: 443
-  server: 15.175.213.130
-  type: ss
+  server: 206.223.183.13
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CA
+- name: CA_HTTP_9443_162
+  port: 9443
+  server: 149.88.98.81
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -102,18 +112,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_SS_8882_38
-  - CA_SS_5003_157
-  - CA_SS_8119_582
-  - CA_SS_445_839
-  - CA_SS_5000_1233
-  - CA_SS_8882_1333
-  - CA_SS_8118_1660
-  - CA_SS_445_1780
-  - CA_SS_5601_1760
-  - CA_HTTP_443_115
-  - CA_SS_443_44
-  - CA_SS_443_45
+  - CA_VMESS_18000_113
+  - CA_SS_5000_73
+  - CA_SS_8118_81
+  - CA_SS_8882_109
+  - CA_SS_5601_116
+  - CA_SS_8119_382
+  - CA_SS_445_786
+  - CA_SS_8882_1268
+  - CA_SS_445_1586
+  - CA_HTTP_443_145
+  - CA_HTTP_443_165
+  - CA_HTTP_443_121
+  - CA_HTTP_9443_162
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -126,18 +137,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_8882_38
-  - CA_SS_443_44
-  - CA_SS_443_45
-  - CA_HTTP_443_115
-  - CA_SS_5003_157
-  - CA_SS_8119_582
-  - CA_SS_445_839
-  - CA_SS_5000_1233
-  - CA_SS_8882_1333
-  - CA_SS_8118_1660
-  - CA_SS_5601_1760
-  - CA_SS_445_1780
+  - CA_SS_5000_73
+  - CA_SS_8118_81
+  - CA_SS_8882_109
+  - CA_VMESS_18000_113
+  - CA_SS_5601_116
+  - CA_HTTP_443_121
+  - CA_HTTP_443_145
+  - CA_HTTP_9443_162
+  - CA_HTTP_443_165
+  - CA_SS_8119_382
+  - CA_SS_445_786
+  - CA_SS_8882_1268
+  - CA_SS_445_1586
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -149,18 +161,19 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_SS_8882_38
-  - CA_SS_5003_157
-  - CA_SS_8119_582
-  - CA_SS_445_839
-  - CA_SS_5000_1233
-  - CA_SS_8882_1333
-  - CA_SS_8118_1660
-  - CA_SS_445_1780
-  - CA_SS_5601_1760
-  - CA_HTTP_443_115
-  - CA_SS_443_44
-  - CA_SS_443_45
+  - CA_VMESS_18000_113
+  - CA_SS_5000_73
+  - CA_SS_8118_81
+  - CA_SS_8882_109
+  - CA_SS_5601_116
+  - CA_SS_8119_382
+  - CA_SS_445_786
+  - CA_SS_8882_1268
+  - CA_SS_445_1586
+  - CA_HTTP_443_145
+  - CA_HTTP_443_165
+  - CA_HTTP_443_121
+  - CA_HTTP_9443_162
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

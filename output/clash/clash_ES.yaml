@@ -5,9 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- name: ES_TROJAN_2053_548
+  type: trojan
+  network: ws
+  server: 185.114.72.31
+  port: 2053
+  password: humanity
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  ws-opts:
+    headers:
+      Host: www.calmlunch.com
+    path: /assignment
+  country: ES
 - alpn:
   - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
-  name: ES_TROJAN_8443_441
+  name: ES_TROJAN_8443_601
   network: ws
   password: humanity
   port: 8443
@@ -20,30 +33,17 @@ proxies:
       Host: www.calmlunch.com
     path: /assignment
   country: ES
-- name: ES_TROJAN_2053_420
-  network: ws
-  password: humanity
-  port: 2053
-  server: 185.114.72.31
-  skip-cert-verify: false
-  sni: www.calmlunch.com
-  type: trojan
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: /assignment
-  country: ES
-- name: ES_HTTP_443_390
+- name: ES_HTTP_443_502
+  password: None
   port: 443
-  server: 130.195.250.18
+  server: 130.195.250.34
   skip-cert-verify: true
   tls: true
   type: http
   country: ES
-- name: ES_HTTP_443_779
-  password: None
+- name: ES_HTTP_443_553
   port: 443
-  server: 130.195.250.34
+  server: 82.102.17.178
   skip-cert-verify: true
   tls: true
   type: http
@@ -61,10 +61,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_TROJAN_8443_441
-  - ES_TROJAN_2053_420
-  - ES_HTTP_443_390
-  - ES_HTTP_443_779
+  - ES_TROJAN_2053_548
+  - ES_TROJAN_8443_601
+  - ES_HTTP_443_502
+  - ES_HTTP_443_553
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -77,10 +77,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_HTTP_443_390
-  - ES_TROJAN_2053_420
-  - ES_TROJAN_8443_441
-  - ES_HTTP_443_779
+  - ES_HTTP_443_502
+  - ES_TROJAN_2053_548
+  - ES_HTTP_443_553
+  - ES_TROJAN_8443_601
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -92,10 +92,10 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_TROJAN_8443_441
-  - ES_TROJAN_2053_420
-  - ES_HTTP_443_390
-  - ES_HTTP_443_779
+  - ES_TROJAN_2053_548
+  - ES_TROJAN_8443_601
+  - ES_HTTP_443_502
+  - ES_HTTP_443_553
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

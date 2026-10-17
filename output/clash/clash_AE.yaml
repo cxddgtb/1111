@@ -5,21 +5,58 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_443_996
+- name: AE_VLESS_14430_706
   type: vless
-  server: 45.59.120.217
-  port: 443
-  uuid: 8732f92b-ba85-48f7-92e4-ad029f1cd4e7
-  servername: strm.yandex.net
-  tls: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w
-    short-id: 29c2dd1e3ef7c4d4
-  skip-cert-verify: true
-  udp: true
+  network: ws
+  server: 95.174.68.188
+  port: 14430
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  servername: 95.174.68.188
+  tls: false
+  ws-opts:
+    headers:
+      Host: 95.174.68.188
+    path: /vless
   country: AE
-- name: AE_HYSTERIA2_443_341
+- name: AE_VLESS_22573_669
+  type: vless
+  network: ws
+  server: uae.unixzone.us
+  port: 22573
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  tls: false
+  ws-opts:
+    headers:
+      Host: uae.unixzone.us
+    path: /
+  country: AE
+- name: AE_VLESS_443_708
+  type: vless
+  network: ws
+  server: 89.125.139.115
+  port: 443
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  tls: true
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=chrome
+  country: AE
+- name: AE_VLESS_2053_1066
+  type: vless
+  network: ws
+  server: 147.78.0.186
+  port: 2053
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  tls: true
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=random
+  country: AE
+- name: AE_HYSTERIA2_443_408
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -30,62 +67,10 @@ proxies:
   tls: false
   type: hysteria2
   country: AE
-- encryption: none
-  name: AE_VLESS_14430_492
-  network: ws
-  port: 14430
-  server: 95.174.68.188
-  servername: 95.174.68.188
-  tls: false
-  type: vless
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  ws-opts:
-    headers:
-      Host: 95.174.68.188
-    path: /vless
-  country: AE
-- name: AE_VLESS_22573_513
-  network: ws
-  port: 22573
-  server: uae.unixzone.us
-  tls: false
-  type: vless
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  ws-opts:
-    headers:
-      Host: uae.unixzone.us
-    path: /
-  country: AE
-- name: AE_VLESS_443_597
-  network: ws
-  port: 443
-  server: 89.125.139.115
-  servername: free.cndyw.ggff.net
-  tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=chrome
-  country: AE
-- name: AE_VLESS_2053_952
-  network: ws
-  port: 2053
-  server: 147.78.0.186
-  servername: free.cndyw.ggff.net
-  tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=random
-  country: AE
 - alpn:
   - http/1.1
-  encryption: none
-  name: AE_VLESS_443_386
+  client-fingerprint: unsafe
+  name: AE_VLESS_443_533
   network: ws
   port: 443
   server: 31.57.190.49
@@ -96,13 +81,13 @@ proxies:
   ws-opts:
     headers:
       Host: lucasjow.us.ci
-    path: /cart/docs/www/proxyip=108.160.132.132fp=unsafe
+    path: /cart/docs/www/proxyip=108.160.132.132
   country: AE
 - alpn:
   - http/1.1
   client-fingerprint: unsafe
   encryption: none
-  name: AE_VLESS_443_381
+  name: AE_VLESS_443_506
   network: ws
   port: 443
   server: 31.57.190.17
@@ -116,7 +101,7 @@ proxies:
       Host: lucasjow.us.ci
     path: /cart/docs/www/proxyip=108.160.132.132
   country: AE
-- name: AE_VLESS_443_692
+- name: AE_VLESS_443_747
   server: 188.72.103.4
   port: 443
   type: vless
@@ -156,15 +141,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_443_996
-  - AE_HYSTERIA2_443_341
-  - AE_VLESS_14430_492
-  - AE_VLESS_22573_513
-  - AE_VLESS_443_597
-  - AE_VLESS_2053_952
-  - AE_VLESS_443_386
-  - AE_VLESS_443_381
-  - AE_VLESS_443_692
+  - AE_VLESS_14430_706
+  - AE_VLESS_22573_669
+  - AE_VLESS_443_708
+  - AE_VLESS_2053_1066
+  - AE_HYSTERIA2_443_408
+  - AE_VLESS_443_533
+  - AE_VLESS_443_506
+  - AE_VLESS_443_747
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -177,15 +161,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_341
-  - AE_VLESS_443_381
-  - AE_VLESS_443_386
-  - AE_VLESS_14430_492
-  - AE_VLESS_22573_513
-  - AE_VLESS_443_597
-  - AE_VLESS_443_692
-  - AE_VLESS_2053_952
-  - AE_VLESS_443_996
+  - AE_HYSTERIA2_443_408
+  - AE_VLESS_443_506
+  - AE_VLESS_443_533
+  - AE_VLESS_22573_669
+  - AE_VLESS_14430_706
+  - AE_VLESS_443_708
+  - AE_VLESS_443_747
+  - AE_VLESS_2053_1066
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -197,15 +180,14 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_443_996
-  - AE_HYSTERIA2_443_341
-  - AE_VLESS_14430_492
-  - AE_VLESS_22573_513
-  - AE_VLESS_443_597
-  - AE_VLESS_2053_952
-  - AE_VLESS_443_386
-  - AE_VLESS_443_381
-  - AE_VLESS_443_692
+  - AE_VLESS_14430_706
+  - AE_VLESS_22573_669
+  - AE_VLESS_443_708
+  - AE_VLESS_2053_1066
+  - AE_HYSTERIA2_443_408
+  - AE_VLESS_443_533
+  - AE_VLESS_443_506
+  - AE_VLESS_443_747
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

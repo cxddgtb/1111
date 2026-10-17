@@ -5,24 +5,11 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AT_TROJAN_443_315
-  network: ws
-  password: humanity
-  port: 443
-  server: 212.183.88.136
-  sni: www.calmlunch.com
-  type: trojan
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: '%2Fassignment'
-  country: AT
-- name: AT_HTTP_443_454
-  port: 443
-  server: 146.70.244.2
+- name: AT_SOCKS5_1080_537
+  port: 1080
+  server: 62.83.34.101
   skip-cert-verify: true
-  tls: true
-  type: http
+  type: socks5
   country: AT
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +24,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AT_TROJAN_443_315
-  - AT_HTTP_443_454
+  - AT_SOCKS5_1080_537
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +37,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AT_TROJAN_443_315
-  - AT_HTTP_443_454
+  - AT_SOCKS5_1080_537
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +49,7 @@ proxy-groups:
 - name: 🌍 AT
   type: url-test
   proxies:
-  - AT_TROJAN_443_315
-  - AT_HTTP_443_454
+  - AT_SOCKS5_1080_537
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

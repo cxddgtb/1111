@@ -6,40 +6,26 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: chacha20-ietf-poly1305
-  name: CH_SS_8388_232
+  name: CH_SS_8388_391
   password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
   port: 8388
   server: 132.243.175.144
   type: ss
   country: CH
-- name: CH_HTTP_9443_389
-  port: 9443
-  server: 149.88.27.33
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_9443_400
-  port: 9443
-  server: 149.88.27.46
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_443_452
+- name: CH_VLESS_443_507
+  server: freefl.aiage.work
   port: 443
-  server: 31.7.62.50
-  skip-cert-verify: true
+  type: vless
+  uuid: 6338c01a-310e-42c3-bf4f-2a20e161054b
   tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_9443_393
-  password: None
-  port: 9443
-  server: 37.120.213.210
-  skip-cert-verify: true
-  tls: true
-  type: http
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: EqN5QtvWGccdkmL5ZNVDBRxRhWgr6g_vr3ABT8Q2dW4
+    short-id: ff0ddf949624ef2a
+  servername: freefl.aiage.work
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -54,11 +40,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_SS_8388_232
-  - CH_HTTP_9443_389
-  - CH_HTTP_9443_400
-  - CH_HTTP_443_452
-  - CH_HTTP_9443_393
+  - CH_SS_8388_391
+  - CH_VLESS_443_507
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -71,11 +54,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_SS_8388_232
-  - CH_HTTP_9443_389
-  - CH_HTTP_9443_393
-  - CH_HTTP_9443_400
-  - CH_HTTP_443_452
+  - CH_SS_8388_391
+  - CH_VLESS_443_507
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,11 +67,8 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_SS_8388_232
-  - CH_HTTP_9443_389
-  - CH_HTTP_9443_400
-  - CH_HTTP_443_452
-  - CH_HTTP_9443_393
+  - CH_SS_8388_391
+  - CH_VLESS_443_507
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

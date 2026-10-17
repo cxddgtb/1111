@@ -5,83 +5,33 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BY_VLESS_10444_457
-  type: vless
-  server: 178.172.227.124
-  port: 10444
-  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
-  servername: ads.x5.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: safari
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  skip-cert-verify: true
-  udp: true
-  country: BY
-- name: BY_VLESS_10444_1019
-  type: vless
-  server: 95.128.71.79
-  port: 10444
-  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
-  servername: ads.x5.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: safari
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  skip-cert-verify: true
-  udp: true
-  country: BY
-- name: BY_VLESS_14430_373
-  type: vless
-  server: 178.172.227.124
-  port: 14430
-  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
-  network: ws
-  servername: 178.172.227.124
-  tls: false
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless
-    headers:
-      Host: 178.172.227.124
-  skip-cert-verify: true
-  udp: true
-  country: BY
-- name: BY_VLESS_14430_495
-  type: vless
-  server: 95.128.71.79
-  port: 14430
-  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
-  network: ws
-  servername: 95.128.71.79
-  tls: false
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless
-    headers:
-      Host: 95.128.71.79
-  skip-cert-verify: true
-  udp: true
-  country: BY
-- name: BY_VLESS_14430_1009
+- name: BY_VLESS_14430_501
   type: vless
   server: 178.172.227.228
   port: 14430
   uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
   network: ws
-  servername: 178.172.227.228
   tls: false
+  servername: 178.172.227.228
   client-fingerprint: chrome
   ws-opts:
     path: /vless
     headers:
       Host: 178.172.227.228
-  skip-cert-verify: true
-  udp: true
+  country: BY
+- name: BY_VLESS_14430_1535
+  type: vless
+  server: 178.172.227.124
+  port: 14430
+  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
+  network: ws
+  tls: false
+  servername: 178.172.227.124
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 178.172.227.124
   country: BY
 proxy-groups:
 - name: 🚀 节点选择
@@ -96,11 +46,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BY_VLESS_10444_457
-  - BY_VLESS_10444_1019
-  - BY_VLESS_14430_373
-  - BY_VLESS_14430_495
-  - BY_VLESS_14430_1009
+  - BY_VLESS_14430_501
+  - BY_VLESS_14430_1535
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -113,11 +60,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BY_VLESS_14430_373
-  - BY_VLESS_10444_457
-  - BY_VLESS_14430_495
-  - BY_VLESS_14430_1009
-  - BY_VLESS_10444_1019
+  - BY_VLESS_14430_501
+  - BY_VLESS_14430_1535
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -129,11 +73,8 @@ proxy-groups:
 - name: 🌍 BY
   type: url-test
   proxies:
-  - BY_VLESS_10444_457
-  - BY_VLESS_10444_1019
-  - BY_VLESS_14430_373
-  - BY_VLESS_14430_495
-  - BY_VLESS_14430_1009
+  - BY_VLESS_14430_501
+  - BY_VLESS_14430_1535
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

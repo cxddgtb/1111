@@ -5,7 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_HYSTERIA2_5443_621
+- name: EE_VLESS_2053_619
+  type: vless
+  network: ws
+  server: 5.189.254.168
+  port: 2053
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  servername: cf3.schzyc.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: cf3.schzyc.cc.cd
+    path: /proxyip=ProxyIP.CMLiussss.net
+  country: EE
+- name: EE_HYSTERIA2_5443_680
   password: 43212c32-01f2-4356-b216-67dc1c178262
   port: 5443
   server: ees92.shhflow.xyz
@@ -13,19 +27,12 @@ proxies:
   tls: false
   type: hysteria2
   country: EE
-- client-fingerprint: chrome
-  name: EE_VLESS_2053_957
-  network: ws
-  port: 2053
-  server: 5.189.254.168
-  servername: cf3.schzyc.cc.cd
+- name: EE_HTTP_443_508
+  port: 443
+  server: 95.153.32.2
+  skip-cert-verify: true
   tls: true
-  type: vless
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-  ws-opts:
-    headers:
-      Host: cf3.schzyc.cc.cd
-    path: /proxyip=ProxyIP.CMLiussss.net
+  type: http
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -40,8 +47,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_HYSTERIA2_5443_621
-  - EE_VLESS_2053_957
+  - EE_VLESS_2053_619
+  - EE_HYSTERIA2_5443_680
+  - EE_HTTP_443_508
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -54,8 +62,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_HYSTERIA2_5443_621
-  - EE_VLESS_2053_957
+  - EE_HTTP_443_508
+  - EE_VLESS_2053_619
+  - EE_HYSTERIA2_5443_680
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -67,8 +76,9 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_HYSTERIA2_5443_621
-  - EE_VLESS_2053_957
+  - EE_VLESS_2053_619
+  - EE_HYSTERIA2_5443_680
+  - EE_HTTP_443_508
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

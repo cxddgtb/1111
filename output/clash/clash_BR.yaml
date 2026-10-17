@@ -5,20 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BR_VLESS_80_791
-  network: ws
-  port: 80
-  server: platform101.golnamakcert.top
-  tls: false
-  type: vless
-  uuid: e13cf851-b4fd-413b-8d49-146e6eb8e5d4
-  ws-opts:
-    headers:
-      Host: platform101.halalkhor.info
-    path: /platform101
+- name: BR_HTTP_443_603
+  port: 443
+  server: 134.65.17.77
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: BR
 - auth: CyG0RFxMjzs41uQD4OLuHQ==
-  name: BR_HYSTERIA2_20000_657
+  name: BR_HYSTERIA2_20000_1089
   obfs: salamander
   obfs-password: CyG0RFxMjzs41uQD4OLuHQ==
   password: CyG0RFxMjzs41uQD4OLuHQ==
@@ -42,8 +37,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BR_VLESS_80_791
-  - BR_HYSTERIA2_20000_657
+  - BR_HTTP_443_603
+  - BR_HYSTERIA2_20000_1089
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +51,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BR_HYSTERIA2_20000_657
-  - BR_VLESS_80_791
+  - BR_HTTP_443_603
+  - BR_HYSTERIA2_20000_1089
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +64,8 @@ proxy-groups:
 - name: 🌍 BR
   type: url-test
   proxies:
-  - BR_VLESS_80_791
-  - BR_HYSTERIA2_20000_657
+  - BR_HTTP_443_603
+  - BR_HYSTERIA2_20000_1089
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
