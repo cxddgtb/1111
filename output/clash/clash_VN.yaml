@@ -5,19 +5,11 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VN_VLESS_443_909
-  type: vless
-  server: 160.25.75.40
-  port: 443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  network: ws
-  tls: true
-  servername: cdn8848.776676.xyz
-  client-fingerprint: chrome
-  ws-opts:
-    path: /html?ed=2560fp=chrome
-    headers:
-      Host: cdn8848.776676.xyz
+- name: VN_SOCKS5_1083_957
+  port: 1083
+  server: 113.22.224.63
+  skip-cert-verify: true
+  type: socks5
   country: VN
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +24,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - VN_VLESS_443_909
+  - VN_SOCKS5_1083_957
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +37,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - VN_VLESS_443_909
+  - VN_SOCKS5_1083_957
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +49,7 @@ proxy-groups:
 - name: 🌍 VN
   type: url-test
   proxies:
-  - VN_VLESS_443_909
+  - VN_SOCKS5_1083_957
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

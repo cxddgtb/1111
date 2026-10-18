@@ -5,37 +5,24 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VMESS_443_723
+- name: KR_VMESS_8888_357
   type: vmess
-  network: ws
-  server: seoul02.zgjok.com
-  port: 443
-  uuid: 1a1e5196-eab4-4772-9012-65c27f19a524
+  network: tcp
+  server: 146.56.112.110
+  port: 8888
+  uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
   skip-cert-verify: true
-  tls: true
   alterId: 0
   cipher: auto
-  ws-opts:
-    headers:
-      Host: seoul02.zgjok.com
-    path: /
   country: KR
-- name: KR_ANYTLS_24318_795
-  password: 87c6ad7b-e450-44a8-8088-bc2234d43de1
-  port: 24318
-  server: svip.skycon808.com
+- name: KR_VLESS_443_308
+  type: vless
+  server: 43.203.219.68
+  port: 443
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
+  network: http
+  tls: false
   skip-cert-verify: true
-  sni: hk08.jdddyy01.cc
-  type: anytls
-  udp: true
-  country: KR
-- name: KR_ANYTLS_47531_862
-  password: 87c6ad7b-e450-44a8-8088-bc2234d43de1
-  port: 47531
-  server: svip.skycon808.com
-  skip-cert-verify: true
-  sni: tw15.swiftrelay.cc
-  type: anytls
   udp: true
   country: KR
 proxy-groups:
@@ -51,9 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_443_723
-  - KR_ANYTLS_24318_795
-  - KR_ANYTLS_47531_862
+  - KR_VMESS_8888_357
+  - KR_VLESS_443_308
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -66,9 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_443_723
-  - KR_ANYTLS_24318_795
-  - KR_ANYTLS_47531_862
+  - KR_VLESS_443_308
+  - KR_VMESS_8888_357
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -80,9 +65,8 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_443_723
-  - KR_ANYTLS_24318_795
-  - KR_ANYTLS_47531_862
+  - KR_VMESS_8888_357
+  - KR_VLESS_443_308
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

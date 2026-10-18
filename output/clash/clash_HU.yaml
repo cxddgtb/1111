@@ -5,32 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HU_VLESS_443_437
-  type: vless
-  server: hu1.aiage.work
-  port: 443
-  uuid: 6338c01a-310e-42c3-bf4f-2a20e161054b
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: chrome
-  servername: hu1.aiage.work
-  reality-opts:
-    public-key: mPzNFHO4pZMzFviRkIhRd7xDUz4dMHyI-flZLOrgDVg
-    short-id: f8379ce795f2e5ed
-  country: HU
-- name: HU_VLESS_8443_605
-  type: vless
+- client-fingerprint: random
+  name: HU_VLESS_8443_735
   network: ws
-  server: 37.221.210.113
   port: 8443
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  server: 37.221.210.113
   servername: free.cndyw.ggff.net
   tls: true
+  type: vless
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
   ws-opts:
     headers:
       Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=random
+    path: pyip=bpb.yousef.isegaro.com
   country: HU
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,8 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HU_VLESS_443_437
-  - HU_VLESS_8443_605
+  - HU_VLESS_8443_735
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HU_VLESS_443_437
-  - HU_VLESS_8443_605
+  - HU_VLESS_8443_735
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +57,7 @@ proxy-groups:
 - name: 🌍 HU
   type: url-test
   proxies:
-  - HU_VLESS_443_437
-  - HU_VLESS_8443_605
+  - HU_VLESS_8443_735
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

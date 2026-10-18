@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_14430_334
+- name: FR_VLESS_14430_426
   type: vless
   server: 138.124.70.41
   port: 14430
@@ -19,55 +19,11 @@ proxies:
     headers:
       Host: 138.124.70.41
   country: FR
-- name: FR_VMESS_80_382
-  type: vmess
-  network: ws
-  server: 145.239.55.210
-  port: 80
-  uuid: 067fcd63-b215-4abd-8529-ae929a9971a9
-  skip-cert-verify: false
-  tls: false
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-    path: /
-  country: FR
-- name: FR_VMESS_80_681
-  type: vmess
-  network: ws
-  server: 54.37.131.126
-  port: 80
-  uuid: 6deef9ad-1357-443d-f95c-cb18952c20b3
-  skip-cert-verify: false
-  tls: false
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
-    path: /
-  country: FR
-- name: FR_VLESS_443_348
-  type: vless
-  network: tcp
-  server: 149.202.57.89
-  port: 443
-  uuid: 126fdbae-bb34-5882-a40c-fb60c5ea4afb
-  servername: rgiw5k0gg5-1492025789-direct.kheibarr.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  country: FR
 - alpn:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
-  name: FR_HYSTERIA_24667_1829
+  name: FR_HYSTERIA_24667_1735
   port: 24667
   protocol: udp
   server: 62.210.70.191
@@ -76,46 +32,76 @@ proxies:
   type: hysteria
   up: 11 Mbps
   country: FR
-- name: FR_VLESS_14430_1448
+- alpn:
+  - http/1.1
+  name: FR_TROJAN_443_613
   network: ws
-  port: 14430
-  server: 46.226.166.208
-  tls: false
-  type: vless
-  uuid: af827fd0-6381-426f-bc5e-dcd9a7baeaac
+  password: humanity
+  port: 443
+  server: 57.128.179.254
+  skip-cert-verify: false
+  sni: www.volumeroot.com
+  type: trojan
   ws-opts:
     headers:
-      Host: ''
-    path: /vless
+      Host: www.volumeroot.com
+    path: /assignment
   country: FR
-- name: FR_HTTP_9443_489
+- alpn:
+  - http/1.1
+  name: FR_TROJAN_443_779
+  network: ws
+  password: humanity
+  port: 443
+  server: 157.173.97.132
+  skip-cert-verify: false
+  sni: wWw.Volumeroot.cOm.
+  type: trojan
+  ws-opts:
+    headers:
+      Host: www.volumerOot.coM.
+    path: /assignment
+  country: FR
+- name: FR_HTTP_9443_583
   port: 9443
   server: 138.199.47.247
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_443_553
+- name: FR_HTTP_9443_588
+  port: 9443
+  server: 213.139.9.142
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_646
   port: 443
   server: 82.66.235.221
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_443_485
-  password: None
-  port: 443
-  server: 149.102.245.65
+- name: FR_HTTP_6103_613
+  port: 6103
+  server: 87.98.174.157
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_8081_517
-  port: 8081
-  server: 31.32.19.111
-  skip-cert-verify: true
-  tls: true
-  type: http
+- name: FR_VLESS_8080_1205
+  server: farancenew.mamadhpbot.ir
+  port: 8080
+  type: vless
+  uuid: 732ec777-bf4a-4fee-835a-25d6a8b58563
+  tls: false
+  network: ws
+  ws-opts:
+    path: /real
+    headers:
+      Host: farancenew.mamadhpbot.ir
+  udp: true
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -130,16 +116,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_14430_334
-  - FR_VMESS_80_382
-  - FR_VMESS_80_681
-  - FR_VLESS_443_348
-  - FR_HYSTERIA_24667_1829
-  - FR_VLESS_14430_1448
-  - FR_HTTP_9443_489
-  - FR_HTTP_443_553
-  - FR_HTTP_443_485
-  - FR_HTTP_8081_517
+  - FR_VLESS_14430_426
+  - FR_HYSTERIA_24667_1735
+  - FR_TROJAN_443_613
+  - FR_TROJAN_443_779
+  - FR_HTTP_9443_583
+  - FR_HTTP_9443_588
+  - FR_HTTP_443_646
+  - FR_HTTP_6103_613
+  - FR_VLESS_8080_1205
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -152,16 +137,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_14430_334
-  - FR_VLESS_443_348
-  - FR_VMESS_80_382
-  - FR_HTTP_443_485
-  - FR_HTTP_9443_489
-  - FR_HTTP_8081_517
-  - FR_HTTP_443_553
-  - FR_VMESS_80_681
-  - FR_VLESS_14430_1448
-  - FR_HYSTERIA_24667_1829
+  - FR_VLESS_14430_426
+  - FR_HTTP_9443_583
+  - FR_HTTP_9443_588
+  - FR_TROJAN_443_613
+  - FR_HTTP_6103_613
+  - FR_HTTP_443_646
+  - FR_TROJAN_443_779
+  - FR_VLESS_8080_1205
+  - FR_HYSTERIA_24667_1735
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -173,16 +157,15 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_14430_334
-  - FR_VMESS_80_382
-  - FR_VMESS_80_681
-  - FR_VLESS_443_348
-  - FR_HYSTERIA_24667_1829
-  - FR_VLESS_14430_1448
-  - FR_HTTP_9443_489
-  - FR_HTTP_443_553
-  - FR_HTTP_443_485
-  - FR_HTTP_8081_517
+  - FR_VLESS_14430_426
+  - FR_HYSTERIA_24667_1735
+  - FR_TROJAN_443_613
+  - FR_TROJAN_443_779
+  - FR_HTTP_9443_583
+  - FR_HTTP_9443_588
+  - FR_HTTP_443_646
+  - FR_HTTP_6103_613
+  - FR_VLESS_8080_1205
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
