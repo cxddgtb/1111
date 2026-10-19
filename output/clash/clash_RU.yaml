@@ -5,33 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_HYSTERIA2_54183_442
-  password: 082f5694-9019-4110-b67b-8125dbb9bab8
-  port: 54183
-  server: 189.74.114.2
-  sni: outh.yandex-cloud.org
-  tls: false
-  type: hysteria2
-  country: RU
-- auth: 082f5694-9019-4110-b67b-8125dbb9bab8
-  name: RU_HYSTERIA2_54183_459
-  password: 082f5694-9019-4110-b67b-8125dbb9bab8
-  port: 54183
-  server: 189.74.106.162
-  skip-cert-verify: true
-  sni: outh.yandex-cloud.org
-  tls: false
-  type: hysteria2
-  country: RU
-- name: RU_HYSTERIA2_443_444
-  password: 9yOIR2_QAChKs26rYaiX_aoNnOALd0aU
-  port: 443
-  server: nl1server.rabstvo.shop
-  skip-cert-verify: true
-  tls: false
-  type: hysteria2
-  country: RU
-- name: RU_HYSTERIA2_17701_726
+- name: RU_HYSTERIA2_17701_533
   obfs: salamander
   obfs-password: 588c76723192f87cfe6d6786816177cd2bd9773acdc545928d7d1d5e8338d4ce
   password: 56ff50da-a238-4646-95ab-dd159634bd87
@@ -42,26 +16,23 @@ proxies:
   tls: false
   type: hysteria2
   country: RU
-- name: RU_HYSTERIA2_54183_839
-  password: 082f5694-9019-4110-b67b-8125dbb9bab8
-  port: 54183
-  server: outh.yandex-cloud.org
-  sni: outh.yandex-cloud.org
-  tls: false
-  type: hysteria2
-  country: RU
-- name: RU_HTTP_1446_810
-  port: 1446
-  server: 46.29.166.134
+- client-fingerprint: random
+  name: RU_VLESS_8443_543
+  network: ws
+  port: 8443
+  server: 194.87.143.165
   skip-cert-verify: true
   tls: true
-  type: http
+  type: vless
+  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
+  ws-opts:
+    path: /
   country: RU
 - alpn:
-  - h2
   - http/1.1
+  - h2
   client-fingerprint: firefox
-  name: RU_VLESS_2053_619
+  name: RU_VLESS_2053_486
   network: xhttp
   port: 2053
   server: 78.159.246.179
@@ -69,73 +40,73 @@ proxies:
   tls: true
   type: vless
   udp: true
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
+  uuid: 6a2aff19-ff1f-4a13-96c8-a4d8986a9699
   xhttp-opts:
     host: randomquaint.net
     mode: auto
     path: /api/v1/upload
   country: RU
-- alpn:
+- name: RU_VLESS_443_806
+  server: cdn-01.funvideos.video
+  port: 443
+  type: vless
+  uuid: aca886aa-9b51-4eb2-8d7a-12d6b89caf4d
+  tls: true
+  servername: cdn-01.funvideos.video
+  client-fingerprint: ios
+  network: ws
+  ws-opts:
+    path: /api/53d53ac3/a7fa61/096357bebc62
+    headers:
+      Host: cdn-01.funvideos.video
+  udp: true
+  country: RU
+- name: RU_VLESS_2053_616
+  server: randomquaint.net
+  port: 2053
+  type: vless
+  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
+  tls: true
+  alpn:
   - h2
   - http/1.1
-  client-fingerprint: firefox
-  name: RU_VLESS_2053_651
-  network: xhttp
-  port: 2053
-  server: randomquaint.net
   servername: randomquaint.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 95a608b6-bff1-4e10-bb61-0a39f221bb7d
+  client-fingerprint: firefox
+  network: xhttp
   xhttp-opts:
+    path: /api/v1/upload
     host: randomquaint.net
     mode: auto
-    path: /api/v1/upload
+  udp: true
   country: RU
-- name: RU_VLESS_443_468
-  server: 189.74.117.22
+- name: RU_VLESS_443_2411
+  server: 78.24.92.70
   port: 443
   type: vless
-  uuid: 082f5694-9019-4110-b67b-8125dbb9bab8
+  uuid: cb5d9bb5-c2f9-46cf-9555-9ead6b30c7b7
   tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
-    short-id: a8
-  servername: api.videolaguna.cc
+  servername: lt69.cdnfern.org
   client-fingerprint: firefox
-  network: tcp
+  network: xhttp
+  xhttp-opts:
+    path: /api/v1/
   udp: true
   country: RU
-- name: RU_VLESS_443_599
-  server: api.mediapolyana.cc
+- name: RU_VLESS_443_565
+  type: vless
+  network: ws
+  server: 91.210.169.181
   port: 443
-  type: vless
-  uuid: 082f5694-9019-4110-b67b-8125dbb9bab8
+  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
+  servername: wstg.datasynctrue.online
+  skip-cert-verify: false
   tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
-    short-id: a8
-  servername: api.mediapolyana.cc
-  client-fingerprint: edge
-  network: tcp
   udp: true
-  country: RU
-- name: RU_VLESS_444_757
-  server: 103.24.207.39
-  port: 444
-  type: vless
-  uuid: 258d8fc5-206c-48fd-88df-169dbbe44d3f
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: P7F65GjTQGZju-N8CVHtlKNaWebVe_76Xt7Lm00RuH0
-  servername: vextor.win
-  client-fingerprint: random
-  network: tcp
-  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: wstg.datasynctrue.online
+    path: /api/connect
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -150,17 +121,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_HYSTERIA2_54183_442
-  - RU_HYSTERIA2_54183_459
-  - RU_HYSTERIA2_443_444
-  - RU_HYSTERIA2_17701_726
-  - RU_HYSTERIA2_54183_839
-  - RU_HTTP_1446_810
-  - RU_VLESS_2053_619
-  - RU_VLESS_2053_651
-  - RU_VLESS_443_468
-  - RU_VLESS_443_599
-  - RU_VLESS_444_757
+  - RU_HYSTERIA2_17701_533
+  - RU_VLESS_8443_543
+  - RU_VLESS_2053_486
+  - RU_VLESS_443_806
+  - RU_VLESS_2053_616
+  - RU_VLESS_443_2411
+  - RU_VLESS_443_565
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -173,17 +140,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_HYSTERIA2_54183_442
-  - RU_HYSTERIA2_443_444
-  - RU_HYSTERIA2_54183_459
-  - RU_VLESS_443_468
-  - RU_VLESS_443_599
-  - RU_VLESS_2053_619
-  - RU_VLESS_2053_651
-  - RU_HYSTERIA2_17701_726
-  - RU_VLESS_444_757
-  - RU_HTTP_1446_810
-  - RU_HYSTERIA2_54183_839
+  - RU_VLESS_2053_486
+  - RU_HYSTERIA2_17701_533
+  - RU_VLESS_8443_543
+  - RU_VLESS_443_565
+  - RU_VLESS_2053_616
+  - RU_VLESS_443_806
+  - RU_VLESS_443_2411
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -195,17 +158,13 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_HYSTERIA2_54183_442
-  - RU_HYSTERIA2_54183_459
-  - RU_HYSTERIA2_443_444
-  - RU_HYSTERIA2_17701_726
-  - RU_HYSTERIA2_54183_839
-  - RU_HTTP_1446_810
-  - RU_VLESS_2053_619
-  - RU_VLESS_2053_651
-  - RU_VLESS_443_468
-  - RU_VLESS_443_599
-  - RU_VLESS_444_757
+  - RU_HYSTERIA2_17701_533
+  - RU_VLESS_8443_543
+  - RU_VLESS_2053_486
+  - RU_VLESS_443_806
+  - RU_VLESS_2053_616
+  - RU_VLESS_443_2411
+  - RU_VLESS_443_565
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

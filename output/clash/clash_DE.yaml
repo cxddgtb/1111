@@ -5,25 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_8080_685
-  type: vless
-  server: milo.rubinaz.xyz
-  port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+- name: DE_TROJAN_443_294
+  type: trojan
+  server: de7.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  sni: de7.dedushka.top
+  skip-cert-verify: true
+  udp: true
   country: DE
-- client-fingerprint: chrome
-  encryption: none
-  name: DE_VLESS_2083_636
+- encryption: none
+  name: DE_VLESS_2083_422
   network: ws
   port: 2083
   server: sino.bestsellers1.site
   servername: sino.bestsellers1.site
-  skip-cert-verify: false
   tls: true
   type: vless
   uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
@@ -33,65 +29,7 @@ proxies:
 - alpn:
   - http/1.1
   encryption: none
-  name: DE_VLESS_2087_613
-  network: ws
-  port: 2087
-  server: ops4asfseretuiyk.localip.ir
-  servername: ops4asfseretuiyk.localip.ir
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e4c0d
-  ws-opts:
-    headers:
-      Host: ops4asfseretuiyk.localip.ir
-    path: /hokm
-  country: DE
-- alpn:
-  - http/1.1
-  encryption: none
-  name: DE_VLESS_2087_839
-  network: ws
-  port: 2087
-  server: hoert1rert.localip.ir
-  servername: hoert1rert.localip.ir
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e4c0d
-  ws-opts:
-    headers:
-      Host: hoert1rert.localip.ir
-    path: /hokm
-  country: DE
-- name: DE_VLESS_2052_584
-  port: 2052
-  server: edge10.cyrionflare.com
-  tls: false
-  type: vless
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
-  country: DE
-- alpn:
-  - http/1.1
-  encryption: none
-  name: DE_VLESS_2087_915
-  network: ws
-  port: 2087
-  server: fert1qswdfegrthy.localip.ir
-  servername: fert1qswdfegrthy.localip.ir
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e4c0d
-  ws-opts:
-    headers:
-      Host: fert1qswdfegrthy.localip.ir
-    path: /hokm
-  country: DE
-- alpn:
-  - http/1.1
-  encryption: none
-  name: DE_VLESS_2087_1046
+  name: DE_VLESS_2087_635
   network: ws
   port: 2087
   server: sdcdethyerft.localip.ir
@@ -105,10 +43,36 @@ proxies:
       Host: sdcdethyerft.localip.ir
     path: /hokm
   country: DE
+- encryption: none
+  name: DE_VLESS_2052_448
+  network: tcp
+  port: 2052
+  server: edge10.cyrionflare.com
+  tls: false
+  type: vless
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  country: DE
 - alpn:
   - http/1.1
   encryption: none
-  name: DE_VLESS_2087_1040
+  name: DE_VLESS_2087_591
+  network: ws
+  port: 2087
+  server: hoert1rert.localip.ir
+  servername: hoert1rert.localip.ir
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e4c0d
+  ws-opts:
+    headers:
+      Host: hoert1rert.localip.ir
+    path: /hokm
+  country: DE
+- alpn:
+  - http/1.1
+  encryption: none
+  name: DE_VLESS_2087_563
   network: ws
   port: 2087
   server: fert6.localip.ir
@@ -122,7 +86,7 @@ proxies:
       Host: fert6.localip.ir
     path: /hokm
   country: DE
-- name: DE_VLESS_80_801
+- name: DE_VLESS_80_715
   network: ws
   port: 80
   server: free.sahanwickramasinghe.me
@@ -134,7 +98,20 @@ proxies:
       Host: free.sahanwickramasinghe.me
     path: /
   country: DE
-- name: DE_TROJAN_443_812
+- name: DE_TROJAN_443_489
+  network: ws
+  password: humanity
+  port: 443
+  server: 185.220.100.168
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  ws-opts:
+    headers:
+      Host: www.calmlunch.com
+    path: /assignment
+  country: DE
+- name: DE_TROJAN_443_561
   network: ws
   password: humanity
   port: 443
@@ -149,7 +126,7 @@ proxies:
   country: DE
 - alpn:
   - http/1.1
-  name: DE_TROJAN_443_703
+  name: DE_TROJAN_443_507
   network: ws
   password: humanity
   port: 443
@@ -163,7 +140,7 @@ proxies:
     path: /assignment
   country: DE
 - encryption: none
-  name: DE_VLESS_443_2271
+  name: DE_VLESS_443_1795
   network: ws
   port: 443
   server: sub.merky.top
@@ -176,70 +153,50 @@ proxies:
       Host: sub.merky.top
     path: /merky-connect/de6/
   country: DE
-- name: DE_HTTP_9002_626
-  port: 9002
-  server: 158.173.154.5
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_443_608
-  port: 443
-  server: 159.69.94.125
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_443_594
+- name: DE_HTTP_443_355
   port: 443
   server: 79.127.156.177
   skip-cert-verify: true
   tls: true
   type: http
   country: DE
-- name: DE_HTTP_9002_620
+- name: DE_HTTP_443_368
+  password: None
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_375
+  port: 443
+  server: 149.36.50.157
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_9002_394
   port: 9002
   server: 158.173.154.4
   skip-cert-verify: true
   tls: true
   type: http
   country: DE
-- name: DE_HTTP_9002_621
+- name: DE_HTTP_443_383
+  port: 443
+  server: 213.109.163.119
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_9002_401
   port: 9002
   server: 158.173.154.2
   skip-cert-verify: true
   tls: true
   type: http
   country: DE
-- name: DE_HTTP_443_599
-  port: 443
-  server: 149.36.50.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_443_657
-  port: 443
-  server: 152.233.20.206
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_443_645
-  port: 443
-  server: 213.177.229.161
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_9002_642
-  port: 9002
-  server: 158.173.154.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_9443_593
+- name: DE_HTTP_9443_363
   password: None
   port: 9443
   server: 87.249.132.97
@@ -247,14 +204,98 @@ proxies:
   tls: true
   type: http
   country: DE
-- name: DE_HYSTERIA2_54183_469
-  server: 50.7.87.150
-  port: 54183
-  type: hysteria2
-  password: 082f5694-9019-4110-b67b-8125dbb9bab8
-  auth: 082f5694-9019-4110-b67b-8125dbb9bab8
-  sni: outh.yandex-cloud.org
+- name: DE_HTTP_9002_396
+  port: 9002
+  server: 158.173.154.3
   skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_9443_389
+  port: 9443
+  server: 213.177.229.161
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_SOCKS5_3129_420
+  port: 3129
+  server: 89.58.42.118
+  skip-cert-verify: true
+  type: socks5
+  country: DE
+- name: DE_VLESS_443_279
+  server: 64.188.66.181
+  port: 443
+  type: vless
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 5fkwwCKZzMsE6Eb_b3iqluu-1AWIfnYl-p0N3EL9Al8
+    short-id: 2c9a2790ad5900b2
+  servername: ge-s-1.pythonmakemigreat.wiki
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+  country: DE
+- name: DE_VLESS_20001_517
+  server: site.teslamotor.site
+  port: 20001
+  type: vless
+  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
+  tls: false
+  network: tcp
+  udp: true
+  country: DE
+- name: DE_VLESS_443_774
+  type: vless
+  network: ws
+  server: 94.143.231.146
+  port: 443
+  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
+  servername: sub.merky.top
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: sub.merky.top
+    path: /merky-connect/de6/
+  country: DE
+- name: DE_VLESS_2083_397
+  type: vless
+  network: ws
+  server: 91.107.247.173
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  servername: sino.bestsellers1.site
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: sino.bestsellers1.site
+  country: DE
+- name: DE_VLESS_2096_455
+  type: vless
+  network: ws
+  server: 167.172.183.195
+  port: 2096
+  uuid: bba95b1f-f48c-454b-897b-a6c6bc307df1
+  servername: edge.yzkvm.top
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: edge.yzkvm.top
+    path: /fp=chrome
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -269,29 +310,32 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_8080_685
-  - DE_VLESS_2083_636
-  - DE_VLESS_2087_613
-  - DE_VLESS_2087_839
-  - DE_VLESS_2052_584
-  - DE_VLESS_2087_915
-  - DE_VLESS_2087_1046
-  - DE_VLESS_2087_1040
-  - DE_VLESS_80_801
-  - DE_TROJAN_443_812
-  - DE_TROJAN_443_703
-  - DE_VLESS_443_2271
-  - DE_HTTP_9002_626
-  - DE_HTTP_443_608
-  - DE_HTTP_443_594
-  - DE_HTTP_9002_620
-  - DE_HTTP_9002_621
-  - DE_HTTP_443_599
-  - DE_HTTP_443_657
-  - DE_HTTP_443_645
-  - DE_HTTP_9002_642
-  - DE_HTTP_9443_593
-  - DE_HYSTERIA2_54183_469
+  - DE_TROJAN_443_294
+  - DE_VLESS_2083_422
+  - DE_VLESS_2087_635
+  - DE_VLESS_2052_448
+  - DE_VLESS_2087_591
+  - DE_VLESS_2087_563
+  - DE_VLESS_80_715
+  - DE_TROJAN_443_489
+  - DE_TROJAN_443_561
+  - DE_TROJAN_443_507
+  - DE_VLESS_443_1795
+  - DE_HTTP_443_355
+  - DE_HTTP_443_368
+  - DE_HTTP_443_375
+  - DE_HTTP_9002_394
+  - DE_HTTP_443_383
+  - DE_HTTP_9002_401
+  - DE_HTTP_9443_363
+  - DE_HTTP_9002_396
+  - DE_HTTP_9443_389
+  - DE_SOCKS5_3129_420
+  - DE_VLESS_443_279
+  - DE_VLESS_20001_517
+  - DE_VLESS_443_774
+  - DE_VLESS_2083_397
+  - DE_VLESS_2096_455
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -304,29 +348,32 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_HYSTERIA2_54183_469
-  - DE_VLESS_2052_584
-  - DE_HTTP_9443_593
-  - DE_HTTP_443_594
-  - DE_HTTP_443_599
-  - DE_HTTP_443_608
-  - DE_VLESS_2087_613
-  - DE_HTTP_9002_620
-  - DE_HTTP_9002_621
-  - DE_HTTP_9002_626
-  - DE_VLESS_2083_636
-  - DE_HTTP_9002_642
-  - DE_HTTP_443_645
-  - DE_HTTP_443_657
-  - DE_VLESS_8080_685
-  - DE_TROJAN_443_703
-  - DE_VLESS_80_801
-  - DE_TROJAN_443_812
-  - DE_VLESS_2087_839
-  - DE_VLESS_2087_915
-  - DE_VLESS_2087_1040
-  - DE_VLESS_2087_1046
-  - DE_VLESS_443_2271
+  - DE_VLESS_443_279
+  - DE_TROJAN_443_294
+  - DE_HTTP_443_355
+  - DE_HTTP_9443_363
+  - DE_HTTP_443_368
+  - DE_HTTP_443_375
+  - DE_HTTP_443_383
+  - DE_HTTP_9443_389
+  - DE_HTTP_9002_394
+  - DE_HTTP_9002_396
+  - DE_VLESS_2083_397
+  - DE_HTTP_9002_401
+  - DE_SOCKS5_3129_420
+  - DE_VLESS_2083_422
+  - DE_VLESS_2052_448
+  - DE_VLESS_2096_455
+  - DE_TROJAN_443_489
+  - DE_TROJAN_443_507
+  - DE_VLESS_20001_517
+  - DE_TROJAN_443_561
+  - DE_VLESS_2087_563
+  - DE_VLESS_2087_591
+  - DE_VLESS_2087_635
+  - DE_VLESS_80_715
+  - DE_VLESS_443_774
+  - DE_VLESS_443_1795
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -338,29 +385,32 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_8080_685
-  - DE_VLESS_2083_636
-  - DE_VLESS_2087_613
-  - DE_VLESS_2087_839
-  - DE_VLESS_2052_584
-  - DE_VLESS_2087_915
-  - DE_VLESS_2087_1046
-  - DE_VLESS_2087_1040
-  - DE_VLESS_80_801
-  - DE_TROJAN_443_812
-  - DE_TROJAN_443_703
-  - DE_VLESS_443_2271
-  - DE_HTTP_9002_626
-  - DE_HTTP_443_608
-  - DE_HTTP_443_594
-  - DE_HTTP_9002_620
-  - DE_HTTP_9002_621
-  - DE_HTTP_443_599
-  - DE_HTTP_443_657
-  - DE_HTTP_443_645
-  - DE_HTTP_9002_642
-  - DE_HTTP_9443_593
-  - DE_HYSTERIA2_54183_469
+  - DE_TROJAN_443_294
+  - DE_VLESS_2083_422
+  - DE_VLESS_2087_635
+  - DE_VLESS_2052_448
+  - DE_VLESS_2087_591
+  - DE_VLESS_2087_563
+  - DE_VLESS_80_715
+  - DE_TROJAN_443_489
+  - DE_TROJAN_443_561
+  - DE_TROJAN_443_507
+  - DE_VLESS_443_1795
+  - DE_HTTP_443_355
+  - DE_HTTP_443_368
+  - DE_HTTP_443_375
+  - DE_HTTP_9002_394
+  - DE_HTTP_443_383
+  - DE_HTTP_9002_401
+  - DE_HTTP_9443_363
+  - DE_HTTP_9002_396
+  - DE_HTTP_9443_389
+  - DE_SOCKS5_3129_420
+  - DE_VLESS_443_279
+  - DE_VLESS_20001_517
+  - DE_VLESS_443_774
+  - DE_VLESS_2083_397
+  - DE_VLESS_2096_455
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

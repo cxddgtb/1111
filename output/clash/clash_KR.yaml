@@ -5,25 +5,45 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VMESS_8888_357
+- name: KR_VMESS_443_945
   type: vmess
-  network: tcp
-  server: 146.56.112.110
-  port: 8888
-  uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
-  skip-cert-verify: true
+  server: chuncheon02.zgjok.com
+  port: 443
+  uuid: d1a1cb91-0f1f-41eb-a307-631bba00f1bb
   alterId: 0
   cipher: auto
-  country: KR
-- name: KR_VLESS_443_308
-  type: vless
-  server: 43.203.219.68
-  port: 443
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-  network: http
-  tls: false
+  tls: true
   skip-cert-verify: true
+  servername: chuncheon02.zgjok.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: chuncheon02.zgjok.com
   udp: true
+  country: KR
+- name: KR_ANYTLS_47531_1086
+  server: svip.skycon808.com
+  port: 47531
+  type: anytls
+  password: 87c6ad7b-e450-44a8-8088-bc2234d43de1
+  udp: true
+  sni: tw15.swiftrelay.cc
+  skip-cert-verify: true
+  country: KR
+- name: KR_VLESS_16034_2887
+  type: vless
+  server: 220.71.172.2
+  port: 16034
+  uuid: 967c38e8-ecce-4471-b248-635e5cd28358
+  network: ws
+  tls: true
+  servername: 3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -38,8 +58,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_8888_357
-  - KR_VLESS_443_308
+  - KR_VMESS_443_945
+  - KR_ANYTLS_47531_1086
+  - KR_VLESS_16034_2887
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +73,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VLESS_443_308
-  - KR_VMESS_8888_357
+  - KR_VMESS_443_945
+  - KR_ANYTLS_47531_1086
+  - KR_VLESS_16034_2887
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +87,9 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_8888_357
-  - KR_VLESS_443_308
+  - KR_VMESS_443_945
+  - KR_ANYTLS_47531_1086
+  - KR_VLESS_16034_2887
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

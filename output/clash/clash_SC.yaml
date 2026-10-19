@@ -5,7 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SC_TROJAN_443_468
+- encryption: none
+  grpc-opts:
+    grpc-service-name: swedenfeed
+  name: SC_VLESS_443_612
+  network: grpc
+  port: 443
+  server: edge-lab-b.10media.top
+  servername: edge-lab-b.10media.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 9cb8d71c-fe06-4402-a591-eaa1f173b890
+  country: SC
+- name: SC_TROJAN_443_272
   network: ws
   password: humanity
   port: 443
@@ -18,19 +31,33 @@ proxies:
       Host: www.calmlunch.com
     path: '%2Fassignment'
   country: SC
-- client-fingerprint: firefox
+- client-fingerprint: chrome
   grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: swedenfeed
-  name: SC_VLESS_443_747
+    grpc-service-name: studiofeed
+  name: SC_VLESS_443_577
   network: grpc
   port: 443
-  server: 45.12.63.219
-  servername: edge-lab-b.10media.top
+  server: studio.10media.top
+  servername: studio.10media.top
   tls: true
   type: vless
   udp: true
   uuid: 9cb8d71c-fe06-4402-a591-eaa1f173b890
+  xudp: true
+  country: SC
+- name: SC_VLESS_443_522
+  server: 45.12.63.96
+  port: 443
+  type: vless
+  uuid: 9cb8d71c-fe06-4402-a591-eaa1f173b890
+  tls: true
+  servername: studio.10media.top
+  client-fingerprint: firefox
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: studiofeed
+  udp: true
   country: SC
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,8 +72,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SC_TROJAN_443_468
-  - SC_VLESS_443_747
+  - SC_VLESS_443_612
+  - SC_TROJAN_443_272
+  - SC_VLESS_443_577
+  - SC_VLESS_443_522
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +88,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SC_TROJAN_443_468
-  - SC_VLESS_443_747
+  - SC_TROJAN_443_272
+  - SC_VLESS_443_522
+  - SC_VLESS_443_577
+  - SC_VLESS_443_612
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +103,10 @@ proxy-groups:
 - name: 🌍 SC
   type: url-test
   proxies:
-  - SC_TROJAN_443_468
-  - SC_VLESS_443_747
+  - SC_VLESS_443_612
+  - SC_TROJAN_443_272
+  - SC_VLESS_443_577
+  - SC_VLESS_443_522
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
