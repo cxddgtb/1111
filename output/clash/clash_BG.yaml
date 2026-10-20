@@ -5,10 +5,9 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BG_HTTP_443_550
-  password: None
+- name: BG_HTTP_443_668
   port: 443
-  server: 185.94.192.210
+  server: 109.204.88.17
   skip-cert-verify: true
   tls: true
   type: http
@@ -26,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_HTTP_443_550
+  - BG_HTTP_443_668
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_HTTP_443_550
+  - BG_HTTP_443_668
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +50,7 @@ proxy-groups:
 - name: 🌍 BG
   type: url-test
   proxies:
-  - BG_HTTP_443_550
+  - BG_HTTP_443_668
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

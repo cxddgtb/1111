@@ -5,18 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TR_VLESS_443_530
-  network: ws
-  port: 443
-  server: 155.103.71.142
-  servername: ccc.010304.xyz
-  tls: true
+- name: TR_VLESS_443_398
   type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
+  server: 206.1.103.26
+  port: 443
+  uuid: 0ad58d97-922c-4e85-b820-9d04dab5b8ec
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: TR
+- name: TR_VLESS_443_774
+  type: vless
+  network: ws
+  server: 203.202.232.110
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  servername: vlso5.1d.mom
+  tls: true
   ws-opts:
     headers:
-      Host: ccc.010304.xyz
-    path: /fp=chromefp=chrome
+      Host: vlso5.1d.mom
+    path: /socks5=888:888
   country: TR
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_VLESS_443_530
+  - TR_VLESS_443_398
+  - TR_VLESS_443_774
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_VLESS_443_530
+  - TR_VLESS_443_398
+  - TR_VLESS_443_774
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +69,8 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_VLESS_443_530
+  - TR_VLESS_443_398
+  - TR_VLESS_443_774
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

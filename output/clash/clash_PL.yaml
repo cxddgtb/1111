@@ -5,50 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- encryption: none
-  name: PL_VLESS_8080_734
-  network: tcp
-  port: 8080
-  server: milo.rubinaz.xyz
-  tls: false
+- name: PL_VLESS_8443_1259
   type: vless
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  country: PL
-- encryption: none
-  name: PL_VLESS_8443_929
   network: tcp
-  port: 8443
   server: 2.26.225.89
+  port: 8443
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
   servername: pl.flen-vpn.xyz
   tls: true
-  type: vless
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  encryption: none
   country: PL
-- name: PL_HTTP_443_451
-  password: None
-  port: 443
-  server: 37.120.156.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: PL
-- name: PL_VLESS_8080_729
-  server: milo.networkforexir.site
-  port: 8080
-  type: vless
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  tls: false
-  network: tcp
-  udp: true
-  country: PL
-- name: PL_VLESS_10002_337
-  server: connect.hondamotor.site
+- name: PL_VLESS_10002_626
   port: 10002
+  server: connect.hondamotor.site
+  tls: false
   type: vless
   uuid: c6362720-0931-4b91-b187-d8ecf3149734
-  tls: false
-  network: tcp
-  udp: true
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -63,11 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_8080_734
-  - PL_VLESS_8443_929
-  - PL_HTTP_443_451
-  - PL_VLESS_8080_729
-  - PL_VLESS_10002_337
+  - PL_VLESS_8443_1259
+  - PL_VLESS_10002_626
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,11 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_10002_337
-  - PL_HTTP_443_451
-  - PL_VLESS_8080_729
-  - PL_VLESS_8080_734
-  - PL_VLESS_8443_929
+  - PL_VLESS_10002_626
+  - PL_VLESS_8443_1259
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -96,11 +62,8 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_8080_734
-  - PL_VLESS_8443_929
-  - PL_HTTP_443_451
-  - PL_VLESS_8080_729
-  - PL_VLESS_10002_337
+  - PL_VLESS_8443_1259
+  - PL_VLESS_10002_626
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

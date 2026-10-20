@@ -5,29 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  name: RS_VLESS_8443_561
-  network: ws
-  port: 8443
-  server: 185.48.250.113
-  servername: cf3.schzyc.cc.cd
-  tls: true
-  type: vless
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-  ws-opts:
-    headers:
-      Host: cf3.schzyc.cc.cd
-    path: /proxyip=ProxyIP.CMLiussss.net
-  country: RS
-- name: RS_HTTP_443_482
-  password: None
-  port: 443
-  server: 146.70.221.34
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: RS
-- name: RS_HTTP_443_483
+- name: RS_HTTP_443_682
   port: 443
   server: 146.70.221.18
   skip-cert-verify: true
@@ -47,9 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RS_VLESS_8443_561
-  - RS_HTTP_443_482
-  - RS_HTTP_443_483
+  - RS_HTTP_443_682
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,9 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RS_HTTP_443_482
-  - RS_HTTP_443_483
-  - RS_VLESS_8443_561
+  - RS_HTTP_443_682
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -76,9 +50,7 @@ proxy-groups:
 - name: 🌍 RS
   type: url-test
   proxies:
-  - RS_VLESS_8443_561
-  - RS_HTTP_443_482
-  - RS_HTTP_443_483
+  - RS_HTTP_443_682
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

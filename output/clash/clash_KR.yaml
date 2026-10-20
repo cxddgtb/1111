@@ -5,24 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VMESS_443_945
-  type: vmess
-  server: chuncheon02.zgjok.com
-  port: 443
-  uuid: d1a1cb91-0f1f-41eb-a307-631bba00f1bb
-  alterId: 0
-  cipher: auto
-  tls: true
+- name: KR_ANYTLS_60005_794
+  password: 13f0acfa-38c1-4e82-a758-583aa31740df
+  port: 60005
+  server: svip.skycon808.com
   skip-cert-verify: true
-  servername: chuncheon02.zgjok.com
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: chuncheon02.zgjok.com
+  type: anytls
   udp: true
   country: KR
-- name: KR_ANYTLS_47531_1086
+- name: KR_ANYTLS_47531_833
   server: svip.skycon808.com
   port: 47531
   type: anytls
@@ -30,20 +21,6 @@ proxies:
   udp: true
   sni: tw15.swiftrelay.cc
   skip-cert-verify: true
-  country: KR
-- name: KR_VLESS_16034_2887
-  type: vless
-  server: 220.71.172.2
-  port: 16034
-  uuid: 967c38e8-ecce-4471-b248-635e5cd28358
-  network: ws
-  tls: true
-  servername: 3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: 3tmj2egtm-fno.49bnithzk8vphybv36d1z1xkzfvogt2m6.workers.dev
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,9 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_443_945
-  - KR_ANYTLS_47531_1086
-  - KR_VLESS_16034_2887
+  - KR_ANYTLS_60005_794
+  - KR_ANYTLS_47531_833
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,9 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_443_945
-  - KR_ANYTLS_47531_1086
-  - KR_VLESS_16034_2887
+  - KR_ANYTLS_60005_794
+  - KR_ANYTLS_47531_833
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,9 +62,8 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_443_945
-  - KR_ANYTLS_47531_1086
-  - KR_VLESS_16034_2887
+  - KR_ANYTLS_60005_794
+  - KR_ANYTLS_47531_833
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

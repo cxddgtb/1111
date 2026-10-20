@@ -5,17 +5,86 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_HYSTERIA2_443_363
-  obfs: salamander
-  obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
-  password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
-  port: 443
-  server: hy2.aspidnet.xyz
-  sni: hy2.aspidnet.xyz
+- name: AE_VLESS_14430_705
+  type: vless
+  network: ws
+  server: 95.174.68.188
+  port: 14430
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
   tls: false
-  type: hysteria2
+  ws-opts:
+    headers:
+      Host: 95.174.68.188
+    path: /vless
   country: AE
-- name: AE_HYSTERIA2_443_394
+- name: AE_VLESS_22573_736
+  type: vless
+  network: ws
+  server: uae.unixzone.us
+  port: 22573
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  tls: false
+  ws-opts:
+    headers:
+      Host: uae.unixzone.us
+    path: /
+  country: AE
+- name: AE_VLESS_443_788
+  type: vless
+  network: ws
+  server: 89.125.139.115
+  port: 443
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  tls: true
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=chrome
+  country: AE
+- name: AE_VLESS_443_583
+  type: vless
+  network: ws
+  server: 31.57.190.89
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  servername: ccc.010304.xyz
+  tls: true
+  encryption: none
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+  country: AE
+- name: AE_VLESS_443_592
+  type: vless
+  network: ws
+  server: 31.57.190.15
+  port: 443
+  uuid: d4733e5a-5850-4523-942e-f28f82ebf4a9
+  servername: party-5cn.pages.dev
+  skip-cert-verify: false
+  tls: true
+  encryption: none
+  ws-opts:
+    headers:
+      Host: party-5cn.pages.dev
+    path: /
+  country: AE
+- name: AE_VLESS_8443_1137
+  type: vless
+  network: ws
+  server: 147.78.0.186
+  port: 8443
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  tls: true
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=random
+  country: AE
+- name: AE_HYSTERIA2_443_498
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -26,51 +95,21 @@ proxies:
   tls: false
   type: hysteria2
   country: AE
-- encryption: none
-  name: AE_VLESS_22573_546
-  network: ws
-  port: 22573
-  server: uae.unixzone.us
+- name: AE_HYSTERIA2_443_531
+  obfs: salamander
+  obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
+  password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
+  port: 443
+  server: hy2.aspidnet.xyz
+  sni: hy2.aspidnet.xyz
   tls: false
-  type: vless
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  ws-opts:
-    headers:
-      Host: uae.unixzone.us
-    path: /
+  type: hysteria2
   country: AE
-- name: AE_VLESS_443_596
+- encryption: none
+  name: AE_VLESS_443_580
   network: ws
   port: 443
-  server: 89.125.139.115
-  servername: free.cndyw.ggff.net
-  tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=chrome
-  country: AE
-- encryption: none
-  name: AE_VLESS_14430_686
-  network: ws
-  port: 14430
-  server: 95.174.68.188
-  servername: 95.174.68.188
-  tls: false
-  type: vless
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  ws-opts:
-    headers:
-      Host: 95.174.68.188
-    path: /vless
-  country: AE
-- encryption: none
-  name: AE_VLESS_443_395
-  network: ws
-  port: 443
-  server: 31.57.190.89
+  server: 31.57.190.50
   servername: ccc.010304.xyz
   tls: true
   type: vless
@@ -78,64 +117,7 @@ proxies:
   ws-opts:
     headers:
       Host: ccc.010304.xyz
-    path: /
-  country: AE
-- alpn:
-  - http/1.1
-  name: AE_TROJAN_443_483
-  network: ws
-  password: humanity
-  port: 443
-  server: 31.57.190.71
-  skip-cert-verify: false
-  sni: www.pleadcourt.org
-  type: trojan
-  ws-opts:
-    headers:
-      Host: www.pleadcourt.org
-    path: /assignment
-  country: AE
-- alpn:
-  - http/1.1
-  name: AE_TROJAN_443_486
-  network: ws
-  password: humanity
-  port: 443
-  server: 31.57.190.34
-  skip-cert-verify: false
-  sni: www.pleadcourt.org
-  type: trojan
-  ws-opts:
-    headers:
-      Host: www.pleadcourt.org
-    path: /assignment
-  country: AE
-- name: AE_VLESS_443_671
-  server: 188.72.103.4
-  port: 443
-  type: vless
-  uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
-  tls: true
-  alpn:
-  - h2
-  servername: ru.nnight.cfd
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /api/v4/media/session/poll
-    host: ru.nnight.cfd
-    mode: packet-up
-    seq-key: offset
-    seq-placement: query
-    uplink-data-key: X-Playback-Token
-    uplink-data-placement: header
-    uplink-http-method: GET
-    x-padding-bytes: 48-320
-    x-padding-key: q
-    x-padding-method: tokenish
-    x-padding-obfs-mode: true
-    x-padding-placement: query
-  udp: true
+    path: /fp
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -150,15 +132,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_HYSTERIA2_443_363
-  - AE_HYSTERIA2_443_394
-  - AE_VLESS_22573_546
-  - AE_VLESS_443_596
-  - AE_VLESS_14430_686
-  - AE_VLESS_443_395
-  - AE_TROJAN_443_483
-  - AE_TROJAN_443_486
-  - AE_VLESS_443_671
+  - AE_VLESS_14430_705
+  - AE_VLESS_22573_736
+  - AE_VLESS_443_788
+  - AE_VLESS_443_583
+  - AE_VLESS_443_592
+  - AE_VLESS_8443_1137
+  - AE_HYSTERIA2_443_498
+  - AE_HYSTERIA2_443_531
+  - AE_VLESS_443_580
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -171,15 +153,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_363
-  - AE_HYSTERIA2_443_394
-  - AE_VLESS_443_395
-  - AE_TROJAN_443_483
-  - AE_TROJAN_443_486
-  - AE_VLESS_22573_546
-  - AE_VLESS_443_596
-  - AE_VLESS_443_671
-  - AE_VLESS_14430_686
+  - AE_HYSTERIA2_443_498
+  - AE_HYSTERIA2_443_531
+  - AE_VLESS_443_580
+  - AE_VLESS_443_583
+  - AE_VLESS_443_592
+  - AE_VLESS_14430_705
+  - AE_VLESS_22573_736
+  - AE_VLESS_443_788
+  - AE_VLESS_8443_1137
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -191,15 +173,15 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_HYSTERIA2_443_363
-  - AE_HYSTERIA2_443_394
-  - AE_VLESS_22573_546
-  - AE_VLESS_443_596
-  - AE_VLESS_14430_686
-  - AE_VLESS_443_395
-  - AE_TROJAN_443_483
-  - AE_TROJAN_443_486
-  - AE_VLESS_443_671
+  - AE_VLESS_14430_705
+  - AE_VLESS_22573_736
+  - AE_VLESS_443_788
+  - AE_VLESS_443_583
+  - AE_VLESS_443_592
+  - AE_VLESS_8443_1137
+  - AE_HYSTERIA2_443_498
+  - AE_HYSTERIA2_443_531
+  - AE_VLESS_443_580
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
