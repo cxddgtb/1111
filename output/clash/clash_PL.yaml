@@ -5,22 +5,64 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_8443_1259
-  type: vless
+- encryption: none
+  name: PL_VLESS_2052_557
   network: tcp
-  server: 2.26.225.89
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  servername: pl.flen-vpn.xyz
-  tls: true
-  encryption: none
-  country: PL
-- name: PL_VLESS_10002_626
-  port: 10002
-  server: connect.hondamotor.site
+  port: 2052
+  server: edge10.cyrionflare.com
   tls: false
   type: vless
-  uuid: c6362720-0931-4b91-b187-d8ecf3149734
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  country: PL
+- name: PL_TROJAN_443_579
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  port: 443
+  server: pl2.dedushka.top
+  skip-cert-verify: false
+  sni: pl2.dedushka.top
+  type: trojan
+  country: PL
+- name: PL_HTTP_443_641
+  password: None
+  port: 443
+  server: 37.120.156.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: PL
+- name: PL_HTTP_443_632
+  password: 'null'
+  port: 443
+  server: 151.115.54.133
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+  country: PL
+- name: PL_HTTP_443_638
+  password: None
+  port: 443
+  server: 37.120.156.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: PL
+- name: PL_VLESS_33891_581
+  type: vless
+  server: 144.31.101.196
+  port: 33891
+  uuid: 1c794e75-bcd4-4a65-9f69-ed0a10f33d60
+  servername: browser.yandex.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: HXXIkFRPeRpluXJ7SOoUGf9EOq4Lw-oJpvg1W0UPbEw
+    short-id: 5bd7b68ca4c04443
+  skip-cert-verify: true
+  udp: true
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -35,8 +77,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_8443_1259
-  - PL_VLESS_10002_626
+  - PL_VLESS_2052_557
+  - PL_TROJAN_443_579
+  - PL_HTTP_443_641
+  - PL_HTTP_443_632
+  - PL_HTTP_443_638
+  - PL_VLESS_33891_581
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -49,8 +95,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_10002_626
-  - PL_VLESS_8443_1259
+  - PL_VLESS_2052_557
+  - PL_TROJAN_443_579
+  - PL_VLESS_33891_581
+  - PL_HTTP_443_632
+  - PL_HTTP_443_638
+  - PL_HTTP_443_641
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -62,8 +112,12 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_8443_1259
-  - PL_VLESS_10002_626
+  - PL_VLESS_2052_557
+  - PL_TROJAN_443_579
+  - PL_HTTP_443_641
+  - PL_HTTP_443_632
+  - PL_HTTP_443_638
+  - PL_VLESS_33891_581
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

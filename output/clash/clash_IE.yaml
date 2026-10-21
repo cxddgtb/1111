@@ -5,33 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IE_HTTP_443_563
+- name: IE_TROJAN_443_612
+  type: trojan
+  server: ie1.dedushka.top
   port: 443
-  server: 149.88.96.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: IE
-- name: IE_HTTP_443_480
-  port: 443
-  server: 34.249.214.108
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: IE
-- name: IE_HTTP_443_485
-  port: 443
-  server: 18.200.158.139
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: IE
-- name: IE_HTTP_443_584
-  port: 443
-  server: 149.88.96.12
-  skip-cert-verify: true
-  tls: true
-  type: http
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  sni: ie1.dedushka.top
+  network: tcp
   country: IE
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,10 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IE_HTTP_443_563
-  - IE_HTTP_443_480
-  - IE_HTTP_443_485
-  - IE_HTTP_443_584
+  - IE_TROJAN_443_612
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,10 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IE_HTTP_443_480
-  - IE_HTTP_443_485
-  - IE_HTTP_443_563
-  - IE_HTTP_443_584
+  - IE_TROJAN_443_612
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -77,10 +51,7 @@ proxy-groups:
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_HTTP_443_563
-  - IE_HTTP_443_480
-  - IE_HTTP_443_485
-  - IE_HTTP_443_584
+  - IE_TROJAN_443_612
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
