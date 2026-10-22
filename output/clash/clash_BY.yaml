@@ -5,51 +5,23 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BY_VLESS_10444_606
-  type: vless
-  server: 178.172.227.124
-  port: 10444
-  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
-  servername: ads.x5.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: safari
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  skip-cert-verify: true
-  udp: true
-  country: BY
-- name: BY_VLESS_10444_741
-  type: vless
-  server: 178.172.227.228
-  port: 10444
-  uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
-  servername: ads.x5.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: safari
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  skip-cert-verify: true
-  udp: true
-  country: BY
-- name: BY_VLESS_14430_547
-  type: vless
-  server: 178.172.227.228
-  port: 14430
-  uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
+- client-fingerprint: chrome
+  name: BY_VLESS_443_727
   network: ws
-  servername: 178.172.227.228
-  tls: false
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless
-    headers:
-      Host: 178.172.227.228
-  skip-cert-verify: true
+  port: 443
+  server: 185.179.82.246
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  type: vless
   udp: true
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/67.0.3396.87 Safari/537.36
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
+  xudp: true
   country: BY
 proxy-groups:
 - name: 🚀 节点选择
@@ -64,9 +36,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BY_VLESS_10444_606
-  - BY_VLESS_10444_741
-  - BY_VLESS_14430_547
+  - BY_VLESS_443_727
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -79,9 +49,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BY_VLESS_14430_547
-  - BY_VLESS_10444_606
-  - BY_VLESS_10444_741
+  - BY_VLESS_443_727
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -93,9 +61,7 @@ proxy-groups:
 - name: 🌍 BY
   type: url-test
   proxies:
-  - BY_VLESS_10444_606
-  - BY_VLESS_10444_741
-  - BY_VLESS_14430_547
+  - BY_VLESS_443_727
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

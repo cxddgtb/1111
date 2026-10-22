@@ -5,14 +5,25 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_14430_478
+- name: FI_VLESS_33477_350
+  type: vless
+  server: 65.109.209.239
+  port: 33477
+  uuid: 0a9dfb0b-4fe1-40fe-b74c-0367e666ca96
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: FI
+- name: FI_VLESS_14430_503
+  type: vless
   network: ws
-  port: 14430
   server: 45.144.234.157
+  port: 14430
+  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
   servername: 45.144.234.157
   tls: false
-  type: vless
-  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
   ws-opts:
     headers:
       Host: 45.144.234.157
@@ -31,7 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_14430_478
+  - FI_VLESS_33477_350
+  - FI_VLESS_14430_503
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_14430_478
+  - FI_VLESS_33477_350
+  - FI_VLESS_14430_503
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +69,8 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_14430_478
+  - FI_VLESS_33477_350
+  - FI_VLESS_14430_503
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

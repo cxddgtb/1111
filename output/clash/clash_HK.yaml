@@ -5,7 +5,52 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_HYSTERIA2_5010_1134
+- name: HK_VLESS_8443_835
+  type: vless
+  network: ws
+  server: 43.129.80.179
+  port: 8443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  encryption: none
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+  country: HK
+- name: HK_VMESS_443_2254
+  type: vmess
+  network: ws
+  server: 47.243.194.125
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: nycqg19zkwacpm1b.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  encryption: none
+  name: HK_VLESS_11907_981
+  network: tcp
+  port: 11907
+  server: 195.58.144.56
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
+  country: HK
+- name: HK_HYSTERIA2_5010_2651
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -16,28 +61,48 @@ proxies:
   tls: false
   type: hysteria2
   country: HK
-- name: HK_TROJAN_45464_832
+- name: HK_TROJAN_45464_1367
+  network: tcp
   password: XuMweB2PWs
   port: 45464
   server: 2.27.109.179
+  skip-cert-verify: false
   sni: 2.27.109.179.sslip.io
   type: trojan
   country: HK
-- name: HK_VLESS_8443_1896
-  type: vless
-  server: 103.253.42.37
-  port: 8443
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+- client-fingerprint: chrome
+  encryption: none
+  name: HK_VLESS_443_1043
   network: ws
-  servername: vlso5.1d.mom
+  port: 443
+  server: 83.229.120.10
+  servername: snip.edgeoneai.cc.cd
   tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /socks5=888:888@hkip.1d.mom:1080
-    headers:
-      Host: vlso5.1d.mom
-  skip-cert-verify: true
+  type: vless
   udp: true
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+      User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/55.0.2883.87 Safari/537.36
+    path: /fp=chrome
+  xudp: true
+  country: HK
+- name: HK_VMESS_35043_670
+  type: vmess
+  server: 156.245.232.239
+  port: 35043
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -52,9 +117,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_HYSTERIA2_5010_1134
-  - HK_TROJAN_45464_832
-  - HK_VLESS_8443_1896
+  - HK_VLESS_8443_835
+  - HK_VMESS_443_2254
+  - HK_VLESS_11907_981
+  - HK_HYSTERIA2_5010_2651
+  - HK_TROJAN_45464_1367
+  - HK_VLESS_443_1043
+  - HK_VMESS_35043_670
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -67,9 +136,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_TROJAN_45464_832
-  - HK_HYSTERIA2_5010_1134
-  - HK_VLESS_8443_1896
+  - HK_VMESS_35043_670
+  - HK_VLESS_8443_835
+  - HK_VLESS_11907_981
+  - HK_VLESS_443_1043
+  - HK_TROJAN_45464_1367
+  - HK_VMESS_443_2254
+  - HK_HYSTERIA2_5010_2651
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,9 +154,13 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_HYSTERIA2_5010_1134
-  - HK_TROJAN_45464_832
-  - HK_VLESS_8443_1896
+  - HK_VLESS_8443_835
+  - HK_VMESS_443_2254
+  - HK_VLESS_11907_981
+  - HK_HYSTERIA2_5010_2651
+  - HK_TROJAN_45464_1367
+  - HK_VLESS_443_1043
+  - HK_VMESS_35043_670
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,25 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_ANYTLS_443_1474
-  password: ec74bb6a86c2
-  port: 443
-  server: 684616s4.df6h451rh.xin
-  skip-cert-verify: true
-  sni: px.ads.linkedin.com
-  type: anytls
-  udp: true
-  country: TW
-- name: TW_ANYTLS_443_1693
-  password: 0324fbc29561
-  port: 443
-  server: er8u54dh.df6h451rh.xin
-  skip-cert-verify: true
-  sni: px.ads.linkedin.com
-  type: anytls
-  udp: true
-  country: TW
-- name: TW_VMESS_35034_418
+- name: TW_VMESS_35034_296
   type: vmess
   network: tcp
   server: 165.154.195.38
@@ -46,9 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_ANYTLS_443_1474
-  - TW_ANYTLS_443_1693
-  - TW_VMESS_35034_418
+  - TW_VMESS_35034_296
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -61,9 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_VMESS_35034_418
-  - TW_ANYTLS_443_1474
-  - TW_ANYTLS_443_1693
+  - TW_VMESS_35034_296
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,9 +53,7 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_ANYTLS_443_1474
-  - TW_ANYTLS_443_1693
-  - TW_VMESS_35034_418
+  - TW_VMESS_35034_296
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
