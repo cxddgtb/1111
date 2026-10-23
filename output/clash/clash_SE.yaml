@@ -5,62 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_443_329
+- name: SE_VLESS_14430_340
   type: vless
-  server: 51.21.135.136
-  port: 443
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-  network: http
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: SE
-- name: SE_VLESS_14430_533
-  type: vless
-  network: ws
   server: 5.178.109.174
   port: 14430
   uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
-  servername: 5.178.109.174
-  tls: false
-  ws-opts:
-    headers:
-      Host: 5.178.109.174
-    path: /vless
-  country: SE
-- name: SE_VLESS_14430_638
-  type: vless
   network: ws
-  server: 193.188.21.253
-  port: 14430
-  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
-  servername: 193.188.21.253
   tls: false
+  servername: ''
+  client-fingerprint: chrome
   ws-opts:
-    headers:
-      Host: 193.188.21.253
     path: /vless
-  country: SE
-- name: SE_VLESS_443_351
-  type: vless
-  network: http
-  server: 13.60.198.133
-  port: 443
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-  tls: false
-  udp: true
-  http-opts:
     headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
+      Host: ''
   country: SE
-- alpn:
-  - h3
-  name: SE_HYSTERIA2_36264_597
+- name: SE_HYSTERIA2_36264_351
   obfs: salamander
   obfs-password: Telegram@vpnjey
   password: Telegram-vpnjey
@@ -71,39 +30,9 @@ proxies:
   tls: false
   type: hysteria2
   country: SE
-- name: SE_VLESS_443_944
-  network: ws
+- name: SE_HTTP_443_447
   port: 443
-  server: 109.120.134.243
-  servername: free.cndyw.ggff.net
-  tls: true
-  type: vless
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=random
-  country: SE
-- name: SE_HTTP_443_659
-  port: 443
-  server: 79.142.77.63
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: SE
-- name: SE_HTTP_443_648
-  password: None
-  port: 443
-  server: 146.70.242.146
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: SE
-- name: SE_HTTP_443_699
-  password: None
-  port: 443
-  server: 146.70.242.130
+  server: 217.210.129.243
   skip-cert-verify: true
   tls: true
   type: http
@@ -121,15 +50,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_443_329
-  - SE_VLESS_14430_533
-  - SE_VLESS_14430_638
-  - SE_VLESS_443_351
-  - SE_HYSTERIA2_36264_597
-  - SE_VLESS_443_944
-  - SE_HTTP_443_659
-  - SE_HTTP_443_648
-  - SE_HTTP_443_699
+  - SE_VLESS_14430_340
+  - SE_HYSTERIA2_36264_351
+  - SE_HTTP_443_447
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -142,15 +65,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_443_329
-  - SE_VLESS_443_351
-  - SE_VLESS_14430_533
-  - SE_HYSTERIA2_36264_597
-  - SE_VLESS_14430_638
-  - SE_HTTP_443_648
-  - SE_HTTP_443_659
-  - SE_HTTP_443_699
-  - SE_VLESS_443_944
+  - SE_VLESS_14430_340
+  - SE_HYSTERIA2_36264_351
+  - SE_HTTP_443_447
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -162,15 +79,9 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_443_329
-  - SE_VLESS_14430_533
-  - SE_VLESS_14430_638
-  - SE_VLESS_443_351
-  - SE_HYSTERIA2_36264_597
-  - SE_VLESS_443_944
-  - SE_HTTP_443_659
-  - SE_HTTP_443_648
-  - SE_HTTP_443_699
+  - SE_VLESS_14430_340
+  - SE_HYSTERIA2_36264_351
+  - SE_HTTP_443_447
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

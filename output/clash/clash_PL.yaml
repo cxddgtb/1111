@@ -5,40 +5,52 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- encryption: none
-  name: PL_VLESS_8443_478
-  network: tcp
-  port: 8443
-  server: 2.26.225.89
-  servername: pl.flen-vpn.xyz
-  tls: true
+- name: PL_VLESS_443_388
   type: vless
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  country: PL
-- name: PL_TROJAN_443_519
-  network: tcp
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
+  server: 144.31.0.140
   port: 443
+  uuid: 9c794bb7-54fe-4acd-844a-a26209af36c3
+  servername: api.sakhalin.fyi
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ
+    short-id: 7271129440ade8fa
+  skip-cert-verify: true
+  udp: true
+  country: PL
+- name: PL_TROJAN_443_397
+  type: trojan
   server: pl1.dedushka.top
+  port: 443
+  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   sni: pl1.dedushka.top
-  type: trojan
-  country: PL
-- name: PL_TROJAN_443_512
   network: tcp
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  port: 443
+  country: PL
+- name: PL_TROJAN_443_407
+  type: trojan
   server: pl2.dedushka.top
-  skip-cert-verify: false
-  sni: pl2.dedushka.top
-  type: trojan
-  country: PL
-- name: PL_TROJAN_443_493
-  type: trojan
-  server: 31.133.0.186
   port: 443
   password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
   sni: pl2.dedushka.top
   network: tcp
+  country: PL
+- name: PL_HTTP_443_471
+  password: None
+  port: 443
+  server: 37.120.156.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: PL
+- name: PL_HTTP_443_459
+  password: None
+  port: 443
+  server: 37.120.156.18
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -53,10 +65,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_8443_478
-  - PL_TROJAN_443_519
-  - PL_TROJAN_443_512
-  - PL_TROJAN_443_493
+  - PL_VLESS_443_388
+  - PL_TROJAN_443_397
+  - PL_TROJAN_443_407
+  - PL_HTTP_443_471
+  - PL_HTTP_443_459
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -69,10 +82,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_8443_478
-  - PL_TROJAN_443_493
-  - PL_TROJAN_443_512
-  - PL_TROJAN_443_519
+  - PL_VLESS_443_388
+  - PL_TROJAN_443_397
+  - PL_TROJAN_443_407
+  - PL_HTTP_443_459
+  - PL_HTTP_443_471
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,10 +98,11 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_8443_478
-  - PL_TROJAN_443_519
-  - PL_TROJAN_443_512
-  - PL_TROJAN_443_493
+  - PL_VLESS_443_388
+  - PL_TROJAN_443_397
+  - PL_TROJAN_443_407
+  - PL_HTTP_443_471
+  - PL_HTTP_443_459
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

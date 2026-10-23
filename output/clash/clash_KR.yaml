@@ -5,47 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VMESS_443_1323
-  type: vmess
-  server: 140.238.2.250
-  port: 443
-  uuid: 41a7089a-040b-4538-8b8d-010902405bde
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
+- name: KR_ANYTLS_60005_785
+  password: 13f0acfa-38c1-4e82-a758-583aa31740df
+  port: 60005
+  server: svip.skycon808.com
+  skip-cert-verify: true
+  type: anytls
+  udp: true
   country: KR
-- name: KR_VMESS_80_430
-  type: vmess
-  server: 132.145.80.230
-  port: 80
-  uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: ''
-  country: KR
-- name: KR_VMESS_20086_832
-  type: vmess
-  server: 183.109.131.75
-  port: 20086
-  uuid: b26c4803-0bca-467c-a245-c9a80bdd72ec
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
+- name: KR_ANYTLS_47531_843
+  password: 87c6ad7b-e450-44a8-8088-bc2234d43de1
+  port: 47531
+  server: svip.skycon808.com
+  skip-cert-verify: true
+  sni: tw15.swiftrelay.cc
+  type: anytls
+  udp: true
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -60,9 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_443_1323
-  - KR_VMESS_80_430
-  - KR_VMESS_20086_832
+  - KR_ANYTLS_60005_785
+  - KR_ANYTLS_47531_843
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -75,9 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_80_430
-  - KR_VMESS_20086_832
-  - KR_VMESS_443_1323
+  - KR_ANYTLS_60005_785
+  - KR_ANYTLS_47531_843
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -89,9 +62,8 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_443_1323
-  - KR_VMESS_80_430
-  - KR_VMESS_20086_832
+  - KR_ANYTLS_60005_785
+  - KR_ANYTLS_47531_843
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

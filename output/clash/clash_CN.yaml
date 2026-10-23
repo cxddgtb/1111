@@ -5,9 +5,9 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_HTTP_52200_1664
-  port: 52200
-  server: 120.232.204.58
+- name: CN_HTTP_10007_1138
+  port: 10007
+  server: 118.25.131.160
   skip-cert-verify: true
   tls: true
   type: http
@@ -25,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CN_HTTP_52200_1664
+  - CN_HTTP_10007_1138
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CN_HTTP_52200_1664
+  - CN_HTTP_10007_1138
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +50,7 @@ proxy-groups:
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_HTTP_52200_1664
+  - CN_HTTP_10007_1138
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

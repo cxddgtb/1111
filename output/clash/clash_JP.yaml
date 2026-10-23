@@ -5,25 +5,136 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VLESS_443_799
-  port: 443
-  server: 137.220.221.179
-  tls: false
+- name: JP_VLESS_35544_787
   type: vless
+  server: funagfrdfs.alixxplay.com
+  port: 35544
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  servername: iosapps.itunes.apple.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: HrcXRHtsitc_AVlN-_8fZuRgaP-Mqa_9JJotI9OnkVc
+    short-id: 25c79e5856c7
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VLESS_46105_1009
+  type: vless
+  server: funagfrdfs.alixxplay.com
+  port: 46105
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  servername: www.lamer.com.sg
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: safari
+  reality-opts:
+    public-key: Lk5nwDxC2tr3J7hT8emhUUiMX8cHyKX9TiRj_EnAiik
+    short-id: 28f5c1f8f98a
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VLESS_30892_1073
+  type: vless
+  server: funagfrdfs.alixxplay.com
+  port: 30892
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  servername: us1p1.xn--ghq880n3na965a.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: YinI5MijeZpRatg6QNDvP0qXEif-6VHC6gV5yoji4i4
+    short-id: 3d31326f95
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VLESS_54528_1151
+  type: vless
+  server: funagfrdfs.alixxplay.com
+  port: 54528
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  servername: www.apple.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo
+    short-id: 54cca3c1c1c7
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VLESS_47691_1345
+  type: vless
+  server: funagfrdfs.alixxplay.com
+  port: 47691
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  servername: m.media-amazon.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 6PbC7GxOg_YdXya-53llPReUzoU_yknQbkDvI4uorBg
+    short-id: 2905326a
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VLESS_34379_1233
+  type: vless
+  server: funagfrdfs.alixxplay.com
+  port: 34379
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  servername: us1p1.xn--ghq880n3na965a.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: KfOrtENkHAXDFlsCluw6fv62Q-WuJXCKI98XZihtemA
+    short-id: e51285e3
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VLESS_55688_1244
+  type: vless
+  server: funagfrdfs.alixxplay.com
+  port: 55688
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  servername: bilibili-vn.biliimg.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: KeV1nArisy7FO5DjqTSmn0hBnlNd38rzhbIMMpe-MBw
+    short-id: a46bb5972cf50671
+  skip-cert-verify: true
+  udp: true
+  country: JP
+- name: JP_VLESS_443_939
+  type: vless
+  server: 137.220.221.179
+  port: 443
   uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: JP
+- name: JP_SS_8388_582
+  type: ss
+  server: 154.36.158.197
+  port: 8388
+  cipher: aes-256-gcm
+  password: BeaUf9c0AEWH40Pu
+  skip-cert-verify: true
+  udp: true
   country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_8388_198
+  name: JP_SS_8388_532
   password: JuD6MNgtX3nVpCzFzXYVYjDTZ7nsmaTv
   port: 8388
   server: 191.223.221.53
-  type: ss
-  country: JP
-- cipher: aes-256-gcm
-  name: JP_SS_8388_2088
-  password: BeaUf9c0AEWH40Pu
-  port: 8388
-  server: 154.36.158.197
   type: ss
   country: JP
 proxy-groups:
@@ -39,9 +150,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_443_799
-  - JP_SS_8388_198
-  - JP_SS_8388_2088
+  - JP_VLESS_35544_787
+  - JP_VLESS_46105_1009
+  - JP_VLESS_30892_1073
+  - JP_VLESS_54528_1151
+  - JP_VLESS_47691_1345
+  - JP_VLESS_34379_1233
+  - JP_VLESS_55688_1244
+  - JP_VLESS_443_939
+  - JP_SS_8388_582
+  - JP_SS_8388_532
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -54,9 +172,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_SS_8388_198
-  - JP_VLESS_443_799
-  - JP_SS_8388_2088
+  - JP_SS_8388_532
+  - JP_SS_8388_582
+  - JP_VLESS_35544_787
+  - JP_VLESS_443_939
+  - JP_VLESS_46105_1009
+  - JP_VLESS_30892_1073
+  - JP_VLESS_54528_1151
+  - JP_VLESS_34379_1233
+  - JP_VLESS_55688_1244
+  - JP_VLESS_47691_1345
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -68,9 +193,16 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_443_799
-  - JP_SS_8388_198
-  - JP_SS_8388_2088
+  - JP_VLESS_35544_787
+  - JP_VLESS_46105_1009
+  - JP_VLESS_30892_1073
+  - JP_VLESS_54528_1151
+  - JP_VLESS_47691_1345
+  - JP_VLESS_34379_1233
+  - JP_VLESS_55688_1244
+  - JP_VLESS_443_939
+  - JP_SS_8388_582
+  - JP_SS_8388_532
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

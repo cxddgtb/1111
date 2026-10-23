@@ -6,13 +6,21 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: chacha20-ietf-poly1305
-  name: CH_SS_8388_322
+  name: CH_SS_8388_200
   password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
   port: 8388
   server: 132.243.175.144
   type: ss
   country: CH
-- name: CH_HTTP_9443_631
+- name: CH_HTTP_9443_396
+  password: None
+  port: 9443
+  server: 149.88.27.46
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CH
+- name: CH_HTTP_9443_396_2
   password: None
   port: 9443
   server: 149.88.27.33
@@ -20,10 +28,10 @@ proxies:
   tls: true
   type: http
   country: CH
-- name: CH_HTTP_9443_625
+- name: CH_HTTP_443_421
   password: None
-  port: 9443
-  server: 37.120.213.210
+  port: 443
+  server: 31.7.62.50
   skip-cert-verify: true
   tls: true
   type: http
@@ -41,9 +49,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_SS_8388_322
-  - CH_HTTP_9443_631
-  - CH_HTTP_9443_625
+  - CH_SS_8388_200
+  - CH_HTTP_9443_396
+  - CH_HTTP_9443_396_2
+  - CH_HTTP_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,9 +65,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_SS_8388_322
-  - CH_HTTP_9443_625
-  - CH_HTTP_9443_631
+  - CH_SS_8388_200
+  - CH_HTTP_9443_396
+  - CH_HTTP_9443_396_2
+  - CH_HTTP_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,9 +80,10 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_SS_8388_322
-  - CH_HTTP_9443_631
-  - CH_HTTP_9443_625
+  - CH_SS_8388_200
+  - CH_HTTP_9443_396
+  - CH_HTTP_9443_396_2
+  - CH_HTTP_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

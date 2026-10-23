@@ -5,29 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_33477_350
+- name: FI_VLESS_8443_375
   type: vless
-  server: 65.109.209.239
-  port: 33477
-  uuid: 0a9dfb0b-4fe1-40fe-b74c-0367e666ca96
-  network: tcp
-  tls: false
-  servername: ''
+  server: 212.87.222.10
+  port: 8443
+  uuid: 8afeb33c-b686-43e9-a629-0d98f991ec28
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
   client-fingerprint: chrome
-  ws-opts: null
+  servername: www.nokia.com
+  reality-opts:
+    public-key: f25sygANXTpzdc9YPCwkggwSmm3piA3BluSeHdfG-hg
   country: FI
-- name: FI_VLESS_14430_503
+- name: FI_VLESS_14430_353
   type: vless
-  network: ws
   server: 45.144.234.157
   port: 14430
   uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
-  servername: 45.144.234.157
+  network: ws
   tls: false
+  servername: ''
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 45.144.234.157
-    path: /vless
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -42,8 +45,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_33477_350
-  - FI_VLESS_14430_503
+  - FI_VLESS_8443_375
+  - FI_VLESS_14430_353
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +59,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_33477_350
-  - FI_VLESS_14430_503
+  - FI_VLESS_14430_353
+  - FI_VLESS_8443_375
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +72,8 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_33477_350
-  - FI_VLESS_14430_503
+  - FI_VLESS_8443_375
+  - FI_VLESS_14430_353
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
