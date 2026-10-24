@@ -5,69 +5,67 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_47881_679
-  type: vless
-  server: 134.185.81.5
-  port: 47881
-  uuid: 59b203b2-b1bc-4e9c-a9e5-ccb8f691bf72
-  servername: www.tesla.com
+- client-fingerprint: firefox
+  name: SG_VLESS_443_455
+  network: ws
+  port: 443
+  server: 43.170.8.95
+  servername: jp3.yohototo.top
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 6XmXX1QXGodmtqU37Zx9CDHnCnPtonRdq8ieLmt__g4
-    short-id: 38d72071
-  skip-cert-verify: true
-  udp: true
-  country: SG
-- name: SG_VLESS_16263_450
   type: vless
-  server: 47.237.74.17
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+  country: SG
+- encryption: none
+  name: SG_VLESS_16263_342
+  network: tcp
   port: 16263
-  uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
-  network: tcp
+  server: 47.237.74.17
   tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+  type: vless
+  uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
   country: SG
-- name: SG_VMESS_18000_454
-  type: vmess
-  network: tcp
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+- client-fingerprint: chrome
+  encryption: none
+  name: SG_VLESS_2096_689
+  network: ws
+  port: 2096
+  server: 139.162.27.96
+  servername: free-server.techsonic.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  ws-opts:
+    headers:
+      Host: free-server.techsonic.dev
+    path: /free-server.techsonic.dev
   country: SG
-- name: SG_VMESS_18000_457
-  type: vmess
-  network: tcp
-  server: 149.88.23.202
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+- client-fingerprint: chrome
+  encryption: none
+  name: SG_VLESS_443_833
+  network: ws
+  port: 443
+  server: 43.174.195.1
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  type: vless
+  udp: true
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  ws-opts:
+    headers:
+      Host: snip.edgeoneai.cc.cd
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/55.0.2883.87 Safari/537.36
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+  xudp: true
   country: SG
-- name: SG_HTTP_2080_669
-  password: '1234'
-  port: 2080
-  server: 13.212.186.198
-  skip-cert-verify: true
-  type: http
-  username: '1234'
-  country: SG
-- name: SG_HTTP_9090_692
-  password: None
+- name: SG_HTTP_9090_505
   port: 9090
-  server: 104.248.151.93
-  type: http
-  country: SG
-- name: SG_HTTP_9090_672
-  port: 9090
-  server: 128.199.116.219
+  server: 128.199.121.61
   type: http
   country: SG
 proxy-groups:
@@ -83,13 +81,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_47881_679
-  - SG_VLESS_16263_450
-  - SG_VMESS_18000_454
-  - SG_VMESS_18000_457
-  - SG_HTTP_2080_669
-  - SG_HTTP_9090_692
-  - SG_HTTP_9090_672
+  - SG_VLESS_443_455
+  - SG_VLESS_16263_342
+  - SG_VLESS_2096_689
+  - SG_VLESS_443_833
+  - SG_HTTP_9090_505
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -102,13 +98,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VLESS_16263_450
-  - SG_VMESS_18000_454
-  - SG_VMESS_18000_457
-  - SG_HTTP_2080_669
-  - SG_HTTP_9090_672
-  - SG_VLESS_47881_679
-  - SG_HTTP_9090_692
+  - SG_VLESS_16263_342
+  - SG_VLESS_443_455
+  - SG_HTTP_9090_505
+  - SG_VLESS_2096_689
+  - SG_VLESS_443_833
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -120,13 +114,11 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_47881_679
-  - SG_VLESS_16263_450
-  - SG_VMESS_18000_454
-  - SG_VMESS_18000_457
-  - SG_HTTP_2080_669
-  - SG_HTTP_9090_692
-  - SG_HTTP_9090_672
+  - SG_VLESS_443_455
+  - SG_VLESS_16263_342
+  - SG_VLESS_2096_689
+  - SG_VLESS_443_833
+  - SG_HTTP_9090_505
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

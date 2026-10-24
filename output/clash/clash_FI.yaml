@@ -5,32 +5,50 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_8443_375
-  type: vless
-  server: 212.87.222.10
-  port: 8443
-  uuid: 8afeb33c-b686-43e9-a629-0d98f991ec28
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: chrome
-  servername: www.nokia.com
-  reality-opts:
-    public-key: f25sygANXTpzdc9YPCwkggwSmm3piA3BluSeHdfG-hg
-  country: FI
-- name: FI_VLESS_14430_353
-  type: vless
-  server: 45.144.234.157
-  port: 14430
-  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
+- encryption: none
+  name: FI_VLESS_14430_545
   network: ws
+  port: 14430
+  server: 45.144.234.157
   tls: false
-  servername: ''
-  client-fingerprint: chrome
+  type: vless
+  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
   ws-opts:
-    path: /vless
     headers:
       Host: 45.144.234.157
+    path: /vless
+  country: FI
+- name: FI_VLESS_465_786
+  server: hw3.divarkhaghazi.com
+  port: 465
+  type: vless
+  uuid: 924e20da-fcad-4e7e-8113-c62d27a0d01e
+  tls: true
+  alpn:
+  - http/1.1
+  servername: hw3.divarkhaghazi.com.
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: hw3.divarkhaghazi.com.
+  udp: true
+  country: FI
+- name: FI_VLESS_443_532
+  server: fin4.himoy.space
+  port: 443
+  type: vless
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 36MwbI8-ScG1RGaNp7jGe-NMOm9HfvmdMP5vfY4_P3k
+    short-id: 0c3c7a686e566de2
+  servername: fin4.himoy.space
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,8 +63,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_8443_375
-  - FI_VLESS_14430_353
+  - FI_VLESS_14430_545
+  - FI_VLESS_465_786
+  - FI_VLESS_443_532
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +78,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_14430_353
-  - FI_VLESS_8443_375
+  - FI_VLESS_443_532
+  - FI_VLESS_14430_545
+  - FI_VLESS_465_786
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +92,9 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_8443_375
-  - FI_VLESS_14430_353
+  - FI_VLESS_14430_545
+  - FI_VLESS_465_786
+  - FI_VLESS_443_532
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

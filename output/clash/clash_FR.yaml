@@ -5,41 +5,11 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VMESS_80_344
-  type: vmess
-  network: ws
-  server: 54.37.131.126
-  port: 80
-  uuid: 6deef9ad-1357-443d-f95c-cb18952c20b3
-  skip-cert-verify: false
-  tls: false
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
-    path: /
-  country: FR
-- name: FR_VMESS_80_587
-  type: vmess
-  network: ws
-  server: 145.239.55.210
-  port: 80
-  uuid: 067fcd63-b215-4abd-8529-ae929a9971a9
-  skip-cert-verify: false
-  tls: false
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-    path: /
-  country: FR
 - alpn:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
-  name: FR_HYSTERIA_24667_1392
+  name: FR_HYSTERIA_24667_2272
   port: 24667
   protocol: udp
   server: 62.210.70.191
@@ -48,35 +18,50 @@ proxies:
   type: hysteria
   up: 11 Mbps
   country: FR
-- name: FR_HTTP_443_351
-  port: 443
-  server: 82.65.162.76
+- name: FR_VLESS_14430_430
+  network: ws
+  port: 14430
+  server: 138.124.70.41
+  tls: false
+  type: vless
+  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
+  ws-opts:
+    headers:
+      Host: 138.124.70.41
+    path: /vless
+  country: FR
+- name: FR_HTTP_9443_589
+  password: None
+  port: 9443
+  server: 213.139.9.142
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
   country: FR
-- name: FR_HTTP_80_278
-  port: 80
-  server: 57.131.128.2
-  type: http
-  country: FR
-- name: FR_HTTP_6103_376
+- name: FR_HTTP_6103_585
+  password: None
   port: 6103
   server: 87.98.174.157
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_8081_410
+- name: FR_HTTP_8090_693
   password: None
-  port: 8081
-  server: 31.32.19.111
+  port: 8090
+  server: 82.96.128.175
   skip-cert-verify: true
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_443_380
+- name: FR_HTTP_443_632
+  port: 443
+  server: 82.66.235.221
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_608
   password: None
   port: 443
   server: 149.102.245.65
@@ -84,15 +69,23 @@ proxies:
   tls: true
   type: http
   country: FR
-- name: FR_HTTP_443_365
+- name: FR_HTTP_443_588
   port: 443
-  server: 51.210.167.149
+  server: 82.65.162.76
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
   country: FR
-- name: FR_HTTP_8090_613
+- name: FR_HTTP_443_599
+  port: 443
+  server: 84.235.228.156
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: FR
+- name: FR_HTTP_8090_877
   port: 8090
   server: 83.206.1.225
   skip-cert-verify: true
@@ -113,16 +106,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VMESS_80_344
-  - FR_VMESS_80_587
-  - FR_HYSTERIA_24667_1392
-  - FR_HTTP_443_351
-  - FR_HTTP_80_278
-  - FR_HTTP_6103_376
-  - FR_HTTP_8081_410
-  - FR_HTTP_443_380
-  - FR_HTTP_443_365
-  - FR_HTTP_8090_613
+  - FR_HYSTERIA_24667_2272
+  - FR_VLESS_14430_430
+  - FR_HTTP_9443_589
+  - FR_HTTP_6103_585
+  - FR_HTTP_8090_693
+  - FR_HTTP_443_632
+  - FR_HTTP_443_608
+  - FR_HTTP_443_588
+  - FR_HTTP_443_599
+  - FR_HTTP_8090_877
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -135,16 +128,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_HTTP_80_278
-  - FR_VMESS_80_344
-  - FR_HTTP_443_351
-  - FR_HTTP_443_365
-  - FR_HTTP_6103_376
-  - FR_HTTP_443_380
-  - FR_HTTP_8081_410
-  - FR_VMESS_80_587
-  - FR_HTTP_8090_613
-  - FR_HYSTERIA_24667_1392
+  - FR_VLESS_14430_430
+  - FR_HTTP_6103_585
+  - FR_HTTP_443_588
+  - FR_HTTP_9443_589
+  - FR_HTTP_443_599
+  - FR_HTTP_443_608
+  - FR_HTTP_443_632
+  - FR_HTTP_8090_693
+  - FR_HTTP_8090_877
+  - FR_HYSTERIA_24667_2272
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -156,16 +149,16 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VMESS_80_344
-  - FR_VMESS_80_587
-  - FR_HYSTERIA_24667_1392
-  - FR_HTTP_443_351
-  - FR_HTTP_80_278
-  - FR_HTTP_6103_376
-  - FR_HTTP_8081_410
-  - FR_HTTP_443_380
-  - FR_HTTP_443_365
-  - FR_HTTP_8090_613
+  - FR_HYSTERIA_24667_2272
+  - FR_VLESS_14430_430
+  - FR_HTTP_9443_589
+  - FR_HTTP_6103_585
+  - FR_HTTP_8090_693
+  - FR_HTTP_443_632
+  - FR_HTTP_443_608
+  - FR_HTTP_443_588
+  - FR_HTTP_443_599
+  - FR_HTTP_8090_877
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

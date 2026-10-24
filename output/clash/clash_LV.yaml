@@ -5,23 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_TROJAN_443_489
-  type: trojan
-  server: lv1.dedushka.top
-  port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  sni: lv1.dedushka.top
-  network: tcp
-  country: LV
-- name: LV_HTTP_443_553
-  password: None
-  port: 443
-  server: 85.203.39.130
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: LV
-- name: LV_HTTP_443_538
+- name: LV_HTTP_443_761
   port: 443
   server: 185.219.159.15
   skip-cert-verify: true
@@ -42,9 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_TROJAN_443_489
-  - LV_HTTP_443_553
-  - LV_HTTP_443_538
+  - LV_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -57,9 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_TROJAN_443_489
-  - LV_HTTP_443_538
-  - LV_HTTP_443_553
+  - LV_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -71,9 +51,7 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_TROJAN_443_489
-  - LV_HTTP_443_553
-  - LV_HTTP_443_538
+  - LV_HTTP_443_761
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

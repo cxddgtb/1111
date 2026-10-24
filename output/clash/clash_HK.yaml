@@ -5,62 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VLESS_27509_750
-  type: vless
-  server: 38.22.88.248
-  port: 27509
-  uuid: 29d23018-3265-494c-b9fe-e320b619b1e2
-  servername: www.suffolk.edu
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: nseaofwmjSciWUI2ZOXft9lUJutKvKEDUc-aSpE3e1M
-    short-id: 6ba85179e30d4fc2
-  skip-cert-verify: true
-  udp: true
-  country: HK
-- name: HK_TROJAN_45464_1084
-  type: trojan
-  server: 2.27.109.179
-  port: 45464
-  password: XuMweB2PWs
-  sni: 2.27.109.179.sslip.io
-  network: tcp
-  country: HK
-- name: HK_VMESS_443_799
-  type: vmess
-  network: ws
-  server: 8.210.24.181
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  servername: 6jdvarazgu3qqr6q.v.3dns.vip
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: 6jdvarazgu3qqr6q.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- name: HK_VMESS_443_1721
-  type: vmess
-  network: ws
-  server: 8.218.195.61
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: EX1oGt73NzPQKAc2.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- name: HK_HYSTERIA2_5010_2540
+- name: HK_HYSTERIA2_5010_1093
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -71,10 +16,43 @@ proxies:
   tls: false
   type: hysteria2
   country: HK
-- name: HK_ANYTLS_443_1147
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  name: HK_VLESS_11907_1102
+  port: 11907
+  server: 195.58.144.56
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
+  country: HK
+- alpn:
+  - ''
+  alterId: '0'
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - openai.com
+    path:
+    - /QQqun-737805443
+  name: HK_VMESS_52080_299
+  network: http
+  port: 52080
+  server: 47.242.81.94
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e47b9f77-60e4-4738-8d53-772b6002e146
+  xudp: true
+  country: HK
+- name: HK_ANYTLS_443_1504
   password: 0324fbc29561
   port: 443
-  server: 56481.df6h451rh.xin
+  server: 654968169.df6h451rh.xin
   skip-cert-verify: true
   sni: images.ctfassets.net
   type: anytls
@@ -93,12 +71,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_27509_750
-  - HK_TROJAN_45464_1084
-  - HK_VMESS_443_799
-  - HK_VMESS_443_1721
-  - HK_HYSTERIA2_5010_2540
-  - HK_ANYTLS_443_1147
+  - HK_HYSTERIA2_5010_1093
+  - HK_VLESS_11907_1102
+  - HK_VMESS_52080_299
+  - HK_ANYTLS_443_1504
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -111,12 +87,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VLESS_27509_750
-  - HK_VMESS_443_799
-  - HK_TROJAN_45464_1084
-  - HK_ANYTLS_443_1147
-  - HK_VMESS_443_1721
-  - HK_HYSTERIA2_5010_2540
+  - HK_VMESS_52080_299
+  - HK_HYSTERIA2_5010_1093
+  - HK_VLESS_11907_1102
+  - HK_ANYTLS_443_1504
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -128,12 +102,10 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_27509_750
-  - HK_TROJAN_45464_1084
-  - HK_VMESS_443_799
-  - HK_VMESS_443_1721
-  - HK_HYSTERIA2_5010_2540
-  - HK_ANYTLS_443_1147
+  - HK_HYSTERIA2_5010_1093
+  - HK_VLESS_11907_1102
+  - HK_VMESS_52080_299
+  - HK_ANYTLS_443_1504
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

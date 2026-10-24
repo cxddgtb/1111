@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NO_HTTP_9443_457
+- name: NO_HTTP_9443_677
   password: None
   port: 9443
   server: 146.70.170.210
@@ -26,7 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NO_HTTP_9443_457
+  - NO_HTTP_9443_677
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NO_HTTP_9443_457
+  - NO_HTTP_9443_677
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +51,7 @@ proxy-groups:
 - name: 🌍 NO
   type: url-test
   proxies:
-  - NO_HTTP_9443_457
+  - NO_HTTP_9443_677
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

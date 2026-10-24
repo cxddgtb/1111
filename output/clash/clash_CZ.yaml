@@ -6,19 +6,19 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: aes-256-gcm
-  name: CZ_SS_17001_223
+  name: CZ_SS_17001_337
   password: I6o9NnialYLMEjVt28RF4dpjmr9wMvNL
   port: 17001
   server: 67.159.18.34
   type: ss
   country: CZ
-- name: CZ_HTTP_443_445
-  password: None
+- name: CZ_HTTP_443_670
   port: 443
-  server: 185.216.35.130
+  server: 185.216.35.66
   skip-cert-verify: true
   tls: true
   type: http
+  udp: true
   country: CZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,8 +33,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CZ_SS_17001_223
-  - CZ_HTTP_443_445
+  - CZ_SS_17001_337
+  - CZ_HTTP_443_670
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,8 +47,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CZ_SS_17001_223
-  - CZ_HTTP_443_445
+  - CZ_SS_17001_337
+  - CZ_HTTP_443_670
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -60,8 +60,8 @@ proxy-groups:
 - name: 🌍 CZ
   type: url-test
   proxies:
-  - CZ_SS_17001_223
-  - CZ_HTTP_443_445
+  - CZ_SS_17001_337
+  - CZ_HTTP_443_670
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

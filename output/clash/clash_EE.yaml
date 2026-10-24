@@ -5,7 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_HTTP_9443_460
+- name: EE_VLESS_2053_738
+  network: ws
+  port: 2053
+  server: 5.189.254.168
+  servername: cf3.schzyc.cc.cd
+  tls: true
+  type: vless
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  ws-opts:
+    headers:
+      Host: cf3.schzyc.cc.cd
+    path: /proxyip=ProxyIP.CMLiussss.netfp=chrome
+  country: EE
+- name: EE_HTTP_9443_674
   port: 9443
   server: 95.153.31.66
   skip-cert-verify: true
@@ -25,7 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_HTTP_9443_460
+  - EE_VLESS_2053_738
+  - EE_HTTP_9443_674
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_HTTP_9443_460
+  - EE_HTTP_9443_674
+  - EE_VLESS_2053_738
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +65,8 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_HTTP_9443_460
+  - EE_VLESS_2053_738
+  - EE_HTTP_9443_674
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

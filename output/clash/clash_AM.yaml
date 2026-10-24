@@ -5,14 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- auth: 19f72087-4591-4d72-930b-2697078ec2be
-  name: AM_HYSTERIA2_18333_828
-  password: 19f72087-4591-4d72-930b-2697078ec2be
-  port: 18333
-  server: us3.xiaoliyu.cyou
-  skip-cert-verify: true
+- name: AM_VLESS_10004_974
+  network: ws
+  port: 10004
+  server: 194.36.37.59
   tls: false
-  type: hysteria2
+  type: vless
+  uuid: f7376394-cd54-11f1-bb6a-bff6d0326f6a
+  ws-opts:
+    path: /vpnjantit
   country: AM
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AM_HYSTERIA2_18333_828
+  - AM_VLESS_10004_974
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AM_HYSTERIA2_18333_828
+  - AM_VLESS_10004_974
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +53,7 @@ proxy-groups:
 - name: 🌍 AM
   type: url-test
   proxies:
-  - AM_HYSTERIA2_18333_828
+  - AM_VLESS_10004_974
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
