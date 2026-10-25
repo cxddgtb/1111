@@ -6,22 +6,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - client-fingerprint: chrome
-  encryption: none
-  name: TR_VLESS_443_797
-  network: ws
-  port: 443
-  server: 203.202.232.110
-  servername: vlso5.1d.mom
-  tls: true
-  type: vless
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-  ws-opts:
-    headers:
-      Host: vlso5.1d.mom
-    path: /socks5=888:888@hkip.1d.mom:1080
-  country: TR
-- client-fingerprint: chrome
-  name: TR_VLESS_443_1324
+  name: TR_VLESS_443_593
   network: ws
   port: 443
   server: 155.103.71.142
@@ -34,16 +19,47 @@ proxies:
       Host: ccc.010304.xyz
     path: /fp=chrome
   country: TR
-- auth: c8ed6cd1-6566-4f7a-819e-1c55b2b360c9
-  name: TR_HYSTERIA2_34121_624
-  obfs: salamander
-  obfs-password: 9a33460c-b037-47aa-a606-d04211f4e0ec
-  password: c8ed6cd1-6566-4f7a-819e-1c55b2b360c9
-  port: 34121
-  server: 153.56.210.134
-  skip-cert-verify: true
-  sni: www.bing.com
-  type: hysteria2
+- name: TR_VLESS_443_599
+  network: ws
+  port: 443
+  server: 203.202.232.110
+  servername: vlso5.1d.mom
+  tls: true
+  type: vless
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  ws-opts:
+    headers:
+      Host: vlso5.1d.mom
+    path: /socks5=888:888@hkip.1d.mom:1080fp=chromefp=chrome
+  country: TR
+- name: TR_VLESS_443_336
+  server: 185.88.173.215
+  port: 443
+  type: vless
+  uuid: fd0a5c32-afc0-4d57-b95a-ca6ec8f93e87
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  servername: gb.ozon.ru
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+  country: TR
+- name: TR_VLESS_443_622
+  server: 45.74.159.238
+  port: 443
+  type: vless
+  uuid: 7072eeba-94fd-4fb3-92f2-a4506dd84cd8
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: p7X0vRL9R-23Ey-MZZZj7FY0g87nQq0Jzc01DwuryRk
+    short-id: 7597c5df264bcc10
+  servername: trend.eidoslab.link
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
   country: TR
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,9 +74,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_VLESS_443_797
-  - TR_VLESS_443_1324
-  - TR_HYSTERIA2_34121_624
+  - TR_VLESS_443_593
+  - TR_VLESS_443_599
+  - TR_VLESS_443_336
+  - TR_VLESS_443_622
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,9 +90,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_HYSTERIA2_34121_624
-  - TR_VLESS_443_797
-  - TR_VLESS_443_1324
+  - TR_VLESS_443_336
+  - TR_VLESS_443_593
+  - TR_VLESS_443_599
+  - TR_VLESS_443_622
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,9 +105,10 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_VLESS_443_797
-  - TR_VLESS_443_1324
-  - TR_HYSTERIA2_34121_624
+  - TR_VLESS_443_593
+  - TR_VLESS_443_599
+  - TR_VLESS_443_336
+  - TR_VLESS_443_622
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

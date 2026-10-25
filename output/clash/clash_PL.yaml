@@ -5,52 +5,49 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_443_388
+- name: PL_VLESS_10002_471
+  port: 10002
+  server: connect.hondamotor.site
+  tls: false
   type: vless
-  server: 144.31.0.140
-  port: 443
-  uuid: 9c794bb7-54fe-4acd-844a-a26209af36c3
-  servername: api.sakhalin.fyi
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ
-    short-id: 7271129440ade8fa
-  skip-cert-verify: true
-  udp: true
+  uuid: c6362720-0931-4b91-b187-d8ecf3149734
   country: PL
-- name: PL_TROJAN_443_397
-  type: trojan
-  server: pl1.dedushka.top
-  port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  sni: pl1.dedushka.top
-  network: tcp
-  country: PL
-- name: PL_TROJAN_443_407
-  type: trojan
-  server: pl2.dedushka.top
-  port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  sni: pl2.dedushka.top
-  network: tcp
-  country: PL
-- name: PL_HTTP_443_471
-  password: None
+- name: PL_HTTP_443_513
   port: 443
   server: 37.120.156.34
   skip-cert-verify: true
   tls: true
   type: http
   country: PL
-- name: PL_HTTP_443_459
-  password: None
+- name: PL_VLESS_443_347
+  server: 151.241.138.22
   port: 443
-  server: 37.120.156.18
-  skip-cert-verify: true
+  type: vless
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
   tls: true
-  type: http
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1D_oMYRytcccH8J2SiM9o0bjmWlDND9CXWLL8LwDvE8
+    short-id: e2201d4d8b942ccc
+  servername: pl1.himoy.space
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+  country: PL
+- name: PL_VLESS_443_351
+  server: pl1.himoy.space
+  port: 443
+  type: vless
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1D_oMYRytcccH8J2SiM9o0bjmWlDND9CXWLL8LwDvE8
+    short-id: e2201d4d8b942ccc
+  servername: pl1.himoy.space
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -65,11 +62,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_443_388
-  - PL_TROJAN_443_397
-  - PL_TROJAN_443_407
-  - PL_HTTP_443_471
-  - PL_HTTP_443_459
+  - PL_VLESS_10002_471
+  - PL_HTTP_443_513
+  - PL_VLESS_443_347
+  - PL_VLESS_443_351
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -82,11 +78,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_443_388
-  - PL_TROJAN_443_397
-  - PL_TROJAN_443_407
-  - PL_HTTP_443_459
-  - PL_HTTP_443_471
+  - PL_VLESS_443_347
+  - PL_VLESS_443_351
+  - PL_VLESS_10002_471
+  - PL_HTTP_443_513
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -98,11 +93,10 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_443_388
-  - PL_TROJAN_443_397
-  - PL_TROJAN_443_407
-  - PL_HTTP_443_471
-  - PL_HTTP_443_459
+  - PL_VLESS_10002_471
+  - PL_HTTP_443_513
+  - PL_VLESS_443_347
+  - PL_VLESS_443_351
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

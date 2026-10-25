@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BY_VLESS_14430_535
+- name: BY_VLESS_14430_444
   network: ws
   port: 14430
   server: 178.172.227.124
@@ -17,7 +17,7 @@ proxies:
       Host: 178.172.227.124
     path: /vless
   country: BY
-- name: BY_VLESS_14430_600
+- name: BY_VLESS_14430_427
   network: ws
   port: 14430
   server: 95.128.71.79
@@ -42,8 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BY_VLESS_14430_535
-  - BY_VLESS_14430_600
+  - BY_VLESS_14430_444
+  - BY_VLESS_14430_427
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BY_VLESS_14430_535
-  - BY_VLESS_14430_600
+  - BY_VLESS_14430_427
+  - BY_VLESS_14430_444
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +69,8 @@ proxy-groups:
 - name: 🌍 BY
   type: url-test
   proxies:
-  - BY_VLESS_14430_535
-  - BY_VLESS_14430_600
+  - BY_VLESS_14430_444
+  - BY_VLESS_14430_427
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

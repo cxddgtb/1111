@@ -5,33 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KZ_VMESS_80_743
-  type: vmess
+- client-fingerprint: chrome
+  encryption: none
+  name: KZ_VLESS_443_1158
   network: ws
-  server: 38.107.234.57
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
+  port: 443
+  server: 38.180.38.137
+  servername: vlso5.1d.mom
+  tls: true
+  type: vless
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
   ws-opts:
     headers:
-      Host: viber.com
-    path: /vmess/
-  country: KZ
-- name: KZ_VMESS_80_751
-  type: vmess
-  network: ws
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-    path: /vmess/
+      Host: vlso5.1d.mom
+    path: /socks5=888:888@hkip.1d.mom:1080
   country: KZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KZ_VMESS_80_743
-  - KZ_VMESS_80_751
+  - KZ_VLESS_443_1158
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KZ_VMESS_80_743
-  - KZ_VMESS_80_751
+  - KZ_VLESS_443_1158
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +58,7 @@ proxy-groups:
 - name: 🌍 KZ
   type: url-test
   proxies:
-  - KZ_VMESS_80_743
-  - KZ_VMESS_80_751
+  - KZ_VLESS_443_1158
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

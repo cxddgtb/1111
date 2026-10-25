@@ -5,14 +5,69 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_HYSTERIA2_443_424
+- name: TW_HYSTERIA2_443_544
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
-  server: 160.187.100.109
+  server: 103.115.109.49
   skip-cert-verify: true
-  sni: vpn-tw-002.fastervpn.world
+  sni: 'https:'
   tls: false
   type: hysteria2
+  country: TW
+- name: TW_HYSTERIA2_443_805
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: vpn-tw-002.fastervpn.world
+  skip-cert-verify: true
+  sni: 127.0.0.1
+  tls: false
+  type: hysteria2
+  country: TW
+- name: TW_VLESS_443_721
+  network: ws
+  port: 443
+  server: 60.248.219.78
+  servername: ty986gfazs.cainiaohub.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  ws-opts:
+    headers:
+      Host: ty986gfazs.cainiaohub.xyz
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+  country: TW
+- name: TW_TROJAN_24999_589
+  password: 29086912-33e4-4e06-ba2b-60f1a195864f
+  port: 24999
+  server: tjtw.m2k699.com
+  skip-cert-verify: true
+  sni: www.itunes.com
+  type: trojan
+  country: TW
+- name: TW_ANYTLS_443_1683
+  password: 0324fbc29561
+  port: 443
+  server: 98416548.df6h451rh.xin
+  skip-cert-verify: true
+  sni: images.ctfassets.net
+  type: anytls
+  udp: true
+  country: TW
+- name: TW_VLESS_53002_1156
+  server: forwarded.frnhk.xyz
+  port: 53002
+  type: vless
+  uuid: 5ce8f582-1494-4e3f-9a2d-7164491cc6fa
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 3lswNoHV1RqK6yO--0ZWoYh1WqHkfhKQph3onxE_1So
+    short-id: fc04
+  servername: www.ens.psl.eu
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +82,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_HYSTERIA2_443_424
+  - TW_HYSTERIA2_443_544
+  - TW_HYSTERIA2_443_805
+  - TW_VLESS_443_721
+  - TW_TROJAN_24999_589
+  - TW_ANYTLS_443_1683
+  - TW_VLESS_53002_1156
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +100,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_HYSTERIA2_443_424
+  - TW_HYSTERIA2_443_544
+  - TW_TROJAN_24999_589
+  - TW_VLESS_443_721
+  - TW_HYSTERIA2_443_805
+  - TW_VLESS_53002_1156
+  - TW_ANYTLS_443_1683
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +117,12 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_HYSTERIA2_443_424
+  - TW_HYSTERIA2_443_544
+  - TW_HYSTERIA2_443_805
+  - TW_VLESS_443_721
+  - TW_TROJAN_24999_589
+  - TW_ANYTLS_443_1683
+  - TW_VLESS_53002_1156
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

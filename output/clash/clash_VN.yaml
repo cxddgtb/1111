@@ -5,11 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VN_SOCKS5_1083_957
-  port: 1083
-  server: 113.22.224.63
-  skip-cert-verify: true
-  type: socks5
+- encryption: none
+  name: VN_VLESS_2086_872
+  network: tcp
+  port: 2086
+  server: 150.95.109.109
+  tls: false
+  type: vless
+  uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
   country: VN
 proxy-groups:
 - name: 🚀 节点选择
@@ -24,7 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - VN_SOCKS5_1083_957
+  - VN_VLESS_2086_872
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -37,7 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - VN_SOCKS5_1083_957
+  - VN_VLESS_2086_872
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -49,7 +52,7 @@ proxy-groups:
 - name: 🌍 VN
   type: url-test
   proxies:
-  - VN_SOCKS5_1083_957
+  - VN_VLESS_2086_872
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

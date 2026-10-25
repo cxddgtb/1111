@@ -9,7 +9,7 @@ proxies:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
-  name: FR_HYSTERIA_24667_2272
+  name: FR_HYSTERIA_24667_1460
   port: 24667
   protocol: udp
   server: 62.210.70.191
@@ -18,7 +18,7 @@ proxies:
   type: hysteria
   up: 11 Mbps
   country: FR
-- name: FR_VLESS_14430_430
+- name: FR_VLESS_14430_321
   network: ws
   port: 14430
   server: 138.124.70.41
@@ -30,54 +30,16 @@ proxies:
       Host: 138.124.70.41
     path: /vless
   country: FR
-- name: FR_HTTP_9443_589
-  password: None
-  port: 9443
-  server: 213.139.9.142
-  skip-cert-verify: true
-  tls: true
-  type: http
+- encryption: none
+  name: FR_VLESS_2052_485
+  network: tcp
+  port: 2052
+  server: edge10.cyrionflare.com
+  tls: false
+  type: vless
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
   country: FR
-- name: FR_HTTP_6103_585
-  password: None
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_8090_693
-  password: None
-  port: 8090
-  server: 82.96.128.175
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_632
-  port: 443
-  server: 82.66.235.221
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_608
-  password: None
-  port: 443
-  server: 149.102.245.65
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_588
-  port: 443
-  server: 82.65.162.76
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: FR
-- name: FR_HTTP_443_599
+- name: FR_HTTP_443_437
   port: 443
   server: 84.235.228.156
   skip-cert-verify: true
@@ -85,13 +47,101 @@ proxies:
   type: http
   udp: true
   country: FR
-- name: FR_HTTP_8090_877
+- name: FR_HTTP_9443_393
+  password: None
+  port: 9443
+  server: 213.139.9.142
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_432
+  port: 443
+  server: 51.210.167.149
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_8090_484
+  port: 8090
+  server: 82.96.128.175
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_432_2
+  port: 443
+  server: 82.65.162.76
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: FR
+- name: FR_VLESS_8443_289
+  server: 51.77.108.218
+  port: 8443
+  type: vless
+  uuid: 8a1f8853-9a71-4ef2-a64c-4f0a94c2e14b
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  servername: ozon.ru
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+  country: FR
+- name: FR_VLESS_8443_290
+  server: 54.37.2.245
+  port: 8443
+  type: vless
+  uuid: 8a1f8853-9a71-4ef2-a64c-4f0a94c2e14b
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  servername: ozon.ru
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+  country: FR
+- name: FR_HTTP_8090_636
   port: 8090
   server: 83.206.1.225
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
+  country: FR
+- name: FR_VMESS_80_453
+  type: vmess
+  network: ws
+  server: 145.239.55.210
+  port: 80
+  uuid: 067fcd63-b215-4abd-8529-ae929a9971a9
+  skip-cert-verify: false
+  tls: false
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+    path: /
+  country: FR
+- name: FR_VMESS_80_869
+  type: vmess
+  network: ws
+  server: 54.37.131.126
+  port: 80
+  uuid: 6deef9ad-1357-443d-f95c-cb18952c20b3
+  skip-cert-verify: false
+  tls: false
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
+    path: /
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -106,16 +156,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_HYSTERIA_24667_2272
-  - FR_VLESS_14430_430
-  - FR_HTTP_9443_589
-  - FR_HTTP_6103_585
-  - FR_HTTP_8090_693
-  - FR_HTTP_443_632
-  - FR_HTTP_443_608
-  - FR_HTTP_443_588
-  - FR_HTTP_443_599
-  - FR_HTTP_8090_877
+  - FR_HYSTERIA_24667_1460
+  - FR_VLESS_14430_321
+  - FR_VLESS_2052_485
+  - FR_HTTP_443_437
+  - FR_HTTP_9443_393
+  - FR_HTTP_443_432
+  - FR_HTTP_8090_484
+  - FR_HTTP_443_432_2
+  - FR_VLESS_8443_289
+  - FR_VLESS_8443_290
+  - FR_HTTP_8090_636
+  - FR_VMESS_80_453
+  - FR_VMESS_80_869
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -128,16 +181,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_VLESS_14430_430
-  - FR_HTTP_6103_585
-  - FR_HTTP_443_588
-  - FR_HTTP_9443_589
-  - FR_HTTP_443_599
-  - FR_HTTP_443_608
-  - FR_HTTP_443_632
-  - FR_HTTP_8090_693
-  - FR_HTTP_8090_877
-  - FR_HYSTERIA_24667_2272
+  - FR_VLESS_8443_289
+  - FR_VLESS_8443_290
+  - FR_VLESS_14430_321
+  - FR_HTTP_9443_393
+  - FR_HTTP_443_432
+  - FR_HTTP_443_432_2
+  - FR_HTTP_443_437
+  - FR_VMESS_80_453
+  - FR_HTTP_8090_484
+  - FR_VLESS_2052_485
+  - FR_HTTP_8090_636
+  - FR_VMESS_80_869
+  - FR_HYSTERIA_24667_1460
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -149,16 +205,19 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_HYSTERIA_24667_2272
-  - FR_VLESS_14430_430
-  - FR_HTTP_9443_589
-  - FR_HTTP_6103_585
-  - FR_HTTP_8090_693
-  - FR_HTTP_443_632
-  - FR_HTTP_443_608
-  - FR_HTTP_443_588
-  - FR_HTTP_443_599
-  - FR_HTTP_8090_877
+  - FR_HYSTERIA_24667_1460
+  - FR_VLESS_14430_321
+  - FR_VLESS_2052_485
+  - FR_HTTP_443_437
+  - FR_HTTP_9443_393
+  - FR_HTTP_443_432
+  - FR_HTTP_8090_484
+  - FR_HTTP_443_432_2
+  - FR_VLESS_8443_289
+  - FR_VLESS_8443_290
+  - FR_HTTP_8090_636
+  - FR_VMESS_80_453
+  - FR_VMESS_80_869
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
