@@ -5,13 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IL_HTTP_443_542
+- name: IL_HTTP_443_639
   port: 443
-  server: 62.90.77.30
+  server: 169.150.248.17
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
   country: IL
 proxy-groups:
 - name: 🚀 节点选择
@@ -26,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IL_HTTP_443_542
+  - IL_HTTP_443_639
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IL_HTTP_443_542
+  - IL_HTTP_443_639
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +50,7 @@ proxy-groups:
 - name: 🌍 IL
   type: url-test
   proxies:
-  - IL_HTTP_443_542
+  - IL_HTTP_443_639
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

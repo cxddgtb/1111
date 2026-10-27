@@ -5,8 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GE_HTTP_443_1727
-  password: None
+- name: GE_HTTP_443_810
   port: 443
   server: 195.54.178.210
   skip-cert-verify: true
@@ -26,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GE_HTTP_443_1727
+  - GE_HTTP_443_810
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GE_HTTP_443_1727
+  - GE_HTTP_443_810
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +50,7 @@ proxy-groups:
 - name: 🌍 GE
   type: url-test
   proxies:
-  - GE_HTTP_443_1727
+  - GE_HTTP_443_810
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

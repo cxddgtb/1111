@@ -5,22 +5,85 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VLESS_443_976
-  type: vless
-  server: 151.242.85.236
+- name: HK_VMESS_443_967
+  type: vmess
+  network: ws
+  server: i2psm3knof5qjjix.v.3dns.vip
   port: 443
-  uuid: 7aec627e-a258-4ded-9fd9-fbd7c024f950
-  servername: addons.mozilla.org
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: gUu1n11Ef_GEoatNQzJJucvIjGTt4qxOWdxMzjoHwDM
-    short-id: 9b6fa4047c24629f
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   skip-cert-verify: true
+  tls: true
   udp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: i2psm3knof5qjjix.v.3dns.vip
+    path: /ws-vmess
   country: HK
-- name: HK_HYSTERIA2_5010_1001
+- name: HK_TROJAN_443_658
+  type: trojan
+  network: tcp
+  server: 119.246.1.143
+  port: 443
+  password: BxceQaOe
+  skip-cert-verify: true
+  sni: t.me/ripaojiedian
+  country: HK
+- name: HK_VMESS_443_1873
+  type: vmess
+  network: ws
+  server: 47.243.65.243
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- name: HK_VMESS_44867_531
+  type: vmess
+  server: 47.244.120.197
+  port: 44867
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /arki
+    headers:
+      Host: ''
+  country: HK
+- name: HK_TROJAN_45464_1271
+  type: trojan
+  server: 2.27.109.179
+  port: 45464
+  password: XuMweB2PWs
+  sni: 2.27.109.179.sslip.io
+  network: tcp
+  country: HK
+- name: HK_VMESS_36703_1563
+  type: vmess
+  server: 47.244.120.197
+  port: 36703
+  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /arki
+    headers:
+      Host: ''
+  country: HK
+- name: HK_HYSTERIA2_5010_580
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -31,86 +94,16 @@ proxies:
   tls: false
   type: hysteria2
   country: HK
-- name: HK_TROJAN_45464_1169
-  password: XuMweB2PWs
-  port: 45464
-  server: 2.27.109.179
-  sni: 2.27.109.179.sslip.io
-  type: trojan
-  country: HK
-- name: HK_VMESS_23026_556
-  server: 47.244.120.197
-  port: 23026
-  type: vmess
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki
-    headers:
-      Host: 47.244.120.197
-  udp: true
-  country: HK
-- name: HK_VLESS_2090_875
-  server: 66.90.115.130
-  port: 2090
-  type: vless
-  uuid: 3644635c-f8c4-449c-a665-fce1897a7bf3
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: qBobe6KSNkFLqTPCffcJo0nXgxy-3JKru9WRqY9rkjk
-    short-id: bb472a184677af64
-  servername: www.apple.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-  country: HK
-- name: HK_VLESS_2090_1215
-  server: 66.90.115.124
-  port: 2090
-  type: vless
-  uuid: 3644635c-f8c4-449c-a665-fce1897a7bf3
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: qBobe6KSNkFLqTPCffcJo0nXgxy-3JKru9WRqY9rkjk
-    short-id: bb472a184677af64
-  servername: www.apple.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-  country: HK
-- name: HK_ANYTLS_12686_805
-  server: user01.godvpn.lol
-  port: 12686
-  type: anytls
-  password: db62309c-486a-4fd5-abc4-4e91ac495d38
-  udp: true
-  skip-cert-verify: true
-  country: HK
-- name: HK_VLESS_443_1140
-  server: sg.01.mdh.icu
+- name: HK_ANYTLS_443_979
+  password: 0324fbc29561
   port: 443
-  type: vless
-  uuid: 87343096-0b65-43c4-88a2-ef932ea2381f
-  tls: true
-  reality-opts:
-    public-key: 1_0DNST7EjlUldQNpFqM0bMWx9bHfGpL4k24vfgUDDc
-    short-id: e6a2c4ff
-  servername: www.apple.com
-  client-fingerprint: chrome
-  network: xhttp
-  xhttp-opts:
-    path: /xh/c32dc99ba45e
-    host: www.apple.com
-    mode: auto
+  server: 56481.df6h451rh.xin
+  skip-cert-verify: true
+  sni: images.ctfassets.net
+  type: anytls
   udp: true
   country: HK
-- name: HK_ANYTLS_443_1746
+- name: HK_ANYTLS_443_1099
   server: 654968169.df6h451rh.xin
   port: 443
   type: anytls
@@ -132,15 +125,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_443_976
-  - HK_HYSTERIA2_5010_1001
-  - HK_TROJAN_45464_1169
-  - HK_VMESS_23026_556
-  - HK_VLESS_2090_875
-  - HK_VLESS_2090_1215
-  - HK_ANYTLS_12686_805
-  - HK_VLESS_443_1140
-  - HK_ANYTLS_443_1746
+  - HK_VMESS_443_967
+  - HK_TROJAN_443_658
+  - HK_VMESS_443_1873
+  - HK_VMESS_44867_531
+  - HK_TROJAN_45464_1271
+  - HK_VMESS_36703_1563
+  - HK_HYSTERIA2_5010_580
+  - HK_ANYTLS_443_979
+  - HK_ANYTLS_443_1099
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -153,15 +146,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_23026_556
-  - HK_ANYTLS_12686_805
-  - HK_VLESS_2090_875
-  - HK_VLESS_443_976
-  - HK_HYSTERIA2_5010_1001
-  - HK_VLESS_443_1140
-  - HK_TROJAN_45464_1169
-  - HK_VLESS_2090_1215
-  - HK_ANYTLS_443_1746
+  - HK_VMESS_44867_531
+  - HK_HYSTERIA2_5010_580
+  - HK_TROJAN_443_658
+  - HK_VMESS_443_967
+  - HK_ANYTLS_443_979
+  - HK_ANYTLS_443_1099
+  - HK_TROJAN_45464_1271
+  - HK_VMESS_36703_1563
+  - HK_VMESS_443_1873
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -173,15 +166,15 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_443_976
-  - HK_HYSTERIA2_5010_1001
-  - HK_TROJAN_45464_1169
-  - HK_VMESS_23026_556
-  - HK_VLESS_2090_875
-  - HK_VLESS_2090_1215
-  - HK_ANYTLS_12686_805
-  - HK_VLESS_443_1140
-  - HK_ANYTLS_443_1746
+  - HK_VMESS_443_967
+  - HK_TROJAN_443_658
+  - HK_VMESS_443_1873
+  - HK_VMESS_44867_531
+  - HK_TROJAN_45464_1271
+  - HK_VMESS_36703_1563
+  - HK_HYSTERIA2_5010_580
+  - HK_ANYTLS_443_979
+  - HK_ANYTLS_443_1099
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

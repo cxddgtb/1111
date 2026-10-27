@@ -5,7 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_HTTP_443_490
+- name: LV_HTTP_443_571
+  password: None
+  port: 443
+  server: 109.248.149.34
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: LV
+- name: LV_HTTP_443_569
   password: None
   port: 443
   server: 109.248.147.66
@@ -13,7 +21,16 @@ proxies:
   tls: true
   type: http
   country: LV
-- name: LV_HTTP_443_553
+- name: LV_HTTP_443_693
+  password: None
+  port: 443
+  server: 185.219.159.16
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: LV
+- name: LV_HTTP_443_720
   port: 443
   server: 185.219.159.15
   skip-cert-verify: true
@@ -34,8 +51,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_HTTP_443_490
-  - LV_HTTP_443_553
+  - LV_HTTP_443_571
+  - LV_HTTP_443_569
+  - LV_HTTP_443_693
+  - LV_HTTP_443_720
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,8 +67,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_HTTP_443_490
-  - LV_HTTP_443_553
+  - LV_HTTP_443_569
+  - LV_HTTP_443_571
+  - LV_HTTP_443_693
+  - LV_HTTP_443_720
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -61,8 +82,10 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_HTTP_443_490
-  - LV_HTTP_443_553
+  - LV_HTTP_443_571
+  - LV_HTTP_443_569
+  - LV_HTTP_443_693
+  - LV_HTTP_443_720
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

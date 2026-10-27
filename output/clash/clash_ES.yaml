@@ -5,18 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ES_TROJAN_2053_468
+- name: ES_TROJAN_2053_542
+  type: trojan
   network: ws
-  password: humanity
-  port: 2053
   server: 185.114.72.31
+  port: 2053
+  password: humanity
   skip-cert-verify: false
   sni: www.calmlunch.com
-  type: trojan
   ws-opts:
     headers:
       Host: www.calmlunch.com
     path: /assignment
+  country: ES
+- name: ES_VLESS_443_412
+  type: vless
+  network: tcp
+  server: 85.90.217.42
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  servername: 85.90.217.42
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  country: ES
+- name: ES_HTTP_443_514
+  password: None
+  port: 443
+  server: 130.195.250.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: ES
+- auth: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  name: ES_HYSTERIA2_2060_449
+  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
+  port: 2060
+  server: xby.mangshe.xyz
+  skip-cert-verify: true
+  sni: xby.mangshe.xyz
+  tls: false
+  type: hysteria2
   country: ES
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +60,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_TROJAN_2053_468
+  - ES_TROJAN_2053_542
+  - ES_VLESS_443_412
+  - ES_HTTP_443_514
+  - ES_HYSTERIA2_2060_449
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +76,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_TROJAN_2053_468
+  - ES_VLESS_443_412
+  - ES_HYSTERIA2_2060_449
+  - ES_HTTP_443_514
+  - ES_TROJAN_2053_542
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +91,10 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_TROJAN_2053_468
+  - ES_TROJAN_2053_542
+  - ES_VLESS_443_412
+  - ES_HTTP_443_514
+  - ES_HYSTERIA2_2060_449
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
