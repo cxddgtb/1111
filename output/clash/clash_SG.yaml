@@ -5,23 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_2096_789
-  type: vless
+- encryption: none
+  name: SG_VLESS_443_661
   network: ws
-  server: 139.162.27.96
+  port: 443
+  server: v2.drsachi.com
+  tls: false
+  type: vless
+  uuid: 270c3fa5-0293-4d68-875c-6cdc3bdc5b84
+  country: SG
+- client-fingerprint: chrome
+  encryption: none
+  name: SG_VLESS_2096_862
+  network: ws
   port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  server: 139.162.27.96
   servername: free-server.techsonic.dev
   skip-cert-verify: false
   tls: true
-  client-fingerprint: chrome
-  encryption: none
+  type: vless
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
   ws-opts:
     headers:
       Host: free-server.techsonic.dev
     path: /free-server.techsonic.dev
   country: SG
-- name: SG_VMESS_18000_400
+- cipher: aes-256-gcm
+  name: SG_SS_8388_415
+  password: qpSevKaUXYQKvSjp
+  port: 8388
+  server: 139.180.220.175
+  type: ss
+  country: SG
+- name: SG_HTTP_9443_829
+  port: 9443
+  server: 149.88.99.209
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: SG
+- name: SG_VMESS_18000_425
   type: vmess
   network: tcp
   server: 149.88.23.202
@@ -31,7 +55,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: SG
-- name: SG_VMESS_18000_409
+- name: SG_VMESS_18000_455
   type: vmess
   network: tcp
   server: 149.88.23.207
@@ -40,31 +64,6 @@ proxies:
   udp: true
   alterId: 0
   cipher: auto
-  country: SG
-- name: SG_VLESS_443_651
-  type: vless
-  server: 43.174.193.1
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  network: ws
-  tls: true
-  servername: ccc.010304.xyz
-  client-fingerprint: chrome
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: ccc.010304.xyz
-  country: SG
-- name: SG_VLESS_16263_395
-  type: vless
-  server: 47.237.74.17
-  port: 16263
-  uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -79,11 +78,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_2096_789
-  - SG_VMESS_18000_400
-  - SG_VMESS_18000_409
-  - SG_VLESS_443_651
-  - SG_VLESS_16263_395
+  - SG_VLESS_443_661
+  - SG_VLESS_2096_862
+  - SG_SS_8388_415
+  - SG_HTTP_9443_829
+  - SG_VMESS_18000_425
+  - SG_VMESS_18000_455
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -96,11 +96,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VLESS_16263_395
-  - SG_VMESS_18000_400
-  - SG_VMESS_18000_409
-  - SG_VLESS_443_651
-  - SG_VLESS_2096_789
+  - SG_SS_8388_415
+  - SG_VMESS_18000_425
+  - SG_VMESS_18000_455
+  - SG_VLESS_443_661
+  - SG_HTTP_9443_829
+  - SG_VLESS_2096_862
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -112,11 +113,12 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_2096_789
-  - SG_VMESS_18000_400
-  - SG_VMESS_18000_409
-  - SG_VLESS_443_651
-  - SG_VLESS_16263_395
+  - SG_VLESS_443_661
+  - SG_VLESS_2096_862
+  - SG_SS_8388_415
+  - SG_HTTP_9443_829
+  - SG_VMESS_18000_425
+  - SG_VMESS_18000_455
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

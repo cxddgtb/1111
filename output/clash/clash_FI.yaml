@@ -5,31 +5,82 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_14430_429
-  type: vless
-  network: ws
-  server: 45.144.234.157
-  port: 14430
-  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
+- name: FI_HYSTERIA2_4443_389
+  password: 146d567c-6335-4e63-a8aa-7ec068642440
+  port: 4443
+  server: 31.76.8.20
+  sni: nl1.obxodvpn.us
   tls: false
+  type: hysteria2
+  country: FI
+- name: FI_HYSTERIA2_4443_385
+  password: 146d567c-6335-4e63-a8aa-7ec068642440
+  port: 4443
+  server: fi1.obxodvpn.us
+  skip-cert-verify: false
+  sni: nl1.obxodvpn.us
+  tls: false
+  type: hysteria2
+  country: FI
+- name: FI_VLESS_14430_424
+  network: ws
+  port: 14430
+  server: 45.144.234.157
+  servername: 45.144.234.157
+  tls: false
+  type: vless
+  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
   ws-opts:
     headers:
       Host: 45.144.234.157
     path: /vless
   country: FI
-- name: FI_VLESS_465_657
-  type: vless
-  server: hw3.divarkhaghazi.com
-  port: 465
-  uuid: 924e20da-fcad-4e7e-8113-c62d27a0d01e
-  network: ws
-  tls: true
-  servername: hw3.divarkhaghazi.com.
+- alpn:
+  - h2
   client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: kobedin-server1-vless
+  name: FI_VLESS_4443_484
+  network: grpc
+  port: 4443
+  server: 45-149-147-213.sslip.io
+  servername: 45-149-147-213.sslip.io
+  tls: true
+  type: vless
+  uuid: 9b347a9b-d7a6-4b51-9890-eff62b832834
+  country: FI
+- alpn:
+  - http/1.1
+  encryption: none
+  name: FI_VLESS_465_553
+  network: ws
+  port: 465
+  server: hw3.divarkhaghazi.com
+  servername: hw3.divarkhaghazi.com.
+  tls: true
+  type: vless
+  uuid: 924e20da-fcad-4e7e-8113-c62d27a0d01e
   ws-opts:
-    path: /
     headers:
       Host: hw3.divarkhaghazi.com.
+    path: /
+  country: FI
+- name: FI_VLESS_443_1482
+  server: 36a466g.fi1.h1clayd.click
+  port: 443
+  type: vless
+  uuid: 9a0e84f8-4b58-477f-99da-5fac5a2e58e8
+  tls: true
+  reality-opts:
+    public-key: pAgrBKJCmuSJHIzYkEJTqsOBOVBK_DMtEqFPo-PaTkg
+    short-id: b3c9d0c6bdd114a6
+  servername: 36a466g.fi1.h1clayd.click
+  client-fingerprint: random
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: 0adb9638509b
+  udp: true
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,8 +95,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_14430_429
-  - FI_VLESS_465_657
+  - FI_HYSTERIA2_4443_389
+  - FI_HYSTERIA2_4443_385
+  - FI_VLESS_14430_424
+  - FI_VLESS_4443_484
+  - FI_VLESS_465_553
+  - FI_VLESS_443_1482
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,8 +113,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_14430_429
-  - FI_VLESS_465_657
+  - FI_HYSTERIA2_4443_385
+  - FI_HYSTERIA2_4443_389
+  - FI_VLESS_14430_424
+  - FI_VLESS_4443_484
+  - FI_VLESS_465_553
+  - FI_VLESS_443_1482
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -71,8 +130,12 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_14430_429
-  - FI_VLESS_465_657
+  - FI_HYSTERIA2_4443_389
+  - FI_HYSTERIA2_4443_385
+  - FI_VLESS_14430_424
+  - FI_VLESS_4443_484
+  - FI_VLESS_465_553
+  - FI_VLESS_443_1482
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

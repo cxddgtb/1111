@@ -5,12 +5,24 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BR_HTTP_443_722
+- name: BR_HTTP_443_556
+  password: None
   port: 443
   server: 134.65.17.77
   skip-cert-verify: true
   tls: true
   type: http
+  country: BR
+- name: BR_VLESS_15040_453
+  server: br001.zestapp778.com
+  port: 15040
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  tls: true
+  servername: br.zestapp778.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
   country: BR
 proxy-groups:
 - name: 🚀 节点选择
@@ -25,7 +37,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BR_HTTP_443_722
+  - BR_HTTP_443_556
+  - BR_VLESS_15040_453
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +51,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BR_HTTP_443_722
+  - BR_VLESS_15040_453
+  - BR_HTTP_443_556
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +64,8 @@ proxy-groups:
 - name: 🌍 BR
   type: url-test
   proxies:
-  - BR_HTTP_443_722
+  - BR_HTTP_443_556
+  - BR_VLESS_15040_453
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

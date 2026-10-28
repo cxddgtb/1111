@@ -5,18 +5,33 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_VLESS_14430_668
-  type: vless
+- name: IN_VLESS_14430_685
   network: ws
-  server: 13.140.56.100
   port: 14430
-  uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
+  server: 13.140.56.100
   servername: 13.140.56.100
   tls: false
+  type: vless
+  uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
   ws-opts:
     headers:
       Host: 13.140.56.100
     path: /vless
+  country: IN
+- name: IN_VMESS_443_2024
+  type: vmess
+  server: 20.235.220.189
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: 6JDvArazgU3qQR6Q.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
   country: IN
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +46,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VLESS_14430_668
+  - IN_VLESS_14430_685
+  - IN_VMESS_443_2024
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +60,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VLESS_14430_668
+  - IN_VLESS_14430_685
+  - IN_VMESS_443_2024
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +73,8 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VLESS_14430_668
+  - IN_VLESS_14430_685
+  - IN_VMESS_443_2024
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

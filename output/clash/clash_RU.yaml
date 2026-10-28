@@ -5,34 +5,107 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_8445_625
-  type: vless
-  network: grpc
-  server: 77.232.135.141
-  port: 8445
-  uuid: 36cf792c-f07d-4500-97ea-a395e5178deb
-  servername: ru1.radiolumens.uk
-  tls: true
-  client-fingerprint: firefox
+- alpn:
+  - h2
+  client-fingerprint: chrome
+  encryption: none
   grpc-opts:
-    grpc-service-name: beru-pl
-  country: RU
-- name: RU_VLESS_443_1007
-  type: vless
+    grpc-mode: gun
+    grpc-service-name: vlgrpc
+  name: RU_VLESS_443_483
   network: grpc
-  server: xsru1.ddnsfree.com
   port: 443
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-  servername: xsru1.ddnsfree.com
+  server: 201.24.121.243
+  servername: kk-ru24a1.testkknegr.online
+  skip-cert-verify: false
   tls: true
-  client-fingerprint: random
+  type: vless
+  udp: true
+  uuid: 32b5ca9b-3f81-4031-965d-e8b074216e8d
+  country: RU
+- alpn:
+  - h2
+  client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: VideoRenderer
+  name: RU_VLESS_443_1041
+  network: grpc
+  port: 443
+  server: renderer-bridge-1-881.mirra.now
+  servername: renderer-bridge-1-881.mirra.now
+  tls: true
+  type: vless
+  uuid: 27653b37-603c-4c90-b1f5-25c4d23f8932
+  country: RU
+- client-fingerprint: chrome
+  encryption: none
   grpc-opts:
     grpc-service-name: grpc-ru
+  name: RU_VLESS_443_909
+  network: grpc
+  port: 443
+  server: xsru1.ddnsfree.com
+  servername: xsru1.ddnsfree.com
+  tls: true
+  type: vless
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
   country: RU
-- name: RU_VLESS_443_703
+- name: RU_TROJAN_25267_717
+  password: happybirthdaydaniel
+  port: 25267
+  server: de-bots4.h1cloud.net
+  skip-cert-verify: true
+  sni: t.me/FuckTheWall
+  type: trojan
+  country: RU
+- name: RU_HTTP_1446_861
+  password: None
+  port: 1446
+  server: 46.29.166.134
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RU
+- name: RU_HTTP_3128_514
+  port: 3128
+  server: 45.12.238.164
+  skip-cert-verify: true
+  type: http
+  country: RU
+- name: RU_VLESS_443_468
+  server: 185.178.208.140
+  port: 443
+  type: vless
+  uuid: ea277838-a188-44f1-a2e8-94aa110c4f27
+  tls: true
+  servername: static.bakarova-top.ru
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /api/v2/events
+    host: static.bakarova-top.ru
+    mode: packet-up
+  udp: true
+  country: RU
+- name: RU_VLESS_443_548
+  server: 45.9.12.110
+  port: 443
+  type: vless
+  uuid: 4b1be712-774c-4b65-8491-a3339e124a70
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: myIjvlXZS0rm1eg4q2w5WsQBuj80i2rBA0HpRGCUg1w
+    short-id: 86d1efde
+  servername: ru.letsconnectpoint.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+  country: RU
+- name: RU_VLESS_443_655
   type: vless
   network: ws
-  server: 91.210.169.181
+  server: wstg.datasynctrue.online
   port: 443
   uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
   servername: wstg.datasynctrue.online
@@ -40,17 +113,11 @@ proxies:
   tls: true
   udp: true
   tfo: false
+  client-fingerprint: chrome
   ws-opts:
     headers:
       Host: wstg.datasynctrue.online
     path: /api/connect
-  country: RU
-- name: RU_HTTP_1446_801
-  port: 1446
-  server: 46.29.166.134
-  skip-cert-verify: true
-  tls: true
-  type: http
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -65,10 +132,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_8445_625
-  - RU_VLESS_443_1007
-  - RU_VLESS_443_703
-  - RU_HTTP_1446_801
+  - RU_VLESS_443_483
+  - RU_VLESS_443_1041
+  - RU_VLESS_443_909
+  - RU_TROJAN_25267_717
+  - RU_HTTP_1446_861
+  - RU_HTTP_3128_514
+  - RU_VLESS_443_468
+  - RU_VLESS_443_548
+  - RU_VLESS_443_655
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -81,10 +153,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_8445_625
-  - RU_VLESS_443_703
-  - RU_HTTP_1446_801
-  - RU_VLESS_443_1007
+  - RU_VLESS_443_468
+  - RU_VLESS_443_483
+  - RU_HTTP_3128_514
+  - RU_VLESS_443_548
+  - RU_VLESS_443_655
+  - RU_TROJAN_25267_717
+  - RU_HTTP_1446_861
+  - RU_VLESS_443_909
+  - RU_VLESS_443_1041
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -96,10 +173,15 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_8445_625
-  - RU_VLESS_443_1007
-  - RU_VLESS_443_703
-  - RU_HTTP_1446_801
+  - RU_VLESS_443_483
+  - RU_VLESS_443_1041
+  - RU_VLESS_443_909
+  - RU_TROJAN_25267_717
+  - RU_HTTP_1446_861
+  - RU_HTTP_3128_514
+  - RU_VLESS_443_468
+  - RU_VLESS_443_548
+  - RU_VLESS_443_655
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

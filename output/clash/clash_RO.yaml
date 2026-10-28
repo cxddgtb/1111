@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RO_HYSTERIA2_443_665
+- name: RO_HYSTERIA2_443_537
   obfs: salamander
   obfs-password: c1b4086fea89914496c7e10967a419216566
   password: QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s
@@ -16,20 +16,34 @@ proxies:
   tls: false
   type: hysteria2
   country: RO
-- name: RO_HTTP_9002_644
+- cipher: chacha20-ietf-poly1305
+  name: RO_SS_443_337
+  password: QFWzCw2uX9B9i6qAYeFBIE
+  port: 443
+  server: bogging-eyeteeth-fly.freesocks.work
+  type: ss
+  country: RO
+- name: RO_HTTP_9443_572
   password: None
-  port: 9002
-  server: 193.176.84.22
+  port: 9443
+  server: 135.136.1.2
   skip-cert-verify: true
   tls: true
   type: http
   country: RO
 - cipher: chacha20-ietf-poly1305
-  name: RO_SS_64546_2349
+  name: RO_SS_64546_2745
   password: U83u9OGpvSatIUW7LsWffr
   port: 64546
   server: 194.68.44.42
   type: ss
+  country: RO
+- name: RO_HTTP_9443_552
+  port: 9443
+  server: 169.150.199.1
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: RO
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,9 +58,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_HYSTERIA2_443_665
-  - RO_HTTP_9002_644
-  - RO_SS_64546_2349
+  - RO_HYSTERIA2_443_537
+  - RO_SS_443_337
+  - RO_HTTP_9443_572
+  - RO_SS_64546_2745
+  - RO_HTTP_9443_552
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,9 +75,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_HTTP_9002_644
-  - RO_HYSTERIA2_443_665
-  - RO_SS_64546_2349
+  - RO_SS_443_337
+  - RO_HYSTERIA2_443_537
+  - RO_HTTP_9443_552
+  - RO_HTTP_9443_572
+  - RO_SS_64546_2745
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,9 +91,11 @@ proxy-groups:
 - name: 🌍 RO
   type: url-test
   proxies:
-  - RO_HYSTERIA2_443_665
-  - RO_HTTP_9002_644
-  - RO_SS_64546_2349
+  - RO_HYSTERIA2_443_537
+  - RO_SS_443_337
+  - RO_HTTP_9443_572
+  - RO_SS_64546_2745
+  - RO_HTTP_9443_552
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

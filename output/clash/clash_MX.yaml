@@ -5,48 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MX_VLESS_443_312
-  type: vless
+- client-fingerprint: chrome
+  name: MX_VLESS_443_402
   network: ws
-  server: 131.196.253.141
   port: 443
-  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
+  server: 131.196.253.141
   servername: kclx.eu.org
   tls: true
-  client-fingerprint: chrome
+  type: vless
+  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
   ws-opts:
     headers:
       Host: kclx.eu.org
     path: /154.16.10.34-8080
-  country: MX
-- name: MX_VLESS_19167_141
-  type: vless
-  network: tcp
-  server: 149.104.90.21
-  port: 19167
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  servername: mx001.zestapp778.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  country: MX
-- name: MX_VLESS_19167_196
-  type: vless
-  server: mx001.zestapp778.com
-  port: 19167
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  network: tcp
-  tls: true
-  servername: mx001.zestapp778.com
-  client-fingerprint: chrome
-  ws-opts: null
-  country: MX
-- name: MX_HTTP_999_116
-  port: 999
-  server: 201.163.154.14
-  skip-cert-verify: true
-  type: http
   country: MX
 proxy-groups:
 - name: 🚀 节点选择
@@ -61,10 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MX_VLESS_443_312
-  - MX_VLESS_19167_141
-  - MX_VLESS_19167_196
-  - MX_HTTP_999_116
+  - MX_VLESS_443_402
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -77,10 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MX_HTTP_999_116
-  - MX_VLESS_19167_141
-  - MX_VLESS_19167_196
-  - MX_VLESS_443_312
+  - MX_VLESS_443_402
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -92,10 +57,7 @@ proxy-groups:
 - name: 🌍 MX
   type: url-test
   proxies:
-  - MX_VLESS_443_312
-  - MX_VLESS_19167_141
-  - MX_VLESS_19167_196
-  - MX_HTTP_999_116
+  - MX_VLESS_443_402
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,18 +5,52 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CY_VLESS_443_727
-  type: vless
+- name: CY_VLESS_443_677
   network: ws
-  server: 213.111.177.107
   port: 443
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  server: 213.111.177.107
   servername: vlso5.1d.mom
   tls: true
+  type: vless
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
   ws-opts:
     headers:
       Host: vlso5.1d.mom
-    path: /socks5=888:888
+    path: /socks5=888:888@hkip.1d.mom:1080fp=chrome
+  country: CY
+- name: CY_HTTP_443_646
+  password: None
+  port: 443
+  server: 213.207.130.34
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  country: CY
+- name: CY_VLESS_8447_219
+  server: 171.22.119.74
+  port: 8447
+  type: vless
+  uuid: 6aed42ba-cd2d-4671-87d9-c949b6876888
+  tls: false
+  network: tcp
+  udp: true
+  country: CY
+- name: CY_VLESS_40443_2522
+  server: 5.253.28.224
+  port: 40443
+  type: vless
+  uuid: af5eac96-e478-488a-bc8c-45269d7e8847
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
+    short-id: 68a8
+  servername: deepl.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
   country: CY
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +65,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CY_VLESS_443_727
+  - CY_VLESS_443_677
+  - CY_HTTP_443_646
+  - CY_VLESS_8447_219
+  - CY_VLESS_40443_2522
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +81,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CY_VLESS_443_727
+  - CY_VLESS_8447_219
+  - CY_HTTP_443_646
+  - CY_VLESS_443_677
+  - CY_VLESS_40443_2522
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +96,10 @@ proxy-groups:
 - name: 🌍 CY
   type: url-test
   proxies:
-  - CY_VLESS_443_727
+  - CY_VLESS_443_677
+  - CY_HTTP_443_646
+  - CY_VLESS_8447_219
+  - CY_VLESS_40443_2522
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
