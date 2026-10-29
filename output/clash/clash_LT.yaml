@@ -5,17 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LT_VLESS_8880_73
-  network: ws
-  port: 8880
-  server: 88.216.69.30
-  tls: false
+- name: LT_VLESS_443_132
   type: vless
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 88.216.69.253
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  network: ws
+  tls: true
+  servername: ccc.010304.xyz
+  client-fingerprint: chrome
   ws-opts:
+    path: /fp=chromefp=unsafe
     headers:
-      Host: vms.lifetime06.workers.dev
-    path: /
+      Host: ccc.010304.xyz
   country: LT
 proxy-groups:
 - name: 🚀 节点选择
@@ -30,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LT_VLESS_8880_73
+  - LT_VLESS_443_132
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LT_VLESS_8880_73
+  - LT_VLESS_443_132
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +57,7 @@ proxy-groups:
 - name: 🌍 LT
   type: url-test
   proxies:
-  - LT_VLESS_8880_73
+  - LT_VLESS_443_132
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

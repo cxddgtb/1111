@@ -5,59 +5,55 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_SS_8388_1066
-  type: ss
-  server: 154.36.158.197
-  port: 8388
-  cipher: aes-256-gcm
-  password: BeaUf9c0AEWH40Pu
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_VLESS_443_1051
+- name: JP_VLESS_443_552
+  type: vless
+  server: 141.11.139.215
   port: 443
-  server: 137.220.221.179
-  tls: false
-  type: vless
-  uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4
-  country: JP
-- cipher: aes-256-gcm
-  name: JP_SS_80_390
-  password: 3eOFeNssde7PYYMv
-  port: 80
-  server: 84.247.155.196
-  type: ss
-  country: JP
-- name: JP_HYSTERIA2_4444_411
-  server: jap2.nexfile.net
-  port: 4444
-  type: hysteria2
-  password: 10be1dad-9952-4c5e-aa30-db435f69b727
-  auth: 10be1dad-9952-4c5e-aa30-db435f69b727
-  skip-cert-verify: true
-  country: JP
-- name: JP_HYSTERIA2_4444_403
-  server: 31.77.29.74
-  port: 4444
-  type: hysteria2
-  password: 10be1dad-9952-4c5e-aa30-db435f69b727
-  auth: 10be1dad-9952-4c5e-aa30-db435f69b727
-  sni: jap2.nexfile.net
-  skip-cert-verify: true
-  country: JP
-- name: JP_VLESS_57554_656
-  type: vless
-  server: 203.137.165.164
-  port: 57554
-  uuid: 0985e268-5c1c-4141-9d96-139f8046c47c
+  uuid: d342d11e-d224-4463-b982-532309285094
   network: ws
   tls: true
-  servername: kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev
+  servername: ccc.010304.xyz
   client-fingerprint: chrome
   ws-opts:
-    path: /@Marisa_kristi
+    path: /fp=chrome
     headers:
-      Host: kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev
+      Host: ccc.010304.xyz
+  country: JP
+- name: JP_VLESS_443_1752
+  type: vless
+  server: 137.220.221.179
+  port: 443
+  uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4
+  network: tcp
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
+  country: JP
+- type: vmess
+  name: JP_VMESS_80_387
+  server: 168.138.43.75
+  port: 80
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  servername: 168.138.43.75
+  sni: 168.138.43.75
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: 168.138.43.75
+  country: JP
+- cipher: aes-256-gcm
+  name: JP_SS_8388_450
+  password: BeaUf9c0AEWH40Pu
+  port: 8388
+  server: 154.36.158.197
+  type: ss
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -72,12 +68,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_SS_8388_1066
-  - JP_VLESS_443_1051
-  - JP_SS_80_390
-  - JP_HYSTERIA2_4444_411
-  - JP_HYSTERIA2_4444_403
-  - JP_VLESS_57554_656
+  - JP_VLESS_443_552
+  - JP_VLESS_443_1752
+  - JP_VMESS_80_387
+  - JP_SS_8388_450
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -90,12 +84,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_SS_80_390
-  - JP_HYSTERIA2_4444_403
-  - JP_HYSTERIA2_4444_411
-  - JP_VLESS_57554_656
-  - JP_VLESS_443_1051
-  - JP_SS_8388_1066
+  - JP_VMESS_80_387
+  - JP_SS_8388_450
+  - JP_VLESS_443_552
+  - JP_VLESS_443_1752
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -107,12 +99,10 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_SS_8388_1066
-  - JP_VLESS_443_1051
-  - JP_SS_80_390
-  - JP_HYSTERIA2_4444_411
-  - JP_HYSTERIA2_4444_403
-  - JP_VLESS_57554_656
+  - JP_VLESS_443_552
+  - JP_VLESS_443_1752
+  - JP_VMESS_80_387
+  - JP_SS_8388_450
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

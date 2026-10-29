@@ -5,37 +5,51 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_14430_1409
-  network: ws
-  port: 14430
-  server: 5.178.109.174
-  tls: false
+- name: SE_VLESS_443_891
   type: vless
-  uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
+  server: 77.110.97.245
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  network: ws
+  tls: true
+  servername: ccc.010304.xyz
+  client-fingerprint: chrome
   ws-opts:
+    path: /fp=chromefp=chrome
+    headers:
+      Host: ccc.010304.xyz
+  country: SE
+- name: SE_VLESS_14430_440
+  type: vless
+  server: 5.178.109.174
+  port: 14430
+  uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless
     headers:
       Host: 5.178.109.174
-    path: /vless
   country: SE
-- name: SE_HTTP_9443_472
-  port: 9443
+- name: SE_HTTP_443_549
+  port: 443
   server: 146.70.242.146
   skip-cert-verify: true
   tls: true
   type: http
   country: SE
-- name: SE_HTTP_443_472
-  password: None
+- name: SE_HTTP_443_771
   port: 443
-  server: 146.70.242.130
+  server: 149.50.216.65
   skip-cert-verify: true
   tls: true
   type: http
   country: SE
-- name: SE_HTTP_443_528
-  password: None
+- name: SE_HTTP_443_565
   port: 443
-  server: 79.142.77.63
+  server: 217.210.129.243
   skip-cert-verify: true
   tls: true
   type: http
@@ -53,10 +67,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_14430_1409
-  - SE_HTTP_9443_472
-  - SE_HTTP_443_472
-  - SE_HTTP_443_528
+  - SE_VLESS_443_891
+  - SE_VLESS_14430_440
+  - SE_HTTP_443_549
+  - SE_HTTP_443_771
+  - SE_HTTP_443_565
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -69,10 +84,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_HTTP_9443_472
-  - SE_HTTP_443_472
-  - SE_HTTP_443_528
-  - SE_VLESS_14430_1409
+  - SE_VLESS_14430_440
+  - SE_HTTP_443_549
+  - SE_HTTP_443_565
+  - SE_HTTP_443_771
+  - SE_VLESS_443_891
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,10 +100,11 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_14430_1409
-  - SE_HTTP_9443_472
-  - SE_HTTP_443_472
-  - SE_HTTP_443_528
+  - SE_VLESS_443_891
+  - SE_VLESS_14430_440
+  - SE_HTTP_443_549
+  - SE_HTTP_443_771
+  - SE_HTTP_443_565
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

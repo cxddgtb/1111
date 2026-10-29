@@ -5,126 +5,189 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_TROJAN_45464_1306
-  password: XuMweB2PWs
-  port: 45464
-  server: 2.27.109.179
-  sni: 2.27.109.179.sslip.io
-  type: trojan
-  country: HK
-- name: HK_HTTP_3128_550
-  port: 3128
-  server: 43.161.254.16
-  skip-cert-verify: true
-  type: http
-  country: HK
-- alterId: 0
-  cipher: auto
-  name: HK_VMESS_443_745
-  network: ws
-  port: 443
-  server: 47.243.65.243
-  skip-cert-verify: true
-  tls: true
+- name: HK_VMESS_44441_163
   type: vmess
-  udp: true
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  ws-opts:
-    headers:
-      Host: lcv8v9l7oyamxxfz.v.3dns.vip
-    path: /ws-vmess
+  server: 206.237.11.17
+  port: 44441
+  uuid: de4e0335-2a3b-4006-d746-c939fa85fdc3
+  alterId: 0
+  cipher: auto
+  network: http
+  tls: false
+  servername: ''
+  ws-opts: null
   country: HK
-- name: HK_VMESS_23026_561
+- name: HK_VMESS_8080_162
+  type: vmess
+  server: 206.237.11.17
+  port: 8080
+  uuid: edcf3108-da2b-45c8-a852-a7e58dd55a43
+  alterId: 0
+  cipher: auto
+  network: http
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_VMESS_23026_487
+  type: vmess
   server: 47.244.120.197
   port: 23026
-  type: vmess
   uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
   alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: true
   network: ws
+  tls: false
+  servername: 47.244.120.197
   ws-opts:
     path: /arki
     headers:
       Host: 47.244.120.197
-  udp: true
   country: HK
-- alterId: 0
-  cipher: auto
-  name: HK_VMESS_443_1797
-  network: ws
-  port: 443
-  server: 47.243.194.125
-  skip-cert-verify: true
-  tls: true
+- name: HK_VMESS_44867_486
   type: vmess
-  udp: true
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  server: 47.244.120.197
+  port: 44867
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
   ws-opts:
+    path: /arki
+    headers:
+      Host: ''
+  country: HK
+- name: HK_VMESS_443_658
+  type: vmess
+  server: 47.243.194.125
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: nycqg19zkwacpm1b.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
     headers:
       Host: nycqg19zkwacpm1b.v.3dns.vip
-    path: /ws-vmess
   country: HK
-- name: HK_VMESS_443_1026
-  server: ex1ogt73nzpqkac2.v.3dns.vip
-  port: 443
+- name: HK_VMESS_443_694
   type: vmess
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  server: euu1yAlfmcqvLJEx.v.3dns.vip
+  port: 443
+  uuid: d237ab38-1974-4b36-94a3-0665ce8587b9
   alterId: 0
   cipher: auto
-  tls: true
-  skip-cert-verify: true
   network: ws
+  tls: true
+  servername: euu1yAlfmcqvLJEx.v.3dns.vip
   ws-opts:
     path: /ws-vmess
     headers:
-      Host: ex1ogt73nzpqkac2.v.3dns.vip
-  udp: true
+      Host: euu1yAlfmcqvLJEx.v.3dns.vip
   country: HK
-- name: HK_ANYTLS_443_1081
+- name: HK_VMESS_443_1729
+  type: vmess
+  server: vah4urdzl3jdx5r2.v.3dns.vip
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: vah4urdzl3jdx5r2.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: vah4urdzl3jdx5r2.v.3dns.vip
+  country: HK
+- name: HK_VMESS_443_1798
+  type: vmess
+  server: qtkdr8jxe3wefxjm.v.3dns.vip
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: qtkdr8jxe3wefxjm.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: qtkdr8jxe3wefxjm.v.3dns.vip
+  country: HK
+- type: vless
+  name: HK_VLESS_443_497
+  server: 165.154.63.139
+  port: 443
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.amazon.com
+  sni: www.amazon.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ
+    short-id: ca4aedd4
+  country: HK
+- name: HK_VMESS_443_2203
+  type: vmess
+  server: lcv8v9l7oyamxxfz.v.3dns.vip
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: lcv8v9l7oyamxxfz.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+  country: HK
+- type: vmess
+  name: HK_VMESS_35043_991
+  server: 156.245.232.239
+  port: 35043
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+  country: HK
+- name: HK_VMESS_443_691
+  type: vmess
+  network: ws
+  server: nycqg19zkwacpm1b.v.3dns.vip
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: NYcQg19zkwaCPM1B.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- name: HK_ANYTLS_443_1072
+  password: 0324fbc29561
+  port: 443
   server: 56481.df6h451rh.xin
-  port: 443
-  type: anytls
-  password: 0324fbc29561
-  udp: true
+  skip-cert-verify: true
   sni: images.ctfassets.net
-  skip-cert-verify: true
-  country: HK
-- name: HK_ANYTLS_443_1472
-  server: 654968169.df6h451rh.xin
-  port: 443
   type: anytls
-  password: 0324fbc29561
   udp: true
-  sni: images.ctfassets.net
-  skip-cert-verify: true
-  country: HK
-- name: HK_VMESS_443_1791
-  server: 8.217.254.88
-  port: 443
-  type: vmess
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: 2b9hwy8ocx7q74nm.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: 2b9hwy8ocx7q74nm.v.3dns.vip
-  udp: true
-  country: HK
-- name: HK_TROJAN_443_665
-  type: trojan
-  network: tcp
-  server: 119.246.1.143
-  port: 443
-  password: BxceQaOe
-  skip-cert-verify: true
-  sni: t.me/ripaojiedian
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -139,16 +202,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_TROJAN_45464_1306
-  - HK_HTTP_3128_550
-  - HK_VMESS_443_745
-  - HK_VMESS_23026_561
-  - HK_VMESS_443_1797
-  - HK_VMESS_443_1026
-  - HK_ANYTLS_443_1081
-  - HK_ANYTLS_443_1472
-  - HK_VMESS_443_1791
-  - HK_TROJAN_443_665
+  - HK_VMESS_44441_163
+  - HK_VMESS_8080_162
+  - HK_VMESS_23026_487
+  - HK_VMESS_44867_486
+  - HK_VMESS_443_658
+  - HK_VMESS_443_694
+  - HK_VMESS_443_1729
+  - HK_VMESS_443_1798
+  - HK_VLESS_443_497
+  - HK_VMESS_443_2203
+  - HK_VMESS_35043_991
+  - HK_VMESS_443_691
+  - HK_ANYTLS_443_1072
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -161,16 +227,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_HTTP_3128_550
-  - HK_VMESS_23026_561
-  - HK_TROJAN_443_665
-  - HK_VMESS_443_745
-  - HK_VMESS_443_1026
-  - HK_ANYTLS_443_1081
-  - HK_TROJAN_45464_1306
-  - HK_ANYTLS_443_1472
-  - HK_VMESS_443_1791
-  - HK_VMESS_443_1797
+  - HK_VMESS_8080_162
+  - HK_VMESS_44441_163
+  - HK_VMESS_44867_486
+  - HK_VMESS_23026_487
+  - HK_VLESS_443_497
+  - HK_VMESS_443_658
+  - HK_VMESS_443_691
+  - HK_VMESS_443_694
+  - HK_VMESS_35043_991
+  - HK_ANYTLS_443_1072
+  - HK_VMESS_443_1729
+  - HK_VMESS_443_1798
+  - HK_VMESS_443_2203
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -182,16 +251,19 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_TROJAN_45464_1306
-  - HK_HTTP_3128_550
-  - HK_VMESS_443_745
-  - HK_VMESS_23026_561
-  - HK_VMESS_443_1797
-  - HK_VMESS_443_1026
-  - HK_ANYTLS_443_1081
-  - HK_ANYTLS_443_1472
-  - HK_VMESS_443_1791
-  - HK_TROJAN_443_665
+  - HK_VMESS_44441_163
+  - HK_VMESS_8080_162
+  - HK_VMESS_23026_487
+  - HK_VMESS_44867_486
+  - HK_VMESS_443_658
+  - HK_VMESS_443_694
+  - HK_VMESS_443_1729
+  - HK_VMESS_443_1798
+  - HK_VLESS_443_497
+  - HK_VMESS_443_2203
+  - HK_VMESS_35043_991
+  - HK_VMESS_443_691
+  - HK_ANYTLS_443_1072
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

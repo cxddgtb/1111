@@ -5,104 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- alpn:
-  - h2
+- type: vmess
+  name: RU_VMESS_24212_606
+  server: 158.160.180.165
+  port: 24212
+  uuid: c58c1205-b308-416f-8503-c04557abf93d
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  country: RU
+- type: vless
+  name: RU_VLESS_25548_1348
+  server: pl5.h1cloud.net
+  port: 25548
+  uuid: 5a519754-a673-4462-83f6-5eb25d2af141
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  sni: www.cloudflare.com
+  skip-cert-verify: false
   client-fingerprint: chrome
-  encryption: none
+  reality-opts:
+    public-key: lceynvFy326oU4ew9OPR7079m-L5ZcFELgCl0sqxU2M
+    short-id: bceb5b2197b76818
+  country: RU
+- name: RU_VLESS_443_977
+  type: vless
+  network: grpc
+  server: xssite.webredirect.org
+  port: 443
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  servername: xssite.webredirect.org
+  tls: true
+  udp: true
+  client-fingerprint: random
   grpc-opts:
     grpc-mode: gun
-    grpc-service-name: vlgrpc
-  name: RU_VLESS_443_483
-  network: grpc
-  port: 443
-  server: 201.24.121.243
-  servername: kk-ru24a1.testkknegr.online
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 32b5ca9b-3f81-4031-965d-e8b074216e8d
-  country: RU
-- alpn:
-  - h2
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: VideoRenderer
-  name: RU_VLESS_443_1041
-  network: grpc
-  port: 443
-  server: renderer-bridge-1-881.mirra.now
-  servername: renderer-bridge-1-881.mirra.now
-  tls: true
-  type: vless
-  uuid: 27653b37-603c-4c90-b1f5-25c4d23f8932
-  country: RU
-- client-fingerprint: chrome
-  encryption: none
-  grpc-opts:
     grpc-service-name: grpc-ru
-  name: RU_VLESS_443_909
-  network: grpc
-  port: 443
-  server: xsru1.ddnsfree.com
-  servername: xsru1.ddnsfree.com
-  tls: true
-  type: vless
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
   country: RU
-- name: RU_TROJAN_25267_717
-  password: happybirthdaydaniel
-  port: 25267
-  server: de-bots4.h1cloud.net
-  skip-cert-verify: true
-  sni: t.me/FuckTheWall
-  type: trojan
-  country: RU
-- name: RU_HTTP_1446_861
-  password: None
-  port: 1446
-  server: 46.29.166.134
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: RU
-- name: RU_HTTP_3128_514
-  port: 3128
-  server: 45.12.238.164
-  skip-cert-verify: true
-  type: http
-  country: RU
-- name: RU_VLESS_443_468
-  server: 185.178.208.140
-  port: 443
-  type: vless
-  uuid: ea277838-a188-44f1-a2e8-94aa110c4f27
-  tls: true
-  servername: static.bakarova-top.ru
-  client-fingerprint: firefox
-  network: xhttp
-  xhttp-opts:
-    path: /api/v2/events
-    host: static.bakarova-top.ru
-    mode: packet-up
-  udp: true
-  country: RU
-- name: RU_VLESS_443_548
-  server: 45.9.12.110
-  port: 443
-  type: vless
-  uuid: 4b1be712-774c-4b65-8491-a3339e124a70
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: myIjvlXZS0rm1eg4q2w5WsQBuj80i2rBA0HpRGCUg1w
-    short-id: 86d1efde
-  servername: ru.letsconnectpoint.com
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
-  country: RU
-- name: RU_VLESS_443_655
+- name: RU_VLESS_443_783
   type: vless
   network: ws
   server: wstg.datasynctrue.online
@@ -119,6 +62,59 @@ proxies:
       Host: wstg.datasynctrue.online
     path: /api/connect
   country: RU
+- name: RU_VLESS_8443_517
+  type: vless
+  network: tcp
+  server: 185.147.27.183
+  port: 8443
+  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
+  servername: ekb.eg
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  country: RU
+- name: RU_VLESS_443_704
+  type: vless
+  network: ws
+  server: 91.210.169.181
+  port: 443
+  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
+  servername: wstg.datasynctrue.online
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: wstg.datasynctrue.online
+    path: /api/connect
+  country: RU
+- cipher: chacha20-ietf-poly1305
+  name: RU_SS_43558_375
+  password: cZGr8nLHdf+FE5ZAw0Y/Rzsml4AyikGL481Pg7eBpsI=
+  port: 43558
+  server: 130.49.189.158
+  type: ss
+  country: RU
+- name: RU_HTTP_1446_767
+  password: None
+  port: 1446
+  server: 46.29.166.134
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RU
+- name: RU_SS_18443_336
+  server: 195.58.49.167
+  port: 18443
+  type: ss
+  cipher: aes-256-gcm
+  password: Lpq5UPVHtQYiuB9jEUNc2WkeIYCUH9DE
+  udp: true
+  country: RU
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -132,15 +128,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_483
-  - RU_VLESS_443_1041
-  - RU_VLESS_443_909
-  - RU_TROJAN_25267_717
-  - RU_HTTP_1446_861
-  - RU_HTTP_3128_514
-  - RU_VLESS_443_468
-  - RU_VLESS_443_548
-  - RU_VLESS_443_655
+  - RU_VMESS_24212_606
+  - RU_VLESS_25548_1348
+  - RU_VLESS_443_977
+  - RU_VLESS_443_783
+  - RU_VLESS_8443_517
+  - RU_VLESS_443_704
+  - RU_SS_43558_375
+  - RU_HTTP_1446_767
+  - RU_SS_18443_336
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -153,15 +149,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_443_468
-  - RU_VLESS_443_483
-  - RU_HTTP_3128_514
-  - RU_VLESS_443_548
-  - RU_VLESS_443_655
-  - RU_TROJAN_25267_717
-  - RU_HTTP_1446_861
-  - RU_VLESS_443_909
-  - RU_VLESS_443_1041
+  - RU_SS_18443_336
+  - RU_SS_43558_375
+  - RU_VLESS_8443_517
+  - RU_VMESS_24212_606
+  - RU_VLESS_443_704
+  - RU_HTTP_1446_767
+  - RU_VLESS_443_783
+  - RU_VLESS_443_977
+  - RU_VLESS_25548_1348
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -173,15 +169,15 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_483
-  - RU_VLESS_443_1041
-  - RU_VLESS_443_909
-  - RU_TROJAN_25267_717
-  - RU_HTTP_1446_861
-  - RU_HTTP_3128_514
-  - RU_VLESS_443_468
-  - RU_VLESS_443_548
-  - RU_VLESS_443_655
+  - RU_VMESS_24212_606
+  - RU_VLESS_25548_1348
+  - RU_VLESS_443_977
+  - RU_VLESS_443_783
+  - RU_VLESS_8443_517
+  - RU_VLESS_443_704
+  - RU_SS_43558_375
+  - RU_HTTP_1446_767
+  - RU_SS_18443_336
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,89 +5,110 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- type: vmess
+  name: CA_VMESS_18000_85
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: CA
+- name: CA_VLESS_32355_2219
+  type: vless
+  server: ca001.zestapp778.com
+  port: 32355
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  network: tcp
+  tls: true
+  servername: ca001.zestapp778.com
+  client-fingerprint: chrome
+  ws-opts: null
+  country: CA
+- type: vmess
+  name: CA_VMESS_18000_87
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5003_49
-  password: g5MeD6Ft3CWlJId
-  port: 5003
-  server: 51.222.155.32
+  name: CA_SS_8118_157
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 51.79.85.185
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8882_76
+  name: CA_SS_8882_177
   password: kDWvXYZoTBcGkC4
   port: 8882
   server: 51.222.136.236
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8882_138
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.79.49.116
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_445_668
+  name: CA_SS_445_389
   password: zDNVedRFPQexG9v
   port: 445
   server: 51.222.141.125
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_955
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.12.127
+  name: CA_SS_8882_316
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.79.49.116
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5601_1146
-  password: Y6R9pAtvxxzmGC
-  port: 5601
-  server: 51.222.155.113
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5000_1304
+  name: CA_SS_5000_1118
   password: Y6R9pAtvxxzmGC
   port: 5000
   server: 51.222.200.165
   type: ss
   country: CA
-- name: CA_HTTP_443_87
-  port: 443
-  server: 206.223.161.47
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CA
-- name: CA_HTTP_443_75
+- name: CA_HTTP_9443_168
   password: None
-  port: 443
-  server: 206.223.183.21
+  port: 9443
+  server: 198.44.157.27
   skip-cert-verify: true
   tls: true
   type: http
   country: CA
-- name: CA_VMESS_18000_32
-  type: vmess
-  network: tcp
-  server: 23.162.200.198
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  tls: false
-  alterId: 0
-  cipher: auto
+- name: CA_HTTP_9443_158
+  password: None
+  port: 9443
+  server: 198.44.157.19
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: CA
-- name: CA_VMESS_18000_30
-  type: vmess
-  network: tcp
-  server: 134.195.196.211
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  udp: true
-  alterId: 0
-  cipher: auto
+- name: CA_HTTP_443_278
+  port: 443
+  server: 206.223.183.13
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_8119_2836
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 51.79.64.198
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_445_2926
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.12.127
+  type: ss
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -102,17 +123,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_SS_5003_49
-  - CA_SS_8882_76
-  - CA_SS_8882_138
-  - CA_SS_445_668
-  - CA_SS_445_955
-  - CA_SS_5601_1146
-  - CA_SS_5000_1304
-  - CA_HTTP_443_87
-  - CA_HTTP_443_75
-  - CA_VMESS_18000_32
-  - CA_VMESS_18000_30
+  - CA_VMESS_18000_85
+  - CA_VLESS_32355_2219
+  - CA_VMESS_18000_87
+  - CA_SS_8118_157
+  - CA_SS_8882_177
+  - CA_SS_445_389
+  - CA_SS_8882_316
+  - CA_SS_5000_1118
+  - CA_HTTP_9443_168
+  - CA_HTTP_9443_158
+  - CA_HTTP_443_278
+  - CA_SS_8119_2836
+  - CA_SS_445_2926
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -125,17 +148,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_VMESS_18000_30
-  - CA_VMESS_18000_32
-  - CA_SS_5003_49
-  - CA_HTTP_443_75
-  - CA_SS_8882_76
-  - CA_HTTP_443_87
-  - CA_SS_8882_138
-  - CA_SS_445_668
-  - CA_SS_445_955
-  - CA_SS_5601_1146
-  - CA_SS_5000_1304
+  - CA_VMESS_18000_85
+  - CA_VMESS_18000_87
+  - CA_SS_8118_157
+  - CA_HTTP_9443_158
+  - CA_HTTP_9443_168
+  - CA_SS_8882_177
+  - CA_HTTP_443_278
+  - CA_SS_8882_316
+  - CA_SS_445_389
+  - CA_SS_5000_1118
+  - CA_VLESS_32355_2219
+  - CA_SS_8119_2836
+  - CA_SS_445_2926
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -147,17 +172,19 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_SS_5003_49
-  - CA_SS_8882_76
-  - CA_SS_8882_138
-  - CA_SS_445_668
-  - CA_SS_445_955
-  - CA_SS_5601_1146
-  - CA_SS_5000_1304
-  - CA_HTTP_443_87
-  - CA_HTTP_443_75
-  - CA_VMESS_18000_32
-  - CA_VMESS_18000_30
+  - CA_VMESS_18000_85
+  - CA_VLESS_32355_2219
+  - CA_VMESS_18000_87
+  - CA_SS_8118_157
+  - CA_SS_8882_177
+  - CA_SS_445_389
+  - CA_SS_8882_316
+  - CA_SS_5000_1118
+  - CA_HTTP_9443_168
+  - CA_HTTP_9443_158
+  - CA_HTTP_443_278
+  - CA_SS_8119_2836
+  - CA_SS_445_2926
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
