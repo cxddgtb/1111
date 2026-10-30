@@ -5,32 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_14430_408
+- name: FR_VLESS_14430_433
   type: vless
+  network: ws
   server: 138.124.70.41
   port: 14430
   uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
-  network: ws
   tls: false
-  servername: 138.124.70.41
-  client-fingerprint: chrome
+  encryption: none
   ws-opts:
-    path: /vless
     headers:
       Host: 138.124.70.41
+    path: /vless
   country: FR
-- name: FR_VLESS_20001_526
-  type: vless
-  server: site.teslamotor.site
-  port: 20001
-  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
-  network: tcp
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FR
-- name: FR_VMESS_80_691
+- name: FR_VMESS_80_577
   type: vmess
   network: ws
   server: 54.37.131.126
@@ -45,7 +33,7 @@ proxies:
       Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
     path: /
   country: FR
-- name: FR_VMESS_80_783
+- name: FR_VMESS_80_725
   type: vmess
   network: ws
   server: 145.239.55.210
@@ -60,28 +48,24 @@ proxies:
       Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
     path: /
   country: FR
-- name: FR_VLESS_8443_522
+- name: FR_VLESS_2053_686
   type: vless
-  network: ws
-  server: 104.252.111.38
-  port: 8443
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  servername: free.cndyw.ggff.net
+  network: tcp
+  server: w.geogame.ir
+  port: 2053
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  servername: w.geogame.ir
   skip-cert-verify: false
   tls: true
   udp: true
   tfo: false
   client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.com
   country: FR
 - alpn:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
-  name: FR_HYSTERIA_24667_1598
+  name: FR_HYSTERIA_24667_1602
   port: 24667
   protocol: udp
   server: 62.210.70.191
@@ -90,39 +74,49 @@ proxies:
   type: hysteria
   up: 11 Mbps
   country: FR
+- encryption: none
+  name: FR_VLESS_10002_443
+  network: tcp
+  port: 10002
+  server: connect.hondamotor.site
+  tls: false
+  type: vless
+  uuid: c6362720-0931-4b91-b187-d8ecf3149734
+  country: FR
+- encryption: none
+  name: FR_VLESS_2052_590
+  network: tcp
+  port: 2052
+  server: edge10.cyrionflare.com
+  tls: false
+  type: vless
+  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+  country: FR
 - cipher: chacha20-ietf-poly1305
-  name: FR_SS_443_394
+  name: FR_SS_443_332
+  password: 6heexyz
+  port: 443
+  server: 54.36.174.134
+  type: ss
+  country: FR
+- cipher: chacha20-ietf-poly1305
+  name: FR_SS_443_366
   password: 6heexyz
   port: 443
   server: pl140.vpnbook.com
   type: ss
   country: FR
-- cipher: chacha20-ietf-poly1305
-  name: FR_SS_443_380
-  password: 6heexyz
-  port: 443
-  server: pl134.vpnbook.com
-  type: ss
-  country: FR
-- name: FR_HTTP_9443_491
-  password: None
-  port: 9443
-  server: 138.199.47.247
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_544
-  password: None
-  port: 443
-  server: 149.102.245.65
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_443_527
+- name: FR_HTTP_443_612
   port: 443
   server: 82.65.162.76
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: FR
+- name: FR_HTTP_8090_1014
+  port: 8090
+  server: 83.206.1.225
   skip-cert-verify: true
   tls: true
   type: http
@@ -141,17 +135,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_14430_408
-  - FR_VLESS_20001_526
-  - FR_VMESS_80_691
-  - FR_VMESS_80_783
-  - FR_VLESS_8443_522
-  - FR_HYSTERIA_24667_1598
-  - FR_SS_443_394
-  - FR_SS_443_380
-  - FR_HTTP_9443_491
-  - FR_HTTP_443_544
-  - FR_HTTP_443_527
+  - FR_VLESS_14430_433
+  - FR_VMESS_80_577
+  - FR_VMESS_80_725
+  - FR_VLESS_2053_686
+  - FR_HYSTERIA_24667_1602
+  - FR_VLESS_10002_443
+  - FR_VLESS_2052_590
+  - FR_SS_443_332
+  - FR_SS_443_366
+  - FR_HTTP_443_612
+  - FR_HTTP_8090_1014
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -164,17 +158,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_443_380
-  - FR_SS_443_394
-  - FR_VLESS_14430_408
-  - FR_HTTP_9443_491
-  - FR_VLESS_8443_522
-  - FR_VLESS_20001_526
-  - FR_HTTP_443_527
-  - FR_HTTP_443_544
-  - FR_VMESS_80_691
-  - FR_VMESS_80_783
-  - FR_HYSTERIA_24667_1598
+  - FR_SS_443_332
+  - FR_SS_443_366
+  - FR_VLESS_14430_433
+  - FR_VLESS_10002_443
+  - FR_VMESS_80_577
+  - FR_VLESS_2052_590
+  - FR_HTTP_443_612
+  - FR_VLESS_2053_686
+  - FR_VMESS_80_725
+  - FR_HTTP_8090_1014
+  - FR_HYSTERIA_24667_1602
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -186,17 +180,17 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_14430_408
-  - FR_VLESS_20001_526
-  - FR_VMESS_80_691
-  - FR_VMESS_80_783
-  - FR_VLESS_8443_522
-  - FR_HYSTERIA_24667_1598
-  - FR_SS_443_394
-  - FR_SS_443_380
-  - FR_HTTP_9443_491
-  - FR_HTTP_443_544
-  - FR_HTTP_443_527
+  - FR_VLESS_14430_433
+  - FR_VMESS_80_577
+  - FR_VMESS_80_725
+  - FR_VLESS_2053_686
+  - FR_HYSTERIA_24667_1602
+  - FR_VLESS_10002_443
+  - FR_VLESS_2052_590
+  - FR_SS_443_332
+  - FR_SS_443_366
+  - FR_HTTP_443_612
+  - FR_HTTP_8090_1014
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

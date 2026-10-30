@@ -5,51 +5,35 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VLESS_25555_1598
-  type: vless
-  server: 152.69.226.63
-  port: 25555
-  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
+- name: KR_VMESS_800_343
+  type: vmess
+  network: tcp
+  server: 129.154.61.196
+  port: 800
+  uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: KR
+- name: KR_VMESS_8888_1352
+  type: vmess
+  network: tcp
+  server: 146.56.112.110
+  port: 8888
+  uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: KR
+- name: KR_VLESS_25555_473
   network: ws
+  port: 25555
+  server: 152.69.226.63
   tls: false
-  servername: ''
-  client-fingerprint: chrome
+  type: vless
+  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
   ws-opts:
     path: /
-    headers:
-      Host: ''
-  country: KR
-- type: vmess
-  name: KR_VMESS_443_1368
-  server: 140.238.2.250
-  port: 443
-  uuid: 41a7089a-040b-4538-8b8d-010902405bde
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: KR
-- type: vmess
-  name: KR_VMESS_80_1496
-  server: 132.145.80.230
-  port: 80
-  uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /cctv13.m3u8
-  country: KR
-- cipher: aes-256-gcm
-  name: KR_SS_6697_1210
-  password: TEzjfAYq2IjtuoS
-  port: 6697
-  server: 141.164.45.187
-  type: ss
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -64,10 +48,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VLESS_25555_1598
-  - KR_VMESS_443_1368
-  - KR_VMESS_80_1496
-  - KR_SS_6697_1210
+  - KR_VMESS_800_343
+  - KR_VMESS_8888_1352
+  - KR_VLESS_25555_473
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,10 +63,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_SS_6697_1210
-  - KR_VMESS_443_1368
-  - KR_VMESS_80_1496
-  - KR_VLESS_25555_1598
+  - KR_VMESS_800_343
+  - KR_VLESS_25555_473
+  - KR_VMESS_8888_1352
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -95,10 +77,9 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VLESS_25555_1598
-  - KR_VMESS_443_1368
-  - KR_VMESS_80_1496
-  - KR_SS_6697_1210
+  - KR_VMESS_800_343
+  - KR_VMESS_8888_1352
+  - KR_VLESS_25555_473
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

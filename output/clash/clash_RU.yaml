@@ -5,33 +5,34 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vmess
-  name: RU_VMESS_24212_606
-  server: 158.160.180.165
-  port: 24212
-  uuid: c58c1205-b308-416f-8503-c04557abf93d
-  cipher: auto
-  alterId: 0
-  udp: true
+- name: RU_VLESS_8443_878
+  type: vless
+  server: 194.87.143.165
+  port: 8443
+  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
+  network: ws
   tls: true
-  skip-cert-verify: false
-  country: RU
-- type: vless
-  name: RU_VLESS_25548_1348
-  server: pl5.h1cloud.net
-  port: 25548
-  uuid: 5a519754-a673-4462-83f6-5eb25d2af141
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  sni: www.cloudflare.com
-  skip-cert-verify: false
+  servername: wsru1.wba-pn.ru
   client-fingerprint: chrome
-  reality-opts:
-    public-key: lceynvFy326oU4ew9OPR7079m-L5ZcFELgCl0sqxU2M
-    short-id: bceb5b2197b76818
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
   country: RU
-- name: RU_VLESS_443_977
+- name: RU_VLESS_443_1772
+  type: vless
+  server: a0688bt.us4.h1clayd.click
+  port: 443
+  uuid: 056405e8-de9f-4d0d-8145-956f13cc34da
+  udp: true
+  tls: true
+  client-fingerprint: chrome
+  servername: a0688bt.us4.h1clayd.click
+  reality-opts:
+    public-key: 5-9YzvyXcZ4J5Z4OaVTUbxUU2InvnwT17m0XY-Jse1E
+    short-id: 257420d9d430152a
+  country: RU
+- name: RU_VLESS_443_1117
   type: vless
   network: grpc
   server: xssite.webredirect.org
@@ -39,44 +40,22 @@ proxies:
   uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
   servername: xssite.webredirect.org
   tls: true
-  udp: true
   client-fingerprint: random
   grpc-opts:
-    grpc-mode: gun
     grpc-service-name: grpc-ru
   country: RU
-- name: RU_VLESS_443_783
-  type: vless
-  network: ws
-  server: wstg.datasynctrue.online
-  port: 443
-  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
-  servername: wstg.datasynctrue.online
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: wstg.datasynctrue.online
-    path: /api/connect
-  country: RU
-- name: RU_VLESS_8443_517
-  type: vless
+- name: RU_VMESS_24212_1123
+  type: vmess
   network: tcp
-  server: 185.147.27.183
-  port: 8443
-  uuid: 379998c5-2a71-4202-9c74-522e0c3c5404
-  servername: ekb.eg
+  server: 158.160.180.165
+  port: 24212
+  uuid: c58c1205-b308-416f-8503-c04557abf93d
   skip-cert-verify: true
   tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
+  alterId: 0
+  cipher: auto
   country: RU
-- name: RU_VLESS_443_704
+- name: RU_VLESS_443_794
   type: vless
   network: ws
   server: 91.210.169.181
@@ -92,27 +71,55 @@ proxies:
       Host: wstg.datasynctrue.online
     path: /api/connect
   country: RU
-- cipher: chacha20-ietf-poly1305
-  name: RU_SS_43558_375
-  password: cZGr8nLHdf+FE5ZAw0Y/Rzsml4AyikGL481Pg7eBpsI=
-  port: 43558
-  server: 130.49.189.158
-  type: ss
-  country: RU
-- name: RU_HTTP_1446_767
-  password: None
-  port: 1446
-  server: 46.29.166.134
-  skip-cert-verify: true
+- name: RU_VLESS_443_520
+  server: 130.49.177.193
+  port: 443
+  type: vless
+  uuid: 727a9178-d7f0-4142-8205-b0d19959ded0
   tls: true
-  type: http
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: DCpi9-1rSXxBnEIAQ9U3mTqHivk7vHJRV_T2pWw5vCc
+    short-id: 681fc2dd643bc2f3
+  servername: de-2.ffpn.pro
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
   country: RU
-- name: RU_SS_18443_336
-  server: 195.58.49.167
-  port: 18443
-  type: ss
-  cipher: aes-256-gcm
-  password: Lpq5UPVHtQYiuB9jEUNc2WkeIYCUH9DE
+- name: RU_HYSTERIA2_11592_721
+  server: srv-17e124.21freedom.net
+  port: 11592
+  type: hysteria2
+  password: 41edb44c8e
+  auth: 41edb44c8e
+  skip-cert-verify: true
+  country: RU
+- name: RU_VLESS_443_798
+  server: 72.56.38.83
+  port: 443
+  type: vless
+  uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: ZzIetLcQtENjIXQ9XZqFo8p3J81p8Emj0wi51Uy07n8
+  servername: absolute-disaster.org
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+  country: RU
+- name: RU_VLESS_443_1208
+  server: 186.246.9.29
+  port: 443
+  type: vless
+  uuid: b2847c3b-5278-4b06-9c66-bc919d2dfec7
+  tls: true
+  reality-opts:
+    public-key: MPNMomAMn_lu9YMYjD2jAQWrI-rTM4hj9Jgg9d6qzTA
+    short-id: 50ad5564
+  servername: wordpress.com
+  client-fingerprint: firefox
+  network: tcp
   udp: true
   country: RU
 proxy-groups:
@@ -128,15 +135,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VMESS_24212_606
-  - RU_VLESS_25548_1348
-  - RU_VLESS_443_977
-  - RU_VLESS_443_783
-  - RU_VLESS_8443_517
-  - RU_VLESS_443_704
-  - RU_SS_43558_375
-  - RU_HTTP_1446_767
-  - RU_SS_18443_336
+  - RU_VLESS_8443_878
+  - RU_VLESS_443_1772
+  - RU_VLESS_443_1117
+  - RU_VMESS_24212_1123
+  - RU_VLESS_443_794
+  - RU_VLESS_443_520
+  - RU_HYSTERIA2_11592_721
+  - RU_VLESS_443_798
+  - RU_VLESS_443_1208
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -149,15 +156,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_SS_18443_336
-  - RU_SS_43558_375
-  - RU_VLESS_8443_517
-  - RU_VMESS_24212_606
-  - RU_VLESS_443_704
-  - RU_HTTP_1446_767
-  - RU_VLESS_443_783
-  - RU_VLESS_443_977
-  - RU_VLESS_25548_1348
+  - RU_VLESS_443_520
+  - RU_HYSTERIA2_11592_721
+  - RU_VLESS_443_794
+  - RU_VLESS_443_798
+  - RU_VLESS_8443_878
+  - RU_VLESS_443_1117
+  - RU_VMESS_24212_1123
+  - RU_VLESS_443_1208
+  - RU_VLESS_443_1772
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -169,15 +176,15 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VMESS_24212_606
-  - RU_VLESS_25548_1348
-  - RU_VLESS_443_977
-  - RU_VLESS_443_783
-  - RU_VLESS_8443_517
-  - RU_VLESS_443_704
-  - RU_SS_43558_375
-  - RU_HTTP_1446_767
-  - RU_SS_18443_336
+  - RU_VLESS_8443_878
+  - RU_VLESS_443_1772
+  - RU_VLESS_443_1117
+  - RU_VMESS_24212_1123
+  - RU_VLESS_443_794
+  - RU_VLESS_443_520
+  - RU_HYSTERIA2_11592_721
+  - RU_VLESS_443_798
+  - RU_VLESS_443_1208
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

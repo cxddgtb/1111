@@ -5,39 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_VLESS_14430_693
+- name: IN_VLESS_14430_652
   type: vless
+  network: ws
   server: 13.140.56.100
   port: 14430
   uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
-  network: ws
-  tls: false
   servername: 13.140.56.100
-  client-fingerprint: chrome
+  tls: false
   ws-opts:
-    path: /vless
     headers:
       Host: 13.140.56.100
+    path: /vless
   country: IN
-- type: vmess
-  name: IN_VMESS_443_2148
-  server: 20.235.220.189
-  port: 443
-  uuid: f23bb427c1f94373876c2f43e9f790f3
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: true
-  servername: 6JDvArazgU3qQR6Q.v.3dns.vip
-  sni: 6JDvArazgU3qQR6Q.v.3dns.vip
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
-  country: IN
-- name: IN_VLESS_443_982
+- name: IN_VLESS_443_1176
   type: vless
   network: ws
   server: 122.176.216.52
@@ -54,6 +35,15 @@ proxies:
       Host: app-6ada5023.deploy.meerasolution.com
     path: /ws/16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88
   country: IN
+- name: IN_TROJAN_42733_735
+  password: 5t6i121em5lkmsmk
+  port: 42733
+  server: in002.zestapp778.com
+  skip-cert-verify: true
+  sni: in002.zestapp778.com
+  type: trojan
+  udp: true
+  country: IN
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -67,9 +57,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VLESS_14430_693
-  - IN_VMESS_443_2148
-  - IN_VLESS_443_982
+  - IN_VLESS_14430_652
+  - IN_VLESS_443_1176
+  - IN_TROJAN_42733_735
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -82,9 +72,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VLESS_14430_693
-  - IN_VLESS_443_982
-  - IN_VMESS_443_2148
+  - IN_VLESS_14430_652
+  - IN_TROJAN_42733_735
+  - IN_VLESS_443_1176
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -96,9 +86,9 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VLESS_14430_693
-  - IN_VMESS_443_2148
-  - IN_VLESS_443_982
+  - IN_VLESS_14430_652
+  - IN_VLESS_443_1176
+  - IN_TROJAN_42733_735
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
