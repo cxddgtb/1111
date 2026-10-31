@@ -5,33 +5,35 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_22573_666
+- name: AE_VLESS_14430_672
   type: vless
-  network: ws
-  server: 84.235.244.108
-  port: 22573
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  servername: uae.unixzone.us
-  tls: false
-  ws-opts:
-    headers:
-      Host: uae.unixzone.us
-    path: /
-  country: AE
-- name: AE_VLESS_14430_699
-  type: vless
-  network: ws
   server: 95.174.68.188
   port: 14430
   uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  servername: 95.174.68.188
+  network: ws
   tls: false
+  servername: ''
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 95.174.68.188
-    path: /vless
   country: AE
-- name: AE_HYSTERIA2_443_515
+- name: AE_VLESS_2083_605
+  type: vless
+  server: 140.225.208.60
+  port: 2083
+  uuid: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
+  network: ws
+  tls: true
+  servername: speedtestmark.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless-ws
+    headers:
+      Host: ''
+  country: AE
+- name: AE_HYSTERIA2_443_517
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -41,6 +43,18 @@ proxies:
   sni: hy2.aspidnet.xyz
   tls: false
   type: hysteria2
+  country: AE
+- type: vless
+  name: AE_VLESS_14430_544
+  server: 185.253.116.33
+  port: 14430
+  uuid: aee7ae19-672f-49d8-8a92-aa7cdfc89f89
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /vless
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -55,9 +69,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_22573_666
-  - AE_VLESS_14430_699
-  - AE_HYSTERIA2_443_515
+  - AE_VLESS_14430_672
+  - AE_VLESS_2083_605
+  - AE_HYSTERIA2_443_517
+  - AE_VLESS_14430_544
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,9 +85,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_515
-  - AE_VLESS_22573_666
-  - AE_VLESS_14430_699
+  - AE_HYSTERIA2_443_517
+  - AE_VLESS_14430_544
+  - AE_VLESS_2083_605
+  - AE_VLESS_14430_672
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,9 +100,10 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_22573_666
-  - AE_VLESS_14430_699
-  - AE_HYSTERIA2_443_515
+  - AE_VLESS_14430_672
+  - AE_VLESS_2083_605
+  - AE_HYSTERIA2_443_517
+  - AE_VLESS_14430_544
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

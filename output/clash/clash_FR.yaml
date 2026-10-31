@@ -5,108 +5,125 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_14430_433
+- name: FR_VLESS_14430_445
   type: vless
-  network: ws
   server: 138.124.70.41
   port: 14430
   uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
+  network: ws
   tls: false
-  encryption: none
+  servername: ''
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 138.124.70.41
-    path: /vless
   country: FR
-- name: FR_VMESS_80_577
-  type: vmess
-  network: ws
-  server: 54.37.131.126
-  port: 80
-  uuid: 6deef9ad-1357-443d-f95c-cb18952c20b3
-  skip-cert-verify: false
-  tls: false
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
-    path: /
-  country: FR
-- name: FR_VMESS_80_725
-  type: vmess
-  network: ws
-  server: 145.239.55.210
-  port: 80
-  uuid: 067fcd63-b215-4abd-8529-ae929a9971a9
-  skip-cert-verify: false
-  tls: false
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-    path: /
-  country: FR
-- name: FR_VLESS_2053_686
+- name: FR_VLESS_2053_1173
   type: vless
-  network: tcp
   server: w.geogame.ir
   port: 2053
   uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: tcp
+  tls: true
   servername: w.geogame.ir
-  skip-cert-verify: false
+  client-fingerprint: chrome
+  ws-opts: null
+  country: FR
+- name: FR_VMESS_1234_491
+  type: vmess
+  network: tcp
+  server: 141.95.65.9
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  servername: supervpn.super.com
+  skip-cert-verify: true
   tls: true
   udp: true
-  tfo: false
+  alterId: 0
+  cipher: aes-128-gcm
+  client-fingerprint: chrome
+  country: FR
+- name: FR_VMESS_1234_506
+  type: vmess
+  network: tcp
+  server: 162.19.204.71
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  servername: supervpn.super.com
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  alterId: 0
+  cipher: auto
   client-fingerprint: chrome
   country: FR
 - alpn:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
-  name: FR_HYSTERIA_24667_1602
+  name: FR_HYSTERIA_24667_1586
   port: 24667
   protocol: udp
-  server: 62.210.70.191
+  server: 62.210.28.175
   skip-cert-verify: true
   sni: bing.com
   type: hysteria
   up: 11 Mbps
   country: FR
-- encryption: none
-  name: FR_VLESS_10002_443
-  network: tcp
-  port: 10002
-  server: connect.hondamotor.site
-  tls: false
-  type: vless
-  uuid: c6362720-0931-4b91-b187-d8ecf3149734
-  country: FR
-- encryption: none
-  name: FR_VLESS_2052_590
-  network: tcp
-  port: 2052
-  server: edge10.cyrionflare.com
-  tls: false
-  type: vless
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+- cipher: chacha20-ietf-poly1305
+  name: FR_SS_443_371
+  password: 6heexyz
+  port: 443
+  server: 54.36.174.140
+  type: ss
   country: FR
 - cipher: chacha20-ietf-poly1305
-  name: FR_SS_443_332
+  name: FR_SS_443_369
   password: 6heexyz
   port: 443
   server: 54.36.174.134
   type: ss
   country: FR
-- cipher: chacha20-ietf-poly1305
-  name: FR_SS_443_366
-  password: 6heexyz
-  port: 443
-  server: pl140.vpnbook.com
-  type: ss
+- name: FR_HTTP_9443_642
+  port: 9443
+  server: 138.199.47.247
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: FR
-- name: FR_HTTP_443_612
+- name: FR_HTTP_8090_809
+  port: 8090
+  server: 83.206.1.225
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: FR
+- name: FR_HTTP_443_643
+  password: None
+  port: 443
+  server: 84.235.228.156
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_8090_830
+  password: None
+  port: 8090
+  server: 82.96.128.175
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_8090_635
+  port: 8090
+  server: 80.124.109.22
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_624
   port: 443
   server: 82.65.162.76
   skip-cert-verify: true
@@ -114,13 +131,59 @@ proxies:
   type: http
   udp: true
   country: FR
-- name: FR_HTTP_8090_1014
-  port: 8090
-  server: 83.206.1.225
-  skip-cert-verify: true
-  tls: true
-  type: http
+- type: vmess
+  name: FR_VMESS_80_473
+  server: 145.239.55.210
+  port: 80
+  uuid: 067fcd63-b215-4abd-8529-ae929a9971a9
+  cipher: auto
+  alterId: 0
   udp: true
+  tls: false
+  servername: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+  sni: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+  country: FR
+- type: vless
+  name: FR_VLESS_8080_460
+  server: 155.117.5.208
+  port: 8080
+  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  country: FR
+- type: vmess
+  name: FR_VMESS_80_629
+  server: 54.37.131.126
+  port: 80
+  uuid: 6deef9ad-1357-443d-f95c-cb18952c20b3
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  servername: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
+  sni: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
+  country: FR
+- type: vless
+  name: FR_VLESS_10000_687
+  server: connect.wecantos.site
+  port: 10000
+  uuid: a05ecf37-c661-4247-ab09-4432cf0f3cc1
+  udp: true
+  tls: false
+  skip-cert-verify: true
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -135,17 +198,23 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_14430_433
-  - FR_VMESS_80_577
-  - FR_VMESS_80_725
-  - FR_VLESS_2053_686
-  - FR_HYSTERIA_24667_1602
-  - FR_VLESS_10002_443
-  - FR_VLESS_2052_590
-  - FR_SS_443_332
-  - FR_SS_443_366
-  - FR_HTTP_443_612
-  - FR_HTTP_8090_1014
+  - FR_VLESS_14430_445
+  - FR_VLESS_2053_1173
+  - FR_VMESS_1234_491
+  - FR_VMESS_1234_506
+  - FR_HYSTERIA_24667_1586
+  - FR_SS_443_371
+  - FR_SS_443_369
+  - FR_HTTP_9443_642
+  - FR_HTTP_8090_809
+  - FR_HTTP_443_643
+  - FR_HTTP_8090_830
+  - FR_HTTP_8090_635
+  - FR_HTTP_443_624
+  - FR_VMESS_80_473
+  - FR_VLESS_8080_460
+  - FR_VMESS_80_629
+  - FR_VLESS_10000_687
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -158,17 +227,23 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_443_332
-  - FR_SS_443_366
-  - FR_VLESS_14430_433
-  - FR_VLESS_10002_443
-  - FR_VMESS_80_577
-  - FR_VLESS_2052_590
-  - FR_HTTP_443_612
-  - FR_VLESS_2053_686
-  - FR_VMESS_80_725
-  - FR_HTTP_8090_1014
-  - FR_HYSTERIA_24667_1602
+  - FR_SS_443_369
+  - FR_SS_443_371
+  - FR_VLESS_14430_445
+  - FR_VLESS_8080_460
+  - FR_VMESS_80_473
+  - FR_VMESS_1234_491
+  - FR_VMESS_1234_506
+  - FR_HTTP_443_624
+  - FR_VMESS_80_629
+  - FR_HTTP_8090_635
+  - FR_HTTP_9443_642
+  - FR_HTTP_443_643
+  - FR_VLESS_10000_687
+  - FR_HTTP_8090_809
+  - FR_HTTP_8090_830
+  - FR_VLESS_2053_1173
+  - FR_HYSTERIA_24667_1586
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -180,17 +255,23 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_14430_433
-  - FR_VMESS_80_577
-  - FR_VMESS_80_725
-  - FR_VLESS_2053_686
-  - FR_HYSTERIA_24667_1602
-  - FR_VLESS_10002_443
-  - FR_VLESS_2052_590
-  - FR_SS_443_332
-  - FR_SS_443_366
-  - FR_HTTP_443_612
-  - FR_HTTP_8090_1014
+  - FR_VLESS_14430_445
+  - FR_VLESS_2053_1173
+  - FR_VMESS_1234_491
+  - FR_VMESS_1234_506
+  - FR_HYSTERIA_24667_1586
+  - FR_SS_443_371
+  - FR_SS_443_369
+  - FR_HTTP_9443_642
+  - FR_HTTP_8090_809
+  - FR_HTTP_443_643
+  - FR_HTTP_8090_830
+  - FR_HTTP_8090_635
+  - FR_HTTP_443_624
+  - FR_VMESS_80_473
+  - FR_VLESS_8080_460
+  - FR_VMESS_80_629
+  - FR_VLESS_10000_687
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

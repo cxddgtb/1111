@@ -5,16 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CY_TROJAN_8446_438
-  type: trojan
-  network: grpc
-  server: 171.22.119.74
-  port: 8446
-  password: Pass-Client-1
-  skip-cert-verify: true
+- type: trojan
+  name: CY_TROJAN_443_2676
+  server: 194.55.164.118
+  port: 443
+  password: humanity
+  udp: true
   tls: true
-  grpc-opts:
-    grpc-service-name: grpc-video-call
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /assignment
   country: CY
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CY_TROJAN_8446_438
+  - CY_TROJAN_443_2676
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CY_TROJAN_8446_438
+  - CY_TROJAN_443_2676
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +58,7 @@ proxy-groups:
 - name: 🌍 CY
   type: url-test
   proxies:
-  - CY_TROJAN_8446_438
+  - CY_TROJAN_443_2676
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

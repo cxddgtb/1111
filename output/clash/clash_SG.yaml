@@ -5,74 +5,116 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_2096_658
-  type: vless
-  network: ws
-  server: 139.162.27.96
-  port: 2096
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  servername: free-server.techsonic.dev
-  skip-cert-verify: false
-  tls: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: free-server.techsonic.dev
-    path: /free-server.techsonic.dev
-  country: SG
-- name: SG_VMESS_18000_340
+- name: SG_VMESS_18000_329
   type: vmess
   network: tcp
   server: 149.88.23.202
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
+  udp: true
   alterId: 0
   cipher: auto
   country: SG
-- name: SG_VMESS_18000_333
+- name: SG_VMESS_18000_334
   type: vmess
   network: tcp
   server: 149.88.23.207
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
+  udp: true
   alterId: 0
   cipher: auto
   country: SG
-- name: SG_VLESS_2083_69
-  type: vless
-  network: ws
-  server: 27.50.49.154
-  port: 2083
-  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
-  servername: proxy-34l.pages.dev
-  skip-cert-verify: false
+- cipher: aes-256-gcm
+  name: SG_SS_8388_328
+  password: qpSevKaUXYQKvSjp
+  port: 8388
+  server: 139.180.220.175
+  type: ss
+  country: SG
+- name: SG_HTTP_443_659
+  port: 443
+  server: 156.146.56.97
+  skip-cert-verify: true
   tls: true
+  type: http
+  country: SG
+- name: SG_HTTP_9090_505
+  port: 9090
+  server: 152.42.170.187
+  skip-cert-verify: true
+  type: http
+  country: SG
+- type: trojan
+  name: SG_TROJAN_443_482
+  server: 149.28.130.108
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   udp: true
-  tfo: false
-  client-fingerprint: chrome
+  tls: true
+  servername: searchcreativejobsandshowcaseyourartistictalents.com
+  sni: searchcreativejobsandshowcaseyourartistictalents.com
+  skip-cert-verify: true
+  country: SG
+- type: vless
+  name: SG_VLESS_443_1179
+  server: 152.42.175.196
+  port: 443
+  uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
+  udp: true
+  tls: true
+  servername: n.bitpulse.me
+  sni: n.bitpulse.me
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  network: ws
   ws-opts:
+    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed=2560
     headers:
-      Host: proxy-34l.pages.dev
-    path: /
+      Host: n.bitpulse.me
   country: SG
-- name: SG_HTTP_2080_490
-  password: '1234'
-  port: 2080
-  server: 13.250.6.200
-  skip-cert-verify: true
-  type: http
+- type: vless
+  name: SG_VLESS_443_493
+  server: 172.237.88.103
+  port: 443
+  uuid: efd11a89-7506-44ce-95b6-6654859f155b
+  flow: xtls-rprx-vision
   udp: true
-  username: '1234'
-  country: SG
-- name: SG_HTTP_2080_491
-  password: '1234'
-  port: 2080
-  server: 54.151.160.36
+  tls: true
+  servername: zoom.us
+  sni: zoom.us
   skip-cert-verify: true
-  type: http
-  username: '1234'
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: EeLAX-BAjzSdRes-zpUFzVOYsBedmP8lUOHhXXJFXyI
+    short-id: 5a42dbd7e26a0415
+  country: SG
+- type: vless
+  name: SG_VLESS_19825_2982
+  server: 146.235.16.130
+  port: 19825
+  uuid: 2d1ad594-80a4-4bfb-87a6-038e39701f51
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: sg2-8sb.6121999.dpdns.org
+  sni: sg2-8sb.6121999.dpdns.org
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI
+    short-id: 6ba85179e30d4fc2
+  country: SG
+- type: vmess
+  name: SG_VMESS_18000_500
+  server: ww11.levikogjgfdd.ir
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: true
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -87,12 +129,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_2096_658
-  - SG_VMESS_18000_340
-  - SG_VMESS_18000_333
-  - SG_VLESS_2083_69
-  - SG_HTTP_2080_490
-  - SG_HTTP_2080_491
+  - SG_VMESS_18000_329
+  - SG_VMESS_18000_334
+  - SG_SS_8388_328
+  - SG_HTTP_443_659
+  - SG_HTTP_9090_505
+  - SG_TROJAN_443_482
+  - SG_VLESS_443_1179
+  - SG_VLESS_443_493
+  - SG_VLESS_19825_2982
+  - SG_VMESS_18000_500
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -105,12 +151,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VLESS_2083_69
-  - SG_VMESS_18000_333
-  - SG_VMESS_18000_340
-  - SG_HTTP_2080_490
-  - SG_HTTP_2080_491
-  - SG_VLESS_2096_658
+  - SG_SS_8388_328
+  - SG_VMESS_18000_329
+  - SG_VMESS_18000_334
+  - SG_TROJAN_443_482
+  - SG_VLESS_443_493
+  - SG_VMESS_18000_500
+  - SG_HTTP_9090_505
+  - SG_HTTP_443_659
+  - SG_VLESS_443_1179
+  - SG_VLESS_19825_2982
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -122,12 +172,16 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_2096_658
-  - SG_VMESS_18000_340
-  - SG_VMESS_18000_333
-  - SG_VLESS_2083_69
-  - SG_HTTP_2080_490
-  - SG_HTTP_2080_491
+  - SG_VMESS_18000_329
+  - SG_VMESS_18000_334
+  - SG_SS_8388_328
+  - SG_HTTP_443_659
+  - SG_HTTP_9090_505
+  - SG_TROJAN_443_482
+  - SG_VLESS_443_1179
+  - SG_VLESS_443_493
+  - SG_VLESS_19825_2982
+  - SG_VMESS_18000_500
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

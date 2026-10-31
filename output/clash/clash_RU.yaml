@@ -5,122 +5,124 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_8443_878
+- name: RU_VLESS_443_608
   type: vless
-  server: 194.87.143.165
-  port: 8443
-  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
-  network: ws
-  tls: true
-  servername: wsru1.wba-pn.ru
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  country: RU
-- name: RU_VLESS_443_1772
-  type: vless
-  server: a0688bt.us4.h1clayd.click
+  server: 87.242.119.253
   port: 443
-  uuid: 056405e8-de9f-4d0d-8145-956f13cc34da
-  udp: true
-  tls: true
-  client-fingerprint: chrome
-  servername: a0688bt.us4.h1clayd.click
-  reality-opts:
-    public-key: 5-9YzvyXcZ4J5Z4OaVTUbxUU2InvnwT17m0XY-Jse1E
-    short-id: 257420d9d430152a
-  country: RU
-- name: RU_VLESS_443_1117
-  type: vless
-  network: grpc
-  server: xssite.webredirect.org
-  port: 443
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-  servername: xssite.webredirect.org
-  tls: true
-  client-fingerprint: random
-  grpc-opts:
-    grpc-service-name: grpc-ru
-  country: RU
-- name: RU_VMESS_24212_1123
-  type: vmess
+  uuid: aba9cdd4-026c-0001-87a9-9b3e5f24dd82
   network: tcp
-  server: 158.160.180.165
-  port: 24212
-  uuid: c58c1205-b308-416f-8503-c04557abf93d
+  tls: true
+  servername: hvtlr-ru-47sb.fade.mom
+  client-fingerprint: chrome
+  ws-opts: null
+  country: RU
+- cipher: chacha20-ietf-poly1305
+  name: RU_SS_8388_691
+  password: hTTg7lwQMzpaF7KXpY3A8w
+  port: 8388
+  server: alb.rvpn.app
+  type: ss
+  country: RU
+- cipher: aes-256-gcm
+  name: RU_SS_18443_514
+  password: NTiHBg64fsY8u8DbGrtypD9gPGSL386p
+  port: 18443
+  server: 185.22.155.121
+  type: ss
+  udp: true
+  country: RU
+- cipher: chacha20-ietf-poly1305
+  name: RU_SS_8388_1329
+  password: MODziWLa9qMuW-4yPa0rfw
+  port: 8388
+  server: 159.194.251.76
+  type: ss
+  country: RU
+- name: RU_HTTP_8443_799
+  password: None
+  port: 8443
+  server: 87.242.85.187
   skip-cert-verify: true
   tls: true
-  alterId: 0
-  cipher: auto
+  type: http
   country: RU
-- name: RU_VLESS_443_794
-  type: vless
-  network: ws
-  server: 91.210.169.181
-  port: 443
-  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
-  servername: wstg.datasynctrue.online
-  skip-cert-verify: false
+- name: RU_HTTP_9443_708
+  password: None
+  port: 9443
+  server: 192.159.101.174
+  skip-cert-verify: true
   tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: wstg.datasynctrue.online
-    path: /api/connect
+  type: http
   country: RU
-- name: RU_VLESS_443_520
+- auth: 41edb44c8e
+  name: RU_HYSTERIA2_11592_706
+  password: 41edb44c8e
+  port: 11592
+  server: 103.88.243.142
+  skip-cert-verify: true
+  sni: srv-17e124.21freedom.net
+  tls: false
+  type: hysteria2
+  country: RU
+- type: vless
+  name: RU_VLESS_443_530
   server: 130.49.177.193
   port: 443
-  type: vless
   uuid: 727a9178-d7f0-4142-8205-b0d19959ded0
-  tls: true
   flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: de-2.ffpn.pro
+  sni: de-2.ffpn.pro
+  skip-cert-verify: true
+  client-fingerprint: chrome
   reality-opts:
     public-key: DCpi9-1rSXxBnEIAQ9U3mTqHivk7vHJRV_T2pWw5vCc
     short-id: 681fc2dd643bc2f3
-  servername: de-2.ffpn.pro
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
   country: RU
-- name: RU_HYSTERIA2_11592_721
-  server: srv-17e124.21freedom.net
-  port: 11592
-  type: hysteria2
-  password: 41edb44c8e
-  auth: 41edb44c8e
+- type: vmess
+  name: RU_VMESS_24212_673
+  server: 158.160.180.165
+  port: 24212
+  uuid: c58c1205-b308-416f-8503-c04557abf93d
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: true
   skip-cert-verify: true
   country: RU
-- name: RU_VLESS_443_798
-  server: 72.56.38.83
+- type: vless
+  name: RU_VLESS_443_1160
+  server: 147.45.175.81
   port: 443
-  type: vless
-  uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  udp: true
   tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZzIetLcQtENjIXQ9XZqFo8p3J81p8Emj0wi51Uy07n8
-  servername: absolute-disaster.org
+  servername: xsru2.freeddns.org
+  sni: xsru2.freeddns.org
+  skip-cert-verify: true
   client-fingerprint: chrome
-  network: tcp
-  udp: true
+  network: ws
+  ws-opts:
+    path: /wsru
+    headers:
+      Host: xsru2.freeddns.org
   country: RU
-- name: RU_VLESS_443_1208
-  server: 186.246.9.29
+- type: vless
+  name: RU_VLESS_443_763
+  server: 88.218.170.236
   port: 443
-  type: vless
-  uuid: b2847c3b-5278-4b06-9c66-bc919d2dfec7
-  tls: true
-  reality-opts:
-    public-key: MPNMomAMn_lu9YMYjD2jAQWrI-rTM4hj9Jgg9d6qzTA
-    short-id: 50ad5564
-  servername: wordpress.com
-  client-fingerprint: firefox
-  network: tcp
+  uuid: b872771d-e9d1-42d7-ad29-a9acff49ea2d
+  flow: xtls-rprx-vision
   udp: true
+  tls: true
+  servername: www.sun6-21.userapi.com
+  sni: www.sun6-21.userapi.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: qC4VE5jv0q0ALYAfCNtAHU-kN32OdA-cqJmXpL4Y2VY
+    short-id: 3199b70105c62ce0
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -135,15 +137,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_8443_878
-  - RU_VLESS_443_1772
-  - RU_VLESS_443_1117
-  - RU_VMESS_24212_1123
-  - RU_VLESS_443_794
-  - RU_VLESS_443_520
-  - RU_HYSTERIA2_11592_721
-  - RU_VLESS_443_798
-  - RU_VLESS_443_1208
+  - RU_VLESS_443_608
+  - RU_SS_8388_691
+  - RU_SS_18443_514
+  - RU_SS_8388_1329
+  - RU_HTTP_8443_799
+  - RU_HTTP_9443_708
+  - RU_HYSTERIA2_11592_706
+  - RU_VLESS_443_530
+  - RU_VMESS_24212_673
+  - RU_VLESS_443_1160
+  - RU_VLESS_443_763
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -156,15 +160,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_443_520
-  - RU_HYSTERIA2_11592_721
-  - RU_VLESS_443_794
-  - RU_VLESS_443_798
-  - RU_VLESS_8443_878
-  - RU_VLESS_443_1117
-  - RU_VMESS_24212_1123
-  - RU_VLESS_443_1208
-  - RU_VLESS_443_1772
+  - RU_SS_18443_514
+  - RU_VLESS_443_530
+  - RU_VLESS_443_608
+  - RU_VMESS_24212_673
+  - RU_SS_8388_691
+  - RU_HYSTERIA2_11592_706
+  - RU_HTTP_9443_708
+  - RU_VLESS_443_763
+  - RU_HTTP_8443_799
+  - RU_VLESS_443_1160
+  - RU_SS_8388_1329
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -176,15 +182,17 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_8443_878
-  - RU_VLESS_443_1772
-  - RU_VLESS_443_1117
-  - RU_VMESS_24212_1123
-  - RU_VLESS_443_794
-  - RU_VLESS_443_520
-  - RU_HYSTERIA2_11592_721
-  - RU_VLESS_443_798
-  - RU_VLESS_443_1208
+  - RU_VLESS_443_608
+  - RU_SS_8388_691
+  - RU_SS_18443_514
+  - RU_SS_8388_1329
+  - RU_HTTP_8443_799
+  - RU_HTTP_9443_708
+  - RU_HYSTERIA2_11592_706
+  - RU_VLESS_443_530
+  - RU_VMESS_24212_673
+  - RU_VLESS_443_1160
+  - RU_VLESS_443_763
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

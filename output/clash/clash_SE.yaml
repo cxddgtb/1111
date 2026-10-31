@@ -5,42 +5,43 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_14430_525
+- name: SE_VLESS_14430_512
   type: vless
-  network: ws
   server: 5.178.109.174
   port: 14430
   uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
+  network: ws
   tls: false
-  encryption: none
+  servername: 5.178.109.174
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 5.178.109.174
-    path: /vless
   country: SE
-- name: SE_HYSTERIA2_443_543
-  server: 192.142.23.46
+- name: SE_HTTP_443_648
+  password: None
   port: 443
-  type: hysteria2
-  password: a0052f4f-4c63-0002-a16f-ab2d5d718cd3
-  auth: a0052f4f-4c63-0002-a16f-ab2d5d718cd3
-  sni: diffoscope.com
+  server: 146.70.242.146
   skip-cert-verify: true
-  country: SE
-- name: SE_VLESS_8443_577
-  server: 31.172.65.4
-  port: 8443
-  type: vless
-  uuid: 9c6e83fc-b755-4ad4-9b0a-14b610153d8f
   tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: wRvUAKwcHc4pBNVouIcVjQkVD9aCRR-AmtcFyBV36lU
-    short-id: 0e7741edc378622f
-  servername: www.bing.com
-  client-fingerprint: qq
-  network: tcp
-  udp: true
+  type: http
+  country: SE
+- name: SE_HTTP_443_650
+  password: None
+  port: 443
+  server: 146.70.242.130
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: SE
+- name: SE_HTTP_443_661
+  password: None
+  port: 443
+  server: 79.142.77.63
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -55,9 +56,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_14430_525
-  - SE_HYSTERIA2_443_543
-  - SE_VLESS_8443_577
+  - SE_VLESS_14430_512
+  - SE_HTTP_443_648
+  - SE_HTTP_443_650
+  - SE_HTTP_443_661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,9 +72,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_14430_525
-  - SE_HYSTERIA2_443_543
-  - SE_VLESS_8443_577
+  - SE_VLESS_14430_512
+  - SE_HTTP_443_648
+  - SE_HTTP_443_650
+  - SE_HTTP_443_661
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,9 +87,10 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_14430_525
-  - SE_HYSTERIA2_443_543
-  - SE_VLESS_8443_577
+  - SE_VLESS_14430_512
+  - SE_HTTP_443_648
+  - SE_HTTP_443_650
+  - SE_HTTP_443_661
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

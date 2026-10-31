@@ -5,40 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VLESS_443_954
-  type: vless
-  network: ws
-  server: 60.248.219.53
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  servername: ty986gfazs.cainiaohub.xyz
-  skip-cert-verify: true
+- name: TW_HTTP_1443_609
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  skip-cert-verify: false
+  sni: twmoon1-cdn-route.couldflare-cdn.com
   tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: ty986gfazs.cainiaohub.xyz
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-  country: TW
-- name: TW_ANYTLS_443_640
-  password: 0324fbc29561
-  port: 443
-  server: 684616s4.df6h451rh.xin
-  skip-cert-verify: true
-  sni: px.ads.linkedin.com
-  type: anytls
-  udp: true
-  country: TW
-- name: TW_ANYTLS_443_585
-  server: er8u54dh.df6h451rh.xin
-  port: 443
-  type: anytls
-  password: 0324fbc29561
-  udp: true
-  sni: px.ads.linkedin.com
-  skip-cert-verify: true
+  type: http
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -53,9 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VLESS_443_954
-  - TW_ANYTLS_443_640
-  - TW_ANYTLS_443_585
+  - TW_HTTP_1443_609
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -68,9 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_ANYTLS_443_585
-  - TW_ANYTLS_443_640
-  - TW_VLESS_443_954
+  - TW_HTTP_1443_609
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -82,9 +53,7 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VLESS_443_954
-  - TW_ANYTLS_443_640
-  - TW_ANYTLS_443_585
+  - TW_HTTP_1443_609
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

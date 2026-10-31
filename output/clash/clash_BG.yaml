@@ -5,36 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BG_VLESS_443_661
-  type: vless
-  network: ws
-  server: 103.249.134.29
+- type: trojan
+  name: BG_TROJAN_443_837
+  server: 193.239.160.134
   port: 443
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  servername: free.cndyw.ggff.net
-  skip-cert-verify: false
-  tls: true
+  password: humanity
   udp: true
-  tfo: false
+  tls: true
+  servername: www.calmlunch.com
+  sni: www.calmlunch.com
+  skip-cert-verify: true
   client-fingerprint: chrome
+  network: ws
   ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.com
-  country: BG
-- name: BG_HTTP_443_681
-  port: 443
-  server: 185.94.192.210
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: BG
-- name: BG_HTTP_443_611
-  port: 443
-  server: 109.204.88.17
-  skip-cert-verify: true
-  tls: true
-  type: http
+    path: /assignment
   country: BG
 proxy-groups:
 - name: 🚀 节点选择
@@ -49,9 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_VLESS_443_661
-  - BG_HTTP_443_681
-  - BG_HTTP_443_611
+  - BG_TROJAN_443_837
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,9 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_HTTP_443_611
-  - BG_VLESS_443_661
-  - BG_HTTP_443_681
+  - BG_TROJAN_443_837
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -78,9 +58,7 @@ proxy-groups:
 - name: 🌍 BG
   type: url-test
   proxies:
-  - BG_VLESS_443_661
-  - BG_HTTP_443_681
-  - BG_HTTP_443_611
+  - BG_TROJAN_443_837
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

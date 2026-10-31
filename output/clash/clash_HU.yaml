@@ -5,18 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HU_TROJAN_443_789
-  network: ws
-  password: humanity
+- name: HU_HTTP_443_685
+  password: None
   port: 443
-  server: 185.225.68.232
-  skip-cert-verify: false
-  sni: www.calmlunch.com
-  type: trojan
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: /assignment
+  server: 146.70.203.18
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: HU
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HU_TROJAN_443_789
+  - HU_HTTP_443_685
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HU_TROJAN_443_789
+  - HU_HTTP_443_685
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +51,7 @@ proxy-groups:
 - name: 🌍 HU
   type: url-test
   proxies:
-  - HU_TROJAN_443_789
+  - HU_HTTP_443_685
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

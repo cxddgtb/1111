@@ -5,19 +5,34 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_VLESS_34451_757
-  server: ee-2e06d85dc0.shamanapp.online
-  port: 34451
-  type: vless
-  uuid: 5d9fb46f-c4bc-4d6e-9a26-a4d5f51abd28
+- name: EE_HTTP_9443_658
+  password: None
+  port: 9443
+  server: 95.153.32.2
+  skip-cert-verify: true
   tls: true
-  servername: ee-2e06d85dc0.shamanapp.online
-  client-fingerprint: chrome
-  network: xhttp
-  xhttp-opts:
-    path: /ShamanXHTTP2026
-    host: ee-2e06d85dc0.shamanapp.online
-    mode: stream-up
+  type: http
+  country: EE
+- name: EE_HTTP_9443_660
+  password: None
+  port: 9443
+  server: 95.153.31.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: EE
+- name: EE_HYSTERIA2_443_498
+  server: 13.143.239.127
+  port: 443
+  type: hysteria2
+  password: 2a0fc918-9c61-451b-a9ad-e8f796e70f52
+  auth: 2a0fc918-9c61-451b-a9ad-e8f796e70f52
+  sni: nl1.obxodvpn.us
+  up: 100
+  down: 200
+  skip-cert-verify: true
+  alpn:
+  - h3
   udp: true
   country: EE
 proxy-groups:
@@ -33,7 +48,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_VLESS_34451_757
+  - EE_HTTP_9443_658
+  - EE_HTTP_9443_660
+  - EE_HYSTERIA2_443_498
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +63,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_VLESS_34451_757
+  - EE_HYSTERIA2_443_498
+  - EE_HTTP_9443_658
+  - EE_HTTP_9443_660
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +77,9 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_VLESS_34451_757
+  - EE_HTTP_9443_658
+  - EE_HTTP_9443_660
+  - EE_HYSTERIA2_443_498
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

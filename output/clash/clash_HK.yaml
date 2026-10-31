@@ -5,145 +5,81 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_443_571
-  type: vmess
-  network: ws
-  server: 47.243.153.153
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  skip-cert-verify: true
+- name: HK_VLESS_11907_520
+  type: vless
+  server: 195.58.144.56
+  port: 11907
+  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
+  network: tcp
   tls: true
-  udp: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: i2psm3knof5qjjix.v.3dns.vip
-    path: /ws-vmess
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts: null
   country: HK
-- name: HK_VMESS_443_579
+- name: HK_VMESS_23026_1464
   type: vmess
-  network: ws
-  server: euu1yalfmcqvljex.v.3dns.vip
-  port: 443
-  uuid: d237ab38-1974-4b36-94a3-0665ce8587b9
-  servername: euu1yalfmcqvljex.v.3dns.vip
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: euu1yalfmcqvljex.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- name: HK_VMESS_443_2084
-  type: vmess
-  network: ws
-  server: lcv8v9l7oyamxxfz.v.3dns.vip
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: lcv8v9l7oyamxxfz.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- name: HK_VMESS_23026_422
-  type: vmess
-  network: ws
   server: 47.244.120.197
   port: 23026
   uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  skip-cert-verify: true
   alterId: 0
   cipher: auto
+  network: ws
+  tls: false
+  servername: 47.244.120.197
   ws-opts:
+    path: /arki
     headers:
       Host: 47.244.120.197
-    path: /arki
   country: HK
-- name: HK_VMESS_443_1678
-  type: vmess
-  network: ws
-  server: 47.243.194.125
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: nycqg19zkwacpm1b.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- name: HK_VMESS_443_572
-  type: vmess
-  network: ws
-  server: 8.218.195.61
-  port: 443
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: EX1oGt73NzPQKAc2.v.3dns.vip
-    path: /ws-vmess
-  country: HK
-- client-fingerprint: chrome
-  name: HK_VLESS_1443_1514
-  network: ws
-  port: 1443
-  server: 38.76.180.144
-  servername: 38.76.180.144
-  tls: false
-  type: vless
-  uuid: d98b67d4-024a-4bba-91e2-e6ebece6df11
-  ws-opts:
-    headers:
-      Host: 38.76.180.144
-    path: /vless-ws
-  country: HK
-- name: HK_ANYTLS_443_792
-  password: 0324fbc29561
-  port: 443
-  server: 56481.df6h451rh.xin
-  skip-cert-verify: true
-  sni: images.ctfassets.net
-  type: anytls
-  udp: true
-  country: HK
-- name: HK_ANYTLS_443_761
-  password: 0324fbc29561
-  port: 443
-  server: 654968169.df6h451rh.xin
-  skip-cert-verify: true
-  sni: images.ctfassets.net
-  type: anytls
-  udp: true
-  country: HK
-- alpn:
-  - http/1.1
-  name: HK_TROJAN_443_1327
-  network: ws
-  password: humanity
-  port: 443
-  server: 219.76.13.177
-  skip-cert-verify: false
-  sni: www.pleadcourt.org
+- name: HK_TROJAN_443_533
   type: trojan
-  ws-opts:
-    headers:
-      Host: www.pleadcourt.org
-    path: '%2Fassignment'
+  network: tcp
+  server: 119.246.1.143
+  port: 443
+  password: BxceQaOe
+  skip-cert-verify: true
+  sni: t.me/ripaojiedian
+  country: HK
+- type: vmess
+  name: HK_VMESS_35043_534
+  server: 156.245.232.239
+  port: 35043
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts: {}
+  country: HK
+- type: vless
+  name: HK_VLESS_443_437
+  server: 165.154.63.139
+  port: 443
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.amazon.com
+  sni: www.amazon.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ
+    short-id: ca4aedd4
+  country: HK
+- type: vless
+  name: HK_VLESS_31884_2382
+  server: 152.175.6.229
+  port: 31884
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  udp: true
+  tls: true
+  servername: hk010.zestapp778.com
+  sni: hk010.zestapp778.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -158,16 +94,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_443_571
-  - HK_VMESS_443_579
-  - HK_VMESS_443_2084
-  - HK_VMESS_23026_422
-  - HK_VMESS_443_1678
-  - HK_VMESS_443_572
-  - HK_VLESS_1443_1514
-  - HK_ANYTLS_443_792
-  - HK_ANYTLS_443_761
-  - HK_TROJAN_443_1327
+  - HK_VLESS_11907_520
+  - HK_VMESS_23026_1464
+  - HK_TROJAN_443_533
+  - HK_VMESS_35043_534
+  - HK_VLESS_443_437
+  - HK_VLESS_31884_2382
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -180,16 +112,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_23026_422
-  - HK_VMESS_443_571
-  - HK_VMESS_443_572
-  - HK_VMESS_443_579
-  - HK_ANYTLS_443_761
-  - HK_ANYTLS_443_792
-  - HK_TROJAN_443_1327
-  - HK_VLESS_1443_1514
-  - HK_VMESS_443_1678
-  - HK_VMESS_443_2084
+  - HK_VLESS_443_437
+  - HK_VLESS_11907_520
+  - HK_TROJAN_443_533
+  - HK_VMESS_35043_534
+  - HK_VMESS_23026_1464
+  - HK_VLESS_31884_2382
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -201,16 +129,12 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_443_571
-  - HK_VMESS_443_579
-  - HK_VMESS_443_2084
-  - HK_VMESS_23026_422
-  - HK_VMESS_443_1678
-  - HK_VMESS_443_572
-  - HK_VLESS_1443_1514
-  - HK_ANYTLS_443_792
-  - HK_ANYTLS_443_761
-  - HK_TROJAN_443_1327
+  - HK_VLESS_11907_520
+  - HK_VMESS_23026_1464
+  - HK_TROJAN_443_533
+  - HK_VMESS_35043_534
+  - HK_VLESS_443_437
+  - HK_VLESS_31884_2382
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
