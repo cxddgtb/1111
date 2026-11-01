@@ -5,30 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IE_HTTP_9443_596
-  port: 9443
-  server: 149.88.96.12
+- name: IE_HTTP_443_361
+  port: 443
+  server: 149.88.96.1
   skip-cert-verify: true
   tls: true
   type: http
   country: IE
-- name: IE_HTTP_443_506
+- name: IE_HTTP_443_294
   password: None
   port: 443
   server: 34.249.214.108
   skip-cert-verify: true
   tls: true
   type: http
-  country: IE
-- name: IE_HTTP_443_621
-  password: None
-  port: 443
-  server: 149.88.96.1
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
   country: IE
 proxy-groups:
 - name: 🚀 节点选择
@@ -43,9 +33,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IE_HTTP_9443_596
-  - IE_HTTP_443_506
-  - IE_HTTP_443_621
+  - IE_HTTP_443_361
+  - IE_HTTP_443_294
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,9 +47,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IE_HTTP_443_506
-  - IE_HTTP_9443_596
-  - IE_HTTP_443_621
+  - IE_HTTP_443_294
+  - IE_HTTP_443_361
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,9 +60,8 @@ proxy-groups:
 - name: 🌍 IE
   type: url-test
   proxies:
-  - IE_HTTP_9443_596
-  - IE_HTTP_443_506
-  - IE_HTTP_443_621
+  - IE_HTTP_443_361
+  - IE_HTTP_443_294
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,20 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: trojan
-  name: BG_TROJAN_443_837
-  server: 193.239.160.134
+- name: BG_HTTP_443_530
+  password: None
   port: 443
-  password: humanity
-  udp: true
-  tls: true
-  servername: www.calmlunch.com
-  sni: www.calmlunch.com
+  server: 185.94.192.210
   skip-cert-verify: true
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /assignment
+  tls: true
+  type: http
   country: BG
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_TROJAN_443_837
+  - BG_HTTP_443_530
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_TROJAN_443_837
+  - BG_HTTP_443_530
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +51,7 @@ proxy-groups:
 - name: 🌍 BG
   type: url-test
   proxies:
-  - BG_TROJAN_443_837
+  - BG_HTTP_443_530
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

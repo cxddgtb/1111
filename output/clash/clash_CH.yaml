@@ -5,32 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CH_VLESS_443_555
-  type: vless
-  server: 149.33.15.213
-  port: 443
-  uuid: 054362fb-e485-4a3f-9568-4c5b0f60e074
-  network: tcp
-  tls: true
-  servername: swz.proxyplankton.ru
-  client-fingerprint: chrome
-  ws-opts: null
-  country: CH
-- name: CH_VLESS_443_700
-  type: vless
-  server: 195.141.65.98
-  port: 443
-  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
-  network: ws
-  tls: true
-  servername: 148-253-210-191.sslip.io
-  client-fingerprint: chrome
-  ws-opts:
-    path: /test-ws
-    headers:
-      Host: 148-253-210-191.sslip.io
-  country: CH
-- name: CH_TROJAN_443_620
+- name: CH_TROJAN_443_264
   type: trojan
   network: ws
   server: 185.18.250.245
@@ -43,7 +18,7 @@ proxies:
       Host: www.calmlunch.com
     path: /assignment
   country: CH
-- name: CH_HTTP_9443_624
+- name: CH_HTTP_9443_396
   port: 9443
   server: 149.88.27.46
   skip-cert-verify: true
@@ -51,7 +26,7 @@ proxies:
   type: http
   udp: true
   country: CH
-- name: CH_HTTP_9443_645
+- name: CH_HTTP_9443_385
   port: 9443
   server: 149.88.27.33
   skip-cert-verify: true
@@ -60,51 +35,13 @@ proxies:
   type: http
   udp: true
   country: CH
-- name: CH_HTTP_9443_640
+- name: CH_HTTP_443_424
   password: None
-  port: 9443
-  server: 37.120.213.210
+  port: 443
+  server: 31.7.62.50
   skip-cert-verify: true
   tls: true
   type: http
-  country: CH
-- type: trojan
-  name: CH_TROJAN_443_526
-  server: 185.18.250.252
-  port: 443
-  password: humanity
-  udp: true
-  tls: true
-  servername: www.calmlunch.com
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  country: CH
-- type: trojan
-  name: CH_TROJAN_443_1223
-  server: 208.69.78.19
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: www.yourultimateprofessionalcareerhub.com
-  sni: www.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-  country: CH
-- type: trojan
-  name: CH_TROJAN_443_1175
-  server: 208.69.78.29
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: learn.yourultimateprofessionalcareerhub.com
-  sni: learn.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -119,15 +56,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_VLESS_443_555
-  - CH_VLESS_443_700
-  - CH_TROJAN_443_620
-  - CH_HTTP_9443_624
-  - CH_HTTP_9443_645
-  - CH_HTTP_9443_640
-  - CH_TROJAN_443_526
-  - CH_TROJAN_443_1223
-  - CH_TROJAN_443_1175
+  - CH_TROJAN_443_264
+  - CH_HTTP_9443_396
+  - CH_HTTP_9443_385
+  - CH_HTTP_443_424
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -140,15 +72,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_TROJAN_443_526
-  - CH_VLESS_443_555
-  - CH_TROJAN_443_620
-  - CH_HTTP_9443_624
-  - CH_HTTP_9443_640
-  - CH_HTTP_9443_645
-  - CH_VLESS_443_700
-  - CH_TROJAN_443_1175
-  - CH_TROJAN_443_1223
+  - CH_TROJAN_443_264
+  - CH_HTTP_9443_385
+  - CH_HTTP_9443_396
+  - CH_HTTP_443_424
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -160,15 +87,10 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_VLESS_443_555
-  - CH_VLESS_443_700
-  - CH_TROJAN_443_620
-  - CH_HTTP_9443_624
-  - CH_HTTP_9443_645
-  - CH_HTTP_9443_640
-  - CH_TROJAN_443_526
-  - CH_TROJAN_443_1223
-  - CH_TROJAN_443_1175
+  - CH_TROJAN_443_264
+  - CH_HTTP_9443_396
+  - CH_HTTP_9443_385
+  - CH_HTTP_443_424
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

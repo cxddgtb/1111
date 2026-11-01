@@ -5,33 +5,66 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VLESS_11907_520
-  type: vless
-  server: 195.58.144.56
-  port: 11907
-  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
-  network: tcp
-  tls: true
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: HK
-- name: HK_VMESS_23026_1464
+- name: HK_VMESS_36703_605
   type: vmess
   server: 47.244.120.197
-  port: 23026
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  port: 36703
+  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
   alterId: 0
   cipher: auto
   network: ws
   tls: false
-  servername: 47.244.120.197
+  servername: ''
   ws-opts:
     path: /arki
     headers:
-      Host: 47.244.120.197
+      Host: ''
   country: HK
-- name: HK_TROJAN_443_533
+- name: HK_VLESS_1443_634
+  type: vless
+  network: ws
+  server: 38.76.180.144
+  port: 1443
+  uuid: d98b67d4-024a-4bba-91e2-e6ebece6df11
+  servername: 38.76.180.144
+  tls: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: 38.76.180.144
+    path: /vless-ws
+  country: HK
+- name: HK_VMESS_23026_601
+  type: vmess
+  network: ws
+  server: 47.244.120.197
+  port: 23026
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  skip-cert-verify: true
+  tls: false
+  udp: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: 47.244.120.197
+    path: /arki
+  country: HK
+- name: HK_TROJAN_443_1392
+  type: trojan
+  network: ws
+  server: 103.219.195.65
+  port: 443
+  password: humanity
+  skip-cert-verify: true
+  udp: true
+  sni: www.cordweave.com
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+  country: HK
+- name: HK_TROJAN_443_704
   type: trojan
   network: tcp
   server: 119.246.1.143
@@ -40,46 +73,31 @@ proxies:
   skip-cert-verify: true
   sni: t.me/ripaojiedian
   country: HK
-- type: vmess
-  name: HK_VMESS_35043_534
-  server: 156.245.232.239
-  port: 35043
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts: {}
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  name: HK_VLESS_11907_864
+  port: 11907
+  server: 195.58.144.56
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
   country: HK
-- type: vless
-  name: HK_VLESS_443_437
-  server: 165.154.63.139
+- name: HK_ANYTLS_443_1190
+  password: 0324fbc29561
   port: 443
-  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.amazon.com
-  sni: www.amazon.com
+  server: 56481.df6h451rh.xin
   skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ
-    short-id: ca4aedd4
+  sni: images.ctfassets.net
+  type: anytls
+  udp: true
   country: HK
-- type: vless
-  name: HK_VLESS_31884_2382
-  server: 152.175.6.229
-  port: 31884
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  udp: true
-  tls: true
-  servername: hk010.zestapp778.com
-  sni: hk010.zestapp778.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
+- name: HK_SOCKS5_1080_1722
+  port: 1080
+  server: 34.150.120.78
+  type: socks5
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -94,12 +112,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_11907_520
-  - HK_VMESS_23026_1464
-  - HK_TROJAN_443_533
-  - HK_VMESS_35043_534
-  - HK_VLESS_443_437
-  - HK_VLESS_31884_2382
+  - HK_VMESS_36703_605
+  - HK_VLESS_1443_634
+  - HK_VMESS_23026_601
+  - HK_TROJAN_443_1392
+  - HK_TROJAN_443_704
+  - HK_VLESS_11907_864
+  - HK_ANYTLS_443_1190
+  - HK_SOCKS5_1080_1722
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -112,12 +132,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VLESS_443_437
-  - HK_VLESS_11907_520
-  - HK_TROJAN_443_533
-  - HK_VMESS_35043_534
-  - HK_VMESS_23026_1464
-  - HK_VLESS_31884_2382
+  - HK_VMESS_23026_601
+  - HK_VMESS_36703_605
+  - HK_VLESS_1443_634
+  - HK_TROJAN_443_704
+  - HK_VLESS_11907_864
+  - HK_ANYTLS_443_1190
+  - HK_TROJAN_443_1392
+  - HK_SOCKS5_1080_1722
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -129,12 +151,14 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_11907_520
-  - HK_VMESS_23026_1464
-  - HK_TROJAN_443_533
-  - HK_VMESS_35043_534
-  - HK_VLESS_443_437
-  - HK_VLESS_31884_2382
+  - HK_VMESS_36703_605
+  - HK_VLESS_1443_634
+  - HK_VMESS_23026_601
+  - HK_TROJAN_443_1392
+  - HK_TROJAN_443_704
+  - HK_VLESS_11907_864
+  - HK_ANYTLS_443_1190
+  - HK_SOCKS5_1080_1722
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

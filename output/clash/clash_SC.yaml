@@ -5,7 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SC_TROJAN_443_481
+- name: SC_TROJAN_443_273
+  type: trojan
+  network: ws
+  server: 45.130.125.160
+  port: 443
+  password: humanity
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  ws-opts:
+    headers:
+      Host: www.calmlunch.com
+    path: /assignment
+  country: SC
+- name: SC_TROJAN_443_259
   type: trojan
   network: ws
   server: 45.130.125.75
@@ -17,54 +30,38 @@ proxies:
       Host: www.calmlunch.com
     path: /assignment
   country: SC
-- type: trojan
-  name: SC_TROJAN_443_510
-  server: 154.81.141.42
-  port: 443
-  password: humanity
-  udp: true
-  tls: true
-  servername: www.pleadcourt.org
-  sni: www.pleadcourt.org
-  skip-cert-verify: true
+- name: SC_VLESS_2083_43
+  type: vless
   network: ws
+  server: 154.218.15.250
+  port: 2083
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  servername: proxy-1cu.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
   ws-opts:
-    path: /assignment
     headers:
-      Host: www.pleadcourt.org
+      Host: proxy-1cu.pages.dev
+    path: /
   country: SC
-- type: vless
-  name: SC_VLESS_443_644
+- name: SC_VLESS_443_519
+  type: vless
+  network: ws
   server: 155.212.240.10
   port: 443
   uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
-  udp: true
-  tls: true
   servername: n.bitpulse.me
-  sni: n.bitpulse.me
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  network: ws
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
   ws-opts:
-    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed=2560
     headers:
       Host: n.bitpulse.me
-  country: SC
-- type: trojan
-  name: SC_TROJAN_443_539
-  server: 45.130.125.190
-  port: 443
-  password: humanity
-  udp: true
-  tls: true
-  servername: www.calmlunch.com
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
+    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed
   country: SC
 proxy-groups:
 - name: 🚀 节点选择
@@ -79,10 +76,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SC_TROJAN_443_481
-  - SC_TROJAN_443_510
-  - SC_VLESS_443_644
-  - SC_TROJAN_443_539
+  - SC_TROJAN_443_273
+  - SC_TROJAN_443_259
+  - SC_VLESS_2083_43
+  - SC_VLESS_443_519
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -95,10 +92,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SC_TROJAN_443_481
-  - SC_TROJAN_443_510
-  - SC_TROJAN_443_539
-  - SC_VLESS_443_644
+  - SC_VLESS_2083_43
+  - SC_TROJAN_443_259
+  - SC_TROJAN_443_273
+  - SC_VLESS_443_519
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -110,10 +107,10 @@ proxy-groups:
 - name: 🌍 SC
   type: url-test
   proxies:
-  - SC_TROJAN_443_481
-  - SC_TROJAN_443_510
-  - SC_VLESS_443_644
-  - SC_TROJAN_443_539
+  - SC_TROJAN_443_273
+  - SC_TROJAN_443_259
+  - SC_VLESS_2083_43
+  - SC_VLESS_443_519
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

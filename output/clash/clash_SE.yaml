@@ -5,37 +5,40 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_VLESS_14430_512
+- name: SE_VLESS_14430_314
   type: vless
+  network: ws
   server: 5.178.109.174
   port: 14430
   uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
-  network: ws
   tls: false
-  servername: 5.178.109.174
-  client-fingerprint: chrome
   ws-opts:
-    path: /vless
     headers:
       Host: 5.178.109.174
+    path: /vless
   country: SE
-- name: SE_HTTP_443_648
-  password: None
+- name: SE_TROJAN_443_780
+  type: trojan
+  network: ws
+  server: 77.221.139.114
   port: 443
-  server: 146.70.242.146
+  password: humanity
+  skip-cert-verify: true
+  udp: true
+  sni: www.cordweave.com
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+  country: SE
+- name: SE_HTTP_443_433
+  port: 443
+  server: 217.210.129.243
   skip-cert-verify: true
   tls: true
   type: http
   country: SE
-- name: SE_HTTP_443_650
-  password: None
-  port: 443
-  server: 146.70.242.130
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: SE
-- name: SE_HTTP_443_661
+- name: SE_HTTP_443_412
   password: None
   port: 443
   server: 79.142.77.63
@@ -56,10 +59,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_14430_512
-  - SE_HTTP_443_648
-  - SE_HTTP_443_650
-  - SE_HTTP_443_661
+  - SE_VLESS_14430_314
+  - SE_TROJAN_443_780
+  - SE_HTTP_443_433
+  - SE_HTTP_443_412
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -72,10 +75,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_14430_512
-  - SE_HTTP_443_648
-  - SE_HTTP_443_650
-  - SE_HTTP_443_661
+  - SE_VLESS_14430_314
+  - SE_HTTP_443_412
+  - SE_HTTP_443_433
+  - SE_TROJAN_443_780
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,10 +90,10 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_14430_512
-  - SE_HTTP_443_648
-  - SE_HTTP_443_650
-  - SE_HTTP_443_661
+  - SE_VLESS_14430_314
+  - SE_TROJAN_443_780
+  - SE_HTTP_443_433
+  - SE_HTTP_443_412
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

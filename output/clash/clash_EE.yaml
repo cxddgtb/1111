@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: EE_HTTP_9443_658
+- name: EE_HTTP_9443_433
   password: None
   port: 9443
   server: 95.153.32.2
@@ -13,7 +13,7 @@ proxies:
   tls: true
   type: http
   country: EE
-- name: EE_HTTP_9443_660
+- name: EE_HTTP_9443_438
   password: None
   port: 9443
   server: 95.153.31.66
@@ -21,19 +21,19 @@ proxies:
   tls: true
   type: http
   country: EE
-- name: EE_HYSTERIA2_443_498
-  server: 13.143.239.127
+- name: EE_TROJAN_443_432
+  network: ws
+  password: humanity
   port: 443
-  type: hysteria2
-  password: 2a0fc918-9c61-451b-a9ad-e8f796e70f52
-  auth: 2a0fc918-9c61-451b-a9ad-e8f796e70f52
-  sni: nl1.obxodvpn.us
-  up: 100
-  down: 200
+  server: 153.56.171.216
   skip-cert-verify: true
-  alpn:
-  - h3
+  sni: www.cordweave.com
+  type: trojan
   udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
   country: EE
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,9 +48,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - EE_HTTP_9443_658
-  - EE_HTTP_9443_660
-  - EE_HYSTERIA2_443_498
+  - EE_HTTP_9443_433
+  - EE_HTTP_9443_438
+  - EE_TROJAN_443_432
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -63,9 +63,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - EE_HYSTERIA2_443_498
-  - EE_HTTP_9443_658
-  - EE_HTTP_9443_660
+  - EE_TROJAN_443_432
+  - EE_HTTP_9443_433
+  - EE_HTTP_9443_438
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -77,9 +77,9 @@ proxy-groups:
 - name: 🌍 EE
   type: url-test
   proxies:
-  - EE_HTTP_9443_658
-  - EE_HTTP_9443_660
-  - EE_HYSTERIA2_443_498
+  - EE_HTTP_9443_433
+  - EE_HTTP_9443_438
+  - EE_TROJAN_443_432
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

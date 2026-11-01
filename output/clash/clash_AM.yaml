@@ -5,15 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AM_VLESS_10004_1018
+- name: AM_TROJAN_443_1258
+  type: trojan
   network: ws
-  port: 10004
-  server: 194.36.37.59
-  tls: false
-  type: vless
-  uuid: f7376394-cd54-11f1-bb6a-bff6d0326f6a
+  server: 88.218.92.205
+  port: 443
+  password: humanity
+  skip-cert-verify: true
+  udp: true
+  sni: www.cordweave.com
   ws-opts:
-    path: /vpnjantit
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
   country: AM
 proxy-groups:
 - name: 🚀 节点选择
@@ -28,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AM_VLESS_10004_1018
+  - AM_TROJAN_443_1258
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AM_VLESS_10004_1018
+  - AM_TROJAN_443_1258
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +57,7 @@ proxy-groups:
 - name: 🌍 AM
   type: url-test
   proxies:
-  - AM_VLESS_10004_1018
+  - AM_TROJAN_443_1258
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
