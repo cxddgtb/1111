@@ -5,22 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_36703_605
-  type: vmess
-  server: 47.244.120.197
-  port: 36703
-  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /arki
-    headers:
-      Host: ''
-  country: HK
-- name: HK_VLESS_1443_634
+- name: HK_VLESS_1443_650
   type: vless
   network: ws
   server: 38.76.180.144
@@ -34,37 +19,39 @@ proxies:
       Host: 38.76.180.144
     path: /vless-ws
   country: HK
-- name: HK_VMESS_23026_601
+- name: HK_VMESS_443_806
   type: vmess
   network: ws
-  server: 47.244.120.197
-  port: 23026
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  server: euu1yAlfmcqvLJEx.v.3dns.vip
+  port: 443
+  uuid: d237ab38-1974-4b36-94a3-0665ce8587b9
   skip-cert-verify: true
-  tls: false
+  tls: true
   udp: true
   alterId: 0
   cipher: auto
   ws-opts:
     headers:
-      Host: 47.244.120.197
-    path: /arki
+      Host: euu1yAlfmcqvLJEx.v.3dns.vip
+    path: /ws-vmess
   country: HK
-- name: HK_TROJAN_443_1392
-  type: trojan
+- name: HK_VMESS_443_2863
+  type: vmess
   network: ws
-  server: 103.219.195.65
+  server: 47.76.57.83
   port: 443
-  password: humanity
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   skip-cert-verify: true
+  tls: true
   udp: true
-  sni: www.cordweave.com
+  alterId: 0
+  cipher: auto
   ws-opts:
     headers:
-      Host: www.cordweave.com
-    path: /assignment
+      Host: vah4urdzl3jdx5r2.v.3dns.vip
+    path: /ws-vmess
   country: HK
-- name: HK_TROJAN_443_704
+- name: HK_TROJAN_443_684
   type: trojan
   network: tcp
   server: 119.246.1.143
@@ -73,19 +60,12 @@ proxies:
   skip-cert-verify: true
   sni: t.me/ripaojiedian
   country: HK
-- alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  name: HK_VLESS_11907_864
-  port: 11907
-  server: 195.58.144.56
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
+- name: HK_SOCKS5_1080_917
+  port: 1080
+  server: 34.150.120.78
+  type: socks5
   country: HK
-- name: HK_ANYTLS_443_1190
+- name: HK_ANYTLS_443_948
   password: 0324fbc29561
   port: 443
   server: 56481.df6h451rh.xin
@@ -93,11 +73,6 @@ proxies:
   sni: images.ctfassets.net
   type: anytls
   udp: true
-  country: HK
-- name: HK_SOCKS5_1080_1722
-  port: 1080
-  server: 34.150.120.78
-  type: socks5
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -112,14 +87,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_36703_605
-  - HK_VLESS_1443_634
-  - HK_VMESS_23026_601
-  - HK_TROJAN_443_1392
-  - HK_TROJAN_443_704
-  - HK_VLESS_11907_864
-  - HK_ANYTLS_443_1190
-  - HK_SOCKS5_1080_1722
+  - HK_VLESS_1443_650
+  - HK_VMESS_443_806
+  - HK_VMESS_443_2863
+  - HK_TROJAN_443_684
+  - HK_SOCKS5_1080_917
+  - HK_ANYTLS_443_948
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -132,14 +105,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_23026_601
-  - HK_VMESS_36703_605
-  - HK_VLESS_1443_634
-  - HK_TROJAN_443_704
-  - HK_VLESS_11907_864
-  - HK_ANYTLS_443_1190
-  - HK_TROJAN_443_1392
-  - HK_SOCKS5_1080_1722
+  - HK_VLESS_1443_650
+  - HK_TROJAN_443_684
+  - HK_VMESS_443_806
+  - HK_SOCKS5_1080_917
+  - HK_ANYTLS_443_948
+  - HK_VMESS_443_2863
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -151,14 +122,12 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_36703_605
-  - HK_VLESS_1443_634
-  - HK_VMESS_23026_601
-  - HK_TROJAN_443_1392
-  - HK_TROJAN_443_704
-  - HK_VLESS_11907_864
-  - HK_ANYTLS_443_1190
-  - HK_SOCKS5_1080_1722
+  - HK_VLESS_1443_650
+  - HK_VMESS_443_806
+  - HK_VMESS_443_2863
+  - HK_TROJAN_443_684
+  - HK_SOCKS5_1080_917
+  - HK_ANYTLS_443_948
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

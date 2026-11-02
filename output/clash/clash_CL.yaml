@@ -5,12 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: aes-256-gcm
-  name: CL_SS_8388_243
-  password: xBStBEVqvGwHPocc
-  port: 8388
-  server: 64.176.2.21
-  type: ss
+- type: trojan
+  name: CL_TROJAN_443_362
+  server: 64.176.7.205
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: advanceyouremploymentskillsandcareerdevelopmenthub.com
+  sni: advanceyouremploymentskillsandcareerdevelopmenthub.com
+  skip-cert-verify: true
   country: CL
 proxy-groups:
 - name: 🚀 节点选择
@@ -25,7 +29,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CL_SS_8388_243
+  - CL_TROJAN_443_362
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CL_SS_8388_243
+  - CL_TROJAN_443_362
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +54,7 @@ proxy-groups:
 - name: 🌍 CL
   type: url-test
   proxies:
-  - CL_SS_8388_243
+  - CL_TROJAN_443_362
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,33 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RS_TROJAN_443_663
-  type: trojan
-  network: ws
-  server: 38.180.100.80
+- name: RS_HTTP_443_545
   port: 443
-  password: humanity
+  server: 146.70.221.18
   skip-cert-verify: true
-  udp: true
-  sni: www.cordweave.com
-  ws-opts:
-    headers:
-      Host: www.cordweave.com
-    path: /assignment
-  country: RS
-- name: RS_TROJAN_443_603
-  network: ws
-  password: humanity
-  port: 443
-  server: 93.86.12.49
-  skip-cert-verify: true
-  sni: www.cordweave.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: www.cordweave.com
-    path: /assignment
+  tls: true
+  type: http
   country: RS
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RS_TROJAN_443_663
-  - RS_TROJAN_443_603
+  - RS_HTTP_443_545
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RS_TROJAN_443_603
-  - RS_TROJAN_443_663
+  - RS_HTTP_443_545
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +50,7 @@ proxy-groups:
 - name: 🌍 RS
   type: url-test
   proxies:
-  - RS_TROJAN_443_663
-  - RS_TROJAN_443_603
+  - RS_HTTP_443_545
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

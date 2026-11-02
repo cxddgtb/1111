@@ -5,24 +5,8 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PH_TROJAN_46298_859
-  type: trojan
-  server: 130.94.52.157
-  port: 46298
-  password: 5t6i121em5lkmsmk
-  sni: ph001.zestapp778.com
-  network: tcp
-  country: PH
-- name: PH_TROJAN_46298_872
-  type: trojan
-  server: ph001.zestapp778.com
-  port: 46298
-  password: 5t6i121em5lkmsmk
-  sni: ph001.zestapp778.com
-  network: tcp
-  country: PH
 - cipher: aes-256-gcm
-  name: PH_SS_8882_545
+  name: PH_SS_8882_1257
   password: kDWvXYZoTBcGkC4
   port: 8882
   server: 149.104.109.252
@@ -41,9 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PH_TROJAN_46298_859
-  - PH_TROJAN_46298_872
-  - PH_SS_8882_545
+  - PH_SS_8882_1257
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,9 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PH_SS_8882_545
-  - PH_TROJAN_46298_859
-  - PH_TROJAN_46298_872
+  - PH_SS_8882_1257
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,9 +50,7 @@ proxy-groups:
 - name: 🌍 PH
   type: url-test
   proxies:
-  - PH_TROJAN_46298_859
-  - PH_TROJAN_46298_872
-  - PH_SS_8882_545
+  - PH_SS_8882_1257
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

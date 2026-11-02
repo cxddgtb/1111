@@ -5,61 +5,34 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_57043_402
-  type: vless
-  server: 179.253.179.109
-  port: 57043
-  uuid: da8fab8e-4a25-4eb0-b224-88ab96c753ce
-  network: tcp
-  tls: true
-  servername: 87.121.86.24
-  client-fingerprint: chrome
-  ws-opts: null
-  country: PL
-- name: PL_VLESS_63053_421
-  type: vless
-  server: 179.253.179.109
-  port: 63053
-  uuid: e3aa3d22-a95e-407b-aacc-d855b90a5d70
-  network: tcp
-  tls: true
-  servername: de2.derevohom.xyz
-  client-fingerprint: chrome
-  ws-opts: null
-  country: PL
-- name: PL_VLESS_2087_1983
-  type: vless
-  server: 2.26.6.1
-  port: 2087
-  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  network: tcp
-  tls: true
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
-  country: PL
-- name: PL_VLESS_50083_1066
-  type: vless
-  network: tcp
-  server: 179.253.179.109
-  port: 50083
-  uuid: 268fac1e-bb07-4d6c-8942-92fef4d7ede1
-  servername: 177.3.219.252
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: PL
-- name: PL_HTTP_443_442
-  password: None
+- type: vless
+  name: PL_VLESS_443_353
+  server: 2.26.255.215
   port: 443
-  server: 37.120.156.34
-  skip-cert-verify: true
+  uuid: 69e41e64-a832-471a-b740-94577ca85520
+  flow: xtls-rprx-vision
+  udp: true
   tls: true
-  type: http
+  servername: cloudflare.com
+  sni: cloudflare.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: pOHbbyo_PlUwH4DjC6bKvC3jB8RPnCdu-nL8trAP8CI
+    short-id: '50'
   country: PL
-- name: PL_HTTP_443_820
+- type: trojan
+  name: PL_TROJAN_443_334
+  server: 70.34.252.255
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: browseexecutivejobopeningsandenhanceleadershipcareer.com
+  sni: browseexecutivejobopeningsandenhanceleadershipcareer.com
+  skip-cert-verify: true
+  country: PL
+- name: PL_HTTP_443_717
   port: 443
   server: 31.186.220.204
   skip-cert-verify: true
@@ -80,12 +53,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_57043_402
-  - PL_VLESS_63053_421
-  - PL_VLESS_2087_1983
-  - PL_VLESS_50083_1066
-  - PL_HTTP_443_442
-  - PL_HTTP_443_820
+  - PL_VLESS_443_353
+  - PL_TROJAN_443_334
+  - PL_HTTP_443_717
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -98,12 +68,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_VLESS_57043_402
-  - PL_VLESS_63053_421
-  - PL_HTTP_443_442
-  - PL_HTTP_443_820
-  - PL_VLESS_50083_1066
-  - PL_VLESS_2087_1983
+  - PL_TROJAN_443_334
+  - PL_VLESS_443_353
+  - PL_HTTP_443_717
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -115,12 +82,9 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_57043_402
-  - PL_VLESS_63053_421
-  - PL_VLESS_2087_1983
-  - PL_VLESS_50083_1066
-  - PL_HTTP_443_442
-  - PL_HTTP_443_820
+  - PL_VLESS_443_353
+  - PL_TROJAN_443_334
+  - PL_HTTP_443_717
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

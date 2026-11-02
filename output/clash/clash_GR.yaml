@@ -5,32 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GR_VLESS_443_605
-  type: vless
-  network: ws
-  server: 85.90.197.156
+- type: vless
+  name: GR_VLESS_443_457
+  server: 85.90.197.220
   port: 443
-  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
-  servername: free.cndyw.ggff.net
-  tls: true
-  ws-opts:
-    headers:
-      Host: free.cndyw.ggff.net
-    path: pyip=bpb.yousef.isegaro.comfp=chrome
-  country: GR
-- name: GR_TROJAN_443_706
-  type: trojan
-  network: ws
-  server: 91.250.248.151
-  port: 443
-  password: humanity
-  skip-cert-verify: true
+  uuid: 8f704ed6-9a1a-4d04-94dd-1bff501716de
+  flow: xtls-rprx-vision
   udp: true
-  sni: www.cordweave.com
-  ws-opts:
-    headers:
-      Host: www.cordweave.com
-    path: /assignment
+  tls: true
+  servername: www.cloudflare.com
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4
+    short-id: 94acb54627612d43
   country: GR
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,8 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GR_VLESS_443_605
-  - GR_TROJAN_443_706
+  - GR_VLESS_443_457
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GR_VLESS_443_605
-  - GR_TROJAN_443_706
+  - GR_VLESS_443_457
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +59,7 @@ proxy-groups:
 - name: 🌍 GR
   type: url-test
   proxies:
-  - GR_VLESS_443_605
-  - GR_TROJAN_443_706
+  - GR_VLESS_443_457
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

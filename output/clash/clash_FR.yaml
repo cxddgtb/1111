@@ -5,25 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_8080_628
-  type: vless
-  network: tcp
-  server: milo.networkforexir.site
-  port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  servername: milo.networkforexir.site
-  tls: false
+- type: vless
+  name: FR_VLESS_443_881
+  server: 161.97.160.224
+  port: 443
+  uuid: b81b4d1b-7f20-48f1-82dc-d24bef898cab
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: passport.yandex.ru
+  sni: passport.yandex.ru
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0
+    short-id: e6
   country: FR
-- name: FR_VLESS_2052_435
-  type: vless
-  network: tcp
-  server: edge10.cyrionflare.com
-  port: 2052
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
-  tls: false
-  encryption: none
+- type: vless
+  name: FR_VLESS_2053_1628
+  server: w.geogame.ir
+  port: 2053
+  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  udp: true
+  tls: true
+  servername: w.geogame.ir
+  sni: w.geogame.ir
+  skip-cert-verify: true
+  client-fingerprint: chrome
   country: FR
-- name: FR_VMESS_1234_284
+- name: FR_VLESS_14430_298
+  type: vless
+  network: ws
+  server: 138.124.70.41
+  port: 14430
+  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
+  tls: false
+  ws-opts:
+    headers:
+      Host: 138.124.70.41
+    path: /vless
+  country: FR
+- name: FR_VMESS_1234_361
   type: vmess
   network: tcp
   server: 141.95.65.9
@@ -37,7 +59,7 @@ proxies:
   cipher: aes-128-gcm
   client-fingerprint: chrome
   country: FR
-- name: FR_VMESS_1234_318
+- name: FR_VMESS_1234_392
   type: vmess
   network: tcp
   server: 162.19.204.71
@@ -51,7 +73,7 @@ proxies:
   cipher: auto
   client-fingerprint: chrome
   country: FR
-- name: FR_VLESS_80_285
+- name: FR_VLESS_80_328
   type: vless
   network: ws
   server: 152.228.162.19
@@ -65,39 +87,41 @@ proxies:
       Host: akamaized.net
     path: /vless/
   country: FR
-- name: FR_VLESS_14430_257
-  network: ws
-  port: 14430
-  server: 138.124.70.41
-  servername: 138.124.70.41
-  tls: false
+- name: FR_VLESS_80_367
   type: vless
-  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
+  network: ws
+  server: OV-France1.09vpn.com
+  port: 80
+  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
+  skip-cert-verify: false
+  tls: false
+  udp: true
+  encryption: none
+  packet-encoding: xudp
   ws-opts:
     headers:
-      Host: 138.124.70.41
-    path: /vless
+      Host: OV-France1.09vpn.com
+    path: /vless/
   country: FR
-- alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  encryption: none
-  name: FR_VLESS_2053_630
-  network: tcp
-  port: 2053
-  server: w.geogame.ir
-  servername: w.geogame.ir
-  skip-cert-verify: false
-  tls: true
+- name: FR_VLESS_80_322
   type: vless
-  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: ws
+  server: ov-france1.09vpn.com
+  port: 80
+  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
+  skip-cert-verify: false
+  tls: false
+  encryption: none
+  ws-opts:
+    headers:
+      Host: ov-france1.09vpn.com
+    path: /vless/
   country: FR
 - alpn:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
-  name: FR_HYSTERIA_24667_1591
+  name: FR_HYSTERIA_24667_1435
   port: 24667
   protocol: udp
   server: 62.210.28.175
@@ -107,34 +131,79 @@ proxies:
   up: 11 Mbps
   country: FR
 - cipher: aes-256-gcm
-  name: FR_SS_20222_181
+  name: FR_SS_20222_483
   password: lF3nRjH58koKTe-_VtABbg
   port: 20222
   server: 51.75.118.5
   type: ss
   country: FR
 - cipher: aes-256-gcm
-  name: FR_SS_8388_207
+  name: FR_SS_8388_247
   password: itzvpn@321
   port: 8388
   server: 51.83.192.80
   type: ss
   country: FR
 - cipher: chacha20-ietf-poly1305
-  name: FR_SS_443_260
+  name: FR_SS_443_246
   password: 6heexyz
   port: 443
-  server: pl140.vpnbook.com
+  server: 54.36.174.140
   type: ss
   country: FR
 - cipher: chacha20-ietf-poly1305
-  name: FR_SS_443_280
+  name: FR_SS_443_248
   password: 6heexyz
   port: 443
-  server: pl134.vpnbook.com
+  server: 54.36.174.134
   type: ss
   country: FR
-- name: FR_HTTP_443_358
+- name: FR_HTTP_9443_396
+  password: None
+  port: 9443
+  server: 138.199.47.247
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_9443_387
+  port: 9443
+  server: 213.139.9.142
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_472
+  port: 443
+  server: 82.66.235.221
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_8090_507
+  port: 8090
+  server: 82.96.128.175
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_435
+  password: None
+  port: 443
+  server: 149.102.245.65
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: FR
+- name: FR_HTTP_443_524
+  password: f13f964e-f06c-11ec-a858-f23c91cfbbc9
+  port: 443
+  server: 8a7d3033-ta1og0-ta5i1s-1j61y.fr.oshuawei.com
+  tls: true
+  type: http
+  username: f13f964e-f06c-11ec-a858-f23c91cfbbc9
+  country: FR
+- name: FR_HTTP_443_423
   port: 443
   server: 82.65.162.76
   skip-cert-verify: true
@@ -142,15 +211,7 @@ proxies:
   type: http
   udp: true
   country: FR
-- name: FR_HTTP_443_414
-  password: None
-  port: 443
-  server: 82.66.235.221
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: FR
-- name: FR_HTTP_8090_622
+- name: FR_HTTP_8090_598
   port: 8090
   server: 83.206.1.225
   skip-cert-verify: true
@@ -171,21 +232,27 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_8080_628
-  - FR_VLESS_2052_435
-  - FR_VMESS_1234_284
-  - FR_VMESS_1234_318
-  - FR_VLESS_80_285
-  - FR_VLESS_14430_257
-  - FR_VLESS_2053_630
-  - FR_HYSTERIA_24667_1591
-  - FR_SS_20222_181
-  - FR_SS_8388_207
-  - FR_SS_443_260
-  - FR_SS_443_280
-  - FR_HTTP_443_358
-  - FR_HTTP_443_414
-  - FR_HTTP_8090_622
+  - FR_VLESS_443_881
+  - FR_VLESS_2053_1628
+  - FR_VLESS_14430_298
+  - FR_VMESS_1234_361
+  - FR_VMESS_1234_392
+  - FR_VLESS_80_328
+  - FR_VLESS_80_367
+  - FR_VLESS_80_322
+  - FR_HYSTERIA_24667_1435
+  - FR_SS_20222_483
+  - FR_SS_8388_247
+  - FR_SS_443_246
+  - FR_SS_443_248
+  - FR_HTTP_9443_396
+  - FR_HTTP_9443_387
+  - FR_HTTP_443_472
+  - FR_HTTP_8090_507
+  - FR_HTTP_443_435
+  - FR_HTTP_443_524
+  - FR_HTTP_443_423
+  - FR_HTTP_8090_598
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -198,21 +265,27 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_20222_181
-  - FR_SS_8388_207
-  - FR_VLESS_14430_257
-  - FR_SS_443_260
-  - FR_SS_443_280
-  - FR_VMESS_1234_284
-  - FR_VLESS_80_285
-  - FR_VMESS_1234_318
-  - FR_HTTP_443_358
-  - FR_HTTP_443_414
-  - FR_VLESS_2052_435
-  - FR_HTTP_8090_622
-  - FR_VLESS_8080_628
-  - FR_VLESS_2053_630
-  - FR_HYSTERIA_24667_1591
+  - FR_SS_443_246
+  - FR_SS_8388_247
+  - FR_SS_443_248
+  - FR_VLESS_14430_298
+  - FR_VLESS_80_322
+  - FR_VLESS_80_328
+  - FR_VMESS_1234_361
+  - FR_VLESS_80_367
+  - FR_HTTP_9443_387
+  - FR_VMESS_1234_392
+  - FR_HTTP_9443_396
+  - FR_HTTP_443_423
+  - FR_HTTP_443_435
+  - FR_HTTP_443_472
+  - FR_SS_20222_483
+  - FR_HTTP_8090_507
+  - FR_HTTP_443_524
+  - FR_HTTP_8090_598
+  - FR_VLESS_443_881
+  - FR_HYSTERIA_24667_1435
+  - FR_VLESS_2053_1628
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -224,21 +297,27 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_8080_628
-  - FR_VLESS_2052_435
-  - FR_VMESS_1234_284
-  - FR_VMESS_1234_318
-  - FR_VLESS_80_285
-  - FR_VLESS_14430_257
-  - FR_VLESS_2053_630
-  - FR_HYSTERIA_24667_1591
-  - FR_SS_20222_181
-  - FR_SS_8388_207
-  - FR_SS_443_260
-  - FR_SS_443_280
-  - FR_HTTP_443_358
-  - FR_HTTP_443_414
-  - FR_HTTP_8090_622
+  - FR_VLESS_443_881
+  - FR_VLESS_2053_1628
+  - FR_VLESS_14430_298
+  - FR_VMESS_1234_361
+  - FR_VMESS_1234_392
+  - FR_VLESS_80_328
+  - FR_VLESS_80_367
+  - FR_VLESS_80_322
+  - FR_HYSTERIA_24667_1435
+  - FR_SS_20222_483
+  - FR_SS_8388_247
+  - FR_SS_443_246
+  - FR_SS_443_248
+  - FR_HTTP_9443_396
+  - FR_HTTP_9443_387
+  - FR_HTTP_443_472
+  - FR_HTTP_8090_507
+  - FR_HTTP_443_435
+  - FR_HTTP_443_524
+  - FR_HTTP_443_423
+  - FR_HTTP_8090_598
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

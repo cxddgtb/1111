@@ -5,7 +5,23 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TR_VLESS_443_532
+- type: vless
+  name: TR_VLESS_443_481
+  server: 78.135.73.47
+  port: 443
+  uuid: 25e16692-d097-4e69-9e2d-8415609c1968
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.datadoghq.com
+  sni: www.datadoghq.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8
+    short-id: f46cd3ea3d1eb72d
+  country: TR
+- name: TR_VLESS_443_588
   type: vless
   network: ws
   server: 155.103.71.142
@@ -18,61 +34,6 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp=chrome
-  country: TR
-- name: TR_VLESS_443_655
-  type: vless
-  network: ws
-  server: 203.202.232.110
-  port: 443
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-  servername: vlso5.1d.mom
-  tls: true
-  ws-opts:
-    headers:
-      Host: vlso5.1d.mom
-    path: /socks5=888:888
-  country: TR
-- name: TR_TROJAN_443_696
-  type: trojan
-  network: ws
-  server: 213.238.182.13
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  udp: true
-  sni: www.cordweave.com
-  ws-opts:
-    headers:
-      Host: www.cordweave.com
-    path: /assignment
-  country: TR
-- name: TR_TROJAN_443_685
-  network: ws
-  password: humanity
-  port: 443
-  server: 82.26.198.25
-  skip-cert-verify: true
-  sni: www.cordweave.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: www.cordweave.com
-    path: /assignment
-  country: TR
-- name: TR_TROJAN_443_733
-  network: ws
-  password: humanity
-  port: 443
-  server: 89.36.137.173
-  skip-cert-verify: true
-  sni: www.cordweave.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: www.cordweave.com
-    path: /assignment
   country: TR
 proxy-groups:
 - name: 🚀 节点选择
@@ -87,11 +48,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_VLESS_443_532
-  - TR_VLESS_443_655
-  - TR_TROJAN_443_696
-  - TR_TROJAN_443_685
-  - TR_TROJAN_443_733
+  - TR_VLESS_443_481
+  - TR_VLESS_443_588
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -104,11 +62,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_VLESS_443_532
-  - TR_VLESS_443_655
-  - TR_TROJAN_443_685
-  - TR_TROJAN_443_696
-  - TR_TROJAN_443_733
+  - TR_VLESS_443_481
+  - TR_VLESS_443_588
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -120,11 +75,8 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_VLESS_443_532
-  - TR_VLESS_443_655
-  - TR_TROJAN_443_696
-  - TR_TROJAN_443_685
-  - TR_TROJAN_443_733
+  - TR_VLESS_443_481
+  - TR_VLESS_443_588
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

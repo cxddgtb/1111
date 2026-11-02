@@ -5,21 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_465_527
-  type: vless
-  server: hw5.roghanmo.com
-  port: 465
-  uuid: a356fa77-7199-417a-80dd-0c0925789161
-  network: ws
-  tls: true
-  servername: hw5.roghanmo.com.
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: hw5.roghanmo.com
-  country: FI
-- name: FI_VLESS_14430_364
+- name: FI_VLESS_14430_369
   type: vless
   network: ws
   server: 45.144.234.157
@@ -31,46 +17,11 @@ proxies:
       Host: 45.144.234.157
     path: /vless
   country: FI
-- name: FI_VLESS_443_514
-  type: vless
-  network: ws
-  server: 212.147.234.124
-  port: 443
-  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
-  servername: vp5.1145678.xyz
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: vp5.1145678.xyz
-  country: FI
-- name: FI_HYSTERIA2_443_319
-  password: 2a0fc918-9c61-451b-a9ad-e8f796e70f52
-  port: 443
-  server: 177.3.220.9
-  sni: nl1.obxodvpn.us
-  tls: false
-  type: hysteria2
-  country: FI
-- alpn:
-  - http/1.1
-  encryption: none
-  name: FI_VLESS_465_487
-  network: ws
-  port: 465
-  server: hw3.divarkhaghazi.com
-  servername: hw3.divarkhaghazi.com.
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 924e20da-fcad-4e7e-8113-c62d27a0d01e
-  ws-opts:
-    headers:
-      Host: hw3.divarkhaghazi.com.
-    path: /
+- name: FI_SOCKS5_8443_568
+  port: 8443
+  server: 176.124.206.150
+  skip-cert-verify: true
+  type: socks5
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -85,11 +36,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_465_527
-  - FI_VLESS_14430_364
-  - FI_VLESS_443_514
-  - FI_HYSTERIA2_443_319
-  - FI_VLESS_465_487
+  - FI_VLESS_14430_369
+  - FI_SOCKS5_8443_568
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -102,11 +50,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_HYSTERIA2_443_319
-  - FI_VLESS_14430_364
-  - FI_VLESS_465_487
-  - FI_VLESS_443_514
-  - FI_VLESS_465_527
+  - FI_VLESS_14430_369
+  - FI_SOCKS5_8443_568
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -118,11 +63,8 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_465_527
-  - FI_VLESS_14430_364
-  - FI_VLESS_443_514
-  - FI_HYSTERIA2_443_319
-  - FI_VLESS_465_487
+  - FI_VLESS_14430_369
+  - FI_SOCKS5_8443_568
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
