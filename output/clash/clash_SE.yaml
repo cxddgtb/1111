@@ -5,51 +5,34 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: trojan
-  name: SE_TROJAN_443_367
-  server: 70.34.207.14
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: searchhealthcarejobsandbuildmedicalcareerpathway.com
-  sni: searchhealthcarejobsandbuildmedicalcareerpathway.com
-  skip-cert-verify: true
-  country: SE
-- name: SE_VLESS_14430_354
+- name: SE_VLESS_14430_348
   type: vless
   network: ws
   server: 5.178.109.174
   port: 14430
   uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
+  servername: 5.178.109.174
   tls: false
   ws-opts:
     headers:
       Host: 5.178.109.174
     path: /vless
   country: SE
-- name: SE_HTTP_443_454
-  password: None
+- name: SE_HYSTERIA2_443_380
+  password: 769f34f0-1500-488f-b414-03bc90666502
   port: 443
-  server: 79.142.77.63
-  skip-cert-verify: true
-  tls: true
-  type: http
+  server: se.mimowhat.online
+  skip-cert-verify: false
+  sni: se.mimowhat.online
+  tls: false
+  type: hysteria2
   country: SE
-- name: SE_HTTP_443_470
-  port: 443
-  server: 146.70.242.130
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: SE
-- name: SE_HTTP_443_471
-  password: None
-  port: 443
-  server: 146.70.242.146
-  skip-cert-verify: true
-  tls: true
-  type: http
+- cipher: aes-256-gcm
+  name: SE_SS_8388_2340
+  password: AxIYWtskJWIIaefW
+  port: 8388
+  server: 70.34.212.124
+  type: ss
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -64,11 +47,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_TROJAN_443_367
-  - SE_VLESS_14430_354
-  - SE_HTTP_443_454
-  - SE_HTTP_443_470
-  - SE_HTTP_443_471
+  - SE_VLESS_14430_348
+  - SE_HYSTERIA2_443_380
+  - SE_SS_8388_2340
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -81,11 +62,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_14430_354
-  - SE_TROJAN_443_367
-  - SE_HTTP_443_454
-  - SE_HTTP_443_470
-  - SE_HTTP_443_471
+  - SE_VLESS_14430_348
+  - SE_HYSTERIA2_443_380
+  - SE_SS_8388_2340
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -97,11 +76,9 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_TROJAN_443_367
-  - SE_VLESS_14430_354
-  - SE_HTTP_443_454
-  - SE_HTTP_443_470
-  - SE_HTTP_443_471
+  - SE_VLESS_14430_348
+  - SE_HYSTERIA2_443_380
+  - SE_SS_8388_2340
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

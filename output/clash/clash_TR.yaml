@@ -5,23 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: TR_VLESS_443_481
-  server: 78.135.73.47
-  port: 443
-  uuid: 25e16692-d097-4e69-9e2d-8415609c1968
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.datadoghq.com
-  sni: www.datadoghq.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8
-    short-id: f46cd3ea3d1eb72d
-  country: TR
-- name: TR_VLESS_443_588
+- name: TR_VLESS_443_550
   type: vless
   network: ws
   server: 155.103.71.142
@@ -48,8 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_VLESS_443_481
-  - TR_VLESS_443_588
+  - TR_VLESS_443_550
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,8 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_VLESS_443_481
-  - TR_VLESS_443_588
+  - TR_VLESS_443_550
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,8 +57,7 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_VLESS_443_481
-  - TR_VLESS_443_588
+  - TR_VLESS_443_550
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

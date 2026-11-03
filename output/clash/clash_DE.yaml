@@ -5,145 +5,68 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: trojan
-  name: DE_TROJAN_443_308
-  server: 193.108.119.15
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: courses.iloverussia2026.com
-  sni: courses.iloverussia2026.com
-  skip-cert-verify: true
-  country: DE
-- type: trojan
-  name: DE_TROJAN_443_319
-  server: 193.108.119.78
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: www.iloverussia2026.com
-  sni: www.iloverussia2026.com
-  skip-cert-verify: true
-  country: DE
-- type: trojan
-  name: DE_TROJAN_443_308_2
-  server: 193.108.119.96
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: learn.iloverussia2026.com
-  sni: learn.iloverussia2026.com
-  skip-cert-verify: true
-  country: DE
-- type: trojan
-  name: DE_TROJAN_443_318
-  server: 193.108.119.193
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: resources.iloverussia2026.com
-  sni: resources.iloverussia2026.com
-  skip-cert-verify: true
-  country: DE
-- type: vless
-  name: DE_VLESS_8443_330
-  server: 144.31.140.125
-  port: 8443
-  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: twitch.tv
-  sni: twitch.tv
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: wgyw3OxZw4HEzedNdY_eHdcVkrtT7GEeZSHfzcZ8iDo
-    short-id: 168c15efac9df5fd
-  country: DE
-- type: vless
-  name: DE_VLESS_443_377
-  server: nl-modx-prime.storagedirectguide.com
-  port: 443
-  uuid: 5254c281-3bc1-40ee-ba89-1aaf8c251402
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: nl-modx-prime.storagedirectguide.com
-  sni: nl-modx-prime.storagedirectguide.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: node0aB_7yyVADkeieiBBpxqIlxNLQcvgotRClh0QXQ
-  country: DE
-- type: trojan
-  name: DE_TROJAN_51520_320
-  server: de001.zestapp778.com
-  port: 51520
-  password: 5t6i121em5lkmsmk
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  country: DE
-- type: vless
-  name: DE_VLESS_443_355
-  server: 82.118.19.153
-  port: 443
-  uuid: adcaa148-7c66-4282-a81a-99ec8afa029d
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Tiuy8om5Lk0pWL95-8LaFFTwH0vbURVMoOkaW9xGaiE
-    short-id: 670ed9f350bd8ee0
-  country: DE
-- type: vmess
-  name: DE_VMESS_443_349
-  server: de.zhou-yufan.com
-  port: 443
-  uuid: f38e591d-d13a-4c30-9763-6be3ad65f3ec
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  country: DE
-- type: trojan
-  name: DE_TROJAN_443_305
-  server: 193.108.119.29
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: blog.iloverussia2026.com
-  sni: blog.iloverussia2026.com
-  skip-cert-verify: true
-  country: DE
-- name: DE_VLESS_80_389
+- name: DE_VLESS_443_296
   type: vless
+  server: 62.84.162.161
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
   network: ws
-  server: OV-Germany1.09vpn.com
-  port: 80
-  uuid: 7d74eae4-8a06-4306-a923-ad686f30bf26
-  skip-cert-verify: false
+  tls: true
+  servername: xy1ej.stream-node-us.danfeng.qzz.io
+  client-fingerprint: chrome
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: xy1ej.stream-node-us.danfeng.qzz.io
+  country: DE
+- name: DE_VLESS_443_308
+  type: vless
+  server: 64.227.115.28
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  network: ws
+  tls: true
+  servername: xy1ej.stream-node-us.danfeng.qzz.io
+  client-fingerprint: chrome
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: xy1ej.stream-node-us.danfeng.qzz.io
+  country: DE
+- name: DE_VMESS_8018_338
+  type: vmess
+  network: ws
+  server: d2.anonix.cloud
+  port: 8018
+  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
+  skip-cert-verify: true
+  tls: false
   udp: true
-  encryption: none
-  xudp: true
-  packet-encoding: xudp
+  alterId: 0
+  cipher: auto
   ws-opts:
     headers:
-      Host: OV-Germany1.09vpn.com
-    path: /vless/
+      Host: shit.67133767.xyz
+    path: /websocket/transfer/gayporn
   country: DE
-- name: DE_HYSTERIA2_443_338
+- name: DE_VLESS_2083_591
+  type: vless
+  network: ws
+  server: 195.137.226.133
+  port: 2083
+  uuid: 7f733b1a-6c00-48ac-ae3b-cbc178a9146e
+  servername: nexostore.xnetaro.ir
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: firefox
+  ws-opts:
+    headers:
+      Host: nexostore.xnetaro.ir
+    path: /wss?TELEGRAM----
+  country: DE
+- name: DE_HYSTERIA2_443_310
   password: 6da2c981-8c77-4340-bda3-93399b7aea26
   port: 443
   server: 163.245.41.48
@@ -151,16 +74,7 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HYSTERIA2_443_421
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: 443
-  server: 18.193.79.104
-  skip-cert-verify: true
-  sni: 18.193.79.104
-  tls: false
-  type: hysteria2
-  country: DE
-- name: DE_HYSTERIA2_443_446
+- name: DE_HYSTERIA2_443_561
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
   server: 3.76.221.4
@@ -169,7 +83,7 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HYSTERIA2_443_603
+- name: DE_HYSTERIA2_443_931
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
   server: vpn-de-002.fastervpn.world
@@ -178,23 +92,29 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- name: DE_HTTP_9443_434
-  password: None
-  port: 9443
-  server: 87.249.132.97
-  skip-cert-verify: true
+- type: hysteria
+  name: DE_HYSTERIA_54177_2039
+  server: 5.83.129.90
+  port: 54177
+  password: dongtaiwang.com
   tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_9443_457
-  password: None
-  port: 9443
-  server: 79.127.156.177
+  servername: apple.com
+  sni: apple.com
   skip-cert-verify: true
-  tls: true
-  type: http
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
   country: DE
-- name: DE_HTTP_443_459
+- name: DE_TROJAN_443_284
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 193.108.119.15
+  sni: courses.iloverussia2026.com
+  type: trojan
+  country: DE
+- name: DE_HTTP_443_388
   port: 443
   server: 213.109.163.119
   skip-cert-verify: true
@@ -202,33 +122,17 @@ proxies:
   type: http
   udp: true
   country: DE
-- name: DE_HTTP_9002_463
+- name: DE_HTTP_9002_393
   port: 9002
-  server: 158.173.154.1
+  server: 158.173.154.5
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
   country: DE
-- name: DE_HTTP_9002_474
-  password: None
+- name: DE_HTTP_9002_402
   port: 9002
-  server: 158.173.154.2
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_9443_460
-  password: None
-  port: 9443
-  server: 213.177.229.161
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: DE
-- name: DE_HTTP_9002_465
-  port: 9002
-  server: 158.173.154.5
+  server: 158.173.154.1
   skip-cert-verify: true
   tls: true
   type: http
@@ -247,28 +151,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_TROJAN_443_308
-  - DE_TROJAN_443_319
-  - DE_TROJAN_443_308_2
-  - DE_TROJAN_443_318
-  - DE_VLESS_8443_330
-  - DE_VLESS_443_377
-  - DE_TROJAN_51520_320
-  - DE_VLESS_443_355
-  - DE_VMESS_443_349
-  - DE_TROJAN_443_305
-  - DE_VLESS_80_389
-  - DE_HYSTERIA2_443_338
-  - DE_HYSTERIA2_443_421
-  - DE_HYSTERIA2_443_446
-  - DE_HYSTERIA2_443_603
-  - DE_HTTP_9443_434
-  - DE_HTTP_9443_457
-  - DE_HTTP_443_459
-  - DE_HTTP_9002_463
-  - DE_HTTP_9002_474
-  - DE_HTTP_9443_460
-  - DE_HTTP_9002_465
+  - DE_VLESS_443_296
+  - DE_VLESS_443_308
+  - DE_VMESS_8018_338
+  - DE_VLESS_2083_591
+  - DE_HYSTERIA2_443_310
+  - DE_HYSTERIA2_443_561
+  - DE_HYSTERIA2_443_931
+  - DE_HYSTERIA_54177_2039
+  - DE_TROJAN_443_284
+  - DE_HTTP_443_388
+  - DE_HTTP_9002_393
+  - DE_HTTP_9002_402
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -281,28 +175,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_TROJAN_443_305
-  - DE_TROJAN_443_308
-  - DE_TROJAN_443_308_2
-  - DE_TROJAN_443_318
-  - DE_TROJAN_443_319
-  - DE_TROJAN_51520_320
-  - DE_VLESS_8443_330
-  - DE_HYSTERIA2_443_338
-  - DE_VMESS_443_349
-  - DE_VLESS_443_355
-  - DE_VLESS_443_377
-  - DE_VLESS_80_389
-  - DE_HYSTERIA2_443_421
-  - DE_HTTP_9443_434
-  - DE_HYSTERIA2_443_446
-  - DE_HTTP_9443_457
-  - DE_HTTP_443_459
-  - DE_HTTP_9443_460
-  - DE_HTTP_9002_463
-  - DE_HTTP_9002_465
-  - DE_HTTP_9002_474
-  - DE_HYSTERIA2_443_603
+  - DE_TROJAN_443_284
+  - DE_VLESS_443_296
+  - DE_VLESS_443_308
+  - DE_HYSTERIA2_443_310
+  - DE_VMESS_8018_338
+  - DE_HTTP_443_388
+  - DE_HTTP_9002_393
+  - DE_HTTP_9002_402
+  - DE_HYSTERIA2_443_561
+  - DE_VLESS_2083_591
+  - DE_HYSTERIA2_443_931
+  - DE_HYSTERIA_54177_2039
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -314,28 +198,18 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_TROJAN_443_308
-  - DE_TROJAN_443_319
-  - DE_TROJAN_443_308_2
-  - DE_TROJAN_443_318
-  - DE_VLESS_8443_330
-  - DE_VLESS_443_377
-  - DE_TROJAN_51520_320
-  - DE_VLESS_443_355
-  - DE_VMESS_443_349
-  - DE_TROJAN_443_305
-  - DE_VLESS_80_389
-  - DE_HYSTERIA2_443_338
-  - DE_HYSTERIA2_443_421
-  - DE_HYSTERIA2_443_446
-  - DE_HYSTERIA2_443_603
-  - DE_HTTP_9443_434
-  - DE_HTTP_9443_457
-  - DE_HTTP_443_459
-  - DE_HTTP_9002_463
-  - DE_HTTP_9002_474
-  - DE_HTTP_9443_460
-  - DE_HTTP_9002_465
+  - DE_VLESS_443_296
+  - DE_VLESS_443_308
+  - DE_VMESS_8018_338
+  - DE_VLESS_2083_591
+  - DE_HYSTERIA2_443_310
+  - DE_HYSTERIA2_443_561
+  - DE_HYSTERIA2_443_931
+  - DE_HYSTERIA_54177_2039
+  - DE_TROJAN_443_284
+  - DE_HTTP_443_388
+  - DE_HTTP_9002_393
+  - DE_HTTP_9002_402
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

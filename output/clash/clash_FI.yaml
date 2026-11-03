@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_14430_369
+- name: FI_VLESS_14430_334
   type: vless
   network: ws
   server: 45.144.234.157
@@ -16,12 +16,6 @@ proxies:
     headers:
       Host: 45.144.234.157
     path: /vless
-  country: FI
-- name: FI_SOCKS5_8443_568
-  port: 8443
-  server: 176.124.206.150
-  skip-cert-verify: true
-  type: socks5
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -36,8 +30,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_14430_369
-  - FI_SOCKS5_8443_568
+  - FI_VLESS_14430_334
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +43,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_14430_369
-  - FI_SOCKS5_8443_568
+  - FI_VLESS_14430_334
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +55,7 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_14430_369
-  - FI_SOCKS5_8443_568
+  - FI_VLESS_14430_334
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

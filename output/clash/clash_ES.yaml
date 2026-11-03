@@ -5,51 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: trojan
-  name: ES_TROJAN_443_378
-  server: 66.163.118.166
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: learn.discovergreatjobsandadvanceyourcareer.com
-  sni: learn.discovergreatjobsandadvanceyourcareer.com
-  skip-cert-verify: true
-  country: ES
-- type: trojan
-  name: ES_TROJAN_443_372
-  server: 66.163.118.62
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: courses.discovergreatjobsandadvanceyourcareer.com
-  sni: courses.discovergreatjobsandadvanceyourcareer.com
-  skip-cert-verify: true
-  country: ES
-- type: trojan
-  name: ES_TROJAN_443_381
-  server: 66.163.118.244
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: api.discovergreatjobsandadvanceyourcareer.com
-  sni: api.discovergreatjobsandadvanceyourcareer.com
-  skip-cert-verify: true
-  country: ES
-- type: trojan
-  name: ES_TROJAN_443_380
-  server: 66.163.118.251
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: resources.discovergreatjobsandadvanceyourcareer.com
-  sni: resources.discovergreatjobsandadvanceyourcareer.com
-  skip-cert-verify: true
-  country: ES
-- name: ES_VLESS_443_370
+- name: ES_VLESS_443_394
   type: vless
   network: tcp
   server: 85.90.217.42
@@ -59,22 +15,6 @@ proxies:
   skip-cert-verify: true
   tls: true
   udp: true
-  country: ES
-- name: ES_HTTP_443_452
-  password: None
-  port: 443
-  server: 130.195.250.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: ES
-- name: ES_HTTP_443_466
-  password: None
-  port: 443
-  server: 130.195.250.34
-  skip-cert-verify: true
-  tls: true
-  type: http
   country: ES
 proxy-groups:
 - name: 🚀 节点选择
@@ -89,13 +29,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_TROJAN_443_378
-  - ES_TROJAN_443_372
-  - ES_TROJAN_443_381
-  - ES_TROJAN_443_380
-  - ES_VLESS_443_370
-  - ES_HTTP_443_452
-  - ES_HTTP_443_466
+  - ES_VLESS_443_394
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -108,13 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_VLESS_443_370
-  - ES_TROJAN_443_372
-  - ES_TROJAN_443_378
-  - ES_TROJAN_443_380
-  - ES_TROJAN_443_381
-  - ES_HTTP_443_452
-  - ES_HTTP_443_466
+  - ES_VLESS_443_394
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -126,13 +54,7 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_TROJAN_443_378
-  - ES_TROJAN_443_372
-  - ES_TROJAN_443_381
-  - ES_TROJAN_443_380
-  - ES_VLESS_443_370
-  - ES_HTTP_443_452
-  - ES_HTTP_443_466
+  - ES_VLESS_443_394
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

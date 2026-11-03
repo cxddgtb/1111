@@ -5,58 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: IT_VLESS_443_1134
-  server: 151.91.39.191
-  port: 443
-  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
-  udp: true
-  tls: true
-  servername: 148-253-210-191.sslip.io
-  sni: 148-253-210-191.sslip.io
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /test-ws
-    headers:
-      Host: 148-253-210-191.sslip.io
-  country: IT
-- type: vless
-  name: IT_VLESS_443_416
-  server: 82.118.16.189
-  port: 443
-  uuid: d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY
-    short-id: 37fbf155c7a9f3ff
-  country: IT
-- type: vless
-  name: IT_VLESS_443_401
-  server: 82.118.16.187
-  port: 443
-  uuid: dc2259c4-388e-4285-ba18-df619b6672b6
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU
-    short-id: cd6065902eea7a02
-  country: IT
-- name: IT_SS_19999_240
+- name: IT_SS_19999_217
   type: ss
   server: 202.50.253.27
   port: 19999
@@ -64,39 +13,7 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
-- name: IT_SS_19999_232
-  type: ss
-  server: 202.50.253.54
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_231
-  type: ss
-  server: 202.50.253.90
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_239
-  type: ss
-  server: 202.50.253.72
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_231_2
-  type: ss
-  server: 202.50.253.18
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_236
+- name: IT_SS_19999_207
   type: ss
   server: 202.50.253.63
   port: 19999
@@ -104,15 +21,23 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
-- name: IT_SS_19999_232_2
+- name: IT_SS_19999_211
   type: ss
-  server: 202.50.253.99
+  server: 202.50.253.90
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
-- name: IT_SS_19999_238
+- name: IT_SS_19999_208
+  type: ss
+  server: 202.50.253.54
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_209
   type: ss
   server: 202.50.253.36
   port: 19999
@@ -120,15 +45,7 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
-- name: IT_SS_19999_235
-  type: ss
-  server: 202.50.253.81
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_2616
+- name: IT_SS_19999_210
   type: ss
   server: 202.50.253.45
   port: 19999
@@ -136,13 +53,37 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
-- name: IT_HTTP_443_537
-  password: None
-  port: 443
-  server: 185.183.105.130
-  skip-cert-verify: true
-  tls: true
-  type: http
+- name: IT_SS_19999_208_2
+  type: ss
+  server: 202.50.253.72
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_229
+  type: ss
+  server: 202.50.253.99
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_603
+  type: ss
+  server: 202.50.253.81
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_1706
+  type: ss
+  server: 202.50.253.18
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
   country: IT
 proxy-groups:
 - name: 🚀 节点选择
@@ -157,20 +98,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_VLESS_443_1134
-  - IT_VLESS_443_416
-  - IT_VLESS_443_401
-  - IT_SS_19999_240
-  - IT_SS_19999_232
-  - IT_SS_19999_231
-  - IT_SS_19999_239
-  - IT_SS_19999_231_2
-  - IT_SS_19999_236
-  - IT_SS_19999_232_2
-  - IT_SS_19999_238
-  - IT_SS_19999_235
-  - IT_SS_19999_2616
-  - IT_HTTP_443_537
+  - IT_SS_19999_217
+  - IT_SS_19999_207
+  - IT_SS_19999_211
+  - IT_SS_19999_208
+  - IT_SS_19999_209
+  - IT_SS_19999_210
+  - IT_SS_19999_208_2
+  - IT_SS_19999_229
+  - IT_SS_19999_603
+  - IT_SS_19999_1706
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -183,20 +120,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_SS_19999_231
-  - IT_SS_19999_231_2
-  - IT_SS_19999_232
-  - IT_SS_19999_232_2
-  - IT_SS_19999_235
-  - IT_SS_19999_236
-  - IT_SS_19999_238
-  - IT_SS_19999_239
-  - IT_SS_19999_240
-  - IT_VLESS_443_401
-  - IT_VLESS_443_416
-  - IT_HTTP_443_537
-  - IT_VLESS_443_1134
-  - IT_SS_19999_2616
+  - IT_SS_19999_207
+  - IT_SS_19999_208
+  - IT_SS_19999_208_2
+  - IT_SS_19999_209
+  - IT_SS_19999_210
+  - IT_SS_19999_211
+  - IT_SS_19999_217
+  - IT_SS_19999_229
+  - IT_SS_19999_603
+  - IT_SS_19999_1706
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -208,20 +141,16 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_VLESS_443_1134
-  - IT_VLESS_443_416
-  - IT_VLESS_443_401
-  - IT_SS_19999_240
-  - IT_SS_19999_232
-  - IT_SS_19999_231
-  - IT_SS_19999_239
-  - IT_SS_19999_231_2
-  - IT_SS_19999_236
-  - IT_SS_19999_232_2
-  - IT_SS_19999_238
-  - IT_SS_19999_235
-  - IT_SS_19999_2616
-  - IT_HTTP_443_537
+  - IT_SS_19999_217
+  - IT_SS_19999_207
+  - IT_SS_19999_211
+  - IT_SS_19999_208
+  - IT_SS_19999_209
+  - IT_SS_19999_210
+  - IT_SS_19999_208_2
+  - IT_SS_19999_229
+  - IT_SS_19999_603
+  - IT_SS_19999_1706
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

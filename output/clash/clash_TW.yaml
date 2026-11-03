@@ -5,62 +5,42 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_ANYTLS_443_1126
-  password: 0324fbc29561
+- type: anytls
+  name: TW_ANYTLS_443_934
+  server: 684616s4.df6h451rh.xin
   port: 443
-  server: er8u54dh.df6h451rh.xin
-  skip-cert-verify: true
+  password: 0324fbc29561
+  tls: true
+  servername: px.ads.linkedin.com
   sni: px.ads.linkedin.com
-  type: anytls
-  udp: true
-  country: TW
-- auth: 171a4d7a-a1f0-499c-9fc5-3915c8b1f47b
-  name: TW_HYSTERIA2_19310_1325
-  obfs: salamander
-  obfs-password: 4mcqiPwfROfrKkIKx1WO32Va
-  password: 171a4d7a-a1f0-499c-9fc5-3915c8b1f47b
-  port: 19310
-  ports: 19310-19821
-  server: ufcaxsoooxez3p6h.5273ef7a.e.yuetong.online
   skip-cert-verify: true
-  sni: srv-l7o.yuetong.online
+  country: TW
+- type: anytls
+  name: TW_ANYTLS_443_1185
+  server: er8u54dh.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
+  tls: true
+  servername: px.ads.linkedin.com
+  sni: px.ads.linkedin.com
+  skip-cert-verify: true
+  country: TW
+- name: TW_HYSTERIA2_443_581
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: 160.187.100.109
+  skip-cert-verify: true
+  sni: 160.187.100.109
+  tls: false
   type: hysteria2
   country: TW
-- name: TW_HYSTERIA2_25400_1063
-  server: ufcaxsoooxez3p6h.5273ef7a.e.yuetong.online
-  port: 25400
-  type: hysteria2
-  password: 171a4d7a-a1f0-499c-9fc5-3915c8b1f47b
-  auth: 171a4d7a-a1f0-499c-9fc5-3915c8b1f47b
-  sni: net-e4q.yuetong.online
+- type: anytls
+  name: TW_ANYTLS_62405_1837
+  server: user02.godvpn.lol
+  port: 62405
+  password: 4bbfa33a-449a-4a50-8dfc-6d0de880f7bc
+  tls: true
   skip-cert-verify: true
-  obfs: salamander
-  obfs-password: obD2LS8RFvYtkPaNlaPBXRRn
-  ports: 25400-26299
-  country: TW
-- name: TW_HYSTERIA2_23600_1172
-  server: ufcaxsoooxez3p6h.5273ef7a.e.yuetong.online
-  port: 23600
-  type: hysteria2
-  password: 171a4d7a-a1f0-499c-9fc5-3915c8b1f47b
-  auth: 171a4d7a-a1f0-499c-9fc5-3915c8b1f47b
-  sni: io-ybu5.yuetong.online
-  skip-cert-verify: true
-  obfs: salamander
-  obfs-password: mhqJXiKOjxerLzK4LUIfr0qd
-  ports: 23600-24499
-  country: TW
-- name: TW_HYSTERIA2_13900_1626
-  server: ufcaxsoooxez3p6h.5273ef7a.e.yuetong.online
-  port: 13900
-  type: hysteria2
-  password: 171a4d7a-a1f0-499c-9fc5-3915c8b1f47b
-  auth: 171a4d7a-a1f0-499c-9fc5-3915c8b1f47b
-  sni: web-26hb.yuetong.online
-  skip-cert-verify: true
-  obfs: salamander
-  obfs-password: CU1Unks0JaM8VgEPkavYRmai
-  ports: 13900-14799
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -75,11 +55,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_ANYTLS_443_1126
-  - TW_HYSTERIA2_19310_1325
-  - TW_HYSTERIA2_25400_1063
-  - TW_HYSTERIA2_23600_1172
-  - TW_HYSTERIA2_13900_1626
+  - TW_ANYTLS_443_934
+  - TW_ANYTLS_443_1185
+  - TW_HYSTERIA2_443_581
+  - TW_ANYTLS_62405_1837
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -92,11 +71,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_HYSTERIA2_25400_1063
-  - TW_ANYTLS_443_1126
-  - TW_HYSTERIA2_23600_1172
-  - TW_HYSTERIA2_19310_1325
-  - TW_HYSTERIA2_13900_1626
+  - TW_HYSTERIA2_443_581
+  - TW_ANYTLS_443_934
+  - TW_ANYTLS_443_1185
+  - TW_ANYTLS_62405_1837
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -108,11 +86,10 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_ANYTLS_443_1126
-  - TW_HYSTERIA2_19310_1325
-  - TW_HYSTERIA2_25400_1063
-  - TW_HYSTERIA2_23600_1172
-  - TW_HYSTERIA2_13900_1626
+  - TW_ANYTLS_443_934
+  - TW_ANYTLS_443_1185
+  - TW_HYSTERIA2_443_581
+  - TW_ANYTLS_62405_1837
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

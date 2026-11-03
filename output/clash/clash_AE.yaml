@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_14430_531
+- name: AE_VLESS_14430_573
   type: vless
   network: ws
   server: 95.174.68.188
@@ -16,6 +16,39 @@ proxies:
     headers:
       Host: 95.174.68.188
     path: /vless
+  country: AE
+- type: hysteria2
+  name: AE_HYSTERIA2_443_837
+  server: 217.60.73.56
+  port: 443
+  password: 69e41e64-a832-471a-b740-94577ca85520
+  tls: true
+  servername: forshynewh.duckdns.org
+  sni: forshynewh.duckdns.org
+  skip-cert-verify: true
+  country: AE
+- type: hysteria2
+  name: AE_HYSTERIA2_443_900
+  server: forshynewh.duckdns.org
+  port: 443
+  password: 69e41e64-a832-471a-b740-94577ca85520
+  tls: true
+  servername: forshynewh.duckdns.org
+  sni: forshynewh.duckdns.org
+  skip-cert-verify: false
+  alpn:
+  - h3
+  country: AE
+- name: AE_HYSTERIA2_443_362
+  obfs: salamander
+  obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
+  password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
+  port: 443
+  server: 130.49.161.70
+  skip-cert-verify: false
+  sni: hy2.aspidnet.xyz
+  tls: false
+  type: hysteria2
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -30,7 +63,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_14430_531
+  - AE_VLESS_14430_573
+  - AE_HYSTERIA2_443_837
+  - AE_HYSTERIA2_443_900
+  - AE_HYSTERIA2_443_362
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +79,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_VLESS_14430_531
+  - AE_HYSTERIA2_443_362
+  - AE_VLESS_14430_573
+  - AE_HYSTERIA2_443_837
+  - AE_HYSTERIA2_443_900
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +94,10 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_14430_531
+  - AE_VLESS_14430_573
+  - AE_HYSTERIA2_443_837
+  - AE_HYSTERIA2_443_900
+  - AE_HYSTERIA2_443_362
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
