@@ -5,31 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_VLESS_2053_899
+- name: IN_VLESS_14430_1033
   type: vless
-  server: 172.235.26.156
-  port: 2053
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  network: ws
-  tls: true
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  client-fingerprint: chrome
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-  country: IN
-- name: IN_VLESS_14430_900
-  type: vless
-  network: ws
   server: 13.140.56.100
   port: 14430
   uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
+  network: ws
   tls: false
+  servername: 13.140.56.100
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 13.140.56.100
-    path: /vless
+  country: IN
+- type: hysteria2
+  name: IN_HYSTERIA2_51000_2293
+  server: 144.24.109.215
+  port: 51000
+  password: d105c6ae-621b-47c1-b85b-075fd6a39aca
+  tls: true
+  servername: cn.cremedelamer.com
+  sni: cn.cremedelamer.com
+  skip-cert-verify: true
   country: IN
 proxy-groups:
 - name: 🚀 节点选择
@@ -44,8 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VLESS_2053_899
-  - IN_VLESS_14430_900
+  - IN_VLESS_14430_1033
+  - IN_HYSTERIA2_51000_2293
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,8 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VLESS_2053_899
-  - IN_VLESS_14430_900
+  - IN_VLESS_14430_1033
+  - IN_HYSTERIA2_51000_2293
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -71,8 +69,8 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VLESS_2053_899
-  - IN_VLESS_14430_900
+  - IN_VLESS_14430_1033
+  - IN_HYSTERIA2_51000_2293
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

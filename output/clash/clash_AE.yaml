@@ -5,41 +5,35 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_14430_573
+- name: AE_VLESS_14430_493
   type: vless
-  network: ws
   server: 95.174.68.188
   port: 14430
   uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  network: ws
   tls: false
+  servername: ''
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 95.174.68.188
-    path: /vless
   country: AE
-- type: hysteria2
-  name: AE_HYSTERIA2_443_837
-  server: 217.60.73.56
-  port: 443
-  password: 69e41e64-a832-471a-b740-94577ca85520
-  tls: true
-  servername: forshynewh.duckdns.org
-  sni: forshynewh.duckdns.org
-  skip-cert-verify: true
+- name: AE_VLESS_22573_585
+  type: vless
+  server: uae.unixzone.us
+  port: 22573
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: uae.unixzone.us
   country: AE
-- type: hysteria2
-  name: AE_HYSTERIA2_443_900
-  server: forshynewh.duckdns.org
-  port: 443
-  password: 69e41e64-a832-471a-b740-94577ca85520
-  tls: true
-  servername: forshynewh.duckdns.org
-  sni: forshynewh.duckdns.org
-  skip-cert-verify: false
-  alpn:
-  - h3
-  country: AE
-- name: AE_HYSTERIA2_443_362
+- name: AE_HYSTERIA2_443_324
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -63,10 +57,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_14430_573
-  - AE_HYSTERIA2_443_837
-  - AE_HYSTERIA2_443_900
-  - AE_HYSTERIA2_443_362
+  - AE_VLESS_14430_493
+  - AE_VLESS_22573_585
+  - AE_HYSTERIA2_443_324
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -79,10 +72,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_362
-  - AE_VLESS_14430_573
-  - AE_HYSTERIA2_443_837
-  - AE_HYSTERIA2_443_900
+  - AE_HYSTERIA2_443_324
+  - AE_VLESS_14430_493
+  - AE_VLESS_22573_585
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -94,10 +86,9 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_14430_573
-  - AE_HYSTERIA2_443_837
-  - AE_HYSTERIA2_443_900
-  - AE_HYSTERIA2_443_362
+  - AE_VLESS_14430_493
+  - AE_VLESS_22573_585
+  - AE_HYSTERIA2_443_324
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

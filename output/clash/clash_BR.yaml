@@ -5,23 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: trojan
-  name: BR_TROJAN_443_412
+- name: BR_TROJAN_443_350
+  type: trojan
   server: 216.238.104.154
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: findtemporaryworkandfreelancerprojectsonlineplatform.com
   sni: findtemporaryworkandfreelancerprojectsonlineplatform.com
-  skip-cert-verify: true
-  country: BR
-- name: BR_HTTP_443_549
-  port: 443
-  server: 134.65.17.77
-  skip-cert-verify: true
-  tls: true
-  type: http
+  network: tcp
   country: BR
 proxy-groups:
 - name: 🚀 节点选择
@@ -36,8 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BR_TROJAN_443_412
-  - BR_HTTP_443_549
+  - BR_TROJAN_443_350
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BR_TROJAN_443_412
-  - BR_HTTP_443_549
+  - BR_TROJAN_443_350
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +51,7 @@ proxy-groups:
 - name: 🌍 BR
   type: url-test
   proxies:
-  - BR_TROJAN_443_412
-  - BR_HTTP_443_549
+  - BR_TROJAN_443_350
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

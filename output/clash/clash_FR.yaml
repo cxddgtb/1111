@@ -5,20 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VLESS_14430_263
+- name: FR_VLESS_14430_264
   type: vless
-  network: ws
   server: 138.124.70.41
   port: 14430
   uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
-  servername: 138.124.70.41
+  network: ws
   tls: false
+  servername: ''
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 138.124.70.41
-    path: /vless
   country: FR
-- name: FR_VMESS_1234_312
+- name: FR_VMESS_1234_297
   type: vmess
   network: tcp
   server: 141.95.65.9
@@ -32,7 +33,7 @@ proxies:
   cipher: aes-128-gcm
   client-fingerprint: chrome
   country: FR
-- name: FR_VMESS_1234_306
+- name: FR_VMESS_1234_296
   type: vmess
   network: tcp
   server: 162.19.204.71
@@ -46,85 +47,85 @@ proxies:
   cipher: auto
   client-fingerprint: chrome
   country: FR
-- name: FR_VLESS_443_392
+- name: FR_VLESS_80_287
   type: vless
   network: ws
-  server: 162.19.254.104
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  servername: t5pmr.mail-node.gfw.kdns.fr
+  server: 152.228.162.19
+  port: 80
+  uuid: 5ce84688-f535-46ad-a512-37b17becf6ea
   skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
+  tls: false
+  encryption: none
   ws-opts:
     headers:
-      Host: t5pmr.mail-node.gfw.kdns.fr
-    path: /danfeng
+      Host: akamaized.net
+    path: /vless/
   country: FR
-- type: hysteria
-  name: FR_HYSTERIA_24667_1416
-  server: 62.210.28.175
-  port: 24667
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-  country: FR
-- type: hysteria
-  name: FR_HYSTERIA_36699_1373
-  server: 163.172.117.163
-  port: 36699
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-  country: FR
-- client-fingerprint: chrome
-  name: FR_VLESS_2053_578
-  network: tcp
-  port: 2053
-  server: w.geogame.ir
-  servername: w.geogame.ir
-  tls: true
+- name: FR_VLESS_80_296
   type: vless
-  uuid: fbda2834-b1e7-4148-afb9-deda31036a30
+  network: ws
+  server: OV-France1.09vpn.com
+  port: 80
+  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
+  skip-cert-verify: false
+  tls: false
+  udp: true
+  encryption: none
+  packet-encoding: xudp
+  ws-opts:
+    headers:
+      Host: OV-France1.09vpn.com
+    path: /vless/
+  country: FR
+- name: FR_VLESS_80_301
+  type: vless
+  network: ws
+  server: ov-france1.09vpn.com
+  port: 80
+  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
+  skip-cert-verify: false
+  tls: false
+  encryption: none
+  ws-opts:
+    headers:
+      Host: ov-france1.09vpn.com
+    path: /vless/
+  country: FR
+- alpn:
+  - h3
+  auth-str: dongtaiwang.com
+  down: 55 Mbps
+  name: FR_HYSTERIA_24667_1411
+  port: 24667
+  protocol: udp
+  server: 62.210.28.175
+  skip-cert-verify: true
+  sni: bing.com
+  type: hysteria
+  up: 11 Mbps
   country: FR
 - cipher: aes-256-gcm
-  name: FR_SS_8388_209
+  name: FR_SS_8388_207
   password: itzvpn@321
   port: 8388
   server: 51.83.192.80
   type: ss
   country: FR
 - cipher: chacha20-ietf-poly1305
-  name: FR_SS_443_210
+  name: FR_SS_443_213
   password: 6heexyz
   port: 443
   server: 54.36.174.140
   type: ss
   country: FR
 - cipher: chacha20-ietf-poly1305
-  name: FR_SS_443_283
+  name: FR_SS_443_296
   password: 6heexyz
   port: 443
   server: pl134.vpnbook.com
   type: ss
   country: FR
-- name: FR_HTTP_443_370
+- name: FR_HTTP_443_367
   port: 443
   server: 82.65.162.76
   skip-cert-verify: true
@@ -132,7 +133,7 @@ proxies:
   type: http
   udp: true
   country: FR
-- name: FR_HTTP_8090_556
+- name: FR_HTTP_8090_803
   port: 8090
   server: 83.206.1.225
   skip-cert-verify: true
@@ -153,18 +154,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VLESS_14430_263
-  - FR_VMESS_1234_312
-  - FR_VMESS_1234_306
-  - FR_VLESS_443_392
-  - FR_HYSTERIA_24667_1416
-  - FR_HYSTERIA_36699_1373
-  - FR_VLESS_2053_578
-  - FR_SS_8388_209
-  - FR_SS_443_210
-  - FR_SS_443_283
-  - FR_HTTP_443_370
-  - FR_HTTP_8090_556
+  - FR_VLESS_14430_264
+  - FR_VMESS_1234_297
+  - FR_VMESS_1234_296
+  - FR_VLESS_80_287
+  - FR_VLESS_80_296
+  - FR_VLESS_80_301
+  - FR_HYSTERIA_24667_1411
+  - FR_SS_8388_207
+  - FR_SS_443_213
+  - FR_SS_443_296
+  - FR_HTTP_443_367
+  - FR_HTTP_8090_803
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -177,18 +178,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_8388_209
-  - FR_SS_443_210
-  - FR_VLESS_14430_263
-  - FR_SS_443_283
-  - FR_VMESS_1234_306
-  - FR_VMESS_1234_312
-  - FR_HTTP_443_370
-  - FR_VLESS_443_392
-  - FR_HTTP_8090_556
-  - FR_VLESS_2053_578
-  - FR_HYSTERIA_36699_1373
-  - FR_HYSTERIA_24667_1416
+  - FR_SS_8388_207
+  - FR_SS_443_213
+  - FR_VLESS_14430_264
+  - FR_VLESS_80_287
+  - FR_VMESS_1234_296
+  - FR_VLESS_80_296
+  - FR_SS_443_296
+  - FR_VMESS_1234_297
+  - FR_VLESS_80_301
+  - FR_HTTP_443_367
+  - FR_HTTP_8090_803
+  - FR_HYSTERIA_24667_1411
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -200,18 +201,18 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VLESS_14430_263
-  - FR_VMESS_1234_312
-  - FR_VMESS_1234_306
-  - FR_VLESS_443_392
-  - FR_HYSTERIA_24667_1416
-  - FR_HYSTERIA_36699_1373
-  - FR_VLESS_2053_578
-  - FR_SS_8388_209
-  - FR_SS_443_210
-  - FR_SS_443_283
-  - FR_HTTP_443_370
-  - FR_HTTP_8090_556
+  - FR_VLESS_14430_264
+  - FR_VMESS_1234_297
+  - FR_VMESS_1234_296
+  - FR_VLESS_80_287
+  - FR_VLESS_80_296
+  - FR_VLESS_80_301
+  - FR_HYSTERIA_24667_1411
+  - FR_SS_8388_207
+  - FR_SS_443_213
+  - FR_SS_443_296
+  - FR_HTTP_443_367
+  - FR_HTTP_8090_803
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,85 +5,58 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_443_296
-  type: vless
-  server: 62.84.162.161
+- type: vless
+  name: DE_VLESS_443_305
+  server: 47.245.134.84
   port: 443
   uuid: 26524cce-d514-4014-a426-365fb266a14d
-  network: ws
+  udp: true
   tls: true
   servername: xy1ej.stream-node-us.danfeng.qzz.io
-  client-fingerprint: chrome
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-  country: DE
-- name: DE_VLESS_443_308
-  type: vless
-  server: 64.227.115.28
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  network: ws
-  tls: true
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  client-fingerprint: chrome
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-  country: DE
-- name: DE_VMESS_8018_338
-  type: vmess
-  network: ws
-  server: d2.anonix.cloud
-  port: 8018
-  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
+  sni: xy1ej.stream-node-us.danfeng.qzz.io
   skip-cert-verify: true
-  tls: false
-  udp: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: shit.67133767.xyz
-    path: /websocket/transfer/gayporn
-  country: DE
-- name: DE_VLESS_2083_591
-  type: vless
-  network: ws
-  server: 195.137.226.133
-  port: 2083
-  uuid: 7f733b1a-6c00-48ac-ae3b-cbc178a9146e
-  servername: nexostore.xnetaro.ir
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
+  alpn:
+  - http/1.1
   client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: xy1ej.stream-node-us.danfeng.qzz.io
+  country: DE
+- type: vless
+  name: DE_VLESS_443_362
+  server: 13.140.94.191
+  port: 443
+  uuid: 1d1eda2e-0bd7-4478-877b-1c5425c6c4dd
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: tradingview.com
+  sni: tradingview.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: yr_opKG6DGTppNDXkk-DhGSYJZXbb9o-caexk2FZO38
+    short-id: 8f3c6e2a1b5d4f09
+  country: DE
+- name: DE_VLESS_80_349
+  type: vless
+  network: ws
+  server: OV-Germany1.09vpn.com
+  port: 80
+  uuid: 7d74eae4-8a06-4306-a923-ad686f30bf26
+  skip-cert-verify: false
+  udp: true
+  encryption: none
+  xudp: true
+  packet-encoding: xudp
   ws-opts:
     headers:
-      Host: nexostore.xnetaro.ir
-    path: /wss?TELEGRAM----
+      Host: OV-Germany1.09vpn.com
+    path: /vless/
   country: DE
-- name: DE_HYSTERIA2_443_310
-  password: 6da2c981-8c77-4340-bda3-93399b7aea26
-  port: 443
-  server: 163.245.41.48
-  sni: blogs.blog-forme.ru
-  tls: false
-  type: hysteria2
-  country: DE
-- name: DE_HYSTERIA2_443_561
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: 443
-  server: 3.76.221.4
-  skip-cert-verify: true
-  sni: 3.76.221.4
-  tls: false
-  type: hysteria2
-  country: DE
-- name: DE_HYSTERIA2_443_931
+- name: DE_HYSTERIA2_443_483
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
   server: vpn-de-002.fastervpn.world
@@ -92,29 +65,7 @@ proxies:
   tls: false
   type: hysteria2
   country: DE
-- type: hysteria
-  name: DE_HYSTERIA_54177_2039
-  server: 5.83.129.90
-  port: 54177
-  password: dongtaiwang.com
-  tls: true
-  servername: apple.com
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-  country: DE
-- name: DE_TROJAN_443_284
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 193.108.119.15
-  sni: courses.iloverussia2026.com
-  type: trojan
-  country: DE
-- name: DE_HTTP_443_388
+- name: DE_HTTP_443_407
   port: 443
   server: 213.109.163.119
   skip-cert-verify: true
@@ -122,7 +73,7 @@ proxies:
   type: http
   udp: true
   country: DE
-- name: DE_HTTP_9002_393
+- name: DE_HTTP_9002_392
   port: 9002
   server: 158.173.154.5
   skip-cert-verify: true
@@ -130,13 +81,27 @@ proxies:
   type: http
   udp: true
   country: DE
-- name: DE_HTTP_9002_402
+- name: DE_HTTP_9002_397
   port: 9002
   server: 158.173.154.1
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
+  country: DE
+- alpn:
+  - h3
+  auth-str: dongtaiwang.com
+  auth_str: dongtaiwang.com
+  down: 1000
+  name: DE_HYSTERIA_54177_2704
+  port: 54177
+  protocol: udp
+  server: 5.83.129.90
+  skip-cert-verify: true
+  sni: apple.com
+  type: hysteria
+  up: 500
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -151,18 +116,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_443_296
-  - DE_VLESS_443_308
-  - DE_VMESS_8018_338
-  - DE_VLESS_2083_591
-  - DE_HYSTERIA2_443_310
-  - DE_HYSTERIA2_443_561
-  - DE_HYSTERIA2_443_931
-  - DE_HYSTERIA_54177_2039
-  - DE_TROJAN_443_284
-  - DE_HTTP_443_388
-  - DE_HTTP_9002_393
-  - DE_HTTP_9002_402
+  - DE_VLESS_443_305
+  - DE_VLESS_443_362
+  - DE_VLESS_80_349
+  - DE_HYSTERIA2_443_483
+  - DE_HTTP_443_407
+  - DE_HTTP_9002_392
+  - DE_HTTP_9002_397
+  - DE_HYSTERIA_54177_2704
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -175,18 +136,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_TROJAN_443_284
-  - DE_VLESS_443_296
-  - DE_VLESS_443_308
-  - DE_HYSTERIA2_443_310
-  - DE_VMESS_8018_338
-  - DE_HTTP_443_388
-  - DE_HTTP_9002_393
-  - DE_HTTP_9002_402
-  - DE_HYSTERIA2_443_561
-  - DE_VLESS_2083_591
-  - DE_HYSTERIA2_443_931
-  - DE_HYSTERIA_54177_2039
+  - DE_VLESS_443_305
+  - DE_VLESS_80_349
+  - DE_VLESS_443_362
+  - DE_HTTP_9002_392
+  - DE_HTTP_9002_397
+  - DE_HTTP_443_407
+  - DE_HYSTERIA2_443_483
+  - DE_HYSTERIA_54177_2704
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -198,18 +155,14 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_443_296
-  - DE_VLESS_443_308
-  - DE_VMESS_8018_338
-  - DE_VLESS_2083_591
-  - DE_HYSTERIA2_443_310
-  - DE_HYSTERIA2_443_561
-  - DE_HYSTERIA2_443_931
-  - DE_HYSTERIA_54177_2039
-  - DE_TROJAN_443_284
-  - DE_HTTP_443_388
-  - DE_HTTP_9002_393
-  - DE_HTTP_9002_402
+  - DE_VLESS_443_305
+  - DE_VLESS_443_362
+  - DE_VLESS_80_349
+  - DE_HYSTERIA2_443_483
+  - DE_HTTP_443_407
+  - DE_HTTP_9002_392
+  - DE_HTTP_9002_397
+  - DE_HYSTERIA_54177_2704
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

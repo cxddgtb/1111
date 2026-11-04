@@ -5,51 +5,47 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BY_VLESS_14430_406
+- name: BY_VLESS_14430_388
   type: vless
-  network: ws
   server: 178.172.227.228
   port: 14430
   uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
+  network: ws
   tls: false
+  servername: 178.172.227.228
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 178.172.227.228
-    path: /vless
   country: BY
-- name: BY_VLESS_14430_380
+- name: BY_VLESS_14430_451
   type: vless
-  network: ws
-  server: 178.172.227.124
-  port: 14430
-  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
-  tls: false
-  encryption: none
-  ws-opts:
-    headers:
-      Host: 178.172.227.124
-    path: /vless
-  country: BY
-- name: BY_VLESS_14430_407
-  type: vless
-  network: ws
   server: 95.128.71.79
   port: 14430
   uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
+  network: ws
   tls: false
-  encryption: none
+  servername: 95.128.71.79
+  client-fingerprint: chrome
   ws-opts:
+    path: /vless
     headers:
       Host: 95.128.71.79
-    path: /vless
   country: BY
-- name: BY_VLESS_10443_251
-  network: tcp
-  port: 10443
-  server: 178.172.227.124
-  tls: false
+- name: BY_VLESS_14430_529
   type: vless
+  server: 178.172.227.124
+  port: 14430
   uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 178.172.227.124
   country: BY
 proxy-groups:
 - name: 🚀 节点选择
@@ -64,10 +60,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BY_VLESS_14430_406
-  - BY_VLESS_14430_380
-  - BY_VLESS_14430_407
-  - BY_VLESS_10443_251
+  - BY_VLESS_14430_388
+  - BY_VLESS_14430_451
+  - BY_VLESS_14430_529
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -80,10 +75,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BY_VLESS_10443_251
-  - BY_VLESS_14430_380
-  - BY_VLESS_14430_406
-  - BY_VLESS_14430_407
+  - BY_VLESS_14430_388
+  - BY_VLESS_14430_451
+  - BY_VLESS_14430_529
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -95,10 +89,9 @@ proxy-groups:
 - name: 🌍 BY
   type: url-test
   proxies:
-  - BY_VLESS_14430_406
-  - BY_VLESS_14430_380
-  - BY_VLESS_14430_407
-  - BY_VLESS_10443_251
+  - BY_VLESS_14430_388
+  - BY_VLESS_14430_451
+  - BY_VLESS_14430_529
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

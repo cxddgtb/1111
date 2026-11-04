@@ -5,27 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: anytls
-  name: TW_ANYTLS_443_934
-  server: 684616s4.df6h451rh.xin
-  port: 443
-  password: 0324fbc29561
-  tls: true
-  servername: px.ads.linkedin.com
-  sni: px.ads.linkedin.com
-  skip-cert-verify: true
-  country: TW
-- type: anytls
-  name: TW_ANYTLS_443_1185
-  server: er8u54dh.df6h451rh.xin
-  port: 443
-  password: 0324fbc29561
-  tls: true
-  servername: px.ads.linkedin.com
-  sni: px.ads.linkedin.com
-  skip-cert-verify: true
-  country: TW
-- name: TW_HYSTERIA2_443_581
+- name: TW_HYSTERIA2_443_584
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
   server: 160.187.100.109
@@ -34,13 +14,23 @@ proxies:
   tls: false
   type: hysteria2
   country: TW
-- type: anytls
-  name: TW_ANYTLS_62405_1837
-  server: user02.godvpn.lol
-  port: 62405
-  password: 4bbfa33a-449a-4a50-8dfc-6d0de880f7bc
-  tls: true
+- name: TW_ANYTLS_443_1766
+  password: 0324fbc29561
+  port: 443
+  server: er8u54dh.df6h451rh.xin
   skip-cert-verify: true
+  sni: px.ads.linkedin.com
+  type: anytls
+  udp: true
+  country: TW
+- name: TW_ANYTLS_443_2969
+  password: 0324fbc29561
+  port: 443
+  server: 684616s4.df6h451rh.xin
+  skip-cert-verify: true
+  sni: px.ads.linkedin.com
+  type: anytls
+  udp: true
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -55,10 +45,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_ANYTLS_443_934
-  - TW_ANYTLS_443_1185
-  - TW_HYSTERIA2_443_581
-  - TW_ANYTLS_62405_1837
+  - TW_HYSTERIA2_443_584
+  - TW_ANYTLS_443_1766
+  - TW_ANYTLS_443_2969
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -71,10 +60,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_HYSTERIA2_443_581
-  - TW_ANYTLS_443_934
-  - TW_ANYTLS_443_1185
-  - TW_ANYTLS_62405_1837
+  - TW_HYSTERIA2_443_584
+  - TW_ANYTLS_443_1766
+  - TW_ANYTLS_443_2969
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -86,10 +74,9 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_ANYTLS_443_934
-  - TW_ANYTLS_443_1185
-  - TW_HYSTERIA2_443_581
-  - TW_ANYTLS_62405_1837
+  - TW_HYSTERIA2_443_584
+  - TW_ANYTLS_443_1766
+  - TW_ANYTLS_443_2969
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
