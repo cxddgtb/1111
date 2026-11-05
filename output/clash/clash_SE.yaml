@@ -5,35 +5,39 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: SE_VLESS_443_332
-  server: 89.125.37.1
-  port: 443
-  uuid: 518079db-d88d-4035-bbf4-ddd1f9cf1e5f
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: se.frgcdn.xyz
-  sni: se.frgcdn.xyz
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: nF_kEdHan2dgl2tlQ_dtNaKZ4oORhuiFrXHbtEDcT2Q
-    short-id: 2d6d073dc88f22a8
-  country: SE
-- name: SE_VLESS_14430_342
+- name: SE_VLESS_14430_360
   type: vless
   server: 5.178.109.174
   port: 14430
   uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
   network: ws
   tls: false
-  servername: 5.178.109.174
+  servername: ''
   client-fingerprint: chrome
   ws-opts:
     path: /vless
     headers:
       Host: 5.178.109.174
+  country: SE
+- name: SE_VLESS_443_2345
+  type: vless
+  network: tcp
+  server: 194.104.94.141
+  port: 443
+  uuid: 6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6
+  servername: se3.shtil.io
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  country: SE
+- cipher: aes-256-gcm
+  name: SE_SS_8388_225
+  password: AxIYWtskJWIIaefW
+  port: 8388
+  server: 70.34.212.124
+  type: ss
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,8 +52,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_443_332
-  - SE_VLESS_14430_342
+  - SE_VLESS_14430_360
+  - SE_VLESS_443_2345
+  - SE_SS_8388_225
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -62,8 +67,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_VLESS_443_332
-  - SE_VLESS_14430_342
+  - SE_SS_8388_225
+  - SE_VLESS_14430_360
+  - SE_VLESS_443_2345
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,8 +81,9 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_443_332
-  - SE_VLESS_14430_342
+  - SE_VLESS_14430_360
+  - SE_VLESS_443_2345
+  - SE_SS_8388_225
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

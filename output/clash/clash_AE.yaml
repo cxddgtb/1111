@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_14430_493
+- name: AE_VLESS_14430_544
   type: vless
   server: 95.174.68.188
   port: 14430
@@ -19,21 +19,20 @@ proxies:
     headers:
       Host: 95.174.68.188
   country: AE
-- name: AE_VLESS_22573_585
+- name: AE_VLESS_22573_572
   type: vless
+  network: ws
   server: uae.unixzone.us
   port: 22573
   uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  network: ws
   tls: false
-  servername: ''
-  client-fingerprint: chrome
+  encryption: none
   ws-opts:
-    path: /
     headers:
       Host: uae.unixzone.us
+    path: /
   country: AE
-- name: AE_HYSTERIA2_443_324
+- name: AE_HYSTERIA2_443_351
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -43,6 +42,20 @@ proxies:
   sni: hy2.aspidnet.xyz
   tls: false
   type: hysteria2
+  country: AE
+- cipher: aes-256-gcm
+  name: AE_SS_19999_261
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 151.241.19.36
+  type: ss
+  country: AE
+- cipher: aes-256-gcm
+  name: AE_SS_19999_259
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 151.241.19.29
+  type: ss
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -57,9 +70,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_14430_493
-  - AE_VLESS_22573_585
-  - AE_HYSTERIA2_443_324
+  - AE_VLESS_14430_544
+  - AE_VLESS_22573_572
+  - AE_HYSTERIA2_443_351
+  - AE_SS_19999_261
+  - AE_SS_19999_259
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -72,9 +87,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_HYSTERIA2_443_324
-  - AE_VLESS_14430_493
-  - AE_VLESS_22573_585
+  - AE_SS_19999_259
+  - AE_SS_19999_261
+  - AE_HYSTERIA2_443_351
+  - AE_VLESS_14430_544
+  - AE_VLESS_22573_572
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -86,9 +103,11 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_14430_493
-  - AE_VLESS_22573_585
-  - AE_HYSTERIA2_443_324
+  - AE_VLESS_14430_544
+  - AE_VLESS_22573_572
+  - AE_HYSTERIA2_443_351
+  - AE_SS_19999_261
+  - AE_SS_19999_259
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

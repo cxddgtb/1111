@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_TROJAN_443_300
+- name: PL_TROJAN_443_370
   type: trojan
   server: 70.34.252.255
   port: 443
@@ -13,7 +13,7 @@ proxies:
   sni: browseexecutivejobopeningsandenhanceleadershipcareer.com
   network: tcp
   country: PL
-- name: PL_HTTP_443_665
+- name: PL_HTTP_443_985
   port: 443
   server: 31.186.220.204
   skip-cert-verify: true
@@ -34,8 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_TROJAN_443_300
-  - PL_HTTP_443_665
+  - PL_TROJAN_443_370
+  - PL_HTTP_443_985
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,8 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_TROJAN_443_300
-  - PL_HTTP_443_665
+  - PL_TROJAN_443_370
+  - PL_HTTP_443_985
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -61,8 +61,8 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_TROJAN_443_300
-  - PL_HTTP_443_665
+  - PL_TROJAN_443_370
+  - PL_HTTP_443_985
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

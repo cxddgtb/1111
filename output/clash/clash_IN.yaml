@@ -5,14 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IN_VLESS_14430_1033
+- name: IN_VLESS_14430_825
   type: vless
   server: 13.140.56.100
   port: 14430
   uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
   network: ws
   tls: false
-  servername: 13.140.56.100
+  servername: ''
   client-fingerprint: chrome
   ws-opts:
     path: /vless
@@ -20,7 +20,7 @@ proxies:
       Host: 13.140.56.100
   country: IN
 - type: hysteria2
-  name: IN_HYSTERIA2_51000_2293
+  name: IN_HYSTERIA2_51000_698
   server: 144.24.109.215
   port: 51000
   password: d105c6ae-621b-47c1-b85b-075fd6a39aca
@@ -42,8 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VLESS_14430_1033
-  - IN_HYSTERIA2_51000_2293
+  - IN_VLESS_14430_825
+  - IN_HYSTERIA2_51000_698
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,8 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VLESS_14430_1033
-  - IN_HYSTERIA2_51000_2293
+  - IN_HYSTERIA2_51000_698
+  - IN_VLESS_14430_825
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -69,8 +69,8 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VLESS_14430_1033
-  - IN_HYSTERIA2_51000_2293
+  - IN_VLESS_14430_825
+  - IN_HYSTERIA2_51000_698
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

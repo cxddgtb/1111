@@ -5,7 +5,15 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_TROJAN_46977_94
+- name: CA_TROJAN_443_117
+  type: trojan
+  server: 216.152.147.152
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.connectingpeoplewithgreatjobs.com
+  network: tcp
+  country: CA
+- name: CA_TROJAN_46977_133
   type: trojan
   server: ca001.zestapp778.com
   port: 46977
@@ -13,53 +21,66 @@ proxies:
   sni: ca001.zestapp778.com
   network: tcp
   country: CA
+- name: CA_VMESS_18000_107
+  type: vmess
+  network: tcp
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  tls: false
+  alterId: 0
+  cipher: auto
+  country: CA
+- name: CA_VMESS_18000_80
+  type: vmess
+  network: tcp
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  udp: true
+  alterId: 0
+  cipher: auto
+  country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8882_38
+  name: CA_SS_8882_76
   password: kDWvXYZoTBcGkC4
   port: 8882
   server: 51.222.136.236
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_5601_33
-  password: Y6R9pAtvxxzmGC
-  port: 5601
-  server: 51.222.155.113
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8119_38
-  password: cdBIDV42DCwnfIN
-  port: 8119
-  server: 51.79.64.198
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5000_789
+  name: CA_SS_5000_396
   password: Y6R9pAtvxxzmGC
   port: 5000
   server: 51.222.200.165
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_910
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.141.125
+  name: CA_SS_8119_482
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 51.79.64.198
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_1091
+  name: CA_SS_5601_1569
+  password: Y6R9pAtvxxzmGC
+  port: 5601
+  server: 51.222.155.113
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_445_2045
   password: zDNVedRFPQexG9v
   port: 445
   server: 51.222.12.127
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8882_1379
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.79.49.116
+  name: CA_SS_445_2939
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.141.125
   type: ss
   country: CA
 proxy-groups:
@@ -75,14 +96,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_TROJAN_46977_94
-  - CA_SS_8882_38
-  - CA_SS_5601_33
-  - CA_SS_8119_38
-  - CA_SS_5000_789
-  - CA_SS_445_910
-  - CA_SS_445_1091
-  - CA_SS_8882_1379
+  - CA_TROJAN_443_117
+  - CA_TROJAN_46977_133
+  - CA_VMESS_18000_107
+  - CA_VMESS_18000_80
+  - CA_SS_8882_76
+  - CA_SS_5000_396
+  - CA_SS_8119_482
+  - CA_SS_5601_1569
+  - CA_SS_445_2045
+  - CA_SS_445_2939
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -95,14 +118,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_5601_33
-  - CA_SS_8882_38
-  - CA_SS_8119_38
-  - CA_TROJAN_46977_94
-  - CA_SS_5000_789
-  - CA_SS_445_910
-  - CA_SS_445_1091
-  - CA_SS_8882_1379
+  - CA_SS_8882_76
+  - CA_VMESS_18000_80
+  - CA_VMESS_18000_107
+  - CA_TROJAN_443_117
+  - CA_TROJAN_46977_133
+  - CA_SS_5000_396
+  - CA_SS_8119_482
+  - CA_SS_5601_1569
+  - CA_SS_445_2045
+  - CA_SS_445_2939
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -114,14 +139,16 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_TROJAN_46977_94
-  - CA_SS_8882_38
-  - CA_SS_5601_33
-  - CA_SS_8119_38
-  - CA_SS_5000_789
-  - CA_SS_445_910
-  - CA_SS_445_1091
-  - CA_SS_8882_1379
+  - CA_TROJAN_443_117
+  - CA_TROJAN_46977_133
+  - CA_VMESS_18000_107
+  - CA_VMESS_18000_80
+  - CA_SS_8882_76
+  - CA_SS_5000_396
+  - CA_SS_8119_482
+  - CA_SS_5601_1569
+  - CA_SS_445_2045
+  - CA_SS_445_2939
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

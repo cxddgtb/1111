@@ -6,26 +6,35 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: vless
-  name: NL_VLESS_8443_278
-  server: 62.132.3.104
-  port: 8443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  name: NL_VLESS_443_338
+  server: 188.116.27.6
+  port: 443
+  uuid: 7e81eba3-28fe-4cf6-b397-d5c08fea38ab
+  flow: xtls-rprx-vision
   udp: true
   tls: true
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  sni: xy1ej.stream-node-us.danfeng.qzz.io
+  servername: www.sony.co.uk
+  sni: www.sony.co.uk
   skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: mprwTEsQ9nJ78qG7BJskAWXaVfDxeMHBkQHbReVfMnc
+    short-id: '1174'
   country: NL
 - type: vless
-  name: NL_VLESS_444_295
+  name: NL_VLESS_444_291
+  server: 177.177.215.45
+  port: 444
+  uuid: 254f28cb-d0c1-41e9-a06b-f2155213ff04
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: ams2.shtil.io
+  sni: ams2.shtil.io
+  skip-cert-verify: true
+  country: NL
+- type: vless
+  name: NL_VLESS_444_411
   server: ams2.shtil.io
   port: 444
   uuid: 254f28cb-d0c1-41e9-a06b-f2155213ff04
@@ -40,49 +49,7 @@ proxies:
   - http/1.1
   client-fingerprint: firefox
   country: NL
-- type: vless
-  name: NL_VLESS_444_289
-  server: 177.177.215.45
-  port: 444
-  uuid: 254f28cb-d0c1-41e9-a06b-f2155213ff04
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: ams2.shtil.io
-  sni: ams2.shtil.io
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  country: NL
-- type: vless
-  name: NL_VLESS_25362_2282
-  server: 79.182.39.236
-  port: 25362
-  uuid: 36fb6650-8a50-42b5-9f66-06538806f32c
-  udp: true
-  tls: true
-  servername: www.chip.de
-  sni: www.chip.de
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: hFee7zTreqlv_wccK_8zxN5v23hj9u-DshByvGf-KAA
-    short-id: 23732d14a527990d
-  country: NL
-- name: NL_VLESS_443_350
-  type: vless
-  server: 198.211.123.90
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  network: ws
-  tls: true
-  servername: ccc.010304.xyz
-  client-fingerprint: chrome
-  ws-opts:
-    path: /fp=unsafefp=chrome
-    headers:
-      Host: ccc.010304.xyz
-  country: NL
-- name: NL_VMESS_1234_311
+- name: NL_VMESS_1234_305
   type: vmess
   network: tcp
   server: 45.90.106.24
@@ -95,7 +62,47 @@ proxies:
   alterId: 0
   cipher: aes-128-gcm
   country: NL
-- name: NL_HYSTERIA2_443_254
+- name: NL_VLESS_80_292
+  type: vless
+  network: ws
+  server: sc-thenetherlands1.09vpn.com
+  port: 80
+  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
+  skip-cert-verify: false
+  tls: false
+  udp: true
+  encryption: none
+  packet-encoding: xudp
+  ws-opts:
+    headers:
+      Host: sc-thenetherlands1.09vpn.com
+    path: /vless/
+  country: NL
+- name: NL_VLESS_80_302
+  type: vless
+  network: ws
+  server: SC-TheNetherlands1.09vpn.com
+  port: 80
+  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
+  skip-cert-verify: false
+  tls: false
+  encryption: none
+  ws-opts:
+    headers:
+      Host: SC-TheNetherlands1.09vpn.com
+    path: /vless/
+  country: NL
+- name: NL_VMESS_11674_484
+  type: vmess
+  network: tcp
+  server: 176.65.151.175
+  port: 11674
+  uuid: a98a98cb-ae86-43ae-b695-cf0dbcad3fc2
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
+  country: NL
+- name: NL_HYSTERIA2_443_299
   password: f4b80b26-b6d4-49a6-a460-f50efb7a457c
   port: 443
   server: 45.91.237.78
@@ -103,7 +110,7 @@ proxies:
   tls: false
   type: hysteria2
   country: NL
-- name: NL_HTTP_19362_339
+- name: NL_HTTP_19362_393
   port: 19362
   server: 51.159.225.197
   skip-cert-verify: true
@@ -111,7 +118,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_23856_355
+- name: NL_HTTP_23856_386
   password: 'null'
   port: 23856
   server: 51.159.225.196
@@ -121,7 +128,7 @@ proxies:
   udp: true
   username: 'null'
   country: NL
-- name: NL_HTTP_443_356
+- name: NL_HTTP_443_402
   password: 'null'
   port: 443
   server: 103.97.88.154
@@ -131,7 +138,15 @@ proxies:
   udp: true
   username: 'null'
   country: NL
-- name: NL_HTTP_9002_363
+- name: NL_HTTP_9002_421
+  port: 9002
+  server: 84.17.47.124
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_420
   password: None
   port: 9002
   server: 84.17.47.148
@@ -140,15 +155,15 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_373
+- name: NL_HTTP_9002_419
   port: 9002
-  server: 84.17.47.124
+  server: 84.17.47.125
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_363_2
+- name: NL_HTTP_9002_426
   password: None
   port: 9002
   server: 84.17.47.149
@@ -157,21 +172,25 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_372
-  port: 9002
-  server: 84.17.47.125
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_368
+- name: NL_HTTP_9002_427
   password: None
   port: 9002
   server: 84.17.47.123
   skip-cert-verify: true
   tls: true
   type: http
+  udp: true
+  country: NL
+- name: NL_SSR_33336_317
+  server: 109.104.153.43
+  port: 33336
+  type: ssr
+  cipher: chacha20-ietf
+  password: dongtaiwang.com
+  protocol: auth_chain_a
+  obfs: tls1.2_ticket_auth
+  protocolparam: ''
+  obfsparam: ''
   udp: true
   country: NL
 proxy-groups:
@@ -187,21 +206,23 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_VLESS_8443_278
-  - NL_VLESS_444_295
-  - NL_VLESS_444_289
-  - NL_VLESS_25362_2282
-  - NL_VLESS_443_350
-  - NL_VMESS_1234_311
-  - NL_HYSTERIA2_443_254
-  - NL_HTTP_19362_339
-  - NL_HTTP_23856_355
-  - NL_HTTP_443_356
-  - NL_HTTP_9002_363
-  - NL_HTTP_9002_373
-  - NL_HTTP_9002_363_2
-  - NL_HTTP_9002_372
-  - NL_HTTP_9002_368
+  - NL_VLESS_443_338
+  - NL_VLESS_444_291
+  - NL_VLESS_444_411
+  - NL_VMESS_1234_305
+  - NL_VLESS_80_292
+  - NL_VLESS_80_302
+  - NL_VMESS_11674_484
+  - NL_HYSTERIA2_443_299
+  - NL_HTTP_19362_393
+  - NL_HTTP_23856_386
+  - NL_HTTP_443_402
+  - NL_HTTP_9002_421
+  - NL_HTTP_9002_420
+  - NL_HTTP_9002_419
+  - NL_HTTP_9002_426
+  - NL_HTTP_9002_427
+  - NL_SSR_33336_317
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -214,21 +235,23 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_HYSTERIA2_443_254
-  - NL_VLESS_8443_278
-  - NL_VLESS_444_289
-  - NL_VLESS_444_295
-  - NL_VMESS_1234_311
-  - NL_HTTP_19362_339
-  - NL_VLESS_443_350
-  - NL_HTTP_23856_355
-  - NL_HTTP_443_356
-  - NL_HTTP_9002_363
-  - NL_HTTP_9002_363_2
-  - NL_HTTP_9002_368
-  - NL_HTTP_9002_372
-  - NL_HTTP_9002_373
-  - NL_VLESS_25362_2282
+  - NL_VLESS_444_291
+  - NL_VLESS_80_292
+  - NL_HYSTERIA2_443_299
+  - NL_VLESS_80_302
+  - NL_VMESS_1234_305
+  - NL_SSR_33336_317
+  - NL_VLESS_443_338
+  - NL_HTTP_23856_386
+  - NL_HTTP_19362_393
+  - NL_HTTP_443_402
+  - NL_VLESS_444_411
+  - NL_HTTP_9002_419
+  - NL_HTTP_9002_420
+  - NL_HTTP_9002_421
+  - NL_HTTP_9002_426
+  - NL_HTTP_9002_427
+  - NL_VMESS_11674_484
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -240,21 +263,23 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_VLESS_8443_278
-  - NL_VLESS_444_295
-  - NL_VLESS_444_289
-  - NL_VLESS_25362_2282
-  - NL_VLESS_443_350
-  - NL_VMESS_1234_311
-  - NL_HYSTERIA2_443_254
-  - NL_HTTP_19362_339
-  - NL_HTTP_23856_355
-  - NL_HTTP_443_356
-  - NL_HTTP_9002_363
-  - NL_HTTP_9002_373
-  - NL_HTTP_9002_363_2
-  - NL_HTTP_9002_372
-  - NL_HTTP_9002_368
+  - NL_VLESS_443_338
+  - NL_VLESS_444_291
+  - NL_VLESS_444_411
+  - NL_VMESS_1234_305
+  - NL_VLESS_80_292
+  - NL_VLESS_80_302
+  - NL_VMESS_11674_484
+  - NL_HYSTERIA2_443_299
+  - NL_HTTP_19362_393
+  - NL_HTTP_23856_386
+  - NL_HTTP_443_402
+  - NL_HTTP_9002_421
+  - NL_HTTP_9002_420
+  - NL_HTTP_9002_419
+  - NL_HTTP_9002_426
+  - NL_HTTP_9002_427
+  - NL_SSR_33336_317
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
