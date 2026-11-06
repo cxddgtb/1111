@@ -5,7 +5,40 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CH_VLESS_443_433
+- type: trojan
+  name: CH_TROJAN_443_376
+  server: 208.69.78.29
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: learn.yourultimateprofessionalcareerhub.com
+  sni: learn.yourultimateprofessionalcareerhub.com
+  skip-cert-verify: false
+  country: CH
+- type: trojan
+  name: CH_TROJAN_443_371
+  server: 208.69.78.19
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: www.yourultimateprofessionalcareerhub.com
+  sni: www.yourultimateprofessionalcareerhub.com
+  skip-cert-verify: false
+  country: CH
+- type: trojan
+  name: CH_TROJAN_443_371_2
+  server: 208.69.78.208
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: resources.yourultimateprofessionalcareerhub.com
+  sni: resources.yourultimateprofessionalcareerhub.com
+  skip-cert-verify: false
+  country: CH
+- name: CH_VLESS_443_381
   type: vless
   network: tcp
   server: 179.43.187.67
@@ -17,6 +50,50 @@ proxies:
   udp: true
   tfo: false
   client-fingerprint: chrome
+  country: CH
+- client-fingerprint: firefox
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: 138-124-86-230-sslip-io
+  name: CH_VLESS_48115_400
+  network: grpc
+  port: 48115
+  server: 138.124.86.230
+  servername: 138-124-86-230.sslip.io
+  tls: true
+  type: vless
+  udp: true
+  uuid: b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b
+  country: CH
+- name: CH_HTTP_9443_445
+  password: None
+  port: 9443
+  server: 149.88.27.33
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CH
+- name: CH_HTTP_443_503
+  port: 443
+  server: 31.7.62.50
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: CH
+- name: CH_HTTP_11107_341
+  port: 11107
+  server: 147.161.246.38
+  skip-cert-verify: true
+  type: http
+  country: CH
+- name: CH_TROJAN_443_352
+  server: 208.69.78.33
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.yourultimateprofessionalcareerhub.com
+  skip-cert-verify: true
+  udp: true
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -31,7 +108,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_VLESS_443_433
+  - CH_TROJAN_443_376
+  - CH_TROJAN_443_371
+  - CH_TROJAN_443_371_2
+  - CH_VLESS_443_381
+  - CH_VLESS_48115_400
+  - CH_HTTP_9443_445
+  - CH_HTTP_443_503
+  - CH_HTTP_11107_341
+  - CH_TROJAN_443_352
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,7 +129,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_VLESS_443_433
+  - CH_HTTP_11107_341
+  - CH_TROJAN_443_352
+  - CH_TROJAN_443_371
+  - CH_TROJAN_443_371_2
+  - CH_TROJAN_443_376
+  - CH_VLESS_443_381
+  - CH_VLESS_48115_400
+  - CH_HTTP_9443_445
+  - CH_HTTP_443_503
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -56,7 +149,15 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_VLESS_443_433
+  - CH_TROJAN_443_376
+  - CH_TROJAN_443_371
+  - CH_TROJAN_443_371_2
+  - CH_VLESS_443_381
+  - CH_VLESS_48115_400
+  - CH_HTTP_9443_445
+  - CH_HTTP_443_503
+  - CH_HTTP_11107_341
+  - CH_TROJAN_443_352
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

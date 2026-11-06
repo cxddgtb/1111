@@ -5,82 +5,117 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SG_VLESS_56984_693
-  type: vless
-  server: sg1.zestapp778.com
-  port: 56984
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  network: tcp
-  tls: true
-  servername: sg1.zestapp778.com
-  client-fingerprint: chrome
-  ws-opts: null
-  country: SG
-- name: SG_VLESS_443_739
-  type: vless
-  server: 45.77.243.143
-  port: 443
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  network: tcp
-  tls: true
-  servername: sg003.zestapp778.com
-  client-fingerprint: chrome
-  ws-opts: null
-  country: SG
-- name: SG_TROJAN_443_660
-  type: trojan
-  server: 149.28.130.108
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: searchcreativejobsandshowcaseyourartistictalents.com
-  network: tcp
-  country: SG
-- name: SG_VLESS_443_678
-  type: vless
-  server: 134.255.211.36
-  port: 443
-  uuid: c5f59ef3-9540-49fa-bd1e-c6c2f79df49a
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: chrome
-  servername: sg-sin.probe.geomyip.com
-  reality-opts:
-    public-key: KcI3PoYu2yF7whv-e0C7JnRyUoUiUDu6tOlUBPYYbCk
-    short-id: 2e96bf6afa823abb
-  country: SG
-- name: SG_VMESS_18000_462
-  type: vmess
-  network: tcp
-  server: 149.88.23.202
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  udp: true
-  alterId: 0
-  cipher: auto
-  country: SG
-- name: SG_VMESS_18000_453
-  type: vmess
-  network: tcp
+- type: vmess
+  name: SG_VMESS_18000_419
   server: 149.88.23.207
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  udp: true
-  alterId: 0
   cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
   country: SG
-- name: SG_VLESS_56984_666
-  type: vless
-  network: tcp
+- type: vmess
+  name: SG_VMESS_18000_528
+  server: ww11.levikogjgfdd.ir
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: SG
+- type: vless
+  name: SG_VLESS_56984_629
   server: 140.235.11.243
   port: 56984
   uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  servername: sg1.zestapp778.com
-  skip-cert-verify: false
-  tls: true
   udp: true
-  tfo: false
+  tls: true
+  servername: sg1.zestapp778.com
+  sni: sg1.zestapp778.com
+  skip-cert-verify: false
   client-fingerprint: chrome
+  country: SG
+- type: trojan
+  name: SG_TROJAN_443_654
+  server: 149.28.130.108
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: searchcreativejobsandshowcaseyourartistictalents.com
+  sni: searchcreativejobsandshowcaseyourartistictalents.com
+  skip-cert-verify: false
+  country: SG
+- type: vless
+  name: SG_VLESS_443_640
+  server: 206.206.76.75
+  port: 443
+  uuid: 32cf52f4-b8d2-4ed5-a37c-0d0a8e743309
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  sni: www.cloudflare.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: gSHylaTvEzWj19Bk-zLHXKYUINGWVmo_ybCiD2CRinE
+    short-id: a775360a48ef5cfb
+  country: SG
+- type: vless
+  name: SG_VLESS_443_2044
+  server: 43.163.112.174
+  port: 443
+  uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  sni: www.cloudflare.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
+    short-id: 0123456789abcdef
+  country: SG
+- client-fingerprint: firefox
+  name: SG_VLESS_443_626
+  network: tcp
+  port: 443
+  server: 45.76.155.179
+  servername: sg003.zestapp778.com
+  tls: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  country: SG
+- client-fingerprint: chrome
+  name: SG_VLESS_56984_663
+  port: 56984
+  server: sg1.zestapp778.com
+  servername: sg1.zestapp778.com
+  tls: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  country: SG
+- name: SG_HTTP_443_840
+  password: None
+  port: 443
+  server: 156.146.56.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: SG
+- name: SG_HTTP_9443_823
+  port: 9443
+  server: 149.88.99.209
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -95,13 +130,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VLESS_56984_693
-  - SG_VLESS_443_739
-  - SG_TROJAN_443_660
-  - SG_VLESS_443_678
-  - SG_VMESS_18000_462
-  - SG_VMESS_18000_453
-  - SG_VLESS_56984_666
+  - SG_VMESS_18000_419
+  - SG_VMESS_18000_528
+  - SG_VLESS_56984_629
+  - SG_TROJAN_443_654
+  - SG_VLESS_443_640
+  - SG_VLESS_443_2044
+  - SG_VLESS_443_626
+  - SG_VLESS_56984_663
+  - SG_HTTP_443_840
+  - SG_HTTP_9443_823
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -114,13 +152,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_VMESS_18000_453
-  - SG_VMESS_18000_462
-  - SG_TROJAN_443_660
-  - SG_VLESS_56984_666
-  - SG_VLESS_443_678
-  - SG_VLESS_56984_693
-  - SG_VLESS_443_739
+  - SG_VMESS_18000_419
+  - SG_VMESS_18000_528
+  - SG_VLESS_443_626
+  - SG_VLESS_56984_629
+  - SG_VLESS_443_640
+  - SG_TROJAN_443_654
+  - SG_VLESS_56984_663
+  - SG_HTTP_9443_823
+  - SG_HTTP_443_840
+  - SG_VLESS_443_2044
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -132,13 +173,16 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VLESS_56984_693
-  - SG_VLESS_443_739
-  - SG_TROJAN_443_660
-  - SG_VLESS_443_678
-  - SG_VMESS_18000_462
-  - SG_VMESS_18000_453
-  - SG_VLESS_56984_666
+  - SG_VMESS_18000_419
+  - SG_VMESS_18000_528
+  - SG_VLESS_56984_629
+  - SG_TROJAN_443_654
+  - SG_VLESS_443_640
+  - SG_VLESS_443_2044
+  - SG_VLESS_443_626
+  - SG_VLESS_56984_663
+  - SG_HTTP_443_840
+  - SG_HTTP_9443_823
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

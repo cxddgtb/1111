@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SC_VLESS_2083_140
+- name: SC_VLESS_2083_58
   type: vless
   network: ws
   server: 154.218.15.250
@@ -21,6 +21,23 @@ proxies:
       Host: proxy-1cu.pages.dev
     path: /
   country: SC
+- name: SC_VLESS_443_869
+  type: vless
+  network: ws
+  server: 155.212.240.10
+  port: 443
+  uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
+  servername: n.bitpulse.me
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: n.bitpulse.me
+    path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed
+  country: SC
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -34,7 +51,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SC_VLESS_2083_140
+  - SC_VLESS_2083_58
+  - SC_VLESS_443_869
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +65,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SC_VLESS_2083_140
+  - SC_VLESS_2083_58
+  - SC_VLESS_443_869
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +78,8 @@ proxy-groups:
 - name: 🌍 SC
   type: url-test
   proxies:
-  - SC_VLESS_2083_140
+  - SC_VLESS_2083_58
+  - SC_VLESS_443_869
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

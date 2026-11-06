@@ -6,11 +6,97 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: chacha20-ietf-poly1305
-  name: RO_SS_64546_632
+  name: RO_SS_443_308
+  password: QFWzCw2uX9B9i6qAYeFBIE
+  port: 443
+  server: 154.46.31.106
+  type: ss
+  country: RO
+- cipher: chacha20-ietf-poly1305
+  name: RO_SS_64546_645
   password: U83u9OGpvSatIUW7LsWffr
   port: 64546
   server: 194.68.44.42
   type: ss
+  country: RO
+- name: RO_HTTP_9002_639
+  password: None
+  port: 9002
+  server: 193.176.84.27
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_629
+  password: None
+  port: 9002
+  server: 193.176.84.20
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_443_628
+  port: 443
+  server: 185.163.110.194
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_631
+  password: None
+  port: 9002
+  server: 193.176.84.22
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_656
+  port: 9002
+  server: 193.176.84.37
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_668
+  password: None
+  port: 9002
+  server: 193.176.84.36
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9443_552
+  password: None
+  port: 9443
+  server: 169.150.199.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_650
+  port: 9002
+  server: 193.176.84.17
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_629_2
+  port: 9002
+  server: 193.176.84.30
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
+  country: RO
+- name: RO_HTTP_9002_636
+  port: 9002
+  server: 193.176.84.35
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
   country: RO
 proxy-groups:
 - name: 🚀 节点选择
@@ -25,7 +111,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_SS_64546_632
+  - RO_SS_443_308
+  - RO_SS_64546_645
+  - RO_HTTP_9002_639
+  - RO_HTTP_9002_629
+  - RO_HTTP_443_628
+  - RO_HTTP_9002_631
+  - RO_HTTP_9002_656
+  - RO_HTTP_9002_668
+  - RO_HTTP_9443_552
+  - RO_HTTP_9002_650
+  - RO_HTTP_9002_629_2
+  - RO_HTTP_9002_636
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +135,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_SS_64546_632
+  - RO_SS_443_308
+  - RO_HTTP_9443_552
+  - RO_HTTP_443_628
+  - RO_HTTP_9002_629
+  - RO_HTTP_9002_629_2
+  - RO_HTTP_9002_631
+  - RO_HTTP_9002_636
+  - RO_HTTP_9002_639
+  - RO_SS_64546_645
+  - RO_HTTP_9002_650
+  - RO_HTTP_9002_656
+  - RO_HTTP_9002_668
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +158,18 @@ proxy-groups:
 - name: 🌍 RO
   type: url-test
   proxies:
-  - RO_SS_64546_632
+  - RO_SS_443_308
+  - RO_SS_64546_645
+  - RO_HTTP_9002_639
+  - RO_HTTP_9002_629
+  - RO_HTTP_443_628
+  - RO_HTTP_9002_631
+  - RO_HTTP_9002_656
+  - RO_HTTP_9002_668
+  - RO_HTTP_9443_552
+  - RO_HTTP_9002_650
+  - RO_HTTP_9002_629_2
+  - RO_HTTP_9002_636
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

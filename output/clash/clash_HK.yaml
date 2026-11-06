@@ -5,52 +5,39 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_44867_586
-  type: vmess
-  server: 47.244.120.197
-  port: 44867
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /arki
-    headers:
-      Host: ''
+- type: vless
+  name: HK_VLESS_443_638
+  server: 85.155.149.190
+  port: 443
+  uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: hk1.japancase.site
+  sni: hk1.japancase.site
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: pGCqNljaUIUVC7xpHa9nFnu6vsQ0OX3QyfvYMhLZuWY
+    short-id: bee10b047804c637
   country: HK
-- name: HK_VMESS_36703_580
-  type: vmess
-  server: 47.244.120.197
-  port: 36703
-  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /arki
-    headers:
-      Host: ''
+- type: vless
+  name: HK_VLESS_443_762
+  server: hk1.japancase.site
+  port: 443
+  uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: hk1.japancase.site
+  sni: hk1.japancase.site
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: pGCqNljaUIUVC7xpHa9nFnu6vsQ0OX3QyfvYMhLZuWY
+    short-id: bee10b047804c637
   country: HK
-- name: HK_VMESS_23026_577
-  type: vmess
-  server: 47.244.120.197
-  port: 23026
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: 47.244.120.197
-  ws-opts:
-    path: /arki
-    headers:
-      Host: 47.244.120.197
-  country: HK
-- name: HK_TROJAN_443_686
+- name: HK_TROJAN_443_687
   type: trojan
   network: tcp
   server: 119.246.1.143
@@ -59,29 +46,30 @@ proxies:
   skip-cert-verify: true
   sni: t.me/ripaojiedian
   country: HK
-- name: HK_VMESS_50007_819
-  type: vmess
-  network: ws
-  server: hk.wawojk.dpdns.org
-  port: 50007
-  uuid: 0d824a74-1207-48c4-a7a0-d283d5f10b4e
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: hk.wawojk.dpdns.org
-    path: /hk-vmess-ws-c9f3a2
+- name: HK_HYSTERIA2_5010_575
+  obfs: salamander
+  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
+  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
+  port: 5010
+  server: 152.32.254.68
+  skip-cert-verify: false
+  sni: nas.aizhzo.com
+  tls: false
+  type: hysteria2
   country: HK
-- name: HK_ANYTLS_443_981
-  password: 0324fbc29561
-  port: 443
-  server: 56481.df6h451rh.xin
+- alterId: 0
+  cipher: auto
+  name: HK_VMESS_36703_1212
+  network: ws
+  port: 36703
+  server: 47.244.120.197
   skip-cert-verify: true
-  sni: images.ctfassets.net
-  type: anytls
+  tls: false
+  type: vmess
   udp: true
+  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
+  ws-opts:
+    path: /arki
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -96,12 +84,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_44867_586
-  - HK_VMESS_36703_580
-  - HK_VMESS_23026_577
-  - HK_TROJAN_443_686
-  - HK_VMESS_50007_819
-  - HK_ANYTLS_443_981
+  - HK_VLESS_443_638
+  - HK_VLESS_443_762
+  - HK_TROJAN_443_687
+  - HK_HYSTERIA2_5010_575
+  - HK_VMESS_36703_1212
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -114,12 +101,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_23026_577
-  - HK_VMESS_36703_580
-  - HK_VMESS_44867_586
-  - HK_TROJAN_443_686
-  - HK_VMESS_50007_819
-  - HK_ANYTLS_443_981
+  - HK_HYSTERIA2_5010_575
+  - HK_VLESS_443_638
+  - HK_TROJAN_443_687
+  - HK_VLESS_443_762
+  - HK_VMESS_36703_1212
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -131,12 +117,11 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_44867_586
-  - HK_VMESS_36703_580
-  - HK_VMESS_23026_577
-  - HK_TROJAN_443_686
-  - HK_VMESS_50007_819
-  - HK_ANYTLS_443_981
+  - HK_VLESS_443_638
+  - HK_VLESS_443_762
+  - HK_TROJAN_443_687
+  - HK_HYSTERIA2_5010_575
+  - HK_VMESS_36703_1212
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,26 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GE_HTTP_443_696
+- name: GE_HTTP_443_727
   port: 443
   server: 195.54.178.210
   skip-cert-verify: true
   tls: true
   type: http
-  country: GE
-- name: GE_TROJAN_2053_846
-  network: ws
-  password: humanity
-  port: 2053
-  server: 194.135.119.82
-  skip-cert-verify: true
-  sni: www.cordweave.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: www.cordweave.com
-    path: /assignment
   country: GE
 proxy-groups:
 - name: 🚀 节点选择
@@ -39,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GE_HTTP_443_696
-  - GE_TROJAN_2053_846
+  - GE_HTTP_443_727
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -53,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GE_HTTP_443_696
-  - GE_TROJAN_2053_846
+  - GE_HTTP_443_727
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -66,8 +50,7 @@ proxy-groups:
 - name: 🌍 GE
   type: url-test
   proxies:
-  - GE_HTTP_443_696
-  - GE_TROJAN_2053_846
+  - GE_HTTP_443_727
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

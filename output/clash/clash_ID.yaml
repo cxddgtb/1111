@@ -5,19 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ID_VLESS_587_962
-  type: vless
-  server: 147.139.139.151
-  port: 587
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  network: ws
+- type: vless
+  name: ID_VLESS_57353_737
+  server: in001.zestapp778.com
+  port: 57353
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  udp: true
   tls: true
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
+  servername: in001.zestapp778.com
+  sni: in001.zestapp778.com
+  skip-cert-verify: false
   client-fingerprint: chrome
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
   country: ID
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +30,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ID_VLESS_587_962
+  - ID_VLESS_57353_737
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +43,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ID_VLESS_587_962
+  - ID_VLESS_57353_737
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +55,7 @@ proxy-groups:
 - name: 🌍 ID
   type: url-test
   proxies:
-  - ID_VLESS_587_962
+  - ID_VLESS_57353_737
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
