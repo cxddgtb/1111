@@ -6,7 +6,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: vmess
-  name: KR_VMESS_800_462
+  name: KR_VMESS_800_474
   server: 129.154.61.196
   port: 800
   uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
@@ -15,6 +15,36 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: false
+  country: KR
+- type: vmess
+  name: KR_VMESS_443_436
+  server: 140.238.2.250
+  port: 443
+  uuid: 41a7089a-040b-4538-8b8d-010902405bde
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: KR
+- name: KR_VLESS_25555_661
+  network: ws
+  port: 25555
+  server: 152.69.226.63
+  servername: 152.69.226.63
+  tls: false
+  type: vless
+  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
+  ws-opts:
+    path: /
+  country: KR
+- name: KR_TROJAN_48851_678
+  password: 5t6i121em5lkmsmk
+  port: 48851
+  server: kr002.zestapp778.com
+  skip-cert-verify: true
+  sni: kr002.zestapp778.com
+  type: trojan
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +59,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_800_462
+  - KR_VMESS_800_474
+  - KR_VMESS_443_436
+  - KR_VLESS_25555_661
+  - KR_TROJAN_48851_678
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +75,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_800_462
+  - KR_VMESS_443_436
+  - KR_VMESS_800_474
+  - KR_VLESS_25555_661
+  - KR_TROJAN_48851_678
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +90,10 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_800_462
+  - KR_VMESS_800_474
+  - KR_VMESS_443_436
+  - KR_VLESS_25555_661
+  - KR_TROJAN_48851_678
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

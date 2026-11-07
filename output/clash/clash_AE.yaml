@@ -5,20 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_14430_526
-  type: vless
-  network: ws
-  server: 95.174.68.188
-  port: 14430
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  servername: 95.174.68.188
-  tls: false
-  ws-opts:
-    headers:
-      Host: 95.174.68.188
-    path: /vless
-  country: AE
-- name: AE_HYSTERIA2_443_350
+- name: AE_HYSTERIA2_443_314
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -29,15 +16,41 @@ proxies:
   tls: false
   type: hysteria2
   country: AE
+- name: AE_VLESS_22573_500
+  network: ws
+  port: 22573
+  server: 84.235.244.108
+  servername: uae.unixzone.us
+  tls: false
+  type: vless
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  ws-opts:
+    headers:
+      Host: uae.unixzone.us
+    path: /
+  country: AE
+- name: AE_VLESS_14430_740
+  network: ws
+  port: 14430
+  server: 95.174.68.188
+  servername: 95.174.68.188
+  tls: false
+  type: vless
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  ws-opts:
+    headers:
+      Host: 95.174.68.188
+    path: /vless
+  country: AE
 - cipher: aes-256-gcm
-  name: AE_SS_19999_200
+  name: AE_SS_19999_169
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 151.241.19.36
   type: ss
   country: AE
 - cipher: aes-256-gcm
-  name: AE_SS_19999_202
+  name: AE_SS_19999_183
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 151.241.19.29
@@ -56,10 +69,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_14430_526
-  - AE_HYSTERIA2_443_350
-  - AE_SS_19999_200
-  - AE_SS_19999_202
+  - AE_HYSTERIA2_443_314
+  - AE_VLESS_22573_500
+  - AE_VLESS_14430_740
+  - AE_SS_19999_169
+  - AE_SS_19999_183
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -72,10 +86,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_SS_19999_200
-  - AE_SS_19999_202
-  - AE_HYSTERIA2_443_350
-  - AE_VLESS_14430_526
+  - AE_SS_19999_169
+  - AE_SS_19999_183
+  - AE_HYSTERIA2_443_314
+  - AE_VLESS_22573_500
+  - AE_VLESS_14430_740
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -87,10 +102,11 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_14430_526
-  - AE_HYSTERIA2_443_350
-  - AE_SS_19999_200
-  - AE_SS_19999_202
+  - AE_HYSTERIA2_443_314
+  - AE_VLESS_22573_500
+  - AE_VLESS_14430_740
+  - AE_SS_19999_169
+  - AE_SS_19999_183
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

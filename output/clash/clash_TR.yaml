@@ -6,7 +6,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: vless
-  name: TR_VLESS_443_631
+  name: TR_VLESS_443_619
   server: tr1.japancase.site
   port: 443
   uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
@@ -34,7 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_VLESS_443_631
+  - TR_VLESS_443_619
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -47,7 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_VLESS_443_631
+  - TR_VLESS_443_619
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,7 +59,7 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_VLESS_443_631
+  - TR_VLESS_443_619
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

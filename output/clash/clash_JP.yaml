@@ -6,19 +6,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: vless
-  name: JP_VLESS_443_465
-  server: 23.27.11.86
-  port: 443
-  uuid: e8a346c2-e14c-4f82-876f-367dc19ee541
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: jp.burmy.xyz
-  sni: jp.burmy.xyz
-  skip-cert-verify: false
-  country: JP
-- type: vless
-  name: JP_VLESS_47878_323
+  name: JP_VLESS_47878_333
   server: 152.69.195.67
   port: 47878
   uuid: eb8613e3-8393-4cff-a3ad-6501fd4adc63
@@ -26,48 +14,34 @@ proxies:
   tls: false
   skip-cert-verify: false
   country: JP
-- name: JP_VLESS_8443_958
-  type: vless
-  network: ws
-  server: 154.31.114.162
-  port: 8443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  servername: jp3.yohototo.top
-  tls: true
-  client-fingerprint: unsafe
-  ws-opts:
-    headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
-  country: JP
 - cipher: aes-128-gcm
-  name: JP_SS_443_297
+  name: JP_SS_443_316
   password: shadowsocks
   port: 443
   server: 149.22.87.204
   type: ss
   country: JP
 - cipher: aes-128-gcm
-  name: JP_SS_443_286
+  name: JP_SS_443_316_2
   password: shadowsocks
   port: 443
   server: 149.22.87.240
   type: ss
   country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_8388_382
+  name: JP_SS_443_346
+  password: 3eOFeNssde7PYYMv
+  port: 443
+  server: 84.247.155.196
+  type: ss
+  country: JP
+- cipher: aes-256-gcm
+  name: JP_SS_8388_1414
   password: BeaUf9c0AEWH40Pu
   port: 8388
   server: 154.36.158.197
   type: ss
   udp: true
-  country: JP
-- cipher: aes-256-gcm
-  name: JP_SS_80_833
-  password: 3eOFeNssde7PYYMv
-  port: 80
-  server: 84.247.155.196
-  type: ss
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -82,13 +56,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_443_465
-  - JP_VLESS_47878_323
-  - JP_VLESS_8443_958
-  - JP_SS_443_297
-  - JP_SS_443_286
-  - JP_SS_8388_382
-  - JP_SS_80_833
+  - JP_VLESS_47878_333
+  - JP_SS_443_316
+  - JP_SS_443_316_2
+  - JP_SS_443_346
+  - JP_SS_8388_1414
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -101,13 +73,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_SS_443_286
-  - JP_SS_443_297
-  - JP_VLESS_47878_323
-  - JP_SS_8388_382
-  - JP_VLESS_443_465
-  - JP_SS_80_833
-  - JP_VLESS_8443_958
+  - JP_SS_443_316
+  - JP_SS_443_316_2
+  - JP_VLESS_47878_333
+  - JP_SS_443_346
+  - JP_SS_8388_1414
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -119,13 +89,11 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_443_465
-  - JP_VLESS_47878_323
-  - JP_VLESS_8443_958
-  - JP_SS_443_297
-  - JP_SS_443_286
-  - JP_SS_8388_382
-  - JP_SS_80_833
+  - JP_VLESS_47878_333
+  - JP_SS_443_316
+  - JP_SS_443_316_2
+  - JP_SS_443_346
+  - JP_SS_8388_1414
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

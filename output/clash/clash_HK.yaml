@@ -6,7 +6,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: vless
-  name: HK_VLESS_443_638
+  name: HK_VLESS_443_628
   server: 85.155.149.190
   port: 443
   uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
@@ -22,7 +22,7 @@ proxies:
     short-id: bee10b047804c637
   country: HK
 - type: vless
-  name: HK_VLESS_443_762
+  name: HK_VLESS_443_836
   server: hk1.japancase.site
   port: 443
   uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
@@ -37,16 +37,7 @@ proxies:
     public-key: pGCqNljaUIUVC7xpHa9nFnu6vsQ0OX3QyfvYMhLZuWY
     short-id: bee10b047804c637
   country: HK
-- name: HK_TROJAN_443_687
-  type: trojan
-  network: tcp
-  server: 119.246.1.143
-  port: 443
-  password: BxceQaOe
-  skip-cert-verify: true
-  sni: t.me/ripaojiedian
-  country: HK
-- name: HK_HYSTERIA2_5010_575
+- name: HK_HYSTERIA2_5010_610
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -59,7 +50,7 @@ proxies:
   country: HK
 - alterId: 0
   cipher: auto
-  name: HK_VMESS_36703_1212
+  name: HK_VMESS_36703_600
   network: ws
   port: 36703
   server: 47.244.120.197
@@ -70,6 +61,15 @@ proxies:
   uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
   ws-opts:
     path: /arki
+  country: HK
+- name: HK_TROJAN_443_715
+  type: trojan
+  network: tcp
+  server: 119.246.1.143
+  port: 443
+  password: BxceQaOe
+  skip-cert-verify: true
+  sni: t.me/ripaojiedian
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -84,11 +84,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_443_638
-  - HK_VLESS_443_762
-  - HK_TROJAN_443_687
-  - HK_HYSTERIA2_5010_575
-  - HK_VMESS_36703_1212
+  - HK_VLESS_443_628
+  - HK_VLESS_443_836
+  - HK_HYSTERIA2_5010_610
+  - HK_VMESS_36703_600
+  - HK_TROJAN_443_715
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -101,11 +101,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_HYSTERIA2_5010_575
-  - HK_VLESS_443_638
-  - HK_TROJAN_443_687
-  - HK_VLESS_443_762
-  - HK_VMESS_36703_1212
+  - HK_VMESS_36703_600
+  - HK_HYSTERIA2_5010_610
+  - HK_VLESS_443_628
+  - HK_TROJAN_443_715
+  - HK_VLESS_443_836
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -117,11 +117,11 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_443_638
-  - HK_VLESS_443_762
-  - HK_TROJAN_443_687
-  - HK_HYSTERIA2_5010_575
-  - HK_VMESS_36703_1212
+  - HK_VLESS_443_628
+  - HK_VLESS_443_836
+  - HK_HYSTERIA2_5010_610
+  - HK_VMESS_36703_600
+  - HK_TROJAN_443_715
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
