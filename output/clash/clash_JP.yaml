@@ -5,43 +5,71 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: JP_VLESS_47878_333
-  server: 152.69.195.67
+- type: trojan
+  name: JP_TROJAN_8443_642
+  server: 160.21.74.183
+  port: 8443
+  password: ZLNrfFIw6IXWvhFvGEWi4EcsWJ76ZiDh
+  tls: true
+  servername: 160.21.74.183
+  sni: 160.21.74.183
+  skip-cert-verify: true
+  country: JP
+- name: JP_VLESS_47878_321
+  network: tcp
   port: 47878
-  uuid: eb8613e3-8393-4cff-a3ad-6501fd4adc63
-  udp: true
+  server: 152.69.195.67
   tls: false
-  skip-cert-verify: false
+  type: vless
+  uuid: eb8613e3-8393-4cff-a3ad-6501fd4adc63
+  country: JP
+- name: JP_VLESS_443_687
+  network: ws
+  port: 443
+  server: 207.148.115.152
+  servername: vlso5.1d.mom
+  tls: true
+  type: vless
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  ws-opts:
+    headers:
+      Host: vlso5.1d.mom
+    path: /socks5=888:888@hkip.1d.mom:1080fp=chrome
   country: JP
 - cipher: aes-128-gcm
-  name: JP_SS_443_316
+  name: JP_SS_443_310
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.241
+  type: ss
+  country: JP
+- cipher: aes-128-gcm
+  name: JP_SS_443_307
   password: shadowsocks
   port: 443
   server: 149.22.87.204
   type: ss
   country: JP
 - cipher: aes-128-gcm
-  name: JP_SS_443_316_2
+  name: JP_SS_443_308
   password: shadowsocks
   port: 443
   server: 149.22.87.240
   type: ss
   country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_443_346
+  name: JP_SS_443_425
   password: 3eOFeNssde7PYYMv
   port: 443
   server: 84.247.155.196
   type: ss
   country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_8388_1414
+  name: JP_SS_8388_2422
   password: BeaUf9c0AEWH40Pu
   port: 8388
   server: 154.36.158.197
   type: ss
-  udp: true
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -56,11 +84,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_47878_333
-  - JP_SS_443_316
-  - JP_SS_443_316_2
-  - JP_SS_443_346
-  - JP_SS_8388_1414
+  - JP_TROJAN_8443_642
+  - JP_VLESS_47878_321
+  - JP_VLESS_443_687
+  - JP_SS_443_310
+  - JP_SS_443_307
+  - JP_SS_443_308
+  - JP_SS_443_425
+  - JP_SS_8388_2422
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -73,11 +104,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_SS_443_316
-  - JP_SS_443_316_2
-  - JP_VLESS_47878_333
-  - JP_SS_443_346
-  - JP_SS_8388_1414
+  - JP_SS_443_307
+  - JP_SS_443_308
+  - JP_SS_443_310
+  - JP_VLESS_47878_321
+  - JP_SS_443_425
+  - JP_TROJAN_8443_642
+  - JP_VLESS_443_687
+  - JP_SS_8388_2422
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -89,11 +123,14 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_47878_333
-  - JP_SS_443_316
-  - JP_SS_443_316_2
-  - JP_SS_443_346
-  - JP_SS_8388_1414
+  - JP_TROJAN_8443_642
+  - JP_VLESS_47878_321
+  - JP_VLESS_443_687
+  - JP_SS_443_310
+  - JP_SS_443_307
+  - JP_SS_443_308
+  - JP_SS_443_425
+  - JP_SS_8388_2422
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

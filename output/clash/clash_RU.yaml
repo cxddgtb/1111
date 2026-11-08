@@ -5,62 +5,23 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: RU_VLESS_8880_62
-  server: 185.148.107.40
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: vms.lifetime55.workers.dev
-  country: RU
-- type: vless
-  name: RU_VLESS_443_353
-  server: 130.49.177.193
-  port: 443
-  uuid: 727a9178-d7f0-4142-8205-b0d19959ded0
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: de-2.ffpn.pro
-  sni: de-2.ffpn.pro
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: DCpi9-1rSXxBnEIAQ9U3mTqHivk7vHJRV_T2pWw5vCc
-    short-id: 681fc2dd643bc2f3
-  country: RU
-- type: vless
-  name: RU_VLESS_443_662
-  server: 147.45.108.45
-  port: 443
-  uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: absolute-disaster.org
-  sni: absolute-disaster.org
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: IuzAWh6UM62Txrnh_No9y5n6wmZecyR1ki8z5xor-0g
+- cipher: chacha20-ietf-poly1305
+  name: RU_SS_43558_298
+  password: yZiPrr484OdSYcivDUv+UIygwvyW+HQYytKsIgTw9tU=
+  port: 43558
+  server: 130.49.189.158
+  type: ss
   country: RU
 - alpn:
   - h2
   client-fingerprint: chrome
   grpc-opts:
     grpc-service-name: vlgrpc
-  name: RU_VLESS_443_446
+  name: RU_VLESS_443_471
   network: grpc
   port: 443
   server: 201.24.121.243
   servername: kk-ru24a1.testkknegr.online
-  skip-cert-verify: false
   tls: true
   type: vless
   uuid: 32b5ca9b-3f81-4031-965d-e8b074216e8d
@@ -71,7 +32,7 @@ proxies:
   client-fingerprint: chrome
   grpc-opts:
     grpc-service-name: beru-pl
-  name: RU_VLESS_8445_520
+  name: RU_VLESS_8445_721
   network: grpc
   port: 8445
   server: ru1.radiolumens.uk
@@ -81,22 +42,148 @@ proxies:
   uuid: 36cf792c-f07d-4500-97ea-a395e5178deb
   country: RU
 - client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: grpc-ru
-  name: RU_VLESS_443_503
-  network: grpc
+  name: RU_VLESS_443_635
+  network: ws
   port: 443
-  server: xssite.webredirect.org
-  servername: xssite.webredirect.org
+  server: xsru2.freeddns.org
+  servername: xsru2.freeddns.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  ws-opts:
+    headers:
+      Host: xsru2.freeddns.org
+    path: /wsru
+  country: RU
+- client-fingerprint: firefox
+  name: RU_VLESS_443_1553
+  network: ws
+  port: 443
+  server: 185.86.147.175
+  servername: bhjolq0d0l.flowersgood.top
+  tls: true
+  type: vless
+  uuid: 7955bf18-35c4-412d-aabd-c0b36c793063
+  ws-opts:
+    headers:
+      Host: bhjolq0d0l.flowersgood.top
+    path: /service/telemetry/045d381f1166/
+  country: RU
+- cipher: aes-256-gcm
+  name: RU_SS_18443_413
+  password: cCMJgJTA3BA489YUYrFq7XHXSiSpWlLa
+  port: 18443
+  server: 46.17.47.58
+  type: ss
+  udp: true
+  country: RU
+- name: RU_HTTP_8443_557
+  port: 8443
+  server: 87.242.85.187
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: RU
+- client-fingerprint: edge
+  name: RU_VLESS_443_596
+  network: ws
+  port: 443
+  server: 147.45.175.81
+  servername: xsru1.ddnsfree.com
   tls: true
   type: vless
   uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  ws-opts:
+    headers:
+      Host: xsru1.ddnsfree.com
+    path: /wsru
+  country: RU
+- client-fingerprint: random
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc-ru
+  name: RU_VLESS_443_560
+  network: grpc
+  port: 443
+  server: xsru1.ddnsfree.com
+  servername: xsru1.ddnsfree.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  country: RU
+- name: RU_VLESS_8008_485
+  server: 5.53.124.191
+  port: 8008
+  type: vless
+  uuid: b48e1596-e835-4547-bdae-31daadf9ea17
+  tls: false
+  network: xhttp
+  xhttp-opts:
+    path: /
+    mode: auto
+  udp: true
+  country: RU
+- name: RU_HYSTERIA2_23661_295
+  server: 194.113.235.254
+  port: 23661
+  type: hysteria2
+  password: 40546f3a-0590-4a5a-a104-6eb2e6ba5f0c
+  auth: 40546f3a-0590-4a5a-a104-6eb2e6ba5f0c
+  sni: fr.verymad.net
+  skip-cert-verify: true
+  country: RU
+- name: RU_VLESS_2058_594
+  server: 62.109.1.5
+  port: 2058
+  type: vless
+  uuid: 4ad9f982-b56a-444a-9684-35ce51307a36
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s
+    short-id: 937255313d6ce673
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+  country: RU
+- name: RU_VLESS_443_503
+  server: 193.160.208.240
+  port: 443
+  type: vless
+  uuid: 4777d90d-265b-4927-a0d1-63f36ed1421c
+  tls: true
+  servername: 193.160.208.240
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /assets/twru01/
+    mode: auto
+  udp: true
+  country: RU
+- name: RU_VLESS_8444_488
+  server: 193.233.253.180
+  port: 8444
+  type: vless
+  uuid: a346c521-7a7f-452b-9356-a4893feb5982
+  tls: true
+  reality-opts:
+    public-key: FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0
+  servername: github.com
+  client-fingerprint: firefox
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: GunService
+  udp: true
   country: RU
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: firefox
-  name: RU_VLESS_443_943
+  name: RU_VLESS_443_1276
   network: xhttp
   port: 443
   server: cdn-ya.shamanapp.online
@@ -124,86 +211,44 @@ proxies:
     x-padding-obfs-mode: true
     x-padding-placement: header
   country: RU
-- client-fingerprint: firefox
-  name: RU_VLESS_443_489
-  network: xhttp
-  port: 443
-  server: 193.160.208.240
-  servername: 193.160.208.240
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4777d90d-265b-4927-a0d1-63f36ed1421c
-  xhttp-opts:
-    mode: auto
-    path: /assets/twru01/
+- name: RU_HYSTERIA2_19455_811
+  server: 89.125.214.221
+  port: 19455
+  type: hysteria2
+  password: 190edece-2750-454c-b766-0570fc32deca
+  auth: 190edece-2750-454c-b766-0570fc32deca
+  sni: mshvpn.online
+  skip-cert-verify: true
   country: RU
-- client-fingerprint: random
+- name: RU_VLESS_443_1685
+  server: falmero.store
+  port: 443
+  type: vless
+  uuid: 8fb19a9e-ca2b-433a-8469-e4c7796033b2
+  tls: true
+  servername: falmero.store
+  client-fingerprint: chrome
+  network: grpc
   grpc-opts:
     grpc-mode: gun
-    grpc-service-name: grpc-ru
-  name: RU_VLESS_443_544
-  network: grpc
-  port: 443
-  server: xsru1.ddnsfree.com
-  servername: xsru1.ddnsfree.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-  country: RU
-- client-fingerprint: chrome
-  name: RU_VLESS_443_622
-  network: ws
-  port: 443
-  server: xsru2.freeddns.org
-  servername: xsru2.freeddns.org
-  tls: true
-  type: vless
-  udp: true
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-  ws-opts:
-    headers:
-      Host: xsru2.freeddns.org
-    path: /wsru
-  country: RU
-- name: RU_SS_18443_348
-  server: 46.17.47.58
-  port: 18443
-  type: ss
-  cipher: aes-256-gcm
-  password: cCMJgJTA3BA489YUYrFq7XHXSiSpWlLa
+    grpc-service-name: glush.de1.v1
   udp: true
   country: RU
-- name: RU_VLESS_443_2507
-  server: 92.243.66.79
-  port: 443
-  type: vless
-  uuid: c5f59ef3-9540-49fa-bd1e-c6c2f79df49a
-  tls: true
+- type: vless
+  name: RU_VLESS_8443_545
+  server: 5.42.99.64
+  port: 8443
+  uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
   flow: xtls-rprx-vision
-  reality-opts:
-    public-key: siD4oj2gdtLLEphV6fUXb8ueIc2WHVn7msOUhNGPf2o
-    short-id: 8d03c10b6a874a9c
-  servername: ru-mow.probe.geomyip.com
-  client-fingerprint: chrome
-  network: tcp
   udp: true
-  country: RU
-- name: RU_VLESS_443_2783
-  server: 185.86.147.175
-  port: 443
-  type: vless
-  uuid: 7955bf18-35c4-412d-aabd-c0b36c793063
   tls: true
-  servername: bhjolq0d0l.flowersgood.top
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /service/telemetry/045d381f1166/
-    headers:
-      Host: bhjolq0d0l.flowersgood.top
-  udp: true
+  servername: du-rov.secureservice.top
+  sni: du-rov.secureservice.top
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
+    short-id: 3cbc3d737fb9c4af
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -218,19 +263,24 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_8880_62
-  - RU_VLESS_443_353
-  - RU_VLESS_443_662
-  - RU_VLESS_443_446
-  - RU_VLESS_8445_520
+  - RU_SS_43558_298
+  - RU_VLESS_443_471
+  - RU_VLESS_8445_721
+  - RU_VLESS_443_635
+  - RU_VLESS_443_1553
+  - RU_SS_18443_413
+  - RU_HTTP_8443_557
+  - RU_VLESS_443_596
+  - RU_VLESS_443_560
+  - RU_VLESS_8008_485
+  - RU_HYSTERIA2_23661_295
+  - RU_VLESS_2058_594
   - RU_VLESS_443_503
-  - RU_VLESS_443_943
-  - RU_VLESS_443_489
-  - RU_VLESS_443_544
-  - RU_VLESS_443_622
-  - RU_SS_18443_348
-  - RU_VLESS_443_2507
-  - RU_VLESS_443_2783
+  - RU_VLESS_8444_488
+  - RU_VLESS_443_1276
+  - RU_HYSTERIA2_19455_811
+  - RU_VLESS_443_1685
+  - RU_VLESS_8443_545
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -243,19 +293,24 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_VLESS_8880_62
-  - RU_SS_18443_348
-  - RU_VLESS_443_353
-  - RU_VLESS_443_446
-  - RU_VLESS_443_489
+  - RU_HYSTERIA2_23661_295
+  - RU_SS_43558_298
+  - RU_SS_18443_413
+  - RU_VLESS_443_471
+  - RU_VLESS_8008_485
+  - RU_VLESS_8444_488
   - RU_VLESS_443_503
-  - RU_VLESS_8445_520
-  - RU_VLESS_443_544
-  - RU_VLESS_443_622
-  - RU_VLESS_443_662
-  - RU_VLESS_443_943
-  - RU_VLESS_443_2507
-  - RU_VLESS_443_2783
+  - RU_VLESS_8443_545
+  - RU_HTTP_8443_557
+  - RU_VLESS_443_560
+  - RU_VLESS_2058_594
+  - RU_VLESS_443_596
+  - RU_VLESS_443_635
+  - RU_VLESS_8445_721
+  - RU_HYSTERIA2_19455_811
+  - RU_VLESS_443_1276
+  - RU_VLESS_443_1553
+  - RU_VLESS_443_1685
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -267,19 +322,24 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_8880_62
-  - RU_VLESS_443_353
-  - RU_VLESS_443_662
-  - RU_VLESS_443_446
-  - RU_VLESS_8445_520
+  - RU_SS_43558_298
+  - RU_VLESS_443_471
+  - RU_VLESS_8445_721
+  - RU_VLESS_443_635
+  - RU_VLESS_443_1553
+  - RU_SS_18443_413
+  - RU_HTTP_8443_557
+  - RU_VLESS_443_596
+  - RU_VLESS_443_560
+  - RU_VLESS_8008_485
+  - RU_HYSTERIA2_23661_295
+  - RU_VLESS_2058_594
   - RU_VLESS_443_503
-  - RU_VLESS_443_943
-  - RU_VLESS_443_489
-  - RU_VLESS_443_544
-  - RU_VLESS_443_622
-  - RU_SS_18443_348
-  - RU_VLESS_443_2507
-  - RU_VLESS_443_2783
+  - RU_VLESS_8444_488
+  - RU_VLESS_443_1276
+  - RU_HYSTERIA2_19455_811
+  - RU_VLESS_443_1685
+  - RU_VLESS_8443_545
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

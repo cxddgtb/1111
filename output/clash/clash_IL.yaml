@@ -5,12 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IL_TROJAN_443_365
+- name: IL_TROJAN_443_404
+  network: tcp
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
   server: 64.176.163.182
   sni: exploreeducationsectoropportunitiestodayandadvancecareers.com
   type: trojan
+  country: IL
+- name: IL_VLESS_8443_693
+  type: vless
+  network: ws
+  server: 64.177.66.9
+  port: 8443
+  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+  servername: vp7.1145678.xyz
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: vp7.1145678.xyz
+    path: /events/classfp
   country: IL
 proxy-groups:
 - name: 🚀 节点选择
@@ -25,7 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IL_TROJAN_443_365
+  - IL_TROJAN_443_404
+  - IL_VLESS_8443_693
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IL_TROJAN_443_365
+  - IL_TROJAN_443_404
+  - IL_VLESS_8443_693
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +69,8 @@ proxy-groups:
 - name: 🌍 IL
   type: url-test
   proxies:
-  - IL_TROJAN_443_365
+  - IL_TROJAN_443_404
+  - IL_VLESS_8443_693
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

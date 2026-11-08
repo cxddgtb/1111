@@ -5,39 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: HK_VLESS_443_628
-  server: 85.155.149.190
-  port: 443
-  uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: hk1.japancase.site
-  sni: hk1.japancase.site
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: pGCqNljaUIUVC7xpHa9nFnu6vsQ0OX3QyfvYMhLZuWY
-    short-id: bee10b047804c637
-  country: HK
-- type: vless
-  name: HK_VLESS_443_836
-  server: hk1.japancase.site
-  port: 443
-  uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: hk1.japancase.site
-  sni: hk1.japancase.site
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: pGCqNljaUIUVC7xpHa9nFnu6vsQ0OX3QyfvYMhLZuWY
-    short-id: bee10b047804c637
-  country: HK
-- name: HK_HYSTERIA2_5010_610
+- name: HK_HYSTERIA2_5010_627
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -50,7 +18,7 @@ proxies:
   country: HK
 - alterId: 0
   cipher: auto
-  name: HK_VMESS_36703_600
+  name: HK_VMESS_36703_609
   network: ws
   port: 36703
   server: 47.244.120.197
@@ -62,7 +30,55 @@ proxies:
   ws-opts:
     path: /arki
   country: HK
-- name: HK_TROJAN_443_715
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  name: HK_VMESS_44867_608
+  network: ws
+  port: 44867
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  ws-opts:
+    path: /arki
+  country: HK
+- alterId: 0
+  cipher: auto
+  name: HK_VMESS_23026_605
+  network: ws
+  port: 23026
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  ws-opts:
+    headers:
+      Host: 47.244.120.197
+    path: /arki
+  country: HK
+- type: vless
+  name: HK_VLESS_11107_1382
+  server: mo01.dw.sh-cloudflare.sbs
+  port: 11107
+  uuid: 792ba6a8-b887-42bd-9480-4eb19b0a9b2b
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: cdn-dynmedia-1.microsoft.com
+  sni: cdn-dynmedia-1.microsoft.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: cIAvdh9g8o4OWaCs4yY1aKxz32F0N73O7kQpqp3oQHg
+    short-id: 9433bfa1
+  country: HK
+- name: HK_TROJAN_443_749
   type: trojan
   network: tcp
   server: 119.246.1.143
@@ -84,11 +100,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VLESS_443_628
-  - HK_VLESS_443_836
-  - HK_HYSTERIA2_5010_610
-  - HK_VMESS_36703_600
-  - HK_TROJAN_443_715
+  - HK_HYSTERIA2_5010_627
+  - HK_VMESS_36703_609
+  - HK_VMESS_44867_608
+  - HK_VMESS_23026_605
+  - HK_VLESS_11107_1382
+  - HK_TROJAN_443_749
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -101,11 +118,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_36703_600
-  - HK_HYSTERIA2_5010_610
-  - HK_VLESS_443_628
-  - HK_TROJAN_443_715
-  - HK_VLESS_443_836
+  - HK_VMESS_23026_605
+  - HK_VMESS_44867_608
+  - HK_VMESS_36703_609
+  - HK_HYSTERIA2_5010_627
+  - HK_TROJAN_443_749
+  - HK_VLESS_11107_1382
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -117,11 +135,12 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VLESS_443_628
-  - HK_VLESS_443_836
-  - HK_HYSTERIA2_5010_610
-  - HK_VMESS_36703_600
-  - HK_TROJAN_443_715
+  - HK_HYSTERIA2_5010_627
+  - HK_VMESS_36703_609
+  - HK_VMESS_44867_608
+  - HK_VMESS_23026_605
+  - HK_VLESS_11107_1382
+  - HK_TROJAN_443_749
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

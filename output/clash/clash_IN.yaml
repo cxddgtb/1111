@@ -5,11 +5,11 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- encryption: none
-  name: IN_VLESS_14430_583
+- name: IN_VLESS_14430_779
   network: ws
   port: 14430
   server: 13.140.56.100
+  servername: 13.140.56.100
   tls: false
   type: vless
   uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
@@ -18,19 +18,21 @@ proxies:
       Host: 13.140.56.100
     path: /vless
   country: IN
-- client-fingerprint: firefox
-  name: IN_VLESS_443_1078
-  network: ws
+- type: vless
+  name: IN_VLESS_443_888
+  server: in1.japancase.site
   port: 443
-  server: 122.176.216.52
-  servername: app-6ada5023.deploy.meerasolution.com
+  uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
+  flow: xtls-rprx-vision
+  udp: true
   tls: true
-  type: vless
-  uuid: 16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88
-  ws-opts:
-    headers:
-      Host: app-6ada5023.deploy.meerasolution.com
-    path: /ws/16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88
+  servername: in1.japancase.site
+  sni: in1.japancase.site
+  skip-cert-verify: false
+  client-fingerprint: ios
+  reality-opts:
+    public-key: lDBwW08dYwPP-7dVxYQ_clzfFwsDHLlclz9K2cEV6DM
+    short-id: df7b054cfc29800c
   country: IN
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,8 +47,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VLESS_14430_583
-  - IN_VLESS_443_1078
+  - IN_VLESS_14430_779
+  - IN_VLESS_443_888
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,8 +61,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VLESS_14430_583
-  - IN_VLESS_443_1078
+  - IN_VLESS_14430_779
+  - IN_VLESS_443_888
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,8 +74,8 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VLESS_14430_583
-  - IN_VLESS_443_1078
+  - IN_VLESS_14430_779
+  - IN_VLESS_443_888
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

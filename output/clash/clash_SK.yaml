@@ -5,33 +5,37 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SK_VLESS_8443_505
+- name: SK_VLESS_443_1091
+  server: f0d7aft.nl13.h1clayd.click
+  port: 443
   type: vless
-  server: 5.35.103.185
-  port: 8443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
   tls: true
-  servername: shuma.ccwu.cc
+  reality-opts:
+    public-key: kkCGiCQCKnkozJR1KKCRNtmdBECmThCgI9VSv7iDcWI
+    short-id: 8956c57cb4c4f8d2
+  servername: f0d7aft.nl13.h1clayd.click
   client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
+  network: tcp
+  udp: true
   country: SK
-- name: SK_VLESS_2053_563
+- name: SK_VLESS_443_1113
+  server: 80cb66x.nl13.h1clayd.click
+  port: 443
   type: vless
-  server: 89.46.42.141
-  port: 2053
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
   tls: true
-  servername: shuma.ccwu.cc
+  reality-opts:
+    public-key: jhVdP7NFUaEXGfrmOqJlMCHTvqn3fymbzPfPT6NO4i0
+    short-id: f72d4a2c7cbbacb1
+  servername: 80cb66x.nl13.h1clayd.click
   client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: shuma.ccwu.cc
+  network: xhttp
+  xhttp-opts:
+    path: /d610f026b146
+    host: 80cb66x.nl13.h1clayd.click
+    mode: auto
+  udp: true
   country: SK
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +50,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SK_VLESS_8443_505
-  - SK_VLESS_2053_563
+  - SK_VLESS_443_1091
+  - SK_VLESS_443_1113
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +64,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SK_VLESS_8443_505
-  - SK_VLESS_2053_563
+  - SK_VLESS_443_1091
+  - SK_VLESS_443_1113
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +77,8 @@ proxy-groups:
 - name: 🌍 SK
   type: url-test
   proxies:
-  - SK_VLESS_8443_505
-  - SK_VLESS_2053_563
+  - SK_VLESS_443_1091
+  - SK_VLESS_443_1113
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

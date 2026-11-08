@@ -5,50 +5,33 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: trojan
-  name: PL_TROJAN_443_314
-  server: 70.34.252.255
-  port: 443
+- client-fingerprint: chrome
+  encryption: none
+  name: PL_VLESS_2087_348
+  network: tcp
+  port: 2087
+  server: 2.26.6.1
+  servername: 2.26.6.1
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
+  country: PL
+- name: PL_TROJAN_443_334
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: browseexecutivejobopeningsandenhanceleadershipcareer.com
+  port: 443
+  server: 70.34.252.255
   sni: browseexecutivejobopeningsandenhanceleadershipcareer.com
-  skip-cert-verify: false
+  type: trojan
   country: PL
-- type: vless
-  name: PL_VLESS_443_322
-  server: 94.249.180.86
+- name: PL_HTTP_443_450
   port: 443
-  uuid: 0de1d303-d7de-0001-8679-c4cb67e2e2cc
-  flow: xtls-rprx-vision
-  udp: true
+  server: 151.115.54.133
+  skip-cert-verify: true
   tls: true
-  servername: amd.com
-  sni: amd.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc
-    short-id: a696de84963656de
+  type: http
   country: PL
-- type: vless
-  name: PL_VLESS_443_408
-  server: 150.251.113.34
-  port: 443
-  uuid: d7d724b5-17ce-4f3c-877d-dfbf0f07afa1
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  sni: www.cloudflare.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 8yMLSTbkpJFfbgTjNzotzz7U8OT6AERrclgKdKrXXW8
-    short-id: 150a627d15154cf2
-  country: PL
-- name: PL_HTTP_443_447
+- name: PL_HTTP_443_484
   password: None
   port: 443
   server: 37.120.156.18
@@ -56,20 +39,36 @@ proxies:
   tls: true
   type: http
   country: PL
-- name: PL_HTTP_443_445
+- name: PL_HTTP_443_468
   port: 443
   server: 37.120.156.34
   skip-cert-verify: true
   tls: true
   type: http
   country: PL
-- name: PL_HTTP_443_548
+- name: PL_HTTP_443_631
   port: 443
   server: 31.186.220.204
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
+  country: PL
+- type: vless
+  name: PL_VLESS_443_433
+  server: pl3.japancase.site
+  port: 443
+  uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: pl3.japancase.site
+  sni: pl3.japancase.site
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: COvqGpB7lUdZshmbn5zdqiVi81n8Iyha8RbEHtK93xc
+    short-id: 5037f0423dc4e4ff
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -84,12 +83,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_TROJAN_443_314
-  - PL_VLESS_443_322
-  - PL_VLESS_443_408
-  - PL_HTTP_443_447
-  - PL_HTTP_443_445
-  - PL_HTTP_443_548
+  - PL_VLESS_2087_348
+  - PL_TROJAN_443_334
+  - PL_HTTP_443_450
+  - PL_HTTP_443_484
+  - PL_HTTP_443_468
+  - PL_HTTP_443_631
+  - PL_VLESS_443_433
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -102,12 +102,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_TROJAN_443_314
-  - PL_VLESS_443_322
-  - PL_VLESS_443_408
-  - PL_HTTP_443_445
-  - PL_HTTP_443_447
-  - PL_HTTP_443_548
+  - PL_TROJAN_443_334
+  - PL_VLESS_2087_348
+  - PL_VLESS_443_433
+  - PL_HTTP_443_450
+  - PL_HTTP_443_468
+  - PL_HTTP_443_484
+  - PL_HTTP_443_631
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -119,12 +120,13 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_TROJAN_443_314
-  - PL_VLESS_443_322
-  - PL_VLESS_443_408
-  - PL_HTTP_443_447
-  - PL_HTTP_443_445
-  - PL_HTTP_443_548
+  - PL_VLESS_2087_348
+  - PL_TROJAN_443_334
+  - PL_HTTP_443_450
+  - PL_HTTP_443_484
+  - PL_HTTP_443_468
+  - PL_HTTP_443_631
+  - PL_VLESS_443_433
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
