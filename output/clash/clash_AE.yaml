@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_HYSTERIA2_443_318
+- name: AE_HYSTERIA2_443_411
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -16,19 +16,7 @@ proxies:
   tls: false
   type: hysteria2
   country: AE
-- name: AE_VLESS_14430_511
-  network: ws
-  port: 14430
-  server: 95.174.68.188
-  tls: false
-  type: vless
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  ws-opts:
-    headers:
-      Host: 95.174.68.188
-    path: /vless
-  country: AE
-- name: AE_VLESS_22573_524
+- name: AE_VLESS_22573_660
   network: ws
   port: 22573
   server: 84.235.244.108
@@ -41,48 +29,31 @@ proxies:
       Host: uae.unixzone.us
     path: /
   country: AE
+- name: AE_VLESS_14430_675
+  network: ws
+  port: 14430
+  server: 95.174.68.188
+  tls: false
+  type: vless
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  ws-opts:
+    headers:
+      Host: 95.174.68.188
+    path: /vless
+  country: AE
 - cipher: aes-256-gcm
-  name: AE_SS_19999_179
+  name: AE_SS_19999_245
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 151.241.19.36
   type: ss
   country: AE
 - cipher: aes-256-gcm
-  name: AE_SS_19999_179_2
+  name: AE_SS_19999_260
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 151.241.19.29
   type: ss
-  country: AE
-- name: AE_VLESS_443_686
-  server: 188.72.103.4
-  port: 443
-  type: vless
-  uuid: 00a560f4-035e-48eb-b698-6f6be0b5e477
-  tls: true
-  servername: decdn2.bota7.com
-  client-fingerprint: chrome
-  network: xhttp
-  xhttp-opts:
-    path: /api/v4/lop/
-    host: decdn2.bota7.com
-    mode: packet-up
-    no-grpc-header: true
-    seq-key: csrftoken
-    seq-placement: cookie
-    session-key: session_id
-    session-placement: cookie
-    uplink-data-key: data
-    uplink-data-placement: header
-    uplink-http-method: HEAD
-    x-padding-bytes: 100-1000
-    x-padding-header: X-CSRFToken
-    x-padding-key: _t
-    x-padding-method: tokenish
-    x-padding-obfs-mode: true
-    x-padding-placement: queryInHeader
-  udp: true
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -97,12 +68,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_HYSTERIA2_443_318
-  - AE_VLESS_14430_511
-  - AE_VLESS_22573_524
-  - AE_SS_19999_179
-  - AE_SS_19999_179_2
-  - AE_VLESS_443_686
+  - AE_HYSTERIA2_443_411
+  - AE_VLESS_22573_660
+  - AE_VLESS_14430_675
+  - AE_SS_19999_245
+  - AE_SS_19999_260
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -115,12 +85,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_SS_19999_179
-  - AE_SS_19999_179_2
-  - AE_HYSTERIA2_443_318
-  - AE_VLESS_14430_511
-  - AE_VLESS_22573_524
-  - AE_VLESS_443_686
+  - AE_SS_19999_245
+  - AE_SS_19999_260
+  - AE_HYSTERIA2_443_411
+  - AE_VLESS_22573_660
+  - AE_VLESS_14430_675
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -132,12 +101,11 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_HYSTERIA2_443_318
-  - AE_VLESS_14430_511
-  - AE_VLESS_22573_524
-  - AE_SS_19999_179
-  - AE_SS_19999_179_2
-  - AE_VLESS_443_686
+  - AE_HYSTERIA2_443_411
+  - AE_VLESS_22573_660
+  - AE_VLESS_14430_675
+  - AE_SS_19999_245
+  - AE_SS_19999_260
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

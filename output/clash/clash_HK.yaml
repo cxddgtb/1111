@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_HYSTERIA2_5010_627
+- name: HK_HYSTERIA2_5010_499
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -16,69 +16,35 @@ proxies:
   tls: false
   type: hysteria2
   country: HK
-- alterId: 0
-  cipher: auto
-  name: HK_VMESS_36703_609
-  network: ws
-  port: 36703
-  server: 47.244.120.197
+- name: HK_TROJAN_20086_1085
+  network: tcp
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  port: 20086
+  server: sclass-c1.catcat321.com
   skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
-  ws-opts:
-    path: /arki
+  sni: hk.catxstar.com
+  type: trojan
   country: HK
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: HK_VMESS_44867_608
-  network: ws
-  port: 44867
-  server: 47.244.120.197
+- name: HK_TROJAN_20123_1187
+  network: tcp
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  port: 20123
+  server: sclass-00.catcat321.com
   skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  ws-opts:
-    path: /arki
+  sni: hk.catxstar.com
+  type: trojan
   country: HK
-- alterId: 0
-  cipher: auto
-  name: HK_VMESS_23026_605
-  network: ws
-  port: 23026
-  server: 47.244.120.197
+- auth: b0917015b656b3dd2286b5633af0c5c1
+  name: HK_HYSTERIA2_50160_2081
+  password: b0917015b656b3dd2286b5633af0c5c1
+  port: 50160
+  server: 31.57.248.176
   skip-cert-verify: true
+  sni: www.bing.com%23%e9%a6%83%e5%9a%9f%e9%a6%83%e5%9a%a2%7chk%7c%40wxgqlfx%7c147
   tls: false
-  type: vmess
-  udp: true
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  ws-opts:
-    headers:
-      Host: 47.244.120.197
-    path: /arki
+  type: hysteria2
   country: HK
-- type: vless
-  name: HK_VLESS_11107_1382
-  server: mo01.dw.sh-cloudflare.sbs
-  port: 11107
-  uuid: 792ba6a8-b887-42bd-9480-4eb19b0a9b2b
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: cdn-dynmedia-1.microsoft.com
-  sni: cdn-dynmedia-1.microsoft.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: cIAvdh9g8o4OWaCs4yY1aKxz32F0N73O7kQpqp3oQHg
-    short-id: 9433bfa1
-  country: HK
-- name: HK_TROJAN_443_749
+- name: HK_TROJAN_443_596
   type: trojan
   network: tcp
   server: 119.246.1.143
@@ -86,6 +52,16 @@ proxies:
   password: BxceQaOe
   skip-cert-verify: true
   sni: t.me/ripaojiedian
+  country: HK
+- name: HK_VMESS_11353_617
+  type: vmess
+  network: tcp
+  server: df.668fx.com
+  port: 11353
+  uuid: d105eadc-c3ea-4a82-a299-373d75f2d2b7
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -100,12 +76,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_HYSTERIA2_5010_627
-  - HK_VMESS_36703_609
-  - HK_VMESS_44867_608
-  - HK_VMESS_23026_605
-  - HK_VLESS_11107_1382
-  - HK_TROJAN_443_749
+  - HK_HYSTERIA2_5010_499
+  - HK_TROJAN_20086_1085
+  - HK_TROJAN_20123_1187
+  - HK_HYSTERIA2_50160_2081
+  - HK_TROJAN_443_596
+  - HK_VMESS_11353_617
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -118,12 +94,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_23026_605
-  - HK_VMESS_44867_608
-  - HK_VMESS_36703_609
-  - HK_HYSTERIA2_5010_627
-  - HK_TROJAN_443_749
-  - HK_VLESS_11107_1382
+  - HK_HYSTERIA2_5010_499
+  - HK_TROJAN_443_596
+  - HK_VMESS_11353_617
+  - HK_TROJAN_20086_1085
+  - HK_TROJAN_20123_1187
+  - HK_HYSTERIA2_50160_2081
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -135,12 +111,12 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_HYSTERIA2_5010_627
-  - HK_VMESS_36703_609
-  - HK_VMESS_44867_608
-  - HK_VMESS_23026_605
-  - HK_VLESS_11107_1382
-  - HK_TROJAN_443_749
+  - HK_HYSTERIA2_5010_499
+  - HK_TROJAN_20086_1085
+  - HK_TROJAN_20123_1187
+  - HK_HYSTERIA2_50160_2081
+  - HK_TROJAN_443_596
+  - HK_VMESS_11353_617
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

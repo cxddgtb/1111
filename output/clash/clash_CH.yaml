@@ -8,7 +8,7 @@ proxies:
 - client-fingerprint: firefox
   grpc-opts:
     grpc-service-name: 138-124-86-230-sslip-io
-  name: CH_VLESS_48115_345
+  name: CH_VLESS_48115_484
   network: grpc
   port: 48115
   server: 138.124.86.230
@@ -18,56 +18,63 @@ proxies:
   uuid: b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_209
+  name: CH_SS_19999_286
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 23.166.88.127
   type: ss
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_200
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 79.127.184.104
-  type: ss
-  country: CH
-- cipher: aes-256-gcm
-  name: CH_SS_19999_205
+  name: CH_SS_19999_290
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 186.190.215.251
   type: ss
   country: CH
-- name: CH_TROJAN_443_315
+- cipher: aes-256-gcm
+  name: CH_SS_19999_281
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 79.127.184.104
+  type: ss
+  country: CH
+- name: CH_TROJAN_443_422
   network: tcp
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
   server: 208.69.78.33
-  skip-cert-verify: true
   sni: courses.yourultimateprofessionalcareerhub.com
   type: trojan
   country: CH
-- name: CH_HTTP_9443_400
-  password: None
-  port: 9443
-  server: 37.120.213.210
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- type: trojan
-  name: CH_TROJAN_443_319
-  server: 208.69.78.60
+- name: CH_VLESS_443_1517
+  type: vless
+  server: 46.19.138.214
   port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  uuid: 90157e25-cee1-4217-921e-91f300bc1a24
+  flow: xtls-rprx-vision
   udp: true
   tls: true
-  servername: cdn.yourultimateprofessionalcareerhub.com
-  sni: cdn.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
+  client-fingerprint: firefox
+  servername: perevodchiki.su
+  reality-opts:
+    public-key: 1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs
+    short-id: 428ef87fd47a3a32
   country: CH
-- name: CH_VLESS_443_384
+- name: CH_VLESS_443_1586
+  type: vless
+  server: prvtch.titun.su
+  port: 443
+  uuid: 90157e25-cee1-4217-921e-91f300bc1a24
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  client-fingerprint: chrome
+  servername: perevodchiki.su
+  reality-opts:
+    public-key: 1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs
+    short-id: 428ef87fd47a3a32
+  country: CH
+- name: CH_VLESS_443_469
   type: vless
   network: tcp
   server: 179.43.187.67
@@ -93,14 +100,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_VLESS_48115_345
-  - CH_SS_19999_209
-  - CH_SS_19999_200
-  - CH_SS_19999_205
-  - CH_TROJAN_443_315
-  - CH_HTTP_9443_400
-  - CH_TROJAN_443_319
-  - CH_VLESS_443_384
+  - CH_VLESS_48115_484
+  - CH_SS_19999_286
+  - CH_SS_19999_290
+  - CH_SS_19999_281
+  - CH_TROJAN_443_422
+  - CH_VLESS_443_1517
+  - CH_VLESS_443_1586
+  - CH_VLESS_443_469
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -113,14 +120,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_SS_19999_200
-  - CH_SS_19999_205
-  - CH_SS_19999_209
-  - CH_TROJAN_443_315
-  - CH_TROJAN_443_319
-  - CH_VLESS_48115_345
-  - CH_VLESS_443_384
-  - CH_HTTP_9443_400
+  - CH_SS_19999_281
+  - CH_SS_19999_286
+  - CH_SS_19999_290
+  - CH_TROJAN_443_422
+  - CH_VLESS_443_469
+  - CH_VLESS_48115_484
+  - CH_VLESS_443_1517
+  - CH_VLESS_443_1586
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -132,14 +139,14 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_VLESS_48115_345
-  - CH_SS_19999_209
-  - CH_SS_19999_200
-  - CH_SS_19999_205
-  - CH_TROJAN_443_315
-  - CH_HTTP_9443_400
-  - CH_TROJAN_443_319
-  - CH_VLESS_443_384
+  - CH_VLESS_48115_484
+  - CH_SS_19999_286
+  - CH_SS_19999_290
+  - CH_SS_19999_281
+  - CH_TROJAN_443_422
+  - CH_VLESS_443_1517
+  - CH_VLESS_443_1586
+  - CH_VLESS_443_469
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

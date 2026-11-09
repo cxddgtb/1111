@@ -5,13 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DK_HTTP_443_381
-  password: None
+- name: DK_VLESS_443_647
+  type: vless
+  server: 193.181.212.80
   port: 443
-  server: 185.245.84.50
-  skip-cert-verify: true
+  uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
+  network: ws
   tls: true
-  type: http
+  servername: kv.074167.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: kv.074167.xyz
   country: DK
 proxy-groups:
 - name: 🚀 节点选择
@@ -26,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DK_HTTP_443_381
+  - DK_VLESS_443_647
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DK_HTTP_443_381
+  - DK_VLESS_443_647
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +57,7 @@ proxy-groups:
 - name: 🌍 DK
   type: url-test
   proxies:
-  - DK_HTTP_443_381
+  - DK_VLESS_443_647
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VLESS_25555_645
+- name: KR_VLESS_25555_656
   network: ws
   port: 25555
   server: 152.69.226.63
@@ -15,13 +15,45 @@ proxies:
   ws-opts:
     path: /
   country: KR
-- name: KR_TROJAN_48851_662
+- client-fingerprint: unsafe
+  encryption: none
+  name: KR_VLESS_443_867
+  network: ws
+  port: 443
+  server: 168.107.36.135
+  servername: jp3.yohototo.top
+  tls: true
+  type: vless
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+  country: KR
+- name: KR_TROJAN_48851_551
   password: 5t6i121em5lkmsmk
   port: 48851
   server: kr002.zestapp778.com
   skip-cert-verify: true
   sni: kr002.zestapp778.com
   type: trojan
+  country: KR
+- cipher: aes-256-gcm
+  name: KR_SS_8091_1952
+  password: PCnnH6SQSnfoS27
+  port: 8091
+  server: 141.164.45.187
+  type: ss
+  country: KR
+- name: KR_VMESS_8888_467
+  type: vmess
+  network: tcp
+  server: 146.56.112.110
+  port: 8888
+  uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
+  udp: true
+  alterId: 0
+  cipher: auto
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -36,8 +68,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VLESS_25555_645
-  - KR_TROJAN_48851_662
+  - KR_VLESS_25555_656
+  - KR_VLESS_443_867
+  - KR_TROJAN_48851_551
+  - KR_SS_8091_1952
+  - KR_VMESS_8888_467
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +85,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VLESS_25555_645
-  - KR_TROJAN_48851_662
+  - KR_VMESS_8888_467
+  - KR_TROJAN_48851_551
+  - KR_VLESS_25555_656
+  - KR_VLESS_443_867
+  - KR_SS_8091_1952
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +101,11 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VLESS_25555_645
-  - KR_TROJAN_48851_662
+  - KR_VLESS_25555_656
+  - KR_VLESS_443_867
+  - KR_TROJAN_48851_551
+  - KR_SS_8091_1952
+  - KR_VMESS_8888_467
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
