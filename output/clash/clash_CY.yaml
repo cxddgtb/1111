@@ -5,14 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- encryption: none
-  name: CY_VLESS_16443_295
-  network: tcp
-  port: 16443
-  server: 45.86.60.174
-  tls: false
+- name: CY_VLESS_16443_2629
   type: vless
+  network: tcp
+  server: 45.86.60.174
+  port: 16443
   uuid: 13e541f3-d09d-4633-89df-8513db0ced20
+  tls: false
   country: CY
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CY_VLESS_16443_295
+  - CY_VLESS_16443_2629
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CY_VLESS_16443_295
+  - CY_VLESS_16443_2629
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +51,7 @@ proxy-groups:
 - name: 🌍 CY
   type: url-test
   proxies:
-  - CY_VLESS_16443_295
+  - CY_VLESS_16443_2629
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

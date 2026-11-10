@@ -5,7 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_HYSTERIA2_443_411
+- name: AE_VLESS_14430_652
+  type: vless
+  network: ws
+  server: 95.174.68.188
+  port: 14430
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  tls: false
+  ws-opts:
+    headers:
+      Host: 95.174.68.188
+    path: /vless
+  country: AE
+- name: AE_VLESS_22573_690
+  type: vless
+  network: ws
+  server: 84.235.244.108
+  port: 22573
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  servername: uae.unixzone.us
+  tls: false
+  ws-opts:
+    headers:
+      Host: uae.unixzone.us
+    path: /
+  country: AE
+- name: AE_HYSTERIA2_443_466
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -16,43 +41,18 @@ proxies:
   tls: false
   type: hysteria2
   country: AE
-- name: AE_VLESS_22573_660
-  network: ws
-  port: 22573
-  server: 84.235.244.108
-  servername: uae.unixzone.us
-  tls: false
-  type: vless
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  ws-opts:
-    headers:
-      Host: uae.unixzone.us
-    path: /
-  country: AE
-- name: AE_VLESS_14430_675
-  network: ws
-  port: 14430
-  server: 95.174.68.188
-  tls: false
-  type: vless
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  ws-opts:
-    headers:
-      Host: 95.174.68.188
-    path: /vless
-  country: AE
 - cipher: aes-256-gcm
-  name: AE_SS_19999_245
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 151.241.19.36
-  type: ss
-  country: AE
-- cipher: aes-256-gcm
-  name: AE_SS_19999_260
+  name: AE_SS_19999_283
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 151.241.19.29
+  type: ss
+  country: AE
+- cipher: aes-256-gcm
+  name: AE_SS_19999_292
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 151.241.19.36
   type: ss
   country: AE
 proxy-groups:
@@ -68,11 +68,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_HYSTERIA2_443_411
-  - AE_VLESS_22573_660
-  - AE_VLESS_14430_675
-  - AE_SS_19999_245
-  - AE_SS_19999_260
+  - AE_VLESS_14430_652
+  - AE_VLESS_22573_690
+  - AE_HYSTERIA2_443_466
+  - AE_SS_19999_283
+  - AE_SS_19999_292
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -85,11 +85,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_SS_19999_245
-  - AE_SS_19999_260
-  - AE_HYSTERIA2_443_411
-  - AE_VLESS_22573_660
-  - AE_VLESS_14430_675
+  - AE_SS_19999_283
+  - AE_SS_19999_292
+  - AE_HYSTERIA2_443_466
+  - AE_VLESS_14430_652
+  - AE_VLESS_22573_690
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -101,11 +101,11 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_HYSTERIA2_443_411
-  - AE_VLESS_22573_660
-  - AE_VLESS_14430_675
-  - AE_SS_19999_245
-  - AE_SS_19999_260
+  - AE_VLESS_14430_652
+  - AE_VLESS_22573_690
+  - AE_HYSTERIA2_443_466
+  - AE_SS_19999_283
+  - AE_SS_19999_292
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

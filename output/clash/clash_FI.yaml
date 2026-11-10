@@ -5,61 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_HYSTERIA2_443_463
-  password: 146d567c-6335-4e63-a8aa-7ec068642440
-  port: 443
-  server: fi1.obxodvpn.us
-  sni: fi1.obxodvpn.us
-  tls: false
-  type: hysteria2
-  country: FI
-- name: FI_HYSTERIA2_443_472
-  password: 146d567c-6335-4e63-a8aa-7ec068642440
-  port: 443
-  server: 177.202.75.56
-  sni: fi1.obxodvpn.us
-  tls: false
-  type: hysteria2
-  country: FI
-- name: FI_HYSTERIA2_4444_527
-  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
-  port: 4444
-  server: 2.27.210.6
-  skip-cert-verify: true
-  sni: lv2.nexfile.net
-  tls: false
-  type: hysteria2
-  country: FI
-- name: FI_VLESS_14430_438
-  network: ws
-  port: 14430
-  server: 45.144.234.157
-  tls: false
+- name: FI_VLESS_14430_508
   type: vless
+  network: ws
+  server: 45.144.234.157
+  port: 14430
   uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
+  servername: 45.144.234.157
+  tls: false
   ws-opts:
     headers:
       Host: 45.144.234.157
     path: /vless
   country: FI
-- name: FI_VLESS_443_706
-  server: 9e72bbg.msk2.h1clayd.click
-  port: 443
-  type: vless
-  uuid: 13e6bdfd-d51b-4e57-a40e-b88784cba8bd
-  tls: true
-  reality-opts:
-    public-key: 0R5QIf2DFXNgISIYDQdoWIdbNoImaJHrwOkc2tzRPyQ
-    short-id: cc07501e28b18687
-  servername: 9e72bbg.msk2.h1clayd.click
-  client-fingerprint: chrome
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: 93013a569b78
-  udp: true
-  country: FI
-- name: FI_VMESS_39018_1332
+- name: FI_VMESS_39018_366
   type: vmess
   network: tcp
   server: 65.108.240.210
@@ -68,6 +27,39 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
+  country: FI
+- name: FI_HYSTERIA2_443_566
+  password: 146d567c-6335-4e63-a8aa-7ec068642440
+  port: 443
+  server: fi1.obxodvpn.us
+  sni: fi1.obxodvpn.us
+  tls: false
+  type: hysteria2
+  country: FI
+- name: FI_HYSTERIA2_443_507
+  password: 146d567c-6335-4e63-a8aa-7ec068642440
+  port: 443
+  server: 177.202.75.56
+  sni: fi1.obxodvpn.us
+  tls: false
+  type: hysteria2
+  country: FI
+- name: FI_VLESS_443_629
+  server: 78.17.39.129
+  port: 443
+  type: vless
+  uuid: ead9f716-0131-4c16-a107-6b9b16090961
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: 78.17.39.129
+  client-fingerprint: safari
+  network: xhttp
+  xhttp-opts:
+    path: /assets/finvip02/
+    mode: packet-up
+  udp: true
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -82,12 +74,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_HYSTERIA2_443_463
-  - FI_HYSTERIA2_443_472
-  - FI_HYSTERIA2_4444_527
-  - FI_VLESS_14430_438
-  - FI_VLESS_443_706
-  - FI_VMESS_39018_1332
+  - FI_VLESS_14430_508
+  - FI_VMESS_39018_366
+  - FI_HYSTERIA2_443_566
+  - FI_HYSTERIA2_443_507
+  - FI_VLESS_443_629
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -100,12 +91,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_14430_438
-  - FI_HYSTERIA2_443_463
-  - FI_HYSTERIA2_443_472
-  - FI_HYSTERIA2_4444_527
-  - FI_VLESS_443_706
-  - FI_VMESS_39018_1332
+  - FI_VMESS_39018_366
+  - FI_HYSTERIA2_443_507
+  - FI_VLESS_14430_508
+  - FI_HYSTERIA2_443_566
+  - FI_VLESS_443_629
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -117,12 +107,11 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_HYSTERIA2_443_463
-  - FI_HYSTERIA2_443_472
-  - FI_HYSTERIA2_4444_527
-  - FI_VLESS_14430_438
-  - FI_VLESS_443_706
-  - FI_VMESS_39018_1332
+  - FI_VLESS_14430_508
+  - FI_VMESS_39018_366
+  - FI_HYSTERIA2_443_566
+  - FI_HYSTERIA2_443_507
+  - FI_VLESS_443_629
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

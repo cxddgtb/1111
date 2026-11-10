@@ -5,47 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: firefox
-  name: SE_VLESS_443_448
-  port: 443
-  server: 194.104.94.141
-  servername: se3.shtil.io
-  tls: true
-  type: vless
-  uuid: 6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6
-  country: SE
-- name: SE_VLESS_14430_539
-  network: ws
-  port: 14430
-  server: 193.188.21.253
-  servername: 193.188.21.253
-  tls: false
-  type: vless
-  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
-  ws-opts:
-    headers:
-      Host: 193.188.21.253
-    path: /vless
-  country: SE
-- cipher: aes-256-gcm
-  name: SE_SS_19999_301
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 138.199.55.243
-  type: ss
-  country: SE
-- name: SE_TROJAN_443_405
-  network: tcp
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 70.34.207.14
-  sni: searchhealthcarejobsandbuildmedicalcareerpathway.com
-  type: trojan
-  country: SE
-- name: SE_VLESS_14430_429
+- name: SE_VLESS_14430_474
   type: vless
   network: ws
   server: 5.178.109.174
@@ -58,7 +18,20 @@ proxies:
       Host: 5.178.109.174
     path: /vless
   country: SE
-- name: SE_VMESS_1270_424
+- name: SE_VLESS_14430_661
+  type: vless
+  network: ws
+  server: 193.188.21.253
+  port: 14430
+  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
+  servername: 193.188.21.253
+  tls: false
+  ws-opts:
+    headers:
+      Host: 193.188.21.253
+    path: /vless
+  country: SE
+- name: SE_VMESS_1270_494
   type: vmess
   network: tcp
   server: 62.93.166.184
@@ -68,6 +41,94 @@ proxies:
   tls: true
   alterId: 0
   cipher: auto
+  country: SE
+- name: SE_VLESS_443_550
+  type: vless
+  network: tcp
+  server: 194.104.94.141
+  port: 443
+  uuid: 6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6
+  servername: se3.shtil.io
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  country: SE
+- client-fingerprint: chrome
+  name: SE_VLESS_8443_896
+  network: ws
+  port: 8443
+  server: 138.124.49.108
+  servername: fs.qicai99.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  ws-opts:
+    headers:
+      Host: fs.qicai99.com
+    path: /
+  country: SE
+- client-fingerprint: chrome
+  name: SE_VLESS_443_952
+  network: ws
+  port: 443
+  server: 138.124.124.157
+  servername: fs.qicai99.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  ws-opts:
+    headers:
+      Host: fs.qicai99.com
+    path: /
+  country: SE
+- cipher: aes-256-gcm
+  name: SE_SS_19999_346
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 138.199.55.243
+  type: ss
+  country: SE
+- client-fingerprint: chrome
+  name: SE_VLESS_443_1973
+  network: ws
+  port: 443
+  server: 109.120.134.181
+  servername: fs.qicai99.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  ws-opts:
+    headers:
+      Host: fs.qicai99.com
+    path: /
+  country: SE
+- name: SE_TROJAN_443_482
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 70.34.207.14
+  sni: searchhealthcarejobsandbuildmedicalcareerpathway.com
+  type: trojan
+  country: SE
+- name: SE_HTTP_443_646
+  password: None
+  port: 443
+  server: 146.70.242.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: SE
+- name: SE_HTTP_443_668
+  password: None
+  port: 443
+  server: 149.50.216.65
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -82,12 +143,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_VLESS_443_448
-  - SE_VLESS_14430_539
-  - SE_SS_19999_301
-  - SE_TROJAN_443_405
-  - SE_VLESS_14430_429
-  - SE_VMESS_1270_424
+  - SE_VLESS_14430_474
+  - SE_VLESS_14430_661
+  - SE_VMESS_1270_494
+  - SE_VLESS_443_550
+  - SE_VLESS_8443_896
+  - SE_VLESS_443_952
+  - SE_SS_19999_346
+  - SE_VLESS_443_1973
+  - SE_TROJAN_443_482
+  - SE_HTTP_443_646
+  - SE_HTTP_443_668
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -100,12 +166,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_SS_19999_301
-  - SE_TROJAN_443_405
-  - SE_VMESS_1270_424
-  - SE_VLESS_14430_429
-  - SE_VLESS_443_448
-  - SE_VLESS_14430_539
+  - SE_SS_19999_346
+  - SE_VLESS_14430_474
+  - SE_TROJAN_443_482
+  - SE_VMESS_1270_494
+  - SE_VLESS_443_550
+  - SE_HTTP_443_646
+  - SE_VLESS_14430_661
+  - SE_HTTP_443_668
+  - SE_VLESS_8443_896
+  - SE_VLESS_443_952
+  - SE_VLESS_443_1973
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -117,12 +188,17 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_VLESS_443_448
-  - SE_VLESS_14430_539
-  - SE_SS_19999_301
-  - SE_TROJAN_443_405
-  - SE_VLESS_14430_429
-  - SE_VMESS_1270_424
+  - SE_VLESS_14430_474
+  - SE_VLESS_14430_661
+  - SE_VMESS_1270_494
+  - SE_VLESS_443_550
+  - SE_VLESS_8443_896
+  - SE_VLESS_443_952
+  - SE_SS_19999_346
+  - SE_VLESS_443_1973
+  - SE_TROJAN_443_482
+  - SE_HTTP_443_646
+  - SE_HTTP_443_668
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_HTTP_443_643
+- name: LV_HTTP_443_721
   port: 443
   server: 185.219.159.15
   skip-cert-verify: true
@@ -13,30 +13,13 @@ proxies:
   type: http
   udp: true
   country: LV
-- name: LV_HTTP_443_644
+- name: LV_HTTP_443_740
   password: None
   port: 443
   server: 185.219.159.16
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-  country: LV
-- name: LV_VLESS_443_719
-  server: 188.130.154.204
-  port: 443
-  type: vless
-  uuid: ed2e4dd1-d19f-48dd-b613-3f855b1d0765
-  tls: true
-  alpn:
-  - http/1.1
-  servername: cdn2.zovip2.ir
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /api/v3/pulse
-    headers:
-      Host: cdn2.zovip2.ir
   udp: true
   country: LV
 proxy-groups:
@@ -52,9 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_HTTP_443_643
-  - LV_HTTP_443_644
-  - LV_VLESS_443_719
+  - LV_HTTP_443_721
+  - LV_HTTP_443_740
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -67,9 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_HTTP_443_643
-  - LV_HTTP_443_644
-  - LV_VLESS_443_719
+  - LV_HTTP_443_721
+  - LV_HTTP_443_740
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,9 +62,8 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_HTTP_443_643
-  - LV_HTTP_443_644
-  - LV_VLESS_443_719
+  - LV_HTTP_443_721
+  - LV_HTTP_443_740
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

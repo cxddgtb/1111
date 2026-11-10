@@ -5,16 +5,61 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_HYSTERIA2_443_410
-  password: 23c82941-70f4-4381-90db-bd28e9a902e9
+- type: vless
+  name: DE_VLESS_443_466
+  server: 31.22.10.239
   port: 443
-  server: 201.8.71.59
-  sni: steel7.hadsvpn.com
-  tls: false
-  type: hysteria2
+  uuid: dbf3f074-3b18-43f3-b82a-debd8c879c69
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.apple.com
+  sni: www.apple.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 5rF9gThFLwVXRoVF8CQXcZbNXACv3SR4ob0TVyfbCWI
+    short-id: 09af1b0c92e6fed4
+  country: DE
+- name: DE_VMESS_1270_434
+  type: vmess
+  network: tcp
+  server: 193.108.117.61
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- name: DE_VMESS_1270_432
+  type: vmess
+  network: tcp
+  server: 193.108.119.87
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  country: DE
+- type: trojan
+  name: DE_TROJAN_443_1337
+  server: 191.44.112.170.sslip.io
+  port: 443
+  password: 46d221fa-e9b4-748c-4eae-019a88e42991
+  tls: true
+  servername: orbylume.my.to
+  sni: orbylume.my.to
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /tvpn-trojan/bg
+    headers:
+      Host: orbylume.my.to
   country: DE
 - type: hysteria
-  name: DE_HYSTERIA_54177_1769
+  name: DE_HYSTERIA_54177_1972
   server: 5.83.129.90
   port: 54177
   password: dongtaiwang.com
@@ -28,86 +73,136 @@ proxies:
   down: '55'
   auth-str: dongtaiwang.com
   country: DE
-- name: DE_VLESS_443_763
-  network: ws
-  port: 443
-  server: 178.104.70.11
-  servername: parsa-panel-dy55x.railway1385-2a46.workers.dev
-  tls: true
-  type: vless
-  uuid: 64726966-0000-4000-8000-740000000000
-  ws-opts:
-    headers:
-      Host: parsa-panel-dy55x.railway1385-2a46.workers.dev
-    path: /fp=firefox
-  country: DE
 - cipher: aes-256-gcm
-  name: DE_SS_19999_271
+  name: DE_SS_19999_289
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 193.108.119.3
   type: ss
   country: DE
 - cipher: aes-256-gcm
-  name: DE_SS_19999_283
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 57.129.83.85
-  type: ss
-  country: DE
-- cipher: aes-256-gcm
-  name: DE_SS_19999_270
+  name: DE_SS_19999_288
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 23.157.88.43
   type: ss
   country: DE
 - cipher: aes-256-gcm
-  name: DE_SS_19999_267
+  name: DE_SS_19999_300
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 57.129.83.85
+  type: ss
+  country: DE
+- cipher: aes-256-gcm
+  name: DE_SS_19999_288_2
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 193.108.119.2
   type: ss
   country: DE
 - cipher: chacha20-ietf-poly1305
-  name: DE_SS_51628_247
+  name: DE_SS_51628_300
   password: 29ZZXVa34x7sC48w9FKQ54UKHiJJGTVgKFppBRgviLrVCAYVVyKZdD3obbpjCyk31V5b2G2d7xzqmaPBFdcheCVB9UQ4ZghF
   port: 51628
   server: 156.67.120.205
   type: ss
   udp: true
   country: DE
-- name: DE_TROJAN_443_390
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 193.108.119.29
-  sni: blog.iloverussia2026.com
-  type: trojan
-  country: DE
-- name: DE_TROJAN_443_410
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 193.108.119.96
-  sni: learn.iloverussia2026.com
-  type: trojan
-  country: DE
-- name: DE_TROJAN_443_406
+- name: DE_TROJAN_443_435
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
   server: 193.108.119.193
   sni: resources.iloverussia2026.com
   type: trojan
   country: DE
-- name: DE_TROJAN_443_466
-  password: 6cddea99-9b18-4d42-8638-131bd9f5374f
+- name: DE_TROJAN_443_430
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
-  server: jp1.8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
-  skip-cert-verify: true
-  sni: 8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
+  server: 193.108.119.29
+  sni: blog.iloverussia2026.com
   type: trojan
-  udp: true
   country: DE
-- name: DE_HTTP_443_557
+- name: DE_HTTP_9002_636
+  password: None
+  port: 9002
+  server: 158.173.154.4
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_604
+  password: None
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_635
+  password: None
+  port: 443
+  server: 87.106.223.158
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_443_604_2
+  password: None
+  port: 443
+  server: 152.233.20.206
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_9443_598
+  password: None
+  port: 9443
+  server: 87.249.132.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_9002_632
+  password: 'null'
+  port: 9002
+  server: 158.173.154.2
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+  country: DE
+- client-fingerprint: chrome
+  name: DE_VLESS_443_619
+  network: ws
+  port: 443
+  server: 178.128.199.136
+  servername: fs.qicai99.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  ws-opts:
+    headers:
+      Host: fs.qicai99.com
+    path: /
+  country: DE
+- client-fingerprint: chrome
+  name: DE_VLESS_443_692
+  network: ws
+  port: 443
+  server: 159.223.20.232
+  servername: fs.qicai99.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  ws-opts:
+    headers:
+      Host: fs.qicai99.com
+    path: /
+  country: DE
+- name: DE_HTTP_443_626
   port: 443
   server: 213.109.163.119
   skip-cert-verify: true
@@ -115,15 +210,7 @@ proxies:
   type: http
   udp: true
   country: DE
-- name: DE_HTTP_9002_575
-  port: 9002
-  server: 158.173.154.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: DE
-- name: DE_HTTP_9002_585
+- name: DE_HTTP_9002_633
   port: 9002
   server: 158.173.154.5
   skip-cert-verify: true
@@ -131,75 +218,50 @@ proxies:
   type: http
   udp: true
   country: DE
-- client-fingerprint: chrome
-  name: DE_VLESS_443_812
-  network: ws
+- name: DE_HTTP_9002_635
+  port: 9002
+  server: 158.173.154.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: DE
+- name: DE_HYSTERIA2_443_576
+  server: vpn-de-002.fastervpn.world
   port: 443
-  server: 185.242.113.75
-  tls: true
-  type: vless
-  udp: true
-  uuid: 18615aac-72e2-451b-b7c8-b492e63cf65a
-  ws-opts:
-    headers:
-      Host: jyfrj1cims.dev.onappjet.com
-    path: /jx-8c3iiq92bemzqp
+  type: hysteria2
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  auth: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  sni: vpn-de-002.fastervpn.world
+  skip-cert-verify: true
   country: DE
-- name: DE_VLESS_447_497
-  server: 2.26.48.13
-  port: 447
+- name: DE_VLESS_443_1509
+  server: 217.60.27.108
+  port: 443
   type: vless
-  uuid: a4ef4fa2-3080-4d2d-a4bf-571c7adf6a0b
-  tls: true
-  servername: cdn.vash-uzel.cyou
-  client-fingerprint: chrome
-  network: xhttp
-  xhttp-opts:
-    path: /api/v1/telemetry/sync
-    host: cdn.vash-uzel.cyou
-  udp: true
-  country: DE
-- name: DE_VLESS_8443_627
-  server: nl-1.bexumconnect.ltd
-  port: 8443
-  type: vless
-  uuid: 68a67906-5b37-4779-a6cc-58a1655f18b4
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
   tls: true
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: xEprpxcbj30lJZMfNWftPtiAmgrXTzRnnN3HFRtFfB4
-    short-id: f3c0f343a191
-  servername: max.ru
+    public-key: q4_o7NvD6vQg4hYsyO29Q6PVufjTJHDUbQTqstre9EQ
+  servername: music.3apes.online
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+  country: DE
+- name: DE_VLESS_443_1575
+  server: music.3apes.online
+  port: 443
+  type: vless
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: q4_o7NvD6vQg4hYsyO29Q6PVufjTJHDUbQTqstre9EQ
+  servername: music.3apes.online
   client-fingerprint: qq
   network: tcp
   udp: true
-  country: DE
-- name: DE_VLESS_80_470
-  type: vless
-  network: ws
-  server: OV-Germany1.09vpn.com
-  port: 80
-  uuid: 7d74eae4-8a06-4306-a923-ad686f30bf26
-  skip-cert-verify: false
-  udp: true
-  encryption: none
-  xudp: true
-  packet-encoding: xudp
-  ws-opts:
-    headers:
-      Host: OV-Germany1.09vpn.com
-    path: /vless/
-  country: DE
-- name: DE_VMESS_1270_401
-  type: vmess
-  network: tcp
-  server: 193.108.119.87
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -214,26 +276,32 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_HYSTERIA2_443_410
-  - DE_HYSTERIA_54177_1769
-  - DE_VLESS_443_763
-  - DE_SS_19999_271
-  - DE_SS_19999_283
-  - DE_SS_19999_270
-  - DE_SS_19999_267
-  - DE_SS_51628_247
-  - DE_TROJAN_443_390
-  - DE_TROJAN_443_410
-  - DE_TROJAN_443_406
-  - DE_TROJAN_443_466
-  - DE_HTTP_443_557
-  - DE_HTTP_9002_575
-  - DE_HTTP_9002_585
-  - DE_VLESS_443_812
-  - DE_VLESS_447_497
-  - DE_VLESS_8443_627
-  - DE_VLESS_80_470
-  - DE_VMESS_1270_401
+  - DE_VLESS_443_466
+  - DE_VMESS_1270_434
+  - DE_VMESS_1270_432
+  - DE_TROJAN_443_1337
+  - DE_HYSTERIA_54177_1972
+  - DE_SS_19999_289
+  - DE_SS_19999_288
+  - DE_SS_19999_300
+  - DE_SS_19999_288_2
+  - DE_SS_51628_300
+  - DE_TROJAN_443_435
+  - DE_TROJAN_443_430
+  - DE_HTTP_9002_636
+  - DE_HTTP_443_604
+  - DE_HTTP_443_635
+  - DE_HTTP_443_604_2
+  - DE_HTTP_9443_598
+  - DE_HTTP_9002_632
+  - DE_VLESS_443_619
+  - DE_VLESS_443_692
+  - DE_HTTP_443_626
+  - DE_HTTP_9002_633
+  - DE_HTTP_9002_635
+  - DE_HYSTERIA2_443_576
+  - DE_VLESS_443_1509
+  - DE_VLESS_443_1575
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -246,26 +314,32 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_SS_51628_247
-  - DE_SS_19999_267
-  - DE_SS_19999_270
-  - DE_SS_19999_271
-  - DE_SS_19999_283
-  - DE_TROJAN_443_390
-  - DE_VMESS_1270_401
-  - DE_TROJAN_443_406
-  - DE_HYSTERIA2_443_410
-  - DE_TROJAN_443_410
-  - DE_TROJAN_443_466
-  - DE_VLESS_80_470
-  - DE_VLESS_447_497
-  - DE_HTTP_443_557
-  - DE_HTTP_9002_575
-  - DE_HTTP_9002_585
-  - DE_VLESS_8443_627
-  - DE_VLESS_443_763
-  - DE_VLESS_443_812
-  - DE_HYSTERIA_54177_1769
+  - DE_SS_19999_288
+  - DE_SS_19999_288_2
+  - DE_SS_19999_289
+  - DE_SS_19999_300
+  - DE_SS_51628_300
+  - DE_TROJAN_443_430
+  - DE_VMESS_1270_432
+  - DE_VMESS_1270_434
+  - DE_TROJAN_443_435
+  - DE_VLESS_443_466
+  - DE_HYSTERIA2_443_576
+  - DE_HTTP_9443_598
+  - DE_HTTP_443_604
+  - DE_HTTP_443_604_2
+  - DE_VLESS_443_619
+  - DE_HTTP_443_626
+  - DE_HTTP_9002_632
+  - DE_HTTP_9002_633
+  - DE_HTTP_443_635
+  - DE_HTTP_9002_635
+  - DE_HTTP_9002_636
+  - DE_VLESS_443_692
+  - DE_TROJAN_443_1337
+  - DE_VLESS_443_1509
+  - DE_VLESS_443_1575
+  - DE_HYSTERIA_54177_1972
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -277,26 +351,32 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_HYSTERIA2_443_410
-  - DE_HYSTERIA_54177_1769
-  - DE_VLESS_443_763
-  - DE_SS_19999_271
-  - DE_SS_19999_283
-  - DE_SS_19999_270
-  - DE_SS_19999_267
-  - DE_SS_51628_247
-  - DE_TROJAN_443_390
-  - DE_TROJAN_443_410
-  - DE_TROJAN_443_406
-  - DE_TROJAN_443_466
-  - DE_HTTP_443_557
-  - DE_HTTP_9002_575
-  - DE_HTTP_9002_585
-  - DE_VLESS_443_812
-  - DE_VLESS_447_497
-  - DE_VLESS_8443_627
-  - DE_VLESS_80_470
-  - DE_VMESS_1270_401
+  - DE_VLESS_443_466
+  - DE_VMESS_1270_434
+  - DE_VMESS_1270_432
+  - DE_TROJAN_443_1337
+  - DE_HYSTERIA_54177_1972
+  - DE_SS_19999_289
+  - DE_SS_19999_288
+  - DE_SS_19999_300
+  - DE_SS_19999_288_2
+  - DE_SS_51628_300
+  - DE_TROJAN_443_435
+  - DE_TROJAN_443_430
+  - DE_HTTP_9002_636
+  - DE_HTTP_443_604
+  - DE_HTTP_443_635
+  - DE_HTTP_443_604_2
+  - DE_HTTP_9443_598
+  - DE_HTTP_9002_632
+  - DE_VLESS_443_619
+  - DE_VLESS_443_692
+  - DE_HTTP_443_626
+  - DE_HTTP_9002_633
+  - DE_HTTP_9002_635
+  - DE_HYSTERIA2_443_576
+  - DE_VLESS_443_1509
+  - DE_VLESS_443_1575
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
