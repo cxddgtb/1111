@@ -5,46 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: US_SSR_8080_76
-  type: ssr
-  server: 107.151.182.253
-  port: 8080
-  password: 14fFPrbezE3HDZzsMOr6
-  cipher: rc4-md5
-  protocol: origin
-  obfs: plain
-  country: US
-- type: vless
-  name: US_VLESS_443_354
-  server: 179.253.248.21
-  port: 443
-  uuid: a3940ddb-ba50-5109-a0fd-4a06990f1ded
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: learn.microsoft.com
-  sni: learn.microsoft.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: ABZFDD3Ne57Q0i7skCnEpyUVTKTdMhm3aqJ9mwLZ7lw
-    short-id: 62169cb853fb7503
-  country: US
-- name: US_VLESS_443_667
-  type: vless
-  network: xhttp
-  server: 201.34.142.108
-  port: 443
-  uuid: 4777d90d-265b-4927-a0d1-63f36ed1421c
-  servername: 201.34.142.108
-  tls: true
-  udp: true
-  client-fingerprint: firefox
-  xhttp-opts:
-    mode: auto
-    path: /assets/nlrelay01/
-  country: US
-- name: US_VMESS_18000_12
+- name: US_VMESS_18000_140
   type: vmess
   network: tcp
   server: 84.17.41.2
@@ -54,23 +15,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: US
-- name: US_VLESS_8443_99
-  type: vless
-  network: ws
-  server: 38.107.236.166
-  port: 8443
-  uuid: 48572af1-d091-457b-a86e-4a457e99927f
-  servername: 3h-unitedstates3.09vpn.com
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  packet-encoding: xudp
-  ws-opts:
-    headers:
-      Host: 3h-unitedstates3.09vpn.com
-    path: /vless/
-  country: US
-- name: US_VMESS_18000_131
+- name: US_VMESS_18000_35
   type: vmess
   network: tcp
   server: 67.220.85.46
@@ -80,27 +25,7 @@ proxies:
   alterId: 0
   cipher: aes-128-gcm
   country: US
-- name: US_VMESS_18000_161
-  type: vmess
-  network: tcp
-  server: 67.220.95.3
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  tls: false
-  alterId: 0
-  cipher: aes-128-gcm
-  country: US
-- name: US_VMESS_18000_150
-  type: vmess
-  network: tcp
-  server: 38.91.107.49
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  tls: false
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_18000_148
+- name: US_VMESS_18000_101
   type: vmess
   network: tcp
   server: 38.110.1.246
@@ -110,210 +35,436 @@ proxies:
   alterId: 0
   cipher: auto
   country: US
-- name: US_VLESS_2087_245
-  type: vless
-  network: ws
-  server: saas.sin.fan
-  port: 2087
-  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
-  servername: vp3.1145678.xyz
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: vp3.1145678.xyz
-    path: /new/comics
+- name: US_VMESS_18000_1530
+  type: vmess
+  network: tcp
+  server: 67.220.95.3
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  tls: false
+  alterId: 0
+  cipher: aes-128-gcm
   country: US
-- name: US_VLESS_443_1488
-  type: vless
+- name: US_VMESS_18000_2717
+  type: vmess
+  network: tcp
+  server: 38.91.107.49
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  tls: false
+  alterId: 0
+  cipher: auto
+  country: US
+- name: US_VMESS_443_1929
+  type: vmess
+  server: 172.66.0.1
+  port: 443
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
   network: ws
+  tls: true
+  servername: vmess.lbw666.dpdns.org
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
+  country: US
+- name: US_VMESS_39495_2168
+  type: vmess
+  server: 129.146.77.248
+  port: 39495
+  uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: ''
+  country: US
+- name: US_VLESS_443_1601
+  type: vless
   server: 3.169.9.125
   port: 443
   uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  servername: d2ex4nxd2e01ub.cloudfront.net
-  skip-cert-verify: false
+  network: ws
   tls: true
-  udp: true
-  tfo: false
+  servername: d4afoyczh5tek.cloudfront.net
   client-fingerprint: chrome
   ws-opts:
-    headers:
-      Host: d2ex4nxd2e01ub.cloudfront.net
     path: /
+    headers:
+      Host: d4afoyczh5tek.cloudfront.net
   country: US
-- name: US_VMESS_1270_150
-  type: vmess
-  network: tcp
-  server: 162.251.61.46
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_183
-  type: vmess
-  network: tcp
-  server: 167.88.63.99
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_205
-  type: vmess
-  network: tcp
-  server: 142.202.48.87
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_167
-  type: vmess
-  network: tcp
-  server: 162.251.60.97
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_224
-  type: vmess
-  network: tcp
-  server: 162.251.62.35
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_184
-  type: vmess
-  network: tcp
-  server: 167.88.63.47
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_226
-  type: vmess
-  network: tcp
-  server: 162.251.62.44
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_235
-  type: vmess
-  network: tcp
-  server: 162.251.62.42
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_236
-  type: vmess
-  network: tcp
-  server: 216.106.182.225
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_150_2
-  type: vmess
-  network: tcp
-  server: 38.128.66.241
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_18000_911
-  type: vmess
-  network: tcp
-  server: 169.197.142.22
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VLESS_18580_149
-  type: vless
-  network: tcp
-  server: 108.61.119.63
-  port: 18580
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  servername: us007.zestapp778.com
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: US
-- name: US_HYSTERIA2_20999_218
-  password: MZKlrFbG73bKvCDe8VPul5PR9xQm
-  port: 20999
-  server: 35.207.53.51
-  skip-cert-verify: true
-  sni: www.apple.com
-  tls: false
-  type: hysteria2
-  country: US
-- name: US_HYSTERIA2_443_228
-  obfs: salamander
-  obfs-password: ZuPf4OcXKvotJdDxlTus
-  password: YV1sd3tfCZngTtnvRmy7
+- name: US_TROJAN_443_195
+  type: trojan
+  server: 167.88.61.193
   port: 443
-  server: 206.189.229.48
-  skip-cert-verify: true
-  sni: www.microsoft.com
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: browseseniorrolesandenhanceyourcareertoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_174
+  type: trojan
+  server: 66.163.112.31
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: unlockyourfuturefindyourperfectcareer.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_198
+  type: trojan
+  server: 167.88.61.20
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.browseseniorrolesandenhanceyourcareertoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_249
+  type: trojan
+  server: 167.88.61.52
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.browseseniorrolesandenhanceyourcareertoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_183
+  type: trojan
+  server: 66.163.112.13
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.unlockyourfuturefindyourperfectcareer.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_174_2
+  type: trojan
+  server: 66.163.112.142
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.unlockyourfuturefindyourperfectcareer.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_173
+  type: trojan
+  server: 66.163.112.121
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.unlockyourfuturefindyourperfectcareer.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_81
+  type: trojan
+  server: 216.152.155.131
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.nextjobopportunityandclaimyouridealrole.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_69
+  type: trojan
+  server: 216.152.156.212
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_86
+  type: trojan
+  server: 216.152.155.54
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.nextjobopportunityandclaimyouridealrole.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_79
+  type: trojan
+  server: 216.152.155.176
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.nextjobopportunityandclaimyouridealrole.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_88
+  type: trojan
+  server: 169.197.140.245
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_171
+  type: trojan
+  server: 66.163.112.242
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.unlockyourfuturefindyourperfectcareer.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_255
+  type: trojan
+  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  port: 443
+  password: f0eb8c92ce8946aaba856569cff1a16b
+  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_170
+  type: trojan
+  server: 66.163.112.76
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.unlockyourfuturefindyourperfectcareer.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_76
+  type: trojan
+  server: 216.152.155.59
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.nextjobopportunityandclaimyouridealrole.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_215
+  type: trojan
+  server: 216.106.186.33
+  port: 443
+  password: f0eb8c92ce8946aaba856569cff1a16b
+  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_166
+  type: trojan
+  server: 66.163.114.132
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.findconnectwithemployersandbuildprofessionalnetwork.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_59
+  type: trojan
+  server: 216.152.156.65
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_79_2
+  type: trojan
+  server: 216.152.155.23
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.nextjobopportunityandclaimyouridealrole.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_69_2
+  type: trojan
+  server: 216.152.156.49
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_245
+  type: trojan
+  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  port: 443
+  password: dba20dcb635e430fa4d3bfc303a149d2
+  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_65
+  type: trojan
+  server: 216.152.156.81
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_93
+  type: trojan
+  server: 169.197.140.218
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_92
+  type: trojan
+  server: 169.197.140.171
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_49
+  type: trojan
+  server: 66.163.122.7
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.searchnationwidecareerchangehelperandguidancetoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_85
+  type: trojan
+  server: 169.197.140.214
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_125
+  type: trojan
+  server: 170.101.101.131
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_TROJAN_57277_97
+  type: trojan
+  server: us001.zestapp778.com
+  port: 57277
+  password: 5t6i121em5lkmsmk
+  sni: us001.zestapp778.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_47
+  type: trojan
+  server: 66.163.122.25
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.searchnationwidecareerchangehelperandguidancetoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_81_2
+  type: trojan
+  server: 216.152.155.158
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.nextjobopportunityandclaimyouridealrole.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_122
+  type: trojan
+  server: 170.101.101.237
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_123
+  type: trojan
+  server: 170.101.101.67
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_92_2
+  type: trojan
+  server: 169.197.140.208
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_53
+  type: trojan
+  server: 66.163.122.26
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.searchnationwidecareerchangehelperandguidancetoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_119
+  type: trojan
+  server: 170.101.101.211
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_48
+  type: trojan
+  server: 66.163.122.81
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.searchnationwidecareerchangehelperandguidancetoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_48_2
+  type: trojan
+  server: 66.163.122.46
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: searchnationwidecareerchangehelperandguidancetoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_118
+  type: trojan
+  server: 170.101.101.112
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_122_2
+  type: trojan
+  server: 170.101.101.53
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_VLESS_443_1304
+  type: vless
+  server: 85.155.179.206
+  port: 443
+  uuid: 86a83d11-d751-4b60-aa4e-1dca5cff7028
+  network: tcp
+  tls: true
+  servername: us3.shtil.io
+  client-fingerprint: chrome
+  ws-opts: null
+  country: US
+- name: US_TROJAN_443_198_2
+  type: trojan
+  server: 167.88.61.175
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.browseseniorrolesandenhanceyourcareertoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_216
+  type: trojan
+  server: 216.106.186.46
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.findlocaljobnetworkandbuildcommunityconnections.com
+  network: tcp
+  country: US
+- name: US_HYSTERIA2_4444_393
+  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
+  port: 4444
+  server: 13.143.189.106
+  skip-cert-verify: false
+  sni: pl2.nexfile.net
+  tls: false
+  type: hysteria2
+  country: US
+- name: US_HYSTERIA2_4444_416
+  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
+  port: 4444
+  server: 31.76.62.148
+  sni: lv2.nexfile.net
   tls: false
   type: hysteria2
   country: US
 - type: hysteria
-  name: US_HYSTERIA_22335_1097
-  server: 198.200.57.142
-  port: 22335
-  password: github.com/Alvin9999-newpac/fanqiang
-  tls: true
-  servername: bing.com
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: github.com/Alvin9999-newpac/fanqiang
-  country: US
-- type: hysteria
-  name: US_HYSTERIA_20022_1149
+  name: US_HYSTERIA_20022_1404
   server: 137.175.82.44
   port: 20022
   password: dongtaiwang.com
@@ -328,7 +479,7 @@ proxies:
   auth-str: dongtaiwang.com
   country: US
 - type: hysteria
-  name: US_HYSTERIA_20022_1195
+  name: US_HYSTERIA_20022_1644
   server: 137.175.82.43
   port: 20022
   password: dongtaiwang.com
@@ -342,16 +493,31 @@ proxies:
   down: '20'
   auth-str: dongtaiwang.com
   country: US
-- name: US_HYSTERIA2_4444_503
+- name: US_HYSTERIA2_4444_935
   password: a35c508f-4d5d-4531-842e-6e9d43c762c0
   port: 4444
-  server: 13.143.188.143
+  server: 13.143.189.105
   skip-cert-verify: false
-  sni: bl1.nexfile.net
+  sni: pl2.nexfile.net
   tls: false
   type: hysteria2
   country: US
-- name: US_HYSTERIA2_4444_515
+- type: hysteria
+  name: US_HYSTERIA_22335_1684
+  server: 198.200.57.142
+  port: 22335
+  password: github.com/Alvin9999-newpac/fanqiang
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: github.com/Alvin9999-newpac/fanqiang
+  country: US
+- name: US_HYSTERIA2_4444_1152
   password: a35c508f-4d5d-4531-842e-6e9d43c762c0
   port: 4444
   server: 13.143.189.149
@@ -360,75 +526,38 @@ proxies:
   tls: false
   type: hysteria2
   country: US
-- name: US_HYSTERIA2_4444_902
+- name: US_HYSTERIA2_4444_1161
   password: a35c508f-4d5d-4531-842e-6e9d43c762c0
   port: 4444
-  server: 13.143.189.106
+  server: 13.143.189.147
   skip-cert-verify: false
   sni: pl2.nexfile.net
   tls: false
   type: hysteria2
   country: US
-- name: US_HYSTERIA2_4444_928
-  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
-  port: 4444
-  server: 13.143.189.101
-  skip-cert-verify: false
-  sni: pl1.nexfile.net
-  tls: false
-  type: hysteria2
-  country: US
-- name: US_HYSTERIA2_4444_1085
-  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
-  port: 4444
-  server: 13.143.189.142
-  skip-cert-verify: false
-  sni: pl3.nexfile.net
-  tls: false
-  type: hysteria2
-  country: US
 - client-fingerprint: chrome
-  encryption: none
-  name: US_VLESS_443_238
-  network: xhttp
+  name: US_VLESS_443_850
+  network: ws
   port: 443
-  server: 200.102.179.69
-  servername: dmbdnpctq8hjxx.hat.onl
+  server: 68.64.182.205
+  servername: fs.qicai99.com
   tls: true
   type: vless
-  udp: true
-  uuid: 7592ca5c-b352-4562-8856-a9c936a3331b
-  xhttp-opts:
-    host: dmbdnpctq8hjxx.hat.onl
-    mode: auto
-    path: /hls/014373eq/seg
-  xudp: true
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  ws-opts:
+    headers:
+      Host: fs.qicai99.com
+    path: /
   country: US
-- name: US_HTTP_9002_120
-  port: 9002
-  server: 138.199.35.209
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: US
-- name: US_HTTP_9002_152
-  password: None
-  port: 9002
-  server: 138.199.35.195
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: US
-- name: US_HTTP_443_189
+- name: US_TROJAN_443_198_3
+  password: a75243d0f5c2e31bd6c8c118b4f6442f81ad
   port: 443
-  server: 38.247.141.135
+  server: 176.122.173.224
   skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
+  sni: www.cloudflare.com
+  type: trojan
   country: US
-- name: US_HTTP_9002_125
+- name: US_HTTP_9002_224
   password: None
   port: 9002
   server: 138.199.35.204
@@ -436,23 +565,55 @@ proxies:
   tls: true
   type: http
   country: US
-- name: US_HTTP_9002_141
+- name: US_HTTP_443_269
   password: None
-  port: 9002
-  server: 138.199.35.203
+  port: 443
+  server: 167.88.60.242
   skip-cert-verify: true
   tls: true
   type: http
   country: US
-- name: US_HTTP_9002_122
+- name: US_HTTP_9002_212
   password: None
   port: 9002
-  server: 138.199.35.198
+  server: 138.199.35.214
   skip-cert-verify: true
   tls: true
   type: http
   country: US
-- name: US_HTTP_9002_122_2
+- name: US_HTTP_9002_214
+  port: 9002
+  server: 138.199.35.212
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: US
+- name: US_HTTP_9002_214_2
+  password: None
+  port: 9002
+  server: 138.199.35.216
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: US
+- name: US_HTTP_9002_211
+  password: None
+  port: 9002
+  server: 138.199.35.195
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: US
+- name: US_HTTP_9002_217
+  port: 9002
+  server: 138.199.35.209
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: US
+- name: US_HTTP_9002_211_2
   port: 9002
   server: 138.199.35.220
   skip-cert-verify: true
@@ -460,84 +621,46 @@ proxies:
   type: http
   udp: true
   country: US
-- name: US_HTTP_443_159
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: US
-- name: US_HTTP_443_196
-  port: 443
-  server: 121.127.34.82
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: US
-- name: US_HTTP_443_257
+- name: US_HTTP_9002_214_3
   password: None
-  port: 443
-  server: 198.44.135.27
+  port: 9002
+  server: 138.199.35.202
   skip-cert-verify: true
   tls: true
   type: http
   country: US
-- name: US_HTTP_443_218
-  password: None
-  port: 443
-  server: 12.202.180.10
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: US
-- alpn:
-  - h3
-  client-fingerprint: edge
-  name: US_VLESS_443_955
-  network: xhttp
-  port: 443
-  server: 151.101.36.61
-  servername: accounts.fastly.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  xhttp-opts:
-    host: ovd10.global.ssl.fastly.net
-    mode: auto
-    path: /
-  country: US
-- name: US_HTTP_443_200
-  port: 443
-  server: 68.235.56.51
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: US
-- name: US_HTTP_9443_186
+- name: US_HTTP_9443_235
   password: None
   port: 9443
-  server: 154.47.25.78
+  server: 38.95.111.226
   skip-cert-verify: true
   tls: true
   type: http
   country: US
-- name: US_SOCKS5_1080_109
-  password: test123
-  port: 1080
-  server: 104.168.249.36
-  type: socks5
-  username: test123
+- name: US_HTTP_8443_49
+  password: None
+  port: 8443
+  server: 18.206.28.143
+  skip-cert-verify: true
+  tls: true
+  type: http
   country: US
-- name: US_HTTP_9443_257
+- name: US_HTTP_9443_163
   password: None
   port: 9443
-  server: 149.88.21.140
+  server: 23.169.224.34
   skip-cert-verify: true
   tls: true
   type: http
   country: US
-- name: US_HTTP_443_659
+- name: US_HTTP_443_103
+  port: 443
+  server: 193.239.236.134
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: US
+- name: US_HTTP_443_478
   port: 443
   server: 149.34.248.65
   skip-cert-verify: true
@@ -546,32 +669,72 @@ proxies:
   type: http
   udp: true
   country: US
-- name: US_HTTP_9002_149
-  password: 'null'
+- name: US_SOCKS5_3001_197
+  port: 3001
+  server: 4.157.29.42
+  skip-cert-verify: true
+  type: socks5
+  country: US
+- name: US_HTTP_9002_228
+  password: None
   port: 9002
-  server: 138.199.35.216
+  server: 138.199.35.206
   skip-cert-verify: true
   tls: true
   type: http
   username: 'null'
+  country: US
+- name: US_HTTP_443_582
+  port: 443
+  server: 68.235.56.51
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: US
+- alpn:
+  - h3
+  client-fingerprint: edge
+  name: US_VLESS_443_200
+  network: xhttp
+  port: 443
+  server: 151.101.36.2
+  servername: accounts.fastly.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  xhttp-opts:
+    host: oh4.global.ssl.fastly.net
+    mode: auto
+    path: /
+  country: US
+- auth: 64c05afc-ce81-4ba0-b697-afa04da1427e
+  name: US_HYSTERIA2_44443_114
+  password: 64c05afc-ce81-4ba0-b697-afa04da1427e
+  port: 44443
+  server: 104.168.6.236
+  skip-cert-verify: true
+  sni: bing.com
+  tls: false
+  type: hysteria2
   country: US
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: chrome
   encryption: none
-  name: US_VLESS_443_685
+  name: US_VLESS_443_1404
   network: xhttp
   port: 443
   server: www.codex2api.com
-  servername: 86f9dec4s478.kuback.top
+  servername: b5cb4fa7s274.kuback.top
   tls: true
   type: vless
   udp: true
   uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
   xhttp-opts:
-    host: 86f9dec4s478.kuback.top
-    path: 48a0348bf803e0097405a138424f4890
+    host: b5cb4fa7s274.kuback.top
+    path: 596e6bac208562ef1c25e117655ef1a6
     x-padding-bytes: 100-1000
     x-padding-header: X-Forwarded-Uri
     x-padding-key: _
@@ -580,75 +743,7 @@ proxies:
     x-padding-placement: queryInHeader
   xudp: true
   country: US
-- client-fingerprint: chrome
-  name: US_VLESS_443_178
-  network: ws
-  port: 443
-  server: 5.253.38.69
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /
-  country: US
-- name: US_VLESS_443_325
-  server: 151.101.36.2
-  port: 443
-  type: vless
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  tls: true
-  alpn:
-  - h3
-  servername: accounts.fastly.com
-  client-fingerprint: edge
-  network: xhttp
-  xhttp-opts:
-    path: /
-    host: oh4.global.ssl.fastly.net
-    mode: auto
-  udp: true
-  country: US
-- name: US_VLESS_443_330
-  server: 151.101.36.111
-  port: 443
-  type: vless
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  tls: true
-  alpn:
-  - h3
-  servername: accounts.fastly.com
-  client-fingerprint: edge
-  network: xhttp
-  xhttp-opts:
-    path: /
-    host: ovd11.global.ssl.fastly.net
-    mode: auto
-  udp: true
-  country: US
-- name: US_VLESS_443_396
-  server: 151.101.36.227
-  port: 443
-  type: vless
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  tls: true
-  alpn:
-  - h3
-  servername: accounts.fastly.com
-  client-fingerprint: edge
-  network: xhttp
-  xhttp-opts:
-    path: /
-    host: oh1.global.ssl.fastly.net
-    mode: auto
-    no-grpc-header: true
-    x-padding-bytes: 100-1000
-  udp: true
-  country: US
-- name: US_HTTP_8443_972
+- name: US_HTTP_8443_369
   port: 8443
   server: 44.248.167.117
   skip-cert-verify: true
@@ -656,25 +751,69 @@ proxies:
   type: http
   udp: true
   country: US
-- name: US_VLESS_443_568
-  server: 151.101.36.128
+- name: US_VLESS_443_101
+  server: 200.102.179.69
   port: 443
   type: vless
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  uuid: 7592ca5c-b352-4562-8856-a9c936a3331b
   tls: true
-  alpn:
-  - h3
-  servername: accounts.fastly.com
+  servername: dmbdnpctq8hjxx.hat.onl
   client-fingerprint: chrome
   network: xhttp
   xhttp-opts:
-    path: /
-    host: ovd7.global.ssl.fastly.net
+    path: /hls/014373eq/seg
+    host: dmbdnpctq8hjxx.hat.onl
     mode: auto
   udp: true
   country: US
-- name: US_VLESS_443_2171
-  server: 151.101.36.88
+- name: US_VLESS_443_592
+  server: msk5.gacvpn.site
+  port: 443
+  type: vless
+  uuid: 3f5e89d5-591f-4ac9-b071-b05680b573c3
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 8fSwTqCwJ2HWGxcTQsZs8Sx0hRk2Ru7HFdu-iLnesGg
+    short-id: 53d0d0611a
+  servername: de2.gacvpn.site
+  client-fingerprint: edge
+  network: tcp
+  udp: true
+  country: US
+- name: US_VLESS_443_496
+  server: 201.34.142.108
+  port: 443
+  type: vless
+  uuid: 4777d90d-265b-4927-a0d1-63f36ed1421c
+  tls: true
+  servername: 201.34.142.108
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /assets/nlrelay01/
+    mode: auto
+  udp: true
+  country: US
+- name: US_VLESS_14443_696
+  server: 129.101.106.205
+  port: 14443
+  type: vless
+  uuid: 010be6fa-ab5f-404a-9edf-ab2db1f09f0c
+  tls: true
+  alpn:
+  - http/1.1
+  servername: ndfst11.neuroblur.top
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /api/generate
+    headers:
+      Host: ndfst11.neuroblur.top
+  udp: true
+  country: US
+- name: US_VLESS_443_2248
+  server: 151.101.36.246
   port: 443
   type: vless
   uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
@@ -682,11 +821,11 @@ proxies:
   alpn:
   - h3
   servername: accounts.fastly.com
-  client-fingerprint: chrome
+  client-fingerprint: edge
   network: xhttp
   xhttp-opts:
     path: /
-    host: ovd5.global.ssl.fastly.net
+    host: ovd12.global.ssl.fastly.net
     mode: auto
   udp: true
   country: US
@@ -703,66 +842,93 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - US_SSR_8080_76
-  - US_VLESS_443_354
-  - US_VLESS_443_667
-  - US_VMESS_18000_12
-  - US_VLESS_8443_99
-  - US_VMESS_18000_131
-  - US_VMESS_18000_161
-  - US_VMESS_18000_150
-  - US_VMESS_18000_148
-  - US_VLESS_2087_245
-  - US_VLESS_443_1488
-  - US_VMESS_1270_150
-  - US_VMESS_1270_183
-  - US_VMESS_1270_205
-  - US_VMESS_1270_167
-  - US_VMESS_1270_224
-  - US_VMESS_1270_184
-  - US_VMESS_1270_226
-  - US_VMESS_1270_235
-  - US_VMESS_1270_236
-  - US_VMESS_1270_150_2
-  - US_VMESS_18000_911
-  - US_VLESS_18580_149
-  - US_HYSTERIA2_20999_218
-  - US_HYSTERIA2_443_228
-  - US_HYSTERIA_22335_1097
-  - US_HYSTERIA_20022_1149
-  - US_HYSTERIA_20022_1195
-  - US_HYSTERIA2_4444_503
-  - US_HYSTERIA2_4444_515
-  - US_HYSTERIA2_4444_902
-  - US_HYSTERIA2_4444_928
-  - US_HYSTERIA2_4444_1085
-  - US_VLESS_443_238
-  - US_HTTP_9002_120
-  - US_HTTP_9002_152
-  - US_HTTP_443_189
-  - US_HTTP_9002_125
-  - US_HTTP_9002_141
-  - US_HTTP_9002_122
-  - US_HTTP_9002_122_2
-  - US_HTTP_443_159
-  - US_HTTP_443_196
-  - US_HTTP_443_257
-  - US_HTTP_443_218
-  - US_VLESS_443_955
-  - US_HTTP_443_200
-  - US_HTTP_9443_186
-  - US_SOCKS5_1080_109
-  - US_HTTP_9443_257
-  - US_HTTP_443_659
-  - US_HTTP_9002_149
-  - US_VLESS_443_685
-  - US_VLESS_443_178
-  - US_VLESS_443_325
-  - US_VLESS_443_330
-  - US_VLESS_443_396
-  - US_HTTP_8443_972
-  - US_VLESS_443_568
-  - US_VLESS_443_2171
+  - US_VMESS_18000_140
+  - US_VMESS_18000_35
+  - US_VMESS_18000_101
+  - US_VMESS_18000_1530
+  - US_VMESS_18000_2717
+  - US_VMESS_443_1929
+  - US_VMESS_39495_2168
+  - US_VLESS_443_1601
+  - US_TROJAN_443_195
+  - US_TROJAN_443_174
+  - US_TROJAN_443_198
+  - US_TROJAN_443_249
+  - US_TROJAN_443_183
+  - US_TROJAN_443_174_2
+  - US_TROJAN_443_173
+  - US_TROJAN_443_81
+  - US_TROJAN_443_69
+  - US_TROJAN_443_86
+  - US_TROJAN_443_79
+  - US_TROJAN_443_88
+  - US_TROJAN_443_171
+  - US_TROJAN_443_255
+  - US_TROJAN_443_170
+  - US_TROJAN_443_76
+  - US_TROJAN_443_215
+  - US_TROJAN_443_166
+  - US_TROJAN_443_59
+  - US_TROJAN_443_79_2
+  - US_TROJAN_443_69_2
+  - US_TROJAN_443_245
+  - US_TROJAN_443_65
+  - US_TROJAN_443_93
+  - US_TROJAN_443_92
+  - US_TROJAN_443_49
+  - US_TROJAN_443_85
+  - US_TROJAN_443_125
+  - US_TROJAN_57277_97
+  - US_TROJAN_443_47
+  - US_TROJAN_443_81_2
+  - US_TROJAN_443_122
+  - US_TROJAN_443_123
+  - US_TROJAN_443_92_2
+  - US_TROJAN_443_53
+  - US_TROJAN_443_119
+  - US_TROJAN_443_48
+  - US_TROJAN_443_48_2
+  - US_TROJAN_443_118
+  - US_TROJAN_443_122_2
+  - US_VLESS_443_1304
+  - US_TROJAN_443_198_2
+  - US_TROJAN_443_216
+  - US_HYSTERIA2_4444_393
+  - US_HYSTERIA2_4444_416
+  - US_HYSTERIA_20022_1404
+  - US_HYSTERIA_20022_1644
+  - US_HYSTERIA2_4444_935
+  - US_HYSTERIA_22335_1684
+  - US_HYSTERIA2_4444_1152
+  - US_HYSTERIA2_4444_1161
+  - US_VLESS_443_850
+  - US_TROJAN_443_198_3
+  - US_HTTP_9002_224
+  - US_HTTP_443_269
+  - US_HTTP_9002_212
+  - US_HTTP_9002_214
+  - US_HTTP_9002_214_2
+  - US_HTTP_9002_211
+  - US_HTTP_9002_217
+  - US_HTTP_9002_211_2
+  - US_HTTP_9002_214_3
+  - US_HTTP_9443_235
+  - US_HTTP_8443_49
+  - US_HTTP_9443_163
+  - US_HTTP_443_103
+  - US_HTTP_443_478
+  - US_SOCKS5_3001_197
+  - US_HTTP_9002_228
+  - US_HTTP_443_582
+  - US_VLESS_443_200
+  - US_HYSTERIA2_44443_114
+  - US_VLESS_443_1404
+  - US_HTTP_8443_369
+  - US_VLESS_443_101
+  - US_VLESS_443_592
+  - US_VLESS_443_496
+  - US_VLESS_14443_696
+  - US_VLESS_443_2248
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -775,66 +941,93 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - US_VMESS_18000_12
-  - US_SSR_8080_76
-  - US_VLESS_8443_99
-  - US_SOCKS5_1080_109
-  - US_HTTP_9002_120
-  - US_HTTP_9002_122
-  - US_HTTP_9002_122_2
-  - US_HTTP_9002_125
-  - US_VMESS_18000_131
-  - US_HTTP_9002_141
-  - US_VMESS_18000_148
-  - US_VLESS_18580_149
-  - US_HTTP_9002_149
-  - US_VMESS_18000_150
-  - US_VMESS_1270_150
-  - US_VMESS_1270_150_2
-  - US_HTTP_9002_152
-  - US_HTTP_443_159
-  - US_VMESS_18000_161
-  - US_VMESS_1270_167
-  - US_VLESS_443_178
-  - US_VMESS_1270_183
-  - US_VMESS_1270_184
-  - US_HTTP_9443_186
-  - US_HTTP_443_189
-  - US_HTTP_443_196
-  - US_HTTP_443_200
-  - US_VMESS_1270_205
-  - US_HYSTERIA2_20999_218
-  - US_HTTP_443_218
-  - US_VMESS_1270_224
-  - US_VMESS_1270_226
-  - US_HYSTERIA2_443_228
-  - US_VMESS_1270_235
-  - US_VMESS_1270_236
-  - US_VLESS_443_238
-  - US_VLESS_2087_245
-  - US_HTTP_443_257
-  - US_HTTP_9443_257
-  - US_VLESS_443_325
-  - US_VLESS_443_330
-  - US_VLESS_443_354
-  - US_VLESS_443_396
-  - US_HYSTERIA2_4444_503
-  - US_HYSTERIA2_4444_515
-  - US_VLESS_443_568
-  - US_HTTP_443_659
-  - US_VLESS_443_667
-  - US_VLESS_443_685
-  - US_HYSTERIA2_4444_902
-  - US_VMESS_18000_911
-  - US_HYSTERIA2_4444_928
-  - US_VLESS_443_955
-  - US_HTTP_8443_972
-  - US_HYSTERIA2_4444_1085
-  - US_HYSTERIA_22335_1097
-  - US_HYSTERIA_20022_1149
-  - US_HYSTERIA_20022_1195
-  - US_VLESS_443_1488
-  - US_VLESS_443_2171
+  - US_VMESS_18000_35
+  - US_TROJAN_443_47
+  - US_TROJAN_443_48
+  - US_TROJAN_443_48_2
+  - US_TROJAN_443_49
+  - US_HTTP_8443_49
+  - US_TROJAN_443_53
+  - US_TROJAN_443_59
+  - US_TROJAN_443_65
+  - US_TROJAN_443_69
+  - US_TROJAN_443_69_2
+  - US_TROJAN_443_76
+  - US_TROJAN_443_79
+  - US_TROJAN_443_79_2
+  - US_TROJAN_443_81
+  - US_TROJAN_443_81_2
+  - US_TROJAN_443_85
+  - US_TROJAN_443_86
+  - US_TROJAN_443_88
+  - US_TROJAN_443_92
+  - US_TROJAN_443_92_2
+  - US_TROJAN_443_93
+  - US_TROJAN_57277_97
+  - US_VMESS_18000_101
+  - US_VLESS_443_101
+  - US_HTTP_443_103
+  - US_HYSTERIA2_44443_114
+  - US_TROJAN_443_118
+  - US_TROJAN_443_119
+  - US_TROJAN_443_122
+  - US_TROJAN_443_122_2
+  - US_TROJAN_443_123
+  - US_TROJAN_443_125
+  - US_VMESS_18000_140
+  - US_HTTP_9443_163
+  - US_TROJAN_443_166
+  - US_TROJAN_443_170
+  - US_TROJAN_443_171
+  - US_TROJAN_443_173
+  - US_TROJAN_443_174
+  - US_TROJAN_443_174_2
+  - US_TROJAN_443_183
+  - US_TROJAN_443_195
+  - US_SOCKS5_3001_197
+  - US_TROJAN_443_198
+  - US_TROJAN_443_198_2
+  - US_TROJAN_443_198_3
+  - US_VLESS_443_200
+  - US_HTTP_9002_211
+  - US_HTTP_9002_211_2
+  - US_HTTP_9002_212
+  - US_HTTP_9002_214
+  - US_HTTP_9002_214_2
+  - US_HTTP_9002_214_3
+  - US_TROJAN_443_215
+  - US_TROJAN_443_216
+  - US_HTTP_9002_217
+  - US_HTTP_9002_224
+  - US_HTTP_9002_228
+  - US_HTTP_9443_235
+  - US_TROJAN_443_245
+  - US_TROJAN_443_249
+  - US_TROJAN_443_255
+  - US_HTTP_443_269
+  - US_HTTP_8443_369
+  - US_HYSTERIA2_4444_393
+  - US_HYSTERIA2_4444_416
+  - US_HTTP_443_478
+  - US_VLESS_443_496
+  - US_HTTP_443_582
+  - US_VLESS_443_592
+  - US_VLESS_14443_696
+  - US_VLESS_443_850
+  - US_HYSTERIA2_4444_935
+  - US_HYSTERIA2_4444_1152
+  - US_HYSTERIA2_4444_1161
+  - US_VLESS_443_1304
+  - US_HYSTERIA_20022_1404
+  - US_VLESS_443_1404
+  - US_VMESS_18000_1530
+  - US_VLESS_443_1601
+  - US_HYSTERIA_20022_1644
+  - US_HYSTERIA_22335_1684
+  - US_VMESS_443_1929
+  - US_VMESS_39495_2168
+  - US_VLESS_443_2248
+  - US_VMESS_18000_2717
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -846,66 +1039,93 @@ proxy-groups:
 - name: 🌍 US
   type: url-test
   proxies:
-  - US_SSR_8080_76
-  - US_VLESS_443_354
-  - US_VLESS_443_667
-  - US_VMESS_18000_12
-  - US_VLESS_8443_99
-  - US_VMESS_18000_131
-  - US_VMESS_18000_161
-  - US_VMESS_18000_150
-  - US_VMESS_18000_148
-  - US_VLESS_2087_245
-  - US_VLESS_443_1488
-  - US_VMESS_1270_150
-  - US_VMESS_1270_183
-  - US_VMESS_1270_205
-  - US_VMESS_1270_167
-  - US_VMESS_1270_224
-  - US_VMESS_1270_184
-  - US_VMESS_1270_226
-  - US_VMESS_1270_235
-  - US_VMESS_1270_236
-  - US_VMESS_1270_150_2
-  - US_VMESS_18000_911
-  - US_VLESS_18580_149
-  - US_HYSTERIA2_20999_218
-  - US_HYSTERIA2_443_228
-  - US_HYSTERIA_22335_1097
-  - US_HYSTERIA_20022_1149
-  - US_HYSTERIA_20022_1195
-  - US_HYSTERIA2_4444_503
-  - US_HYSTERIA2_4444_515
-  - US_HYSTERIA2_4444_902
-  - US_HYSTERIA2_4444_928
-  - US_HYSTERIA2_4444_1085
-  - US_VLESS_443_238
-  - US_HTTP_9002_120
-  - US_HTTP_9002_152
-  - US_HTTP_443_189
-  - US_HTTP_9002_125
-  - US_HTTP_9002_141
-  - US_HTTP_9002_122
-  - US_HTTP_9002_122_2
-  - US_HTTP_443_159
-  - US_HTTP_443_196
-  - US_HTTP_443_257
-  - US_HTTP_443_218
-  - US_VLESS_443_955
-  - US_HTTP_443_200
-  - US_HTTP_9443_186
-  - US_SOCKS5_1080_109
-  - US_HTTP_9443_257
-  - US_HTTP_443_659
-  - US_HTTP_9002_149
-  - US_VLESS_443_685
-  - US_VLESS_443_178
-  - US_VLESS_443_325
-  - US_VLESS_443_330
-  - US_VLESS_443_396
-  - US_HTTP_8443_972
-  - US_VLESS_443_568
-  - US_VLESS_443_2171
+  - US_VMESS_18000_140
+  - US_VMESS_18000_35
+  - US_VMESS_18000_101
+  - US_VMESS_18000_1530
+  - US_VMESS_18000_2717
+  - US_VMESS_443_1929
+  - US_VMESS_39495_2168
+  - US_VLESS_443_1601
+  - US_TROJAN_443_195
+  - US_TROJAN_443_174
+  - US_TROJAN_443_198
+  - US_TROJAN_443_249
+  - US_TROJAN_443_183
+  - US_TROJAN_443_174_2
+  - US_TROJAN_443_173
+  - US_TROJAN_443_81
+  - US_TROJAN_443_69
+  - US_TROJAN_443_86
+  - US_TROJAN_443_79
+  - US_TROJAN_443_88
+  - US_TROJAN_443_171
+  - US_TROJAN_443_255
+  - US_TROJAN_443_170
+  - US_TROJAN_443_76
+  - US_TROJAN_443_215
+  - US_TROJAN_443_166
+  - US_TROJAN_443_59
+  - US_TROJAN_443_79_2
+  - US_TROJAN_443_69_2
+  - US_TROJAN_443_245
+  - US_TROJAN_443_65
+  - US_TROJAN_443_93
+  - US_TROJAN_443_92
+  - US_TROJAN_443_49
+  - US_TROJAN_443_85
+  - US_TROJAN_443_125
+  - US_TROJAN_57277_97
+  - US_TROJAN_443_47
+  - US_TROJAN_443_81_2
+  - US_TROJAN_443_122
+  - US_TROJAN_443_123
+  - US_TROJAN_443_92_2
+  - US_TROJAN_443_53
+  - US_TROJAN_443_119
+  - US_TROJAN_443_48
+  - US_TROJAN_443_48_2
+  - US_TROJAN_443_118
+  - US_TROJAN_443_122_2
+  - US_VLESS_443_1304
+  - US_TROJAN_443_198_2
+  - US_TROJAN_443_216
+  - US_HYSTERIA2_4444_393
+  - US_HYSTERIA2_4444_416
+  - US_HYSTERIA_20022_1404
+  - US_HYSTERIA_20022_1644
+  - US_HYSTERIA2_4444_935
+  - US_HYSTERIA_22335_1684
+  - US_HYSTERIA2_4444_1152
+  - US_HYSTERIA2_4444_1161
+  - US_VLESS_443_850
+  - US_TROJAN_443_198_3
+  - US_HTTP_9002_224
+  - US_HTTP_443_269
+  - US_HTTP_9002_212
+  - US_HTTP_9002_214
+  - US_HTTP_9002_214_2
+  - US_HTTP_9002_211
+  - US_HTTP_9002_217
+  - US_HTTP_9002_211_2
+  - US_HTTP_9002_214_3
+  - US_HTTP_9443_235
+  - US_HTTP_8443_49
+  - US_HTTP_9443_163
+  - US_HTTP_443_103
+  - US_HTTP_443_478
+  - US_SOCKS5_3001_197
+  - US_HTTP_9002_228
+  - US_HTTP_443_582
+  - US_VLESS_443_200
+  - US_HYSTERIA2_44443_114
+  - US_VLESS_443_1404
+  - US_HTTP_8443_369
+  - US_VLESS_443_101
+  - US_VLESS_443_592
+  - US_VLESS_443_496
+  - US_VLESS_14443_696
+  - US_VLESS_443_2248
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

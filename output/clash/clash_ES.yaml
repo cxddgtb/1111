@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ES_VLESS_443_619
+- name: ES_VLESS_443_330
   type: vless
   network: tcp
   server: 85.90.217.42
@@ -16,32 +16,80 @@ proxies:
   tls: true
   udp: true
   country: ES
-- cipher: aes-256-gcm
-  name: ES_SS_19999_376
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 66.163.118.103
-  type: ss
+- name: ES_TROJAN_443_340
+  type: trojan
+  server: 66.163.118.244
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.discovergreatjobsandadvanceyourcareer.com
+  network: tcp
+  country: ES
+- name: ES_TROJAN_443_360
+  type: trojan
+  server: 66.163.118.131
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.discovergreatjobsandadvanceyourcareer.com
+  network: tcp
+  country: ES
+- name: ES_TROJAN_443_338
+  type: trojan
+  server: 66.163.118.203
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.discovergreatjobsandadvanceyourcareer.com
+  network: tcp
+  country: ES
+- name: ES_TROJAN_443_340_2
+  type: trojan
+  server: 66.163.118.40
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.discovergreatjobsandadvanceyourcareer.com
+  network: tcp
+  country: ES
+- name: ES_TROJAN_443_347
+  type: trojan
+  server: 66.163.118.251
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.discovergreatjobsandadvanceyourcareer.com
+  network: tcp
+  country: ES
+- name: ES_TROJAN_443_339
+  type: trojan
+  server: 66.163.118.62
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.discovergreatjobsandadvanceyourcareer.com
+  network: tcp
   country: ES
 - cipher: aes-128-gcm
-  name: ES_SS_12798_343
+  name: ES_SS_12798_173
   password: cd706a104284a70f9cffe6ac1df63c18
   port: 12798
   server: 193.148.19.214
   type: ss
   country: ES
 - cipher: aes-256-gcm
-  name: ES_SS_19999_393
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 167.17.71.167
-  type: ss
-  country: ES
-- cipher: aes-256-gcm
-  name: ES_SS_19999_410
+  name: ES_SS_19999_216
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 79.127.139.242
+  type: ss
+  country: ES
+- cipher: aes-256-gcm
+  name: ES_SS_19999_265
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 66.163.118.103
+  type: ss
+  country: ES
+- cipher: aes-256-gcm
+  name: ES_SS_19999_263
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 167.17.71.167
   type: ss
   country: ES
 proxy-groups:
@@ -57,11 +105,17 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_VLESS_443_619
-  - ES_SS_19999_376
-  - ES_SS_12798_343
-  - ES_SS_19999_393
-  - ES_SS_19999_410
+  - ES_VLESS_443_330
+  - ES_TROJAN_443_340
+  - ES_TROJAN_443_360
+  - ES_TROJAN_443_338
+  - ES_TROJAN_443_340_2
+  - ES_TROJAN_443_347
+  - ES_TROJAN_443_339
+  - ES_SS_12798_173
+  - ES_SS_19999_216
+  - ES_SS_19999_265
+  - ES_SS_19999_263
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -74,11 +128,17 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_SS_12798_343
-  - ES_SS_19999_376
-  - ES_SS_19999_393
-  - ES_SS_19999_410
-  - ES_VLESS_443_619
+  - ES_SS_12798_173
+  - ES_SS_19999_216
+  - ES_SS_19999_263
+  - ES_SS_19999_265
+  - ES_VLESS_443_330
+  - ES_TROJAN_443_338
+  - ES_TROJAN_443_339
+  - ES_TROJAN_443_340
+  - ES_TROJAN_443_340_2
+  - ES_TROJAN_443_347
+  - ES_TROJAN_443_360
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -90,11 +150,17 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_VLESS_443_619
-  - ES_SS_19999_376
-  - ES_SS_12798_343
-  - ES_SS_19999_393
-  - ES_SS_19999_410
+  - ES_VLESS_443_330
+  - ES_TROJAN_443_340
+  - ES_TROJAN_443_360
+  - ES_TROJAN_443_338
+  - ES_TROJAN_443_340_2
+  - ES_TROJAN_443_347
+  - ES_TROJAN_443_339
+  - ES_SS_12798_173
+  - ES_SS_19999_216
+  - ES_SS_19999_265
+  - ES_SS_19999_263
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

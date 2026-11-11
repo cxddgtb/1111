@@ -5,14 +5,20 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_HTTP_40583_1748
-  password: 'null'
-  port: 40583
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
+- name: CN_VMESS_10086_1165
+  type: vmess
+  server: 39.108.113.127
+  port: 10086
+  uuid: b0253c6c-0b96-4950-bde1-669f13bc1a01
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
   country: CN
 proxy-groups:
 - name: 🚀 节点选择
@@ -27,7 +33,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CN_HTTP_40583_1748
+  - CN_VMESS_10086_1165
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -40,7 +46,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CN_HTTP_40583_1748
+  - CN_VMESS_10086_1165
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -52,7 +58,7 @@ proxy-groups:
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_HTTP_40583_1748
+  - CN_VMESS_10086_1165
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

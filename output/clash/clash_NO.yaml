@@ -5,35 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  name: NO_VLESS_8443_649
-  network: ws
-  port: 8443
-  server: 185.14.97.242
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /
-  country: 'NO'
 - cipher: chacha20-ietf-poly1305
-  name: NO_SS_990_372
+  name: NO_SS_990_367
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   port: 990
   server: 185.213.23.63
   type: ss
-  country: 'NO'
-- name: NO_HTTP_9443_706
-  password: None
-  port: 9443
-  server: 146.70.170.210
-  skip-cert-verify: true
-  tls: true
-  type: http
   country: 'NO'
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,9 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NO_VLESS_8443_649
-  - NO_SS_990_372
-  - NO_HTTP_9443_706
+  - NO_SS_990_367
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -63,9 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NO_SS_990_372
-  - NO_VLESS_8443_649
-  - NO_HTTP_9443_706
+  - NO_SS_990_367
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -77,9 +50,7 @@ proxy-groups:
 - name: 🌍 NO
   type: url-test
   proxies:
-  - NO_VLESS_8443_649
-  - NO_SS_990_372
-  - NO_HTTP_9443_706
+  - NO_SS_990_367
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

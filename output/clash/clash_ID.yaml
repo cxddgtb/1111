@@ -5,17 +5,16 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: ID_VLESS_57353_737
-  server: in001.zestapp778.com
+- client-fingerprint: firefox
+  name: ID_VLESS_57353_741
+  network: tcp
   port: 57353
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  udp: true
-  tls: true
+  server: 130.94.95.198
   servername: in001.zestapp778.com
-  sni: in001.zestapp778.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
   country: ID
 proxy-groups:
 - name: 🚀 节点选择
@@ -30,7 +29,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ID_VLESS_57353_737
+  - ID_VLESS_57353_741
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ID_VLESS_57353_737
+  - ID_VLESS_57353_741
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +54,7 @@ proxy-groups:
 - name: 🌍 ID
   type: url-test
   proxies:
-  - ID_VLESS_57353_737
+  - ID_VLESS_57353_741
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

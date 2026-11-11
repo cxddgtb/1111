@@ -5,23 +5,8 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_8443_1060
-  type: vless
-  server: 188.137.178.174
-  port: 8443
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  servername: fs.qicai99.com
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: fs.qicai99.com
-  country: PL
 - client-fingerprint: chrome
-  name: PL_VLESS_2087_519
+  name: PL_VLESS_2087_333
   port: 2087
   server: 2.26.6.1
   servername: 2.26.6.1
@@ -29,28 +14,6 @@ proxies:
   tls: true
   type: vless
   uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  country: PL
-- client-fingerprint: chrome
-  name: PL_VLESS_8443_687
-  network: ws
-  port: 8443
-  server: 151.245.112.193
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /
-  country: PL
-- name: PL_TROJAN_443_466
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 70.34.252.255
-  sni: browseexecutivejobopeningsandenhanceleadershipcareer.com
-  type: trojan
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -65,10 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_8443_1060
-  - PL_VLESS_2087_519
-  - PL_VLESS_8443_687
-  - PL_TROJAN_443_466
+  - PL_VLESS_2087_333
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -81,10 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_TROJAN_443_466
-  - PL_VLESS_2087_519
-  - PL_VLESS_8443_687
-  - PL_VLESS_8443_1060
+  - PL_VLESS_2087_333
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -96,10 +53,7 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_8443_1060
-  - PL_VLESS_2087_519
-  - PL_VLESS_8443_687
-  - PL_TROJAN_443_466
+  - PL_VLESS_2087_333
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

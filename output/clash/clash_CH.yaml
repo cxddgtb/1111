@@ -5,99 +5,72 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: CH_VLESS_443_1755
-  server: 46.19.138.214
+- name: CH_TROJAN_443_1472
+  type: trojan
+  server: 208.69.78.29
   port: 443
-  uuid: 90157e25-cee1-4217-921e-91f300bc1a24
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: perevodchiki.su
-  sni: perevodchiki.su
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: 1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs
-    short-id: 428ef87fd47a3a32
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.yourultimateprofessionalcareerhub.com
+  network: tcp
   country: CH
-- name: CH_VLESS_48115_516
-  type: vless
-  network: grpc
-  server: 138.124.86.230
-  port: 48115
-  uuid: b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b
-  servername: 138-124-86-230.sslip.io
-  tls: true
-  client-fingerprint: firefox
+- name: CH_TROJAN_443_447
+  type: trojan
+  server: 208.69.78.222
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: yourultimateprofessionalcareerhub.com
+  network: tcp
+  country: CH
+- name: CH_TROJAN_443_1844
+  type: trojan
+  server: 208.69.78.33
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.yourultimateprofessionalcareerhub.com
+  network: tcp
+  country: CH
+- name: CH_TROJAN_443_1852
+  type: trojan
+  server: 208.69.78.19
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.yourultimateprofessionalcareerhub.com
+  network: tcp
+  country: CH
+- client-fingerprint: firefox
   grpc-opts:
     grpc-service-name: 138-124-86-230-sslip-io
-  country: CH
-- name: CH_VLESS_443_542
-  type: vless
-  network: tcp
-  server: 179.43.187.67
-  port: 443
-  uuid: 9dd38d60-e683-47c6-bd53-d71bdfee78f3
-  servername: portal.mavexa.ir
-  skip-cert-verify: false
+  name: CH_VLESS_48115_366
+  network: grpc
+  port: 48115
+  server: 138.124.86.230
+  servername: 138-124-86-230.sslip.io
   tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
+  type: vless
+  uuid: b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_317
+  name: CH_SS_19999_207
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 23.166.88.127
   type: ss
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_318
+  name: CH_SS_19999_211
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 186.190.215.251
   type: ss
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_324
+  name: CH_SS_19999_214
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 79.127.184.104
   type: ss
   country: CH
-- name: CH_TROJAN_443_476
-  network: tcp
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 208.69.78.33
-  sni: courses.yourultimateprofessionalcareerhub.com
-  type: trojan
-  country: CH
-- name: CH_HTTP_9443_645
-  port: 9443
-  server: 149.88.27.46
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_9443_645_2
-  password: None
-  port: 9443
-  server: 149.88.27.33
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_443_722
-  port: 443
-  server: 31.7.62.50
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: CH
-- name: CH_HTTP_9443_631
+- name: CH_HTTP_9443_398
   port: 9443
   server: 37.120.213.210
   skip-cert-verify: true
@@ -119,17 +92,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_VLESS_443_1755
-  - CH_VLESS_48115_516
-  - CH_VLESS_443_542
-  - CH_SS_19999_317
-  - CH_SS_19999_318
-  - CH_SS_19999_324
-  - CH_TROJAN_443_476
-  - CH_HTTP_9443_645
-  - CH_HTTP_9443_645_2
-  - CH_HTTP_443_722
-  - CH_HTTP_9443_631
+  - CH_TROJAN_443_1472
+  - CH_TROJAN_443_447
+  - CH_TROJAN_443_1844
+  - CH_TROJAN_443_1852
+  - CH_VLESS_48115_366
+  - CH_SS_19999_207
+  - CH_SS_19999_211
+  - CH_SS_19999_214
+  - CH_HTTP_9443_398
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -142,17 +113,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_SS_19999_317
-  - CH_SS_19999_318
-  - CH_SS_19999_324
-  - CH_TROJAN_443_476
-  - CH_VLESS_48115_516
-  - CH_VLESS_443_542
-  - CH_HTTP_9443_631
-  - CH_HTTP_9443_645
-  - CH_HTTP_9443_645_2
-  - CH_HTTP_443_722
-  - CH_VLESS_443_1755
+  - CH_SS_19999_207
+  - CH_SS_19999_211
+  - CH_SS_19999_214
+  - CH_VLESS_48115_366
+  - CH_HTTP_9443_398
+  - CH_TROJAN_443_447
+  - CH_TROJAN_443_1472
+  - CH_TROJAN_443_1844
+  - CH_TROJAN_443_1852
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -164,17 +133,15 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_VLESS_443_1755
-  - CH_VLESS_48115_516
-  - CH_VLESS_443_542
-  - CH_SS_19999_317
-  - CH_SS_19999_318
-  - CH_SS_19999_324
-  - CH_TROJAN_443_476
-  - CH_HTTP_9443_645
-  - CH_HTTP_9443_645_2
-  - CH_HTTP_443_722
-  - CH_HTTP_9443_631
+  - CH_TROJAN_443_1472
+  - CH_TROJAN_443_447
+  - CH_TROJAN_443_1844
+  - CH_TROJAN_443_1852
+  - CH_VLESS_48115_366
+  - CH_SS_19999_207
+  - CH_SS_19999_211
+  - CH_SS_19999_214
+  - CH_HTTP_9443_398
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

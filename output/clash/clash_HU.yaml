@@ -5,20 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: chrome
-  name: HU_VLESS_2053_907
-  network: ws
-  port: 2053
-  server: 38.180.225.247
-  servername: fs.qicai99.com
+- name: HU_HTTP_443_471
+  port: 443
+  server: 146.70.203.18
+  skip-cert-verify: true
   tls: true
-  type: vless
-  udp: true
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /
+  type: http
   country: HU
 proxy-groups:
 - name: 🚀 节点选择
@@ -33,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HU_VLESS_2053_907
+  - HU_HTTP_443_471
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HU_VLESS_2053_907
+  - HU_HTTP_443_471
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -58,7 +50,7 @@ proxy-groups:
 - name: 🌍 HU
   type: url-test
   proxies:
-  - HU_VLESS_2053_907
+  - HU_HTTP_443_471
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
