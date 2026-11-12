@@ -5,17 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- client-fingerprint: edge
-  grpc-opts:
-    grpc-service-name: grpc
-  name: LT_VLESS_443_378
+- name: LT_VLESS_443_385
+  type: vless
   network: grpc
-  port: 443
   server: 84.32.209.103
+  port: 443
+  uuid: 3f25b15b-1777-4c08-9ade-60336ac92a82
   servername: edge-lt.lindenpixel.com
   tls: true
-  type: vless
-  uuid: 3f25b15b-1777-4c08-9ade-60336ac92a82
+  client-fingerprint: edge
+  grpc-opts:
+    grpc-service-name: grpc
   country: LT
 proxy-groups:
 - name: 🚀 节点选择
@@ -30,7 +30,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LT_VLESS_443_378
+  - LT_VLESS_443_385
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -43,7 +43,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LT_VLESS_443_378
+  - LT_VLESS_443_385
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -55,7 +55,7 @@ proxy-groups:
 - name: 🌍 LT
   type: url-test
   proxies:
-  - LT_VLESS_443_378
+  - LT_VLESS_443_385
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

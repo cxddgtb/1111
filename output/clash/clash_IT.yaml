@@ -5,55 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: IT_SS_19999_206
-  type: ss
-  server: 202.50.253.36
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
+- name: IT_VMESS_1270_321
+  type: vmess
+  network: tcp
+  server: 149.50.215.240
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
   country: IT
-- name: IT_SS_19999_206_2
-  type: ss
-  server: 202.50.253.90
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
+- name: IT_VMESS_1270_418
+  type: vmess
+  network: tcp
+  server: 149.22.91.20
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
   country: IT
-- name: IT_SS_19999_208
-  type: ss
-  server: 202.50.253.63
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_215
-  type: ss
-  server: 202.50.253.18
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_230
-  type: ss
-  server: 202.50.253.27
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_206_3
-  type: ss
-  server: 202.50.253.54
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-  country: IT
-- name: IT_SS_19999_206_4
+- name: IT_SS_19999_207
   type: ss
   server: 202.50.253.99
   port: 19999
@@ -61,23 +35,31 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
-- name: IT_SS_19999_207
+- name: IT_SS_19999_208
   type: ss
-  server: 202.50.253.45
+  server: 202.50.253.90
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
-- name: IT_SS_19999_214
+- name: IT_SS_19999_209
   type: ss
-  server: 202.50.253.72
+  server: 202.50.253.36
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
-- name: IT_SS_19999_211
+- name: IT_SS_19999_277
+  type: ss
+  server: 202.50.253.54
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_215
   type: ss
   server: 202.50.253.81
   port: 19999
@@ -85,26 +67,52 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
   country: IT
+- name: IT_SS_19999_211
+  type: ss
+  server: 202.50.253.63
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_208_2
+  type: ss
+  server: 202.50.253.27
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_208_3
+  type: ss
+  server: 202.50.253.18
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_210
+  type: ss
+  server: 202.50.253.45
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
+- name: IT_SS_19999_212
+  type: ss
+  server: 202.50.253.72
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  country: IT
 - cipher: aes-256-gcm
-  name: IT_SS_19999_204
+  name: IT_SS_19999_219
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 149.50.215.234
   type: ss
-  country: IT
-- name: IT_HTTP_443_502
-  port: 443
-  server: 185.183.105.146
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: IT
-- name: IT_SOCKS5_1088_472
-  password: None
-  port: 1088
-  server: 212.77.75.25
-  type: socks5
-  udp: true
   country: IT
 proxy-groups:
 - name: 🚀 节点选择
@@ -119,19 +127,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IT_SS_19999_206
-  - IT_SS_19999_206_2
-  - IT_SS_19999_208
-  - IT_SS_19999_215
-  - IT_SS_19999_230
-  - IT_SS_19999_206_3
-  - IT_SS_19999_206_4
+  - IT_VMESS_1270_321
+  - IT_VMESS_1270_418
   - IT_SS_19999_207
-  - IT_SS_19999_214
+  - IT_SS_19999_208
+  - IT_SS_19999_209
+  - IT_SS_19999_277
+  - IT_SS_19999_215
   - IT_SS_19999_211
-  - IT_SS_19999_204
-  - IT_HTTP_443_502
-  - IT_SOCKS5_1088_472
+  - IT_SS_19999_208_2
+  - IT_SS_19999_208_3
+  - IT_SS_19999_210
+  - IT_SS_19999_212
+  - IT_SS_19999_219
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -144,19 +152,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IT_SS_19999_204
-  - IT_SS_19999_206
-  - IT_SS_19999_206_2
-  - IT_SS_19999_206_3
-  - IT_SS_19999_206_4
   - IT_SS_19999_207
   - IT_SS_19999_208
+  - IT_SS_19999_208_2
+  - IT_SS_19999_208_3
+  - IT_SS_19999_209
+  - IT_SS_19999_210
   - IT_SS_19999_211
-  - IT_SS_19999_214
+  - IT_SS_19999_212
   - IT_SS_19999_215
-  - IT_SS_19999_230
-  - IT_SOCKS5_1088_472
-  - IT_HTTP_443_502
+  - IT_SS_19999_219
+  - IT_SS_19999_277
+  - IT_VMESS_1270_321
+  - IT_VMESS_1270_418
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -168,19 +176,19 @@ proxy-groups:
 - name: 🌍 IT
   type: url-test
   proxies:
-  - IT_SS_19999_206
-  - IT_SS_19999_206_2
-  - IT_SS_19999_208
-  - IT_SS_19999_215
-  - IT_SS_19999_230
-  - IT_SS_19999_206_3
-  - IT_SS_19999_206_4
+  - IT_VMESS_1270_321
+  - IT_VMESS_1270_418
   - IT_SS_19999_207
-  - IT_SS_19999_214
+  - IT_SS_19999_208
+  - IT_SS_19999_209
+  - IT_SS_19999_277
+  - IT_SS_19999_215
   - IT_SS_19999_211
-  - IT_SS_19999_204
-  - IT_HTTP_443_502
-  - IT_SOCKS5_1088_472
+  - IT_SS_19999_208_2
+  - IT_SS_19999_208_3
+  - IT_SS_19999_210
+  - IT_SS_19999_212
+  - IT_SS_19999_219
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

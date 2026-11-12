@@ -5,7 +5,29 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CZ_HTTP_9443_642
+- name: CZ_VLESS_443_634
+  type: vless
+  server: 95.85.234.66
+  port: 443
+  uuid: 3659f248-1797-4d6e-9982-a308565fec79
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  client-fingerprint: firefox
+  servername: fl-modx.webedg.net
+  reality-opts:
+    public-key: MuQH546CBdgYVBzNU_F5fimkbQ0srHxgLKDjl1Wz2Rw
+    short-id: '00000000'
+  country: CZ
+- name: CZ_HTTP_443_440
+  port: 443
+  server: 185.216.35.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: CZ
+- name: CZ_HTTP_9443_407
   password: None
   port: 9443
   server: 152.233.16.174
@@ -26,7 +48,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CZ_HTTP_9443_642
+  - CZ_VLESS_443_634
+  - CZ_HTTP_443_440
+  - CZ_HTTP_9443_407
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +63,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CZ_HTTP_9443_642
+  - CZ_HTTP_9443_407
+  - CZ_HTTP_443_440
+  - CZ_VLESS_443_634
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +77,9 @@ proxy-groups:
 - name: 🌍 CZ
   type: url-test
   proxies:
-  - CZ_HTTP_9443_642
+  - CZ_VLESS_443_634
+  - CZ_HTTP_443_440
+  - CZ_HTTP_9443_407
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

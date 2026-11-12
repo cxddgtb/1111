@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CY_VLESS_16443_249
+- name: CY_VLESS_16443_262
   type: vless
   server: 45.86.60.174
   port: 16443
@@ -15,14 +15,6 @@ proxies:
   servername: ''
   client-fingerprint: chrome
   ws-opts: null
-  country: CY
-- name: CY_HTTP_443_599
-  password: None
-  port: 443
-  server: 213.207.130.34
-  skip-cert-verify: true
-  tls: true
-  type: http
   country: CY
 proxy-groups:
 - name: 🚀 节点选择
@@ -37,8 +29,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CY_VLESS_16443_249
-  - CY_HTTP_443_599
+  - CY_VLESS_16443_262
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -51,8 +42,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CY_VLESS_16443_249
-  - CY_HTTP_443_599
+  - CY_VLESS_16443_262
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -64,8 +54,7 @@ proxy-groups:
 - name: 🌍 CY
   type: url-test
   proxies:
-  - CY_VLESS_16443_249
-  - CY_HTTP_443_599
+  - CY_VLESS_16443_262
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,103 +5,84 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_SS_8080_210
-  type: ss
-  network: tcp
-  server: 82.38.31.212
-  port: 8080
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  skip-cert-verify: false
-  udp: false
-  cipher: chacha20-ietf-poly1305
-  country: GB
-- name: GB_SS_8080_221
-  type: ss
-  network: tcp
-  server: 82.38.31.180
-  port: 8080
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  skip-cert-verify: false
-  udp: false
-  cipher: chacha20-ietf-poly1305
-  country: GB
-- name: GB_VLESS_80_245
-  network: ws
-  port: 80
-  server: 57.129.132.223
-  servername: '---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net'
-  tls: false
+- name: GB_VLESS_443_1089
   type: vless
+  network: ws
+  server: 46.250.242.104
+  port: 443
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  servername: fs.qicai99.com
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: fs.qicai99.com
+    path: /
+  country: GB
+- name: GB_VLESS_80_263
+  type: vless
+  server: 57.129.132.223
+  port: 80
   uuid: dbb78c94-9f87-4d7d-b945-2000b60352fd
+  network: ws
+  tls: false
+  servername: '---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net'
+  client-fingerprint: chrome
   ws-opts:
     path: /vless/
+    headers:
+      Host: ''
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_233
+  name: GB_SS_19999_228
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 82.110.60.9
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_165
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 198.244.201.129
-  type: ss
-  country: GB
-- cipher: aes-256-gcm
-  name: GB_SS_19999_164
+  name: GB_SS_19999_174
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 198.244.202.215
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_180
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 38.114.120.221
-  type: ss
-  country: GB
-- cipher: aes-256-gcm
-  name: GB_SS_19999_199
+  name: GB_SS_19999_185
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 142.202.51.22
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_187
+  name: GB_SS_19999_194
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 38.114.120.221
+  type: ss
+  country: GB
+- cipher: aes-256-gcm
+  name: GB_SS_19999_189
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 185.176.206.9
   type: ss
   country: GB
-- cipher: aes-128-gcm
-  name: GB_SS_443_188
-  password: shadowsocks
-  port: 443
-  server: 158.173.24.73
+- cipher: aes-256-gcm
+  name: GB_SS_7001_164
+  password: RexnBgU7EV5ADxG
+  port: 7001
+  server: 94.156.250.148
   type: ss
   country: GB
-- name: GB_HTTP_9443_347
-  password: None
-  port: 9443
-  server: 84.17.50.214
-  skip-cert-verify: true
-  tls: true
-  type: http
+- cipher: chacha20-ietf-poly1305
+  name: GB_SS_47195_201
+  password: DYVqFDnYoMquRQunXC1xd2FyuDhd7JWs5jtf2eb7VkKLzXgZv8pt8gY1e91TT71V762zRX7MWW4HmjavanYdUF9bij8gG8AP
+  port: 47195
+  server: 104.222.183.180
+  type: ss
   country: GB
-- name: GB_HTTP_443_331
-  password: None
-  port: 443
-  server: 212.102.63.61
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- name: GB_HTTP_443_324
+- name: GB_HTTP_443_326
   password: None
   port: 443
   server: 185.164.138.156
@@ -109,34 +90,38 @@ proxies:
   tls: true
   type: http
   country: GB
-- cipher: aes-256-gcm
-  name: GB_SS_7001_2134
-  password: RexnBgU7EV5ADxG
-  port: 7001
-  server: 94.156.250.148
-  type: ss
-  country: GB
-- name: GB_HTTP_9443_372
+- name: GB_HTTP_443_351
   password: None
-  port: 9443
-  server: 37.120.233.34
+  port: 443
+  server: 212.102.63.31
   skip-cert-verify: true
+  sub_tag: P002-260618
   tls: true
   type: http
+  udp: true
   country: GB
 - name: GB_HTTP_9443_348
+  password: None
   port: 9443
   server: 84.17.50.129
   skip-cert-verify: true
   tls: true
   type: http
   country: GB
-- name: GB_HTTP_9443_355
-  port: 9443
-  server: 84.233.178.33
-  skip-cert-verify: true
-  tls: true
-  type: http
+- cipher: aes-256-gcm
+  name: GB_SS_19999_2008
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 198.244.201.129
+  type: ss
+  country: GB
+- name: GB_SS_8080_167
+  server: 54.37.240.40
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 8nrpt2il04ptci2j
+  udp: true
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -151,23 +136,20 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_SS_8080_210
-  - GB_SS_8080_221
-  - GB_VLESS_80_245
-  - GB_SS_19999_233
-  - GB_SS_19999_165
-  - GB_SS_19999_164
-  - GB_SS_19999_180
-  - GB_SS_19999_199
-  - GB_SS_19999_187
-  - GB_SS_443_188
-  - GB_HTTP_9443_347
-  - GB_HTTP_443_331
-  - GB_HTTP_443_324
-  - GB_SS_7001_2134
-  - GB_HTTP_9443_372
+  - GB_VLESS_443_1089
+  - GB_VLESS_80_263
+  - GB_SS_19999_228
+  - GB_SS_19999_174
+  - GB_SS_19999_185
+  - GB_SS_19999_194
+  - GB_SS_19999_189
+  - GB_SS_7001_164
+  - GB_SS_47195_201
+  - GB_HTTP_443_326
+  - GB_HTTP_443_351
   - GB_HTTP_9443_348
-  - GB_HTTP_9443_355
+  - GB_SS_19999_2008
+  - GB_SS_8080_167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -180,23 +162,20 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_SS_19999_164
-  - GB_SS_19999_165
-  - GB_SS_19999_180
-  - GB_SS_19999_187
-  - GB_SS_443_188
-  - GB_SS_19999_199
-  - GB_SS_8080_210
-  - GB_SS_8080_221
-  - GB_SS_19999_233
-  - GB_VLESS_80_245
-  - GB_HTTP_443_324
-  - GB_HTTP_443_331
-  - GB_HTTP_9443_347
+  - GB_SS_7001_164
+  - GB_SS_8080_167
+  - GB_SS_19999_174
+  - GB_SS_19999_185
+  - GB_SS_19999_189
+  - GB_SS_19999_194
+  - GB_SS_47195_201
+  - GB_SS_19999_228
+  - GB_VLESS_80_263
+  - GB_HTTP_443_326
   - GB_HTTP_9443_348
-  - GB_HTTP_9443_355
-  - GB_HTTP_9443_372
-  - GB_SS_7001_2134
+  - GB_HTTP_443_351
+  - GB_VLESS_443_1089
+  - GB_SS_19999_2008
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -208,23 +187,20 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_SS_8080_210
-  - GB_SS_8080_221
-  - GB_VLESS_80_245
-  - GB_SS_19999_233
-  - GB_SS_19999_165
-  - GB_SS_19999_164
-  - GB_SS_19999_180
-  - GB_SS_19999_199
-  - GB_SS_19999_187
-  - GB_SS_443_188
-  - GB_HTTP_9443_347
-  - GB_HTTP_443_331
-  - GB_HTTP_443_324
-  - GB_SS_7001_2134
-  - GB_HTTP_9443_372
+  - GB_VLESS_443_1089
+  - GB_VLESS_80_263
+  - GB_SS_19999_228
+  - GB_SS_19999_174
+  - GB_SS_19999_185
+  - GB_SS_19999_194
+  - GB_SS_19999_189
+  - GB_SS_7001_164
+  - GB_SS_47195_201
+  - GB_HTTP_443_326
+  - GB_HTTP_443_351
   - GB_HTTP_9443_348
-  - GB_HTTP_9443_355
+  - GB_SS_19999_2008
+  - GB_SS_8080_167
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
