@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_490
+- name: RU_VLESS_443_547
   type: vless
   network: xhttp
   server: 193.160.208.240
@@ -19,84 +19,100 @@ proxies:
     mode: auto
     path: /assets/twru01/
   country: RU
-- name: RU_VLESS_443_517
+- name: RU_VLESS_443_511
   type: vless
   network: grpc
-  server: 188.225.73.41
+  server: 201.24.116.192
   port: 443
-  uuid: 4cabcd59-a405-4c00-96f5-03507e1e28fa
-  servername: cadrin.wtf
+  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
+  servername: vps3.nemnogogo.com
   tls: true
   udp: true
   client-fingerprint: firefox
   grpc-opts:
     grpc-mode: gun
-    grpc-service-name: cache.sync.v1
+    grpc-service-name: mobile.api.Event
   country: RU
-- name: RU_VLESS_443_848
+- name: RU_VLESS_8443_723
   type: vless
-  network: ws
-  server: 188.225.37.175
-  port: 443
-  uuid: 4b50270b-5caf-4c34-b3da-17b4525604a6
-  servername: cryptoventura.online
-  skip-cert-verify: false
+  network: xhttp
+  server: earlytrain.net
+  port: 8443
+  uuid: 37af0181-5598-4aad-a040-d926bcb65757
+  servername: earlytrain.net
   tls: true
   udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: cryptoventura.online
-    path: /api/de3/live
-  country: RU
-- name: RU_VLESS_443_474
-  type: vless
-  network: tcp
-  server: 176.108.245.237
-  port: 443
-  uuid: 87c35d3a-36f1-fade-90b7-af60506efbb8
-  servername: tfusq-ru-40sb.fade.mom
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  country: RU
-- name: RU_VLESS_443_692
-  type: vless
-  server: 188.225.37.43
-  port: 443
-  uuid: 4cabcd59-a405-4c00-96f5-03507e1e28fa
-  network: ws
-  tls: true
-  servername: torvani.cyou
-  client-fingerprint: chrome
-  ws-opts:
-    path: /api/boards/live
-    headers:
-      Host: torvani.cyou
-  country: RU
-- cipher: aes-256-gcm
-  name: RU_SS_18443_362
-  password: cCMJgJTA3BA489YUYrFq7XHXSiSpWlLa
-  port: 18443
-  server: 46.17.47.58
-  type: ss
-  country: RU
-- name: RU_HTTP_1446_647
-  password: None
-  port: 1446
-  server: 46.29.166.134
-  skip-cert-verify: true
-  tls: true
-  type: http
+  client-fingerprint: firefox
+  xhttp-opts:
+    host: earlytrain.net
+    mode: auto
+    path: /api/v1/upload
   country: RU
 - cipher: aes-128-gcm
-  name: RU_SS_13108_1178
+  name: RU_SS_13108_378
   password: 8722de56b6c0b3f6a4d01cf91c07e6aa
   port: 13108
   server: 38.60.223.125
   type: ss
+  country: RU
+- name: RU_HTTP_1446_727
+  password: 'null'
+  port: 1446
+  server: 46.29.166.134
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+  x-toolall-mihomo: true
+  country: RU
+- name: RU_VLESS_443_508
+  server: 201.51.12.98
+  port: 443
+  type: vless
+  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
+  tls: true
+  alpn:
+  - h2
+  servername: vps3.nemnogogo.com
+  client-fingerprint: firefox
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: mobile.api.Event
+  udp: true
+  country: RU
+- name: RU_VLESS_443_744
+  server: 5.129.193.120
+  port: 443
+  type: vless
+  uuid: 4b50270b-5caf-4c34-b3da-17b4525604a6
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: qq
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: glush.de1.v1
+  udp: true
+  country: RU
+- name: RU_VLESS_443_1992
+  server: 0592efg.us8.h1clayd.click
+  port: 443
+  type: vless
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  tls: true
+  reality-opts:
+    public-key: cO3wYHISTeorXcM8ffaDCDdqZ-olBQL-GyZqb-W7rTk
+    short-id: bd8f712209a9c283
+  servername: 0592efg.us8.h1clayd.click
+  client-fingerprint: firefox
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: 99f2107b03f8
+  udp: true
   country: RU
 proxy-groups:
 - name: 🚀 节点选择
@@ -111,14 +127,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_490
-  - RU_VLESS_443_517
-  - RU_VLESS_443_848
-  - RU_VLESS_443_474
-  - RU_VLESS_443_692
-  - RU_SS_18443_362
-  - RU_HTTP_1446_647
-  - RU_SS_13108_1178
+  - RU_VLESS_443_547
+  - RU_VLESS_443_511
+  - RU_VLESS_8443_723
+  - RU_SS_13108_378
+  - RU_HTTP_1446_727
+  - RU_VLESS_443_508
+  - RU_VLESS_443_744
+  - RU_VLESS_443_1992
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -131,14 +147,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_SS_18443_362
-  - RU_VLESS_443_474
-  - RU_VLESS_443_490
-  - RU_VLESS_443_517
-  - RU_HTTP_1446_647
-  - RU_VLESS_443_692
-  - RU_VLESS_443_848
-  - RU_SS_13108_1178
+  - RU_SS_13108_378
+  - RU_VLESS_443_508
+  - RU_VLESS_443_511
+  - RU_VLESS_443_547
+  - RU_VLESS_8443_723
+  - RU_HTTP_1446_727
+  - RU_VLESS_443_744
+  - RU_VLESS_443_1992
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -150,14 +166,14 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_490
-  - RU_VLESS_443_517
-  - RU_VLESS_443_848
-  - RU_VLESS_443_474
-  - RU_VLESS_443_692
-  - RU_SS_18443_362
-  - RU_HTTP_1446_647
-  - RU_SS_13108_1178
+  - RU_VLESS_443_547
+  - RU_VLESS_443_511
+  - RU_VLESS_8443_723
+  - RU_SS_13108_378
+  - RU_HTTP_1446_727
+  - RU_VLESS_443_508
+  - RU_VLESS_443_744
+  - RU_VLESS_443_1992
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

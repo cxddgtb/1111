@@ -5,13 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BG_HTTP_443_518
+- name: BG_HTTP_443_628
   password: None
   port: 443
   server: 185.94.192.210
   skip-cert-verify: true
+  sub_tag: R002-260618
   tls: true
   type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: BG
+- name: BG_VLESS_443_417
+  server: 88.80.150.15
+  port: 443
+  type: vless
+  uuid: 1d46250c-f015-439d-a7fd-c4d9e2a4c63d
+  tls: true
+  alpn:
+  - h2
+  servername: bg2.oncloudvpn.com
+  client-fingerprint: edge
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc
+  udp: true
   country: BG
 proxy-groups:
 - name: 🚀 节点选择
@@ -26,7 +45,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_HTTP_443_518
+  - BG_HTTP_443_628
+  - BG_VLESS_443_417
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +59,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_HTTP_443_518
+  - BG_VLESS_443_417
+  - BG_HTTP_443_628
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +72,8 @@ proxy-groups:
 - name: 🌍 BG
   type: url-test
   proxies:
-  - BG_HTTP_443_518
+  - BG_HTTP_443_628
+  - BG_VLESS_443_417
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

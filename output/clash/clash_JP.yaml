@@ -5,48 +5,84 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VLESS_47878_1351
+- name: JP_VLESS_443_2051
+  type: vless
+  server: 45.153.245.181
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  network: ws
+  tls: true
+  servername: jp3.yohototo.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+  country: JP
+- name: JP_VMESS_80_1489
+  type: vmess
+  server: 168.138.43.75
+  port: 80
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: ''
+  country: JP
+- name: JP_VLESS_2053_2291
+  type: vless
+  server: 103.201.131.202
+  port: 2053
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  network: ws
+  tls: true
+  servername: jp3.yohototo.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+  country: JP
+- name: JP_VLESS_47878_806
   type: vless
   network: tcp
   server: 152.69.195.67
   port: 47878
   uuid: eb8613e3-8393-4cff-a3ad-6501fd4adc63
+  servername: 152.69.195.67
   tls: false
-  country: JP
-- name: JP_VMESS_80_1502
-  type: vmess
-  network: ws
-  server: 168.138.43.75
-  port: 80
-  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: jp01.a0a.xyz
-    path: /cctv13.m3u8
+  encryption: none
   country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_80_991
+  name: JP_SS_80_541
   password: 3eOFeNssde7PYYMv
   port: 80
   server: 84.247.155.196
   type: ss
   country: JP
-- name: JP_HTTP_9177_486
-  password: 0wcmn0va70ra
-  port: 9177
-  server: 104.252.87.200
-  type: http
-  username: hommkiti
-  country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_8388_2772
+  name: JP_SS_8388_1141
   password: BeaUf9c0AEWH40Pu
   port: 8388
   server: 154.36.158.197
   type: ss
+  country: JP
+- auth: abedf59203ff9523
+  name: JP_HYSTERIA2_17826_911
+  obfs: salamander
+  obfs-password: ce8a8b39835f0ce5340cf548892e8e71
+  password: abedf59203ff9523
+  port: 17826
+  ports: 17826,20000-40000
+  server: 138.2.37.59
+  skip-cert-verify: true
+  sni: www.bing.com
+  type: hysteria2
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -61,11 +97,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_47878_1351
-  - JP_VMESS_80_1502
-  - JP_SS_80_991
-  - JP_HTTP_9177_486
-  - JP_SS_8388_2772
+  - JP_VLESS_443_2051
+  - JP_VMESS_80_1489
+  - JP_VLESS_2053_2291
+  - JP_VLESS_47878_806
+  - JP_SS_80_541
+  - JP_SS_8388_1141
+  - JP_HYSTERIA2_17826_911
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -78,11 +116,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_HTTP_9177_486
-  - JP_SS_80_991
-  - JP_VLESS_47878_1351
-  - JP_VMESS_80_1502
-  - JP_SS_8388_2772
+  - JP_SS_80_541
+  - JP_VLESS_47878_806
+  - JP_HYSTERIA2_17826_911
+  - JP_SS_8388_1141
+  - JP_VMESS_80_1489
+  - JP_VLESS_443_2051
+  - JP_VLESS_2053_2291
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -94,11 +134,13 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_47878_1351
-  - JP_VMESS_80_1502
-  - JP_SS_80_991
-  - JP_HTTP_9177_486
-  - JP_SS_8388_2772
+  - JP_VLESS_443_2051
+  - JP_VMESS_80_1489
+  - JP_VLESS_2053_2291
+  - JP_VLESS_47878_806
+  - JP_SS_80_541
+  - JP_SS_8388_1141
+  - JP_HYSTERIA2_17826_911
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

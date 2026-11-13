@@ -5,92 +5,102 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GB_VLESS_443_1089
-  type: vless
+- client-fingerprint: chrome
+  encryption: none
+  name: GB_VLESS_50818_437
   network: ws
-  server: 46.250.242.104
-  port: 443
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  servername: fs.qicai99.com
+  port: 50818
+  server: 34.39.80.57
+  servername: yingguo.rymaker.cn
   tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /
-  country: GB
-- name: GB_VLESS_80_263
   type: vless
-  server: 57.129.132.223
-  port: 80
-  uuid: dbb78c94-9f87-4d7d-b945-2000b60352fd
-  network: ws
-  tls: false
-  servername: '---@External_Net---@External_Net---@External_Net---@External_Net---@External_Net'
-  client-fingerprint: chrome
+  uuid: 408c814e-f70a-4d16-b3b3-8182bb70211d
   ws-opts:
-    path: /vless/
-    headers:
-      Host: ''
+    path: /GunService
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_228
+  name: GB_SS_19999_267
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 82.110.60.9
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_174
+  name: GB_SS_19999_213
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 198.244.202.215
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_185
+  name: GB_SS_19999_221
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 198.244.201.129
+  type: ss
+  country: GB
+- cipher: chacha20-ietf-poly1305
+  name: GB_SS_8080_227
+  password: 8nrpt2il04ptci2j
+  port: 8080
+  server: 54.37.240.40
+  type: ss
+  country: GB
+- cipher: aes-256-gcm
+  name: GB_SS_19999_241
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 142.202.51.22
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_194
+  name: GB_SS_19999_248
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 38.114.120.221
   type: ss
   country: GB
 - cipher: aes-256-gcm
-  name: GB_SS_19999_189
+  name: GB_SS_19999_249
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 185.176.206.9
   type: ss
   country: GB
-- cipher: aes-256-gcm
-  name: GB_SS_7001_164
-  password: RexnBgU7EV5ADxG
-  port: 7001
-  server: 94.156.250.148
-  type: ss
-  country: GB
 - cipher: chacha20-ietf-poly1305
-  name: GB_SS_47195_201
+  name: GB_SS_47195_232
   password: DYVqFDnYoMquRQunXC1xd2FyuDhd7JWs5jtf2eb7VkKLzXgZv8pt8gY1e91TT71V762zRX7MWW4HmjavanYdUF9bij8gG8AP
   port: 47195
   server: 104.222.183.180
   type: ss
   country: GB
-- name: GB_HTTP_443_326
+- cipher: aes-256-gcm
+  name: GB_SS_7001_376
+  password: RexnBgU7EV5ADxG
+  port: 7001
+  server: 94.156.250.148
+  type: ss
+  country: GB
+- name: GB_HTTP_9443_395
   password: None
-  port: 443
-  server: 185.164.138.156
+  port: 9443
+  server: 84.17.50.214
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: GB
+- name: GB_HTTP_9443_443
+  password: None
+  port: 9443
+  server: 37.120.233.34
   skip-cert-verify: true
   tls: true
   type: http
   country: GB
-- name: GB_HTTP_443_351
+- name: GB_HTTP_443_421
   password: None
   port: 443
   server: 212.102.63.31
@@ -99,29 +109,7 @@ proxies:
   tls: true
   type: http
   udp: true
-  country: GB
-- name: GB_HTTP_9443_348
-  password: None
-  port: 9443
-  server: 84.17.50.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: GB
-- cipher: aes-256-gcm
-  name: GB_SS_19999_2008
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 198.244.201.129
-  type: ss
-  country: GB
-- name: GB_SS_8080_167
-  server: 54.37.240.40
-  port: 8080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 8nrpt2il04ptci2j
-  udp: true
+  x-toolall-mihomo: true
   country: GB
 proxy-groups:
 - name: 🚀 节点选择
@@ -136,20 +124,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GB_VLESS_443_1089
-  - GB_VLESS_80_263
-  - GB_SS_19999_228
-  - GB_SS_19999_174
-  - GB_SS_19999_185
-  - GB_SS_19999_194
-  - GB_SS_19999_189
-  - GB_SS_7001_164
-  - GB_SS_47195_201
-  - GB_HTTP_443_326
-  - GB_HTTP_443_351
-  - GB_HTTP_9443_348
-  - GB_SS_19999_2008
-  - GB_SS_8080_167
+  - GB_VLESS_50818_437
+  - GB_SS_19999_267
+  - GB_SS_19999_213
+  - GB_SS_19999_221
+  - GB_SS_8080_227
+  - GB_SS_19999_241
+  - GB_SS_19999_248
+  - GB_SS_19999_249
+  - GB_SS_47195_232
+  - GB_SS_7001_376
+  - GB_HTTP_9443_395
+  - GB_HTTP_9443_443
+  - GB_HTTP_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -162,20 +149,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GB_SS_7001_164
-  - GB_SS_8080_167
-  - GB_SS_19999_174
-  - GB_SS_19999_185
-  - GB_SS_19999_189
-  - GB_SS_19999_194
-  - GB_SS_47195_201
-  - GB_SS_19999_228
-  - GB_VLESS_80_263
-  - GB_HTTP_443_326
-  - GB_HTTP_9443_348
-  - GB_HTTP_443_351
-  - GB_VLESS_443_1089
-  - GB_SS_19999_2008
+  - GB_SS_19999_213
+  - GB_SS_19999_221
+  - GB_SS_8080_227
+  - GB_SS_47195_232
+  - GB_SS_19999_241
+  - GB_SS_19999_248
+  - GB_SS_19999_249
+  - GB_SS_19999_267
+  - GB_SS_7001_376
+  - GB_HTTP_9443_395
+  - GB_HTTP_443_421
+  - GB_VLESS_50818_437
+  - GB_HTTP_9443_443
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -187,20 +173,19 @@ proxy-groups:
 - name: 🌍 GB
   type: url-test
   proxies:
-  - GB_VLESS_443_1089
-  - GB_VLESS_80_263
-  - GB_SS_19999_228
-  - GB_SS_19999_174
-  - GB_SS_19999_185
-  - GB_SS_19999_194
-  - GB_SS_19999_189
-  - GB_SS_7001_164
-  - GB_SS_47195_201
-  - GB_HTTP_443_326
-  - GB_HTTP_443_351
-  - GB_HTTP_9443_348
-  - GB_SS_19999_2008
-  - GB_SS_8080_167
+  - GB_VLESS_50818_437
+  - GB_SS_19999_267
+  - GB_SS_19999_213
+  - GB_SS_19999_221
+  - GB_SS_8080_227
+  - GB_SS_19999_241
+  - GB_SS_19999_248
+  - GB_SS_19999_249
+  - GB_SS_47195_232
+  - GB_SS_7001_376
+  - GB_HTTP_9443_395
+  - GB_HTTP_9443_443
+  - GB_HTTP_443_421
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

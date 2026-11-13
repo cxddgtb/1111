@@ -5,18 +5,8 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MX_VMESS_32153_134
-  type: vmess
-  network: tcp
-  server: 38.60.224.173
-  port: 32153
-  uuid: 5cf1f470-3f70-4589-a2a4-4657ea3a1edf
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  country: MX
 - cipher: aes-256-gcm
-  name: MX_SS_8388_103
+  name: MX_SS_8388_121
   password: BWyPPTusFKhGgzKh
   port: 8388
   server: 64.177.90.30
@@ -35,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MX_VMESS_32153_134
-  - MX_SS_8388_103
+  - MX_SS_8388_121
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -49,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MX_SS_8388_103
-  - MX_VMESS_32153_134
+  - MX_SS_8388_121
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -62,8 +50,7 @@ proxy-groups:
 - name: 🌍 MX
   type: url-test
   proxies:
-  - MX_VMESS_32153_134
-  - MX_SS_8388_103
+  - MX_SS_8388_121
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

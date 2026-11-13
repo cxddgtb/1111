@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_VLESS_443_1810
+- name: TW_VLESS_443_1380
   type: vless
   network: ws
   server: 60.248.219.78
@@ -20,7 +20,7 @@ proxies:
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
   country: TW
 - type: anytls
-  name: TW_ANYTLS_443_1517
+  name: TW_ANYTLS_443_1393
   server: sdf65h46wr.df6h451rh.xin
   port: 443
   password: 0324fbc29561
@@ -30,21 +30,34 @@ proxies:
   skip-cert-verify: true
   country: TW
 - cipher: 2022-blake3-aes-128-gcm
-  name: TW_SS_14514_412
+  name: TW_SS_14514_385
   password: b7I6g7l7fJhBaMInJ+zkzw==
   port: 14514
   server: amasoid.ddns.net
   type: ss
   country: TW
-- name: TW_HTTP_1443_869
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
+- name: TW_ANYTLS_2053_798
+  password: 047e0e0c-1843-4f16-9812-ec2cc94f7a99
+  port: 2053
+  server: forwarded.frnhk.xyz
+  skip-cert-verify: true
+  sni: my.gosthk.site
+  type: anytls
+  udp: true
+  country: TW
+- name: TW_VLESS_8443_866
+  server: 83.147.13.74
+  port: 8443
+  type: vless
+  uuid: eb8c97f7-a154-4442-91b0-54c0d055ad0b
   tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  reality-opts:
+    public-key: 4g6gX0ueJap7pY_iTDx23h6bzo3KIOTcFzP1Uacn0QA
+    short-id: 4ad2e4e660550e43
+  servername: github.githubassets.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -59,10 +72,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VLESS_443_1810
-  - TW_ANYTLS_443_1517
-  - TW_SS_14514_412
-  - TW_HTTP_1443_869
+  - TW_VLESS_443_1380
+  - TW_ANYTLS_443_1393
+  - TW_SS_14514_385
+  - TW_ANYTLS_2053_798
+  - TW_VLESS_8443_866
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -75,10 +89,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_SS_14514_412
-  - TW_HTTP_1443_869
-  - TW_ANYTLS_443_1517
-  - TW_VLESS_443_1810
+  - TW_SS_14514_385
+  - TW_ANYTLS_2053_798
+  - TW_VLESS_8443_866
+  - TW_VLESS_443_1380
+  - TW_ANYTLS_443_1393
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -90,10 +105,11 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VLESS_443_1810
-  - TW_ANYTLS_443_1517
-  - TW_SS_14514_412
-  - TW_HTTP_1443_869
+  - TW_VLESS_443_1380
+  - TW_ANYTLS_443_1393
+  - TW_SS_14514_385
+  - TW_ANYTLS_2053_798
+  - TW_VLESS_8443_866
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
