@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CL_TROJAN_443_399
+- name: CL_TROJAN_443_481
   type: trojan
   server: 64.176.7.205
   port: 443
@@ -26,7 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CL_TROJAN_443_399
+  - CL_TROJAN_443_481
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CL_TROJAN_443_399
+  - CL_TROJAN_443_481
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +51,7 @@ proxy-groups:
 - name: 🌍 CL
   type: url-test
   proxies:
-  - CL_TROJAN_443_399
+  - CL_TROJAN_443_481
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

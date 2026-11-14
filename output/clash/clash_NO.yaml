@@ -6,22 +6,11 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - cipher: chacha20-ietf-poly1305
-  name: NO_SS_990_659
+  name: NO_SS_990_1251
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   port: 990
   server: 185.213.23.63
   type: ss
-  country: 'NO'
-- name: NO_HTTP_9443_572
-  password: None
-  port: 9443
-  server: 146.70.170.210
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
   country: 'NO'
 proxy-groups:
 - name: 🚀 节点选择
@@ -36,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NO_SS_990_659
-  - NO_HTTP_9443_572
+  - NO_SS_990_1251
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -50,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NO_HTTP_9443_572
-  - NO_SS_990_659
+  - NO_SS_990_1251
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -63,8 +50,7 @@ proxy-groups:
 - name: 🌍 NO
   type: url-test
   proxies:
-  - NO_SS_990_659
-  - NO_HTTP_9443_572
+  - NO_SS_990_1251
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

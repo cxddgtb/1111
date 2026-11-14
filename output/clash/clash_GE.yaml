@@ -5,12 +5,19 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: GE_HTTP_443_769
-  port: 443
-  server: 195.54.178.210
-  skip-cert-verify: true
+- name: GE_VLESS_2053_969
+  type: vless
+  server: 194.135.119.82
+  port: 2053
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  network: ws
   tls: true
-  type: http
+  servername: fs.qicai99.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fp=chrome
+    headers:
+      Host: fs.qicai99.com
   country: GE
 proxy-groups:
 - name: 🚀 节点选择
@@ -25,7 +32,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - GE_HTTP_443_769
+  - GE_VLESS_2053_969
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -38,7 +45,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - GE_HTTP_443_769
+  - GE_VLESS_2053_969
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -50,7 +57,7 @@ proxy-groups:
 - name: 🌍 GE
   type: url-test
   proxies:
-  - GE_HTTP_443_769
+  - GE_VLESS_2053_969
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

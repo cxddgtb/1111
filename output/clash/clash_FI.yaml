@@ -5,39 +5,51 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FI_VLESS_443_429
+- name: FI_VLESS_14430_529
   type: vless
-  server: 65.109.208.183
-  port: 443
-  uuid: 5f07a2a1-82a5-494d-847b-b882e6903192
-  network: tcp
-  tls: true
-  servername: free.for.member.iiproxy.com
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FI
-- name: FI_VLESS_443_476
-  type: vless
-  server: free.for.member.iiproxy.com
-  port: 443
-  uuid: 5f07a2a1-82a5-494d-847b-b882e6903192
-  network: tcp
-  tls: true
-  servername: free.for.member.iiproxy.com
-  client-fingerprint: chrome
-  ws-opts: null
-  country: FI
-- name: FI_VLESS_14430_408
-  type: vless
-  network: ws
   server: 45.144.234.157
   port: 14430
   uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
+  network: ws
   tls: false
+  servername: 45.144.234.157
+  client-fingerprint: chrome
   ws-opts:
-    headers:
-      Host: 45.144.234.157
     path: /vless
+    headers:
+      Host: ''
+  country: FI
+- name: FI_VMESS_39018_354
+  type: vmess
+  server: 65.108.240.210
+  port: 39018
+  uuid: 8ca123a8-720b-47c5-bd0c-637431418b09
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: FI
+- name: FI_HYSTERIA2_443_581
+  obfs: salamander
+  obfs-password: AJyvWNsoDgVkMkboZ3juMJXYNRf6uEQE
+  password: 247802ca-0fbb-428a-b807-91a6e571b5c7
+  port: 443
+  server: 177.202.65.158
+  skip-cert-verify: true
+  sni: hy2-fi2.snobvpn.online
+  tls: false
+  type: hysteria2
+  country: FI
+- name: FI_HYSTERIA2_4444_550
+  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
+  port: 4444
+  server: 2.27.210.6
+  skip-cert-verify: true
+  sni: lv2.nexfile.net
+  tls: false
+  type: hysteria2
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -52,9 +64,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_443_429
-  - FI_VLESS_443_476
-  - FI_VLESS_14430_408
+  - FI_VLESS_14430_529
+  - FI_VMESS_39018_354
+  - FI_HYSTERIA2_443_581
+  - FI_HYSTERIA2_4444_550
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -67,9 +80,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_VLESS_14430_408
-  - FI_VLESS_443_429
-  - FI_VLESS_443_476
+  - FI_VMESS_39018_354
+  - FI_VLESS_14430_529
+  - FI_HYSTERIA2_4444_550
+  - FI_HYSTERIA2_443_581
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,9 +95,10 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_443_429
-  - FI_VLESS_443_476
-  - FI_VLESS_14430_408
+  - FI_VLESS_14430_529
+  - FI_VMESS_39018_354
+  - FI_HYSTERIA2_443_581
+  - FI_HYSTERIA2_4444_550
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

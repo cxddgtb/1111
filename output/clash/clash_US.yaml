@@ -5,514 +5,109 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: US_VLESS_443_549
-  type: vless
-  server: 3.168.217.190
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  network: ws
-  tls: true
-  servername: d1afk2ndm8pox3.cloudfront.net
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: d1afk2ndm8pox3.cloudfront.net
-  country: US
-- name: US_VMESS_39495_158
+- name: US_VMESS_18000_13
   type: vmess
-  server: 129.146.77.248
-  port: 39495
-  uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: 129.146.77.248
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: 129.146.77.248
-  country: US
-- name: US_VLESS_443_714
-  type: vless
-  server: visa.com.sg
-  port: 443
-  uuid: c4f3c4b2-26e5-4a7e-a034-09fc376cec53
-  network: ws
-  tls: true
-  servername: node.plutocore.vip
-  client-fingerprint: chrome
-  ws-opts:
-    path: /f/290/01d76b0ca301d4a84722ce47
-    headers:
-      Host: node.plutocore.vip
-  country: US
-- name: US_TROJAN_443_145
-  type: trojan
-  server: 167.88.61.193
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: browseseniorrolesandenhanceyourcareertoday.com
   network: tcp
-  country: US
-- name: US_VMESS_18000_100
-  type: vmess
-  server: 169.197.142.22
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: US
-- name: US_TROJAN_20027_809
-  type: trojan
-  server: sclass-b1.catcat321.com
-  port: 20027
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  sni: hk.catxstar.com
-  network: tcp
-  country: US
-- name: US_TROJAN_20028_854
-  type: trojan
-  server: sclass-b1.catcat321.com
-  port: 20028
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  sni: hk.catxstar.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_145_2
-  type: trojan
-  server: 167.88.61.20
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.browseseniorrolesandenhanceyourcareertoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_145_3
-  type: trojan
-  server: 167.88.61.52
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.browseseniorrolesandenhanceyourcareertoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_142
-  type: trojan
-  server: 167.88.61.175
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.browseseniorrolesandenhanceyourcareertoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_160
-  type: trojan
-  server: 167.88.61.198
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_129
-  type: trojan
-  server: 66.163.112.171
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.unlockyourfuturefindyourperfectcareer.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_160_2
-  type: trojan
-  server: 66.163.112.13
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.unlockyourfuturefindyourperfectcareer.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_131
-  type: trojan
-  server: 66.163.112.31
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: unlockyourfuturefindyourperfectcareer.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_142_2
-  type: trojan
-  server: 66.163.112.142
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.unlockyourfuturefindyourperfectcareer.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_143
-  type: trojan
-  server: 66.163.112.121
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.unlockyourfuturefindyourperfectcareer.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_157
-  type: trojan
-  server: 66.163.112.242
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.unlockyourfuturefindyourperfectcareer.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_95
-  type: trojan
-  server: 66.163.114.126
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.findconnectwithemployersandbuildprofessionalnetwork.com
-  network: tcp
-  country: US
-- name: US_VMESS_8443_2443
-  type: vmess
-  server: news.zoom.us
-  port: 8443
-  uuid: bd67fcd2-ec34-40a6-aac6-67731f2d7011
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: matrix.phonicsindia.mobi
-  ws-opts:
-    path: /
-    headers:
-      Host: matrix.phonicsindia.mobi
-  country: US
-- name: US_VLESS_443_534
-  type: vless
-  server: 85.155.179.206
-  port: 443
-  uuid: 86a83d11-d751-4b60-aa4e-1dca5cff7028
-  network: tcp
-  tls: true
-  servername: us3.shtil.io
-  client-fingerprint: chrome
-  ws-opts: null
-  country: US
-- name: US_VMESS_18000_155
-  type: vmess
   server: 84.17.41.2
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  udp: true
   alterId: 0
   cipher: auto
+  country: US
+- name: US_VMESS_48111_84
+  type: vmess
   network: tcp
+  server: 129.146.143.80
+  port: 48111
+  uuid: d4603cc2-e0ee-4651-83f5-1db5b7168177
   tls: false
-  servername: ''
-  ws-opts: null
-  country: US
-- name: US_TROJAN_443_94
-  type: trojan
-  server: 66.163.114.114
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
-  network: tcp
-  country: US
-- name: US_VMESS_8443_2467
-  type: vmess
-  server: 141.193.213.21
-  port: 8443
-  uuid: bd67fcd2-ec34-40a6-aac6-67731f2d7011
   alterId: 0
   cipher: auto
-  network: ws
-  tls: true
-  servername: matrix.phonicsindia.mobi
-  ws-opts:
-    path: /
-    headers:
-      Host: matrix.phonicsindia.mobi
   country: US
-- name: US_TROJAN_443_80
-  type: trojan
-  server: 216.152.155.54
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.nextjobopportunityandclaimyouridealrole.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_170
-  type: trojan
-  server: 216.106.186.155
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.findlocaljobnetworkandbuildcommunityconnections.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_95_2
-  type: trojan
-  server: 216.152.156.81
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_159
-  type: trojan
-  server: 216.106.186.66
-  port: 443
-  password: 242a3d8eee5e4ed1a6bfa4141d549a25
-  sni: www.findlocaljobnetworkandbuildcommunityconnections.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_77
-  type: trojan
-  server: 216.152.155.158
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.nextjobopportunityandclaimyouridealrole.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_207
-  type: trojan
-  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
-  port: 443
-  password: f0eb8c92ce8946aaba856569cff1a16b
-  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
-  network: tcp
-  country: US
-- name: US_VMESS_18000_83
+- name: US_VMESS_18000_138
   type: vmess
+  network: tcp
+  server: 67.220.85.46
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  udp: true
+  alterId: 0
+  cipher: aes-128-gcm
+  country: US
+- name: US_VMESS_18000_162
+  type: vmess
+  network: tcp
+  server: 67.220.95.3
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  tls: false
+  alterId: 0
+  cipher: aes-128-gcm
+  country: US
+- name: US_VMESS_18000_179
+  type: vmess
+  network: tcp
   server: 38.91.107.49
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
   tls: false
-  servername: ''
-  ws-opts: null
-  country: US
-- name: US_TROJAN_443_165
-  type: trojan
-  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
-  port: 443
-  password: dba20dcb635e430fa4d3bfc303a149d2
-  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_156
-  type: trojan
-  server: 216.106.186.46
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.findlocaljobnetworkandbuildcommunityconnections.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_84
-  type: trojan
-  server: 216.152.155.176
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.nextjobopportunityandclaimyouridealrole.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_76
-  type: trojan
-  server: 216.152.155.59
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.nextjobopportunityandclaimyouridealrole.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_75
-  type: trojan
-  server: 170.101.101.67
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.explorecreativejobsandenhanceyourcareerportfolio.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_105
-  type: trojan
-  server: 66.163.114.245
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: findconnectwithemployersandbuildprofessionalnetwork.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_76_2
-  type: trojan
-  server: 216.152.155.23
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.nextjobopportunityandclaimyouridealrole.com
-  network: tcp
-  country: US
-- name: US_VMESS_443_2647
-  type: vmess
-  server: 172.66.0.1
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
   alterId: 0
   cipher: auto
-  network: ws
-  tls: true
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
   country: US
-- name: US_TROJAN_443_94_2
-  type: trojan
-  server: 170.101.101.112
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.explorecreativejobsandenhanceyourcareerportfolio.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_127
-  type: trojan
-  server: 169.197.140.208
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.discoverfreshgraduatejobsstartyourprofessionaljourney.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_127_2
-  type: trojan
-  server: 169.197.140.218
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.discoverfreshgraduatejobsstartyourprofessionaljourney.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_125
-  type: trojan
-  server: 169.197.140.169
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.discoverfreshgraduatejobsstartyourprofessionaljourney.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_94_3
-  type: trojan
-  server: 170.101.101.131
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.explorecreativejobsandenhanceyourcareerportfolio.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_117
-  type: trojan
-  server: 170.101.101.211
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.explorecreativejobsandenhanceyourcareerportfolio.com
-  network: tcp
-  country: US
-- name: US_VMESS_18000_118
+- name: US_VMESS_18000_182
   type: vmess
+  network: tcp
   server: 38.110.1.246
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  udp: true
   alterId: 0
   cipher: auto
-  network: tcp
+  country: US
+- name: US_VLESS_14430_210
+  type: vless
+  server: 45.138.100.248
+  port: 14430
+  uuid: ae908ff5-f749-402c-af25-e6e9aef4d6bb
+  network: ws
   tls: false
   servername: ''
-  ws-opts: null
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless
+    headers:
+      Host: ''
   country: US
-- name: US_TROJAN_443_74
-  type: trojan
-  server: 170.101.101.53
+- name: US_VLESS_30016_212
+  type: vless
+  server: 69.48.201.136
+  port: 30016
+  uuid: 03dc60cb-a8d4-4226-93fe-0e6cbf77fe5a
+  network: ws
+  tls: false
+  servername: uspanel.unixzone.us
+  client-fingerprint: chrome
+  ws-opts:
+    path: /usserver
+    headers:
+      Host: ''
+  country: US
+- name: US_VLESS_443_780
+  type: vless
+  server: 155.103.116.110
   port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.explorecreativejobsandenhanceyourcareerportfolio.com
-  network: tcp
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  network: ws
+  tls: true
+  servername: jp3.yohototo.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
   country: US
-- name: US_TROJAN_443_113
-  type: trojan
-  server: 216.152.156.49
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_151
-  type: trojan
-  server: 216.106.186.82
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.findlocaljobnetworkandbuildcommunityconnections.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_150
-  type: trojan
-  server: 169.197.140.214
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.discoverfreshgraduatejobsstartyourprofessionaljourney.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_107
-  type: trojan
-  server: 216.152.156.65
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_83
-  type: trojan
-  server: 170.101.101.237
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.explorecreativejobsandenhanceyourcareerportfolio.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_129_2
-  type: trojan
-  server: 66.163.122.25
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.searchnationwidecareerchangehelperandguidancetoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_98
-  type: trojan
-  server: 216.152.156.212
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_100
-  type: trojan
-  server: 66.163.114.106
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_141
-  type: trojan
-  server: 66.163.112.147
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.unlockyourfuturefindyourperfectcareer.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_105_2
-  type: trojan
-  server: 66.163.122.26
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.searchnationwidecareerchangehelperandguidancetoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_137
+- name: US_TROJAN_443_248
   type: trojan
   server: 66.163.122.7
   port: 443
@@ -520,23 +115,15 @@ proxies:
   sni: www.searchnationwidecareerchangehelperandguidancetoday.com
   network: tcp
   country: US
-- name: US_TROJAN_443_135
+- name: US_TROJAN_443_218
   type: trojan
-  server: 169.197.140.171
+  server: 66.163.122.26
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  sni: blog.searchnationwidecareerchangehelperandguidancetoday.com
   network: tcp
   country: US
-- name: US_TROJAN_443_99
-  type: trojan
-  server: 216.152.156.42
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  network: tcp
-  country: US
-- name: US_TROJAN_443_136
+- name: US_TROJAN_443_217
   type: trojan
   server: 66.163.122.46
   port: 443
@@ -544,27 +131,87 @@ proxies:
   sni: searchnationwidecareerchangehelperandguidancetoday.com
   network: tcp
   country: US
-- name: US_TROJAN_443_119
+- name: US_TROJAN_443_232
   type: trojan
-  server: 66.163.122.30
+  server: 169.197.140.218
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.searchnationwidecareerchangehelperandguidancetoday.com
+  sni: learn.discoverfreshgraduatejobsstartyourprofessionaljourney.com
   network: tcp
   country: US
-- name: US_VMESS_18000_1207
-  type: vmess
-  server: 67.220.85.46
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
+- name: US_TROJAN_443_217_2
+  type: trojan
+  server: 66.163.122.25
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.searchnationwidecareerchangehelperandguidancetoday.com
   network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
   country: US
-- name: US_TROJAN_443_146
+- name: US_TROJAN_443_198
+  type: trojan
+  server: 170.101.101.67
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_192
+  type: trojan
+  server: 170.101.101.131
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_234
+  type: trojan
+  server: 169.197.140.245
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_234_2
+  type: trojan
+  server: 169.197.140.171
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_192_2
+  type: trojan
+  server: 216.152.156.65
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_193
+  type: trojan
+  server: 216.152.156.212
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_195
+  type: trojan
+  server: 216.152.156.49
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_193_2
+  type: trojan
+  server: 216.152.156.81
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_222
   type: trojan
   server: 66.163.122.113
   port: 443
@@ -572,27 +219,115 @@ proxies:
   sni: api.searchnationwidecareerchangehelperandguidancetoday.com
   network: tcp
   country: US
-- name: US_TROJAN_443_1744
+- name: US_TROJAN_443_248_2
   type: trojan
-  server: 170.101.101.19
+  server: 169.197.140.208
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.explorecreativejobsandenhanceyourcareerportfolio.com
+  sni: blog.discoverfreshgraduatejobsstartyourprofessionaljourney.com
   network: tcp
   country: US
-- name: US_VMESS_48111_2236
+- name: US_TROJAN_443_194
+  type: trojan
+  server: 216.152.156.42
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_233
+  type: trojan
+  server: 169.197.140.214
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_234_3
+  type: trojan
+  server: 169.197.140.169
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_21
+  type: trojan
+  server: 216.106.186.155
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.findlocaljobnetworkandbuildcommunityconnections.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_193_3
+  type: trojan
+  server: 170.101.101.112
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.explorecreativejobsandenhanceyourcareerportfolio.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_77
+  type: trojan
+  server: 167.88.61.20
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.browseseniorrolesandenhanceyourcareertoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_218_2
+  type: trojan
+  server: 66.163.122.81
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.searchnationwidecareerchangehelperandguidancetoday.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_152
+  type: trojan
+  server: 216.152.155.176
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.nextjobopportunityandclaimyouridealrole.com
+  network: tcp
+  country: US
+- name: US_TROJAN_443_134
+  type: trojan
+  server: 66.163.112.76
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.unlockyourfuturefindyourperfectcareer.com
+  network: tcp
+  country: US
+- name: US_VMESS_18000_2980
   type: vmess
-  server: 129.146.143.80
-  port: 48111
-  uuid: d4603cc2-e0ee-4651-83f5-1db5b7168177
+  server: 169.197.142.22
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   alterId: 0
-  cipher: auto
+  cipher: none
   network: tcp
   tls: false
   servername: ''
   ws-opts: null
   country: US
-- name: US_TROJAN_20103_1002
+- name: US_TROJAN_20028_804
+  type: trojan
+  server: sclass-b1.catcat321.com
+  port: 20028
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  sni: hk.catxstar.com
+  network: tcp
+  country: US
+- name: US_TROJAN_20027_814
+  type: trojan
+  server: sclass-b1.catcat321.com
+  port: 20027
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  sni: hk.catxstar.com
+  network: tcp
+  country: US
+- name: US_TROJAN_20103_957
   type: trojan
   server: sclass-01.catcat321.com
   port: 20103
@@ -600,78 +335,8 @@ proxies:
   sni: hk.catxstar.com
   network: tcp
   country: US
-- name: US_TROJAN_20051_1076
-  type: trojan
-  server: sclass-c2.catcat321.com
-  port: 20051
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  sni: hk.catxstar.com
-  network: tcp
-  country: US
-- name: US_VLESS_443_447
-  type: vless
-  network: xhttp
-  server: 200.102.179.69
-  port: 443
-  uuid: 7592ca5c-b352-4562-8856-a9c936a3331b
-  servername: dmbdnpctq8hjxx.hat.onl
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xhttp-opts:
-    host: dmbdnpctq8hjxx.hat.onl
-    mode: auto
-    path: /hls/014373eq/seg
-  country: US
-- name: US_VLESS_443_561
-  type: vless
-  network: xhttp
-  server: 201.34.142.108
-  port: 443
-  uuid: 4777d90d-265b-4927-a0d1-63f36ed1421c
-  servername: 201.34.142.108
-  tls: true
-  udp: true
-  client-fingerprint: firefox
-  xhttp-opts:
-    mode: auto
-    path: /assets/nlrelay01/
-  country: US
-- name: US_VMESS_1270_130
-  type: vmess
-  network: tcp
-  server: 172.111.36.126
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_130_2
-  type: vmess
-  network: tcp
-  server: 38.91.107.57
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
-- name: US_VMESS_1270_173
-  type: vmess
-  network: tcp
-  server: 23.150.152.65
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: US
 - type: hysteria
-  name: US_HYSTERIA_20022_1383
+  name: US_HYSTERIA_20022_1452
   server: 137.175.82.43
   port: 20022
   password: dongtaiwang.com
@@ -685,23 +350,27 @@ proxies:
   down: '20'
   auth-str: dongtaiwang.com
   country: US
-- type: hysteria
-  name: US_HYSTERIA_20022_1467
-  server: 137.175.82.44
-  port: 20022
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
+- name: US_HYSTERIA2_443_533
+  obfs: salamander
+  obfs-password: sFQIE4F3SbaXCYoCQTY-4YvYiif8__By
+  password: 247802ca-0fbb-428a-b807-91a6e571b5c7
+  port: 443
+  server: 201.58.190.235
   skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
+  sni: hy2-pl.snobvpn.online
+  tls: false
+  type: hysteria2
+  country: US
+- name: US_TROJAN_20051_1958
+  type: trojan
+  server: sclass-b1.catcat321.com
+  port: 20051
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  sni: hk.catxstar.com
+  network: tcp
   country: US
 - type: hysteria
-  name: US_HYSTERIA_22335_1679
+  name: US_HYSTERIA_22335_1532
   server: 198.200.57.142
   port: 22335
   password: github.com/Alvin9999-newpac/fanqiang
@@ -715,7 +384,22 @@ proxies:
   down: '55'
   auth-str: github.com/Alvin9999-newpac/fanqiang
   country: US
-- name: US_HYSTERIA2_4444_490
+- type: hysteria
+  name: US_HYSTERIA_20022_1844
+  server: 137.175.82.44
+  port: 20022
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+  country: US
+- name: US_HYSTERIA2_4444_550
   password: a35c508f-4d5d-4531-842e-6e9d43c762c0
   port: 4444
   server: 31.76.62.148
@@ -723,130 +407,32 @@ proxies:
   tls: false
   type: hysteria2
   country: US
-- name: US_VLESS_443_855
-  network: ws
-  port: 443
-  server: 38.207.177.204
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /fp=chrome
+- alpn:
+  - h3
+  name: US_HYSTERIA2_4444_577
+  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
+  port: 4444
+  server: 48.102.214.167
+  skip-cert-verify: false
+  sni: fl5.edgeport.cloud
+  tls: false
+  type: hysteria2
   country: US
-- client-fingerprint: chrome
-  name: US_VLESS_443_1431
-  network: ws
-  port: 443
-  server: 68.64.182.205
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /
+- cipher: aes-256-gcm
+  name: US_SS_8388_870
+  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
+  port: 8388
+  server: 209.248.57.105
+  type: ss
   country: US
 - cipher: chacha20-ietf-poly1305
-  name: US_SS_42878_241
+  name: US_SS_42878_302
   password: ijoUwfdnkz7mX4pWdkSpmEixTZCt2TRm1JDr4BSaBAWkLxYGoXBHXadFKY5D5ZfoVTwqsx46jCmEUDnQUizJDYrM7B5anhnu
   port: 42878
   server: 23.230.52.119
   type: ss
   country: US
-- name: US_HTTP_443_123
-  port: 443
-  server: 38.247.141.135
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: US
-- name: US_HTTP_9002_160
-  port: 9002
-  server: 138.199.35.200
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: US
-- name: US_HTTP_9002_156
-  password: None
-  port: 9002
-  server: 138.199.35.195
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: US
-- name: US_HTTP_443_124
-  port: 443
-  server: 12.221.146.147
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: US
-- name: US_HTTP_9002_157
-  password: 'null'
-  port: 9002
-  server: 138.199.35.199
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-  x-toolall-mihomo: true
-  country: US
-- name: US_HTTP_9002_154
-  port: 9002
-  server: 138.199.35.207
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: US
-- name: US_HTTP_443_201
-  port: 443
-  server: 192.227.176.234
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: US
-- name: US_HTTP_9002_152
-  password: None
-  port: 9002
-  server: 138.199.35.197
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: US
-- name: US_HTTP_9002_169
-  password: 'null'
-  port: 9002
-  server: 138.199.35.206
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-  country: US
-- name: US_HTTP_9002_159
+- name: US_HTTP_9002_144
   password: 'null'
   port: 9002
   server: 138.199.35.202
@@ -858,77 +444,132 @@ proxies:
   username: 'null'
   x-toolall-mihomo: true
   country: US
-- name: US_HTTP_9443_111
-  port: 9443
-  server: 149.88.21.140
+- name: US_HTTP_443_207
+  port: 443
+  server: 68.235.56.51
   skip-cert-verify: true
   tls: true
   type: http
   country: US
-- name: US_HTTP_9002_175
+- name: US_HTTP_9002_134
+  password: None
   port: 9002
-  server: 138.199.35.213
+  server: 138.199.35.216
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: US
+- name: US_HTTP_9002_128
+  port: 9002
+  server: 138.199.35.197
   skip-cert-verify: true
   tls: true
   type: http
+  udp: true
+  x-toolall-mihomo: true
   country: US
-- name: US_HTTP_8443_256
+- name: US_HTTP_443_197
+  port: 443
+  server: 38.247.141.135
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: US
+- name: US_HTTP_9002_126
+  password: 'null'
+  port: 9002
+  server: 138.199.35.199
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+  x-toolall-mihomo: true
+  country: US
+- name: US_HTTP_9002_128_2
+  password: 'null'
+  port: 9002
+  server: 138.199.35.198
+  skip-cert-verify: true
+  sni: 138.199.35.198
+  tls: true
+  type: http
+  username: 'null'
+  country: US
+- name: US_HTTP_9002_123
+  password: 'null'
+  port: 9002
+  server: 138.199.35.206
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+  country: US
+- name: US_HTTP_9002_128_3
+  password: 'null'
+  port: 9002
+  server: 138.199.35.214
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+  x-toolall-mihomo: true
+  country: US
+- name: US_HTTP_9002_143
+  password: 'null'
+  port: 9002
+  server: 138.199.35.205
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+  x-toolall-mihomo: true
+  country: US
+- name: US_HTTP_9002_126_2
+  password: None
+  port: 9002
+  server: 138.199.35.203
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: US
+- name: US_HTTP_443_364
+  port: 443
+  server: 192.227.176.234
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: US
+- name: US_HTTP_9002_127
+  password: None
+  port: 9002
+  server: 138.199.35.219
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+  country: US
+- name: US_HTTP_8443_75
   port: 8443
   server: 44.248.167.117
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-  country: US
-- name: US_VLESS_443_140
-  server: 192.177.26.55
-  port: 443
-  type: vless
-  uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: cC6kqzQ1mdCXyPey8xRXS7TQ1S4kF3nJW-h1ItJ4SH8
-    short-id: bdaddda4cbc8c7bf
-  servername: repo-16.topp-con.xyz
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-  country: US
-- name: US_VLESS_443_164
-  server: 198.247.127.131
-  port: 443
-  type: vless
-  uuid: 59548d2d-5d7c-4328-aa81-0d5614da0c1b
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: vmHHRwA9ER6c8dfgtL-gh2HBMCvjySy1xLimqYpLiCI
-  servername: addons.mozilla.org
-  client-fingerprint: chrome
-  network: tcp
-  country: US
-- name: US_SSR_8080_76
-  type: ssr
-  server: 107.151.182.253
-  port: 8080
-  password: 14fFPrbezE3HDZzsMOr6
-  cipher: rc4-md5
-  protocol: origin
-  obfs: plain
-  country: US
-- name: US_VLESS_8443_399
-  server: 156.229.167.109
-  port: 8443
-  type: vless
-  uuid: eb8c97f7-a154-4442-91b0-54c0d055ad0b
-  tls: true
-  reality-opts:
-    public-key: 4g6gX0ueJap7pY_iTDx23h6bzo3KIOTcFzP1Uacn0QA
-    short-id: 4ad2e4e660550e43
-  servername: github.githubassets.com
-  client-fingerprint: chrome
-  network: tcp
   udp: true
   country: US
 proxy-groups:
@@ -944,102 +585,66 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - US_VLESS_443_549
-  - US_VMESS_39495_158
-  - US_VLESS_443_714
-  - US_TROJAN_443_145
-  - US_VMESS_18000_100
-  - US_TROJAN_20027_809
-  - US_TROJAN_20028_854
-  - US_TROJAN_443_145_2
-  - US_TROJAN_443_145_3
-  - US_TROJAN_443_142
-  - US_TROJAN_443_160
-  - US_TROJAN_443_129
-  - US_TROJAN_443_160_2
-  - US_TROJAN_443_131
-  - US_TROJAN_443_142_2
-  - US_TROJAN_443_143
-  - US_TROJAN_443_157
-  - US_TROJAN_443_95
-  - US_VMESS_8443_2443
-  - US_VLESS_443_534
-  - US_VMESS_18000_155
-  - US_TROJAN_443_94
-  - US_VMESS_8443_2467
-  - US_TROJAN_443_80
-  - US_TROJAN_443_170
-  - US_TROJAN_443_95_2
-  - US_TROJAN_443_159
+  - US_VMESS_18000_13
+  - US_VMESS_48111_84
+  - US_VMESS_18000_138
+  - US_VMESS_18000_162
+  - US_VMESS_18000_179
+  - US_VMESS_18000_182
+  - US_VLESS_14430_210
+  - US_VLESS_30016_212
+  - US_VLESS_443_780
+  - US_TROJAN_443_248
+  - US_TROJAN_443_218
+  - US_TROJAN_443_217
+  - US_TROJAN_443_232
+  - US_TROJAN_443_217_2
+  - US_TROJAN_443_198
+  - US_TROJAN_443_192
+  - US_TROJAN_443_234
+  - US_TROJAN_443_234_2
+  - US_TROJAN_443_192_2
+  - US_TROJAN_443_193
+  - US_TROJAN_443_195
+  - US_TROJAN_443_193_2
+  - US_TROJAN_443_222
+  - US_TROJAN_443_248_2
+  - US_TROJAN_443_194
+  - US_TROJAN_443_233
+  - US_TROJAN_443_234_3
+  - US_TROJAN_443_21
+  - US_TROJAN_443_193_3
   - US_TROJAN_443_77
-  - US_TROJAN_443_207
-  - US_VMESS_18000_83
-  - US_TROJAN_443_165
-  - US_TROJAN_443_156
-  - US_TROJAN_443_84
-  - US_TROJAN_443_76
-  - US_TROJAN_443_75
-  - US_TROJAN_443_105
-  - US_TROJAN_443_76_2
-  - US_VMESS_443_2647
-  - US_TROJAN_443_94_2
-  - US_TROJAN_443_127
-  - US_TROJAN_443_127_2
-  - US_TROJAN_443_125
-  - US_TROJAN_443_94_3
-  - US_TROJAN_443_117
-  - US_VMESS_18000_118
-  - US_TROJAN_443_74
-  - US_TROJAN_443_113
-  - US_TROJAN_443_151
-  - US_TROJAN_443_150
-  - US_TROJAN_443_107
-  - US_TROJAN_443_83
-  - US_TROJAN_443_129_2
-  - US_TROJAN_443_98
-  - US_TROJAN_443_100
-  - US_TROJAN_443_141
-  - US_TROJAN_443_105_2
-  - US_TROJAN_443_137
-  - US_TROJAN_443_135
-  - US_TROJAN_443_99
-  - US_TROJAN_443_136
-  - US_TROJAN_443_119
-  - US_VMESS_18000_1207
-  - US_TROJAN_443_146
-  - US_TROJAN_443_1744
-  - US_VMESS_48111_2236
-  - US_TROJAN_20103_1002
-  - US_TROJAN_20051_1076
-  - US_VLESS_443_447
-  - US_VLESS_443_561
-  - US_VMESS_1270_130
-  - US_VMESS_1270_130_2
-  - US_VMESS_1270_173
-  - US_HYSTERIA_20022_1383
-  - US_HYSTERIA_20022_1467
-  - US_HYSTERIA_22335_1679
-  - US_HYSTERIA2_4444_490
-  - US_VLESS_443_855
-  - US_VLESS_443_1431
-  - US_SS_42878_241
-  - US_HTTP_443_123
-  - US_HTTP_9002_160
-  - US_HTTP_9002_156
-  - US_HTTP_443_124
-  - US_HTTP_9002_157
-  - US_HTTP_9002_154
-  - US_HTTP_443_201
-  - US_HTTP_9002_152
-  - US_HTTP_9002_169
-  - US_HTTP_9002_159
-  - US_HTTP_9443_111
-  - US_HTTP_9002_175
-  - US_HTTP_8443_256
-  - US_VLESS_443_140
-  - US_VLESS_443_164
-  - US_SSR_8080_76
-  - US_VLESS_8443_399
+  - US_TROJAN_443_218_2
+  - US_TROJAN_443_152
+  - US_TROJAN_443_134
+  - US_VMESS_18000_2980
+  - US_TROJAN_20028_804
+  - US_TROJAN_20027_814
+  - US_TROJAN_20103_957
+  - US_HYSTERIA_20022_1452
+  - US_HYSTERIA2_443_533
+  - US_TROJAN_20051_1958
+  - US_HYSTERIA_22335_1532
+  - US_HYSTERIA_20022_1844
+  - US_HYSTERIA2_4444_550
+  - US_HYSTERIA2_4444_577
+  - US_SS_8388_870
+  - US_SS_42878_302
+  - US_HTTP_9002_144
+  - US_HTTP_443_207
+  - US_HTTP_9002_134
+  - US_HTTP_9002_128
+  - US_HTTP_443_197
+  - US_HTTP_9002_126
+  - US_HTTP_9002_128_2
+  - US_HTTP_9002_123
+  - US_HTTP_9002_128_3
+  - US_HTTP_9002_143
+  - US_HTTP_9002_126_2
+  - US_HTTP_443_364
+  - US_HTTP_9002_127
+  - US_HTTP_8443_75
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -1052,102 +657,66 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - US_TROJAN_443_74
-  - US_TROJAN_443_75
-  - US_TROJAN_443_76
-  - US_TROJAN_443_76_2
-  - US_SSR_8080_76
+  - US_VMESS_18000_13
+  - US_TROJAN_443_21
+  - US_HTTP_8443_75
   - US_TROJAN_443_77
-  - US_TROJAN_443_80
-  - US_VMESS_18000_83
-  - US_TROJAN_443_83
-  - US_TROJAN_443_84
-  - US_TROJAN_443_94
-  - US_TROJAN_443_94_2
-  - US_TROJAN_443_94_3
-  - US_TROJAN_443_95
-  - US_TROJAN_443_95_2
-  - US_TROJAN_443_98
-  - US_TROJAN_443_99
-  - US_VMESS_18000_100
-  - US_TROJAN_443_100
-  - US_TROJAN_443_105
-  - US_TROJAN_443_105_2
-  - US_TROJAN_443_107
-  - US_HTTP_9443_111
-  - US_TROJAN_443_113
-  - US_TROJAN_443_117
-  - US_VMESS_18000_118
-  - US_TROJAN_443_119
-  - US_HTTP_443_123
-  - US_HTTP_443_124
-  - US_TROJAN_443_125
-  - US_TROJAN_443_127
-  - US_TROJAN_443_127_2
-  - US_TROJAN_443_129
-  - US_TROJAN_443_129_2
-  - US_VMESS_1270_130
-  - US_VMESS_1270_130_2
-  - US_TROJAN_443_131
-  - US_TROJAN_443_135
-  - US_TROJAN_443_136
-  - US_TROJAN_443_137
-  - US_VLESS_443_140
-  - US_TROJAN_443_141
-  - US_TROJAN_443_142
-  - US_TROJAN_443_142_2
-  - US_TROJAN_443_143
-  - US_TROJAN_443_145
-  - US_TROJAN_443_145_2
-  - US_TROJAN_443_145_3
-  - US_TROJAN_443_146
-  - US_TROJAN_443_150
-  - US_TROJAN_443_151
-  - US_HTTP_9002_152
-  - US_HTTP_9002_154
-  - US_VMESS_18000_155
-  - US_TROJAN_443_156
-  - US_HTTP_9002_156
-  - US_TROJAN_443_157
-  - US_HTTP_9002_157
-  - US_VMESS_39495_158
-  - US_TROJAN_443_159
-  - US_HTTP_9002_159
-  - US_TROJAN_443_160
-  - US_TROJAN_443_160_2
-  - US_HTTP_9002_160
-  - US_VLESS_443_164
-  - US_TROJAN_443_165
-  - US_HTTP_9002_169
-  - US_TROJAN_443_170
-  - US_VMESS_1270_173
-  - US_HTTP_9002_175
-  - US_HTTP_443_201
-  - US_TROJAN_443_207
-  - US_SS_42878_241
-  - US_HTTP_8443_256
-  - US_VLESS_8443_399
-  - US_VLESS_443_447
-  - US_HYSTERIA2_4444_490
-  - US_VLESS_443_534
-  - US_VLESS_443_549
-  - US_VLESS_443_561
-  - US_VLESS_443_714
-  - US_TROJAN_20027_809
-  - US_TROJAN_20028_854
-  - US_VLESS_443_855
-  - US_TROJAN_20103_1002
-  - US_TROJAN_20051_1076
-  - US_VMESS_18000_1207
-  - US_HYSTERIA_20022_1383
-  - US_VLESS_443_1431
-  - US_HYSTERIA_20022_1467
-  - US_HYSTERIA_22335_1679
-  - US_TROJAN_443_1744
-  - US_VMESS_48111_2236
-  - US_VMESS_8443_2443
-  - US_VMESS_8443_2467
-  - US_VMESS_443_2647
+  - US_VMESS_48111_84
+  - US_HTTP_9002_123
+  - US_HTTP_9002_126
+  - US_HTTP_9002_126_2
+  - US_HTTP_9002_127
+  - US_HTTP_9002_128
+  - US_HTTP_9002_128_2
+  - US_HTTP_9002_128_3
+  - US_TROJAN_443_134
+  - US_HTTP_9002_134
+  - US_VMESS_18000_138
+  - US_HTTP_9002_143
+  - US_HTTP_9002_144
+  - US_TROJAN_443_152
+  - US_VMESS_18000_162
+  - US_VMESS_18000_179
+  - US_VMESS_18000_182
+  - US_TROJAN_443_192
+  - US_TROJAN_443_192_2
+  - US_TROJAN_443_193
+  - US_TROJAN_443_193_2
+  - US_TROJAN_443_193_3
+  - US_TROJAN_443_194
+  - US_TROJAN_443_195
+  - US_HTTP_443_197
+  - US_TROJAN_443_198
+  - US_HTTP_443_207
+  - US_VLESS_14430_210
+  - US_VLESS_30016_212
+  - US_TROJAN_443_217
+  - US_TROJAN_443_217_2
+  - US_TROJAN_443_218
+  - US_TROJAN_443_218_2
+  - US_TROJAN_443_222
+  - US_TROJAN_443_232
+  - US_TROJAN_443_233
+  - US_TROJAN_443_234
+  - US_TROJAN_443_234_2
+  - US_TROJAN_443_234_3
+  - US_TROJAN_443_248
+  - US_TROJAN_443_248_2
+  - US_SS_42878_302
+  - US_HTTP_443_364
+  - US_HYSTERIA2_443_533
+  - US_HYSTERIA2_4444_550
+  - US_HYSTERIA2_4444_577
+  - US_VLESS_443_780
+  - US_TROJAN_20028_804
+  - US_TROJAN_20027_814
+  - US_SS_8388_870
+  - US_TROJAN_20103_957
+  - US_HYSTERIA_20022_1452
+  - US_HYSTERIA_22335_1532
+  - US_HYSTERIA_20022_1844
+  - US_TROJAN_20051_1958
+  - US_VMESS_18000_2980
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -1159,102 +728,66 @@ proxy-groups:
 - name: 🌍 US
   type: url-test
   proxies:
-  - US_VLESS_443_549
-  - US_VMESS_39495_158
-  - US_VLESS_443_714
-  - US_TROJAN_443_145
-  - US_VMESS_18000_100
-  - US_TROJAN_20027_809
-  - US_TROJAN_20028_854
-  - US_TROJAN_443_145_2
-  - US_TROJAN_443_145_3
-  - US_TROJAN_443_142
-  - US_TROJAN_443_160
-  - US_TROJAN_443_129
-  - US_TROJAN_443_160_2
-  - US_TROJAN_443_131
-  - US_TROJAN_443_142_2
-  - US_TROJAN_443_143
-  - US_TROJAN_443_157
-  - US_TROJAN_443_95
-  - US_VMESS_8443_2443
-  - US_VLESS_443_534
-  - US_VMESS_18000_155
-  - US_TROJAN_443_94
-  - US_VMESS_8443_2467
-  - US_TROJAN_443_80
-  - US_TROJAN_443_170
-  - US_TROJAN_443_95_2
-  - US_TROJAN_443_159
+  - US_VMESS_18000_13
+  - US_VMESS_48111_84
+  - US_VMESS_18000_138
+  - US_VMESS_18000_162
+  - US_VMESS_18000_179
+  - US_VMESS_18000_182
+  - US_VLESS_14430_210
+  - US_VLESS_30016_212
+  - US_VLESS_443_780
+  - US_TROJAN_443_248
+  - US_TROJAN_443_218
+  - US_TROJAN_443_217
+  - US_TROJAN_443_232
+  - US_TROJAN_443_217_2
+  - US_TROJAN_443_198
+  - US_TROJAN_443_192
+  - US_TROJAN_443_234
+  - US_TROJAN_443_234_2
+  - US_TROJAN_443_192_2
+  - US_TROJAN_443_193
+  - US_TROJAN_443_195
+  - US_TROJAN_443_193_2
+  - US_TROJAN_443_222
+  - US_TROJAN_443_248_2
+  - US_TROJAN_443_194
+  - US_TROJAN_443_233
+  - US_TROJAN_443_234_3
+  - US_TROJAN_443_21
+  - US_TROJAN_443_193_3
   - US_TROJAN_443_77
-  - US_TROJAN_443_207
-  - US_VMESS_18000_83
-  - US_TROJAN_443_165
-  - US_TROJAN_443_156
-  - US_TROJAN_443_84
-  - US_TROJAN_443_76
-  - US_TROJAN_443_75
-  - US_TROJAN_443_105
-  - US_TROJAN_443_76_2
-  - US_VMESS_443_2647
-  - US_TROJAN_443_94_2
-  - US_TROJAN_443_127
-  - US_TROJAN_443_127_2
-  - US_TROJAN_443_125
-  - US_TROJAN_443_94_3
-  - US_TROJAN_443_117
-  - US_VMESS_18000_118
-  - US_TROJAN_443_74
-  - US_TROJAN_443_113
-  - US_TROJAN_443_151
-  - US_TROJAN_443_150
-  - US_TROJAN_443_107
-  - US_TROJAN_443_83
-  - US_TROJAN_443_129_2
-  - US_TROJAN_443_98
-  - US_TROJAN_443_100
-  - US_TROJAN_443_141
-  - US_TROJAN_443_105_2
-  - US_TROJAN_443_137
-  - US_TROJAN_443_135
-  - US_TROJAN_443_99
-  - US_TROJAN_443_136
-  - US_TROJAN_443_119
-  - US_VMESS_18000_1207
-  - US_TROJAN_443_146
-  - US_TROJAN_443_1744
-  - US_VMESS_48111_2236
-  - US_TROJAN_20103_1002
-  - US_TROJAN_20051_1076
-  - US_VLESS_443_447
-  - US_VLESS_443_561
-  - US_VMESS_1270_130
-  - US_VMESS_1270_130_2
-  - US_VMESS_1270_173
-  - US_HYSTERIA_20022_1383
-  - US_HYSTERIA_20022_1467
-  - US_HYSTERIA_22335_1679
-  - US_HYSTERIA2_4444_490
-  - US_VLESS_443_855
-  - US_VLESS_443_1431
-  - US_SS_42878_241
-  - US_HTTP_443_123
-  - US_HTTP_9002_160
-  - US_HTTP_9002_156
-  - US_HTTP_443_124
-  - US_HTTP_9002_157
-  - US_HTTP_9002_154
-  - US_HTTP_443_201
-  - US_HTTP_9002_152
-  - US_HTTP_9002_169
-  - US_HTTP_9002_159
-  - US_HTTP_9443_111
-  - US_HTTP_9002_175
-  - US_HTTP_8443_256
-  - US_VLESS_443_140
-  - US_VLESS_443_164
-  - US_SSR_8080_76
-  - US_VLESS_8443_399
+  - US_TROJAN_443_218_2
+  - US_TROJAN_443_152
+  - US_TROJAN_443_134
+  - US_VMESS_18000_2980
+  - US_TROJAN_20028_804
+  - US_TROJAN_20027_814
+  - US_TROJAN_20103_957
+  - US_HYSTERIA_20022_1452
+  - US_HYSTERIA2_443_533
+  - US_TROJAN_20051_1958
+  - US_HYSTERIA_22335_1532
+  - US_HYSTERIA_20022_1844
+  - US_HYSTERIA2_4444_550
+  - US_HYSTERIA2_4444_577
+  - US_SS_8388_870
+  - US_SS_42878_302
+  - US_HTTP_9002_144
+  - US_HTTP_443_207
+  - US_HTTP_9002_134
+  - US_HTTP_9002_128
+  - US_HTTP_443_197
+  - US_HTTP_9002_126
+  - US_HTTP_9002_128_2
+  - US_HTTP_9002_123
+  - US_HTTP_9002_128_3
+  - US_HTTP_9002_143
+  - US_HTTP_9002_126_2
+  - US_HTTP_443_364
+  - US_HTTP_9002_127
+  - US_HTTP_8443_75
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

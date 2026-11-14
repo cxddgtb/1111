@@ -5,23 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CH_TROJAN_443_406
-  type: trojan
-  server: 208.69.78.208
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.yourultimateprofessionalcareerhub.com
-  network: tcp
-  country: CH
-- name: CH_TROJAN_443_410
-  type: trojan
-  server: 208.69.78.222
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: yourultimateprofessionalcareerhub.com
-  network: tcp
-  country: CH
-- name: CH_TROJAN_443_361
+- name: CH_TROJAN_443_488
   type: trojan
   server: 208.69.78.33
   port: 443
@@ -29,86 +13,33 @@ proxies:
   sni: courses.yourultimateprofessionalcareerhub.com
   network: tcp
   country: CH
-- name: CH_TROJAN_443_387
-  type: trojan
-  server: 208.69.78.19
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.yourultimateprofessionalcareerhub.com
-  network: tcp
-  country: CH
-- name: CH_VLESS_48115_392
-  type: vless
-  network: grpc
-  server: 138.124.86.230
-  port: 48115
-  uuid: b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b
-  servername: 138-124-86-230.sslip.io
-  tls: true
-  client-fingerprint: firefox
-  grpc-opts:
-    grpc-service-name: 138-124-86-230-sslip-io
-  country: CH
-- name: CH_VLESS_443_433
-  type: vless
-  network: tcp
-  server: 179.43.187.67
-  port: 443
-  uuid: 9dd38d60-e683-47c6-bd53-d71bdfee78f3
-  servername: portal.mavexa.ir
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_272
+  name: CH_SS_19999_331
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 23.166.88.127
   type: ss
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_245
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 79.127.184.104
-  type: ss
-  country: CH
-- cipher: aes-256-gcm
-  name: CH_SS_19999_267
+  name: CH_SS_19999_322
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 186.190.215.251
   type: ss
   country: CH
-- name: CH_HTTP_443_516
+- cipher: aes-256-gcm
+  name: CH_SS_19999_336
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 79.127.184.104
+  type: ss
+  country: CH
+- name: CH_HTTP_443_682
   port: 443
   server: 31.7.62.50
   skip-cert-verify: true
   tls: true
   type: http
-  country: CH
-- name: CH_HTTP_9443_467
-  port: 9443
-  server: 37.120.213.210
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: CH
-- name: CH_HTTP_9443_496
-  port: 9443
-  server: 149.88.27.33
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -123,18 +54,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_TROJAN_443_406
-  - CH_TROJAN_443_410
-  - CH_TROJAN_443_361
-  - CH_TROJAN_443_387
-  - CH_VLESS_48115_392
-  - CH_VLESS_443_433
-  - CH_SS_19999_272
-  - CH_SS_19999_245
-  - CH_SS_19999_267
-  - CH_HTTP_443_516
-  - CH_HTTP_9443_467
-  - CH_HTTP_9443_496
+  - CH_TROJAN_443_488
+  - CH_SS_19999_331
+  - CH_SS_19999_322
+  - CH_SS_19999_336
+  - CH_HTTP_443_682
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -147,18 +71,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_SS_19999_245
-  - CH_SS_19999_267
-  - CH_SS_19999_272
-  - CH_TROJAN_443_361
-  - CH_TROJAN_443_387
-  - CH_VLESS_48115_392
-  - CH_TROJAN_443_406
-  - CH_TROJAN_443_410
-  - CH_VLESS_443_433
-  - CH_HTTP_9443_467
-  - CH_HTTP_9443_496
-  - CH_HTTP_443_516
+  - CH_SS_19999_322
+  - CH_SS_19999_331
+  - CH_SS_19999_336
+  - CH_TROJAN_443_488
+  - CH_HTTP_443_682
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -170,18 +87,11 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_TROJAN_443_406
-  - CH_TROJAN_443_410
-  - CH_TROJAN_443_361
-  - CH_TROJAN_443_387
-  - CH_VLESS_48115_392
-  - CH_VLESS_443_433
-  - CH_SS_19999_272
-  - CH_SS_19999_245
-  - CH_SS_19999_267
-  - CH_HTTP_443_516
-  - CH_HTTP_9443_467
-  - CH_HTTP_9443_496
+  - CH_TROJAN_443_488
+  - CH_SS_19999_331
+  - CH_SS_19999_322
+  - CH_SS_19999_336
+  - CH_HTTP_443_682
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
