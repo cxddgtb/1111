@@ -5,16 +5,11 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CN_HTTP_8888_646
-  port: 8888
-  server: 123.121.132.234
+- name: CN_HTTP_58764_1246
+  port: 58764
+  server: 118.184.140.90
   skip-cert-verify: true
-  type: http
-  country: CN
-- name: CN_HTTP_8888_645
-  port: 8888
-  server: 114.252.202.38
-  skip-cert-verify: true
+  tls: true
   type: http
   country: CN
 proxy-groups:
@@ -30,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CN_HTTP_8888_646
-  - CN_HTTP_8888_645
+  - CN_HTTP_58764_1246
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -44,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CN_HTTP_8888_645
-  - CN_HTTP_8888_646
+  - CN_HTTP_58764_1246
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,8 +50,7 @@ proxy-groups:
 - name: 🌍 CN
   type: url-test
   proxies:
-  - CN_HTTP_8888_646
-  - CN_HTTP_8888_645
+  - CN_HTTP_58764_1246
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

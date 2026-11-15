@@ -5,21 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_14430_691
-  type: vless
+- type: vless
+  name: AE_VLESS_14430_559
   server: 95.174.68.188
   port: 14430
   uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  network: ws
+  udp: true
   tls: false
   servername: 95.174.68.188
-  client-fingerprint: chrome
+  sni: 95.174.68.188
+  skip-cert-verify: true
+  network: ws
   ws-opts:
     path: /vless
-    headers:
-      Host: ''
   country: AE
-- name: AE_VLESS_22573_662
+- name: AE_VLESS_22573_2592
   type: vless
   server: 84.235.244.108
   port: 22573
@@ -33,7 +33,7 @@ proxies:
     headers:
       Host: uae.unixzone.us
   country: AE
-- name: AE_HYSTERIA2_443_459
+- name: AE_HYSTERIA2_443_323
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
   password: p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR
@@ -43,20 +43,6 @@ proxies:
   sni: hy2.aspidnet.xyz
   tls: false
   type: hysteria2
-  country: AE
-- cipher: chacha20-ietf-poly1305
-  name: AE_SS_1349_434
-  password: byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB
-  port: 1349
-  server: dns24.m3hrzd.ir
-  type: ss
-  country: AE
-- cipher: chacha20-ietf-poly1305
-  name: AE_SS_1352_1402
-  password: byX4-DV0C42PLFTWQhMTAQ63mZ8qrDRB
-  port: 1352
-  server: dns24.m3hrzd.ir
-  type: ss
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -71,11 +57,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_14430_691
-  - AE_VLESS_22573_662
-  - AE_HYSTERIA2_443_459
-  - AE_SS_1349_434
-  - AE_SS_1352_1402
+  - AE_VLESS_14430_559
+  - AE_VLESS_22573_2592
+  - AE_HYSTERIA2_443_323
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -88,11 +72,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_SS_1349_434
-  - AE_HYSTERIA2_443_459
-  - AE_VLESS_22573_662
-  - AE_VLESS_14430_691
-  - AE_SS_1352_1402
+  - AE_HYSTERIA2_443_323
+  - AE_VLESS_14430_559
+  - AE_VLESS_22573_2592
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -104,11 +86,9 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_14430_691
-  - AE_VLESS_22573_662
-  - AE_HYSTERIA2_443_459
-  - AE_SS_1349_434
-  - AE_SS_1352_1402
+  - AE_VLESS_14430_559
+  - AE_VLESS_22573_2592
+  - AE_HYSTERIA2_443_323
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,36 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: PL_VLESS_8443_899
-  type: vless
-  server: 188.137.178.174
-  port: 8443
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  network: ws
-  tls: true
-  servername: fs.qicai99.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: fs.qicai99.com
-  country: PL
-- name: PL_HTTP_443_692
+- type: vless
+  name: PL_VLESS_443_441
+  server: 150.251.113.34
   port: 443
-  server: 37.120.156.34
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: PL
-- name: PL_HTTP_443_689
-  port: 443
-  server: 37.120.156.18
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
+  uuid: d7d724b5-17ce-4f3c-877d-dfbf0f07afa1
+  flow: xtls-rprx-vision
   udp: true
-  x-toolall-mihomo: true
+  tls: true
+  servername: www.cloudflare.com
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 8yMLSTbkpJFfbgTjNzotzz7U8OT6AERrclgKdKrXXW8
+    short-id: 150a627d15154cf2
   country: PL
 proxy-groups:
 - name: 🚀 节点选择
@@ -49,9 +34,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - PL_VLESS_8443_899
-  - PL_HTTP_443_692
-  - PL_HTTP_443_689
+  - PL_VLESS_443_441
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,9 +47,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - PL_HTTP_443_689
-  - PL_HTTP_443_692
-  - PL_VLESS_8443_899
+  - PL_VLESS_443_441
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -78,9 +59,7 @@ proxy-groups:
 - name: 🌍 PL
   type: url-test
   proxies:
-  - PL_VLESS_8443_899
-  - PL_HTTP_443_692
-  - PL_HTTP_443_689
+  - PL_VLESS_443_441
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

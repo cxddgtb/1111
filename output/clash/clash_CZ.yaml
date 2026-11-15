@@ -5,18 +5,39 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CZ_VLESS_443_1090
-  type: vless
-  server: 194.87.109.106
+- type: vless
+  name: CZ_VLESS_443_367
+  server: 153.52.69.249
   port: 443
-  uuid: d9274255-edf4-4944-bc62-6ef35cd2de40
-  network: tcp
+  uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
+  flow: xtls-rprx-vision
+  udp: true
   tls: true
-  servername: currant.asynchronous.site
+  servername: cache-78.topp-con.xyz
+  sni: cache-78.topp-con.xyz
+  skip-cert-verify: true
   client-fingerprint: chrome
-  ws-opts: null
+  reality-opts:
+    public-key: WVfpQqoeOrTtCq052_IOxvMv7RCWfLlAOxEfsH1aa2U
+    short-id: d5492c7a39515c65
   country: CZ
-- name: CZ_HYSTERIA2_443_739
+- type: vless
+  name: CZ_VLESS_443_372
+  server: 212.102.38.25
+  port: 443
+  uuid: b34a52cb-cd52-49a8-9362-b8e97c151d49
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: udemy.com
+  sni: udemy.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 23cb4W9THzBKsrECsLh-A_FcKZfkAtUONoDze8-GnQE
+    short-id: e90360ec7cc61b20
+  country: CZ
+- name: CZ_HYSTERIA2_443_388
   password: 549766c3-fa5f-471e-8031-ffc1f8d5064f
   port: 443
   server: guide.blog-forme.ru
@@ -24,16 +45,12 @@ proxies:
   tls: false
   type: hysteria2
   country: CZ
-- name: CZ_HTTP_443_643
-  password: None
-  port: 443
-  server: 185.216.35.130
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
+- cipher: chacha20-ietf-poly1305
+  name: CZ_SS_46190_185
+  password: 2Ef8X21WALqK7H6N8A78j5WYtzZ999PP8rF8DaLsb5LLyDLQpf5dGVAjdA3mj1wudigKXTt5heYU9jmaBbfxXBJJAqhPHkxe
+  port: 46190
+  server: 194.87.233.93
+  type: ss
   country: CZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -48,9 +65,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CZ_VLESS_443_1090
-  - CZ_HYSTERIA2_443_739
-  - CZ_HTTP_443_643
+  - CZ_VLESS_443_367
+  - CZ_VLESS_443_372
+  - CZ_HYSTERIA2_443_388
+  - CZ_SS_46190_185
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -63,9 +81,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CZ_HTTP_443_643
-  - CZ_HYSTERIA2_443_739
-  - CZ_VLESS_443_1090
+  - CZ_SS_46190_185
+  - CZ_VLESS_443_367
+  - CZ_VLESS_443_372
+  - CZ_HYSTERIA2_443_388
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -77,9 +96,10 @@ proxy-groups:
 - name: 🌍 CZ
   type: url-test
   proxies:
-  - CZ_VLESS_443_1090
-  - CZ_HYSTERIA2_443_739
-  - CZ_HTTP_443_643
+  - CZ_VLESS_443_367
+  - CZ_VLESS_443_372
+  - CZ_HYSTERIA2_443_388
+  - CZ_SS_46190_185
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
