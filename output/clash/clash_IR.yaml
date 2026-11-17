@@ -5,19 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: IR_VLESS_443_285
-  server: 87.248.149.50
-  port: 443
-  uuid: 667016ca-f02e-4b5f-bfc3-3d8ed81e9bec
-  udp: true
-  tls: true
-  servername: base.hosamobenl.co.uk
-  sni: base.hosamobenl.co.uk
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  country: IR
-- name: IR_VLESS_443_298
+- name: IR_VLESS_443_498
   type: vless
   server: 194.60.228.97
   port: 443
@@ -28,16 +16,18 @@ proxies:
   client-fingerprint: chrome
   ws-opts: null
   country: IR
-- name: IR_VLESS_443_274
+- name: IR_VLESS_443_488
   type: vless
-  server: base.hosamobenl.co.uk
+  network: tcp
+  server: 87.248.149.50
   port: 443
   uuid: 667016ca-f02e-4b5f-bfc3-3d8ed81e9bec
-  network: tcp
-  tls: true
   servername: base.hosamobenl.co.uk
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
   client-fingerprint: chrome
-  ws-opts: null
   country: IR
 proxy-groups:
 - name: 🚀 节点选择
@@ -52,9 +42,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IR_VLESS_443_285
-  - IR_VLESS_443_298
-  - IR_VLESS_443_274
+  - IR_VLESS_443_498
+  - IR_VLESS_443_488
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -67,9 +56,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IR_VLESS_443_274
-  - IR_VLESS_443_285
-  - IR_VLESS_443_298
+  - IR_VLESS_443_488
+  - IR_VLESS_443_498
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,9 +69,8 @@ proxy-groups:
 - name: 🌍 IR
   type: url-test
   proxies:
-  - IR_VLESS_443_285
-  - IR_VLESS_443_298
-  - IR_VLESS_443_274
+  - IR_VLESS_443_498
+  - IR_VLESS_443_488
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -6,41 +6,31 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: vless
-  name: FI_VLESS_14430_1400
-  server: 45.144.234.157
-  port: 14430
-  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
+  name: FI_VLESS_49659_532
+  server: 157.180.98.124
+  port: 49659
+  uuid: 88a558b1-9645-42f3-89e5-341570d8486d
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: apple.com
+  sni: apple.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: bBVqro8tG6swTNoAkjwUzcu4Ew4N4VcyDHzADcGviCs
+    short-id: 81959fce
+  country: FI
+- type: vmess
+  name: FI_VMESS_39018_344
+  server: 65.108.240.210
+  port: 39018
+  uuid: 8ca123a8-720b-47c5-bd0c-637431418b09
+  cipher: auto
+  alterId: 0
   udp: true
   tls: false
-  servername: 45.144.234.157
-  sni: 45.144.234.157
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /vless
-  country: FI
-- name: FI_VMESS_8880_867
-  type: vmess
-  server: free3.familysharing.ir
-  port: 8880
-  uuid: 04cacf0a-46d5-81b3-874d-460d7a36c036
-  alterId: 0
-  cipher: auto
-  network: http
-  tls: false
-  servername: www.tno.nl
-  ws-opts: null
-  country: FI
-- name: FI_HYSTERIA2_443_363
-  obfs: salamander
-  obfs-password: AJyvWNsoDgVkMkboZ3juMJXYNRf6uEQE
-  password: 247802ca-0fbb-428a-b807-91a6e571b5c7
-  port: 443
-  server: 177.202.65.158
-  skip-cert-verify: true
-  sni: hy2-fi2.snobvpn.online
-  tls: false
-  type: hysteria2
   country: FI
 proxy-groups:
 - name: 🚀 节点选择
@@ -55,9 +45,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FI_VLESS_14430_1400
-  - FI_VMESS_8880_867
-  - FI_HYSTERIA2_443_363
+  - FI_VLESS_49659_532
+  - FI_VMESS_39018_344
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -70,9 +59,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FI_HYSTERIA2_443_363
-  - FI_VMESS_8880_867
-  - FI_VLESS_14430_1400
+  - FI_VMESS_39018_344
+  - FI_VLESS_49659_532
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -84,9 +72,8 @@ proxy-groups:
 - name: 🌍 FI
   type: url-test
   proxies:
-  - FI_VLESS_14430_1400
-  - FI_VMESS_8880_867
-  - FI_HYSTERIA2_443_363
+  - FI_VLESS_49659_532
+  - FI_VMESS_39018_344
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
