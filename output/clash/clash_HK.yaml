@@ -5,118 +5,79 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vmess
-  name: HK_VMESS_21041_449
-  server: dog-hk.kunlun01dns.com
-  port: 21041
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  country: HK
-- type: vmess
-  name: HK_VMESS_21035_490
-  server: dog-tw.kunlun01dns.com
-  port: 21035
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  country: HK
-- type: vmess
-  name: HK_VMESS_50376_61
-  server: 206.237.11.17
-  port: 50376
-  uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  country: HK
-- type: trojan
-  name: HK_TROJAN_20086_2376
-  server: sclass-c1.catcat321.com
-  port: 20086
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  country: HK
-- type: trojan
-  name: HK_TROJAN_20103_2987
-  server: sclass-00.catcat321.com
-  port: 20103
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  country: HK
-- type: vmess
-  name: HK_VMESS_44867_297
-  server: 47.244.120.197
-  port: 44867
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki?ed=2048
-  country: HK
-- type: vmess
-  name: HK_VMESS_36703_426
+- name: HK_VMESS_36703_538
+  type: vmess
   server: 47.244.120.197
   port: 36703
   uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
-  cipher: auto
   alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
+  cipher: auto
   network: ws
+  tls: false
+  servername: ''
   ws-opts:
     path: /arki
+    headers:
+      Host: ''
   country: HK
-- type: vmess
-  name: HK_VMESS_23026_422
+- name: HK_VMESS_23026_719
+  type: vmess
   server: 47.244.120.197
   port: 23026
   uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  cipher: auto
   alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
+  cipher: auto
   network: ws
+  tls: false
+  servername: 47.244.120.197
   ws-opts:
     path: /arki
+    headers:
+      Host: 47.244.120.197
   country: HK
-- type: vmess
-  name: HK_VMESS_35043_1002
+- name: HK_VMESS_35043_920
+  type: vmess
   server: 156.245.232.239
   port: 35043
   uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  cipher: auto
   alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
+  cipher: auto
   network: ws
+  tls: false
+  servername: ''
   ws-opts:
     path: /
+    headers:
+      Host: ''
   country: HK
-- name: HK_TROJAN_443_544
+- name: HK_VMESS_44867_2536
+  type: vmess
+  server: 47.244.120.197
+  port: 44867
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /arki?ed=2048
+    headers:
+      Host: ''
+  country: HK
+- name: HK_VMESS_50376_63
+  type: vmess
+  server: 206.237.11.17
+  port: 50376
+  uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: HK
+- name: HK_TROJAN_443_538
   type: trojan
   network: tcp
   server: 119.246.1.143
@@ -125,7 +86,23 @@ proxies:
   skip-cert-verify: true
   sni: t.me/ripaojiedian
   country: HK
-- name: HK_HYSTERIA2_5010_431
+- name: HK_HYSTERIA2_443_516
+  password: 92bd8c68-6434-11ee-b644-f23c91cfbbc9
+  port: 443
+  server: 88f7008b-tmm5c0-tonrqx-1khwf.nw4.hyhuawei.com
+  skip-cert-verify: true
+  sni: 88f7008b-tmm5c0-tonrqx-1khwf.nw4.hyhuawei.com
+  tls: false
+  type: hysteria2
+  country: HK
+- cipher: aes-256-gcm
+  name: HK_SS_40647_369
+  password: DgMywXKqojHXeuXY8hOJaYGPFcjweCIJeD5cdg/cUUY=
+  port: 40647
+  server: 213.176.92.148
+  type: ss
+  country: HK
+- name: HK_HYSTERIA2_5010_1981
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -135,22 +112,6 @@ proxies:
   sni: nas.aizhzo.com
   tls: false
   type: hysteria2
-  country: HK
-- cipher: aes-256-gcm
-  name: HK_SS_40647_701
-  password: DgMywXKqojHXeuXY8hOJaYGPFcjweCIJeD5cdg/cUUY=
-  port: 40647
-  server: 213.176.92.148
-  type: ss
-  country: HK
-- name: HK_HYSTERIA2_50160_676
-  server: 31.57.248.176
-  port: 50160
-  type: hysteria2
-  password: b0917015b656b3dd2286b5633af0c5c1
-  auth: b0917015b656b3dd2286b5633af0c5c1
-  sni: www.bing.com%23%e9%a6%83%e5%9a%9f%e9%a6%83%e5%9a%a2%7chk%7c%40wxgqlfx%7c147
-  skip-cert-verify: true
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -165,19 +126,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_21041_449
-  - HK_VMESS_21035_490
-  - HK_VMESS_50376_61
-  - HK_TROJAN_20086_2376
-  - HK_TROJAN_20103_2987
-  - HK_VMESS_44867_297
-  - HK_VMESS_36703_426
-  - HK_VMESS_23026_422
-  - HK_VMESS_35043_1002
-  - HK_TROJAN_443_544
-  - HK_HYSTERIA2_5010_431
-  - HK_SS_40647_701
-  - HK_HYSTERIA2_50160_676
+  - HK_VMESS_36703_538
+  - HK_VMESS_23026_719
+  - HK_VMESS_35043_920
+  - HK_VMESS_44867_2536
+  - HK_VMESS_50376_63
+  - HK_TROJAN_443_538
+  - HK_HYSTERIA2_443_516
+  - HK_SS_40647_369
+  - HK_HYSTERIA2_5010_1981
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -190,19 +147,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_50376_61
-  - HK_VMESS_44867_297
-  - HK_VMESS_23026_422
-  - HK_VMESS_36703_426
-  - HK_HYSTERIA2_5010_431
-  - HK_VMESS_21041_449
-  - HK_VMESS_21035_490
-  - HK_TROJAN_443_544
-  - HK_HYSTERIA2_50160_676
-  - HK_SS_40647_701
-  - HK_VMESS_35043_1002
-  - HK_TROJAN_20086_2376
-  - HK_TROJAN_20103_2987
+  - HK_VMESS_50376_63
+  - HK_SS_40647_369
+  - HK_HYSTERIA2_443_516
+  - HK_VMESS_36703_538
+  - HK_TROJAN_443_538
+  - HK_VMESS_23026_719
+  - HK_VMESS_35043_920
+  - HK_HYSTERIA2_5010_1981
+  - HK_VMESS_44867_2536
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -214,19 +167,15 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_21041_449
-  - HK_VMESS_21035_490
-  - HK_VMESS_50376_61
-  - HK_TROJAN_20086_2376
-  - HK_TROJAN_20103_2987
-  - HK_VMESS_44867_297
-  - HK_VMESS_36703_426
-  - HK_VMESS_23026_422
-  - HK_VMESS_35043_1002
-  - HK_TROJAN_443_544
-  - HK_HYSTERIA2_5010_431
-  - HK_SS_40647_701
-  - HK_HYSTERIA2_50160_676
+  - HK_VMESS_36703_538
+  - HK_VMESS_23026_719
+  - HK_VMESS_35043_920
+  - HK_VMESS_44867_2536
+  - HK_VMESS_50376_63
+  - HK_TROJAN_443_538
+  - HK_HYSTERIA2_443_516
+  - HK_SS_40647_369
+  - HK_HYSTERIA2_5010_1981
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

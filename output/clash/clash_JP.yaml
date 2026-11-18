@@ -5,126 +5,97 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: JP_VLESS_43149_1310
+- name: JP_VMESS_8081_300
+  type: vmess
+  server: 168.110.63.247
+  port: 8081
+  uuid: c3bde296-8e44-4b8c-a325-577d5b3cc7c8
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /vless
+    headers:
+      Host: ''
+  country: JP
+- name: JP_VMESS_80_317
+  type: vmess
+  server: 168.138.43.75
+  port: 80
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: ''
+  country: JP
+- name: JP_VLESS_30322_1349
+  type: vless
   server: zfapi.zalolink.com
-  port: 43149
+  port: 30322
   uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
   flow: xtls-rprx-vision
   udp: true
   tls: true
+  client-fingerprint: ios
   servername: psstatic.cdn.bcebos.com
-  sni: psstatic.cdn.bcebos.com
-  skip-cert-verify: true
-  client-fingerprint: firefox
   reality-opts:
-    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
-    short-id: 15aa0ad4
+    public-key: 5gncThwqPFzLu23WO3mPTEhG7-KgVYlGVvveHjM2SUo
+    short-id: 6a60e7e382d6
   country: JP
-- type: vless
-  name: JP_VLESS_443_625
-  server: 207.65.189.9
-  port: 443
-  uuid: 57715fc4-f787-4e90-9eb2-53fa515fbf37
-  udp: true
-  tls: true
-  servername: spsudu.pages.dev
-  sni: spsudu.pages.dev
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: spsudu.pages.dev
-  country: JP
-- type: vmess
-  name: JP_VMESS_8081_299
-  server: 168.110.63.247
-  port: 8081
-  uuid: c3bde296-8e44-4b8c-a325-577d5b3cc7c8
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /vless
-  country: JP
-- type: vmess
-  name: JP_VMESS_80_320
-  server: 168.138.43.75
-  port: 80
-  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  servername: 168.138.43.75
-  sni: 168.138.43.75
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: 168.138.43.75
-  country: JP
-- name: JP_TROJAN_44184_332
-  type: trojan
-  network: tcp
-  server: v2jp.k1.ssnss.live
-  port: 44184
-  password: d050aca3-9df2-4461-90ec-92373c1d7636
-  skip-cert-verify: true
-  udp: true
-  country: JP
-- name: JP_VMESS_32515_325
+- name: JP_VMESS_32515_221
   type: vmess
-  network: tcp
   server: 141.11.139.102
   port: 32515
   uuid: 081dbf5a-d8b6-40c8-96f8-3c4ca9f50442
-  skip-cert-verify: true
   alterId: 0
   cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
   country: JP
-- cipher: aes-128-gcm
-  name: JP_SS_443_211
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.240
-  type: ss
+- name: JP_VLESS_47691_1554
+  type: vless
+  server: zfapi.zalolink.com
+  port: 47691
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  client-fingerprint: safari
+  servername: m.media-amazon.com
+  reality-opts:
+    public-key: 6PbC7GxOg_YdXya-53llPReUzoU_yknQbkDvI4uorBg
+    short-id: 2905326a
   country: JP
-- cipher: aes-128-gcm
-  name: JP_SS_443_198
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.241
-  type: ss
+- name: JP_TROJAN_44184_315
+  type: trojan
+  server: v2jp.k1.ssnss.live
+  port: 44184
+  password: d050aca3-9df2-4461-90ec-92373c1d7636
+  sni: v2jp.k1.ssnss.live
+  network: tcp
   country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_8388_462
+  name: JP_SS_8388_294
   password: BeaUf9c0AEWH40Pu
   port: 8388
   server: 154.36.158.197
   type: ss
-  udp: true
   country: JP
 - cipher: aes-256-gcm
-  name: JP_SS_80_537
+  name: JP_SS_80_1349
   password: 3eOFeNssde7PYYMv
   port: 80
   server: 84.247.155.196
   type: ss
-  country: JP
-- name: JP_SOCKS5_42000_577
-  password: EGJDy5Kg
-  port: 42000
-  server: 103.248.150.50
-  skip-cert-verify: true
-  type: socks5
-  username: paZFN3JA
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -139,17 +110,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VLESS_43149_1310
-  - JP_VLESS_443_625
-  - JP_VMESS_8081_299
-  - JP_VMESS_80_320
-  - JP_TROJAN_44184_332
-  - JP_VMESS_32515_325
-  - JP_SS_443_211
-  - JP_SS_443_198
-  - JP_SS_8388_462
-  - JP_SS_80_537
-  - JP_SOCKS5_42000_577
+  - JP_VMESS_8081_300
+  - JP_VMESS_80_317
+  - JP_VLESS_30322_1349
+  - JP_VMESS_32515_221
+  - JP_VLESS_47691_1554
+  - JP_TROJAN_44184_315
+  - JP_SS_8388_294
+  - JP_SS_80_1349
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -162,17 +130,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_SS_443_198
-  - JP_SS_443_211
-  - JP_VMESS_8081_299
-  - JP_VMESS_80_320
-  - JP_VMESS_32515_325
-  - JP_TROJAN_44184_332
-  - JP_SS_8388_462
-  - JP_SS_80_537
-  - JP_SOCKS5_42000_577
-  - JP_VLESS_443_625
-  - JP_VLESS_43149_1310
+  - JP_VMESS_32515_221
+  - JP_SS_8388_294
+  - JP_VMESS_8081_300
+  - JP_TROJAN_44184_315
+  - JP_VMESS_80_317
+  - JP_VLESS_30322_1349
+  - JP_SS_80_1349
+  - JP_VLESS_47691_1554
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -184,17 +149,14 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VLESS_43149_1310
-  - JP_VLESS_443_625
-  - JP_VMESS_8081_299
-  - JP_VMESS_80_320
-  - JP_TROJAN_44184_332
-  - JP_VMESS_32515_325
-  - JP_SS_443_211
-  - JP_SS_443_198
-  - JP_SS_8388_462
-  - JP_SS_80_537
-  - JP_SOCKS5_42000_577
+  - JP_VMESS_8081_300
+  - JP_VMESS_80_317
+  - JP_VLESS_30322_1349
+  - JP_VMESS_32515_221
+  - JP_VLESS_47691_1554
+  - JP_TROJAN_44184_315
+  - JP_SS_8388_294
+  - JP_SS_80_1349
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,16 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: Unknown_VMESS_443_197
+- name: Unknown_VMESS_443_130
   type: vmess
   server: 172.67.190.164
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
   cipher: auto
-  network: ws
+  alterId: 0
+  udp: true
   tls: true
+  skip-cert-verify: true
   servername: guanwang.awsno.com
+  network: ws
   ws-opts:
     path: /hls/cctv5phd.m3u8
     headers:
@@ -22,337 +24,75 @@ proxies:
   country: Unknown
 - name: Unknown_VMESS_443_211
   type: vmess
-  server: 104.18.42.163
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: guanwang.awsno.com
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-  country: Unknown
-- name: Unknown_VMESS_443_230
-  type: vmess
   server: 172.64.145.93
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
   cipher: auto
-  network: ws
+  alterId: 0
+  udp: true
   tls: true
+  skip-cert-verify: true
   servername: guanwang.awsno.com
+  network: ws
   ws-opts:
     path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
   country: Unknown
-- name: Unknown_VLESS_443_80
-  type: vless
-  network: ws
-  server: cf.008500.xyz
-  port: 443
-  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
-  servername: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-  tls: true
-  client-fingerprint: chrome
-  encryption: none
-  ws-opts:
-    headers:
-      Host: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-    path: /?ed=2560
-  country: Unknown
-- name: Unknown_VLESS_443_88
-  type: vless
-  network: ws
-  server: 188.114.98.0
-  port: 443
-  uuid: 22424ee2-6fe3-42ca-9749-6d4c5a8acc82
-  servername: tn1r.eu.cc
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: tn1r.eu.cc
-    path: /id-pusat
-  country: Unknown
-- name: Unknown_VLESS_2087_226
-  type: vless
-  network: ws
-  server: www.vmware.com
-  port: 2087
-  uuid: bf14dc50-e9f2-49fd-8642-620446edeafb
-  servername: v7-e4v.pages.dev
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: v7-e4v.pages.dev
-    path: /
-  country: Unknown
-- name: Unknown_VLESS_443_72
-  type: vless
-  network: ws
-  server: 172.67.141.182
-  port: 443
-  uuid: ce440dcf-e570-4a50-af37-bf588ee8a988
-  servername: 6qwoom7kdrcoan3ui4ra5dy.pages.dev
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: 6qwoom7kdrcoan3ui4ra5dy.pages.dev
-    path: /vl/KSPdmco70dfoXFS292o2Nv6yPt?ed=2560
-  country: Unknown
-- name: Unknown_VMESS_443_213
+- name: Unknown_VMESS_443_229
   type: vmess
-  network: ws
-  server: 188.114.99.137
+  server: 104.18.42.163
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
   cipher: auto
+  alterId: 0
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: guanwang.awsno.com
+  network: ws
   ws-opts:
+    path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
-    path: /hls/cctv5phd.m3u8
   country: Unknown
-- name: Unknown_VLESS_443_81
+- name: Unknown_VLESS_2052_54
   type: vless
+  server: 104.18.109.147
+  port: 2052
+  uuid: c29d39bd-92a4-45db-bb61-56013998617c
   network: ws
-  server: 104.27.204.44
-  port: 443
-  uuid: 386d67dc-bf88-49fd-a570-301cbb013a33
-  servername: 9t94roac1ew8n93sdrq.pages.dev
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
+  tls: false
+  servername: ''
   client-fingerprint: chrome
   ws-opts:
+    path: /Telegram-XV2ry2?ed=2048
     headers:
-      Host: 9t94roac1ew8n93sdrq.pages.dev
-    path: /vl/x1qQUZWxHs5IRVeRUjz7AteYS?ed=2560
+      Host: www.speedtest.net.www.1google.com.bing.com.visa.com.tls.xv98.ip-ddns.com
   country: Unknown
-- name: Unknown_VLESS_443_708
-  type: vless
-  network: ws
-  server: 104.16.10.72
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  servername: jp3.yohototo.top
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: unsafe
-  ws-opts:
-    headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
-  country: Unknown
-- name: Unknown_VLESS_443_744
-  type: vless
-  network: ws
-  server: 104.16.10.104
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  servername: jp3.yohototo.top
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: unsafe
-  ws-opts:
-    headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
-  country: Unknown
-- name: Unknown_VLESS_443_99
-  type: vless
-  network: ws
-  server: 104.27.109.16
-  port: 443
-  uuid: 67ab86b7-69fb-41bf-8967-290cbd08f0ac
-  servername: jldmwa9cfrug7b03cr1vs.pages.dev
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: jldmwa9cfrug7b03cr1vs.pages.dev
-    path: /vl/43gYvFJEPmUtPFSZ?ed=2560
-  country: Unknown
-- name: Unknown_VLESS_443_143
-  type: vless
-  network: ws
-  server: 104.24.225.89
-  port: 443
-  uuid: dbbed131-4ae8-4297-a102-438a2e19b0d9
-  servername: ghzo7q51sn2b5e2i1670v7dmx.pages.dev
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: ghzo7q51sn2b5e2i1670v7dmx.pages.dev
-    path: /vl/c5R0DRvdSoEZO90UjW3StIJxLpFWZod?ed=2560
-  country: Unknown
-- name: Unknown_VMESS_443_205
+- name: Unknown_VMESS_443_98
   type: vmess
-  network: ws
-  server: www.shopify.com
+  server: US122207.ssgreen.org
   port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  skip-cert-verify: true
-  tls: true
+  uuid: 74d216a3-fdb8-4774-a9c3-35f9e5a46819
   alterId: 0
   cipher: auto
-  ws-opts:
-    headers:
-      Host: guanwang.awsno.com
-    path: /hls/cctv5phd.m3u8
-  country: Unknown
-- name: Unknown_VMESS_8443_572
-  type: vmess
-  network: ws
-  server: 172.67.161.144
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: v2ray1.dozapp.xyz
-    path: /lMnsZUN4/
-  country: Unknown
-- name: Unknown_VLESS_443_912
-  type: vless
-  server: api.opencode.ai
-  port: 443
-  uuid: 2874e26b-45e3-4d12-9e01-3f5a1c6a7105
   network: ws
   tls: true
-  servername: dietary-forms-begun-orientation.trycloudflare.com
-  client-fingerprint: chrome
+  servername: US122207.ssgreen.org
   ws-opts:
-    path: /d9fb7b4f14c1
+    path: /wes
     headers:
-      Host: dietary-forms-begun-orientation.trycloudflare.com
+      Host: US122207.ssgreen.org
   country: Unknown
-- name: Unknown_VLESS_443_787
-  type: vless
-  server: 382218.xyz
-  port: 443
-  uuid: d801d4d9-111a-46e8-91fc-e2fb39ef2d22
-  network: ws
-  tls: true
-  servername: 382218.xyz
-  client-fingerprint: chrome
-  ws-opts:
-    path: /ws
-    headers:
-      Host: 382218.xyz
-  country: Unknown
-- name: Unknown_HTTP_443_34
+- name: Unknown_HTTP_443_35
   password: 'null'
   port: 443
-  server: 172.64.69.89
+  server: 172.64.68.89
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
   username: 'null'
-  x-toolall-mihomo: true
-  country: Unknown
-- ip: 172.16.0.2/32
-  keepalive: '5'
-  mtu: 1280
-  name: Unknown_WIREGUARD_4500_94
-  persistent-keepalive: '5'
-  port: 4500
-  private-key: AF2nx4tmsO5yJFZHnTkUxGAcnWMhKUWrhfCgJJ79Ylg=
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  reserved:
-  - 4
-  - 150
-  - 196
-  server: 162.159.192.3
-  type: wireguard
-  udp: true
-  wnoise: quic
-  wnoisecount: '5'
-  wnoisedelay: '5'
-  wpayloadsize: 40-90
-  country: Unknown
-- ip: 172.16.0.2/32
-  ipv6: 2606:4700:110:8e4e:939b:b987:39aa:c46c/128
-  mtu: 1280
-  name: Unknown_WIREGUARD_955_124
-  port: 955
-  private-key: OEysS/3kryZt7O/RobQFlmPatDWuUl9bwef0IoMX/Uo=
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  reserved:
-  - 0
-  - 0
-  - 0
-  server: 8.6.112.100
-  type: wireguard
-  udp: true
-  country: Unknown
-- ip: 172.16.0.2/32
-  keepalive: '5'
-  mtu: 1280
-  name: Unknown_WIREGUARD_500_182
-  persistent-keepalive: '5'
-  port: 500
-  private-key: +AYnqJYinZIJ6yZwIjmirctmPqzfctf6H2fTqywa/XM=
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  reserved:
-  - 39
-  - 4
-  - 107
-  server: 162.159.192.2
-  type: wireguard
-  udp: true
-  wnoise: quic
-  wnoisecount: '5'
-  wnoisedelay: '5'
-  wpayloadsize: 40-90
-  country: Unknown
-- ip: 172.16.0.2/32
-  keepalive: '5'
-  mtu: 1280
-  name: Unknown_WIREGUARD_500_234
-  persistent-keepalive: '5'
-  port: 500
-  private-key: mHj04J164X9hgzAVq4BlB0hc/SK3QPbgl7JF+/anXU0=
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  reserved:
-  - 99
-  - 166
-  - 252
-  server: 162.159.192.6
-  type: wireguard
-  udp: true
-  wnoise: quic
-  wnoisecount: '5'
-  wnoisedelay: '5'
-  wpayloadsize: 40-90
   country: Unknown
 proxy-groups:
 - name: 🚀 节点选择
@@ -367,28 +107,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - Unknown_VMESS_443_197
+  - Unknown_VMESS_443_130
   - Unknown_VMESS_443_211
-  - Unknown_VMESS_443_230
-  - Unknown_VLESS_443_80
-  - Unknown_VLESS_443_88
-  - Unknown_VLESS_2087_226
-  - Unknown_VLESS_443_72
-  - Unknown_VMESS_443_213
-  - Unknown_VLESS_443_81
-  - Unknown_VLESS_443_708
-  - Unknown_VLESS_443_744
-  - Unknown_VLESS_443_99
-  - Unknown_VLESS_443_143
-  - Unknown_VMESS_443_205
-  - Unknown_VMESS_8443_572
-  - Unknown_VLESS_443_912
-  - Unknown_VLESS_443_787
-  - Unknown_HTTP_443_34
-  - Unknown_WIREGUARD_4500_94
-  - Unknown_WIREGUARD_955_124
-  - Unknown_WIREGUARD_500_182
-  - Unknown_WIREGUARD_500_234
+  - Unknown_VMESS_443_229
+  - Unknown_VLESS_2052_54
+  - Unknown_VMESS_443_98
+  - Unknown_HTTP_443_35
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -401,28 +125,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - Unknown_HTTP_443_34
-  - Unknown_VLESS_443_72
-  - Unknown_VLESS_443_80
-  - Unknown_VLESS_443_81
-  - Unknown_VLESS_443_88
-  - Unknown_WIREGUARD_4500_94
-  - Unknown_VLESS_443_99
-  - Unknown_WIREGUARD_955_124
-  - Unknown_VLESS_443_143
-  - Unknown_WIREGUARD_500_182
-  - Unknown_VMESS_443_197
-  - Unknown_VMESS_443_205
+  - Unknown_HTTP_443_35
+  - Unknown_VLESS_2052_54
+  - Unknown_VMESS_443_98
+  - Unknown_VMESS_443_130
   - Unknown_VMESS_443_211
-  - Unknown_VMESS_443_213
-  - Unknown_VLESS_2087_226
-  - Unknown_VMESS_443_230
-  - Unknown_WIREGUARD_500_234
-  - Unknown_VMESS_8443_572
-  - Unknown_VLESS_443_708
-  - Unknown_VLESS_443_744
-  - Unknown_VLESS_443_787
-  - Unknown_VLESS_443_912
+  - Unknown_VMESS_443_229
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -434,28 +142,12 @@ proxy-groups:
 - name: 🌍 Unknown
   type: url-test
   proxies:
-  - Unknown_VMESS_443_197
+  - Unknown_VMESS_443_130
   - Unknown_VMESS_443_211
-  - Unknown_VMESS_443_230
-  - Unknown_VLESS_443_80
-  - Unknown_VLESS_443_88
-  - Unknown_VLESS_2087_226
-  - Unknown_VLESS_443_72
-  - Unknown_VMESS_443_213
-  - Unknown_VLESS_443_81
-  - Unknown_VLESS_443_708
-  - Unknown_VLESS_443_744
-  - Unknown_VLESS_443_99
-  - Unknown_VLESS_443_143
-  - Unknown_VMESS_443_205
-  - Unknown_VMESS_8443_572
-  - Unknown_VLESS_443_912
-  - Unknown_VLESS_443_787
-  - Unknown_HTTP_443_34
-  - Unknown_WIREGUARD_4500_94
-  - Unknown_WIREGUARD_955_124
-  - Unknown_WIREGUARD_500_182
-  - Unknown_WIREGUARD_500_234
+  - Unknown_VMESS_443_229
+  - Unknown_VLESS_2052_54
+  - Unknown_VMESS_443_98
+  - Unknown_HTTP_443_35
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
