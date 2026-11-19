@@ -5,16 +5,24 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BY_VLESS_10443_393
-  type: vless
-  server: 178.172.227.124
+- name: BY_VLESS_10443_451
   port: 10443
-  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
-  network: tcp
+  server: 178.172.227.124
   tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+  type: vless
+  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
+  country: BY
+- name: BY_VLESS_14430_597
+  network: ws
+  port: 14430
+  server: 178.172.227.228
+  tls: false
+  type: vless
+  uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
+  ws-opts:
+    headers:
+      Host: 178.172.227.228
+    path: /vless
   country: BY
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +37,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BY_VLESS_10443_393
+  - BY_VLESS_10443_451
+  - BY_VLESS_14430_597
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +51,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BY_VLESS_10443_393
+  - BY_VLESS_10443_451
+  - BY_VLESS_14430_597
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +64,8 @@ proxy-groups:
 - name: 🌍 BY
   type: url-test
   proxies:
-  - BY_VLESS_10443_393
+  - BY_VLESS_10443_451
+  - BY_VLESS_14430_597
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

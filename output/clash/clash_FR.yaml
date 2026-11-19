@@ -5,65 +5,142 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_VMESS_80_681
+- name: FR_VLESS_14430_354
+  network: ws
+  port: 14430
+  server: 138.124.70.41
+  servername: 138.124.70.41
+  tls: false
+  type: vless
+  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
+  ws-opts:
+    headers:
+      Host: 138.124.70.41
+    path: /vless
+  country: FR
+- name: FR_VLESS_80_400
+  network: ws
+  port: 80
+  server: ov-france1.09vpn.com
+  servername: ov-france1.09vpn.com
+  tls: false
+  type: vless
+  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
+  ws-opts:
+    headers:
+      Host: ov-france1.09vpn.com
+    path: /vless/
+  country: FR
+- cipher: aes-256-gcm
+  name: FR_SS_19999_266
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 23.162.152.22
+  type: ss
+  country: FR
+- cipher: aes-256-gcm
+  name: FR_SS_19999_269
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 167.17.64.27
+  type: ss
+  country: FR
+- cipher: aes-256-gcm
+  name: FR_SS_19999_288
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 38.109.228.110
+  type: ss
+  country: FR
+- cipher: aes-256-gcm
+  name: FR_SS_19999_278
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 172.99.189.142
+  type: ss
+  country: FR
+- cipher: aes-256-gcm
+  name: FR_SS_19999_285
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 167.17.64.175
+  type: ss
+  country: FR
+- cipher: aes-256-gcm
+  name: FR_SS_19999_272
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 167.17.64.22
+  type: ss
+  country: FR
+- type: hysteria
+  name: FR_HYSTERIA_24667_2568
+  server: 62.210.124.132
+  port: 24667
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+  country: FR
+- name: FR_HTTP_9443_427
+  password: None
+  port: 9443
+  server: 138.199.47.247
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: FR
+- name: FR_HTTP_9443_423
+  port: 9443
+  server: 213.139.9.142
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: FR
+- cipher: aes-256-gcm
+  name: FR_SS_8388_245
+  password: itzvpn@321
+  port: 8388
+  server: 107.161.160.28
+  type: ss
+  udp: true
+  country: FR
+- name: FR_HTTP_8090_1484
+  port: 8090
+  server: 83.206.1.225
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: FR
+- name: FR_VMESS_80_508
   type: vmess
+  network: ws
   server: 145.239.55.210
   port: 80
   uuid: 2bc80e77-9590-4ded-a48b-0eda493f611b
+  skip-cert-verify: false
+  tls: false
   alterId: 0
   cipher: auto
-  network: ws
-  tls: false
-  servername: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
   ws-opts:
-    path: /
     headers:
       Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
-  country: FR
-- name: FR_VMESS_80_522
-  type: vmess
-  server: 54.37.131.126
-  port: 80
-  uuid: 1e55beca-3c69-4fa7-fb1f-15c1b767435f
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
-  ws-opts:
     path: /
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
   country: FR
-- name: FR_VLESS_14430_448
-  type: vless
-  server: 138.124.70.41
-  port: 14430
-  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
-  network: ws
-  tls: false
-  servername: 138.124.70.41
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless
-    headers:
-      Host: 138.124.70.41
-  country: FR
-- name: FR_VLESS_80_445
-  type: vless
-  server: ov-france1.09vpn.com
-  port: 80
-  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
-  network: ws
-  tls: false
-  servername: ov-france1.09vpn.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ov-france1.09vpn.com
-  country: FR
-- name: FR_VMESS_1234_600
+- name: FR_VMESS_1234_404
   type: vmess
   network: tcp
   server: 141.95.65.9
@@ -77,7 +154,7 @@ proxies:
   cipher: aes-128-gcm
   client-fingerprint: chrome
   country: FR
-- name: FR_VMESS_1234_487
+- name: FR_VMESS_1234_407
   type: vmess
   network: tcp
   server: 162.19.204.71
@@ -91,91 +168,30 @@ proxies:
   cipher: auto
   client-fingerprint: chrome
   country: FR
-- name: FR_VLESS_80_442
+- name: FR_VLESS_80_362
   type: vless
   network: ws
-  server: OV-France1.09vpn.com
+  server: 152.228.162.19
   port: 80
-  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
+  uuid: 5ce84688-f535-46ad-a512-37b17becf6ea
   skip-cert-verify: false
   tls: false
-  udp: true
   encryption: none
-  packet-encoding: xudp
   ws-opts:
     headers:
-      Host: OV-France1.09vpn.com
+      Host: akamaized.net
     path: /vless/
   country: FR
-- cipher: chacha20-ietf-poly1305
-  name: FR_SS_8080_311
-  password: 29irqk0paakcx19v
-  port: 8080
-  server: 51.83.61.102
-  type: ss
-  country: FR
-- cipher: aes-256-gcm
-  name: FR_SS_19999_325
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 23.162.152.22
-  type: ss
-  country: FR
-- cipher: aes-256-gcm
-  name: FR_SS_19999_317
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 38.109.228.110
-  type: ss
-  country: FR
-- cipher: aes-256-gcm
-  name: FR_SS_19999_320
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 167.17.64.27
-  type: ss
-  country: FR
-- cipher: aes-256-gcm
-  name: FR_SS_19999_332
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 172.99.189.142
-  type: ss
-  country: FR
-- cipher: aes-256-gcm
-  name: FR_SS_19999_318
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 167.17.64.22
-  type: ss
-  country: FR
-- cipher: aes-256-gcm
-  name: FR_SS_19999_333
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 167.17.64.175
-  type: ss
-  country: FR
-- alpn:
-  - h3
-  auth-str: dongtaiwang.com
-  down: 55 Mbps
-  name: FR_HYSTERIA_24667_2415
-  port: 24667
-  protocol: udp
-  server: 62.210.28.175
-  skip-cert-verify: true
-  sni: bing.com
-  type: hysteria
-  up: 11 Mbps
-  country: FR
-- name: FR_HTTP_8090_1018
-  port: 8090
-  server: 83.206.1.225
+- name: FR_VMESS_1270_369
+  type: vmess
+  network: tcp
+  server: 46.105.222.157
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
   skip-cert-verify: true
   tls: true
-  type: http
-  udp: true
+  alterId: 0
+  cipher: auto
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -190,22 +206,24 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_VMESS_80_681
-  - FR_VMESS_80_522
-  - FR_VLESS_14430_448
-  - FR_VLESS_80_445
-  - FR_VMESS_1234_600
-  - FR_VMESS_1234_487
-  - FR_VLESS_80_442
-  - FR_SS_8080_311
-  - FR_SS_19999_325
-  - FR_SS_19999_317
-  - FR_SS_19999_320
-  - FR_SS_19999_332
-  - FR_SS_19999_318
-  - FR_SS_19999_333
-  - FR_HYSTERIA_24667_2415
-  - FR_HTTP_8090_1018
+  - FR_VLESS_14430_354
+  - FR_VLESS_80_400
+  - FR_SS_19999_266
+  - FR_SS_19999_269
+  - FR_SS_19999_288
+  - FR_SS_19999_278
+  - FR_SS_19999_285
+  - FR_SS_19999_272
+  - FR_HYSTERIA_24667_2568
+  - FR_HTTP_9443_427
+  - FR_HTTP_9443_423
+  - FR_SS_8388_245
+  - FR_HTTP_8090_1484
+  - FR_VMESS_80_508
+  - FR_VMESS_1234_404
+  - FR_VMESS_1234_407
+  - FR_VLESS_80_362
+  - FR_VMESS_1270_369
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -218,22 +236,24 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_8080_311
-  - FR_SS_19999_317
-  - FR_SS_19999_318
-  - FR_SS_19999_320
-  - FR_SS_19999_325
-  - FR_SS_19999_332
-  - FR_SS_19999_333
-  - FR_VLESS_80_442
-  - FR_VLESS_80_445
-  - FR_VLESS_14430_448
-  - FR_VMESS_1234_487
-  - FR_VMESS_80_522
-  - FR_VMESS_1234_600
-  - FR_VMESS_80_681
-  - FR_HTTP_8090_1018
-  - FR_HYSTERIA_24667_2415
+  - FR_SS_8388_245
+  - FR_SS_19999_266
+  - FR_SS_19999_269
+  - FR_SS_19999_272
+  - FR_SS_19999_278
+  - FR_SS_19999_285
+  - FR_SS_19999_288
+  - FR_VLESS_14430_354
+  - FR_VLESS_80_362
+  - FR_VMESS_1270_369
+  - FR_VLESS_80_400
+  - FR_VMESS_1234_404
+  - FR_VMESS_1234_407
+  - FR_HTTP_9443_423
+  - FR_HTTP_9443_427
+  - FR_VMESS_80_508
+  - FR_HTTP_8090_1484
+  - FR_HYSTERIA_24667_2568
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -245,22 +265,24 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_VMESS_80_681
-  - FR_VMESS_80_522
-  - FR_VLESS_14430_448
-  - FR_VLESS_80_445
-  - FR_VMESS_1234_600
-  - FR_VMESS_1234_487
-  - FR_VLESS_80_442
-  - FR_SS_8080_311
-  - FR_SS_19999_325
-  - FR_SS_19999_317
-  - FR_SS_19999_320
-  - FR_SS_19999_332
-  - FR_SS_19999_318
-  - FR_SS_19999_333
-  - FR_HYSTERIA_24667_2415
-  - FR_HTTP_8090_1018
+  - FR_VLESS_14430_354
+  - FR_VLESS_80_400
+  - FR_SS_19999_266
+  - FR_SS_19999_269
+  - FR_SS_19999_288
+  - FR_SS_19999_278
+  - FR_SS_19999_285
+  - FR_SS_19999_272
+  - FR_HYSTERIA_24667_2568
+  - FR_HTTP_9443_427
+  - FR_HTTP_9443_423
+  - FR_SS_8388_245
+  - FR_HTTP_8090_1484
+  - FR_VMESS_80_508
+  - FR_VMESS_1234_404
+  - FR_VMESS_1234_407
+  - FR_VLESS_80_362
+  - FR_VMESS_1270_369
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,16 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VN_VLESS_2086_708
-  type: vless
-  server: 150.95.109.109
+- name: VN_VLESS_2086_1782
   port: 2086
-  uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
-  network: tcp
+  server: 150.95.109.109
   tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts: null
+  type: vless
+  uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
   country: VN
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - VN_VLESS_2086_708
+  - VN_VLESS_2086_1782
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - VN_VLESS_2086_708
+  - VN_VLESS_2086_1782
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +50,7 @@ proxy-groups:
 - name: 🌍 VN
   type: url-test
   proxies:
-  - VN_VLESS_2086_708
+  - VN_VLESS_2086_1782
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

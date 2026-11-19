@@ -5,7 +5,75 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_VMESS_8081_300
+- cipher: aes-128-gcm
+  name: JP_SS_443_275
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.204
+  type: ss
+  country: JP
+- cipher: aes-128-gcm
+  name: JP_SS_443_276
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.240
+  type: ss
+  country: JP
+- cipher: aes-128-gcm
+  name: JP_SS_443_276_2
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.241
+  type: ss
+  country: JP
+- cipher: aes-256-gcm
+  name: JP_SS_80_411
+  password: 3eOFeNssde7PYYMv
+  port: 80
+  server: 84.247.155.196
+  type: ss
+  country: JP
+- name: JP_HYSTERIA2_8443_2971
+  password: oracle_hy2_pass_2026
+  port: 8443
+  server: 129.225.181.46
+  skip-cert-verify: true
+  sni: bing.com
+  tls: false
+  type: hysteria2
+  country: JP
+- name: JP_TROJAN_44184_446
+  network: tcp
+  password: d050aca3-9df2-4461-90ec-92373c1d7636
+  port: 44184
+  server: v2jp.k1.ssnss.live
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+  country: JP
+- name: JP_SOCKS5_42000_865
+  password: EGJDy5Kg
+  port: 42000
+  server: 103.248.150.50
+  type: socks5
+  username: paZFN3JA
+  country: JP
+- name: JP_VMESS_10086_415
+  type: vmess
+  server: 45.76.100.238
+  port: 10086
+  uuid: ee2927f6-b76a-4011-957c-fe7c4865b36c
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: /ws
+    headers:
+      Host: ''
+  country: JP
+- name: JP_VMESS_8081_410
   type: vmess
   server: 168.110.63.247
   port: 8081
@@ -20,7 +88,7 @@ proxies:
     headers:
       Host: ''
   country: JP
-- name: JP_VMESS_80_317
+- name: JP_VMESS_80_437
   type: vmess
   server: 168.138.43.75
   port: 80
@@ -29,73 +97,11 @@ proxies:
   cipher: auto
   network: ws
   tls: false
-  servername: ''
+  servername: 168.138.43.75
   ws-opts:
     path: /cctv13.m3u8
     headers:
-      Host: ''
-  country: JP
-- name: JP_VLESS_30322_1349
-  type: vless
-  server: zfapi.zalolink.com
-  port: 30322
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: ios
-  servername: psstatic.cdn.bcebos.com
-  reality-opts:
-    public-key: 5gncThwqPFzLu23WO3mPTEhG7-KgVYlGVvveHjM2SUo
-    short-id: 6a60e7e382d6
-  country: JP
-- name: JP_VMESS_32515_221
-  type: vmess
-  server: 141.11.139.102
-  port: 32515
-  uuid: 081dbf5a-d8b6-40c8-96f8-3c4ca9f50442
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: JP
-- name: JP_VLESS_47691_1554
-  type: vless
-  server: zfapi.zalolink.com
-  port: 47691
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: safari
-  servername: m.media-amazon.com
-  reality-opts:
-    public-key: 6PbC7GxOg_YdXya-53llPReUzoU_yknQbkDvI4uorBg
-    short-id: 2905326a
-  country: JP
-- name: JP_TROJAN_44184_315
-  type: trojan
-  server: v2jp.k1.ssnss.live
-  port: 44184
-  password: d050aca3-9df2-4461-90ec-92373c1d7636
-  sni: v2jp.k1.ssnss.live
-  network: tcp
-  country: JP
-- cipher: aes-256-gcm
-  name: JP_SS_8388_294
-  password: BeaUf9c0AEWH40Pu
-  port: 8388
-  server: 154.36.158.197
-  type: ss
-  country: JP
-- cipher: aes-256-gcm
-  name: JP_SS_80_1349
-  password: 3eOFeNssde7PYYMv
-  port: 80
-  server: 84.247.155.196
-  type: ss
+      Host: 168.138.43.75
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -110,14 +116,16 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_VMESS_8081_300
-  - JP_VMESS_80_317
-  - JP_VLESS_30322_1349
-  - JP_VMESS_32515_221
-  - JP_VLESS_47691_1554
-  - JP_TROJAN_44184_315
-  - JP_SS_8388_294
-  - JP_SS_80_1349
+  - JP_SS_443_275
+  - JP_SS_443_276
+  - JP_SS_443_276_2
+  - JP_SS_80_411
+  - JP_HYSTERIA2_8443_2971
+  - JP_TROJAN_44184_446
+  - JP_SOCKS5_42000_865
+  - JP_VMESS_10086_415
+  - JP_VMESS_8081_410
+  - JP_VMESS_80_437
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -130,14 +138,16 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_VMESS_32515_221
-  - JP_SS_8388_294
-  - JP_VMESS_8081_300
-  - JP_TROJAN_44184_315
-  - JP_VMESS_80_317
-  - JP_VLESS_30322_1349
-  - JP_SS_80_1349
-  - JP_VLESS_47691_1554
+  - JP_SS_443_275
+  - JP_SS_443_276
+  - JP_SS_443_276_2
+  - JP_VMESS_8081_410
+  - JP_SS_80_411
+  - JP_VMESS_10086_415
+  - JP_VMESS_80_437
+  - JP_TROJAN_44184_446
+  - JP_SOCKS5_42000_865
+  - JP_HYSTERIA2_8443_2971
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -149,14 +159,16 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_VMESS_8081_300
-  - JP_VMESS_80_317
-  - JP_VLESS_30322_1349
-  - JP_VMESS_32515_221
-  - JP_VLESS_47691_1554
-  - JP_TROJAN_44184_315
-  - JP_SS_8388_294
-  - JP_SS_80_1349
+  - JP_SS_443_275
+  - JP_SS_443_276
+  - JP_SS_443_276_2
+  - JP_SS_80_411
+  - JP_HYSTERIA2_8443_2971
+  - JP_TROJAN_44184_446
+  - JP_SOCKS5_42000_865
+  - JP_VMESS_10086_415
+  - JP_VMESS_8081_410
+  - JP_VMESS_80_437
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

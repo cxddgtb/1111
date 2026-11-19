@@ -5,22 +5,25 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_VMESS_80_437
-  type: vmess
-  server: 132.145.80.230
-  port: 80
-  uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-  alterId: 0
-  cipher: auto
+- name: KR_VLESS_25555_647
   network: ws
+  port: 25555
+  server: 152.69.226.63
   tls: false
-  servername: ''
+  type: vless
+  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
   ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: ''
+    path: /
   country: KR
-- name: KR_VMESS_800_382
+- name: KR_TROJAN_443_542
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 158.247.253.243
+  skip-cert-verify: true
+  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
+  type: trojan
+  country: KR
+- name: KR_VMESS_800_454
   type: vmess
   server: 129.154.61.196
   port: 800
@@ -32,39 +35,15 @@ proxies:
   servername: ''
   ws-opts: null
   country: KR
-- name: KR_TROJAN_443_431
-  type: trojan
-  server: 158.247.253.243
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
-  network: tcp
-  country: KR
-- name: KR_VMESS_8888_336
+- name: KR_VMESS_8888_568
   type: vmess
+  network: tcp
   server: 146.56.112.110
   port: 8888
   uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
+  udp: true
   alterId: 0
   cipher: auto
-  network: tcp
-  tls: false
-  servername: ''
-  ws-opts: null
-  country: KR
-- name: KR_VLESS_25555_549
-  type: vless
-  server: 152.69.226.63
-  port: 25555
-  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
   country: KR
 proxy-groups:
 - name: 🚀 节点选择
@@ -79,11 +58,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_VMESS_80_437
-  - KR_VMESS_800_382
-  - KR_TROJAN_443_431
-  - KR_VMESS_8888_336
-  - KR_VLESS_25555_549
+  - KR_VLESS_25555_647
+  - KR_TROJAN_443_542
+  - KR_VMESS_800_454
+  - KR_VMESS_8888_568
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -96,11 +74,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_8888_336
-  - KR_VMESS_800_382
-  - KR_TROJAN_443_431
-  - KR_VMESS_80_437
-  - KR_VLESS_25555_549
+  - KR_VMESS_800_454
+  - KR_TROJAN_443_542
+  - KR_VMESS_8888_568
+  - KR_VLESS_25555_647
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -112,11 +89,10 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_VMESS_80_437
-  - KR_VMESS_800_382
-  - KR_TROJAN_443_431
-  - KR_VMESS_8888_336
-  - KR_VLESS_25555_549
+  - KR_VLESS_25555_647
+  - KR_TROJAN_443_542
+  - KR_VMESS_800_454
+  - KR_VMESS_8888_568
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
