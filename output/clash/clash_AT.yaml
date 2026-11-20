@@ -5,24 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: chacha20-ietf-poly1305
-  name: AT_SS_8388_286
-  password: AdawffFMHymlasRb0VOP3HFf7sTG5sJx
-  port: 8388
+- type: ss
+  name: AT_SS_8388_340
   server: 152.53.1.57
-  type: ss
-  country: AT
-- name: AT_HTTP_443_541
-  port: 443
-  server: 146.70.244.2
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
+  port: 8388
+  password: AdawffFMHymlasRb0VOP3HFf7sTG5sJx
+  cipher: chacha20-ietf-poly1305
   udp: true
-  x-toolall-mihomo: true
+  tls: false
+  skip-cert-verify: false
   country: AT
-- name: AT_VMESS_1270_402
+- name: AT_VMESS_1270_500
   type: vmess
   network: tcp
   server: 154.47.19.225
@@ -32,6 +25,16 @@ proxies:
   tls: true
   alterId: 0
   cipher: auto
+  country: AT
+- name: AT_HTTP_443_651
+  port: 443
+  server: 146.70.244.2
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
   country: AT
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,9 +49,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AT_SS_8388_286
-  - AT_HTTP_443_541
-  - AT_VMESS_1270_402
+  - AT_SS_8388_340
+  - AT_VMESS_1270_500
+  - AT_HTTP_443_651
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -61,9 +64,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AT_SS_8388_286
-  - AT_VMESS_1270_402
-  - AT_HTTP_443_541
+  - AT_SS_8388_340
+  - AT_VMESS_1270_500
+  - AT_HTTP_443_651
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -75,9 +78,9 @@ proxy-groups:
 - name: 🌍 AT
   type: url-test
   proxies:
-  - AT_SS_8388_286
-  - AT_HTTP_443_541
-  - AT_VMESS_1270_402
+  - AT_SS_8388_340
+  - AT_VMESS_1270_500
+  - AT_HTTP_443_651
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

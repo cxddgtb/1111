@@ -5,45 +5,25 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_14430_723
-  network: ws
-  port: 14430
-  server: 95.174.68.188
-  servername: 95.174.68.188
-  tls: false
-  type: vless
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  ws-opts:
-    headers:
-      Host: 95.174.68.188
-    path: /vless
-  country: AE
-- cipher: aes-256-gcm
-  name: AE_SS_19999_229
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
+- type: ss
+  name: AE_SS_19999_279
   server: 151.241.19.29
-  type: ss
-  country: AE
-- cipher: aes-256-gcm
-  name: AE_SS_19999_239
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
-  server: 151.241.19.36
-  type: ss
-  country: AE
-- name: AE_VLESS_22573_2607
-  network: ws
-  port: 22573
-  server: 84.235.244.108
-  servername: uae.unixzone.us
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
   tls: false
-  type: vless
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  ws-opts:
-    headers:
-      Host: uae.unixzone.us
-    path: /
+  skip-cert-verify: false
+  country: AE
+- type: ss
+  name: AE_SS_19999_276
+  server: 151.241.19.36
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -58,10 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_14430_723
-  - AE_SS_19999_229
-  - AE_SS_19999_239
-  - AE_VLESS_22573_2607
+  - AE_SS_19999_279
+  - AE_SS_19999_276
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -74,10 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_SS_19999_229
-  - AE_SS_19999_239
-  - AE_VLESS_14430_723
-  - AE_VLESS_22573_2607
+  - AE_SS_19999_276
+  - AE_SS_19999_279
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -89,10 +65,8 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_14430_723
-  - AE_SS_19999_229
-  - AE_SS_19999_239
-  - AE_VLESS_22573_2607
+  - AE_SS_19999_279
+  - AE_SS_19999_276
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

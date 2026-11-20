@@ -5,15 +5,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BG_HTTP_443_696
+- name: BG_HYSTERIA2_443_658
+  server: 87.121.112.83
   port: 443
-  server: 109.204.88.17
+  type: hysteria2
+  password: 9a9f167d-b461-466f-be50-f0ffd598a6f8
+  auth: 9a9f167d-b461-466f-be50-f0ffd598a6f8
+  sni: bulghys.live
   skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
   country: BG
 proxy-groups:
 - name: 🚀 节点选择
@@ -28,7 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BG_HTTP_443_696
+  - BG_HYSTERIA2_443_658
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BG_HTTP_443_696
+  - BG_HYSTERIA2_443_658
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +52,7 @@ proxy-groups:
 - name: 🌍 BG
   type: url-test
   proxies:
-  - BG_HTTP_443_696
+  - BG_HYSTERIA2_443_658
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
