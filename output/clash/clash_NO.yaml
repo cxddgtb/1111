@@ -6,7 +6,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: ss
-  name: NO_SS_990_362
+  name: NO_SS_990_320
   server: 185.213.23.63
   port: 990
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
@@ -28,7 +28,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NO_SS_990_362
+  - NO_SS_990_320
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +41,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NO_SS_990_362
+  - NO_SS_990_320
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +53,7 @@ proxy-groups:
 - name: 🌍 NO
   type: url-test
   proxies:
-  - NO_SS_990_362
+  - NO_SS_990_320
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

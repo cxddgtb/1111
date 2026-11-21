@@ -5,16 +5,31 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TR_HYSTERIA2_43345_1449
-  obfs: salamander
-  obfs-password: km9oqmefh2km1i5n
-  password: d1gkicdgem3bsoaa
-  port: 43345
-  server: panel.autonetshop.ir
+- type: vless
+  name: TR_VLESS_2090_1371
+  server: 185.71.216.95
+  port: 2090
+  uuid: f131d292-d3c2-42b3-bcea-f9712c31b303
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.apple.com
+  sni: www.apple.com
   skip-cert-verify: false
-  sni: panel.autonetshop.ir
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: qBobe6KSNkFLqTPCffcJo0nXgxy-3JKru9WRqY9rkjk
+    short-id: bb472a184677af64
+  country: TR
+- type: ss
+  name: TR_SS_2089_565
+  server: tr.subscriptionservice.ir
+  port: 2089
+  password: lZZzfo1mqH7PqnloAogdi2XBhlgiofMy
+  cipher: chacha20-ietf-poly1305
+  udp: true
   tls: false
-  type: hysteria2
+  skip-cert-verify: false
   country: TR
 proxy-groups:
 - name: 🚀 节点选择
@@ -29,7 +44,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TR_HYSTERIA2_43345_1449
+  - TR_VLESS_2090_1371
+  - TR_SS_2089_565
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -42,7 +58,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TR_HYSTERIA2_43345_1449
+  - TR_SS_2089_565
+  - TR_VLESS_2090_1371
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -54,7 +71,8 @@ proxy-groups:
 - name: 🌍 TR
   type: url-test
   proxies:
-  - TR_HYSTERIA2_43345_1449
+  - TR_VLESS_2090_1371
+  - TR_SS_2089_565
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

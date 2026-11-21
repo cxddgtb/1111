@@ -5,98 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: ss
-  name: FR_SS_19999_329
-  server: 38.109.228.110
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
+- type: vless
+  name: FR_VLESS_80_289
+  server: ov-france1.09vpn.com
+  port: 80
+  uuid: f5c47e9c-914a-4a91-a81e-a5a77bc10fc1
   udp: true
   tls: false
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vless/
   country: FR
-- type: ss
-  name: FR_SS_19999_320
-  server: 167.17.64.175
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
+- type: vless
+  name: FR_VLESS_80_290
+  server: 152.228.162.19
+  port: 80
+  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
   udp: true
   tls: false
   skip-cert-verify: false
-  country: FR
-- type: ss
-  name: FR_SS_19999_298
-  server: 79.137.99.183
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: FR
-- type: ss
-  name: FR_SS_19999_318
-  server: 23.162.152.22
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: FR
-- type: ss
-  name: FR_SS_19999_322
-  server: 172.99.189.142
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: FR
-- type: ss
-  name: FR_SS_8080_325
-  server: 51.83.61.102
-  port: 8080
-  password: 29irqk0paakcx19v
-  cipher: chacha20-ietf-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: FR
-- type: ss
-  name: FR_SS_19999_317
-  server: 167.17.64.22
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: FR
-- type: ss
-  name: FR_SS_8080_312
-  server: 51.77.144.182
-  port: 8080
-  password: x19py0a8ipglqkbe
-  cipher: chacha20-ietf-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: FR
-- type: ss
-  name: FR_SS_19999_321
-  server: 167.17.64.27
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /vless/
   country: FR
 - type: vmess
-  name: FR_VMESS_80_1205
+  name: FR_VMESS_80_380
   server: 145.239.55.210
   port: 80
   uuid: 2bc80e77-9590-4ded-a48b-0eda493f611b
@@ -114,7 +48,7 @@ proxies:
       Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
   country: FR
 - type: vmess
-  name: FR_VMESS_80_1058
+  name: FR_VMESS_80_1109
   server: 54.37.131.126
   port: 80
   uuid: 1e55beca-3c69-4fa7-fb1f-15c1b767435f
@@ -131,20 +65,137 @@ proxies:
     headers:
       Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
   country: FR
-- name: FR_VLESS_14430_444
-  type: vless
-  network: ws
-  server: 138.124.70.41
-  port: 14430
-  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
-  servername: 138.124.70.41
-  tls: false
-  ws-opts:
-    headers:
-      Host: 138.124.70.41
-    path: /vless
+- type: vless
+  name: FR_VLESS_443_2045
+  server: 145.223.68.58
+  port: 443
+  uuid: edb50d20-2d3e-4c1e-8a75-a17168a89aa5
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  sni: www.cloudflare.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: qc2DcqT9zPPZr6ePZ7ukxACWrYhRNIBjDIjCK7veyQg
+    short-id: a44ff7d2e80213c2
   country: FR
-- name: FR_VMESS_1234_474
+- type: ss
+  name: FR_SS_19999_184
+  server: 79.137.99.183
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: FR
+- type: ss
+  name: FR_SS_19999_190
+  server: 38.109.228.110
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: FR
+- type: ss
+  name: FR_SS_19999_185
+  server: 23.162.152.22
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: FR
+- type: ss
+  name: FR_SS_8388_199
+  server: 107.161.160.28
+  port: 8388
+  password: itzvpn@321
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: FR
+- type: ss
+  name: FR_SS_19999_186
+  server: 172.99.189.142
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: FR
+- type: ss
+  name: FR_SS_19999_179
+  server: 167.17.64.22
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: FR
+- type: ss
+  name: FR_SS_19999_186_2
+  server: 167.17.64.27
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: FR
+- type: ss
+  name: FR_SS_19999_188
+  server: 167.17.64.175
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: FR
+- type: hysteria
+  name: FR_HYSTERIA_24667_2604
+  server: 62.210.124.132
+  port: 24667
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+  country: FR
+- name: FR_HTTP_9443_313
+  password: None
+  port: 9443
+  server: 138.199.47.247
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: FR
+- name: FR_HTTP_8090_730
+  port: 8090
+  server: 83.206.1.225
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: FR
+- name: FR_VMESS_1234_327
   type: vmess
   network: tcp
   server: 141.95.65.9
@@ -158,7 +209,7 @@ proxies:
   cipher: aes-128-gcm
   client-fingerprint: chrome
   country: FR
-- name: FR_VMESS_1234_463
+- name: FR_VMESS_1234_304
   type: vmess
   network: tcp
   server: 162.19.204.71
@@ -172,35 +223,21 @@ proxies:
   cipher: auto
   client-fingerprint: chrome
   country: FR
-- name: FR_VMESS_1270_460
-  type: vmess
-  network: tcp
-  server: 46.105.222.157
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: FR
-- name: FR_VMESS_1270_549
-  type: vmess
-  network: tcp
-  server: 91.134.35.72
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: FR
-- name: FR_HTTP_8090_2301
-  port: 8090
-  server: 83.206.1.225
-  skip-cert-verify: true
-  tls: true
-  type: http
+- name: FR_VLESS_80_300
+  type: vless
+  network: ws
+  server: OV-France1.09vpn.com
+  port: 80
+  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
+  skip-cert-verify: false
+  tls: false
   udp: true
+  encryption: none
+  packet-encoding: xudp
+  ws-opts:
+    headers:
+      Host: OV-France1.09vpn.com
+    path: /vless/
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -215,23 +252,25 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_SS_19999_329
-  - FR_SS_19999_320
-  - FR_SS_19999_298
-  - FR_SS_19999_318
-  - FR_SS_19999_322
-  - FR_SS_8080_325
-  - FR_SS_19999_317
-  - FR_SS_8080_312
-  - FR_SS_19999_321
-  - FR_VMESS_80_1205
-  - FR_VMESS_80_1058
-  - FR_VLESS_14430_444
-  - FR_VMESS_1234_474
-  - FR_VMESS_1234_463
-  - FR_VMESS_1270_460
-  - FR_VMESS_1270_549
-  - FR_HTTP_8090_2301
+  - FR_VLESS_80_289
+  - FR_VLESS_80_290
+  - FR_VMESS_80_380
+  - FR_VMESS_80_1109
+  - FR_VLESS_443_2045
+  - FR_SS_19999_184
+  - FR_SS_19999_190
+  - FR_SS_19999_185
+  - FR_SS_8388_199
+  - FR_SS_19999_186
+  - FR_SS_19999_179
+  - FR_SS_19999_186_2
+  - FR_SS_19999_188
+  - FR_HYSTERIA_24667_2604
+  - FR_HTTP_9443_313
+  - FR_HTTP_8090_730
+  - FR_VMESS_1234_327
+  - FR_VMESS_1234_304
+  - FR_VLESS_80_300
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -244,23 +283,25 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_19999_298
-  - FR_SS_8080_312
-  - FR_SS_19999_317
-  - FR_SS_19999_318
-  - FR_SS_19999_320
-  - FR_SS_19999_321
-  - FR_SS_19999_322
-  - FR_SS_8080_325
-  - FR_SS_19999_329
-  - FR_VLESS_14430_444
-  - FR_VMESS_1270_460
-  - FR_VMESS_1234_463
-  - FR_VMESS_1234_474
-  - FR_VMESS_1270_549
-  - FR_VMESS_80_1058
-  - FR_VMESS_80_1205
-  - FR_HTTP_8090_2301
+  - FR_SS_19999_179
+  - FR_SS_19999_184
+  - FR_SS_19999_185
+  - FR_SS_19999_186
+  - FR_SS_19999_186_2
+  - FR_SS_19999_188
+  - FR_SS_19999_190
+  - FR_SS_8388_199
+  - FR_VLESS_80_289
+  - FR_VLESS_80_290
+  - FR_VLESS_80_300
+  - FR_VMESS_1234_304
+  - FR_HTTP_9443_313
+  - FR_VMESS_1234_327
+  - FR_VMESS_80_380
+  - FR_HTTP_8090_730
+  - FR_VMESS_80_1109
+  - FR_VLESS_443_2045
+  - FR_HYSTERIA_24667_2604
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -272,23 +313,25 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_SS_19999_329
-  - FR_SS_19999_320
-  - FR_SS_19999_298
-  - FR_SS_19999_318
-  - FR_SS_19999_322
-  - FR_SS_8080_325
-  - FR_SS_19999_317
-  - FR_SS_8080_312
-  - FR_SS_19999_321
-  - FR_VMESS_80_1205
-  - FR_VMESS_80_1058
-  - FR_VLESS_14430_444
-  - FR_VMESS_1234_474
-  - FR_VMESS_1234_463
-  - FR_VMESS_1270_460
-  - FR_VMESS_1270_549
-  - FR_HTTP_8090_2301
+  - FR_VLESS_80_289
+  - FR_VLESS_80_290
+  - FR_VMESS_80_380
+  - FR_VMESS_80_1109
+  - FR_VLESS_443_2045
+  - FR_SS_19999_184
+  - FR_SS_19999_190
+  - FR_SS_19999_185
+  - FR_SS_8388_199
+  - FR_SS_19999_186
+  - FR_SS_19999_179
+  - FR_SS_19999_186_2
+  - FR_SS_19999_188
+  - FR_HYSTERIA_24667_2604
+  - FR_HTTP_9443_313
+  - FR_HTTP_8090_730
+  - FR_VMESS_1234_327
+  - FR_VMESS_1234_304
+  - FR_VLESS_80_300
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

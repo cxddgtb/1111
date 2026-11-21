@@ -5,19 +5,41 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vmess
-  name: IN_VMESS_80_2192
-  server: 152.67.8.205
-  port: 80
-  uuid: 9db4c708-aef8-4359-821b-38e47990be0d
-  cipher: auto
-  alterId: 0
+- type: vless
+  name: IN_VLESS_443_1123
+  server: xray-dmr3b3hy-calm-maple-7.cloady.io
+  port: 443
+  uuid: 06a5afa1-2bbc-a5d1-1770-becd1089c636
   udp: true
-  tls: false
+  tls: true
+  servername: xray-dmr3b3hy-calm-maple-7.cloady.io
+  sni: xray-dmr3b3hy-calm-maple-7.cloady.io
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /
+    path: /0175469f14317d82
+  country: IN
+- type: ss
+  name: IN_SS_7002_1600
+  server: 172.105.39.124
+  port: 7002
+  password: RexnBgU7EV5ADxG
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: IN
+- name: IN_VLESS_14430_821
+  network: ws
+  port: 14430
+  server: 13.140.56.100
+  tls: false
+  type: vless
+  uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
+  ws-opts:
+    headers:
+      Host: 13.140.56.100
+    path: /vless
   country: IN
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,7 +54,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - IN_VMESS_80_2192
+  - IN_VLESS_443_1123
+  - IN_SS_7002_1600
+  - IN_VLESS_14430_821
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -45,7 +69,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - IN_VMESS_80_2192
+  - IN_VLESS_14430_821
+  - IN_VLESS_443_1123
+  - IN_SS_7002_1600
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -57,7 +83,9 @@ proxy-groups:
 - name: 🌍 IN
   type: url-test
   proxies:
-  - IN_VMESS_80_2192
+  - IN_VLESS_443_1123
+  - IN_SS_7002_1600
+  - IN_VLESS_14430_821
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

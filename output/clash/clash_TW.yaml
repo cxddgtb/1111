@@ -6,39 +6,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: vless
-  name: TW_VLESS_47396_1332
-  server: free.fugui.lol
-  port: 47396
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-  country: TW
-- type: vless
-  name: TW_VLESS_62015_2099
-  server: free.fugui.lol
-  port: 62015
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-  country: TW
-- type: vless
-  name: TW_VLESS_51283_2720
+  name: TW_VLESS_51283_2997
   server: free.fugui.lol
   port: 51283
   uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
@@ -53,14 +21,15 @@ proxies:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
   country: TW
-- name: TW_ANYTLS_443_1230
-  server: sdf65h46wr.df6h451rh.xin
-  port: 443
-  type: anytls
-  password: 0324fbc29561
+- type: ss
+  name: TW_SS_25438_1343
+  server: xuefei666a1.aceurl.cc
+  port: 25438
+  password: MWNlYzk2NmI5ODQ1N2QzNDgwNGM0MzE2ZjI4ODVhMWM=:OWZmYjUzMDUtM2JhYi00NGNiLWFhZmEtZTBlMzk5MWY=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-  sni: images.ctfassets.net
-  skip-cert-verify: true
+  tls: false
+  skip-cert-verify: false
   country: TW
 proxy-groups:
 - name: 🚀 节点选择
@@ -75,10 +44,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_VLESS_47396_1332
-  - TW_VLESS_62015_2099
-  - TW_VLESS_51283_2720
-  - TW_ANYTLS_443_1230
+  - TW_VLESS_51283_2997
+  - TW_SS_25438_1343
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -91,10 +58,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_ANYTLS_443_1230
-  - TW_VLESS_47396_1332
-  - TW_VLESS_62015_2099
-  - TW_VLESS_51283_2720
+  - TW_SS_25438_1343
+  - TW_VLESS_51283_2997
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -106,10 +71,8 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_VLESS_47396_1332
-  - TW_VLESS_62015_2099
-  - TW_VLESS_51283_2720
-  - TW_ANYTLS_443_1230
+  - TW_VLESS_51283_2997
+  - TW_SS_25438_1343
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -6,7 +6,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - type: ss
-  name: AT_SS_8388_340
+  name: AT_SS_8388_209
   server: 152.53.1.57
   port: 8388
   password: AdawffFMHymlasRb0VOP3HFf7sTG5sJx
@@ -15,18 +15,7 @@ proxies:
   tls: false
   skip-cert-verify: false
   country: AT
-- name: AT_VMESS_1270_500
-  type: vmess
-  network: tcp
-  server: 154.47.19.225
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: AT
-- name: AT_HTTP_443_651
+- name: AT_HTTP_443_444
   port: 443
   server: 146.70.244.2
   skip-cert-verify: true
@@ -49,9 +38,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AT_SS_8388_340
-  - AT_VMESS_1270_500
-  - AT_HTTP_443_651
+  - AT_SS_8388_209
+  - AT_HTTP_443_444
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -64,9 +52,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AT_SS_8388_340
-  - AT_VMESS_1270_500
-  - AT_HTTP_443_651
+  - AT_SS_8388_209
+  - AT_HTTP_443_444
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -78,9 +65,8 @@ proxy-groups:
 - name: 🌍 AT
   type: url-test
   proxies:
-  - AT_SS_8388_340
-  - AT_VMESS_1270_500
-  - AT_HTTP_443_651
+  - AT_SS_8388_209
+  - AT_HTTP_443_444
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
