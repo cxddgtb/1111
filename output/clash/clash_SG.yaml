@@ -5,137 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vmess
-  name: SG_VMESS_18000_496
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: vmess
-  name: SG_VMESS_18000_578
-  server: 149.88.23.202
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: vless
-  name: SG_VLESS_443_687
-  server: 47.84.226.221
-  port: 443
-  uuid: 49b91402-f8e3-4390-9d7b-b7eddc2684a4
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.samsung.com
-  sni: www.samsung.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: gVQsvRtzd77zlvKW4Gk0dAOJNPRa7cfN1-jVe_AJ8Bo
-    short-id: e1c483f9d4437d42
-  country: SG
-- type: vmess
-  name: SG_VMESS_18000_675
-  server: ww11.levikogjgfdd.ir
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: trojan
-  name: SG_TROJAN_443_1184
-  server: 15.235.184.127
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: exploredigitaljobplatformandfindonlinework.com
-  sni: exploredigitaljobplatformandfindonlinework.com
-  skip-cert-verify: false
-  country: SG
-- type: ss
-  name: SG_SS_19999_501
-  server: 149.88.106.74
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: ss
-  name: SG_SS_19999_548
-  server: 149.88.107.74
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: ss
-  name: SG_SS_19999_499
-  server: 15.235.164.133
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: ss
-  name: SG_SS_19999_534
-  server: 149.88.107.47
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: ss
-  name: SG_SS_19999_604
-  server: 15.235.182.183
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: ss
-  name: SG_SS_19999_548_2
-  server: 149.88.106.73
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- type: ss
-  name: SG_SS_56927_553
-  server: 168.138.177.98
-  port: 56927
-  password: c11JMfCMQ3Y4aGlhMX5LrMpM13uvw+UVbjGfHP+eKkY=
-  cipher: 2022-blake3-chacha20-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: SG
-- name: SG_HYSTERIA2_443_647
+- name: SG_HYSTERIA2_443_613
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   port: 443
   server: 13.212.78.215
@@ -144,8 +14,23 @@ proxies:
   tls: false
   type: hysteria2
   country: SG
+- alpn:
+  - h3
+  name: SG_VLESS_443_176
+  network: ws
+  port: 443
+  server: 27.50.48.6
+  servername: vless2-8vx.pages.dev
+  tls: true
+  type: vless
+  uuid: c98a16e4-0dc5-42f0-b3db-30f04525c123
+  ws-opts:
+    headers:
+      Host: vless2-8vx.pages.dev
+    path: /fp=chrome
+  country: SG
 - client-fingerprint: chrome
-  name: SG_VLESS_2096_930
+  name: SG_VLESS_2096_797
   network: ws
   port: 2096
   server: 139.162.27.96
@@ -158,12 +43,72 @@ proxies:
       Host: free-server.techsonic.dev
     path: /free-server.techsonic.dev
   country: SG
+- cipher: 2022-blake3-chacha20-poly1305
+  name: SG_SS_56927_398
+  password: c11JMfCMQ3Y4aGlhMX5LrMpM13uvw+UVbjGfHP+eKkY=
+  port: 56927
+  server: 168.138.177.98
+  type: ss
+  country: SG
 - cipher: aes-256-gcm
-  name: SG_SS_19999_491
+  name: SG_SS_19999_394
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 51.79.228.131
   type: ss
+  country: SG
+- cipher: aes-256-gcm
+  name: SG_SS_19999_393
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 15.235.164.133
+  type: ss
+  country: SG
+- cipher: aes-256-gcm
+  name: SG_SS_19999_392
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 15.235.182.183
+  type: ss
+  country: SG
+- cipher: aes-256-gcm
+  name: SG_SS_19999_400
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 149.88.106.74
+  type: ss
+  country: SG
+- cipher: aes-256-gcm
+  name: SG_SS_19999_393_2
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 149.88.107.74
+  type: ss
+  country: SG
+- cipher: aes-256-gcm
+  name: SG_SS_19999_397
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 149.88.107.47
+  type: ss
+  country: SG
+- name: SG_TROJAN_443_992
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 15.235.184.127
+  skip-cert-verify: false
+  sni: exploredigitaljobplatformandfindonlinework.com
+  type: trojan
+  country: SG
+- type: ss
+  name: SG_SS_19999_396
+  server: 149.88.106.73
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -178,21 +123,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_VMESS_18000_496
-  - SG_VMESS_18000_578
-  - SG_VLESS_443_687
-  - SG_VMESS_18000_675
-  - SG_TROJAN_443_1184
-  - SG_SS_19999_501
-  - SG_SS_19999_548
-  - SG_SS_19999_499
-  - SG_SS_19999_534
-  - SG_SS_19999_604
-  - SG_SS_19999_548_2
-  - SG_SS_56927_553
-  - SG_HYSTERIA2_443_647
-  - SG_VLESS_2096_930
-  - SG_SS_19999_491
+  - SG_HYSTERIA2_443_613
+  - SG_VLESS_443_176
+  - SG_VLESS_2096_797
+  - SG_SS_56927_398
+  - SG_SS_19999_394
+  - SG_SS_19999_393
+  - SG_SS_19999_392
+  - SG_SS_19999_400
+  - SG_SS_19999_393_2
+  - SG_SS_19999_397
+  - SG_TROJAN_443_992
+  - SG_SS_19999_396
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -205,21 +147,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_SS_19999_491
-  - SG_VMESS_18000_496
-  - SG_SS_19999_499
-  - SG_SS_19999_501
-  - SG_SS_19999_534
-  - SG_SS_19999_548
-  - SG_SS_19999_548_2
-  - SG_SS_56927_553
-  - SG_VMESS_18000_578
-  - SG_SS_19999_604
-  - SG_HYSTERIA2_443_647
-  - SG_VMESS_18000_675
-  - SG_VLESS_443_687
-  - SG_VLESS_2096_930
-  - SG_TROJAN_443_1184
+  - SG_VLESS_443_176
+  - SG_SS_19999_392
+  - SG_SS_19999_393
+  - SG_SS_19999_393_2
+  - SG_SS_19999_394
+  - SG_SS_19999_396
+  - SG_SS_19999_397
+  - SG_SS_56927_398
+  - SG_SS_19999_400
+  - SG_HYSTERIA2_443_613
+  - SG_VLESS_2096_797
+  - SG_TROJAN_443_992
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -231,21 +170,18 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_VMESS_18000_496
-  - SG_VMESS_18000_578
-  - SG_VLESS_443_687
-  - SG_VMESS_18000_675
-  - SG_TROJAN_443_1184
-  - SG_SS_19999_501
-  - SG_SS_19999_548
-  - SG_SS_19999_499
-  - SG_SS_19999_534
-  - SG_SS_19999_604
-  - SG_SS_19999_548_2
-  - SG_SS_56927_553
-  - SG_HYSTERIA2_443_647
-  - SG_VLESS_2096_930
-  - SG_SS_19999_491
+  - SG_HYSTERIA2_443_613
+  - SG_VLESS_443_176
+  - SG_VLESS_2096_797
+  - SG_SS_56927_398
+  - SG_SS_19999_394
+  - SG_SS_19999_393
+  - SG_SS_19999_392
+  - SG_SS_19999_400
+  - SG_SS_19999_393_2
+  - SG_SS_19999_397
+  - SG_TROJAN_443_992
+  - SG_SS_19999_396
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,129 +5,100 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: CA_VLESS_443_339
-  server: kuruish.org
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  udp: true
-  tls: true
-  servername: kuruish.org
-  sni: kuruish.org
-  skip-cert-verify: false
+- cipher: aes-256-gcm
+  name: CA_SS_445_95
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.141.125
+  type: ss
   country: CA
-- type: trojan
-  name: CA_TROJAN_443_61
-  server: 216.152.147.74
-  port: 443
+- cipher: aes-256-gcm
+  name: CA_SS_8882_66
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.222.136.236
+  type: ss
+  country: CA
+- cipher: aes-256-gcm
+  name: CA_SS_445_109
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.12.127
+  type: ss
+  country: CA
+- name: CA_TROJAN_443_105
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: api.connectingpeoplewithgreatjobs.com
-  sni: api.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: false
-  country: CA
-- type: vmess
-  name: CA_VMESS_18000_39
-  server: 23.162.200.198
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- type: trojan
-  name: CA_TROJAN_443_61_2
-  server: 216.152.147.152
   port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: learn.connectingpeoplewithgreatjobs.com
-  sni: learn.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: false
+  server: 216.152.147.93
+  sni: connectingpeoplewithgreatjobs.com
+  type: trojan
   country: CA
-- type: trojan
-  name: CA_TROJAN_443_57
+- name: CA_TROJAN_443_108
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 216.152.147.79
+  skip-cert-verify: false
+  sni: blog.connectingpeoplewithgreatjobs.com
+  type: trojan
+  country: CA
+- name: CA_TROJAN_443_66
+  type: trojan
   server: 216.152.147.85
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: cdn.connectingpeoplewithgreatjobs.com
   sni: cdn.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: false
+  network: tcp
   country: CA
-- type: trojan
-  name: CA_TROJAN_443_58
+- name: CA_TROJAN_443_66_2
+  type: trojan
   server: 216.152.147.48
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: courses.connectingpeoplewithgreatjobs.com
   sni: courses.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: false
+  network: tcp
   country: CA
-- type: trojan
-  name: CA_TROJAN_443_58_2
-  server: 216.152.147.79
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: blog.connectingpeoplewithgreatjobs.com
-  sni: blog.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: false
-  country: CA
-- type: trojan
-  name: CA_TROJAN_443_58_3
-  server: 216.152.147.89
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: www.connectingpeoplewithgreatjobs.com
-  sni: www.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: false
-  country: CA
-- type: trojan
-  name: CA_TROJAN_443_292
-  server: 216.152.147.201
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: resources.connectingpeoplewithgreatjobs.com
-  sni: resources.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: false
-  country: CA
-- type: trojan
-  name: CA_TROJAN_443_56
-  server: 216.152.147.93
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: connectingpeoplewithgreatjobs.com
-  sni: connectingpeoplewithgreatjobs.com
-  skip-cert-verify: false
-  country: CA
-- type: vmess
-  name: CA_VMESS_18000_1069
+- name: CA_VMESS_18000_69
+  type: vmess
   server: 134.195.196.211
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  cipher: auto
   alterId: 0
-  udp: true
+  cipher: auto
+  network: tcp
   tls: false
-  skip-cert-verify: false
+  servername: ''
+  ws-opts: null
+  country: CA
+- name: CA_VMESS_18000_323
+  type: vmess
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  network: tcp
+  tls: false
+  servername: ''
+  ws-opts: null
+  country: CA
+- name: CA_TROJAN_443_70
+  type: trojan
+  server: 216.152.147.89
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.connectingpeoplewithgreatjobs.com
+  network: tcp
+  country: CA
+- name: CA_TROJAN_443_283
+  type: trojan
+  server: 216.152.147.201
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.connectingpeoplewithgreatjobs.com
+  network: tcp
   country: CA
 - type: ss
-  name: CA_SS_443_164
+  name: CA_SS_443_125
   server: 149.22.95.183
   port: 443
   password: shadowsocks
@@ -137,7 +108,7 @@ proxies:
   skip-cert-verify: false
   country: CA
 - type: ss
-  name: CA_SS_8388_31
+  name: CA_SS_8388_62
   server: 184.107.106.77
   port: 8388
   password: itzvpn@321
@@ -147,17 +118,7 @@ proxies:
   skip-cert-verify: false
   country: CA
 - type: ss
-  name: CA_SS_8388_33
-  server: 184.107.106.78
-  port: 8388
-  password: itzvpn@321
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- type: ss
-  name: CA_SS_443_53
+  name: CA_SS_443_75
   server: 134.195.198.163
   port: 443
   password: PmCqK98WqhSC
@@ -167,7 +128,17 @@ proxies:
   skip-cert-verify: false
   country: CA
 - type: ss
-  name: CA_SS_19999_53
+  name: CA_SS_8388_63
+  server: 184.107.106.78
+  port: 8388
+  password: itzvpn@321
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: CA
+- type: ss
+  name: CA_SS_19999_102
   server: 158.51.121.221
   port: 19999
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -175,80 +146,6 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: false
-  country: CA
-- type: ss
-  name: CA_SS_445_31
-  server: 51.222.12.127
-  port: 445
-  password: zDNVedRFPQexG9v
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- type: ss
-  name: CA_SS_8882_103
-  server: 51.222.136.236
-  port: 8882
-  password: kDWvXYZoTBcGkC4
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- type: ss
-  name: CA_SS_5000_36
-  server: 51.222.200.165
-  port: 5000
-  password: Y6R9pAtvxxzmGC
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- type: ss
-  name: CA_SS_8118_157
-  server: 51.79.85.185
-  port: 8118
-  password: cdBIDV42DCwnfIN
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- type: ss
-  name: CA_SS_5601_33
-  server: 51.222.155.113
-  port: 5601
-  password: Y6R9pAtvxxzmGC
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- type: ss
-  name: CA_SS_445_2363
-  server: 51.222.141.125
-  port: 445
-  password: zDNVedRFPQexG9v
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8882_452
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.79.49.116
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5003_1836
-  password: g5MeD6Ft3CWlJId
-  port: 5003
-  server: 51.222.155.32
-  type: ss
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -263,30 +160,22 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VLESS_443_339
-  - CA_TROJAN_443_61
-  - CA_VMESS_18000_39
-  - CA_TROJAN_443_61_2
-  - CA_TROJAN_443_57
-  - CA_TROJAN_443_58
-  - CA_TROJAN_443_58_2
-  - CA_TROJAN_443_58_3
-  - CA_TROJAN_443_292
-  - CA_TROJAN_443_56
-  - CA_VMESS_18000_1069
-  - CA_SS_443_164
-  - CA_SS_8388_31
-  - CA_SS_8388_33
-  - CA_SS_443_53
-  - CA_SS_19999_53
-  - CA_SS_445_31
-  - CA_SS_8882_103
-  - CA_SS_5000_36
-  - CA_SS_8118_157
-  - CA_SS_5601_33
-  - CA_SS_445_2363
-  - CA_SS_8882_452
-  - CA_SS_5003_1836
+  - CA_SS_445_95
+  - CA_SS_8882_66
+  - CA_SS_445_109
+  - CA_TROJAN_443_105
+  - CA_TROJAN_443_108
+  - CA_TROJAN_443_66
+  - CA_TROJAN_443_66_2
+  - CA_VMESS_18000_69
+  - CA_VMESS_18000_323
+  - CA_TROJAN_443_70
+  - CA_TROJAN_443_283
+  - CA_SS_443_125
+  - CA_SS_8388_62
+  - CA_SS_443_75
+  - CA_SS_8388_63
+  - CA_SS_19999_102
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -299,30 +188,22 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_8388_31
-  - CA_SS_445_31
-  - CA_SS_8388_33
-  - CA_SS_5601_33
-  - CA_SS_5000_36
-  - CA_VMESS_18000_39
-  - CA_SS_443_53
-  - CA_SS_19999_53
-  - CA_TROJAN_443_56
-  - CA_TROJAN_443_57
-  - CA_TROJAN_443_58
-  - CA_TROJAN_443_58_2
-  - CA_TROJAN_443_58_3
-  - CA_TROJAN_443_61
-  - CA_TROJAN_443_61_2
-  - CA_SS_8882_103
-  - CA_SS_8118_157
-  - CA_SS_443_164
-  - CA_TROJAN_443_292
-  - CA_VLESS_443_339
-  - CA_SS_8882_452
-  - CA_VMESS_18000_1069
-  - CA_SS_5003_1836
-  - CA_SS_445_2363
+  - CA_SS_8388_62
+  - CA_SS_8388_63
+  - CA_SS_8882_66
+  - CA_TROJAN_443_66
+  - CA_TROJAN_443_66_2
+  - CA_VMESS_18000_69
+  - CA_TROJAN_443_70
+  - CA_SS_443_75
+  - CA_SS_445_95
+  - CA_SS_19999_102
+  - CA_TROJAN_443_105
+  - CA_TROJAN_443_108
+  - CA_SS_445_109
+  - CA_SS_443_125
+  - CA_TROJAN_443_283
+  - CA_VMESS_18000_323
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -334,30 +215,22 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VLESS_443_339
-  - CA_TROJAN_443_61
-  - CA_VMESS_18000_39
-  - CA_TROJAN_443_61_2
-  - CA_TROJAN_443_57
-  - CA_TROJAN_443_58
-  - CA_TROJAN_443_58_2
-  - CA_TROJAN_443_58_3
-  - CA_TROJAN_443_292
-  - CA_TROJAN_443_56
-  - CA_VMESS_18000_1069
-  - CA_SS_443_164
-  - CA_SS_8388_31
-  - CA_SS_8388_33
-  - CA_SS_443_53
-  - CA_SS_19999_53
-  - CA_SS_445_31
-  - CA_SS_8882_103
-  - CA_SS_5000_36
-  - CA_SS_8118_157
-  - CA_SS_5601_33
-  - CA_SS_445_2363
-  - CA_SS_8882_452
-  - CA_SS_5003_1836
+  - CA_SS_445_95
+  - CA_SS_8882_66
+  - CA_SS_445_109
+  - CA_TROJAN_443_105
+  - CA_TROJAN_443_108
+  - CA_TROJAN_443_66
+  - CA_TROJAN_443_66_2
+  - CA_VMESS_18000_69
+  - CA_VMESS_18000_323
+  - CA_TROJAN_443_70
+  - CA_TROJAN_443_283
+  - CA_SS_443_125
+  - CA_SS_8388_62
+  - CA_SS_443_75
+  - CA_SS_8388_63
+  - CA_SS_19999_102
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

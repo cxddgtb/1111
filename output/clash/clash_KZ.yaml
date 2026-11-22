@@ -5,33 +5,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vmess
-  name: KZ_VMESS_80_1428
+- client-fingerprint: chrome
+  name: KZ_VLESS_8443_1386
+  network: ws
+  port: 8443
   server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  network: ws
+  servername: 3h-kazakhstan1.09vpn.com
+  tls: true
+  type: vless
+  uuid: 2424febb-43cb-488d-bdd1-401e923c8e48
   ws-opts:
-    path: /vmess/
-  country: KZ
-- type: vmess
-  name: KZ_VMESS_80_1475
-  server: 38.107.234.57
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /vmess/
+    path: /vless/
   country: KZ
 proxy-groups:
 - name: 🚀 节点选择
@@ -46,8 +30,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KZ_VMESS_80_1428
-  - KZ_VMESS_80_1475
+  - KZ_VLESS_8443_1386
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,8 +43,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KZ_VMESS_80_1428
-  - KZ_VMESS_80_1475
+  - KZ_VLESS_8443_1386
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,8 +55,7 @@ proxy-groups:
 - name: 🌍 KZ
   type: url-test
   proxies:
-  - KZ_VMESS_80_1428
-  - KZ_VMESS_80_1475
+  - KZ_VLESS_8443_1386
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

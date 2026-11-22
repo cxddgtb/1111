@@ -5,18 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: trojan
-  name: AU_TROJAN_443_596
-  server: 45.63.30.142
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: connectwithemployerstohireyouridealteam.com
-  sni: connectwithemployerstohireyouridealteam.com
-  skip-cert-verify: false
-  country: AU
-- name: AU_HYSTERIA2_36712_607
+- name: AU_HYSTERIA2_36712_530
   password: linlin-2026
   port: 36712
   server: 13.55.52.44
@@ -24,6 +13,13 @@ proxies:
   sni: 13.55.52.44
   tls: false
   type: hysteria2
+  country: AU
+- name: AU_TROJAN_443_522
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 45.63.30.142
+  sni: connectwithemployerstohireyouridealteam.com
+  type: trojan
   country: AU
 proxy-groups:
 - name: 🚀 节点选择
@@ -38,8 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AU_TROJAN_443_596
-  - AU_HYSTERIA2_36712_607
+  - AU_HYSTERIA2_36712_530
+  - AU_TROJAN_443_522
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -52,8 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AU_TROJAN_443_596
-  - AU_HYSTERIA2_36712_607
+  - AU_TROJAN_443_522
+  - AU_HYSTERIA2_36712_530
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -65,8 +61,8 @@ proxy-groups:
 - name: 🌍 AU
   type: url-test
   proxies:
-  - AU_TROJAN_443_596
-  - AU_HYSTERIA2_36712_607
+  - AU_HYSTERIA2_36712_530
+  - AU_TROJAN_443_522
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: SE_HYSTERIA2_443_264
+- name: SE_HYSTERIA2_443_355
   password: d4ca9415f0eac7897472e1e5b86d2e96
   port: 443
   server: 50.7.38.243
@@ -13,7 +13,7 @@ proxies:
   tls: false
   type: hysteria2
   country: SE
-- name: SE_VLESS_14430_767
+- name: SE_VLESS_14430_399
   network: ws
   port: 14430
   server: 5.178.109.174
@@ -26,11 +26,33 @@ proxies:
     path: /vless
   country: SE
 - cipher: aes-256-gcm
-  name: SE_SS_19999_221
+  name: SE_SS_19999_260
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 138.199.55.243
   type: ss
+  country: SE
+- name: SE_VMESS_1270_401
+  type: vmess
+  network: tcp
+  server: 62.93.166.184
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  country: SE
+- name: SE_VMESS_1270_391
+  type: vmess
+  network: tcp
+  server: 138.199.55.230
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
   country: SE
 proxy-groups:
 - name: 🚀 节点选择
@@ -45,9 +67,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SE_HYSTERIA2_443_264
-  - SE_VLESS_14430_767
-  - SE_SS_19999_221
+  - SE_HYSTERIA2_443_355
+  - SE_VLESS_14430_399
+  - SE_SS_19999_260
+  - SE_VMESS_1270_401
+  - SE_VMESS_1270_391
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -60,9 +84,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SE_SS_19999_221
-  - SE_HYSTERIA2_443_264
-  - SE_VLESS_14430_767
+  - SE_SS_19999_260
+  - SE_HYSTERIA2_443_355
+  - SE_VMESS_1270_391
+  - SE_VLESS_14430_399
+  - SE_VMESS_1270_401
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -74,9 +100,11 @@ proxy-groups:
 - name: 🌍 SE
   type: url-test
   proxies:
-  - SE_HYSTERIA2_443_264
-  - SE_VLESS_14430_767
-  - SE_SS_19999_221
+  - SE_HYSTERIA2_443_355
+  - SE_VLESS_14430_399
+  - SE_SS_19999_260
+  - SE_VMESS_1270_401
+  - SE_VMESS_1270_391
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_HTTP_443_414
+- name: LV_HTTP_443_523
   password: None
   port: 443
   server: 185.219.159.16
@@ -14,27 +14,12 @@ proxies:
   type: http
   udp: true
   country: LV
-- name: LV_HTTP_443_469
+- name: LV_HTTP_443_548
   port: 443
   server: 185.219.159.15
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-  country: LV
-- name: LV_VLESS_443_462
-  server: 185.220.223.78
-  port: 443
-  type: vless
-  uuid: 70f1696c-8b82-4614-9c1e-8ec21201684d
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: wEJIqlLqor9Z_LMHvcsXh5FSoKMz3NbbcORwPDBgbhw
-    short-id: 5a8e1a04f3d92b67
-  servername: lv.meltun.org
-  client-fingerprint: safari
-  network: tcp
   udp: true
   country: LV
 proxy-groups:
@@ -50,9 +35,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_HTTP_443_414
-  - LV_HTTP_443_469
-  - LV_VLESS_443_462
+  - LV_HTTP_443_523
+  - LV_HTTP_443_548
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -65,9 +49,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_HTTP_443_414
-  - LV_VLESS_443_462
-  - LV_HTTP_443_469
+  - LV_HTTP_443_523
+  - LV_HTTP_443_548
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -79,9 +62,8 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_HTTP_443_414
-  - LV_HTTP_443_469
-  - LV_VLESS_443_462
+  - LV_HTTP_443_523
+  - LV_HTTP_443_548
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

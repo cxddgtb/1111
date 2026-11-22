@@ -5,39 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: vless
-  name: AE_VLESS_14430_641
-  server: 95.174.68.188
-  port: 14430
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  udp: true
-  tls: false
-  servername: 95.174.68.188
-  sni: 95.174.68.188
-  skip-cert-verify: false
+- name: AE_VLESS_14430_577
   network: ws
+  port: 14430
+  server: 95.174.68.188
+  servername: 95.174.68.188
+  tls: false
+  type: vless
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
   ws-opts:
+    headers:
+      Host: 95.174.68.188
     path: /vless
   country: AE
-- type: ss
-  name: AE_SS_19999_183
-  server: 151.241.19.29
-  port: 19999
+- cipher: aes-256-gcm
+  name: AE_SS_19999_215
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: AE
-- type: ss
-  name: AE_SS_19999_182
+  port: 19999
   server: 151.241.19.36
-  port: 19999
+  type: ss
+  country: AE
+- cipher: aes-256-gcm
+  name: AE_SS_19999_228
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
+  port: 19999
+  server: 151.241.19.29
+  type: ss
   country: AE
 proxy-groups:
 - name: 🚀 节点选择
@@ -52,9 +45,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_14430_641
-  - AE_SS_19999_183
-  - AE_SS_19999_182
+  - AE_VLESS_14430_577
+  - AE_SS_19999_215
+  - AE_SS_19999_228
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -67,9 +60,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_SS_19999_182
-  - AE_SS_19999_183
-  - AE_VLESS_14430_641
+  - AE_SS_19999_215
+  - AE_SS_19999_228
+  - AE_VLESS_14430_577
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -81,9 +74,9 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_14430_641
-  - AE_SS_19999_183
-  - AE_SS_19999_182
+  - AE_VLESS_14430_577
+  - AE_SS_19999_215
+  - AE_SS_19999_228
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
