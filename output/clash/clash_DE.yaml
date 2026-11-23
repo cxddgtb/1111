@@ -5,7 +5,24 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_SS_443_254
+- name: DE_VLESS_443_587
+  type: vless
+  network: ws
+  server: 88.216.70.125
+  port: 443
+  uuid: 88e79aa6-f431-4453-8dcc-652a0c747198
+  servername: o685y.save-node.com
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  ws-opts:
+    headers:
+      Host: o685y.save-node.com
+    path: /api/se1k2rfxlsuer3ry4u6e84kl8rqp721p
+  country: DE
+- name: DE_SS_443_954
   type: ss
   server: 47.254.128.109
   port: 443
@@ -13,7 +30,7 @@ proxies:
   password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
   udp: true
   country: DE
-- name: DE_SS_443_398
+- name: DE_SS_443_1056
   type: ss
   server: 47.254.167.157
   port: 443
@@ -21,167 +38,18 @@ proxies:
   password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
   udp: true
   country: DE
-- name: DE_VLESS_443_339
+- name: DE_VLESS_50955_336
   type: vless
-  server: 163.245.42.87
-  port: 443
-  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  client-fingerprint: chrome
-  servername: mother-earth.fyi
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-  country: DE
-- name: DE_HYSTERIA2_443_413
-  password: 23c82941-70f4-4381-90db-bd28e9a902e9
-  port: 443
-  server: steel7.hadsvpn.com
-  tls: false
-  type: hysteria2
-  country: DE
-- cipher: 2022-blake3-chacha20-poly1305
-  name: DE_SS_443_411
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  port: 443
-  server: 47.254.143.251
-  type: ss
-  country: DE
-- cipher: chacha20-ietf-poly1305
-  name: DE_SS_25565_519
-  password: C8ZJ7R4p_HHJ32cst7ilT-0Zi2F22hAc
-  port: 25565
-  server: static.28.210.29.2.clients.your-server.de
-  type: ss
-  country: DE
-- cipher: chacha20-ietf-poly1305
-  name: DE_SS_51628_250
-  password: 29ZZXVa34x7sC48w9FKQ54UKHiJJGTVgKFppBRgviLrVCAYVVyKZdD3obbpjCyk31V5b2G2d7xzqmaPBFdcheCVB9UQ4ZghF
-  port: 51628
-  server: 156.67.120.205
-  type: ss
-  country: DE
-- name: DE_VLESS_50955_249
-  network: tcp
-  port: 50955
   server: 152.53.120.90
-  tls: false
-  type: vless
-  udp: true
+  port: 50955
   uuid: 5ab065b0-2c7a-45a0-829d-9af9af7d8e05
-  ws-opts:
-    path: /
-  country: DE
-- name: DE_VLESS_443_344
   network: tcp
-  port: 443
-  server: 62.144.51.95
-  tls: false
-  type: vless
-  udp: true
-  uuid: c657310e-d87c-4358-9cb7-200a0c3f35e8
-  ws-opts:
-    path: /
-  country: DE
-- name: DE_HTTP_443_513
-  port: 443
-  server: 213.109.163.119
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: DE
-- name: DE_HTTP_9002_517
-  port: 9002
-  server: 158.173.154.5
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: DE
-- name: DE_HTTP_9002_513
-  port: 9002
-  server: 158.173.154.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: DE
-- name: DE_VLESS_443_377
-  server: 168.119.190.106
-  port: 443
-  type: vless
-  uuid: 45f7bbfe-7d9c-49e1-81f3-154c0cd40121
-  tls: false
-  encryption: mlkem768x25519plus.random.0rtt.swY_aKEuuHUHKO0BHVV2uot-UFbtrXpLWr7g8uZk0xk
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
-    headers:
-      Host:
-      - www.upwork.com
-  udp: true
-  country: DE
-- name: DE_VLESS_443_1417
-  server: 5d0319t.nl7.h1clayd.click
-  port: 443
-  type: vless
-  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
-  tls: true
-  reality-opts:
-    public-key: l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs
-    short-id: 361d0dd59c70516f
-  servername: 5d0319t.nl7.h1clayd.click
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-  country: DE
-- name: DE_VLESS_443_451
-  type: vless
-  server: 88.216.70.125
-  port: 443
-  uuid: 88e79aa6-f431-4453-8dcc-652a0c747198
-  network: ws
-  tls: true
-  servername: o685y.save-node.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /api/se1k2rfxlsuer3ry4u6e84kl8rqp721p
-    headers:
-      Host: ''
-  country: DE
-- name: DE_VLESS_80_391
-  type: vless
-  server: 57.129.41.216
-  port: 80
-  uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
-  network: ws
-  tls: false
-  servername: OV-Germany1.09vpn.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ''
-  country: DE
-- name: DE_VLESS_80_423
-  type: vless
-  server: ov-germany1.09vpn.com
-  port: 80
-  uuid: 18535741-e8b3-4b43-9348-785b55936751
-  network: ws
   tls: false
   servername: ''
   client-fingerprint: chrome
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: ''
+  ws-opts: null
   country: DE
-- name: DE_VLESS_443_525
+- name: DE_VLESS_443_632
   type: vless
   server: o685y.save-node.com
   port: 443
@@ -195,80 +63,172 @@ proxies:
     headers:
       Host: ''
   country: DE
-- name: DE_VMESS_443_561
-  type: vmess
-  server: de.zhou-yufan.com
-  port: 443
-  uuid: f38e591d-d13a-4c30-9763-6be3ad65f3ec
-  alterId: 0
-  cipher: auto
+- name: DE_VLESS_2087_1931
+  type: vless
+  server: uuyjnfbv.localip.ir
+  port: 2087
+  uuid: 92a188aa-2e86-4557-bd30-b2079a70f824
   network: tcp
   tls: true
-  servername: ''
+  servername: uuyjnfbv.localip.ir
+  client-fingerprint: chrome
   ws-opts: null
   country: DE
-- name: DE_VLESS_80_368
+- name: DE_VLESS_2087_1537
   type: vless
-  network: ws
-  server: OV-Germany1.09vpn.com
-  port: 80
-  uuid: 7d74eae4-8a06-4306-a923-ad686f30bf26
-  skip-cert-verify: false
-  udp: true
-  encryption: none
-  xudp: true
-  packet-encoding: xudp
-  ws-opts:
-    headers:
-      Host: OV-Germany1.09vpn.com
-    path: /vless/
-  country: DE
-- name: DE_VLESS_443_359
-  type: vless
+  server: 94.103.168.62
+  port: 2087
+  uuid: 92a188aa-2e86-4557-bd30-b2079a70f824
   network: tcp
-  server: 187.7.206.176
-  port: 443
-  uuid: 352a250d-080b-47b5-b7db-f9f8fa31c551
-  servername: 1fw71dc.virtual-network.lol
-  skip-cert-verify: false
   tls: true
-  udp: true
-  tfo: false
+  servername: uuyjnfbv.localip.ir
   client-fingerprint: chrome
-  flow: xtls-rprx-vision
+  ws-opts: null
   country: DE
-- type: ss
-  name: DE_SS_443_237
-  server: 47.245.167.223
+- name: DE_HYSTERIA2_443_489
+  password: 23c82941-70f4-4381-90db-bd28e9a902e9
   port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  udp: true
+  server: steel7.hadsvpn.com
   tls: false
-  skip-cert-verify: false
+  type: hysteria2
   country: DE
-- type: ss
-  name: DE_SS_443_261
-  server: 8.220.81.25
+- cipher: chacha20-ietf-poly1305
+  name: DE_SS_25565_582
+  password: C8ZJ7R4p_HHJ32cst7ilT-0Zi2F22hAc
+  port: 25565
+  server: static.28.210.29.2.clients.your-server.de
+  type: ss
+  country: DE
+- cipher: chacha20-ietf-poly1305
+  name: DE_SS_51628_317
+  password: 29ZZXVa34x7sC48w9FKQ54UKHiJJGTVgKFppBRgviLrVCAYVVyKZdD3obbpjCyk31V5b2G2d7xzqmaPBFdcheCVB9UQ4ZghF
+  port: 51628
+  server: 156.67.120.205
+  type: ss
+  country: DE
+- name: DE_HTTP_443_614
+  password: None
   port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
   udp: true
-  tls: false
-  skip-cert-verify: false
   country: DE
-- type: ss
-  name: DE_SS_443_245
-  server: 8.209.106.54
+- name: DE_HTTP_9002_643
+  port: 9002
+  server: 158.173.154.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: DE
+- name: DE_HTTP_443_609
+  password: 'null'
   port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
+  server: 159.69.94.125
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
   udp: true
-  tls: false
-  skip-cert-verify: false
+  username: 'null'
+  x-toolall-mihomo: true
+  country: DE
+- name: DE_HTTP_9002_638
+  password: None
+  port: 9002
+  server: 158.173.154.3
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: DE
+- name: DE_HTTP_9002_636
+  port: 9002
+  server: 158.173.154.2
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: DE
+- name: DE_HTTP_443_685
+  password: 'null'
+  port: 443
+  server: 87.106.223.158
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+  x-toolall-mihomo: true
+  country: DE
+- name: DE_HTTP_443_621
+  port: 443
+  server: 152.233.20.206
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: DE
+- name: DE_HTTP_443_753
+  port: 443
+  server: 217.92.132.233
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+  country: DE
+- alpn:
+  - h3
+  auth: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  down: 200
+  name: DE_HYSTERIA2_40120_469
+  obfs: salamander
+  obfs-password: pz7lyeav76a5wqzb
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  port: 40120
+  server: dga1de.mateflora.com
+  skip-cert-verify: true
+  sni: psstatic.cdn.bcebos.com
+  type: hysteria2
+  udp: true
+  up: 100
+  country: DE
+- name: DE_HTTP_443_608
+  port: 443
+  server: 79.127.156.177
+  skip-cert-verify: true
+  tls: true
+  type: http
+  country: DE
+- name: DE_HTTP_9002_636_2
+  password: None
+  port: 9002
+  server: 158.173.154.4
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: DE
+- name: DE_HTTP_9002_635
+  port: 9002
+  server: 158.173.154.5
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
   country: DE
 - type: ss
-  name: DE_SS_443_235
+  name: DE_SS_443_307
   server: 8.209.73.203
   port: 443
   password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
@@ -278,37 +238,7 @@ proxies:
   skip-cert-verify: false
   country: DE
 - type: ss
-  name: DE_SS_443_242
-  server: 47.254.169.3
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_19999_234
-  server: 57.129.83.85
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_443_732
-  server: 8.211.38.49
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_443_239
+  name: DE_SS_443_499
   server: 8.209.72.224
   port: 443
   password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
@@ -318,8 +248,69 @@ proxies:
   skip-cert-verify: false
   country: DE
 - type: ss
-  name: DE_SS_19999_270
-  server: 57.129.76.233
+  name: DE_SS_443_321
+  server: 3.66.166.72
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- name: DE_VLESS_443_2704
+  server: 15b171g.nl7.h1clayd.click
+  port: 443
+  type: vless
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  tls: true
+  reality-opts:
+    public-key: zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE
+    short-id: 50a749f0eccb628c
+  servername: 15b171g.nl7.h1clayd.click
+  client-fingerprint: chrome
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: 5b79e8a94241
+  udp: true
+  country: DE
+- name: DE_VLESS_443_2635
+  server: 5d0319t.nl7.h1clayd.click
+  port: 443
+  type: vless
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  tls: true
+  reality-opts:
+    public-key: l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs
+    short-id: 361d0dd59c70516f
+  servername: 5d0319t.nl7.h1clayd.click
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+  country: DE
+- type: ss
+  name: DE_SS_443_302
+  server: 8.209.106.54
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_443_490
+  server: 47.254.169.3
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_19999_317
+  server: 57.129.83.85
   port: 19999
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   cipher: aes-256-gcm
@@ -328,37 +319,17 @@ proxies:
   skip-cert-verify: false
   country: DE
 - type: ss
-  name: DE_SS_443_242_2
-  server: 47.245.174.67
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_8388_237
-  server: 178.162.254.38
-  port: 8388
-  password: itzvpn@321
+  name: DE_SS_19999_292
+  server: 193.108.116.98
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   cipher: aes-256-gcm
   udp: true
   tls: false
   skip-cert-verify: false
   country: DE
 - type: ss
-  name: DE_SS_443_237_2
-  server: 47.254.174.203
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_19999_223
+  name: DE_SS_19999_292_2
   server: 193.108.119.3
   port: 19999
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -368,87 +339,7 @@ proxies:
   skip-cert-verify: false
   country: DE
 - type: ss
-  name: DE_SS_443_727
-  server: 8.211.57.86
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_19999_221
-  server: 185.176.204.18
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_8388_337
-  server: 57.129.113.16
-  port: 8388
-  password: NcAXc0UZI6yQJE1p8QmOv8
-  cipher: chacha20-ietf-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_19999_253
-  server: 193.108.117.111
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_19999_234_2
-  server: 193.108.119.2
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_443_222
-  server: 136.176.66.193
-  port: 443
-  password: SWBJ2eOCrLJk
-  cipher: chacha20-ietf-poly1305
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_19999_238
-  server: 23.157.88.43
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_19999_243
-  server: 193.108.117.84
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: DE
-- type: ss
-  name: DE_SS_19999_247
+  name: DE_SS_19999_291
   server: 193.108.119.83
   port: 19999
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -458,7 +349,117 @@ proxies:
   skip-cert-verify: false
   country: DE
 - type: ss
-  name: DE_SS_8008_236
+  name: DE_SS_19999_294
+  server: 23.157.88.43
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_19999_291_2
+  server: 193.108.119.2
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_443_488
+  server: 8.211.38.49
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_19999_338
+  server: 57.129.76.233
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_554_420
+  server: 144.31.217.18
+  port: 554
+  password: eDmysaMyRZh7JTEka6eOtgCOcA+T7tmC5DnaTZBRQgg=:UjiUW/roKULY/zO9XJnbR0vCPcXxWUg03WUuVvZ2ipo=
+  cipher: 2022-blake3-aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_25565_352
+  server: 2.29.210.28
+  port: 25565
+  password: C8ZJ7R4p_HHJ32cst7ilT-0Zi2F22hAc
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_19999_293
+  server: 185.176.204.18
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_554_415
+  server: leviko-no2500.shopingggg.ir
+  port: 554
+  password: eDmysaMyRZh7JTEka6eOtgCOcA+T7tmC5DnaTZBRQgg=:UjiUW/roKULY/zO9XJnbR0vCPcXxWUg03WUuVvZ2ipo=
+  cipher: 2022-blake3-aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_19999_293_2
+  server: 193.108.117.84
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_19999_292_3
+  server: 193.108.117.111
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_19999_309
+  server: 193.108.118.247
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: DE
+- type: ss
+  name: DE_SS_8008_295
   server: 185.226.172.8
   port: 8008
   password: XKFKl2rULjIp74
@@ -468,21 +469,21 @@ proxies:
   skip-cert-verify: false
   country: DE
 - type: ss
-  name: DE_SS_8086_421
-  server: 77.90.10.175
-  port: 8086
-  password: f2Nq5YLnyclPaWR8my7/Vdd3ZX8URncXZNly5+HcUSs=:dQ6WYcPpGX5xIxUVPAR8w1A9eY6kEVoKKW3HleJ6o8Y=
-  cipher: 2022-blake3-aes-256-gcm
+  name: DE_SS_8388_884
+  server: 57.129.113.16
+  port: 8388
+  password: NcAXc0UZI6yQJE1p8QmOv8
+  cipher: chacha20-ietf-poly1305
   udp: true
   tls: false
   skip-cert-verify: false
   country: DE
 - type: ss
-  name: DE_SS_8388_2283
-  server: 145.79.177.201
-  port: 8388
-  password: itzvpn@321
-  cipher: aes-256-gcm
+  name: DE_SS_443_1915
+  server: 47.245.167.223
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
   udp: true
   tls: false
   skip-cert-verify: false
@@ -500,52 +501,53 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_SS_443_254
-  - DE_SS_443_398
-  - DE_VLESS_443_339
-  - DE_HYSTERIA2_443_413
-  - DE_SS_443_411
-  - DE_SS_25565_519
-  - DE_SS_51628_250
-  - DE_VLESS_50955_249
-  - DE_VLESS_443_344
-  - DE_HTTP_443_513
-  - DE_HTTP_9002_517
-  - DE_HTTP_9002_513
-  - DE_VLESS_443_377
-  - DE_VLESS_443_1417
-  - DE_VLESS_443_451
-  - DE_VLESS_80_391
-  - DE_VLESS_80_423
-  - DE_VLESS_443_525
-  - DE_VMESS_443_561
-  - DE_VLESS_80_368
-  - DE_VLESS_443_359
-  - DE_SS_443_237
-  - DE_SS_443_261
-  - DE_SS_443_245
-  - DE_SS_443_235
-  - DE_SS_443_242
-  - DE_SS_19999_234
-  - DE_SS_443_732
-  - DE_SS_443_239
-  - DE_SS_19999_270
-  - DE_SS_443_242_2
-  - DE_SS_8388_237
-  - DE_SS_443_237_2
-  - DE_SS_19999_223
-  - DE_SS_443_727
-  - DE_SS_19999_221
-  - DE_SS_8388_337
-  - DE_SS_19999_253
-  - DE_SS_19999_234_2
-  - DE_SS_443_222
-  - DE_SS_19999_238
-  - DE_SS_19999_243
-  - DE_SS_19999_247
-  - DE_SS_8008_236
-  - DE_SS_8086_421
-  - DE_SS_8388_2283
+  - DE_VLESS_443_587
+  - DE_SS_443_954
+  - DE_SS_443_1056
+  - DE_VLESS_50955_336
+  - DE_VLESS_443_632
+  - DE_VLESS_2087_1931
+  - DE_VLESS_2087_1537
+  - DE_HYSTERIA2_443_489
+  - DE_SS_25565_582
+  - DE_SS_51628_317
+  - DE_HTTP_443_614
+  - DE_HTTP_9002_643
+  - DE_HTTP_443_609
+  - DE_HTTP_9002_638
+  - DE_HTTP_9002_636
+  - DE_HTTP_443_685
+  - DE_HTTP_443_621
+  - DE_HTTP_443_753
+  - DE_HYSTERIA2_40120_469
+  - DE_HTTP_443_608
+  - DE_HTTP_9002_636_2
+  - DE_HTTP_9002_635
+  - DE_SS_443_307
+  - DE_SS_443_499
+  - DE_SS_443_321
+  - DE_VLESS_443_2704
+  - DE_VLESS_443_2635
+  - DE_SS_443_302
+  - DE_SS_443_490
+  - DE_SS_19999_317
+  - DE_SS_19999_292
+  - DE_SS_19999_292_2
+  - DE_SS_19999_291
+  - DE_SS_19999_294
+  - DE_SS_19999_291_2
+  - DE_SS_443_488
+  - DE_SS_19999_338
+  - DE_SS_554_420
+  - DE_SS_25565_352
+  - DE_SS_19999_293
+  - DE_SS_554_415
+  - DE_SS_19999_293_2
+  - DE_SS_19999_292_3
+  - DE_SS_19999_309
+  - DE_SS_8008_295
+  - DE_SS_8388_884
+  - DE_SS_443_1915
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -558,52 +560,53 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_SS_19999_221
-  - DE_SS_443_222
-  - DE_SS_19999_223
-  - DE_SS_19999_234
-  - DE_SS_19999_234_2
-  - DE_SS_443_235
-  - DE_SS_8008_236
-  - DE_SS_443_237
-  - DE_SS_8388_237
-  - DE_SS_443_237_2
-  - DE_SS_19999_238
-  - DE_SS_443_239
-  - DE_SS_443_242
-  - DE_SS_443_242_2
-  - DE_SS_19999_243
-  - DE_SS_443_245
-  - DE_SS_19999_247
-  - DE_VLESS_50955_249
-  - DE_SS_51628_250
-  - DE_SS_19999_253
-  - DE_SS_443_254
-  - DE_SS_443_261
-  - DE_SS_19999_270
-  - DE_SS_8388_337
-  - DE_VLESS_443_339
-  - DE_VLESS_443_344
-  - DE_VLESS_443_359
-  - DE_VLESS_80_368
-  - DE_VLESS_443_377
-  - DE_VLESS_80_391
-  - DE_SS_443_398
-  - DE_SS_443_411
-  - DE_HYSTERIA2_443_413
-  - DE_SS_8086_421
-  - DE_VLESS_80_423
-  - DE_VLESS_443_451
-  - DE_HTTP_443_513
-  - DE_HTTP_9002_513
-  - DE_HTTP_9002_517
-  - DE_SS_25565_519
-  - DE_VLESS_443_525
-  - DE_VMESS_443_561
-  - DE_SS_443_727
-  - DE_SS_443_732
-  - DE_VLESS_443_1417
-  - DE_SS_8388_2283
+  - DE_SS_19999_291
+  - DE_SS_19999_291_2
+  - DE_SS_19999_292
+  - DE_SS_19999_292_2
+  - DE_SS_19999_292_3
+  - DE_SS_19999_293
+  - DE_SS_19999_293_2
+  - DE_SS_19999_294
+  - DE_SS_8008_295
+  - DE_SS_443_302
+  - DE_SS_443_307
+  - DE_SS_19999_309
+  - DE_SS_51628_317
+  - DE_SS_19999_317
+  - DE_SS_443_321
+  - DE_VLESS_50955_336
+  - DE_SS_19999_338
+  - DE_SS_25565_352
+  - DE_SS_554_415
+  - DE_SS_554_420
+  - DE_HYSTERIA2_40120_469
+  - DE_SS_443_488
+  - DE_HYSTERIA2_443_489
+  - DE_SS_443_490
+  - DE_SS_443_499
+  - DE_SS_25565_582
+  - DE_VLESS_443_587
+  - DE_HTTP_443_608
+  - DE_HTTP_443_609
+  - DE_HTTP_443_614
+  - DE_HTTP_443_621
+  - DE_VLESS_443_632
+  - DE_HTTP_9002_635
+  - DE_HTTP_9002_636
+  - DE_HTTP_9002_636_2
+  - DE_HTTP_9002_638
+  - DE_HTTP_9002_643
+  - DE_HTTP_443_685
+  - DE_HTTP_443_753
+  - DE_SS_8388_884
+  - DE_SS_443_954
+  - DE_SS_443_1056
+  - DE_VLESS_2087_1537
+  - DE_SS_443_1915
+  - DE_VLESS_2087_1931
+  - DE_VLESS_443_2635
+  - DE_VLESS_443_2704
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -615,52 +618,53 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_SS_443_254
-  - DE_SS_443_398
-  - DE_VLESS_443_339
-  - DE_HYSTERIA2_443_413
-  - DE_SS_443_411
-  - DE_SS_25565_519
-  - DE_SS_51628_250
-  - DE_VLESS_50955_249
-  - DE_VLESS_443_344
-  - DE_HTTP_443_513
-  - DE_HTTP_9002_517
-  - DE_HTTP_9002_513
-  - DE_VLESS_443_377
-  - DE_VLESS_443_1417
-  - DE_VLESS_443_451
-  - DE_VLESS_80_391
-  - DE_VLESS_80_423
-  - DE_VLESS_443_525
-  - DE_VMESS_443_561
-  - DE_VLESS_80_368
-  - DE_VLESS_443_359
-  - DE_SS_443_237
-  - DE_SS_443_261
-  - DE_SS_443_245
-  - DE_SS_443_235
-  - DE_SS_443_242
-  - DE_SS_19999_234
-  - DE_SS_443_732
-  - DE_SS_443_239
-  - DE_SS_19999_270
-  - DE_SS_443_242_2
-  - DE_SS_8388_237
-  - DE_SS_443_237_2
-  - DE_SS_19999_223
-  - DE_SS_443_727
-  - DE_SS_19999_221
-  - DE_SS_8388_337
-  - DE_SS_19999_253
-  - DE_SS_19999_234_2
-  - DE_SS_443_222
-  - DE_SS_19999_238
-  - DE_SS_19999_243
-  - DE_SS_19999_247
-  - DE_SS_8008_236
-  - DE_SS_8086_421
-  - DE_SS_8388_2283
+  - DE_VLESS_443_587
+  - DE_SS_443_954
+  - DE_SS_443_1056
+  - DE_VLESS_50955_336
+  - DE_VLESS_443_632
+  - DE_VLESS_2087_1931
+  - DE_VLESS_2087_1537
+  - DE_HYSTERIA2_443_489
+  - DE_SS_25565_582
+  - DE_SS_51628_317
+  - DE_HTTP_443_614
+  - DE_HTTP_9002_643
+  - DE_HTTP_443_609
+  - DE_HTTP_9002_638
+  - DE_HTTP_9002_636
+  - DE_HTTP_443_685
+  - DE_HTTP_443_621
+  - DE_HTTP_443_753
+  - DE_HYSTERIA2_40120_469
+  - DE_HTTP_443_608
+  - DE_HTTP_9002_636_2
+  - DE_HTTP_9002_635
+  - DE_SS_443_307
+  - DE_SS_443_499
+  - DE_SS_443_321
+  - DE_VLESS_443_2704
+  - DE_VLESS_443_2635
+  - DE_SS_443_302
+  - DE_SS_443_490
+  - DE_SS_19999_317
+  - DE_SS_19999_292
+  - DE_SS_19999_292_2
+  - DE_SS_19999_291
+  - DE_SS_19999_294
+  - DE_SS_19999_291_2
+  - DE_SS_443_488
+  - DE_SS_19999_338
+  - DE_SS_554_420
+  - DE_SS_25565_352
+  - DE_SS_19999_293
+  - DE_SS_554_415
+  - DE_SS_19999_293_2
+  - DE_SS_19999_292_3
+  - DE_SS_19999_309
+  - DE_SS_8008_295
+  - DE_SS_8388_884
+  - DE_SS_443_1915
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

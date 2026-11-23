@@ -5,68 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_HYSTERIA2_8443_413
-  password: u63SxILNwtrQZ7Y1ZrFaZfsA
-  port: 8443
-  server: 8.211.175.236
-  skip-cert-verify: true
-  sni: 8.211.175.236
-  tls: false
-  type: hysteria2
-  country: JP
-- cipher: aes-128-gcm
-  name: JP_SS_443_270
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.204
-  type: ss
-  country: JP
-- cipher: aes-128-gcm
-  name: JP_SS_443_269
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.240
-  type: ss
-  country: JP
-- cipher: aes-128-gcm
-  name: JP_SS_443_271
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.241
-  type: ss
-  country: JP
-- cipher: aes-256-gcm
-  name: JP_SS_80_739
-  password: 3eOFeNssde7PYYMv
-  port: 80
-  server: 84.247.155.196
-  type: ss
-  country: JP
-- name: JP_TROJAN_44184_437
-  network: tcp
-  password: d050aca3-9df2-4461-90ec-92373c1d7636
-  port: 44184
-  server: v2jp.k1.ssnss.live
-  skip-cert-verify: true
-  type: trojan
-  udp: true
-  country: JP
-- name: JP_VMESS_80_1476
-  type: vmess
-  server: 168.138.43.75
-  port: 80
-  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: ''
-  country: JP
-- name: JP_VLESS_443_451
+- name: JP_VLESS_443_341
   type: vless
   server: kuruish.org
   port: 443
@@ -77,42 +16,112 @@ proxies:
   client-fingerprint: chrome
   ws-opts: null
   country: JP
-- name: JP_VLESS_2053_2577
+- name: JP_VLESS_443_332
   type: vless
-  network: ws
-  server: 103.201.131.202
-  port: 2053
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  servername: jp3.yohototo.top
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: unsafe
-  ws-opts:
-    headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
-  country: JP
-- name: JP_VLESS_443_2669
-  type: vless
-  network: ws
-  server: 45.153.245.217
+  server: 94.177.131.113
   port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  servername: jp3.yohototo.top
-  skip-cert-verify: false
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  network: tcp
   tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: unsafe
+  servername: kuruish.org
+  client-fingerprint: chrome
+  ws-opts: null
+  country: JP
+- name: JP_VMESS_8081_326
+  type: vmess
+  server: 168.110.63.247
+  port: 8081
+  uuid: c3bde296-8e44-4b8c-a325-577d5b3cc7c8
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
   ws-opts:
+    path: /vless
     headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
+      Host: ''
+  country: JP
+- name: JP_VMESS_8880_336
+  type: vmess
+  server: 161.33.20.255
+  port: 8880
+  uuid: e0856508-d693-450a-a099-455091dc4f25
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: ''
+  ws-opts:
+    path: e0856508-d693-450a-a099-455091dc4f25-vm
+    headers:
+      Host: ''
+  country: JP
+- name: JP_HYSTERIA2_8443_879
+  password: u63SxILNwtrQZ7Y1ZrFaZfsA
+  port: 8443
+  server: 8.211.175.236
+  skip-cert-verify: true
+  sni: 8.211.175.236
+  tls: false
+  type: hysteria2
+  country: JP
+- cipher: aes-128-gcm
+  name: JP_SS_443_213
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.204
+  type: ss
+  country: JP
+- cipher: aes-128-gcm
+  name: JP_SS_443_214
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.240
+  type: ss
+  country: JP
+- cipher: aes-128-gcm
+  name: JP_SS_443_212
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.241
+  type: ss
+  country: JP
+- cipher: aes-256-gcm
+  name: JP_SS_80_528
+  password: 3eOFeNssde7PYYMv
+  port: 80
+  server: 84.247.155.196
+  type: ss
+  country: JP
+- alpn:
+  - h3
+  auth: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  down: 200
+  name: JP_HYSTERIA2_443_362
+  obfs: salamander
+  obfs-password: yhlbhcysaba0wtn1
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  port: 443
+  server: nb5rb.hikigo.com
+  skip-cert-verify: true
+  sni: nb5rb.hikigo.com
+  type: hysteria2
+  udp: true
+  up: 100
   country: JP
 - type: ss
-  name: JP_SS_53758_272
+  name: JP_SS_443_403
+  server: 84.247.155.196
+  port: 443
+  password: 3eOFeNssde7PYYMv
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  country: JP
+- type: ss
+  name: JP_SS_53758_215
   server: 168.138.205.100
   port: 53758
   password: Bwlqh7GcFB
@@ -122,21 +131,11 @@ proxies:
   skip-cert-verify: false
   country: JP
 - type: ss
-  name: JP_SS_53758_318
+  name: JP_SS_53758_231
   server: jpa.123069.xyz
   port: 53758
   password: Bwlqh7GcFB
   cipher: aes-128-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: JP
-- type: ss
-  name: JP_SS_443_1090
-  server: 84.247.155.196
-  port: 443
-  password: 3eOFeNssde7PYYMv
-  cipher: aes-256-gcm
   udp: true
   tls: false
   skip-cert-verify: false
@@ -154,19 +153,19 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_HYSTERIA2_8443_413
-  - JP_SS_443_270
-  - JP_SS_443_269
-  - JP_SS_443_271
-  - JP_SS_80_739
-  - JP_TROJAN_44184_437
-  - JP_VMESS_80_1476
-  - JP_VLESS_443_451
-  - JP_VLESS_2053_2577
-  - JP_VLESS_443_2669
-  - JP_SS_53758_272
-  - JP_SS_53758_318
-  - JP_SS_443_1090
+  - JP_VLESS_443_341
+  - JP_VLESS_443_332
+  - JP_VMESS_8081_326
+  - JP_VMESS_8880_336
+  - JP_HYSTERIA2_8443_879
+  - JP_SS_443_213
+  - JP_SS_443_214
+  - JP_SS_443_212
+  - JP_SS_80_528
+  - JP_HYSTERIA2_443_362
+  - JP_SS_443_403
+  - JP_SS_53758_215
+  - JP_SS_53758_231
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -179,19 +178,19 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_SS_443_269
-  - JP_SS_443_270
-  - JP_SS_443_271
-  - JP_SS_53758_272
-  - JP_SS_53758_318
-  - JP_HYSTERIA2_8443_413
-  - JP_TROJAN_44184_437
-  - JP_VLESS_443_451
-  - JP_SS_80_739
-  - JP_SS_443_1090
-  - JP_VMESS_80_1476
-  - JP_VLESS_2053_2577
-  - JP_VLESS_443_2669
+  - JP_SS_443_212
+  - JP_SS_443_213
+  - JP_SS_443_214
+  - JP_SS_53758_215
+  - JP_SS_53758_231
+  - JP_VMESS_8081_326
+  - JP_VLESS_443_332
+  - JP_VMESS_8880_336
+  - JP_VLESS_443_341
+  - JP_HYSTERIA2_443_362
+  - JP_SS_443_403
+  - JP_SS_80_528
+  - JP_HYSTERIA2_8443_879
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -203,19 +202,19 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_HYSTERIA2_8443_413
-  - JP_SS_443_270
-  - JP_SS_443_269
-  - JP_SS_443_271
-  - JP_SS_80_739
-  - JP_TROJAN_44184_437
-  - JP_VMESS_80_1476
-  - JP_VLESS_443_451
-  - JP_VLESS_2053_2577
-  - JP_VLESS_443_2669
-  - JP_SS_53758_272
-  - JP_SS_53758_318
-  - JP_SS_443_1090
+  - JP_VLESS_443_341
+  - JP_VLESS_443_332
+  - JP_VMESS_8081_326
+  - JP_VMESS_8880_336
+  - JP_HYSTERIA2_8443_879
+  - JP_SS_443_213
+  - JP_SS_443_214
+  - JP_SS_443_212
+  - JP_SS_80_528
+  - JP_HYSTERIA2_443_362
+  - JP_SS_443_403
+  - JP_SS_53758_215
+  - JP_SS_53758_231
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,156 +5,293 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_SS_18443_354
-  type: ss
-  server: 48.103.218.77
-  port: 18443
-  cipher: aes-256-gcm
-  password: 5mKjXAGrliIAlYwWDeFzkCEMIgQdFQLe
+- name: RU_VLESS_443_653
+  type: vless
+  network: xhttp
+  server: 193.160.208.240
+  port: 443
+  uuid: 4777d90d-265b-4927-a0d1-63f36ed1421c
+  servername: 193.160.208.240
+  tls: true
   udp: true
+  client-fingerprint: firefox
+  xhttp-opts:
+    mode: auto
+    path: /assets/twru01/
   country: RU
-- name: RU_VLESS_443_1040
+- name: RU_VLESS_443_972
+  type: vless
+  network: grpc
+  server: xssite.webredirect.org
+  port: 443
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  servername: xssite.webredirect.org
+  tls: true
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: grpc-ru
+  country: RU
+- name: RU_VLESS_443_2357
   type: vless
   server: 136.148.83.69
   port: 443
-  uuid: 666821a2-5c3d-0001-a56f-5a3a562d7324
-  udp: true
+  uuid: 7dff1be7-b930-0001-a8ad-dc7850168215
+  network: tcp
   tls: true
-  skip-cert-verify: false
   servername: szqbx-ru-77dc.my-fade.cloud
+  client-fingerprint: chrome
+  ws-opts: null
   country: RU
 - cipher: chacha20-ietf-poly1305
-  name: RU_SS_43558_440
+  name: RU_SS_43558_420
   password: LNc9h/4NA9Q6ZHNeYHoT5X/fR9aoE9KQR1SWhVDHBog=
   port: 43558
   server: 130.49.189.158
   type: ss
   country: RU
-- client-fingerprint: random
-  grpc-opts:
-    grpc-service-name: grpc-ru
-  name: RU_VLESS_443_897
-  network: grpc
-  port: 443
-  server: xssite.webredirect.org
-  servername: xssite.webredirect.org
-  tls: true
+- name: RU_VLESS_443_2649
   type: vless
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-  country: RU
-- client-fingerprint: firefox
-  name: RU_VLESS_443_563
-  network: xhttp
+  server: leviko-al8733.shopingggg.ir
   port: 443
-  server: 193.160.208.240
-  servername: 193.160.208.240
+  uuid: 58e22afd-bf74-4736-984d-63a8ca03d7f0
+  network: ws
   tls: true
-  type: vless
-  udp: true
-  uuid: 4777d90d-265b-4927-a0d1-63f36ed1421c
-  xhttp-opts:
-    mode: auto
-    path: /assets/twru01/
+  servername: nl.lucheeebezlimitnoekino.stream
+  client-fingerprint: chrome
+  ws-opts:
+    path: /media/ws/
+    headers:
+      Host: ''
   country: RU
-- client-fingerprint: firefox
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: mobile.api.Event
-  name: RU_VLESS_443_543
-  network: grpc
+- name: RU_VLESS_443_2609
+  type: vless
+  server: 147.45.221.225
   port: 443
-  server: 201.24.116.192
-  servername: vps3.nemnogogo.com
+  uuid: 58e22afd-bf74-4736-984d-63a8ca03d7f0
+  network: ws
   tls: true
-  type: vless
-  udp: true
-  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
+  servername: nl.lucheeebezlimitnoekino.stream
+  client-fingerprint: chrome
+  ws-opts:
+    path: /media/ws/
+    headers:
+      Host: ''
   country: RU
-- client-fingerprint: firefox
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: mobile.api.Event
-  name: RU_VLESS_443_533
-  network: grpc
-  port: 443
-  server: 201.51.12.98
-  servername: vps3.nemnogogo.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
-  country: RU
-- auth: 41edb44c8e
-  name: RU_HYSTERIA2_11592_572
-  password: 41edb44c8e
-  port: 11592
-  server: srv-17e124.21freedom.net
-  skip-cert-verify: true
-  sni: srv-17e124.21freedom.net
-  tls: false
-  type: hysteria2
+- cipher: aes-256-gcm
+  name: RU_SS_18443_414
+  password: 5mKjXAGrliIAlYwWDeFzkCEMIgQdFQLe
+  port: 18443
+  server: 48.103.218.77
+  type: ss
   country: RU
 - alpn:
   - h2
-  client-fingerprint: firefox
-  name: RU_VLESS_443_733
+  - http/1.1
+  client-fingerprint: edge
+  name: RU_VLESS_443_828
   network: xhttp
   port: 443
-  server: 66.90.91.122
-  servername: 6b014610-e9958027.ferrin.uk
+  server: terrace.elvano.website
+  servername: terrace.elvano.website
   tls: true
   type: vless
   udp: true
-  uuid: e9958027-03be-4eb5-bcec-70415b2e4844
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
   xhttp-opts:
+    host: terrace.elvano.website
     mode: auto
-    path: /
+    path: /api/de5/sync
   country: RU
-- name: RU_VLESS_443_497
-  server: 168.113.253.178
+- name: RU_VLESS_443_736
+  server: grovewood.moltex.click
   port: 443
   type: vless
-  uuid: eb88bb1a-7bf0-0001-b9cd-4f97c89f0e9b
-  tls: true
-  servername: uzndiuvzvqqljdyhzs.fcloudservices.site
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-  country: RU
-- name: RU_VLESS_443_581
-  server: vps3.nemnogogo.com
-  port: 443
-  type: vless
-  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
   tls: true
   alpn:
   - h2
-  servername: vps3.nemnogogo.com
+  - http/1.1
+  servername: grovewood.moltex.click
   client-fingerprint: firefox
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: mobile.api.Event
+  network: xhttp
+  xhttp-opts:
+    path: /api/de5/sync
+    host: grovewood.moltex.click
+    mode: auto
   udp: true
   country: RU
-- name: RU_VLESS_8443_915
-  server: 91.186.197.50
+- name: RU_VLESS_443_759
+  server: rainwater.elvano.website
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: rainwater.elvano.website
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /api/de6/sync
+    host: rainwater.elvano.website
+    mode: auto
+  udp: true
+  country: RU
+- name: RU_VLESS_443_885
+  server: 185.244.182.162
+  port: 443
+  type: vless
+  uuid: c50eae6b-18de-4bdc-a22f-9edda40a57ed
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: atd1.tunnely.space
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /xhttp/
+    mode: packet-up
+    sc-max-each-post-bytes: 1000000
+    sc-min-posts-interval-ms: 30
+    x-padding-bytes: 100-1000
+  udp: true
+  country: RU
+- name: RU_VLESS_443_747
+  server: brookside.moltex.click
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: brookside.moltex.click
+  client-fingerprint: ios
+  network: xhttp
+  xhttp-opts:
+    path: /api/de7/sync
+    host: brookside.moltex.click
+    mode: auto
+  udp: true
+  country: RU
+- name: RU_VLESS_443_791
+  server: fresco.merlano.monster
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: fresco.merlano.monster
+  client-fingerprint: ios
+  network: xhttp
+  xhttp-opts:
+    path: /api/de4/sync
+    host: fresco.merlano.monster
+    mode: auto
+  udp: true
+  country: RU
+- name: RU_VLESS_8443_972
+  server: 78.159.240.72
   port: 8443
   type: vless
-  uuid: dcf42340-4143-4a52-980d-171afd3efa5c
+  uuid: 37af0181-5598-4aad-a040-d926bcb65757
   tls: true
-  flow: xtls-rprx-vision
-  encryption: mlkem768x25519plus.native.0rtt.B8kapwAcAo7moBioRHJ5wg-TFFKbjlXCL3FFCHfOjEA
-  reality-opts:
-    public-key: T4N8v2chhy4ZJrt2ENLMmwnQU7h7omZEFRhZhKWR9SA
-    short-id: 7ac0b7f44ed17b33
-  servername: origin.media.cdn.videoclothing.xyz
+  servername: plaindune.com
   client-fingerprint: chrome
   network: xhttp
   xhttp-opts:
-    path: /codex-xhttp8443-20261027-s1265796/NL199/xhttp
-    host: origin.media.cdn.videoclothing.xyz
+    path: /api/v1/upload
+    host: plaindune.com
     mode: auto
+  udp: true
+  country: RU
+- name: RU_VLESS_443_1067
+  server: palette.merlano.monster
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: palette.merlano.monster
+  client-fingerprint: edge
+  network: xhttp
+  xhttp-opts:
+    path: /api/de7/sync
+    host: palette.merlano.monster
+    mode: auto
+  udp: true
+  country: RU
+- name: RU_VLESS_443_991
+  server: arbor.elvano.website
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: arbor.elvano.website
+  client-fingerprint: edge
+  network: xhttp
+  xhttp-opts:
+    path: /api/de7/sync
+    host: arbor.elvano.website
+    mode: auto
+  udp: true
+  country: RU
+- name: RU_VLESS_443_997
+  server: parchment.merlano.monster
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  alpn:
+  - http/1.1
+  servername: parchment.merlano.monster
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /api/de7/stream
+    headers:
+      Host: parchment.merlano.monster
+  udp: true
+  country: RU
+- name: RU_VLESS_443_912
+  server: cedar.filnex.baby
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  alpn:
+  - http/1.1
+  servername: fieldstone.moltex.click
+  client-fingerprint: edge
+  network: ws
+  ws-opts:
+    path: /api/de7/stream
+    headers:
+      Host: cedar.filnex.baby
+  udp: true
+  country: RU
+- name: RU_VLESS_443_2067
+  server: 72.56.238.135
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  servername: parchment.merlano.monster
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /api/de7/stream
+    headers:
+      Host: parchment.merlano.monster
   udp: true
   country: RU
 proxy-groups:
@@ -170,18 +307,25 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_SS_18443_354
-  - RU_VLESS_443_1040
-  - RU_SS_43558_440
-  - RU_VLESS_443_897
-  - RU_VLESS_443_563
-  - RU_VLESS_443_543
-  - RU_VLESS_443_533
-  - RU_HYSTERIA2_11592_572
-  - RU_VLESS_443_733
-  - RU_VLESS_443_497
-  - RU_VLESS_443_581
-  - RU_VLESS_8443_915
+  - RU_VLESS_443_653
+  - RU_VLESS_443_972
+  - RU_VLESS_443_2357
+  - RU_SS_43558_420
+  - RU_VLESS_443_2649
+  - RU_VLESS_443_2609
+  - RU_SS_18443_414
+  - RU_VLESS_443_828
+  - RU_VLESS_443_736
+  - RU_VLESS_443_759
+  - RU_VLESS_443_885
+  - RU_VLESS_443_747
+  - RU_VLESS_443_791
+  - RU_VLESS_8443_972
+  - RU_VLESS_443_1067
+  - RU_VLESS_443_991
+  - RU_VLESS_443_997
+  - RU_VLESS_443_912
+  - RU_VLESS_443_2067
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -194,18 +338,25 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_SS_18443_354
-  - RU_SS_43558_440
-  - RU_VLESS_443_497
-  - RU_VLESS_443_533
-  - RU_VLESS_443_543
-  - RU_VLESS_443_563
-  - RU_HYSTERIA2_11592_572
-  - RU_VLESS_443_581
-  - RU_VLESS_443_733
-  - RU_VLESS_443_897
-  - RU_VLESS_8443_915
-  - RU_VLESS_443_1040
+  - RU_SS_18443_414
+  - RU_SS_43558_420
+  - RU_VLESS_443_653
+  - RU_VLESS_443_736
+  - RU_VLESS_443_747
+  - RU_VLESS_443_759
+  - RU_VLESS_443_791
+  - RU_VLESS_443_828
+  - RU_VLESS_443_885
+  - RU_VLESS_443_912
+  - RU_VLESS_443_972
+  - RU_VLESS_8443_972
+  - RU_VLESS_443_991
+  - RU_VLESS_443_997
+  - RU_VLESS_443_1067
+  - RU_VLESS_443_2067
+  - RU_VLESS_443_2357
+  - RU_VLESS_443_2609
+  - RU_VLESS_443_2649
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -217,18 +368,25 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_SS_18443_354
-  - RU_VLESS_443_1040
-  - RU_SS_43558_440
-  - RU_VLESS_443_897
-  - RU_VLESS_443_563
-  - RU_VLESS_443_543
-  - RU_VLESS_443_533
-  - RU_HYSTERIA2_11592_572
-  - RU_VLESS_443_733
-  - RU_VLESS_443_497
-  - RU_VLESS_443_581
-  - RU_VLESS_8443_915
+  - RU_VLESS_443_653
+  - RU_VLESS_443_972
+  - RU_VLESS_443_2357
+  - RU_SS_43558_420
+  - RU_VLESS_443_2649
+  - RU_VLESS_443_2609
+  - RU_SS_18443_414
+  - RU_VLESS_443_828
+  - RU_VLESS_443_736
+  - RU_VLESS_443_759
+  - RU_VLESS_443_885
+  - RU_VLESS_443_747
+  - RU_VLESS_443_791
+  - RU_VLESS_8443_972
+  - RU_VLESS_443_1067
+  - RU_VLESS_443_991
+  - RU_VLESS_443_997
+  - RU_VLESS_443_912
+  - RU_VLESS_443_2067
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
