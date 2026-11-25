@@ -5,17 +5,39 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: CA_VMESS_18000_121
-  type: vmess
-  network: tcp
-  server: 23.162.200.198
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  tls: false
-  alterId: 0
-  cipher: auto
+- type: vless
+  name: CA_VLESS_443_86
+  server: 66.163.113.9
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  udp: true
+  tls: true
+  servername: kuruish.org
+  sni: kuruish.org
+  skip-cert-verify: true
   country: CA
-- name: CA_VMESS_18000_404
+- type: vless
+  name: CA_VLESS_443_274
+  server: kuruish.org
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  udp: true
+  tls: true
+  servername: kuruish.org
+  sni: kuruish.org
+  skip-cert-verify: true
+  country: CA
+- type: ss
+  name: CA_SS_443_164
+  server: 149.22.95.183
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  country: CA
+- name: CA_VMESS_18000_58
   type: vmess
   network: tcp
   server: 134.195.196.211
@@ -25,120 +47,26 @@ proxies:
   alterId: 0
   cipher: auto
   country: CA
-- name: CA_VLESS_443_223
-  type: vless
-  network: tcp
-  server: 66.163.113.9
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  servername: kuruish.org
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  country: CA
-- name: CA_TROJAN_443_217
-  type: trojan
-  server: 216.152.147.48
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.connectingpeoplewithgreatjobs.com
-  network: tcp
-  country: CA
-- name: CA_TROJAN_443_237
-  type: trojan
-  server: 216.152.147.93
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectingpeoplewithgreatjobs.com
-  network: tcp
-  country: CA
-- name: CA_TROJAN_443_719
-  type: trojan
-  server: 216.152.147.201
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.connectingpeoplewithgreatjobs.com
-  network: tcp
-  country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_160
+  name: CA_SS_445_217
   password: zDNVedRFPQexG9v
   port: 445
   server: 51.222.141.125
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_8118_139
-  password: cdBIDV42DCwnfIN
-  port: 8118
-  server: 51.79.85.185
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8882_145
+  name: CA_SS_8882_42
   password: kDWvXYZoTBcGkC4
   port: 8882
   server: 51.222.136.236
   type: ss
   country: CA
 - cipher: aes-256-gcm
-  name: CA_SS_445_143
+  name: CA_SS_445_46
   password: zDNVedRFPQexG9v
   port: 445
   server: 51.222.12.127
   type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5003_498
-  password: g5MeD6Ft3CWlJId
-  port: 5003
-  server: 51.222.155.32
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_8882_658
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.79.49.116
-  type: ss
-  country: CA
-- cipher: aes-256-gcm
-  name: CA_SS_5000_1345
-  password: Y6R9pAtvxxzmGC
-  port: 5000
-  server: 51.222.200.165
-  type: ss
-  country: CA
-- name: CA_HTTP_9443_276
-  port: 9443
-  server: 198.44.142.27
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: CA
-- type: ss
-  name: CA_SS_443_61
-  server: 149.22.95.183
-  port: 443
-  password: shadowsocks
-  cipher: aes-128-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  country: CA
-- type: ss
-  name: CA_SS_19999_152
-  server: 158.51.121.221
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
   country: CA
 proxy-groups:
 - name: 🚀 节点选择
@@ -153,22 +81,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CA_VMESS_18000_121
-  - CA_VMESS_18000_404
-  - CA_VLESS_443_223
-  - CA_TROJAN_443_217
-  - CA_TROJAN_443_237
-  - CA_TROJAN_443_719
-  - CA_SS_445_160
-  - CA_SS_8118_139
-  - CA_SS_8882_145
-  - CA_SS_445_143
-  - CA_SS_5003_498
-  - CA_SS_8882_658
-  - CA_SS_5000_1345
-  - CA_HTTP_9443_276
-  - CA_SS_443_61
-  - CA_SS_19999_152
+  - CA_VLESS_443_86
+  - CA_VLESS_443_274
+  - CA_SS_443_164
+  - CA_VMESS_18000_58
+  - CA_SS_445_217
+  - CA_SS_8882_42
+  - CA_SS_445_46
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -181,22 +100,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CA_SS_443_61
-  - CA_VMESS_18000_121
-  - CA_SS_8118_139
-  - CA_SS_445_143
-  - CA_SS_8882_145
-  - CA_SS_19999_152
-  - CA_SS_445_160
-  - CA_TROJAN_443_217
-  - CA_VLESS_443_223
-  - CA_TROJAN_443_237
-  - CA_HTTP_9443_276
-  - CA_VMESS_18000_404
-  - CA_SS_5003_498
-  - CA_SS_8882_658
-  - CA_TROJAN_443_719
-  - CA_SS_5000_1345
+  - CA_SS_8882_42
+  - CA_SS_445_46
+  - CA_VMESS_18000_58
+  - CA_VLESS_443_86
+  - CA_SS_443_164
+  - CA_SS_445_217
+  - CA_VLESS_443_274
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -208,22 +118,13 @@ proxy-groups:
 - name: 🌍 CA
   type: url-test
   proxies:
-  - CA_VMESS_18000_121
-  - CA_VMESS_18000_404
-  - CA_VLESS_443_223
-  - CA_TROJAN_443_217
-  - CA_TROJAN_443_237
-  - CA_TROJAN_443_719
-  - CA_SS_445_160
-  - CA_SS_8118_139
-  - CA_SS_8882_145
-  - CA_SS_445_143
-  - CA_SS_5003_498
-  - CA_SS_8882_658
-  - CA_SS_5000_1345
-  - CA_HTTP_9443_276
-  - CA_SS_443_61
-  - CA_SS_19999_152
+  - CA_VLESS_443_86
+  - CA_VLESS_443_274
+  - CA_SS_443_164
+  - CA_VMESS_18000_58
+  - CA_SS_445_217
+  - CA_SS_8882_42
+  - CA_SS_445_46
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

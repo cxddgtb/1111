@@ -5,18 +5,32 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- type: trojan
+  name: ZA_TROJAN_443_646
+  server: 139.84.231.142
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: explorecareerpathsandunlockprofessionalsuccesstoday.com
+  sni: explorecareerpathsandunlockprofessionalsuccesstoday.com
+  skip-cert-verify: true
+  country: ZA
+- type: ss
+  name: ZA_SS_443_433
+  server: 102.37.156.224
+  port: 443
+  password: aduB9HGxQHjA2SBMRjkHX6
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  country: ZA
 - cipher: chacha20-ietf-poly1305
-  name: ZA_SS_16233_543
+  name: ZA_SS_16233_432
   password: Xsy8Ox4yOV3xLlpxtjzs3X
   port: 16233
   server: 102.133.165.160
-  type: ss
-  country: ZA
-- cipher: chacha20-ietf-poly1305
-  name: ZA_SS_443_563
-  password: aduB9HGxQHjA2SBMRjkHX6
-  port: 443
-  server: 102.37.156.224
   type: ss
   country: ZA
 proxy-groups:
@@ -32,8 +46,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ZA_SS_16233_543
-  - ZA_SS_443_563
+  - ZA_TROJAN_443_646
+  - ZA_SS_443_433
+  - ZA_SS_16233_432
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,8 +61,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ZA_SS_16233_543
-  - ZA_SS_443_563
+  - ZA_SS_16233_432
+  - ZA_SS_443_433
+  - ZA_TROJAN_443_646
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,8 +75,9 @@ proxy-groups:
 - name: 🌍 ZA
   type: url-test
   proxies:
-  - ZA_SS_16233_543
-  - ZA_SS_443_563
+  - ZA_TROJAN_443_646
+  - ZA_SS_443_433
+  - ZA_SS_16233_432
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

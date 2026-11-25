@@ -5,37 +5,18 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK_VMESS_16632_673
-  type: vmess
-  server: pdmv4.xiaoyan.io
-  port: 16632
-  uuid: 904f0569-8695-466f-97cf-0de2face1b46
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
-  ws-opts:
-    path: /
-    headers:
-      Host: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
-  country: HK
-- name: HK_VLESS_443_671
-  type: vless
-  network: ws
-  server: 45.133.73.167
-  port: 443
-  uuid: 0fc0ded7-32b3-4e36-a623-6e7670225247
-  servername: zmxoo.de5.net
-  tls: true
+- type: trojan
+  name: HK_TROJAN_32521_854
+  server: zzfxgcp.mateflora.com
+  port: 32521
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
   udp: true
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: zmxoo.de5.net
-    path: /html/order/torrent
+  tls: true
+  servername: v2vn.mateflora.com
+  sni: v2vn.mateflora.com
+  skip-cert-verify: true
   country: HK
-- name: HK_TROJAN_443_578
+- name: HK_TROJAN_443_711
   type: trojan
   network: tcp
   server: 119.246.1.143
@@ -44,96 +25,18 @@ proxies:
   skip-cert-verify: true
   sni: t.me/ripaojiedian
   country: HK
-- name: HK_VMESS_23026_446
-  type: vmess
-  network: ws
-  server: 47.244.120.197
-  port: 23026
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: 47.244.120.197
-    path: /arki
-  country: HK
-- name: HK_VLESS_2096_718
-  type: vless
-  network: tcp
-  server: 156.245.234.97
-  port: 2096
-  uuid: 93c0244e-6eb2-41bc-ad9c-1a7606747e13
-  servername: lyhk.mihoyo.site
-  skip-cert-verify: true
+- type: anytls
+  name: HK_ANYTLS_443_1072
+  server: 5641sdds.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
   tls: true
-  udp: true
-  tfo: false
+  servername: images.ctfassets.net
+  sni: images.ctfassets.net
+  skip-cert-verify: true
   client-fingerprint: chrome
-  flow: xtls-rprx-vision
   country: HK
-- name: HK_TROJAN_443_575
-  type: trojan
-  server: 64.118.130.152
-  port: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  sni: nb1hk.hikigo.com
-  network: tcp
-  country: HK
-- name: HK_TROJAN_20051_1674
-  type: trojan
-  server: sclass-c1.catcat321.com
-  port: 20051
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  sni: hk.catxstar.com
-  network: tcp
-  country: HK
-- name: HK_VMESS_36703_305
-  type: vmess
-  server: 47.244.120.197
-  port: 36703
-  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /arki?ed=2048
-    headers:
-      Host: ''
-  country: HK
-- name: HK_VMESS_443_1020
-  type: vmess
-  server: bYWXdhIRqKJj8XAZ.v.3dns.vip
-  port: 443
-  uuid: 234a80412b4d44a3a8d8523cbfd58dc4
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: bYWXdhIRqKJj8XAZ.v.3dns.vip
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: bYWXdhIRqKJj8XAZ.v.3dns.vip
-  country: HK
-- name: HK_VMESS_35043_1073
-  type: vmess
-  server: 156.245.232.239
-  port: 35043
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  servername: ''
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  country: HK
-- name: HK_HYSTERIA2_5010_454
+- name: HK_HYSTERIA2_5010_625
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -145,13 +48,14 @@ proxies:
   type: hysteria2
   country: HK
 - cipher: aes-256-gcm
-  name: HK_SS_40647_375
+  name: HK_SS_40647_1002
   password: DgMywXKqojHXeuXY8hOJaYGPFcjweCIJeD5cdg/cUUY=
   port: 40647
   server: 213.176.92.148
   type: ss
   country: HK
-- name: HK_ANYTLS_443_814
+- client-fingerprint: chrome
+  name: HK_ANYTLS_443_1124
   password: 2902c46c8493
   port: 443
   server: ibsdsf.df6h451rh.xin
@@ -160,45 +64,38 @@ proxies:
   type: anytls
   udp: true
   country: HK
-- down: ''
-  fingerprint: ''
-  name: HK_HYSTERIA2_443_1170
-  obfs: salamander
-  obfs-password: aemx2gndpgrt1qau
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  port: 443
-  server: 66hk.mateflora.com
-  skip-cert-verify: true
-  sni: 66hk.mateflora.com
-  type: hysteria2
-  up: ''
-  country: HK
-- name: HK_VMESS_44867_445
-  server: 47.244.120.197
-  port: 44867
-  type: vmess
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  alterId: 0
+- alterId: 0
   cipher: auto
-  tls: false
-  alpn:
-  - ''
-  skip-cert-verify: true
+  name: HK_VMESS_443_802
   network: ws
+  port: 443
+  server: 47.86.90.31
+  servername: bywxdhirqkjj8xaz.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 234a8041-2b4d-44a3-a8d8-523cbfd58dc4
   ws-opts:
-    path: /arki
+    headers:
+      Host: bywxdhirqkjj8xaz.v.3dns.vip
+    path: /ws-vmess
+  country: HK
+- alterId: 0
+  cipher: auto
+  name: HK_VMESS_23026_1435
+  network: ws
+  port: 23026
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  ws-opts:
     headers:
       Host: 47.244.120.197
-  udp: true
-  country: HK
-- name: HK_TROJAN_443_635
-  server: nb1hk.hikigo.com
-  port: 443
-  type: trojan
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  sni: nb1hk.hikigo.com
-  skip-cert-verify: true
-  udp: true
+    path: /arki
   country: HK
 proxy-groups:
 - name: 🚀 节点选择
@@ -213,22 +110,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - HK_VMESS_16632_673
-  - HK_VLESS_443_671
-  - HK_TROJAN_443_578
-  - HK_VMESS_23026_446
-  - HK_VLESS_2096_718
-  - HK_TROJAN_443_575
-  - HK_TROJAN_20051_1674
-  - HK_VMESS_36703_305
-  - HK_VMESS_443_1020
-  - HK_VMESS_35043_1073
-  - HK_HYSTERIA2_5010_454
-  - HK_SS_40647_375
-  - HK_ANYTLS_443_814
-  - HK_HYSTERIA2_443_1170
-  - HK_VMESS_44867_445
-  - HK_TROJAN_443_635
+  - HK_TROJAN_32521_854
+  - HK_TROJAN_443_711
+  - HK_ANYTLS_443_1072
+  - HK_HYSTERIA2_5010_625
+  - HK_SS_40647_1002
+  - HK_ANYTLS_443_1124
+  - HK_VMESS_443_802
+  - HK_VMESS_23026_1435
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -241,22 +130,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - HK_VMESS_36703_305
-  - HK_SS_40647_375
-  - HK_VMESS_44867_445
-  - HK_VMESS_23026_446
-  - HK_HYSTERIA2_5010_454
-  - HK_TROJAN_443_575
-  - HK_TROJAN_443_578
-  - HK_TROJAN_443_635
-  - HK_VLESS_443_671
-  - HK_VMESS_16632_673
-  - HK_VLESS_2096_718
-  - HK_ANYTLS_443_814
-  - HK_VMESS_443_1020
-  - HK_VMESS_35043_1073
-  - HK_HYSTERIA2_443_1170
-  - HK_TROJAN_20051_1674
+  - HK_HYSTERIA2_5010_625
+  - HK_TROJAN_443_711
+  - HK_VMESS_443_802
+  - HK_TROJAN_32521_854
+  - HK_SS_40647_1002
+  - HK_ANYTLS_443_1072
+  - HK_ANYTLS_443_1124
+  - HK_VMESS_23026_1435
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -268,22 +149,14 @@ proxy-groups:
 - name: 🌍 HK
   type: url-test
   proxies:
-  - HK_VMESS_16632_673
-  - HK_VLESS_443_671
-  - HK_TROJAN_443_578
-  - HK_VMESS_23026_446
-  - HK_VLESS_2096_718
-  - HK_TROJAN_443_575
-  - HK_TROJAN_20051_1674
-  - HK_VMESS_36703_305
-  - HK_VMESS_443_1020
-  - HK_VMESS_35043_1073
-  - HK_HYSTERIA2_5010_454
-  - HK_SS_40647_375
-  - HK_ANYTLS_443_814
-  - HK_HYSTERIA2_443_1170
-  - HK_VMESS_44867_445
-  - HK_TROJAN_443_635
+  - HK_TROJAN_32521_854
+  - HK_TROJAN_443_711
+  - HK_ANYTLS_443_1072
+  - HK_HYSTERIA2_5010_625
+  - HK_SS_40647_1002
+  - HK_ANYTLS_443_1124
+  - HK_VMESS_443_802
+  - HK_VMESS_23026_1435
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

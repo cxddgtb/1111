@@ -5,21 +5,56 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: LV_HTTP_443_575
+- name: LV_VLESS_443_799
+  server: 31.57.28.199
   port: 443
-  server: 37.203.35.27
-  skip-cert-verify: true
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
   tls: true
-  type: http
+  alpn:
+  - http/1.1
+  servername: inlay.merlano.monster
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /api/de3/stream
+    headers:
+      Host: inlay.merlano.monster
   udp: true
-  x-toolall-mihomo: true
   country: LV
-- name: LV_HTTP_443_710
+- name: LV_VLESS_443_1245
+  server: 77.73.71.200
   port: 443
-  server: 185.219.159.16
-  skip-cert-verify: true
+  type: vless
+  uuid: 83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e
   tls: true
-  type: http
+  alpn:
+  - http/1.1
+  servername: lagoon.gerqix.online
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /api/de5/stream
+    headers:
+      Host: lagoon.gerqix.online
+  udp: true
+  country: LV
+- name: LV_VLESS_443_2665
+  server: 31.57.28.169
+  port: 443
+  type: vless
+  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
+  tls: true
+  alpn:
+  - http/1.1
+  servername: inlay.merlano.monster
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /api/de3/stream
+    headers:
+      Host: inlay.merlano.monster
+  udp: true
   country: LV
 proxy-groups:
 - name: 🚀 节点选择
@@ -34,8 +69,9 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - LV_HTTP_443_575
-  - LV_HTTP_443_710
+  - LV_VLESS_443_799
+  - LV_VLESS_443_1245
+  - LV_VLESS_443_2665
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -48,8 +84,9 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - LV_HTTP_443_575
-  - LV_HTTP_443_710
+  - LV_VLESS_443_799
+  - LV_VLESS_443_1245
+  - LV_VLESS_443_2665
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -61,8 +98,9 @@ proxy-groups:
 - name: 🌍 LV
   type: url-test
   proxies:
-  - LV_HTTP_443_575
-  - LV_HTTP_443_710
+  - LV_VLESS_443_799
+  - LV_VLESS_443_1245
+  - LV_VLESS_443_2665
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
