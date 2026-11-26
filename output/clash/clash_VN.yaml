@@ -5,19 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: VN_VLESS_2086_1887
+- name: VN_VLESS_2086_860
   port: 2086
   server: 150.95.109.109
   tls: false
   type: vless
   uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
-  country: VN
-- name: VN_SOCKS5_62000_1344
-  password: jHsK2gqs
-  port: 62000
-  server: 103.184.113.236
-  type: socks5
-  username: qT46DZLv
   country: VN
 proxy-groups:
 - name: 🚀 节点选择
@@ -32,8 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - VN_VLESS_2086_1887
-  - VN_SOCKS5_62000_1344
+  - VN_VLESS_2086_860
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -46,8 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - VN_SOCKS5_62000_1344
-  - VN_VLESS_2086_1887
+  - VN_VLESS_2086_860
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -59,8 +50,7 @@ proxy-groups:
 - name: 🌍 VN
   type: url-test
   proxies:
-  - VN_VLESS_2086_1887
-  - VN_SOCKS5_62000_1344
+  - VN_VLESS_2086_860
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

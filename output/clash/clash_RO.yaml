@@ -5,128 +5,13 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RO_HTTP_9002_531
+- name: RO_HTTP_9002_518
   password: None
   port: 9002
   server: 193.176.84.24
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_548
-  port: 9002
-  server: 193.176.84.26
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: RO
-- name: RO_HTTP_9002_515
-  port: 9002
-  server: 193.176.84.19
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  country: RO
-- name: RO_HTTP_9002_545
-  port: 9002
-  server: 193.176.84.27
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  country: RO
-- name: RO_HTTP_9002_526
-  port: 9002
-  server: 193.176.84.25
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: RO
-- name: RO_HTTP_9002_537
-  port: 9002
-  server: 193.176.84.20
-  skip-cert-verify: true
-  tls: true
-  type: http
-  country: RO
-- name: RO_HTTP_9002_533
-  port: 9002
-  server: 193.176.84.36
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  udp: true
-  country: RO
-- name: RO_HTTP_9002_556
-  port: 9002
-  server: 193.176.84.37
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  country: RO
-- name: RO_HTTP_9002_528
-  port: 9002
-  server: 193.176.84.34
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  country: RO
-- name: RO_HTTP_9002_532
-  port: 9002
-  server: 193.176.84.35
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  country: RO
-- name: RO_HTTP_9002_550
-  port: 9002
-  server: 193.176.84.23
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
-  country: RO
-- name: RO_VLESS_443_1194
-  server: 185.247.224.206
-  port: 443
-  type: vless
-  uuid: 83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e
-  tls: true
-  alpn:
-  - http/1.1
-  servername: lagoon.gerqix.online
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /api/de5/stream
-    headers:
-      Host: lagoon.gerqix.online
-  udp: true
-  country: RO
-- name: RO_VLESS_443_2270
-  server: 193.168.140.175
-  port: 443
-  type: vless
-  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
-  tls: true
-  alpn:
-  - http/1.1
-  servername: inlay.merlano.monster
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /api/de3/stream
-    headers:
-      Host: inlay.merlano.monster
   udp: true
   country: RO
 proxy-groups:
@@ -142,19 +27,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RO_HTTP_9002_531
-  - RO_HTTP_9002_548
-  - RO_HTTP_9002_515
-  - RO_HTTP_9002_545
-  - RO_HTTP_9002_526
-  - RO_HTTP_9002_537
-  - RO_HTTP_9002_533
-  - RO_HTTP_9002_556
-  - RO_HTTP_9002_528
-  - RO_HTTP_9002_532
-  - RO_HTTP_9002_550
-  - RO_VLESS_443_1194
-  - RO_VLESS_443_2270
+  - RO_HTTP_9002_518
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -167,19 +40,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RO_HTTP_9002_515
-  - RO_HTTP_9002_526
-  - RO_HTTP_9002_528
-  - RO_HTTP_9002_531
-  - RO_HTTP_9002_532
-  - RO_HTTP_9002_533
-  - RO_HTTP_9002_537
-  - RO_HTTP_9002_545
-  - RO_HTTP_9002_548
-  - RO_HTTP_9002_550
-  - RO_HTTP_9002_556
-  - RO_VLESS_443_1194
-  - RO_VLESS_443_2270
+  - RO_HTTP_9002_518
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -191,19 +52,7 @@ proxy-groups:
 - name: 🌍 RO
   type: url-test
   proxies:
-  - RO_HTTP_9002_531
-  - RO_HTTP_9002_548
-  - RO_HTTP_9002_515
-  - RO_HTTP_9002_545
-  - RO_HTTP_9002_526
-  - RO_HTTP_9002_537
-  - RO_HTTP_9002_533
-  - RO_HTTP_9002_556
-  - RO_HTTP_9002_528
-  - RO_HTTP_9002_532
-  - RO_HTTP_9002_550
-  - RO_VLESS_443_1194
-  - RO_VLESS_443_2270
+  - RO_HTTP_9002_518
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,7 +5,92 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: DE_VLESS_80_313
+- name: DE_VLESS_31652_405
+  port: 31652
+  server: 195.110.15.216
+  tls: false
+  type: vless
+  uuid: 2da03bdf-8af3-4207-96c7-d70e0dd22c36
+  country: DE
+- cipher: aes-256-gcm
+  name: DE_SS_19999_187
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 57.129.83.85
+  type: ss
+  country: DE
+- cipher: 2022-blake3-chacha20-poly1305
+  name: DE_SS_443_314
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  port: 443
+  server: 47.254.167.157
+  type: ss
+  country: DE
+- cipher: chacha20-ietf-poly1305
+  name: DE_SS_51628_216
+  password: 29ZZXVa34x7sC48w9FKQ54UKHiJJGTVgKFppBRgviLrVCAYVVyKZdD3obbpjCyk31V5b2G2d7xzqmaPBFdcheCVB9UQ4ZghF
+  port: 51628
+  server: 156.67.120.205
+  type: ss
+  country: DE
+- name: DE_HTTP_443_384
+  password: None
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: DE
+- name: DE_HTTP_9002_391
+  port: 9002
+  server: 158.173.154.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: DE
+- name: DE_HTTP_9002_382
+  port: 9002
+  server: 158.173.154.5
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: DE
+- name: DE_HTTP_9002_405
+  password: None
+  port: 9002
+  server: 158.173.154.4
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: DE
+- cipher: chacha20-ietf-poly1305
+  name: DE_SS_8388_2743
+  password: NcAXc0UZI6yQJE1p8QmOv8
+  port: 8388
+  server: 57.129.113.16
+  type: ss
+  country: DE
+- name: DE_VLESS_443_1753
+  server: 153.56.230.6
+  port: 443
+  type: vless
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  tls: true
+  reality-opts:
+    public-key: cO3wYHISTeorXcM8ffaDCDdqZ-olBQL-GyZqb-W7rTk
+    short-id: bd8f712209a9c283
+  servername: 0592efg.us8.h1clayd.click
+  client-fingerprint: edge
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: 99f2107b03f8
+  country: DE
+- name: DE_VLESS_80_344
   type: vless
   network: ws
   server: OV-Germany1.09vpn.com
@@ -21,68 +106,17 @@ proxies:
       Host: OV-Germany1.09vpn.com
     path: /vless/
   country: DE
-- name: DE_VLESS_50955_241
-  port: 50955
-  server: 152.53.120.90
-  tls: false
+- name: DE_VLESS_2087_294
   type: vless
-  uuid: 5ab065b0-2c7a-45a0-829d-9af9af7d8e05
-  country: DE
-- cipher: aes-256-gcm
-  name: DE_SS_19999_184
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 57.129.83.85
-  type: ss
-  country: DE
-- cipher: chacha20-ietf-poly1305
-  name: DE_SS_51628_195
-  password: 29ZZXVa34x7sC48w9FKQ54UKHiJJGTVgKFppBRgviLrVCAYVVyKZdD3obbpjCyk31V5b2G2d7xzqmaPBFdcheCVB9UQ4ZghF
-  port: 51628
-  server: 156.67.120.205
-  type: ss
-  country: DE
-- name: DE_HTTP_443_375
-  password: None
-  port: 443
-  server: 149.36.50.1
-  skip-cert-verify: true
+  network: tcp
+  server: 94.103.168.62
+  port: 2087
+  uuid: 92a188aa-2e86-4557-bd30-b2079a70f824
+  servername: uuyjnfbv.localip.ir
+  skip-cert-verify: false
   tls: true
-  type: http
   udp: true
-  country: DE
-- name: DE_HTTP_9002_377
-  port: 9002
-  server: 158.173.154.1
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: DE
-- name: DE_HTTP_9002_403
-  password: None
-  port: 9002
-  server: 158.173.154.4
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: DE
-- name: DE_HTTP_9002_404
-  port: 9002
-  server: 158.173.154.5
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: DE
-- name: DE_SS_443_189
-  server: 18.197.131.255
-  port: 443
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  udp: true
+  tfo: false
   country: DE
 proxy-groups:
 - name: 🚀 节点选择
@@ -97,15 +131,18 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - DE_VLESS_80_313
-  - DE_VLESS_50955_241
-  - DE_SS_19999_184
-  - DE_SS_51628_195
-  - DE_HTTP_443_375
-  - DE_HTTP_9002_377
-  - DE_HTTP_9002_403
-  - DE_HTTP_9002_404
-  - DE_SS_443_189
+  - DE_VLESS_31652_405
+  - DE_SS_19999_187
+  - DE_SS_443_314
+  - DE_SS_51628_216
+  - DE_HTTP_443_384
+  - DE_HTTP_9002_391
+  - DE_HTTP_9002_382
+  - DE_HTTP_9002_405
+  - DE_SS_8388_2743
+  - DE_VLESS_443_1753
+  - DE_VLESS_80_344
+  - DE_VLESS_2087_294
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -118,15 +155,18 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - DE_SS_19999_184
-  - DE_SS_443_189
-  - DE_SS_51628_195
-  - DE_VLESS_50955_241
-  - DE_VLESS_80_313
-  - DE_HTTP_443_375
-  - DE_HTTP_9002_377
-  - DE_HTTP_9002_403
-  - DE_HTTP_9002_404
+  - DE_SS_19999_187
+  - DE_SS_51628_216
+  - DE_VLESS_2087_294
+  - DE_SS_443_314
+  - DE_VLESS_80_344
+  - DE_HTTP_9002_382
+  - DE_HTTP_443_384
+  - DE_HTTP_9002_391
+  - DE_VLESS_31652_405
+  - DE_HTTP_9002_405
+  - DE_VLESS_443_1753
+  - DE_SS_8388_2743
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -138,15 +178,18 @@ proxy-groups:
 - name: 🌍 DE
   type: url-test
   proxies:
-  - DE_VLESS_80_313
-  - DE_VLESS_50955_241
-  - DE_SS_19999_184
-  - DE_SS_51628_195
-  - DE_HTTP_443_375
-  - DE_HTTP_9002_377
-  - DE_HTTP_9002_403
-  - DE_HTTP_9002_404
-  - DE_SS_443_189
+  - DE_VLESS_31652_405
+  - DE_SS_19999_187
+  - DE_SS_443_314
+  - DE_SS_51628_216
+  - DE_HTTP_443_384
+  - DE_HTTP_9002_391
+  - DE_HTTP_9002_382
+  - DE_HTTP_9002_405
+  - DE_SS_8388_2743
+  - DE_VLESS_443_1753
+  - DE_VLESS_80_344
+  - DE_VLESS_2087_294
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

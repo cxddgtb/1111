@@ -5,18 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: BR_VMESS_1270_535
-  type: vmess
-  network: tcp
-  server: 103.14.27.207
-  port: 1270
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  country: BR
-- name: BR_VMESS_1270_573
+- name: BR_VMESS_1270_389
   type: vmess
   network: tcp
   server: 103.88.232.55
@@ -27,25 +16,16 @@ proxies:
   alterId: 0
   cipher: auto
   country: BR
-- name: BR_HTTP_443_707
-  port: 443
-  server: 134.65.17.77
+- name: BR_VMESS_1270_449
+  type: vmess
+  network: tcp
+  server: 103.14.27.207
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
   skip-cert-verify: true
-  sub_tag: R002-260618
   tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-  country: BR
-- name: BR_SOCKS5_62000_1422
-  password: 0mvrt5jb
-  port: 62000
-  server: 191.7.129.133
-  sub_tag: R002-260618
-  type: socks5
-  udp: true
-  username: uwrgfkwg
-  x-toolall-mihomo: true
+  alterId: 0
+  cipher: auto
   country: BR
 proxy-groups:
 - name: 🚀 节点选择
@@ -60,10 +40,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - BR_VMESS_1270_535
-  - BR_VMESS_1270_573
-  - BR_HTTP_443_707
-  - BR_SOCKS5_62000_1422
+  - BR_VMESS_1270_389
+  - BR_VMESS_1270_449
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -76,10 +54,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - BR_VMESS_1270_535
-  - BR_VMESS_1270_573
-  - BR_HTTP_443_707
-  - BR_SOCKS5_62000_1422
+  - BR_VMESS_1270_389
+  - BR_VMESS_1270_449
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -91,10 +67,8 @@ proxy-groups:
 - name: 🌍 BR
   type: url-test
   proxies:
-  - BR_VMESS_1270_535
-  - BR_VMESS_1270_573
-  - BR_HTTP_443_707
-  - BR_SOCKS5_62000_1422
+  - BR_VMESS_1270_389
+  - BR_VMESS_1270_449
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

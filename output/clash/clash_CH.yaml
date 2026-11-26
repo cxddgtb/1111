@@ -5,65 +5,10 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- type: trojan
-  name: CH_TROJAN_443_1393
-  server: 208.69.78.19
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: www.yourultimateprofessionalcareerhub.com
-  sni: www.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-  country: CH
-- type: trojan
-  name: CH_TROJAN_443_1109
-  server: 208.69.78.33
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: courses.yourultimateprofessionalcareerhub.com
-  sni: courses.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-  country: CH
-- type: trojan
-  name: CH_TROJAN_443_1178
-  server: 208.69.78.208
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: resources.yourultimateprofessionalcareerhub.com
-  sni: resources.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-  country: CH
-- type: trojan
-  name: CH_TROJAN_443_1213
-  server: 208.69.78.158
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: api.yourultimateprofessionalcareerhub.com
-  sni: api.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-  country: CH
-- type: trojan
-  name: CH_TROJAN_443_1257
-  server: 208.69.78.29
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: learn.yourultimateprofessionalcareerhub.com
-  sni: learn.yourultimateprofessionalcareerhub.com
-  skip-cert-verify: true
-  country: CH
 - client-fingerprint: firefox
   grpc-opts:
     grpc-service-name: 138-124-86-230-sslip-io
-  name: CH_VLESS_48115_365
+  name: CH_VLESS_48115_364
   network: grpc
   port: 48115
   server: 138.124.86.230
@@ -73,25 +18,56 @@ proxies:
   uuid: b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_216
+  name: CH_SS_19999_219
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 23.166.88.127
   type: ss
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_208
+  name: CH_SS_19999_231
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 186.190.215.251
   type: ss
   country: CH
 - cipher: aes-256-gcm
-  name: CH_SS_19999_247
+  name: CH_SS_19999_264
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 79.127.184.104
   type: ss
+  country: CH
+- name: CH_TROJAN_443_1547
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 208.69.78.33
+  sni: courses.yourultimateprofessionalcareerhub.com
+  type: trojan
+  country: CH
+- name: CH_VMESS_1270_329
+  type: vmess
+  network: tcp
+  server: 186.190.215.4
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  country: CH
+- name: CH_VLESS_443_356
+  type: vless
+  network: tcp
+  server: 179.43.187.67
+  port: 443
+  uuid: 9dd38d60-e683-47c6-bd53-d71bdfee78f3
+  servername: portal.mavexa.ir
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
   country: CH
 proxy-groups:
 - name: 🚀 节点选择
@@ -106,15 +82,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - CH_TROJAN_443_1393
-  - CH_TROJAN_443_1109
-  - CH_TROJAN_443_1178
-  - CH_TROJAN_443_1213
-  - CH_TROJAN_443_1257
-  - CH_VLESS_48115_365
-  - CH_SS_19999_216
-  - CH_SS_19999_208
-  - CH_SS_19999_247
+  - CH_VLESS_48115_364
+  - CH_SS_19999_219
+  - CH_SS_19999_231
+  - CH_SS_19999_264
+  - CH_TROJAN_443_1547
+  - CH_VMESS_1270_329
+  - CH_VLESS_443_356
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -127,15 +101,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - CH_SS_19999_208
-  - CH_SS_19999_216
-  - CH_SS_19999_247
-  - CH_VLESS_48115_365
-  - CH_TROJAN_443_1109
-  - CH_TROJAN_443_1178
-  - CH_TROJAN_443_1213
-  - CH_TROJAN_443_1257
-  - CH_TROJAN_443_1393
+  - CH_SS_19999_219
+  - CH_SS_19999_231
+  - CH_SS_19999_264
+  - CH_VMESS_1270_329
+  - CH_VLESS_443_356
+  - CH_VLESS_48115_364
+  - CH_TROJAN_443_1547
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -147,15 +119,13 @@ proxy-groups:
 - name: 🌍 CH
   type: url-test
   proxies:
-  - CH_TROJAN_443_1393
-  - CH_TROJAN_443_1109
-  - CH_TROJAN_443_1178
-  - CH_TROJAN_443_1213
-  - CH_TROJAN_443_1257
-  - CH_VLESS_48115_365
-  - CH_SS_19999_216
-  - CH_SS_19999_208
-  - CH_SS_19999_247
+  - CH_VLESS_48115_364
+  - CH_SS_19999_219
+  - CH_SS_19999_231
+  - CH_SS_19999_264
+  - CH_TROJAN_443_1547
+  - CH_VMESS_1270_329
+  - CH_VLESS_443_356
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
