@@ -5,34 +5,41 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: KR_SOCKS5_1080_825
+- name: KR_VLESS_25555_656
+  type: vless
+  server: 152.69.226.63
+  port: 25555
+  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  country: KR
+- name: KR_SOCKS5_1080_1837
   port: 1080
   server: 59.11.209.162
   skip-cert-verify: true
   type: socks5
   country: KR
-- name: KR_SOCKS5_1080_820
-  port: 1080
-  server: 183.106.215.208
-  skip-cert-verify: true
-  type: socks5
-  country: KR
-- client-fingerprint: chrome
-  name: KR_VLESS_443_741
-  network: tcp
-  port: 443
-  server: ifdmbpb.kdns.fr
-  servername: ifdmbpb.kdns.fr
-  tls: true
-  type: vless
+- name: KR_VMESS_80_539
+  type: vmess
+  network: ws
+  server: 132.145.80.230
+  port: 80
+  uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
   udp: true
-  uuid: 9a600801-e889-4705-9adb-bf9aeb366fc7
+  alterId: 0
+  cipher: auto
   ws-opts:
     headers:
-      Host: ifdmbpb.kdns.fr
-    path: /
+      Host: kr02.a0a.xyz
+    path: /cctv13.m3u8
   country: KR
-- name: KR_VMESS_8888_447
+- name: KR_VMESS_8888_396
   type: vmess
   network: tcp
   server: 146.56.112.110
@@ -55,10 +62,10 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - KR_SOCKS5_1080_825
-  - KR_SOCKS5_1080_820
-  - KR_VLESS_443_741
-  - KR_VMESS_8888_447
+  - KR_VLESS_25555_656
+  - KR_SOCKS5_1080_1837
+  - KR_VMESS_80_539
+  - KR_VMESS_8888_396
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -71,10 +78,10 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - KR_VMESS_8888_447
-  - KR_VLESS_443_741
-  - KR_SOCKS5_1080_820
-  - KR_SOCKS5_1080_825
+  - KR_VMESS_8888_396
+  - KR_VMESS_80_539
+  - KR_VLESS_25555_656
+  - KR_SOCKS5_1080_1837
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -86,10 +93,10 @@ proxy-groups:
 - name: 🌍 KR
   type: url-test
   proxies:
-  - KR_SOCKS5_1080_825
-  - KR_SOCKS5_1080_820
-  - KR_VLESS_443_741
-  - KR_VMESS_8888_447
+  - KR_VLESS_25555_656
+  - KR_SOCKS5_1080_1837
+  - KR_VMESS_80_539
+  - KR_VMESS_8888_396
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

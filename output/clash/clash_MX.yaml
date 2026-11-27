@@ -5,25 +5,10 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MX_SOCKS5_42000_359
-  password: sZnD8GTz
-  port: 42000
-  server: 144.225.47.68
-  type: socks5
-  username: DJy1T0dt
-  country: MX
-- name: MX_SOCKS5_42000_309
-  password: KsPAxZGn
-  port: 42000
-  server: 94.194.166.52
-  skip-cert-verify: true
-  type: socks5
-  username: userLRgK
-  country: MX
-- name: MX_SOCKS5_62000_344
+- name: MX_SOCKS5_62000_247
   password: VvUAFi2E
   port: 62000
-  server: 72.57.228.87
+  server: 72.57.228.30
   skip-cert-verify: true
   type: socks5
   username: UBXich0K
@@ -41,9 +26,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MX_SOCKS5_42000_359
-  - MX_SOCKS5_42000_309
-  - MX_SOCKS5_62000_344
+  - MX_SOCKS5_62000_247
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -56,9 +39,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MX_SOCKS5_42000_309
-  - MX_SOCKS5_62000_344
-  - MX_SOCKS5_42000_359
+  - MX_SOCKS5_62000_247
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -70,9 +51,7 @@ proxy-groups:
 - name: 🌍 MX
   type: url-test
   proxies:
-  - MX_SOCKS5_42000_359
-  - MX_SOCKS5_42000_309
-  - MX_SOCKS5_62000_344
+  - MX_SOCKS5_62000_247
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

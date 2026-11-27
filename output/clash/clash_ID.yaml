@@ -5,13 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: ID_TROJAN_443_603
-  type: trojan
-  server: i1tr.mateflora.com
-  port: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  sni: i1tr.mateflora.com
-  network: tcp
+- name: ID_SOCKS5_62000_1065
+  password: APJ7RmY9
+  port: 62000
+  server: 202.155.99.32
+  skip-cert-verify: true
+  type: socks5
+  username: gebHTLF6
+  country: ID
+- name: ID_SOCKS5_62000_1097
+  password: RRWtX6XP
+  port: 62000
+  server: 203.84.138.59
+  skip-cert-verify: true
+  type: socks5
+  username: 9tcjLp2W
   country: ID
 proxy-groups:
 - name: 🚀 节点选择
@@ -26,7 +34,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ID_TROJAN_443_603
+  - ID_SOCKS5_62000_1065
+  - ID_SOCKS5_62000_1097
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -39,7 +48,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ID_TROJAN_443_603
+  - ID_SOCKS5_62000_1065
+  - ID_SOCKS5_62000_1097
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -51,7 +61,8 @@ proxy-groups:
 - name: 🌍 ID
   type: url-test
   proxies:
-  - ID_TROJAN_443_603
+  - ID_SOCKS5_62000_1065
+  - ID_SOCKS5_62000_1097
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

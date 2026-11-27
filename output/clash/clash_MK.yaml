@@ -5,15 +5,12 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: MK_HTTP_443_756
+- name: MK_HTTP_443_624
   port: 443
   server: 185.225.28.50
   skip-cert-verify: true
-  sub_tag: P002-260618
   tls: true
   type: http
-  udp: true
-  x-toolall-mihomo: true
   country: MK
 proxy-groups:
 - name: 🚀 节点选择
@@ -28,7 +25,7 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - MK_HTTP_443_756
+  - MK_HTTP_443_624
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -41,7 +38,7 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - MK_HTTP_443_756
+  - MK_HTTP_443_624
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -53,7 +50,7 @@ proxy-groups:
 - name: 🌍 MK
   type: url-test
   proxies:
-  - MK_HTTP_443_756
+  - MK_HTTP_443_624
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

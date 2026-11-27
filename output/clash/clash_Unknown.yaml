@@ -5,7 +5,22 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: Unknown_VMESS_443_443
+- name: Unknown_VMESS_443_319
+  type: vmess
+  server: 188.114.99.137
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: guanwang.awsno.com
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+  country: Unknown
+- name: Unknown_VMESS_443_320
   type: vmess
   server: 172.67.190.164
   port: 443
@@ -20,22 +35,7 @@ proxies:
     headers:
       Host: guanwang.awsno.com
   country: Unknown
-- name: Unknown_VMESS_443_441
-  type: vmess
-  server: 104.18.42.163
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: true
-  servername: guanwang.awsno.com
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-  country: Unknown
-- name: Unknown_VMESS_443_444
+- name: Unknown_VMESS_443_338
   type: vmess
   server: www.shopify.com
   port: 443
@@ -50,7 +50,7 @@ proxies:
     headers:
       Host: guanwang.awsno.com
   country: Unknown
-- name: Unknown_VMESS_443_449
+- name: Unknown_VMESS_443_343
   type: vmess
   server: 172.64.145.93
   port: 443
@@ -65,9 +65,9 @@ proxies:
     headers:
       Host: guanwang.awsno.com
   country: Unknown
-- name: Unknown_VMESS_443_458
+- name: Unknown_VMESS_443_358
   type: vmess
-  server: 188.114.99.137
+  server: 104.18.42.163
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
   alterId: 0
@@ -80,32 +80,64 @@ proxies:
     headers:
       Host: guanwang.awsno.com
   country: Unknown
-- name: Unknown_VLESS_8443_27
-  network: ws
-  port: 8443
-  server: 172.64.154.113
-  servername: freeceshi6.frii.site
-  tls: true
+- name: Unknown_VLESS_8443_80
   type: vless
+  server: 172.64.154.113
+  port: 8443
   uuid: 53bbdad4-2f4e-45db-8df4-fa491a6a7227
+  network: ws
+  tls: true
+  servername: freeceshi6.frii.site
+  client-fingerprint: chrome
   ws-opts:
+    path: /proxyip=ProxyIP.JP.CMLiussss.netfp=chrome
     headers:
       Host: freeceshi6.frii.site
-    path: /proxyip=ProxyIP.JP.CMLiussss.netfp=chrome
   country: Unknown
-- name: Unknown_VLESS_80_1186
+- name: Unknown_VMESS_8443_506
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   network: ws
-  port: 80
-  server: 188.114.99.137
-  tls: false
-  type: vless
-  uuid: c762af05-2e92-4133-bc30-8cf45dd40a28
+  tls: true
+  servername: v2ray1.dozapp.xyz
   ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+  country: Unknown
+- name: Unknown_VLESS_80_427
+  type: vless
+  server: 188.114.99.137
+  port: 80
+  uuid: c762af05-2e92-4133-bc30-8cf45dd40a28
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
     headers:
       Host: suh.cryptofront.uk
-    path: /
   country: Unknown
-- name: Unknown_HTTP_443_20
+- name: Unknown_VLESS_8080_748
+  type: vless
+  server: www.gov.se
+  port: 8080
+  uuid: 989d58b8-d2ea-4d28-b5ff-0f3cd078f2cf
+  network: ws
+  tls: false
+  servername: www.gov.se
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: sdf23g-billowing-moon-348e.mzm468gc.workers.dev
+  country: Unknown
+- name: Unknown_HTTP_443_61
   port: 443
   server: 172.64.69.89
   skip-cert-verify: true
@@ -113,22 +145,192 @@ proxies:
   type: http
   udp: true
   country: Unknown
-- name: Unknown_VLESS_8443_2292
-  type: vless
-  network: ws
-  server: 104.17.70.206
-  port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
-  servername: free.sahanwickramasinghe.com
-  skip-cert-verify: false
-  tls: true
+- cipher: chacha20-ietf-poly1305
+  name: Unknown_SS_443_644
+  password: 034b5d9404b79a2df62fcb77a49cf748306765448d8b5e93
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: italy.astroapps.io
+    mode: websocket
+    path: /b5cba947dfef6a5494b25d76
+    tls: true
+  port: 443
+  server: italy.astroapps.io
+  type: ss
   udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: free.sahanwickramasinghe.com
-    path: /
+  country: Unknown
+- ip: 172.16.0.2/32
+  keepalive: '5'
+  mtu: 1280
+  name: Unknown_WIREGUARD_4500_37
+  persistent-keepalive: '5'
+  port: 4500
+  private-key: EH18t6hUfxFfP5cUXKBNGXgLS9wTgQ/iMNSTOlBCDHs=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  reserved:
+  - 114
+  - 58
+  - 245
+  server: 162.159.192.4
+  type: wireguard
+  udp: true
+  wnoise: quic
+  wnoisecount: '5'
+  wnoisedelay: '5'
+  wpayloadsize: 40-90
+  country: Unknown
+- ip: 172.16.0.2/32
+  keepalive: '5'
+  mtu: 1280
+  name: Unknown_WIREGUARD_500_74
+  persistent-keepalive: '5'
+  port: 500
+  private-key: +AYnqJYinZIJ6yZwIjmirctmPqzfctf6H2fTqywa/XM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  reserved:
+  - 39
+  - 4
+  - 107
+  server: 162.159.192.2
+  type: wireguard
+  udp: true
+  wnoise: quic
+  wnoisecount: '5'
+  wnoisedelay: '5'
+  wpayloadsize: 40-90
+  country: Unknown
+- ip: 172.16.0.2/32
+  ipv6: 2606:4700:110:8e4e:939b:b987:39aa:c46c/128
+  mtu: 1280
+  name: Unknown_WIREGUARD_8742_107
+  port: 8742
+  private-key: OEysS/3kryZt7O/RobQFlmPatDWuUl9bwef0IoMX/Uo=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  reserved:
+  - 0
+  - 0
+  - 0
+  server: 8.6.112.207
+  type: wireguard
+  udp: true
+  country: Unknown
+- ip: 172.16.0.2/32
+  keepalive: '5'
+  mtu: 1280
+  name: Unknown_WIREGUARD_4500_96
+  persistent-keepalive: '5'
+  port: 4500
+  private-key: 6LvJU33ZnWgR0r4A51ApYLHh+AT4v7Ft/SZ7vZHml3Y=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  reserved:
+  - 128
+  - 217
+  - 102
+  server: 162.159.192.6
+  type: wireguard
+  udp: true
+  wnoise: quic
+  wnoisecount: '5'
+  wnoisedelay: '5'
+  wpayloadsize: 40-90
+  country: Unknown
+- ip: 172.16.0.2/32
+  ipv6: 2606:4700:110:8e4e:939b:b987:39aa:c46c/128
+  mtu: 1280
+  name: Unknown_WIREGUARD_3854_156
+  port: 3854
+  private-key: OEysS/3kryZt7O/RobQFlmPatDWuUl9bwef0IoMX/Uo=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  reserved:
+  - 0
+  - 0
+  - 0
+  server: 8.6.112.134
+  type: wireguard
+  udp: true
+  country: Unknown
+- ip: 172.16.0.2/32
+  mtu: 1280
+  name: Unknown_WIREGUARD_500_162
+  port: 500
+  presharedkey: ''
+  private-key: cMxekgAnVSNb+rgOySV+74ogaJhqpJtShZaECZCY6k4=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  reserved:
+  - 236
+  - 210
+  - 245
+  server: 162.159.192.1
+  type: wireguard
+  udp: true
+  country: Unknown
+- ip: 172.16.0.2/32
+  keepalive: '5'
+  mtu: 1280
+  name: Unknown_WIREGUARD_500_157
+  persistent-keepalive: '5'
+  port: 500
+  private-key: mHj04J164X9hgzAVq4BlB0hc/SK3QPbgl7JF+/anXU0=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  reserved:
+  - 99
+  - 166
+  - 252
+  server: 162.159.192.6
+  type: wireguard
+  udp: true
+  wnoise: quic
+  wnoisecount: '5'
+  wnoisedelay: '5'
+  wpayloadsize: 40-90
+  country: Unknown
+- ip: 172.16.0.2/32
+  keepalive: '5'
+  mtu: 1280
+  name: Unknown_WIREGUARD_2408_150
+  persistent-keepalive: '5'
+  port: 2408
+  private-key: iP43+YO4O28eA8W6YRhSasNI0fggDS6efGoSL4AAIU4=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  reserved:
+  - 213
+  - 69
+  - 137
+  server: 162.159.192.3
+  type: wireguard
+  udp: true
+  wnoise: quic
+  wnoisecount: '5'
+  wnoisedelay: '5'
+  wpayloadsize: 40-90
+  country: Unknown
+- cipher: chacha20-ietf-poly1305
+  name: Unknown_SS_443_627
+  password: c917b96e084ea67a0f21031f1284f9ee9e1d837321ce6362
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: denmark.astroapps.io
+    mode: websocket
+    path: /ad37249091fe1c6ac69e8c23
+    tls: true
+  port: 443
+  server: denmark.astroapps.io
+  type: ss
+  udp: true
+  country: Unknown
+- cipher: chacha20-ietf-poly1305
+  name: Unknown_SS_443_624
+  password: c40d60d1c847e63098058c7524680f349c9042f932d8e79c
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: belgium.astroapps.io
+    mode: websocket
+    path: /7a0f74508333399db96164d7
+    tls: true
+  port: 443
+  server: belgium.astroapps.io
+  type: ss
+  udp: true
   country: Unknown
 proxy-groups:
 - name: 🚀 节点选择
@@ -143,15 +345,27 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - Unknown_VMESS_443_443
-  - Unknown_VMESS_443_441
-  - Unknown_VMESS_443_444
-  - Unknown_VMESS_443_449
-  - Unknown_VMESS_443_458
-  - Unknown_VLESS_8443_27
-  - Unknown_VLESS_80_1186
-  - Unknown_HTTP_443_20
-  - Unknown_VLESS_8443_2292
+  - Unknown_VMESS_443_319
+  - Unknown_VMESS_443_320
+  - Unknown_VMESS_443_338
+  - Unknown_VMESS_443_343
+  - Unknown_VMESS_443_358
+  - Unknown_VLESS_8443_80
+  - Unknown_VMESS_8443_506
+  - Unknown_VLESS_80_427
+  - Unknown_VLESS_8080_748
+  - Unknown_HTTP_443_61
+  - Unknown_SS_443_644
+  - Unknown_WIREGUARD_4500_37
+  - Unknown_WIREGUARD_500_74
+  - Unknown_WIREGUARD_8742_107
+  - Unknown_WIREGUARD_4500_96
+  - Unknown_WIREGUARD_3854_156
+  - Unknown_WIREGUARD_500_162
+  - Unknown_WIREGUARD_500_157
+  - Unknown_WIREGUARD_2408_150
+  - Unknown_SS_443_627
+  - Unknown_SS_443_624
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -164,15 +378,27 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - Unknown_HTTP_443_20
-  - Unknown_VLESS_8443_27
-  - Unknown_VMESS_443_441
-  - Unknown_VMESS_443_443
-  - Unknown_VMESS_443_444
-  - Unknown_VMESS_443_449
-  - Unknown_VMESS_443_458
-  - Unknown_VLESS_80_1186
-  - Unknown_VLESS_8443_2292
+  - Unknown_WIREGUARD_4500_37
+  - Unknown_HTTP_443_61
+  - Unknown_WIREGUARD_500_74
+  - Unknown_VLESS_8443_80
+  - Unknown_WIREGUARD_4500_96
+  - Unknown_WIREGUARD_8742_107
+  - Unknown_WIREGUARD_2408_150
+  - Unknown_WIREGUARD_3854_156
+  - Unknown_WIREGUARD_500_157
+  - Unknown_WIREGUARD_500_162
+  - Unknown_VMESS_443_319
+  - Unknown_VMESS_443_320
+  - Unknown_VMESS_443_338
+  - Unknown_VMESS_443_343
+  - Unknown_VMESS_443_358
+  - Unknown_VLESS_80_427
+  - Unknown_VMESS_8443_506
+  - Unknown_SS_443_624
+  - Unknown_SS_443_627
+  - Unknown_SS_443_644
+  - Unknown_VLESS_8080_748
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -184,15 +410,27 @@ proxy-groups:
 - name: 🌍 Unknown
   type: url-test
   proxies:
-  - Unknown_VMESS_443_443
-  - Unknown_VMESS_443_441
-  - Unknown_VMESS_443_444
-  - Unknown_VMESS_443_449
-  - Unknown_VMESS_443_458
-  - Unknown_VLESS_8443_27
-  - Unknown_VLESS_80_1186
-  - Unknown_HTTP_443_20
-  - Unknown_VLESS_8443_2292
+  - Unknown_VMESS_443_319
+  - Unknown_VMESS_443_320
+  - Unknown_VMESS_443_338
+  - Unknown_VMESS_443_343
+  - Unknown_VMESS_443_358
+  - Unknown_VLESS_8443_80
+  - Unknown_VMESS_8443_506
+  - Unknown_VLESS_80_427
+  - Unknown_VLESS_8080_748
+  - Unknown_HTTP_443_61
+  - Unknown_SS_443_644
+  - Unknown_WIREGUARD_4500_37
+  - Unknown_WIREGUARD_500_74
+  - Unknown_WIREGUARD_8742_107
+  - Unknown_WIREGUARD_4500_96
+  - Unknown_WIREGUARD_3854_156
+  - Unknown_WIREGUARD_500_162
+  - Unknown_WIREGUARD_500_157
+  - Unknown_WIREGUARD_2408_150
+  - Unknown_SS_443_627
+  - Unknown_SS_443_624
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

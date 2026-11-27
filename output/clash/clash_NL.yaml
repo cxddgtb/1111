@@ -5,7 +5,21 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: NL_HYSTERIA2_42848_262
+- name: NL_VLESS_80_353
+  type: vless
+  server: 163.172.213.174
+  port: 80
+  uuid: e73df646-1f62-41bf-8c50-653497d603d0
+  network: ws
+  tls: false
+  servername: ''
+  client-fingerprint: chrome
+  ws-opts:
+    path: /vless/
+    headers:
+      Host: SC-TheNetherlands2.09vpn.com
+  country: NL
+- name: NL_HYSTERIA2_42848_333
   password: 04920673-035c-410d-94e4-5b1469d3fb6f
   port: 42848
   server: 171.22.183.158
@@ -13,7 +27,7 @@ proxies:
   tls: false
   type: hysteria2
   country: NL
-- name: NL_HYSTERIA2_443_252
+- name: NL_HYSTERIA2_443_345
   password: 549766c3-fa5f-471e-8031-ffc1f8d5064f
   port: 443
   server: 212.34.137.105
@@ -23,7 +37,7 @@ proxies:
   type: hysteria2
   country: NL
 - client-fingerprint: chrome
-  name: NL_HYSTERIA2_24403_298
+  name: NL_HYSTERIA2_24403_371
   password: 549766c3-fa5f-471e-8031-ffc1f8d5064f
   port: 24403
   server: 94.183.164.119
@@ -31,7 +45,22 @@ proxies:
   tls: false
   type: hysteria2
   country: NL
-- name: NL_HTTP_443_402
+- name: NL_HYSTERIA2_54706_352
+  password: Cqx5aT9Zux
+  port: 54706
+  server: 185.200.199.179
+  sni: 185.200.199.179
+  tls: false
+  type: hysteria2
+  country: NL
+- cipher: chacha20-ietf-poly1305
+  name: NL_SS_8080_238
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 193.29.139.198
+  type: ss
+  country: NL
+- name: NL_HTTP_443_528
   port: 443
   server: 149.36.51.129
   skip-cert-verify: true
@@ -39,17 +68,7 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_378
-  password: 'null'
-  port: 9002
-  server: 84.17.47.148
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-  country: NL
-- name: NL_HTTP_9002_378_2
+- name: NL_HTTP_9002_466
   password: 'null'
   port: 9002
   server: 84.17.47.125
@@ -59,16 +78,7 @@ proxies:
   udp: true
   username: 'null'
   country: NL
-- name: NL_HTTP_9002_377
-  password: None
-  port: 9002
-  server: 84.17.47.123
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  country: NL
-- name: NL_HTTP_9002_425
+- name: NL_HTTP_9002_475
   password: 'null'
   port: 9002
   server: 84.17.47.147
@@ -78,7 +88,7 @@ proxies:
   udp: true
   username: 'null'
   country: NL
-- name: NL_HTTP_9002_426
+- name: NL_HTTP_9002_478
   password: None
   port: 9002
   server: 84.17.47.149
@@ -87,7 +97,25 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_HTTP_9002_418
+- name: NL_HTTP_9002_502
+  password: None
+  port: 9002
+  server: 84.17.47.123
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  country: NL
+- name: NL_HTTP_9002_479
+  password: 'null'
+  port: 9002
+  server: 84.17.47.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+  country: NL
+- name: NL_HTTP_9002_464
   port: 9002
   server: 84.17.47.124
   skip-cert-verify: true
@@ -95,33 +123,45 @@ proxies:
   type: http
   udp: true
   country: NL
-- name: NL_VLESS_443_514
-  type: vless
-  network: tcp
-  server: 171.22.183.167
-  port: 443
-  uuid: 04920673-035c-410d-94e4-5b1469d3fb6f
-  servername: 171.22.183.167
-  skip-cert-verify: false
+- name: NL_HTTP_9002_486
+  password: 'null'
+  port: 9002
+  server: 84.17.47.148
+  skip-cert-verify: true
   tls: true
+  type: http
   udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
+  username: 'null'
   country: NL
-- name: NL_VLESS_443_310
+- name: NL_VLESS_80_351
   type: vless
-  network: tcp
-  server: 130.78.30.147
-  port: 443
-  uuid: 352a250d-080b-47b5-b7db-f9f8fa31c551
-  servername: 105ky37.virtual-network.lol
+  network: ws
+  server: sc-thenetherlands1.09vpn.com
+  port: 80
+  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
   skip-cert-verify: false
-  tls: true
+  tls: false
   udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
+  encryption: none
+  packet-encoding: xudp
+  ws-opts:
+    headers:
+      Host: sc-thenetherlands1.09vpn.com
+    path: /vless/
+  country: NL
+- name: NL_VLESS_80_406
+  type: vless
+  network: ws
+  server: SC-TheNetherlands1.09vpn.com
+  port: 80
+  uuid: 40cc9b52-25b8-4cd5-8b45-715ae26e6baf
+  skip-cert-verify: false
+  tls: false
+  encryption: none
+  ws-opts:
+    headers:
+      Host: SC-TheNetherlands1.09vpn.com
+    path: /vless/
   country: NL
 proxy-groups:
 - name: 🚀 节点选择
@@ -136,18 +176,22 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - NL_HYSTERIA2_42848_262
-  - NL_HYSTERIA2_443_252
-  - NL_HYSTERIA2_24403_298
-  - NL_HTTP_443_402
-  - NL_HTTP_9002_378
-  - NL_HTTP_9002_378_2
-  - NL_HTTP_9002_377
-  - NL_HTTP_9002_425
-  - NL_HTTP_9002_426
-  - NL_HTTP_9002_418
-  - NL_VLESS_443_514
-  - NL_VLESS_443_310
+  - NL_VLESS_80_353
+  - NL_HYSTERIA2_42848_333
+  - NL_HYSTERIA2_443_345
+  - NL_HYSTERIA2_24403_371
+  - NL_HYSTERIA2_54706_352
+  - NL_SS_8080_238
+  - NL_HTTP_443_528
+  - NL_HTTP_9002_466
+  - NL_HTTP_9002_475
+  - NL_HTTP_9002_478
+  - NL_HTTP_9002_502
+  - NL_HTTP_9002_479
+  - NL_HTTP_9002_464
+  - NL_HTTP_9002_486
+  - NL_VLESS_80_351
+  - NL_VLESS_80_406
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -160,18 +204,22 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - NL_HYSTERIA2_443_252
-  - NL_HYSTERIA2_42848_262
-  - NL_HYSTERIA2_24403_298
-  - NL_VLESS_443_310
-  - NL_HTTP_9002_377
-  - NL_HTTP_9002_378
-  - NL_HTTP_9002_378_2
-  - NL_HTTP_443_402
-  - NL_HTTP_9002_418
-  - NL_HTTP_9002_425
-  - NL_HTTP_9002_426
-  - NL_VLESS_443_514
+  - NL_SS_8080_238
+  - NL_HYSTERIA2_42848_333
+  - NL_HYSTERIA2_443_345
+  - NL_VLESS_80_351
+  - NL_HYSTERIA2_54706_352
+  - NL_VLESS_80_353
+  - NL_HYSTERIA2_24403_371
+  - NL_VLESS_80_406
+  - NL_HTTP_9002_464
+  - NL_HTTP_9002_466
+  - NL_HTTP_9002_475
+  - NL_HTTP_9002_478
+  - NL_HTTP_9002_479
+  - NL_HTTP_9002_486
+  - NL_HTTP_9002_502
+  - NL_HTTP_443_528
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -183,18 +231,22 @@ proxy-groups:
 - name: 🌍 NL
   type: url-test
   proxies:
-  - NL_HYSTERIA2_42848_262
-  - NL_HYSTERIA2_443_252
-  - NL_HYSTERIA2_24403_298
-  - NL_HTTP_443_402
-  - NL_HTTP_9002_378
-  - NL_HTTP_9002_378_2
-  - NL_HTTP_9002_377
-  - NL_HTTP_9002_425
-  - NL_HTTP_9002_426
-  - NL_HTTP_9002_418
-  - NL_VLESS_443_514
-  - NL_VLESS_443_310
+  - NL_VLESS_80_353
+  - NL_HYSTERIA2_42848_333
+  - NL_HYSTERIA2_443_345
+  - NL_HYSTERIA2_24403_371
+  - NL_HYSTERIA2_54706_352
+  - NL_SS_8080_238
+  - NL_HTTP_443_528
+  - NL_HTTP_9002_466
+  - NL_HTTP_9002_475
+  - NL_HTTP_9002_478
+  - NL_HTTP_9002_502
+  - NL_HTTP_9002_479
+  - NL_HTTP_9002_464
+  - NL_HTTP_9002_486
+  - NL_VLESS_80_351
+  - NL_VLESS_80_406
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

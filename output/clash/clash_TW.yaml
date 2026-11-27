@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: TW_ANYTLS_443_1088
+- name: TW_ANYTLS_443_930
   password: 2902c46c8493
   port: 443
   server: er8u54dh.df6h451rh.xin
@@ -13,16 +13,37 @@ proxies:
   sni: px.ads.linkedin.com
   type: anytls
   country: TW
-- name: TW_ANYTLS_443_1012
-  server: rtifgjdr.df6h451rh.xin
+- client-fingerprint: chrome
+  name: TW_ANYTLS_443_959
+  password: 0324fbc29561
   port: 443
-  type: anytls
-  password: 2902c46c8493
-  udp: true
-  sni: docs.microsoft.com
+  server: a54ge.df6h451rh.xin
   skip-cert-verify: true
+  sni: docs.microsoft.com
+  type: anytls
+  udp: true
   country: TW
-- name: TW_ANYTLS_443_1382
+- name: TW_ANYTLS_443_991
+  password: 2902c46c8493
+  port: 443
+  server: rtifgjdr.df6h451rh.xin
+  skip-cert-verify: true
+  sni: docs.microsoft.com
+  type: anytls
+  udp: true
+  country: TW
+- fingerprint: ''
+  name: TW_ANYTLS_443_936
+  password: 0324fbc29561
+  port: 443
+  server: mfjh645drfj1dr6j5.df6h451rh.xin
+  skip-cert-verify: true
+  sni: px.ads.linkedin.com
+  type: anytls
+  udp: true
+  username: 0324fbc29561
+  country: TW
+- name: TW_ANYTLS_443_2616
   server: sdf65h46wr.df6h451rh.xin
   port: 443
   type: anytls
@@ -44,9 +65,11 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - TW_ANYTLS_443_1088
-  - TW_ANYTLS_443_1012
-  - TW_ANYTLS_443_1382
+  - TW_ANYTLS_443_930
+  - TW_ANYTLS_443_959
+  - TW_ANYTLS_443_991
+  - TW_ANYTLS_443_936
+  - TW_ANYTLS_443_2616
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -59,9 +82,11 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - TW_ANYTLS_443_1012
-  - TW_ANYTLS_443_1088
-  - TW_ANYTLS_443_1382
+  - TW_ANYTLS_443_930
+  - TW_ANYTLS_443_936
+  - TW_ANYTLS_443_959
+  - TW_ANYTLS_443_991
+  - TW_ANYTLS_443_2616
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -73,9 +98,11 @@ proxy-groups:
 - name: 🌍 TW
   type: url-test
   proxies:
-  - TW_ANYTLS_443_1088
-  - TW_ANYTLS_443_1012
-  - TW_ANYTLS_443_1382
+  - TW_ANYTLS_443_930
+  - TW_ANYTLS_443_959
+  - TW_ANYTLS_443_991
+  - TW_ANYTLS_443_936
+  - TW_ANYTLS_443_2616
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
