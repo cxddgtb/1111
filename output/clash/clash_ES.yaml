@@ -5,21 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: aes-256-gcm
-  name: ES_SS_19999_264
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 79.127.139.242
-  type: ss
-  country: ES
-- cipher: chacha20-ietf-poly1305
-  name: ES_SS_443_265
-  password: qItG8SueYQcP
-  port: 443
-  server: 108.181.121.170
-  type: ss
-  country: ES
-- name: ES_VLESS_443_417
+- name: ES_VLESS_443_334
   type: vless
   network: tcp
   server: 85.90.217.42
@@ -29,6 +15,16 @@ proxies:
   skip-cert-verify: true
   tls: true
   udp: true
+  country: ES
+- type: ss
+  name: ES_SS_443_238
+  server: 108.181.121.170
+  port: 443
+  password: qItG8SueYQcP
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: true
   country: ES
 proxy-groups:
 - name: 🚀 节点选择
@@ -43,9 +39,8 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - ES_SS_19999_264
-  - ES_SS_443_265
-  - ES_VLESS_443_417
+  - ES_VLESS_443_334
+  - ES_SS_443_238
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -58,9 +53,8 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - ES_SS_19999_264
-  - ES_SS_443_265
-  - ES_VLESS_443_417
+  - ES_SS_443_238
+  - ES_VLESS_443_334
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -72,9 +66,8 @@ proxy-groups:
 - name: 🌍 ES
   type: url-test
   proxies:
-  - ES_SS_19999_264
-  - ES_SS_443_265
-  - ES_VLESS_443_417
+  - ES_VLESS_443_334
+  - ES_SS_443_238
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

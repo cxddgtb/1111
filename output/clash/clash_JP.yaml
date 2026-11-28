@@ -5,120 +5,68 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: JP_SS_5555_277
-  type: ss
-  server: 47.91.16.50
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- name: JP_SS_5555_284
-  type: ss
-  server: 47.74.49.154
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- name: JP_SS_5555_285
-  type: ss
-  server: 47.74.41.139
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- name: JP_SS_5555_274
-  type: ss
-  server: 47.245.32.129
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- name: JP_SS_5555_276
-  type: ss
-  server: 47.74.24.29
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- name: JP_SS_5555_277_2
-  type: ss
-  server: 47.245.54.15
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- name: JP_SS_5555_276_2
-  type: ss
-  server: 8.211.129.80
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- name: JP_SS_5555_281
-  type: ss
-  server: 47.245.40.193
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- name: JP_SS_5555_273
-  type: ss
-  server: 47.74.18.249
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
-  country: JP
-- cipher: aes-128-gcm
-  name: JP_SS_443_269
-  password: shadowsocks
+- name: JP_VLESS_443_505
+  type: vless
+  server: 50.7.159.242
   port: 443
-  server: 149.22.87.204
-  type: ss
-  country: JP
-- cipher: aes-128-gcm
-  name: JP_SS_443_269_2
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.240
-  type: ss
-  country: JP
-- cipher: aes-128-gcm
-  name: JP_SS_443_271
-  password: shadowsocks
-  port: 443
-  server: 149.22.87.241
-  type: ss
-  country: JP
-- name: JP_HTTP_443_634
-  port: 443
-  server: fan.571589.xyz
+  uuid: 8840fac2-5361-4cb6-b887-cd1b95092394
+  network: tcp
   tls: true
-  type: http
+  servername: jp.reddotcorp.org
+  client-fingerprint: chrome
+  ws-opts: null
   country: JP
-- name: JP_SOCKS5_42000_709
-  password: EGJDy5Kg
-  port: 42000
-  server: 103.248.150.50
+- type: ss
+  name: JP_SS_443_307
+  server: 149.22.87.240
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
   skip-cert-verify: true
-  type: socks5
-  username: paZFN3JA
   country: JP
-- name: JP_SOCKS5_42000_763
-  password: J5rM2xL9
-  port: 42000
-  server: 103.248.150.238
+- type: ss
+  name: JP_SS_443_306
+  server: 149.22.87.204
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
   skip-cert-verify: true
-  type: socks5
-  username: tB4vN7qP
+  country: JP
+- type: ss
+  name: JP_SS_443_316
+  server: 149.22.87.241
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  country: JP
+- name: JP_VMESS_80_2481
+  type: vmess
+  server: 168.138.43.75
+  port: 80
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  servername: 168.138.43.75
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: 168.138.43.75
+  country: JP
+- cipher: aes-256-gcm
+  name: JP_SS_5555_318
+  password: '123456'
+  port: 5555
+  server: 47.245.40.193
+  type: ss
   country: JP
 proxy-groups:
 - name: 🚀 节点选择
@@ -133,21 +81,12 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - JP_SS_5555_277
-  - JP_SS_5555_284
-  - JP_SS_5555_285
-  - JP_SS_5555_274
-  - JP_SS_5555_276
-  - JP_SS_5555_277_2
-  - JP_SS_5555_276_2
-  - JP_SS_5555_281
-  - JP_SS_5555_273
-  - JP_SS_443_269
-  - JP_SS_443_269_2
-  - JP_SS_443_271
-  - JP_HTTP_443_634
-  - JP_SOCKS5_42000_709
-  - JP_SOCKS5_42000_763
+  - JP_VLESS_443_505
+  - JP_SS_443_307
+  - JP_SS_443_306
+  - JP_SS_443_316
+  - JP_VMESS_80_2481
+  - JP_SS_5555_318
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -160,21 +99,12 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - JP_SS_443_269
-  - JP_SS_443_269_2
-  - JP_SS_443_271
-  - JP_SS_5555_273
-  - JP_SS_5555_274
-  - JP_SS_5555_276
-  - JP_SS_5555_276_2
-  - JP_SS_5555_277
-  - JP_SS_5555_277_2
-  - JP_SS_5555_281
-  - JP_SS_5555_284
-  - JP_SS_5555_285
-  - JP_HTTP_443_634
-  - JP_SOCKS5_42000_709
-  - JP_SOCKS5_42000_763
+  - JP_SS_443_306
+  - JP_SS_443_307
+  - JP_SS_443_316
+  - JP_SS_5555_318
+  - JP_VLESS_443_505
+  - JP_VMESS_80_2481
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -186,21 +116,12 @@ proxy-groups:
 - name: 🌍 JP
   type: url-test
   proxies:
-  - JP_SS_5555_277
-  - JP_SS_5555_284
-  - JP_SS_5555_285
-  - JP_SS_5555_274
-  - JP_SS_5555_276
-  - JP_SS_5555_277_2
-  - JP_SS_5555_276_2
-  - JP_SS_5555_281
-  - JP_SS_5555_273
-  - JP_SS_443_269
-  - JP_SS_443_269_2
-  - JP_SS_443_271
-  - JP_HTTP_443_634
-  - JP_SOCKS5_42000_709
-  - JP_SOCKS5_42000_763
+  - JP_VLESS_443_505
+  - JP_SS_443_307
+  - JP_SS_443_306
+  - JP_SS_443_316
+  - JP_VMESS_80_2481
+  - JP_SS_5555_318
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

@@ -5,56 +5,34 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: AE_VLESS_22573_585
+- name: AE_VLESS_14430_571
   type: vless
-  server: 84.235.244.108
-  port: 22573
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
   network: ws
-  tls: false
-  servername: uae.unixzone.us
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: uae.unixzone.us
-  country: AE
-- name: AE_VLESS_14430_659
-  type: vless
   server: 95.174.68.188
   port: 14430
   uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  network: ws
-  tls: false
   servername: 95.174.68.188
-  client-fingerprint: chrome
+  tls: false
   ws-opts:
-    path: /vless
     headers:
       Host: 95.174.68.188
+    path: /vless
+  country: AE
+- name: AE_VLESS_22573_1564
+  type: vless
+  network: ws
+  server: 84.235.244.108
+  port: 22573
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  servername: uae.unixzone.us
+  tls: false
+  ws-opts:
+    headers:
+      Host: uae.unixzone.us
+    path: /
   country: AE
 - type: hysteria2
-  name: AE_HYSTERIA2_13337_374
-  server: 128.254.186.190
-  port: 13337
-  password: 900c8c92-1979-4c7c-8f2f-63e87d53d8fe
-  udp: true
-  servername: mother-earth.fyi
-  sni: mother-earth.fyi
-  skip-cert-verify: true
-  country: AE
-- type: hysteria2
-  name: AE_HYSTERIA2_13337_387
-  server: 128.254.186.57
-  port: 13337
-  password: 900c8c92-1979-4c7c-8f2f-63e87d53d8fe
-  udp: true
-  servername: mother-earth.fyi
-  sni: mother-earth.fyi
-  skip-cert-verify: true
-  country: AE
-- type: hysteria2
-  name: AE_HYSTERIA2_13337_448
+  name: AE_HYSTERIA2_13337_328
   server: uk-tube-01.stre4m.net
   port: 13337
   password: 900c8c92-1979-4c7c-8f2f-63e87d53d8fe
@@ -63,15 +41,32 @@ proxies:
   sni: mother-earth.fyi
   skip-cert-verify: true
   country: AE
+- name: AE_HYSTERIA2_13337_283
+  password: 900c8c92-1979-4c7c-8f2f-63e87d53d8fe
+  port: 13337
+  server: 128.254.186.57
+  skip-cert-verify: true
+  sni: mother-earth.fyi
+  tls: false
+  type: hysteria2
+  country: AE
+- name: AE_HYSTERIA2_13337_278
+  password: 900c8c92-1979-4c7c-8f2f-63e87d53d8fe
+  port: 13337
+  server: 128.254.186.190
+  sni: mother-earth.fyi
+  tls: false
+  type: hysteria2
+  country: AE
 - cipher: aes-256-gcm
-  name: AE_SS_19999_218
+  name: AE_SS_19999_184
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 151.241.19.36
   type: ss
   country: AE
 - cipher: aes-256-gcm
-  name: AE_SS_19999_1052
+  name: AE_SS_19999_186
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 151.241.19.29
@@ -90,13 +85,13 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - AE_VLESS_22573_585
-  - AE_VLESS_14430_659
-  - AE_HYSTERIA2_13337_374
-  - AE_HYSTERIA2_13337_387
-  - AE_HYSTERIA2_13337_448
-  - AE_SS_19999_218
-  - AE_SS_19999_1052
+  - AE_VLESS_14430_571
+  - AE_VLESS_22573_1564
+  - AE_HYSTERIA2_13337_328
+  - AE_HYSTERIA2_13337_283
+  - AE_HYSTERIA2_13337_278
+  - AE_SS_19999_184
+  - AE_SS_19999_186
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -109,13 +104,13 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - AE_SS_19999_218
-  - AE_HYSTERIA2_13337_374
-  - AE_HYSTERIA2_13337_387
-  - AE_HYSTERIA2_13337_448
-  - AE_VLESS_22573_585
-  - AE_VLESS_14430_659
-  - AE_SS_19999_1052
+  - AE_SS_19999_184
+  - AE_SS_19999_186
+  - AE_HYSTERIA2_13337_278
+  - AE_HYSTERIA2_13337_283
+  - AE_HYSTERIA2_13337_328
+  - AE_VLESS_14430_571
+  - AE_VLESS_22573_1564
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -127,13 +122,13 @@ proxy-groups:
 - name: 🌍 AE
   type: url-test
   proxies:
-  - AE_VLESS_22573_585
-  - AE_VLESS_14430_659
-  - AE_HYSTERIA2_13337_374
-  - AE_HYSTERIA2_13337_387
-  - AE_HYSTERIA2_13337_448
-  - AE_SS_19999_218
-  - AE_SS_19999_1052
+  - AE_VLESS_14430_571
+  - AE_VLESS_22573_1564
+  - AE_HYSTERIA2_13337_328
+  - AE_HYSTERIA2_13337_283
+  - AE_HYSTERIA2_13337_278
+  - AE_SS_19999_184
+  - AE_SS_19999_186
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

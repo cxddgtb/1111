@@ -5,58 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- cipher: aes-256-gcm
-  name: SG_SS_19999_395
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 15.235.182.183
-  type: ss
-  country: SG
-- cipher: aes-256-gcm
-  name: SG_SS_19999_396
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 15.235.164.133
-  type: ss
-  country: SG
-- cipher: aes-256-gcm
-  name: SG_SS_19999_394
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 149.88.106.74
-  type: ss
-  country: SG
-- cipher: aes-256-gcm
-  name: SG_SS_19999_403
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 149.88.107.74
-  type: ss
-  country: SG
-- cipher: aes-256-gcm
-  name: SG_SS_19999_394_2
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 149.88.107.47
-  type: ss
-  country: SG
-- name: SG_HTTP_9090_596
-  password: None
-  port: 9090
-  server: 167.99.74.174
-  skip-cert-verify: true
-  type: http
-  country: SG
-- name: SG_ANYTLS_43120_788
-  password: 5807f1c4-b50e-4ec0-8d01-274045da0da5
-  port: 43120
-  server: dddz-1-x.473221.xyz
-  skip-cert-verify: true
-  sni: v1-dy.ixigua.com
-  type: anytls
-  udp: true
-  country: SG
-- name: SG_VMESS_18000_399
+- name: SG_VMESS_18000_1155
   type: vmess
   network: tcp
   server: 149.88.23.202
@@ -66,7 +15,7 @@ proxies:
   alterId: 0
   cipher: auto
   country: SG
-- name: SG_VMESS_18000_409
+- name: SG_VMESS_18000_458
   type: vmess
   network: tcp
   server: 149.88.23.207
@@ -75,6 +24,68 @@ proxies:
   udp: true
   alterId: 0
   cipher: auto
+  country: SG
+- name: SG_VLESS_443_81
+  type: vless
+  network: ws
+  server: 27.50.48.6
+  port: 443
+  uuid: c98a16e4-0dc5-42f0-b3db-30f04525c123
+  servername: vless2-8vx.pages.dev
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: vless2-8vx.pages.dev
+    path: /fp=chromesecurity=tls
+  country: SG
+- name: SG_VMESS_1270_672
+  type: vmess
+  network: tcp
+  server: 149.88.107.51
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  country: SG
+- name: SG_VLESS_443_1481
+  type: vless
+  server: 43.170.8.95
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  network: ws
+  tls: true
+  servername: jp3.yohototo.top
+  client-fingerprint: chrome
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+  country: SG
+- cipher: aes-256-gcm
+  name: SG_SS_19999_451
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 149.88.107.74
+  type: ss
+  country: SG
+- cipher: aes-256-gcm
+  name: SG_SS_19999_451_2
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 149.88.107.47
+  type: ss
+  country: SG
+- cipher: aes-256-gcm
+  name: SG_SS_19999_488
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 149.88.106.74
+  type: ss
   country: SG
 proxy-groups:
 - name: 🚀 节点选择
@@ -89,15 +100,14 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - SG_SS_19999_395
-  - SG_SS_19999_396
-  - SG_SS_19999_394
-  - SG_SS_19999_403
-  - SG_SS_19999_394_2
-  - SG_HTTP_9090_596
-  - SG_ANYTLS_43120_788
-  - SG_VMESS_18000_399
-  - SG_VMESS_18000_409
+  - SG_VMESS_18000_1155
+  - SG_VMESS_18000_458
+  - SG_VLESS_443_81
+  - SG_VMESS_1270_672
+  - SG_VLESS_443_1481
+  - SG_SS_19999_451
+  - SG_SS_19999_451_2
+  - SG_SS_19999_488
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -110,15 +120,14 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - SG_SS_19999_394
-  - SG_SS_19999_394_2
-  - SG_SS_19999_395
-  - SG_SS_19999_396
-  - SG_VMESS_18000_399
-  - SG_SS_19999_403
-  - SG_VMESS_18000_409
-  - SG_HTTP_9090_596
-  - SG_ANYTLS_43120_788
+  - SG_VLESS_443_81
+  - SG_SS_19999_451
+  - SG_SS_19999_451_2
+  - SG_VMESS_18000_458
+  - SG_SS_19999_488
+  - SG_VMESS_1270_672
+  - SG_VMESS_18000_1155
+  - SG_VLESS_443_1481
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -130,15 +139,14 @@ proxy-groups:
 - name: 🌍 SG
   type: url-test
   proxies:
-  - SG_SS_19999_395
-  - SG_SS_19999_396
-  - SG_SS_19999_394
-  - SG_SS_19999_403
-  - SG_SS_19999_394_2
-  - SG_HTTP_9090_596
-  - SG_ANYTLS_43120_788
-  - SG_VMESS_18000_399
-  - SG_VMESS_18000_409
+  - SG_VMESS_18000_1155
+  - SG_VMESS_18000_458
+  - SG_VLESS_443_81
+  - SG_VMESS_1270_672
+  - SG_VLESS_443_1481
+  - SG_SS_19999_451
+  - SG_SS_19999_451_2
+  - SG_SS_19999_488
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

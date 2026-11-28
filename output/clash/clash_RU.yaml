@@ -5,127 +5,97 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: RU_VLESS_443_884
+- name: RU_VLESS_443_456
+  type: vless
+  network: grpc
+  server: 201.51.12.98
+  port: 443
+  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
+  servername: vps3.nemnogogo.com
+  tls: true
+  udp: true
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: mobile.api.Event
+  country: RU
+- name: RU_VLESS_443_475
+  type: vless
+  network: tcp
+  server: 136.148.83.70
+  port: 443
+  uuid: 00000000-0000-0001-0000-000000000000
+  servername: aszbk-ru-78dc.my-fade.cloud
+  tls: true
+  udp: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+  country: RU
+- name: RU_VLESS_443_806
+  type: vless
+  network: grpc
+  server: xssite.webredirect.org
+  port: 443
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  servername: xssite.webredirect.org
+  tls: true
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: grpc-ru
+  country: RU
+- name: RU_VLESS_443_465
+  type: vless
+  network: tcp
+  server: 136.148.83.69
+  port: 443
+  uuid: 666821a2-5c3d-0001-a56f-5a3a562d7324
+  servername: szqbx-ru-77dc.my-fade.cloud
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  client-fingerprint: chrome
+  country: RU
+- name: RU_VLESS_443_1540
   type: vless
   server: 136.148.83.71
   port: 443
   uuid: 00000000-0000-0001-0000-000000000000
-  network: tcp
+  udp: true
   tls: true
+  skip-cert-verify: false
   servername: wccfu-ru-79dc.my-fade.cloud
-  client-fingerprint: chrome
-  ws-opts: null
   country: RU
-- name: RU_VLESS_8454_822
+- name: RU_VLESS_443_882
   type: vless
-  server: 213.183.45.23
-  port: 8454
-  uuid: eb62cabf-5901-403a-aa0c-b1d9ed1b346d
-  network: ws
-  tls: true
-  servername: store.plumstatic.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /ws
-    headers:
-      Host: ''
-  country: RU
-- name: RU_VLESS_8450_1022
-  type: vless
-  server: 213.183.45.23
-  port: 8450
-  uuid: eb62cabf-5901-403a-aa0c-b1d9ed1b346d
-  network: ws
-  tls: true
-  servername: fonts.plumstatic.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /ws
-    headers:
-      Host: ''
-  country: RU
-- name: RU_VLESS_8459_1255
-  type: vless
-  server: 213.183.41.31
-  port: 8459
-  uuid: eb62cabf-5901-403a-aa0c-b1d9ed1b346d
-  network: ws
-  tls: true
-  servername: photos.plumstatic.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /ws
-    headers:
-      Host: ''
-  country: RU
-- name: RU_VLESS_8444_1347
-  type: vless
-  server: 213.183.45.23
-  port: 8444
-  uuid: eb62cabf-5901-403a-aa0c-b1d9ed1b346d
-  network: ws
-  tls: true
-  servername: media.plumstatic.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: /ws
-    headers:
-      Host: ''
-  country: RU
-- name: RU_VLESS_443_482
-  type: vless
-  server: 136.148.83.69
+  server: bookend.filnex.baby
   port: 443
-  uuid: 666821a2-5c3d-0001-a56f-5a3a562d7324
-  network: tcp
-  tls: true
-  servername: szqbx-ru-77dc.my-fade.cloud
-  client-fingerprint: chrome
-  ws-opts: null
-  country: RU
-- name: RU_VLESS_8463_1637
-  type: vless
-  server: 213.183.41.31
-  port: 8463
-  uuid: eb62cabf-5901-403a-aa0c-b1d9ed1b346d
+  uuid: 749b1c56-e658-4bf5-94bd-5c3286a4aed1
   network: ws
   tls: true
-  servername: share.plumstatic.com
+  servername: ferncrest.gerqix.online
   client-fingerprint: chrome
   ws-opts:
-    path: /ws
+    path: /api/de1/stream
     headers:
-      Host: ''
+      Host: bookend.filnex.baby
   country: RU
-- name: RU_VLESS_4100_519
+- name: RU_VLESS_8443_385
   type: vless
-  server: 194.26.229.207
-  port: 4100
-  uuid: 026ecbd6-2838-40f6-b530-d2c303c4f629
+  server: xinnusvpn.duckdns.org
+  port: 8443
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
   network: ws
-  tls: false
-  servername: ''
+  tls: true
+  servername: xinnusvpn.duckdns.org
   client-fingerprint: chrome
   ws-opts:
-    path: /v1
+    path: /wsnl
     headers:
-      Host: live.ok.ru
+      Host: xinnusvpn.duckdns.org
   country: RU
-- name: RU_VLESS_2200_520
-  type: vless
-  server: 194.26.229.207
-  port: 2200
-  uuid: 026ecbd6-2838-40f6-b530-d2c303c4f629
-  network: ws
-  tls: false
-  servername: ''
-  client-fingerprint: chrome
-  ws-opts:
-    path: /v1
-    headers:
-      Host: rzd.ru
-  country: RU
-- name: RU_HYSTERIA2_443_1549
+- name: RU_HYSTERIA2_443_446
   password: 87bb2ac4-b7a1-0001-b11d-2107709ea6cb
   port: 443
   server: 136.148.83.69
@@ -134,7 +104,7 @@ proxies:
   type: hysteria2
   country: RU
 - cipher: aes-256-gcm
-  name: RU_SS_18443_307
+  name: RU_SS_18443_264
   password: 5mKjXAGrliIAlYwWDeFzkCEMIgQdFQLe
   port: 18443
   server: 194.87.69.12
@@ -153,17 +123,15 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - RU_VLESS_443_884
-  - RU_VLESS_8454_822
-  - RU_VLESS_8450_1022
-  - RU_VLESS_8459_1255
-  - RU_VLESS_8444_1347
-  - RU_VLESS_443_482
-  - RU_VLESS_8463_1637
-  - RU_VLESS_4100_519
-  - RU_VLESS_2200_520
-  - RU_HYSTERIA2_443_1549
-  - RU_SS_18443_307
+  - RU_VLESS_443_456
+  - RU_VLESS_443_475
+  - RU_VLESS_443_806
+  - RU_VLESS_443_465
+  - RU_VLESS_443_1540
+  - RU_VLESS_443_882
+  - RU_VLESS_8443_385
+  - RU_HYSTERIA2_443_446
+  - RU_SS_18443_264
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -176,17 +144,15 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - RU_SS_18443_307
-  - RU_VLESS_443_482
-  - RU_VLESS_4100_519
-  - RU_VLESS_2200_520
-  - RU_VLESS_8454_822
-  - RU_VLESS_443_884
-  - RU_VLESS_8450_1022
-  - RU_VLESS_8459_1255
-  - RU_VLESS_8444_1347
-  - RU_HYSTERIA2_443_1549
-  - RU_VLESS_8463_1637
+  - RU_SS_18443_264
+  - RU_VLESS_8443_385
+  - RU_HYSTERIA2_443_446
+  - RU_VLESS_443_456
+  - RU_VLESS_443_465
+  - RU_VLESS_443_475
+  - RU_VLESS_443_806
+  - RU_VLESS_443_882
+  - RU_VLESS_443_1540
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -198,17 +164,15 @@ proxy-groups:
 - name: 🌍 RU
   type: url-test
   proxies:
-  - RU_VLESS_443_884
-  - RU_VLESS_8454_822
-  - RU_VLESS_8450_1022
-  - RU_VLESS_8459_1255
-  - RU_VLESS_8444_1347
-  - RU_VLESS_443_482
-  - RU_VLESS_8463_1637
-  - RU_VLESS_4100_519
-  - RU_VLESS_2200_520
-  - RU_HYSTERIA2_443_1549
-  - RU_SS_18443_307
+  - RU_VLESS_443_456
+  - RU_VLESS_443_475
+  - RU_VLESS_443_806
+  - RU_VLESS_443_465
+  - RU_VLESS_443_1540
+  - RU_VLESS_443_882
+  - RU_VLESS_8443_385
+  - RU_HYSTERIA2_443_446
+  - RU_SS_18443_264
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100

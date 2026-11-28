@@ -5,7 +5,75 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: FR_HYSTERIA2_443_348
+- name: FR_VLESS_80_308
+  type: vless
+  network: ws
+  server: ov-france1.09vpn.com
+  port: 80
+  uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
+  servername: ov-france1.09vpn.com
+  tls: false
+  ws-opts:
+    headers:
+      Host: ov-france1.09vpn.com
+    path: /vless/
+  country: FR
+- name: FR_TROJAN_443_304
+  type: trojan
+  network: tcp
+  server: 38.60.136.156
+  port: 443
+  password: hCunaKqdEJDBO+3jCrJUSMevXOw9Q_r4Ey
+  skip-cert-verify: true
+  sni: 38.60.136.156
+  client-fingerprint: chrome
+  country: FR
+- name: FR_VLESS_80_368
+  type: vless
+  network: ws
+  server: 152.228.162.19
+  port: 80
+  uuid: 5ce84688-f535-46ad-a512-37b17becf6ea
+  skip-cert-verify: false
+  tls: false
+  encryption: none
+  ws-opts:
+    headers:
+      Host: akamaized.net
+    path: /vless/
+  country: FR
+- name: FR_VMESS_1270_279
+  type: vmess
+  network: tcp
+  server: 46.105.222.157
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  country: FR
+- type: ss
+  name: FR_SS_443_206
+  server: 23.162.152.245
+  port: 443
+  password: ySGkGhr2sKHV
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  country: FR
+- type: ss
+  name: FR_SS_443_379
+  server: leviko-fr1459.shopingggg.ir
+  port: 443
+  password: ySGkGhr2sKHV
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  country: FR
+- name: FR_HYSTERIA2_443_271
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
   server: 13.36.234.11
@@ -15,95 +83,69 @@ proxies:
   type: hysteria2
   country: FR
 - cipher: aes-256-gcm
-  name: FR_SS_19999_249
+  name: FR_SS_19999_210
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 23.162.152.22
   type: ss
   country: FR
 - cipher: aes-256-gcm
-  name: FR_SS_19999_275
+  name: FR_SS_19999_205
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 38.109.228.110
   type: ss
   country: FR
 - cipher: aes-256-gcm
-  name: FR_SS_19999_276
+  name: FR_SS_19999_208
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 167.17.64.27
   type: ss
   country: FR
 - cipher: aes-256-gcm
-  name: FR_SS_19999_258
+  name: FR_SS_19999_204
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 172.99.189.142
   type: ss
   country: FR
 - cipher: aes-256-gcm
-  name: FR_SS_19999_265
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 167.17.64.175
-  type: ss
-  country: FR
-- alpn:
-  - h3
-  auth-str: dongtaiwang.com
-  down: 55 Mbps
-  name: FR_HYSTERIA_24667_1749
-  port: 24667
-  protocol: udp
-  server: 62.210.124.132
-  skip-cert-verify: true
-  sni: bing.com
-  type: hysteria
-  up: 11 Mbps
-  country: FR
-- cipher: aes-256-gcm
-  name: FR_SS_19999_269
+  name: FR_SS_19999_204_2
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 167.17.64.22
   type: ss
   country: FR
-- name: FR_HTTP_6103_493
+- cipher: aes-256-gcm
+  name: FR_SS_19999_215
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 167.17.64.175
+  type: ss
+  country: FR
+- type: hysteria
+  name: FR_HYSTERIA_24667_2302
+  server: 62.210.124.132
+  port: 24667
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+  country: FR
+- name: FR_HTTP_6103_374
   port: 6103
   server: 87.98.174.157
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-  country: FR
-- name: FR_VMESS_1234_363
-  type: vmess
-  network: tcp
-  server: 141.95.65.9
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  servername: supervpn.super.com
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  alterId: 0
-  cipher: aes-128-gcm
-  client-fingerprint: chrome
-  country: FR
-- name: FR_VMESS_1234_373
-  type: vmess
-  network: tcp
-  server: 162.19.204.71
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  servername: supervpn.super.com
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
   country: FR
 proxy-groups:
 - name: 🚀 节点选择
@@ -118,17 +160,21 @@ proxy-groups:
 - name: ⚡ 全球最低延迟
   type: url-test
   proxies: &id001
-  - FR_HYSTERIA2_443_348
-  - FR_SS_19999_249
-  - FR_SS_19999_275
-  - FR_SS_19999_276
-  - FR_SS_19999_258
-  - FR_SS_19999_265
-  - FR_HYSTERIA_24667_1749
-  - FR_SS_19999_269
-  - FR_HTTP_6103_493
-  - FR_VMESS_1234_363
-  - FR_VMESS_1234_373
+  - FR_VLESS_80_308
+  - FR_TROJAN_443_304
+  - FR_VLESS_80_368
+  - FR_VMESS_1270_279
+  - FR_SS_443_206
+  - FR_SS_443_379
+  - FR_HYSTERIA2_443_271
+  - FR_SS_19999_210
+  - FR_SS_19999_205
+  - FR_SS_19999_208
+  - FR_SS_19999_204
+  - FR_SS_19999_204_2
+  - FR_SS_19999_215
+  - FR_HYSTERIA_24667_2302
+  - FR_HTTP_6103_374
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -141,17 +187,21 @@ proxy-groups:
 - name: ♻️ 自动故障转移
   type: fallback
   proxies:
-  - FR_SS_19999_249
-  - FR_SS_19999_258
-  - FR_SS_19999_265
-  - FR_SS_19999_269
-  - FR_SS_19999_275
-  - FR_SS_19999_276
-  - FR_HYSTERIA2_443_348
-  - FR_VMESS_1234_363
-  - FR_VMESS_1234_373
-  - FR_HTTP_6103_493
-  - FR_HYSTERIA_24667_1749
+  - FR_SS_19999_204
+  - FR_SS_19999_204_2
+  - FR_SS_19999_205
+  - FR_SS_443_206
+  - FR_SS_19999_208
+  - FR_SS_19999_210
+  - FR_SS_19999_215
+  - FR_HYSTERIA2_443_271
+  - FR_VMESS_1270_279
+  - FR_TROJAN_443_304
+  - FR_VLESS_80_308
+  - FR_VLESS_80_368
+  - FR_HTTP_6103_374
+  - FR_SS_443_379
+  - FR_HYSTERIA_24667_2302
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: ⚖️ 负载均衡
@@ -163,17 +213,21 @@ proxy-groups:
 - name: 🌍 FR
   type: url-test
   proxies:
-  - FR_HYSTERIA2_443_348
-  - FR_SS_19999_249
-  - FR_SS_19999_275
-  - FR_SS_19999_276
-  - FR_SS_19999_258
-  - FR_SS_19999_265
-  - FR_HYSTERIA_24667_1749
-  - FR_SS_19999_269
-  - FR_HTTP_6103_493
-  - FR_VMESS_1234_363
-  - FR_VMESS_1234_373
+  - FR_VLESS_80_308
+  - FR_TROJAN_443_304
+  - FR_VLESS_80_368
+  - FR_VMESS_1270_279
+  - FR_SS_443_206
+  - FR_SS_443_379
+  - FR_HYSTERIA2_443_271
+  - FR_SS_19999_210
+  - FR_SS_19999_205
+  - FR_SS_19999_208
+  - FR_SS_19999_204
+  - FR_SS_19999_204_2
+  - FR_SS_19999_215
+  - FR_HYSTERIA_24667_2302
+  - FR_HTTP_6103_374
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
